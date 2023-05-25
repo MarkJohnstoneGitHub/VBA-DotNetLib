@@ -3,21 +3,12 @@ using System.Runtime.InteropServices;
 using System;
 using GSystem = global::System;
 
-// https://learn.microsoft.com/en-us/dotnet/api/system.collections.ilist?view=netframework-4.8.1
 namespace DotNetLib.System.Collections
 {
     [Description("Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.")]
     [ComVisible(true)]
     [Guid("F03A9DAE-AF67-4C90-91C1-7EED79A37EF1")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-
-    //
-    // Summary:
-    //     Represents a collection of objects that can be individually accessed by index.
-    //
-    // Type parameters:
-    //   T:
-    //     The type of elements in the list.
 
     public interface IList
     {
@@ -31,29 +22,17 @@ namespace DotNetLib.System.Collections
         [Description("Initializes a new instance of the List<T> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.")]
         List CreateFromIEnumerable(GSystem.Collections.IEnumerable collection);
 
-        //
-        // Summary:
-        //     Gets or sets the element at the specified index.
-        //
-        // Parameters:
-        //   index:
-        //     The zero-based index of the element to get or set.
-        //
-        // Returns:
-        //     The element at the specified index.
-        //
-        // Exceptions:
-        //   T:System.ArgumentOutOfRangeException:
-        //     index is not a valid index in the System.Collections.Generic.IList`1.
-        //
-        //   T:System.NotSupportedException:
-        //     The property is set and the System.Collections.Generic.IList`1 is read-only.
+
+        // Properties
+
         [Description("Gets or sets the element at the specified index.")]
         object this[int index]
         {
             get;
             set;
         }
+
+        // Methods
 
         [Description("Adds an object to the end of the List<T>.")]
         void Add(object value);
@@ -87,7 +66,6 @@ namespace DotNetLib.System.Collections
 
         [Description("Searches for the specified object and returns the zero-based index of the first occurrence within the range of elements in the List<T> that starts at the specified index and contains the specified number of elements.")]
         int IndexOf3(object item, int index, int count);
-
 
         [Description("Inserts an element into the List<T> at the specified index.")]
         void Insert(int index, object item);

@@ -1,12 +1,4 @@
 ﻿using GSystem = global::System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Microsoft.SqlServer.Server;
-using System.Xml.Linq;
-using System.Xml.XPath;
 using System.Runtime.InteropServices;
 
 namespace DotNetLib.System
