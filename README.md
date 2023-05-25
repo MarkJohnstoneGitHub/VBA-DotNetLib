@@ -19,4 +19,8 @@
  
  Add reference DotNetlib.tlb (Com Interlop wrappers of the .Net Framework 4.8.1)  
  Add reference mscorlib.tlb
+ 
+ 
+ Issues:
+ Currently List COM object wont allow to be created getting invalid use of New Keyword.
    
