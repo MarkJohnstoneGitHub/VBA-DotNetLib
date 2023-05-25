@@ -34,4 +34,4 @@
  
  **Testing**
  
- Only adhoc testing done so far on DateTime object and appears to create the object and various methods are functional.
+ Only adhoc testing performed on DateTime object and appears to create the object and various methods are functional.
