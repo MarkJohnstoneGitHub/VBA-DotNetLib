@@ -10,7 +10,9 @@
  
  Aim: To create .Net Framework 4.8.1 Com Interlop wrappers using C# for VBA 64.
  
- Classes initally focussing on are DateTime,TimeSpan,TimeZoneInfo and associated classes
+ Then in VBA create predeclared class wrappers for the DotLib COM objects.
+ 
+ Classes initally focussing on are DateTime,TimeSpan,TimeZoneInfo and associated classes.
  
  **Usage:**
  In VBA see Tools->References
