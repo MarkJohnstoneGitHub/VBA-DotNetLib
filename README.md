@@ -3,7 +3,7 @@
  
    **Dependencies:**
    
-   DotNetLib.tlb https://github.com/MarkJohnstoneGitHub/DotNetLib/blob/main/bin/Debug/DotNetLib.tlb
+   DotNetLib.tlb https://github.com/MarkJohnstoneGitHub/DotNetLib/blob/main/bin/Release/DotNetLib.tlb
    
    mscorlib.tlb eg Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.tlb
    
