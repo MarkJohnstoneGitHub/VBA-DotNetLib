@@ -1,7 +1,5 @@
 ﻿using System.Runtime.InteropServices;
 using GSystem = global::System; // https://stackoverflow.com/questions/5681537/namespace-conflict-in-c-sharp
-using DotNetLib.System;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System;
 using System.ComponentModel;
 

@@ -6,7 +6,7 @@ using System;
 namespace DotNetLib.System
 {
     [ComVisible(true)]
-    [Description("Represents an instant in time, typically expressed as a date and time of day.\r\n\r\n")]
+    [Description("Represents an instant in time, typically expressed as a date and time of day.")]
     [Guid("72E3AB6F-9742-4F2F-8FA2-43FEEB1CC788")]
     [ProgId("DotNetLib.System.DateTime")]
     [ClassInterface(ClassInterfaceType.None)]

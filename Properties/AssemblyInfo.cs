@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("DotNetLib")]
-[assembly: AssemblyDescription("COM Interlop wrappers of the .Net Framework 4.8.1")]
+[assembly: AssemblyDescription("COM wrapper of the .Net Framework 4.8.1")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mark Johnstone")]
 [assembly: AssemblyProduct("DotNetLib")]
