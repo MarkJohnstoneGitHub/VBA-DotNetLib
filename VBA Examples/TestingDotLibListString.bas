@@ -1,5 +1,4 @@
 Attribute VB_Name = "TestingDotLibListString"
-'@Folder("Database2")
 Option Explicit
 
 Private Sub TestDotNetLibListString()
@@ -17,8 +16,6 @@ Private Sub TestDotNetLibListString()
     dinosaurs.Sort
     
     Debug.Print dinosaurs.Contains("Amargasaurus")
-    dinosaurs.CopyTo
-    
     
     Dim arrayDinosaurs() As String
     arrayDinosaurs = dinosaurs.ToArray
