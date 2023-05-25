@@ -34,4 +34,5 @@
  
  **Testing**
  
- Only adhoc testing performed on DateTime object and appears to create the object and various methods are functional.
+ Only adhoc testing performed on DateTime and ListString object and appears to create the object and various methods are functional.
+ 
