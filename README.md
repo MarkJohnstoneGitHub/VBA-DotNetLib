@@ -36,3 +36,10 @@
  
  Only adhoc testing performed on DateTime and ListString object and appears to create the object and various methods are functional.
  
+  **Development Notes**
+  
+  Require how to treat generic types returned. eg. public static System.Collections.ObjectModel.ReadOnlyCollection<TimeZoneInfo> GetSystemTimeZones()
+ 
+ Possible convert into it's non-generic equivalent i.e. CollectionBase ? 
+ 
+ 
