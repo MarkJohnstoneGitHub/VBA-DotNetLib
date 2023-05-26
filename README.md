@@ -8,7 +8,7 @@
    mscorlib.tlb eg Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.tlb
    
  
- Aim: To create .Net Framework 4.8.1 Com Interlop wrappers using C# for VBA 64.
+ Aim: To create .Net Framework 4.8.1 Com Interlop wrappers using C# for VBA 64 to enable various data types in VBA with early and late binding.
  
  Then in VBA create predeclared class wrappers for the DotLib COM objects.
  
@@ -26,11 +26,13 @@
  
  **Issues:**
  
- Currently List COM object wont allow to be created getting invalid use of New Keyword.
+ Currently List COM object wont allow to be created getting invalid use of New Keyword.  This will removed and replaced with it's non-generic equivalent.
  
  Anticipate the ReadOnlyCollection may have similar issue.
  
  Require to consider how to handle generic types in COM Interlop as not supported, possible work around implement each type separately, which enforces type safety.  
+ 
+ Or replace with non-generic equivalent.  To enforce type safety in VBA create a custom wrapper for the collection on the non-generic collection.
  
  **Testing**
  
@@ -38,8 +40,12 @@
  
   **Development Notes**
   
-  Require how to treat generic types returned. eg. public static System.Collections.ObjectModel.ReadOnlyCollection<TimeZoneInfo> GetSystemTimeZones()
+  As COM Interlop doesn't support generic types required to convert to it's non-generic equivalent.
+  
+  How to treat generic types returned? eg. public static System.Collections.ObjectModel.ReadOnlyCollection<TimeZoneInfo> GetSystemTimeZones()
+  
+  
+  https://github.com/dotnet/platform-compat/blob/master/docs/DE0006.md
  
- Possible convert into it's non-generic equivalent i.e. CollectionBase ? 
- 
+  https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic?view=netframework-4.8.1
  
