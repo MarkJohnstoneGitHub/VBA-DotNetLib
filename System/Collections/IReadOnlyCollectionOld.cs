@@ -1,17 +1,16 @@
 ﻿using GSystem = global::System;
-using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 
 namespace DotNetLib.System.Collections
 {
     [ComVisible(true)]
-    [Guid("2BFD4F86-013C-49D1-A5A5-AD0EEBD10E30")]
+    [Guid("76FAE7BF-C39A-4535-A658-3FD60A7D477E")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-    public interface IReadOnlyCollection
+    public interface IReadOnlyCollectionOld
     {
         [Description("Initializes a new instance of the ReadOnlyCollection<T> class that is a read-only wrapper around the specified list.")]
-        ReadOnlyCollection Create(IList list);
+        ReadOnlyCollectionOld Create(IList list);
 
         [Description("Gets the number of elements contained in the ReadOnlyCollection<T> instance.")]
         int Count { get; }

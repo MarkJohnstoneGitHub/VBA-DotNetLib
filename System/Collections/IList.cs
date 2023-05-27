@@ -5,8 +5,8 @@ using GSystem = global::System;
 
 namespace DotNetLib.System.Collections
 {
-    [Description("Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.")]
     [ComVisible(true)]
+    [Description("Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.")]
     [Guid("F03A9DAE-AF67-4C90-91C1-7EED79A37EF1")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
 

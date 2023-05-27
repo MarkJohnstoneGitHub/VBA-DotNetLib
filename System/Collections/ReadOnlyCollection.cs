@@ -1,72 +1,65 @@
-﻿// https://learn.microsoft.com/en-us/dotnet/api/system.collections.objectmodel.readonlycollection-1?view=netframework-4.8.1
-// https://source.dot.net/#Microsoft.Build/ReadOnlyCollection.cs
-
-using GSystem = global::System;
-using System.ComponentModel;
+﻿using GSystem = global::System;
 using System.Runtime.InteropServices;
-using System;
+using System.ComponentModel;
 
 namespace DotNetLib.System.Collections
 {
-    //[DefaultProperty("Item")]
+
     [ComVisible(true)]
     [Description("Provides the base class for a generic read-only collection.")]
-    [Guid("A762D114-7FBE-444B-96E0-53838D20C49D")]
-    [ProgId("DotNetLib.System.Collections.ObjectModel.ReadOnlyCollection")]
-    [ClassInterface(ClassInterfaceType.None)]
+    [Guid("E4643BBE-74AF-467D-8DF3-06B681E93E4C")]
+    [ProgId("DotNetLib.System.Collections.ReadOnlyCollection")]
+    [ClassInterface(ClassInterfaceType.AutoDual)]
 
-    //[DefaultMemberAttribute("Item")]
-    public class ReadOnlyCollection : IReadOnlyCollection
+    public class ReadOnlyCollection : GSystem.Collections.ReadOnlyCollectionBase
     {
 
-        private GSystem.Collections.ObjectModel.ReadOnlyCollection<Object> _readOnlyCollection;
-
-        // Constructors
-        public ReadOnlyCollection(GSystem.Collections.Generic.IList<Object> list)
+        public ReadOnlyCollection()
         {
-            this._readOnlyCollection = (GSystem.Collections.ObjectModel.ReadOnlyCollection<Object>)list;
         }
 
-        public ReadOnlyCollection Create(IList list)
+        public ReadOnlyCollection(GSystem.Collections.IList sourceList)
         {
-            return new ReadOnlyCollection((GSystem.Collections.Generic.List<Object>)list);
+            InnerList.AddRange(sourceList);
         }
 
-        public int Count => this._readOnlyCollection.Count;
-
-        //public object Item(int index) => this._readOnlyCollection[index];
-
-        public object this[int index] => this._readOnlyCollection[index];
-
-
-        //GSystem.Collections.Generic.IList<object> Items => _readOnlyCollection.Items; //{ get; }
-
-        //public object[] Items() => this._readOnlyCollection.CopyTo(this._readOnlyCollection);
-        //{ get; }
-
-        public bool Contains(Object Index)
+        public ReadOnlyCollection Create(GSystem.Collections.IList sourceList)
         {
-            return this._readOnlyCollection.Contains((Object)Index);
+            return new ReadOnlyCollection(sourceList);
         }
 
-        /// <summary>
-        /// Copies the entire ReadOnlyCollection<T> to a compatible one-dimensional Array, starting at the specified index of the target array.
-        /// </summary>
-        /// <param name="array">The one-dimensional Array that is the destination of the elements copied from ReadOnlyCollection<T>. The Array must have zero-based indexing.</param>
-        /// <param name="index">The zero-based index in array at which copying begins.</param>
-        public void CopyTo(Object[] array, int index)
+
+        public object this[int index]
         {
-            this._readOnlyCollection.CopyTo(array, index);
+            get
+            {
+                return (InnerList[index]);
+            }
         }
 
-        public GSystem.Collections.IEnumerator GetEnumerator()
+        public int IndexOf(object value)
         {
-            return this._readOnlyCollection.GetEnumerator();
+            return (InnerList.IndexOf(value));
         }
 
-        public int IndexOf(Object value)
+        public bool Contains(object value)
         {
-            return this._readOnlyCollection.IndexOf(value);
+            return (InnerList.Contains(value));
+        }
+
+        public void CopyTo(object[] array, int index)
+        { 
+            InnerList.CopyTo(array, index);
+        }
+
+        public override GSystem.Collections.IEnumerator GetEnumerator()
+        { 
+            return InnerList.GetEnumerator(); 
+        }
+
+        public object[] ToArray()
+        {
+            return InnerList.ToArray();
         }
     }
 }

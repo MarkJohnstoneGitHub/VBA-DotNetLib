@@ -6,7 +6,7 @@ using System;
 namespace DotNetLib.System
 {
     [ComVisible(true)]
-    [Description("Represents an instant in time, typically expressed as a date and time of day.\r\n\r\n")]
+    [Description("Represents an instant in time, typically expressed as a date and time of day.")]
     [Guid("72E3AB6F-9742-4F2F-8FA2-43FEEB1CC788")]
     [ProgId("DotNetLib.System.DateTime")]
     [ClassInterface(ClassInterfaceType.None)]
@@ -128,8 +128,6 @@ namespace DotNetLib.System
             return new System.DateTime(year, month, day, hour, minute, second, millisecond, kind);
         }
 
-
-
         //Fields
 
         /// <summary>
@@ -148,7 +146,7 @@ namespace DotNetLib.System
         //public DateTime UnixEpoch => dtUnixEpoch;
 
         //Properties
-        public GSystem.DateTime dateTime
+        internal GSystem.DateTime dateTime
         {
             get { return this.objDateTime; }
             //set { objDateTime = value; }  // set method
@@ -239,7 +237,7 @@ namespace DotNetLib.System
         /// </summary>
         public int Year => this.objDateTime.Year;
 
-        //Methods
+        // Methods
 
         public DateTime Add(TimeSpan value)
         { 

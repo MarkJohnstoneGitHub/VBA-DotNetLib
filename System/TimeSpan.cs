@@ -53,7 +53,7 @@ namespace DotNetLib.System
             return new TimeSpan(days, hours, minutes, seconds, milliseconds);
         }
 
-        public GSystem.TimeSpan timeSpan
+        internal GSystem.TimeSpan timeSpan
         {
             get { return objTimeSpan; }
             set { objTimeSpan = value; }  // set method

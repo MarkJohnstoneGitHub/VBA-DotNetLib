@@ -13,7 +13,7 @@ namespace DotNetLib.System.Collections
     [ComVisible(true)]
     [Description("Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.")]
     [Guid("C88C9749-4D9C-46D0-A463-5DA93F0E1A75")]
-    [ProgId("DotNetLib.System.Collections.Generic.List")]
+    //[ProgId("DotNetLib.System.Collections.Generic.List")]
     [ClassInterface(ClassInterfaceType.None)]
 
 
@@ -22,13 +22,14 @@ namespace DotNetLib.System.Collections
         private GSystem.Collections.Generic.List<object> objList;
 
         // Constructors
-        List()
+        public List()
         {
+            GSystem.Collections.Generic.List<object> objList = new GSystem.Collections.Generic.List<object>();
         }
 
-        public List(GSystem.Collections.Generic.List<object> objList)
+        public List(List<object> objList)
         {
-            this.objList = objList;
+            this.objList = (List<object>)objList;
         }
 
         public List(GSystem.Collections.Generic.List<object> objList, int capacity)
@@ -69,7 +70,11 @@ namespace DotNetLib.System.Collections
             get { return this.objList.Capacity; }
             set { this.objList.Capacity = value; }
         }
-        public int Count { get; }
+        public int Count
+        {
+            get { return this.objList.Count; }
+        }
+
         public object this[int index]
         {
             get { return this.objList[index]; }
