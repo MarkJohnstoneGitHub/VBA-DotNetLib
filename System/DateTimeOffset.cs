@@ -368,7 +368,21 @@ namespace DotNetLib.System
             result = new DateTimeOffset(outResult);
             return pvtTryParse;
         }
-    }
+
+        public bool TryParseExact(string input, string format, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles, out DateTimeOffset result)
+        {
+            bool pvtTryParseExact = GSystem.DateTimeOffset.TryParseExact(input, format, formatProvider, styles, out GSystem.DateTimeOffset outResult);
+            result = new DateTimeOffset(outResult);
+            return pvtTryParseExact;
+        }
+
+        public bool TryParseExact2(string input, string[] formats, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles, out DateTimeOffset result)
+        {
+            bool pvtTryParseExact = GSystem.DateTimeOffset.TryParseExact(input, formats, formatProvider, styles, out GSystem.DateTimeOffset outResult);
+            result = new DateTimeOffset(outResult);
+            return pvtTryParseExact;
+        }
+}
 
 
 }
