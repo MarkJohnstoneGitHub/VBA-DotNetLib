@@ -2,8 +2,6 @@
 using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System;
-using System.Runtime.InteropServices.ComTypes;
-using Microsoft.SqlServer.Server;
 
 namespace DotNetLib.System
 {
