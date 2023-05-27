@@ -172,6 +172,11 @@ namespace DotNetLib.System
         [Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified formats, culture-specific format information, and style. The format of the string representation must match one of the specified formats exactly.")]
         DateTimeOffset ParseExact3(string input, string[] formats, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles);
 
+        [Description("Subtracts a DateTimeOffset value that represents a specific date and time from the current DateTimeOffset object.")]
+        TimeSpan Subtract(DateTimeOffset value);
+
+        [Description("Subtracts a specified time interval from the current DateTimeOffset object.")]
+        DateTimeOffset Subtract2(TimeSpan value);
 
         // [Description("")]
 

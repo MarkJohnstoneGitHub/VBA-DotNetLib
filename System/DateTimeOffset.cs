@@ -293,6 +293,15 @@ namespace DotNetLib.System
             return new DateTimeOffset(GSystem.DateTimeOffset.ParseExact(input, formats, formatProvider,styles));
         }
 
+        public TimeSpan Subtract(DateTimeOffset value)
+        {
+            return new TimeSpan(this.objDateTimeOffset.Subtract(value.objDateTimeOffset));
+        }
+
+        public DateTimeOffset Subtract2(TimeSpan value)
+        {
+            return new DateTimeOffset(this.objDateTimeOffset.Subtract(value.timeSpan));
+        }
     }
 
 
