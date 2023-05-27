@@ -52,28 +52,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-    <Compile Include="System\Collections\ArrayList.cs" />
-    <Compile Include="System\Collections\IReadOnlyCollection.cs" />
-=======
     <Compile Include="System\Collections\IList.cs" />
     <Compile Include="System\Collections\IListString.cs" />
     <Compile Include="System\Collections\IReadOnlyCollection.cs" />
     <Compile Include="System\Collections\List.cs" />
     <Compile Include="System\Collections\ListString.cs" />
->>>>>>> 7342d40c8d06560e9faa22506c24db1b9cd2eb7f
     <Compile Include="System\Collections\ReadOnlyCollection.cs" />
-    <Compile Include="System\Collections\IArrayList.cs" />
-    <Compile Include="System\Collections\IList.cs" />
-    <Compile Include="System\Collections\IListString.cs" />
-    <Compile Include="System\Collections\List.cs" />
-    <Compile Include="System\Collections\ListString.cs" />
     <Compile Include="System\DateTime.cs" />
     <Compile Include="System\DateTimeKind.cs" />
     <Compile Include="System\DateTimeOffset.cs" />
     <Compile Include="System\DayOfWeek.cs" />
     <Compile Include="System\IDateTime.cs" />
-    <Compile Include="System\IDateTimeOffset.cs" />
     <Compile Include="System\ITimeSpan.cs" />
     <Compile Include="System\ITimeZoneInfo.cs" />
     <Compile Include="System\TimeSpan.cs" />
