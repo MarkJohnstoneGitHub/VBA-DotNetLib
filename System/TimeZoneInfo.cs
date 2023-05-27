@@ -6,9 +6,25 @@ using DotNetLib.System.Collections;
 
 namespace DotNetLib.System
 {
-
     // https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo?view=netframework-4.8.1
     // https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/TimeZoneInfo.cs
+
+    // TODO: ClearCachedData() remove cachedLocal, cachedUtc, PopulateAllSystemTimeZones
+    // TODO: For Local property check if cachedLocal is null, if null create TimeZoneInfo object and return cachedLocal
+    // TODO: For Utc property check if cachedUtc is null, if null create TimeZoneInfo and return TimeZoneInfo
+    // TODO: For GetSystemTimeZones check if cachedSystemTimeZones is null, if null PopulateAllSystemTimeZones
+
+    // An instance of the TimeZoneInfo class is immutable.Once an object has been instantiated, its values cannot be modified.
+
+    // You cannot instantiate a TimeZoneInfo object using the new keyword.Instead, you must call one of the static members of the TimeZoneInfo class shown in the following table.
+
+    // Static member name Description
+    // CreateCustomTimeZone method Creates a custom time zone from application-supplied data.
+    // FindSystemTimeZoneById method Instantiates a time zone based on its identifier.
+    // FromSerializedString method Deserializes a string value to re-create a previously serialized TimeZoneInfo object.
+    // GetSystemTimeZones method   Returns an enumerable ReadOnlyCollection<T> of TimeZoneInfo objects that represents all time zones that are available on the local system.
+    // Local property  Instantiates a TimeZoneInfo object that represents the local time zone.
+    // Utc property    Instantiates a TimeZoneInfo object that represents the UTC zone.
 
     [ComVisible(true)]
     [Description("Represents any time zone in the world.")]
@@ -27,15 +43,15 @@ namespace DotNetLib.System
         {
         }
 
-        public TimeZoneInfo(GSystem.TimeZoneInfo objTimeZoneInfo)
+        internal TimeZoneInfo(GSystem.TimeZoneInfo objTimeZoneInfo)
         {
-            this.objTimeZoneInfo = objTimeZoneInfo;
+            this.timeZoneInfo = objTimeZoneInfo;
         }
 
-        public GSystem.TimeZoneInfo timeZoneInfo
+        internal GSystem.TimeZoneInfo timeZoneInfo
         {
             get { return this.objTimeZoneInfo; }
-            set { objTimeZoneInfo = value; }  // set method
+            set { objTimeZoneInfo = value; }  // set method for instance of the TimeZoneInfo class is immutable.
         }
 
         // Properties
@@ -57,6 +73,7 @@ namespace DotNetLib.System
         public string StandardName => this.objTimeZoneInfo.StandardName;
 
         public bool SupportsDaylightSavingTime => this.objTimeZoneInfo.SupportsDaylightSavingTime;
+
         public TimeZoneInfo Utc
         {
             get { return new TimeZoneInfo(GSystem.TimeZoneInfo.Utc); }
