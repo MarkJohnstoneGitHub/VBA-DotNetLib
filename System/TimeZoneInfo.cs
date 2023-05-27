@@ -13,6 +13,8 @@ namespace DotNetLib.System
     // TODO: For Local property check if cachedLocal is null, if null create TimeZoneInfo object and return cachedLocal
     // TODO: For Utc property check if cachedUtc is null, if null create TimeZoneInfo and return TimeZoneInfo
     // TODO: For GetSystemTimeZones check if cachedSystemTimeZones is null, if null PopulateAllSystemTimeZones
+    // TODO: Require to examine how to implement the cachedData see ClearCachedData in .net source code and how it is handled.
+
 
     // An instance of the TimeZoneInfo class is immutable.Once an object has been instantiated, its values cannot be modified.
 
@@ -65,26 +67,33 @@ namespace DotNetLib.System
 
         public string Id => this.objTimeZoneInfo.Id;
 
+
+        // TODO: Update to check if cachedLocal is null, if null create TimeZoneInfo, return cachedLocal ??
         public TimeZoneInfo Local
         {
-            get { return new TimeZoneInfo(GSystem.TimeZoneInfo.Local); }
+            get { return cachedLocal; } 
+            //get { return new TimeZoneInfo(GSystem.TimeZoneInfo.Local); }
         }
 
         public string StandardName => this.objTimeZoneInfo.StandardName;
 
         public bool SupportsDaylightSavingTime => this.objTimeZoneInfo.SupportsDaylightSavingTime;
 
+
+        // TODO: Update to check if cachedUtc is null, if null create TimeZoneInfo, return cachedUtc
         public TimeZoneInfo Utc
         {
-            get { return new TimeZoneInfo(GSystem.TimeZoneInfo.Utc); }
+            get { return cachedUtc; }
+            //get { return new TimeZoneInfo(GSystem.TimeZoneInfo.Utc); }
         }
 
-        //Methods
+        // Methods
 
         public void ClearCachedData()
         {
             GSystem.TimeZoneInfo.ClearCachedData();
 
+            // TODO: update to change to set chached items to null
             //refresh cached static data
             cachedSystemTimeZones = PopulateAllSystemTimeZones();
             cachedLocal = new TimeZoneInfo(GSystem.TimeZoneInfo.Local);
@@ -140,9 +149,8 @@ namespace DotNetLib.System
             return new TimeZoneInfo(GSystem.TimeZoneInfo.CreateCustomTimeZone(id, baseUtcOffset.timeSpan, displayName, standardDisplayName));
         }
 
-        //TimeZoneInfo CreateCustomTimeZone2(string id, TimeSpan baseUtcOffset, string displayName, string standardDisplayName, string daylightDisplayName, TimeZoneInfo.AdjustmentRule[] adjustmentRules);
-        //TimeZoneInfo CreateCustomTimeZone3(string id, TimeSpan baseUtcOffset, string displayName, string standardDisplayName, string daylightDisplayName, TimeZoneInfo.AdjustmentRule[] adjustmentRules, bool disableDaylightSavingTime);
-
+        // TODO: TimeZoneInfo CreateCustomTimeZone2(string id, TimeSpan baseUtcOffset, string displayName, string standardDisplayName, string daylightDisplayName, TimeZoneInfo.AdjustmentRule[] adjustmentRules);
+        // TODO: TimeZoneInfo CreateCustomTimeZone3(string id, TimeSpan baseUtcOffset, string displayName, string standardDisplayName, string daylightDisplayName, TimeZoneInfo.AdjustmentRule[] adjustmentRules, bool disableDaylightSavingTime);
 
         public bool Equals(TimeZoneInfo other)
         {
@@ -164,7 +172,7 @@ namespace DotNetLib.System
             return new TimeZoneInfo(GSystem.TimeZoneInfo.FromSerializedString(source));
         }
 
-        //public TimeZoneInfo.AdjustmentRule[] GetAdjustmentRules();
+        // TODO: public TimeZoneInfo.AdjustmentRule[] GetAdjustmentRules();
 
         public TimeSpan[] GetAmbiguousTimeOffsets(DateTime dateTime)
         {
@@ -205,6 +213,8 @@ namespace DotNetLib.System
         // Note how Method ClearCache  and ROC<T> systemTimeZones is updated
         // Ideally only require to update the system time zone collection when the ReadOnlyCollection is updated
         // https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/TimeZoneInfo.cs,443c9b06db11142b
+
+        // TODO: Update to check if cachedSystemTimeZones is null, if null cachedSystemTimeZones = PopulateAllSystemTimeZones, return cachedLocal
         public ReadOnlyCollection GetSystemTimeZones()
         {
             return cachedSystemTimeZones;
