@@ -382,7 +382,59 @@ namespace DotNetLib.System
             result = new DateTimeOffset(outResult);
             return pvtTryParseExact;
         }
-}
+
+        // Operators
+
+        public DateTimeOffset Addition(DateTimeOffset dateTimeOffset, TimeSpan timeSpan)
+        {
+            return new DateTimeOffset(dateTimeOffset.dateTimeOffset + timeSpan.timeSpan);
+        }
+
+        public bool Equality(DateTimeOffset left, DateTimeOffset right)
+        {
+            return (left.dateTimeOffset == right.dateTimeOffset);
+        }
+
+        public bool GreaterThan(DateTimeOffset left, DateTimeOffset right)
+        {
+            return (left.dateTimeOffset > right.dateTimeOffset);
+        }
+
+        public bool GreaterThanOrEqual(DateTimeOffset left, DateTimeOffset right)
+        {
+            return (left.dateTimeOffset  >= right.dateTimeOffset);
+        }
+
+        public DateTimeOffset Implicit(DateTime dateTime) =>
+            new DateTimeOffset(dateTime);
+
+        public bool Inequality(DateTimeOffset left, DateTimeOffset right)
+        {
+            return (left.dateTimeOffset != right.dateTimeOffset);
+        }
+
+        public bool LessThan(DateTimeOffset left, DateTimeOffset right)
+        {
+            return (left.dateTimeOffset < right.dateTimeOffset);
+        }
+
+        public bool LessThanOrEqual(DateTimeOffset left, DateTimeOffset right)
+        {
+            return (left.dateTimeOffset <= right.dateTimeOffset);
+        }
+
+        public TimeSpan Subtraction(DateTimeOffset left, DateTimeOffset right)
+        {
+            return new TimeSpan(left.dateTimeOffset - right.dateTimeOffset);
+        }
+
+        public DateTimeOffset Subtraction2(DateTimeOffset dateTimeOffset, TimeSpan timeSpan)
+        {
+            return new DateTimeOffset(dateTimeOffset.dateTimeOffset - timeSpan.timeSpan);
+        }
+
+
+    }
 
 
 }

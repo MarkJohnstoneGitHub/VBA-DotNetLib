@@ -223,6 +223,36 @@ namespace DotNetLib.System
         [Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified array of formats, culture-specific format information, and style. The format of the string representation must match one of the specified formats exactly.")]
         bool TryParseExact2(string input, string[] formats, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles, out DateTimeOffset result);
 
-        // [Description("")]
+        // Operatorrs
+
+        [Description("Adds a specified time interval to a DateTimeOffset object that has a specified date and time, and yields a DateTimeOffset object that has new a date and time.")]
+        DateTimeOffset Addition (DateTimeOffset dateTimeOffset, TimeSpan timeSpan);
+
+        [Description("Determines whether two specified DateTimeOffset objects represent the same point in time.")]
+        bool Equality(DateTimeOffset left, DateTimeOffset right);
+
+        [Description("Determines whether one specified DateTimeOffset object is greater than (or later than) a second specified DateTimeOffset object.")]
+        bool GreaterThan(DateTimeOffset left, DateTimeOffset right);
+
+        [Description("Determines whether one specified DateTimeOffset object is greater than or equal to a second specified DateTimeOffset object.")]
+        bool GreaterThanOrEqual(DateTimeOffset left, DateTimeOffset right);
+
+        [Description("Defines an implicit conversion of a DateTime object to a DateTimeOffset object.")]
+        DateTimeOffset Implicit(DateTime dateTime);
+
+        [Description("Determines whether two specified DateTimeOffset objects refer to different points in time.")]
+        bool Inequality(DateTimeOffset left, DateTimeOffset right);
+
+        [Description("Determines whether one specified DateTimeOffset object is less than a second specified DateTimeOffset object.")]
+        bool LessThan(DateTimeOffset left, DateTimeOffset right);
+
+        [Description("Determines whether one specified DateTimeOffset object is less than or equal to a second specified DateTimeOffset object.")]
+        bool LessThanOrEqual(DateTimeOffset left, DateTimeOffset right);
+
+        [Description("Subtracts one DateTimeOffset object from another and yields a time interval.")]
+        TimeSpan Subtraction(DateTimeOffset left, DateTimeOffset right);
+
+        [Description("Subtracts a specified time interval from a specified date and time, and yields a new date and time.")]
+        DateTimeOffset Subtraction2(DateTimeOffset dateTimeOffset, TimeSpan timeSpan);
     }
 }
