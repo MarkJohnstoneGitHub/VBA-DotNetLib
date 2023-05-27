@@ -262,6 +262,21 @@ namespace DotNetLib.System
             return this.objDateTimeOffset.GetHashCode();
         }
 
+        public DateTimeOffset Parse(string input)
+        {
+            return new DateTimeOffset(GSystem.DateTimeOffset.Parse(input));
+        }
+
+        public DateTimeOffset Parse2(string input, IFormatProvider formatProvider)
+        {
+            return new DateTimeOffset(GSystem.DateTimeOffset.Parse(input,formatProvider));
+        }
+
+        public DateTimeOffset Parse3(string input, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles)
+        {
+            return new DateTimeOffset(GSystem.DateTimeOffset.Parse(input, formatProvider,styles));
+        }
+
     }
 
 

@@ -1,6 +1,7 @@
 ﻿using GSystem = global::System; // https://stackoverflow.com/questions/5681537/namespace-conflict-in-c-sharp
 using System.Runtime.InteropServices;
 using System.ComponentModel;
+using System;
 
 namespace DotNetLib.System
 {
@@ -153,6 +154,14 @@ namespace DotNetLib.System
         [Description("Returns the hash code for the current DateTimeOffset object.")]
         int GetHashCode();
 
+        [Description("Converts the specified string representation of a date, time, and offset to its DateTimeOffset equivalent.")]
+        DateTimeOffset Parse(string input);
+
+        [Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified culture-specific format information.")]
+        DateTimeOffset Parse2(string input, IFormatProvider formatProvider);
+
+        [Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified culture-specific format information and formatting style.")]
+        DateTimeOffset Parse3(string input, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles);
 
 
         // [Description("")]
