@@ -108,8 +108,55 @@ namespace DotNetLib.System
         [Description("Returns a new DateTimeOffset object that adds a specified number of milliseconds to the value of this instance.")]
         DateTimeOffset AddMilliseconds(double milliseconds);
 
+        [Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional minutes to the value of this instance.")]
         DateTimeOffset AddMinutes(double minutes);
 
-        //[Description("")]
+        [Description("Returns a new DateTimeOffset object that adds a specified number of months to the value of this instance.")]
+        DateTimeOffset AddMonths(int months);
+
+        [Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional seconds to the value of this instance.")] 
+        DateTimeOffset AddSeconds(double seconds);
+
+        [Description("Returns a new DateTimeOffset object that adds a specified number of ticks to the value of this instance.")]
+        DateTimeOffset AddTicks(long ticks);
+
+        [Description("Returns a new DateTimeOffset object that adds a specified number of years to the value of this instance.")]
+        DateTimeOffset AddYears(int years);
+
+        [Description("Compares two DateTimeOffset objects and indicates whether the first is earlier than the second, equal to the second, or later than the second.")]
+        int Compare(DateTimeOffset first, DateTimeOffset second);
+
+        [Description("Compares the current DateTimeOffset object to a specified DateTimeOffset object and indicates whether the current object is earlier than, the same as, or later than the second DateTimeOffset object.")]
+        int CompareTo(DateTimeOffset other);
+
+        [Description("Determines whether the current DateTimeOffset object represents the same point in time as a specified DateTimeOffset object.")]
+        bool Equals(DateTimeOffset other);
+
+        [Description("Determines whether a DateTimeOffset object represents the same point in time as a specified object.")]
+        bool Equals2(object obj);
+
+        [Description("Determines whether two specified DateTimeOffset objects represent the same point in time.")]
+        bool Equals3(DateTimeOffset first, DateTimeOffset second);
+
+        [Description("Determines whether the current DateTimeOffset object represents the same time and has the same offset as a specified DateTimeOffset object.")]
+        bool EqualsExact(DateTimeOffset other);
+
+        [Description("Converts the specified Windows file time to an equivalent local time.")]
+        DateTimeOffset FromFileTime(long fileTime);
+
+        [Description("Converts a Unix time expressed as the number of milliseconds that have elapsed since 1970-01-01T00:00:00Z to a DateTimeOffset value.")]
+        DateTimeOffset FromUnixTimeMilliseconds(long milliseconds);
+
+        [Description("Converts a Unix time expressed as the number of seconds that have elapsed since 1970-01-01T00:00:00Z to a DateTimeOffset value.")]
+        DateTimeOffset FromUnixTimeSeconds(long seconds);
+
+        [Description("Returns the hash code for the current DateTimeOffset object.")]
+        int GetHashCode();
+
+
+
+        // [Description("")]
+
+
     }
 }

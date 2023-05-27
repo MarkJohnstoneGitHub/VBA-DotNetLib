@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace DotNetLib.System
 {
@@ -183,6 +184,82 @@ namespace DotNetLib.System
         public DateTimeOffset AddMinutes(double minutes)
         {
             return new DateTimeOffset(this.objDateTimeOffset.AddMinutes(minutes));
+        }
+
+        public DateTimeOffset AddMonths(int months)
+        {
+            return new DateTimeOffset(this.objDateTimeOffset.AddMonths(months));
+        }
+
+        public DateTimeOffset AddSeconds(double seconds)
+        {
+            return new DateTimeOffset(this.objDateTimeOffset.AddSeconds(seconds));
+        }
+
+        public DateTimeOffset AddTicks(long ticks)
+        {
+            return new DateTimeOffset(this.objDateTimeOffset.AddTicks(ticks));
+        }
+
+        public DateTimeOffset AddYears(int years)
+        {
+            return new DateTimeOffset(this.objDateTimeOffset.AddYears(years));
+        }
+
+        public int Compare(DateTimeOffset first, DateTimeOffset second)
+        {
+            return GSystem.DateTimeOffset.Compare(first.dateTimeOffset, second.dateTimeOffset);
+        }
+
+        public int CompareTo(DateTimeOffset other)
+        {
+            return this.objDateTimeOffset.CompareTo(other.objDateTimeOffset);   
+        }
+
+        public bool Equals(DateTimeOffset other)
+        {
+            return this.objDateTimeOffset.Equals(other.objDateTimeOffset);
+        }
+
+        // Check implementation
+        // Checks if this DateTimeOffset is equal to a given object. Returns
+        // true if the given object is a boxed DateTimeOffset and its value
+        // is equal to the value of this DateTimeOffset. Returns false
+        // otherwise.
+        //
+        public bool Equals2(object obj)
+        {
+            return obj is DateTimeOffset && UtcDateTime.Equals(((DateTimeOffset)obj).UtcDateTime);
+        }
+
+        public bool Equals3(DateTimeOffset first, DateTimeOffset second)
+        { 
+            return GSystem.DateTimeOffset.Equals(first.dateTimeOffset, second.dateTimeOffset);
+        }
+
+        public bool EqualsExact(DateTimeOffset other)
+        {
+            return this.objDateTimeOffset.EqualsExact(other.objDateTimeOffset);
+        }
+
+        public DateTimeOffset FromFileTime(long fileTime)
+        {
+            return new DateTimeOffset(GSystem.DateTimeOffset.FromFileTime(fileTime));
+        }
+
+        public DateTimeOffset FromUnixTimeMilliseconds(long milliseconds)
+        {
+            return new DateTimeOffset(GSystem.DateTimeOffset.FromUnixTimeMilliseconds(milliseconds));
+        }
+
+        public DateTimeOffset FromUnixTimeSeconds(long seconds)
+        {
+            return new DateTimeOffset(GSystem.DateTimeOffset.FromUnixTimeSeconds(seconds));
+        }
+
+        public override int GetHashCode()
+        {
+            return this.objDateTimeOffset.GetHashCode();
         }
 
     }
