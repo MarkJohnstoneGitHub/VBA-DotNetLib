@@ -9,9 +9,9 @@
  
  **Dependencies:**
    
-   DotNetLib.tlb [DotNetLib.tlb Type library](https://github.com/MarkJohnstoneGitHub/DotNetLib/blob/main/bin/Release/DotNetLib.tlb)
+[DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/DotNetLib/blob/main/bin/Release/DotNetLib.tlb)
    
-   mscorlib.tlb eg Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.tlb
+mscorlib.tlb type library eg Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.tlb
    
  **Usage:**
  
