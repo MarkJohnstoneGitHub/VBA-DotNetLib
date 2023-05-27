@@ -5,7 +5,15 @@
  
  Then in VBA create predeclared class wrappers for the DotNetLib COM objects.
  
- Classes initally focussing on are DateTime,TimeSpan,TimeZoneInfo and associated classes.
+ Classes initally focussing on are DateTime, DateTimeOffset TimeSpan, TimeZoneInfo and associated classes.
+ 
+ https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8.1
+ 
+ https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=netframework-4.8.1
+ 
+ https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8.1
+ 
+ https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo?view=netframework-4.8.1
  
  **Dependencies:**
    
