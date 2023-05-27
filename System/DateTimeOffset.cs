@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System;
 using System.Runtime.InteropServices.ComTypes;
+using Microsoft.SqlServer.Server;
 
 namespace DotNetLib.System
 {
@@ -275,6 +276,21 @@ namespace DotNetLib.System
         public DateTimeOffset Parse3(string input, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles)
         {
             return new DateTimeOffset(GSystem.DateTimeOffset.Parse(input, formatProvider,styles));
+        }
+
+        public DateTimeOffset ParseExact(string input, string format, IFormatProvider formatProvider)
+        {
+            return new DateTimeOffset(GSystem.DateTimeOffset.ParseExact(input, format, formatProvider));
+        }
+
+        public DateTimeOffset ParseExact2(string input, string format, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles)
+        {
+            return new DateTimeOffset(GSystem.DateTimeOffset.ParseExact(input, format, formatProvider, styles));
+        }
+
+        public DateTimeOffset ParseExact3(string input, string[] formats, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles)
+        {
+            return new DateTimeOffset(GSystem.DateTimeOffset.ParseExact(input, formats, formatProvider,styles));
         }
 
     }
