@@ -178,8 +178,43 @@ namespace DotNetLib.System
         [Description("Subtracts a specified time interval from the current DateTimeOffset object.")]
         DateTimeOffset Subtract2(TimeSpan value);
 
+        [Description("Converts the value of the current DateTimeOffset object to a Windows file time.")]
+        long ToFileTime();
+
+        [Description("Converts the current DateTimeOffset object to a DateTimeOffset object that represents the local time.")]
+        DateTimeOffset ToLocalTime();
+
+        [Description("Converts the value of the current DateTimeOffset object to the date and time specified by an offset value.")]
+        DateTimeOffset ToOffset(TimeSpan offset);
+
+        [Description("Converts the value of the current DateTimeOffset object to its equivalent string representation.")]
+        string ToString();
+
+        [Description("Converts the value of the current DateTimeOffset object to its equivalent string representation using the specified format.")]
+        string ToString2(string format);
+
+        [Description("Converts the value of the current DateTimeOffset object to its equivalent string representation using the specified culture-specific formatting information.")]
+        string ToString3(IFormatProvider formatProvider);
+
+        [Description("Converts the value of the current DateTimeOffset object to its equivalent string representation using the specified format and culture-specific format information.")]
+        string ToString4(string format, IFormatProvider formatProvider);
+
+        [Description("Converts the current DateTimeOffset object to a DateTimeOffset value that represents the Coordinated Universal Time (UTC).")]
+        DateTimeOffset ToUniversalTime();
+
+        [Description("Returns the number of milliseconds that have elapsed since 1970-01-01T00:00:00.000Z.")]
+        long ToUnixTimeMilliseconds();
+
+        [Description("Returns the number of seconds that have elapsed since 1970-01-01T00:00:00Z.")]
+        long ToUnixTimeSeconds();
+
+        // [Description("Tries to format the value of the current datetime offset instance into the provided span of characters.")] 
+        // TODO: bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider? formatProvider = default);
+
+
+        [Description("Tries to converts a specified string representation of a date and time to its DateTimeOffset equivalent, and returns a value that indicates whether the conversion succeeded.")]
+        bool TryParse(string input, out DateTimeOffset result);
+
         // [Description("")]
-
-
     }
 }

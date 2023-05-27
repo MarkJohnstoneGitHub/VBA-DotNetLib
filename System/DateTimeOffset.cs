@@ -302,6 +302,67 @@ namespace DotNetLib.System
         {
             return new DateTimeOffset(this.objDateTimeOffset.Subtract(value.timeSpan));
         }
+
+        public long ToFileTime()
+        {
+            return this.objDateTimeOffset.ToFileTime();
+        }
+
+        public DateTimeOffset ToLocalTime()
+        {
+            return new DateTimeOffset(this.objDateTimeOffset.ToLocalTime());
+        }
+
+        public DateTimeOffset ToOffset(TimeSpan offset)
+        {
+            return new DateTimeOffset(this.objDateTimeOffset.ToOffset(offset.timeSpan));
+        }
+
+        public override string ToString()
+        { 
+            return this.objDateTimeOffset.ToString();
+        }
+
+        public string ToString2(string format)
+        { 
+            return this.objDateTimeOffset.ToString(format); 
+        }
+
+        public string ToString3(IFormatProvider formatProvider)
+        { 
+            return this.objDateTimeOffset.ToString( formatProvider); 
+        }
+
+        public string ToString4(string format, IFormatProvider formatProvider)
+        {
+            return this.objDateTimeOffset.ToString(format, formatProvider);
+        }
+
+        public DateTimeOffset ToUniversalTime()
+        {
+            return new DateTimeOffset(this.objDateTimeOffset.ToUniversalTime());
+        }
+
+        public long ToUnixTimeMilliseconds()
+        {
+            return this.objDateTimeOffset.ToUnixTimeMilliseconds();
+        }
+
+        public long ToUnixTimeSeconds()
+        {
+            return this.objDateTimeOffset.ToUnixTimeSeconds();
+        }
+
+        // TODO: public bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider? formatProvider = default);
+
+        public bool TryParse(string input, out DateTimeOffset result)
+        {
+            bool pvtTryParse = GSystem.DateTimeOffset.TryParse(input, out GSystem.DateTimeOffset outResult);
+            result = new DateTimeOffset(outResult);
+            return pvtTryParse;
+        }
+
+
     }
 
 
