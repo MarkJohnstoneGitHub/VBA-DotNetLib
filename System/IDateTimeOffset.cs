@@ -105,6 +105,11 @@ namespace DotNetLib.System
         [Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional days to the value of this instance.")]
         DateTimeOffset AddDays(double days);
 
+        [Description("Returns a new DateTimeOffset object that adds a specified number of milliseconds to the value of this instance.")]
+        DateTimeOffset AddMilliseconds(double milliseconds);
+
+        DateTimeOffset AddMinutes(double minutes);
+
         //[Description("")]
     }
 }

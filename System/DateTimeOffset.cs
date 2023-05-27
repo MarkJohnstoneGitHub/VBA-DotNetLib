@@ -12,7 +12,7 @@ namespace DotNetLib.System
     [Guid("27660912-6101-4779-B4E0-24F2B164B334")]
     [ProgId("DotNetLib.System.DateTimeOffset")]
     [ClassInterface(ClassInterfaceType.None)]
-    public class DateTimeOffset //: IDateTimeOffset
+    public class DateTimeOffset : IDateTimeOffset
     {
         private GSystem.DateTimeOffset objDateTimeOffset;
 
@@ -173,6 +173,16 @@ namespace DotNetLib.System
         public DateTimeOffset AddDays(double days)
         {
             return new DateTimeOffset(this.objDateTimeOffset.AddDays(days));
+        }
+
+        public DateTimeOffset AddMilliseconds(double milliseconds)
+        {
+            return new DateTimeOffset(this.objDateTimeOffset.AddMilliseconds(milliseconds));
+        }
+
+        public DateTimeOffset AddMinutes(double minutes)
+        {
+            return new DateTimeOffset(this.objDateTimeOffset.AddMinutes(minutes));
         }
 
     }
