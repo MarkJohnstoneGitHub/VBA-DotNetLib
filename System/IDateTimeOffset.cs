@@ -211,9 +211,12 @@ namespace DotNetLib.System
         // [Description("Tries to format the value of the current datetime offset instance into the provided span of characters.")] 
         // TODO: bool TryFormat(Span<char> destination, out int charsWritten, ReadOnlySpan<char> format = default, IFormatProvider? formatProvider = default);
 
-
         [Description("Tries to converts a specified string representation of a date and time to its DateTimeOffset equivalent, and returns a value that indicates whether the conversion succeeded.")]
         bool TryParse(string input, out DateTimeOffset result);
+
+        [Description("Tries to convert a specified string representation of a date and time to its DateTimeOffset equivalent, and returns a value that indicates whether the conversion succeeded.")]
+        bool TryParse2(string input, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles, out DateTimeOffset result);
+
 
         // [Description("")]
     }

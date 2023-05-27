@@ -40,7 +40,7 @@ namespace DotNetLib.System
 
         public DateTimeOffset(DateTime dateTime, TimeSpan offset)
         {
-            objDateTimeOffset = new GSystem.DateTimeOffset(dateTime.dateTime,offset.timeSpan);
+            objDateTimeOffset = new GSystem.DateTimeOffset(dateTime.dateTime, offset.timeSpan);
         }
 
         public DateTimeOffset(long ticks, TimeSpan offset)
@@ -50,7 +50,7 @@ namespace DotNetLib.System
 
         public DateTimeOffset(int year, int month, int day, int hour, int minute, int second, TimeSpan offset)
         {
-            objDateTimeOffset = new GSystem.DateTimeOffset(year,month,day,hour,minute,second, offset.timeSpan);
+            objDateTimeOffset = new GSystem.DateTimeOffset(year, month, day, hour, minute, second, offset.timeSpan);
         }
 
         public DateTimeOffset(int year, int month, int day, int hour, int minute, int second, int millisecond, TimeSpan offset)
@@ -75,7 +75,7 @@ namespace DotNetLib.System
 
         public DateTimeOffset CreateFromDateTime2(DateTime dateTime, TimeSpan offset)
         {
-            return new DateTimeOffset(dateTime,offset);
+            return new DateTimeOffset(dateTime, offset);
         }
 
         public DateTimeOffset CreateFromDateTimeParts(int year, int month, int day, int hour, int minute, int second, TimeSpan offset)
@@ -104,14 +104,14 @@ namespace DotNetLib.System
 
         public DateTime Date
         {
-            get {return new DateTime(this.objDateTimeOffset.Date); }
+            get { return new DateTime(this.objDateTimeOffset.Date); }
         }
 
         public DateTime DateTime
         {
             get { return new DateTime(this.objDateTimeOffset.DateTime); }
         }
-        
+
         public int Day => this.objDateTimeOffset.Day;
 
         public DayOfWeek DayOfWeek => (DayOfWeek)this.objDateTimeOffset.DayOfWeek;
@@ -125,7 +125,7 @@ namespace DotNetLib.System
         {
             get { return new DateTime(this.objDateTimeOffset.LocalDateTime); }
         }
-        
+
         public int Millisecond => this.objDateTimeOffset.Millisecond;
 
         public int Minute => this.objDateTimeOffset.Minute;
@@ -141,7 +141,7 @@ namespace DotNetLib.System
         {
             get { return new TimeSpan(this.objDateTimeOffset.Offset); }
         }
-        
+
         public int Second => this.objDateTimeOffset.Second;
 
         public long Ticks => this.objDateTimeOffset.Ticks;
@@ -154,12 +154,12 @@ namespace DotNetLib.System
         public DateTime UtcDateTime
         {
             get { return new DateTime(this.objDateTimeOffset.UtcDateTime); }
-        }        
-        
+        }
+
         public DateTimeOffset UtcNow
         {
             get { return new DateTimeOffset(GSystem.DateTimeOffset.UtcNow); }
-        }   
+        }
 
         public long UtcTicks => this.objDateTimeOffset.UtcTicks;
 
@@ -214,7 +214,7 @@ namespace DotNetLib.System
 
         public int CompareTo(DateTimeOffset other)
         {
-            return this.objDateTimeOffset.CompareTo(other.objDateTimeOffset);   
+            return this.objDateTimeOffset.CompareTo(other.objDateTimeOffset);
         }
 
         public bool Equals(DateTimeOffset other)
@@ -234,7 +234,7 @@ namespace DotNetLib.System
         }
 
         public bool Equals3(DateTimeOffset first, DateTimeOffset second)
-        { 
+        {
             return GSystem.DateTimeOffset.Equals(first.dateTimeOffset, second.dateTimeOffset);
         }
 
@@ -270,12 +270,12 @@ namespace DotNetLib.System
 
         public DateTimeOffset Parse2(string input, IFormatProvider formatProvider)
         {
-            return new DateTimeOffset(GSystem.DateTimeOffset.Parse(input,formatProvider));
+            return new DateTimeOffset(GSystem.DateTimeOffset.Parse(input, formatProvider));
         }
 
         public DateTimeOffset Parse3(string input, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles)
         {
-            return new DateTimeOffset(GSystem.DateTimeOffset.Parse(input, formatProvider,styles));
+            return new DateTimeOffset(GSystem.DateTimeOffset.Parse(input, formatProvider, styles));
         }
 
         public DateTimeOffset ParseExact(string input, string format, IFormatProvider formatProvider)
@@ -290,7 +290,7 @@ namespace DotNetLib.System
 
         public DateTimeOffset ParseExact3(string input, string[] formats, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles)
         {
-            return new DateTimeOffset(GSystem.DateTimeOffset.ParseExact(input, formats, formatProvider,styles));
+            return new DateTimeOffset(GSystem.DateTimeOffset.ParseExact(input, formats, formatProvider, styles));
         }
 
         public TimeSpan Subtract(DateTimeOffset value)
@@ -319,18 +319,18 @@ namespace DotNetLib.System
         }
 
         public override string ToString()
-        { 
+        {
             return this.objDateTimeOffset.ToString();
         }
 
         public string ToString2(string format)
-        { 
-            return this.objDateTimeOffset.ToString(format); 
+        {
+            return this.objDateTimeOffset.ToString(format);
         }
 
         public string ToString3(IFormatProvider formatProvider)
-        { 
-            return this.objDateTimeOffset.ToString( formatProvider); 
+        {
+            return this.objDateTimeOffset.ToString(formatProvider);
         }
 
         public string ToString4(string format, IFormatProvider formatProvider)
@@ -362,7 +362,12 @@ namespace DotNetLib.System
             return pvtTryParse;
         }
 
-
+        public bool TryParse2(string input, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles, out DateTimeOffset result)
+        {
+            bool pvtTryParse = GSystem.DateTimeOffset.TryParse(input, formatProvider, styles,out GSystem.DateTimeOffset outResult);
+            result = new DateTimeOffset(outResult);
+            return pvtTryParse;
+        }
     }
 
 
