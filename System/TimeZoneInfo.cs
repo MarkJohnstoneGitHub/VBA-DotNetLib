@@ -9,6 +9,7 @@ namespace DotNetLib.System
     // https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo?view=netframework-4.8.1
     // https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/TimeZoneInfo.cs
 
+    // TODO : Explict Interface Implementations
     // TODO: ClearCachedData() remove cachedLocal, cachedUtc, PopulateAllSystemTimeZones
     // TODO: For Local property check if cachedLocal is null, if null create TimeZoneInfo object and return cachedLocal
     // TODO: For Utc property check if cachedUtc is null, if null create TimeZoneInfo and return TimeZoneInfo
@@ -162,7 +163,7 @@ namespace DotNetLib.System
 
         public bool Equals2(object obj)
         {
-            return this.timeZoneInfoObject.Equals(obj);
+            return Equals(obj as TimeZoneInfo);
         }
 
         public TimeZoneInfo FindSystemTimeZoneById(string id)

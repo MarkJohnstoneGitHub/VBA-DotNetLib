@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace DotNetLib.System
 {
+    // https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8
 
     [ComVisible(true)]
     [Guid("C2F50F87-A7D4-4C32-A01B-EC750CE1B955")]
@@ -58,6 +59,9 @@ namespace DotNetLib.System
         TimeSpan Add(TimeSpan ts);
         int Compare(TimeSpan t1, TimeSpan t2);
         int CompareTo(TimeSpan value);
+
+        // TODO : int CompareTo2(object value);
+
         TimeSpan Duration();
         bool Equals(TimeSpan obj);
         bool Equals2(object value);
@@ -74,6 +78,5 @@ namespace DotNetLib.System
         string ToString(string format = null);
         bool TryParse(string s, out TimeSpan result);
         
-
     }
 }

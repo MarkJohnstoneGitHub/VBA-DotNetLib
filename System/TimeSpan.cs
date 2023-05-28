@@ -1,11 +1,18 @@
 ﻿using GSystem = global::System;
 using System.Runtime.InteropServices;
+using System.ComponentModel;
+using System;
 
 namespace DotNetLib.System
 {
+
+    // https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8
+    // https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/TimeSpan.cs
+
     [ComVisible(true)]
     [Guid("B73DFD69-6C69-4CFC-89F2-1C344228A9D4")]
     [ProgId("DotNetLib.System.TimeSpan")]
+    [Description("Represents a time interval.")]
     [ClassInterface(ClassInterfaceType.None)]
     public class TimeSpan : ITimeSpan
     {
@@ -121,6 +128,21 @@ namespace DotNetLib.System
             return this.timeSpanObject.CompareTo(value.timeSpanObject);
         }
 
+        // TODO : Check implementation
+        public int CompareTo2(object value)
+        {
+            if (value == null) return 1;
+            return this.timeSpanObject.CompareTo((TimeSpan)value);
+
+            //if (value == null) return 1;
+            //if (!(value is TimeSpan))
+            //    throw new ArgumentException(SR.Arg_MustBeTimeSpan);
+            //long t = ((TimeSpan)value)._ticks;
+            //if (_ticks > t) return 1;
+            //if (_ticks < t) return -1;
+            //return 0;
+        }
+
         public TimeSpan Duration()
         {
             return new TimeSpan(this.timeSpanObject.Duration());
@@ -131,9 +153,16 @@ namespace DotNetLib.System
             return this.timeSpanObject.Equals(obj); 
         }
 
+        // TODO : Check Implementation
         public bool Equals2(object value)
         {
-            return this.timeSpanObject.Equals(value);
+            return value is TimeSpan ts && this.timeSpanObject == ts.timeSpanObject;
+
+            //if (value is TimeSpan)
+            //{
+            //    return this.timeSpanObject.Equals((TimeSpan)value);
+            //}
+            //return false;
         }
 
         public bool Equals3(TimeSpan t1, TimeSpan t2)

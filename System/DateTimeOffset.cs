@@ -6,6 +6,9 @@ using System;
 namespace DotNetLib.System
 {
     // https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=netframework-4.8.1
+    // https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/DateTimeOffset.cs
+
+    // TODO : Explict Interface Implementations
 
     [ComVisible(true)]
     [Description("Represents a point in time, typically expressed as a date and time of day, relative to Coordinated Universal Time (UTC).")]
@@ -222,12 +225,12 @@ namespace DotNetLib.System
             return this.dateTimeOffsetObject.Equals(other.dateTimeOffsetObject);
         }
 
-        // Check implementation
         // Checks if this DateTimeOffset is equal to a given object. Returns
         // true if the given object is a boxed DateTimeOffset and its value
         // is equal to the value of this DateTimeOffset. Returns false
         // otherwise.
         //
+        // TODO : Check implementation
         public bool Equals2(object obj)
         {
             return obj is DateTimeOffset && UtcDateTime.Equals(((DateTimeOffset)obj).UtcDateTime);

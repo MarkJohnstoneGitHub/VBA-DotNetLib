@@ -123,8 +123,8 @@ namespace DotNetLib.System
         [Description("Compares the value of this instance to a specified DateTime value and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.")]
         int CompareTo(DateTime t);
 
-        [Description("Compares the value of this instance to a specified object that contains a specified DateTime value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.")]
-        int CompareTo2(object value);
+        //[Description("Compares the value of this instance to a specified object that contains a specified DateTime value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.")]
+        //TODO : int CompareTo2(object value);
 
         [Description("Returns the number of days in the specified month and year.")]
         int DaysInMonth(int year, int month);

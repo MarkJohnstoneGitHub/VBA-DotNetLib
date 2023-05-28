@@ -6,11 +6,14 @@ using System;
 namespace DotNetLib.System
 {
     // https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8.1
+    // https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/DateTime.cs
+
+    // TODO : Explict Interface Implementations
 
     [ComVisible(true)]
-    [Description("Represents an instant in time, typically expressed as a date and time of day.")]
     [Guid("72E3AB6F-9742-4F2F-8FA2-43FEEB1CC788")]
     [ProgId("DotNetLib.System.DateTime")]
+    [Description("Represents an instant in time, typically expressed as a date and time of day.")]
     [ClassInterface(ClassInterfaceType.None)]
     public class DateTime : IDateTime
     {
@@ -351,9 +354,17 @@ namespace DotNetLib.System
         /// </summary>
         /// <param name="value">A boxed object to compare, or null.</param>
         /// <returns>A signed number indicating the relative values of this instance and value.</returns>
+        /// 
+        //TODO : Check implementation public int CompareTo2(object value)
         public int CompareTo2(object value)
         {
-            return this.dateTimeObject.CompareTo(value);
+            if (value == null) return 1;
+            //if (!(value is DateTime))
+            //{
+            //    throw new ArgumentException(SR.Arg_MustBeDateTime);
+            //}
+
+            return Compare(this, (DateTime)value);
         }
 
         /// <summary>
@@ -382,9 +393,10 @@ namespace DotNetLib.System
         /// </summary>
         /// <param name="value">The object to compare to this instance.</param>
         /// <returns>true if value is an instance of DateTime and equals the value of this instance; otherwise, false.</returns>
+        // TODO : Check implementation
         public bool Equals2(object value)
         {
-            return this.dateTimeObject.Equals(value);
+            return value is DateTime dt && this.dateTimeObject == dt.dateTimeObject;
         }
 
         /// <summary>
