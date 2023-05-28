@@ -62,6 +62,7 @@
     <Compile Include="System\DateTimeKind.cs" />
     <Compile Include="System\DateTimeOffset.cs" />
     <Compile Include="System\DayOfWeek.cs" />
+    <Compile Include="System\Globalization\TimeSpanStyles.cs" />
     <Compile Include="System\IDateTime.cs" />
     <Compile Include="System\IDateTimeOffset.cs" />
     <Compile Include="System\ITimeSpan.cs" />

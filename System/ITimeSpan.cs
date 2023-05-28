@@ -1,6 +1,8 @@
-﻿using System;
+﻿using GSystem = global::System;
+using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using DotNetLib.System.Globalization;
 
 namespace DotNetLib.System
 {
@@ -142,6 +144,15 @@ namespace DotNetLib.System
 
         [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")] 
         TimeSpan ParseExact(string input, string format, IFormatProvider formatProvider);
+
+        [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified array of format strings and culture-specific format information. The format of the string representation must match one of the specified formats exactly.")]
+        TimeSpan ParseExact2(string input, string[] formats, IFormatProvider formatProvider);
+
+        [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information, and styles. The format of the string representation must match the specified format exactly.")]
+        TimeSpan ParseExact3(string input, string format, IFormatProvider formatProvider, TimeSpanStyles styles);
+
+        [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information, and styles. The format of the string representation must match one of the specified formats exactly")]
+        TimeSpan ParseExact4(string input, string[] formats, IFormatProvider formatProvider, TimeSpanStyles styles);
 
         [Description("")]
         TimeSpan Subtract(TimeSpan ts);

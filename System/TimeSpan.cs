@@ -2,6 +2,8 @@
 using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System;
+using Microsoft.SqlServer.Server;
+using DotNetLib.System.Globalization;
 
 namespace DotNetLib.System
 {
@@ -235,7 +237,20 @@ namespace DotNetLib.System
             return new TimeSpan(GSystem.TimeSpan.ParseExact(input,format, formatProvider));
         }
 
+        public TimeSpan ParseExact2(string input, string[] formats, IFormatProvider formatProvider)
+        {
+            return new TimeSpan(GSystem.TimeSpan.ParseExact(input, formats, formatProvider));
+        }
 
+        public TimeSpan ParseExact3(string input, string format, IFormatProvider formatProvider, TimeSpanStyles styles)
+        {
+            return new TimeSpan(GSystem.TimeSpan.ParseExact(input, format, formatProvider, (GSystem.Globalization.TimeSpanStyles)styles));
+        }
+
+        public TimeSpan ParseExact4(string input, string[] formats, IFormatProvider formatProvider, TimeSpanStyles styles)
+        {
+            return new TimeSpan(GSystem.TimeSpan.ParseExact(input, formats, formatProvider, (GSystem.Globalization.TimeSpanStyles)styles));
+        }
 
         public TimeSpan Subtract(TimeSpan ts)
         {
