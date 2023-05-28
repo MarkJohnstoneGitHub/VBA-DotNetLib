@@ -227,27 +227,27 @@ namespace DotNetLib.System
             return new TimeSpan(GSystem.TimeSpan.Parse(s));
         }
 
-        public TimeSpan Parse2(string input, IFormatProvider formatProvider)
+        public TimeSpan Parse2(string input, GSystem.IFormatProvider formatProvider)
         {
             return new TimeSpan(GSystem.TimeSpan.Parse(input,formatProvider));
         }
 
-        public TimeSpan ParseExact(string input, string format, IFormatProvider formatProvider)
+        public TimeSpan ParseExact(string input, string format, GSystem.IFormatProvider formatProvider)
         {
             return new TimeSpan(GSystem.TimeSpan.ParseExact(input,format, formatProvider));
         }
 
-        public TimeSpan ParseExact2(string input, string[] formats, IFormatProvider formatProvider)
+        public TimeSpan ParseExact2(string input, string[] formats, GSystem.IFormatProvider formatProvider)
         {
             return new TimeSpan(GSystem.TimeSpan.ParseExact(input, formats, formatProvider));
         }
 
-        public TimeSpan ParseExact3(string input, string format, IFormatProvider formatProvider, TimeSpanStyles styles)
+        public TimeSpan ParseExact3(string input, string format, GSystem.IFormatProvider formatProvider, TimeSpanStyles styles)
         {
             return new TimeSpan(GSystem.TimeSpan.ParseExact(input, format, formatProvider, (GSystem.Globalization.TimeSpanStyles)styles));
         }
 
-        public TimeSpan ParseExact4(string input, string[] formats, IFormatProvider formatProvider, TimeSpanStyles styles)
+        public TimeSpan ParseExact4(string input, string[] formats, GSystem.IFormatProvider formatProvider, TimeSpanStyles styles)
         {
             return new TimeSpan(GSystem.TimeSpan.ParseExact(input, formats, formatProvider, (GSystem.Globalization.TimeSpanStyles)styles));
         }
@@ -257,9 +257,20 @@ namespace DotNetLib.System
             return new TimeSpan(this.timeSpanObject.Subtract(ts.timeSpanObject));
         }
 
-        public string ToString(string format = null)
+
+        public override string ToString()
+        {
+            return this.timeSpanObject.ToString();
+        }
+
+        public string ToString2(string format)
         {
             return this.timeSpanObject.ToString(format);
+        }
+
+        public string ToString3(string format, GSystem.IFormatProvider formatProvider)
+        {
+            return this.timeSpanObject.ToString(format, formatProvider);
         }
 
         public bool TryParse(string s, out TimeSpan result)
@@ -268,6 +279,14 @@ namespace DotNetLib.System
             result = new TimeSpan(outResult);
             return pvtTryParse;
         }
+
+        public bool TryParse2(string input, GSystem.IFormatProvider formatProvider, out TimeSpan result)
+        {
+            bool pvtTryParse = GSystem.TimeSpan.TryParse(input, formatProvider, out GSystem.TimeSpan outResult);
+            result = new TimeSpan(outResult);
+            return pvtTryParse;
+        }
+
 
 
     }

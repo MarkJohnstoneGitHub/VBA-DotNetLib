@@ -140,7 +140,7 @@ namespace DotNetLib.System
         TimeSpan Parse(string s);
 
         [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific format information.")]
-        TimeSpan Parse2(string input, IFormatProvider formatProvider);
+        TimeSpan Parse2(string input, GSystem.IFormatProvider formatProvider);
 
         [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")] 
         TimeSpan ParseExact(string input, string format, IFormatProvider formatProvider);
@@ -149,19 +149,30 @@ namespace DotNetLib.System
         TimeSpan ParseExact2(string input, string[] formats, IFormatProvider formatProvider);
 
         [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information, and styles. The format of the string representation must match the specified format exactly.")]
-        TimeSpan ParseExact3(string input, string format, IFormatProvider formatProvider, TimeSpanStyles styles);
+        TimeSpan ParseExact3(string input, string format, GSystem.IFormatProvider formatProvider, TimeSpanStyles styles);
 
         [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information, and styles. The format of the string representation must match one of the specified formats exactly")]
-        TimeSpan ParseExact4(string input, string[] formats, IFormatProvider formatProvider, TimeSpanStyles styles);
+        TimeSpan ParseExact4(string input, string[] formats, GSystem.IFormatProvider formatProvider, TimeSpanStyles styles);
 
-        [Description("")]
+        [Description("Returns a new TimeSpan object whose value is the difference between the specified TimeSpan object and this instance.")]
         TimeSpan Subtract(TimeSpan ts);
 
-        [Description("")]
-        string ToString(string format = null);
+        [Description("Converts the value of the current TimeSpan object to its equivalent string representation.")]
+        string ToString();
+
+        [Description("Converts the value of the current TimeSpan object to its equivalent string representation by using the specified format.")]
+        string ToString2(string format);
+
+        [Description("Converts the value of the current TimeSpan object to its equivalent string representation by using the specified format and culture-specific formatting information.")]
+        string ToString3(string format, GSystem.IFormatProvider formatProvider);
+
 
         [Description("")]
         bool TryParse(string s, out TimeSpan result);
-        
+
+        [Description("")]
+        bool TryParse2(string input, GSystem.IFormatProvider formatProvider, out TimeSpan result);
+
+
     }
 }
