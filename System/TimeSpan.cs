@@ -275,19 +275,45 @@ namespace DotNetLib.System
 
         public bool TryParse(string s, out TimeSpan result)
         {
-            bool pvtTryParse = GSystem.TimeSpan.TryParse(s, out GSystem.TimeSpan outResult);
+            bool tryParse = GSystem.TimeSpan.TryParse(s, out GSystem.TimeSpan outResult);
             result = new TimeSpan(outResult);
-            return pvtTryParse;
+            return tryParse;
         }
 
         public bool TryParse2(string input, GSystem.IFormatProvider formatProvider, out TimeSpan result)
         {
-            bool pvtTryParse = GSystem.TimeSpan.TryParse(input, formatProvider, out GSystem.TimeSpan outResult);
+            bool tryParse = GSystem.TimeSpan.TryParse(input, formatProvider, out GSystem.TimeSpan outResult);
             result = new TimeSpan(outResult);
-            return pvtTryParse;
+            return tryParse;
         }
 
+        public bool TryParseExact(string input, string format, IFormatProvider formatProvider, out TimeSpan result)
+        {
+            bool tryParseExact = GSystem.TimeSpan.TryParseExact(input, format, formatProvider, out GSystem.TimeSpan outResult);
+            result = new TimeSpan(outResult);
+            return tryParseExact;
+        }
 
+        public  bool TryParseExact2(string input, string[] formats, IFormatProvider formatProvider, out TimeSpan result)
+        {
+            bool tryParseExact = GSystem.TimeSpan.TryParseExact(input, formats, formatProvider, out GSystem.TimeSpan outResult);
+            result = new TimeSpan(outResult);
+            return tryParseExact;
+        }
+
+        public bool TryParseExact3(string input, string format, IFormatProvider formatProvider, TimeSpanStyles styles, out TimeSpan result)
+        {
+            bool tryParseExact = GSystem.TimeSpan.TryParseExact(input, format, formatProvider, (GSystem.Globalization.TimeSpanStyles)styles, out GSystem.TimeSpan outResult);
+            result = new TimeSpan(outResult);
+            return tryParseExact;
+        }
+
+        public bool TryParseExact4(string input, string[] formats, IFormatProvider formatProvider, TimeSpanStyles styles, out TimeSpan result)
+        {
+            bool tryParseExact = GSystem.TimeSpan.TryParseExact(input, formats, formatProvider, (GSystem.Globalization.TimeSpanStyles)styles, out GSystem.TimeSpan outResult);
+            result = new TimeSpan(outResult);
+            return tryParseExact;
+        }
 
     }
 }
