@@ -183,5 +183,37 @@ namespace DotNetLib.System
 
         [Description("Converts the specified string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information and styles. The format of the string representation must match one of the specified formats exactly.")]
         bool TryParseExact4(string input, string[] formats, IFormatProvider formatProvider, TimeSpanStyles styles, out TimeSpan result);
+
+        // Operators
+
+        [Description("Adds two specified TimeSpan instances.")]
+        TimeSpan Addition(TimeSpan t1, TimeSpan t2);
+
+        [Description("Indicates whether two TimeSpan instances are equal.")]
+        bool Equality(TimeSpan t1, TimeSpan t2);
+
+        [Description("Indicates whether a specified TimeSpan is greater than another specified TimeSpan.")]
+        bool GreaterThan(TimeSpan t1, TimeSpan t2);
+
+        [Description("Indicates whether a specified TimeSpan is greater than or equal to another specified TimeSpan.")]
+        bool GreaterThanOrEqual(TimeSpan t1, TimeSpan t2);
+
+        [Description("Indicates whether two TimeSpan instances are not equal.")]
+        bool Inequality(TimeSpan t1, TimeSpan t2);
+
+        [Description("Indicates whether a specified TimeSpan is less than another specified TimeSpan.")]
+        bool LessThan(TimeSpan t1, TimeSpan t2);
+
+        [Description("Indicates whether a specified TimeSpan is less than or equal to another specified TimeSpan.")]
+        bool LessThanOrEqual(TimeSpan t1, TimeSpan t2);
+
+        [Description("Subtracts a specified TimeSpan from another specified TimeSpan.")]
+        TimeSpan Subtraction(TimeSpan t1, TimeSpan t2);
+
+        [Description("Returns a TimeSpan whose value is the negated value of the specified instance.")]
+        TimeSpan UnaryNegation(TimeSpan t);
+
+        [Description("Returns the specified instance of TimeSpan.")]
+        TimeSpan UnaryPlus(TimeSpan t);
     }
 }

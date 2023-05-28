@@ -315,5 +315,56 @@ namespace DotNetLib.System
             return tryParseExact;
         }
 
+        // Operators
+
+        public TimeSpan Addition(TimeSpan t1, TimeSpan t2)
+        {
+            return new TimeSpan(t1.timeSpanObject + t2.TimeSpanObject);
+        }
+
+        public bool Equality(TimeSpan t1, TimeSpan t2)
+        {
+            return (t1.timeSpanObject == t2.timeSpanObject);
+        }
+
+        public bool GreaterThan(TimeSpan t1, TimeSpan t2)
+        {
+            return (t1.timeSpanObject > t2.timeSpanObject);
+        }
+
+        public bool GreaterThanOrEqual(TimeSpan t1, TimeSpan t2)
+        {
+            return (t1.timeSpanObject >= t2.timeSpanObject);
+        }
+        public bool Inequality(TimeSpan t1, TimeSpan t2)
+        {
+            return (t1.timeSpanObject != t2.timeSpanObject);
+        }
+
+        public bool LessThan(TimeSpan t1, TimeSpan t2)
+        {
+            return (t1.timeSpanObject < t2.timeSpanObject);
+        }
+        public bool LessThanOrEqual(TimeSpan t1, TimeSpan t2)
+        {
+            return (t1.timeSpanObject <= t2.timeSpanObject);
+        }
+
+        public TimeSpan Subtraction(TimeSpan t1, TimeSpan t2)
+        {
+            return new TimeSpan(t1.timeSpanObject - t2.timeSpanObject);
+        }
+
+        public TimeSpan UnaryNegation(TimeSpan t)
+        {
+            return new TimeSpan(-t.timeSpanObject);
+        }
+
+        public TimeSpan UnaryPlus(TimeSpan t)
+        {
+            return new TimeSpan(+ t.timeSpanObject);
+        }
+
+
     }
 }
