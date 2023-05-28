@@ -102,51 +102,51 @@ namespace DotNetLib.System
 
         public DateTime ConvertTime(DateTime dateTime, TimeZoneInfo destinationTimeZone)
         {
-            return new DateTime(GSystem.TimeZoneInfo.ConvertTime(dateTime.dateTime, destinationTimeZone.timeZoneInfo));
+            return new DateTime(GSystem.TimeZoneInfo.ConvertTime(dateTime.DateTimeObject, destinationTimeZone.timeZoneInfo));
         }
 
         public DateTimeOffset ConvertTime2(DateTimeOffset dateTimeOffset, TimeZoneInfo destinationTimeZone)
         {
-            return new DateTimeOffset(GSystem.TimeZoneInfo.ConvertTime(dateTimeOffset.dateTimeOffset, destinationTimeZone.objTimeZoneInfo));
+            return new DateTimeOffset(GSystem.TimeZoneInfo.ConvertTime(dateTimeOffset.DateTimeOffsetObject, destinationTimeZone.objTimeZoneInfo));
         }
 
         public DateTime ConvertTime3(DateTime dateTime, TimeZoneInfo sourceTimeZone, TimeZoneInfo destinationTimeZone)
         {
-            return new DateTime(GSystem.TimeZoneInfo.ConvertTime(dateTime.dateTime, sourceTimeZone.timeZoneInfo ,destinationTimeZone.timeZoneInfo));
+            return new DateTime(GSystem.TimeZoneInfo.ConvertTime(dateTime.DateTimeObject, sourceTimeZone.timeZoneInfo ,destinationTimeZone.timeZoneInfo));
         }
 
         public DateTime ConvertTimeBySystemTimeZoneId(DateTime dateTime, string destinationTimeZoneId)
         {
-            return new DateTime(GSystem.TimeZoneInfo.ConvertTimeBySystemTimeZoneId(dateTime.dateTime, destinationTimeZoneId));
+            return new DateTime(GSystem.TimeZoneInfo.ConvertTimeBySystemTimeZoneId(dateTime.DateTimeObject, destinationTimeZoneId));
         }
 
         public DateTimeOffset ConvertTimeBySystemTimeZoneId2(DateTimeOffset dateTimeOffset, string destinationTimeZoneId)
         {
-            return new DateTimeOffset(GSystem.TimeZoneInfo.ConvertTimeBySystemTimeZoneId(dateTimeOffset.dateTimeOffset, destinationTimeZoneId));
+            return new DateTimeOffset(GSystem.TimeZoneInfo.ConvertTimeBySystemTimeZoneId(dateTimeOffset.DateTimeOffsetObject, destinationTimeZoneId));
         }
 
         public DateTime ConvertTimeBySystemTimeZoneId3(DateTime dateTime, string sourceTimeZoneId, string destinationTimeZoneId)
         {
-            return new DateTime(GSystem.TimeZoneInfo.ConvertTimeBySystemTimeZoneId(dateTime.dateTime, sourceTimeZoneId, destinationTimeZoneId));
+            return new DateTime(GSystem.TimeZoneInfo.ConvertTimeBySystemTimeZoneId(dateTime.DateTimeObject, sourceTimeZoneId, destinationTimeZoneId));
         }
 
         public DateTime ConvertTimeFromUtc(DateTime dateTime, TimeZoneInfo destinationTimeZone)
         {
-            return new DateTime(GSystem.TimeZoneInfo.ConvertTimeFromUtc(dateTime.dateTime, destinationTimeZone.timeZoneInfo));
+            return new DateTime(GSystem.TimeZoneInfo.ConvertTimeFromUtc(dateTime.DateTimeObject, destinationTimeZone.timeZoneInfo));
         }
 
         public DateTime ConvertTimeToUtc(DateTime dateTime)
         {
-            return new DateTime(GSystem.TimeZoneInfo.ConvertTimeToUtc(dateTime.dateTime));
+            return new DateTime(GSystem.TimeZoneInfo.ConvertTimeToUtc(dateTime.DateTimeObject));
         }
         public DateTime ConvertTimeToUtc2(DateTime dateTime, TimeZoneInfo sourceTimeZone)
         {
-            return new DateTime(GSystem.TimeZoneInfo.ConvertTimeToUtc(dateTime.dateTime, sourceTimeZone.timeZoneInfo));
+            return new DateTime(GSystem.TimeZoneInfo.ConvertTimeToUtc(dateTime.DateTimeObject, sourceTimeZone.timeZoneInfo));
         }
 
         public TimeZoneInfo CreateCustomTimeZone(string id, TimeSpan baseUtcOffset, string displayName, string standardDisplayName)
         {
-            return new TimeZoneInfo(GSystem.TimeZoneInfo.CreateCustomTimeZone(id, baseUtcOffset.timeSpan, displayName, standardDisplayName));
+            return new TimeZoneInfo(GSystem.TimeZoneInfo.CreateCustomTimeZone(id, baseUtcOffset.TimeSpanObject, displayName, standardDisplayName));
         }
 
         // TODO: TimeZoneInfo CreateCustomTimeZone2(string id, TimeSpan baseUtcOffset, string displayName, string standardDisplayName, string daylightDisplayName, TimeZoneInfo.AdjustmentRule[] adjustmentRules);
@@ -177,28 +177,28 @@ namespace DotNetLib.System
         public TimeSpan[] GetAmbiguousTimeOffsets(DateTime dateTime)
         {
 
-            GSystem.TimeSpan[] offsets = this.objTimeZoneInfo.GetAmbiguousTimeOffsets(dateTime.dateTime);
+            GSystem.TimeSpan[] offsets = this.objTimeZoneInfo.GetAmbiguousTimeOffsets(dateTime.DateTimeObject);
 
             // Convert GSystem.TimeSpan[] offsets to DotNetLib.TimeSpan[]
             TimeSpan[] timeSpans = new TimeSpan[offsets.Length];
             int i = 0;
             foreach (GSystem.TimeSpan offset in offsets)
             {
-                timeSpans[i++].timeSpan = offset;
+                timeSpans[i++].TimeSpanObject = offset;
             }
             return timeSpans;
         }
 
         public TimeSpan[] GetAmbiguousTimeOffsets2(DateTimeOffset dateTimeOffset)
         {
-            GSystem.TimeSpan[] offsets = this.objTimeZoneInfo.GetAmbiguousTimeOffsets(dateTimeOffset.dateTimeOffset);
+            GSystem.TimeSpan[] offsets = this.objTimeZoneInfo.GetAmbiguousTimeOffsets(dateTimeOffset.DateTimeOffsetObject);
 
             // Convert GSystem.TimeSpan[] offsets to DotNetLib.TimeSpan[]
             TimeSpan[] timeSpans = new TimeSpan[offsets.Length];
             int i = 0;
             foreach (GSystem.TimeSpan offset in offsets)
             {
-                timeSpans[i++].timeSpan = offset;
+                timeSpans[i++].TimeSpanObject = offset;
             }
             return timeSpans;
         }
@@ -222,12 +222,12 @@ namespace DotNetLib.System
 
         public TimeSpan GetUtcOffset(DateTime dateTime)
         {
-            return new TimeSpan(objTimeZoneInfo.GetUtcOffset(dateTime.dateTime));
+            return new TimeSpan(objTimeZoneInfo.GetUtcOffset(dateTime.DateTimeObject));
         }
 
         public TimeSpan GetUtcOffset2(DateTimeOffset dateTimeOffset)
         {
-            return new TimeSpan(objTimeZoneInfo.GetUtcOffset(dateTimeOffset.dateTimeOffset));
+            return new TimeSpan(objTimeZoneInfo.GetUtcOffset(dateTimeOffset.DateTimeOffsetObject));
         }
 
         public bool HasSameRules(TimeZoneInfo other)
@@ -237,27 +237,27 @@ namespace DotNetLib.System
 
         public bool IsAmbiguousTime(DateTime dateTime)
         {
-            return this.objTimeZoneInfo.IsAmbiguousTime(dateTime.dateTime);
+            return this.objTimeZoneInfo.IsAmbiguousTime(dateTime.DateTimeObject);
         }
 
         public bool IsAmbiguousTime2(DateTimeOffset dateTimeOffset)
         {
-            return this.objTimeZoneInfo.IsAmbiguousTime(dateTimeOffset.dateTimeOffset);
+            return this.objTimeZoneInfo.IsAmbiguousTime(dateTimeOffset.DateTimeOffsetObject);
         }
 
         public bool IsDaylightSavingTime(DateTime dateTime)
         {
-            return this.objTimeZoneInfo.IsDaylightSavingTime(dateTime.dateTime);
+            return this.objTimeZoneInfo.IsDaylightSavingTime(dateTime.DateTimeObject);
         }
 
         public bool IsDaylightSavingTime2(DateTimeOffset dateTimeOffset)
         {
-            return this.objTimeZoneInfo.IsDaylightSavingTime(dateTimeOffset.dateTimeOffset);
+            return this.objTimeZoneInfo.IsDaylightSavingTime(dateTimeOffset.DateTimeOffsetObject);
         }
 
         public bool IsInvalidTime(DateTime dateTime)
         {
-            return this.objTimeZoneInfo.IsInvalidTime(dateTime.dateTime);
+            return this.objTimeZoneInfo.IsInvalidTime(dateTime.DateTimeObject);
         }
 
         public string ToSerializedString()

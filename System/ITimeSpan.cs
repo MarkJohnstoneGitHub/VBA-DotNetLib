@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Runtime.InteropServices;
 
 namespace DotNetLib.System
@@ -14,6 +15,25 @@ namespace DotNetLib.System
         TimeSpan Create(int hours, int minutes, int seconds);
         TimeSpan Create2(int days, int hours, int minutes, int seconds, int milliseconds);
 
+        // Fields
+
+        //[Description("Represents the maximum TimeSpan value. This field is read-only.")]
+        //TimeSpan MaxValue { get; }
+
+        //[Description("Represents the minimum TimeSpan value. This field is read-only.")]
+        //TimeSpan MinValue { get; }
+        
+
+        // public static readonly TimeSpan MaxValue;
+        // public static readonly TimeSpan MinValue;
+        // public const long TicksPerDay = 864000000000;
+        // public const long TicksPerHour = 36000000000;
+        // public const long TicksPerMillisecond = 10000;
+        // public const long TicksPerMinute = 600000000;
+        // public const long TicksPerSecond = 10000000;
+        // public static readonly TimeSpan Zero;
+
+        // Properties
         int Days { get; }
         int Hours { get; }
         int Milliseconds { get; }

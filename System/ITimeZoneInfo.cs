@@ -4,6 +4,8 @@ using System.Runtime.InteropServices;
 
 namespace DotNetLib.System
 {
+    // https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8.1
+
     [ComVisible(true)]
     [Guid("3484FC28-42F0-4BCA-A5C4-F7AF3DD4D441")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]

@@ -5,6 +5,8 @@ using System;
 
 namespace DotNetLib.System
 {
+    // https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8.1
+
     [ComVisible(true)]
     [Description("Represents an instant in time, typically expressed as a date and time of day.")]
     [Guid("72E3AB6F-9742-4F2F-8FA2-43FEEB1CC788")]
@@ -12,7 +14,7 @@ namespace DotNetLib.System
     [ClassInterface(ClassInterfaceType.None)]
     public class DateTime : IDateTime
     {
-        private GSystem.DateTime objDateTime;
+        private GSystem.DateTime dateTimeObject;
         public static readonly DateTime dtMaxValue = new DateTime(GSystem.DateTime.MaxValue);
         public static readonly DateTime dtMinValue = new DateTime(GSystem.DateTime.MinValue);
         //public static readonly DateTime dtUnixEpoch = new DateTime(GSystem.DateTime.UnixEpoch);
@@ -20,42 +22,42 @@ namespace DotNetLib.System
         //Constructors
         public DateTime()
         {
-            objDateTime = new GSystem.DateTime();
+            dateTimeObject = new GSystem.DateTime();
         }
 
-        public DateTime(GSystem.DateTime objDateTime)
+        internal DateTime(GSystem.DateTime dateTimeObject)
         {
-            this.objDateTime = objDateTime;
+            this.dateTimeObject = dateTimeObject;
         }
 
         public DateTime(long ticks)
         {
-            this.objDateTime = new GSystem.DateTime(ticks);
+            this.dateTimeObject = new GSystem.DateTime(ticks);
         }
 
         public DateTime(long ticks, DateTimeKind kind)
         {
-            this.objDateTime = new GSystem.DateTime(ticks, (GSystem.DateTimeKind)kind);
+            this.dateTimeObject = new GSystem.DateTime(ticks, (GSystem.DateTimeKind)kind);
         }
 
         public DateTime(int year, int month, int day)
         {
-            this.objDateTime = new GSystem.DateTime(year, month, day);
+            this.dateTimeObject = new GSystem.DateTime(year, month, day);
         }
 
         public DateTime(int year, int month, int day, int hour, int minute, int second)
         {
-            this.objDateTime = new GSystem.DateTime(year, month, day, hour, minute, second);
+            this.dateTimeObject = new GSystem.DateTime(year, month, day, hour, minute, second);
         }
 
         public DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond)
         {
-            this.objDateTime = new GSystem.DateTime(year, month, day, hour, minute, second, millisecond);
+            this.dateTimeObject = new GSystem.DateTime(year, month, day, hour, minute, second, millisecond);
         }
 
         public DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond, DateTimeKind kind)
         {
-            this.objDateTime = new GSystem.DateTime(year, month, day, hour, minute, second, millisecond, (GSystem.DateTimeKind)kind);
+            this.dateTimeObject = new GSystem.DateTime(year, month, day, hour, minute, second, millisecond, (GSystem.DateTimeKind)kind);
         }
 
         /// <summary>
@@ -146,38 +148,38 @@ namespace DotNetLib.System
         //public DateTime UnixEpoch => dtUnixEpoch;
 
         //Properties
-        internal GSystem.DateTime dateTime
+        internal GSystem.DateTime DateTimeObject
         {
-            get { return this.objDateTime; }
+            get { return this.dateTimeObject; }
             //set { objDateTime = value; }  // set method
         }
 
-        public DateTime Date => new DateTime(this.objDateTime.Date);
+        public DateTime Date => new DateTime(this.dateTimeObject.Date);
 
         /// <summary>
         /// Gets the day of the month represented by this instance.
         /// </summary>
-        public int Day => this.objDateTime.Day;
+        public int Day => this.dateTimeObject.Day;
 
         /// <summary>
         /// Gets the day of the week represented by this instance.
         /// </summary>
-        public DayOfWeek DayOfWeek => (DayOfWeek)objDateTime.DayOfWeek;
+        public DayOfWeek DayOfWeek => (DayOfWeek)dateTimeObject.DayOfWeek;
 
         /// <summary>
         /// Gets the day of the year represented by this instance.
         /// </summary>
-        public int DayOfYear => this.objDateTime.DayOfYear;
+        public int DayOfYear => this.dateTimeObject.DayOfYear;
 
         /// <summary>
         /// Gets the hour component of the date represented by this instance.
         /// </summary>
-        public int Hour => this.objDateTime.Hour;
+        public int Hour => this.dateTimeObject.Hour;
 
         /// <summary>
         /// Gets a value that indicates whether the time represented by this instance is based on local time, Coordinated Universal Time (UTC), or neither.
         /// </summary>
-        public DateTimeKind Kind => (DateTimeKind)this.objDateTime.Kind;
+        public DateTimeKind Kind => (DateTimeKind)this.dateTimeObject.Kind;
 
         /// <summary>
         /// The microseconds component, expressed as a value between 0 and 999.
@@ -187,17 +189,17 @@ namespace DotNetLib.System
         /// <summary>
         /// Gets the milliseconds component of the date represented by this instance.
         /// </summary>
-        public int Millisecond => (int)(this.objDateTime.Millisecond);
+        public int Millisecond => (int)(this.dateTimeObject.Millisecond);
 
         /// <summary>
         /// Gets the minute component of the date represented by this instance.
         /// </summary>
-        public int Minute => (int)(this.objDateTime.Minute);
+        public int Minute => (int)(this.dateTimeObject.Minute);
 
         /// <summary>
         /// Gets the month component of the date represented by this instance.
         /// </summary>
-        public int Month => this.objDateTime.Month;
+        public int Month => this.dateTimeObject.Month;
 
         /// <summary>
         /// The nanoseconds component, expressed as a value between 0 and 900 (in increments of 100 nanoseconds).
@@ -212,15 +214,15 @@ namespace DotNetLib.System
         /// <summary>
         /// Gets the seconds component of the date represented by this instance.
         /// </summary>
-        public int Second => this.objDateTime.Second;
+        public int Second => this.dateTimeObject.Second;
 
-        public TimeSpan TimeOfDay => new TimeSpan(this.objDateTime.Ticks);
+        public TimeSpan TimeOfDay => new TimeSpan(this.dateTimeObject.Ticks);
 
 
         /// <summary>
         /// Gets the number of ticks that represent the date and time of this instance.
         /// </summary>
-        public long Ticks => this.objDateTime.Ticks;
+        public long Ticks => this.dateTimeObject.Ticks;
 
         /// <summary>
         /// Gets the current date.
@@ -235,18 +237,18 @@ namespace DotNetLib.System
         /// <summary>
         /// Gets the year component of the date represented by this instance.
         /// </summary>
-        public int Year => this.objDateTime.Year;
+        public int Year => this.dateTimeObject.Year;
 
         // Methods
 
         public DateTime Add(TimeSpan value)
         { 
-            return new DateTime(this.objDateTime.Add(value.timeSpan));
+            return new DateTime(this.dateTimeObject.Add(value.TimeSpanObject));
         }
 
         public DateTime AddDays(double value)
         {
-            return new DateTime(this.objDateTime.AddDays(value));
+            return new DateTime(this.dateTimeObject.AddDays(value));
         }
 
         /// <summary>
@@ -256,7 +258,7 @@ namespace DotNetLib.System
         /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of hours represented by value.</returns>
         public DateTime AddHours(double value)
         {
-            return new DateTime(this.objDateTime.AddHours(value));
+            return new DateTime(this.dateTimeObject.AddHours(value));
         }
 
         //public DateTimeTools AddMicoseconds(double value)
@@ -271,7 +273,7 @@ namespace DotNetLib.System
         /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of milliseconds represented by value.</returns>
         public DateTime AddMilliseconds(double value)
         {
-            return new DateTime(this.objDateTime.AddMilliseconds(value));
+            return new DateTime(this.dateTimeObject.AddMilliseconds(value));
         }
 
         /// <summary>
@@ -281,7 +283,7 @@ namespace DotNetLib.System
         /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of minutes represented by value.An object whose value is the sum of the date and time represented by this instance and the number of minutes represented by value.</returns>
         public DateTime AddMinutes(double value)
         {
-            return new DateTime(this.objDateTime.AddMinutes(value));
+            return new DateTime(this.dateTimeObject.AddMinutes(value));
         }
 
         /// <summary>
@@ -291,7 +293,7 @@ namespace DotNetLib.System
         /// <returns></returns>
         public DateTime AddMonths(int months)
         {
-            return new DateTime(this.objDateTime.AddMonths(months));
+            return new DateTime(this.dateTimeObject.AddMonths(months));
         }
 
         /// <summary>
@@ -301,7 +303,7 @@ namespace DotNetLib.System
         /// <returns></returns>
         public DateTime AddSeconds(double value)
         {
-            return new DateTime(this.objDateTime.AddSeconds(value));
+            return new DateTime(this.dateTimeObject.AddSeconds(value));
         }
 
         /// <summary>
@@ -311,7 +313,7 @@ namespace DotNetLib.System
         /// <returns>An object whose value is the sum of the date and time represented by this instance and the time represented by value.</returns>
         public DateTime AddTicks(long value)
         {
-            return new DateTime(this.objDateTime.AddTicks(value));
+            return new DateTime(this.dateTimeObject.AddTicks(value));
         }
 
         /// <summary>
@@ -321,7 +323,7 @@ namespace DotNetLib.System
         /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of years represented by value.</returns>
         public DateTime AddYears(int value)
         {
-            return new DateTime(this.objDateTime.AddYears(value));
+            return new DateTime(this.dateTimeObject.AddYears(value));
         }
 
         /// <summary>
@@ -332,7 +334,7 @@ namespace DotNetLib.System
         /// <returns>A signed number indicating the relative values of t1 and t2.</returns>
         public int Compare(DateTime t1, DateTime t2)
         {
-            return GSystem.DateTime.Compare(t1.objDateTime, t2.objDateTime);
+            return GSystem.DateTime.Compare(t1.dateTimeObject, t2.dateTimeObject);
         }
 
         /// <summary>
@@ -342,7 +344,7 @@ namespace DotNetLib.System
         /// <returns>A signed number indicating the relative values of this instance and the value parameter.</returns>
         public int CompareTo(DateTime value)
         {
-            return this.objDateTime.CompareTo(value);
+            return this.dateTimeObject.CompareTo(value);
         }
         /// <summary>
         /// Compares the value of this instance to a specified object that contains a specified DateTime value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.
@@ -351,7 +353,7 @@ namespace DotNetLib.System
         /// <returns>A signed number indicating the relative values of this instance and value.</returns>
         public int CompareTo2(object value)
         {
-            return this.objDateTime.CompareTo(value);
+            return this.dateTimeObject.CompareTo(value);
         }
 
         /// <summary>
@@ -372,7 +374,7 @@ namespace DotNetLib.System
         /// <returns>true if the value parameter equals the value of this instance; otherwise, false.</returns>
         public bool Equals(DateTime value)
         {
-            return this.objDateTime.Equals(value);
+            return this.dateTimeObject.Equals(value);
         }
 
         /// <summary>
@@ -382,7 +384,7 @@ namespace DotNetLib.System
         /// <returns>true if value is an instance of DateTime and equals the value of this instance; otherwise, false.</returns>
         public bool Equals2(object value)
         {
-            return this.objDateTime.Equals(value);
+            return this.dateTimeObject.Equals(value);
         }
 
         /// <summary>
@@ -393,7 +395,7 @@ namespace DotNetLib.System
         /// <returns>true if the two values are equal; otherwise, false.</returns>
         public bool Equals3(DateTime t1, DateTime t2)
         {
-            return GSystem.DateTime.Equals(t1.objDateTime, t2.objDateTime);
+            return GSystem.DateTime.Equals(t1.dateTimeObject, t2.dateTimeObject);
         }
 
         /// <summary>
@@ -454,7 +456,7 @@ namespace DotNetLib.System
         /// <returns> A string array where each element is the representation of the value of this instance formatted with one of the standard date and time format specifiers.</returns>
         public string[] GetDateTimeFormats()
         {
-            return this.objDateTime.GetDateTimeFormats();
+            return this.dateTimeObject.GetDateTimeFormats();
         }
 
         /// <summary>
@@ -463,7 +465,7 @@ namespace DotNetLib.System
         /// <returns> A 32-bit signed integer hash code.</returns>
         public override int GetHashCode()
         {
-            return this.objDateTime.GetHashCode();
+            return this.dateTimeObject.GetHashCode();
         }
 
         /// <summary>
@@ -472,7 +474,7 @@ namespace DotNetLib.System
         /// <returns> true if the value of the Kind property is Local or Unspecified and the value of this instance of DateTime is within the daylight saving time range for the local time zone; false if Kind is Utc.</returns>
         public bool IsDaylightSavingTime()
         {
-            return this.objDateTime.IsDaylightSavingTime();
+            return this.dateTimeObject.IsDaylightSavingTime();
         }
 
         /// <summary>
@@ -535,33 +537,33 @@ namespace DotNetLib.System
         /// <returns>A new object that has the same number of ticks as the object represented by the value parameter and the DateTimeKind value specified by the kind parameter.</returns>
         public DateTime SpecifyKind(DateTime value, DateTimeKind kind)
         {
-            return new DateTime(GSystem.DateTime.SpecifyKind(value.objDateTime, (GSystem.DateTimeKind)kind));
+            return new DateTime(GSystem.DateTime.SpecifyKind(value.dateTimeObject, (GSystem.DateTimeKind)kind));
 
         }
 
         public DateTime Subtract(TimeSpan value)
         {
-            return new DateTime(this.objDateTime.Subtract(value.timeSpan));
+            return new DateTime(this.dateTimeObject.Subtract(value.TimeSpanObject));
         }
 
         public TimeSpan Subtract2(DateTime value)
         {
-            return new TimeSpan(this.objDateTime.Subtract(value.objDateTime));
+            return new TimeSpan(this.dateTimeObject.Subtract(value.dateTimeObject));
         }
 
         public long ToBinary()
         { 
-            return this.objDateTime.ToBinary();
+            return this.dateTimeObject.ToBinary();
         }
 
         public long ToFileTime()
         { 
-            return this.objDateTime.ToFileTime();
+            return this.dateTimeObject.ToFileTime();
         }
 
         public long ToFileTimeUtc()
         {
-            return this.objDateTime.ToFileTimeUtc();
+            return this.dateTimeObject.ToFileTimeUtc();
         }
 
         /// <summary>
@@ -570,17 +572,17 @@ namespace DotNetLib.System
         /// <returns>An object whose Kind property is Local, and whose value is the local time equivalent to the value of the current DateTime object, or DateTime.MaxValue if the converted value is too large to be represented by a DateTime object, or DateTime.MinValue if the converted value is too small to be represented as a DateTime object.</returns>        
         public DateTime ToLocalTime()
         {
-            return new DateTime(this.objDateTime.ToLocalTime());
+            return new DateTime(this.dateTimeObject.ToLocalTime());
         }
 
         public string ToLongDateString()
         {
-            return this.objDateTime.ToLongDateString();
+            return this.dateTimeObject.ToLongDateString();
         }
 
         public string ToLongTimeString()
         {
-            return this.objDateTime.ToLongTimeString();
+            return this.dateTimeObject.ToLongTimeString();
         }
 
         /// <summary>
@@ -591,17 +593,17 @@ namespace DotNetLib.System
         /// </exception>
         public double ToOADate()
         {
-            return this.objDateTime.ToOADate();
+            return this.dateTimeObject.ToOADate();
         }
 
         public string ToShortDateString()
         {
-            return this.objDateTime.ToShortDateString();
+            return this.dateTimeObject.ToShortDateString();
         }
 
         public string ToShortTimeString()
         {
-            return this.objDateTime.ToShortTimeString();
+            return this.dateTimeObject.ToShortTimeString();
         }
 
         /// <summary>
@@ -622,7 +624,7 @@ namespace DotNetLib.System
 
         public string ToString(string format = null)
         {
-            return this.objDateTime.ToString(format);
+            return this.dateTimeObject.ToString(format);
         }
 
         /// <summary>
@@ -631,7 +633,7 @@ namespace DotNetLib.System
         /// <returns> An object whose Kind property is Utc, and whose value is the UTC equivalent to the value of the current DateTime object, or DateTime.MaxValue if the converted value is too large to be represented by a DateTime object, or DateTime.MinValue if the converted value is too small to be represented by a DateTime object.</returns>
         public DateTime ToUniversalTime()
         {
-            return new DateTime(this.objDateTime.ToUniversalTime()); 
+            return new DateTime(this.dateTimeObject.ToUniversalTime()); 
         }
 
         public bool TryParse(string s, out DateTime result)
@@ -641,50 +643,49 @@ namespace DotNetLib.System
             return pvtTryParse;
         }
 
-
         //Operators
 
         public DateTime Addition(DateTime d, TimeSpan t)
         {
-            return new DateTime(d.dateTime + t.timeSpan);
+            return new DateTime(d.DateTimeObject + t.TimeSpanObject);
         }
 
         public bool Equality(DateTime d1, DateTime d2)
         { 
-            return (d1.dateTime == d2.dateTime); 
+            return (d1.DateTimeObject == d2.DateTimeObject); 
         }
 
         public bool GreaterThan(DateTime t1, DateTime t2)
         {
-            return (t1.dateTime > t2.dateTime);
+            return (t1.DateTimeObject > t2.DateTimeObject);
         }
 
         public bool GreaterThanOrEqual(DateTime t1, DateTime t2)
         { 
-            return (t1.dateTime >= t2.dateTime);
+            return (t1.DateTimeObject >= t2.DateTimeObject);
         }
         public bool Inequality(DateTime t1, DateTime t2)
         {
-            return (t1.dateTime != t2.dateTime);
+            return (t1.DateTimeObject != t2.DateTimeObject);
         }
 
         public bool LessThan(DateTime t1, DateTime t2)
         {
-            return (t1.dateTime < t2.dateTime);
+            return (t1.DateTimeObject < t2.DateTimeObject);
         }
         public bool LessThanOrEqual(DateTime t1, DateTime t2)
         {
-            return (t1.dateTime <= t2.dateTime);
+            return (t1.DateTimeObject <= t2.DateTimeObject);
         }
 
         public TimeSpan Subtraction(DateTime d1, DateTime d2)
         {
-            return new TimeSpan(d1.dateTime - d2.dateTime);
+            return new TimeSpan(d1.DateTimeObject - d2.DateTimeObject);
         }
 
         public DateTime Subtraction2(DateTime d, TimeSpan t)
         {
-            return new DateTime(d.dateTime - t.timeSpan);
+            return new DateTime(d.DateTimeObject - t.TimeSpanObject);
         }
 
     }
