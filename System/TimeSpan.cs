@@ -28,7 +28,7 @@ namespace DotNetLib.System
             timeSpanObject = new GSystem.TimeSpan();
         }
 
-        public TimeSpan(GSystem.TimeSpan value)
+        internal TimeSpan(GSystem.TimeSpan value)
         {
             this.timeSpanObject = value;
         }
@@ -41,6 +41,11 @@ namespace DotNetLib.System
         public TimeSpan(int hours, int minutes, int seconds)
         {
             this.timeSpanObject = new GSystem.TimeSpan(hours, minutes, seconds);
+        }
+
+        public TimeSpan(int days, int hours, int minutes, int seconds)
+        {
+            this.timeSpanObject = new GSystem.TimeSpan(days, hours, minutes, seconds);
         }
 
         public TimeSpan(int days, int hours, int minutes, int seconds, int milliseconds)
@@ -58,7 +63,12 @@ namespace DotNetLib.System
             return new TimeSpan(hours, minutes, seconds);
         }
 
-        public TimeSpan Create2(int days, int hours, int minutes, int seconds, int milliseconds)
+        public TimeSpan Create2(int days, int hours, int minutes, int seconds)
+        {
+            return new TimeSpan(days, hours, minutes, seconds);
+        }
+
+        public TimeSpan Create3(int days, int hours, int minutes, int seconds, int milliseconds)
         {
             return new TimeSpan(days, hours, minutes, seconds, milliseconds);
         }
@@ -195,6 +205,11 @@ namespace DotNetLib.System
             return new TimeSpan(GSystem.TimeSpan.FromSeconds(value));
         }
 
+        public TimeSpan FromTicks(long value)
+        {
+            return new TimeSpan(GSystem.TimeSpan.FromTicks(value));
+        }
+
         public override int GetHashCode()
         { 
             return this.timeSpanObject.GetHashCode(); 
@@ -209,6 +224,18 @@ namespace DotNetLib.System
         {
             return new TimeSpan(GSystem.TimeSpan.Parse(s));
         }
+
+        public TimeSpan Parse2(string input, IFormatProvider formatProvider)
+        {
+            return new TimeSpan(GSystem.TimeSpan.Parse(input,formatProvider));
+        }
+
+        public TimeSpan ParseExact(string input, string format, IFormatProvider formatProvider)
+        {
+            return new TimeSpan(GSystem.TimeSpan.ParseExact(input,format, formatProvider));
+        }
+
+
 
         public TimeSpan Subtract(TimeSpan ts)
         {
