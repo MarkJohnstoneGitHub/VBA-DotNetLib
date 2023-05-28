@@ -9,7 +9,7 @@
  
   **Status:**
   
-  Initial development.  Adhoc testing for DateTime only done, DateTimeOffset, TimeZoneInfo implemented thou not tested,  TimeSpan currently being implemented.
+  Initial development.  Adhoc testing for DateTime only done, DateTimeOffset, TimeZoneInfo, TimeSpan implemented thou not tested, 
   ReadOnlyCollection implemented thou not tested.  TimeZoneInfo.GetSystemTimes returns a ReadOnlyCollection which isn't tested. 
   
   Unit testing will be done once VBA wrappers for COM objects implemented.
