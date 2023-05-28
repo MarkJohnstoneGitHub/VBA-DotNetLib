@@ -17,23 +17,32 @@ namespace DotNetLib.System
 
         // Fields
 
-        //[Description("Represents the maximum TimeSpan value. This field is read-only.")]
-        //TimeSpan MaxValue { get; }
+        [Description("Represents the maximum TimeSpan value. This field is read-only.")]
+        TimeSpan MaxValue { get; }
 
-        //[Description("Represents the minimum TimeSpan value. This field is read-only.")]
-        //TimeSpan MinValue { get; }
-        
+        [Description("Represents the minimum TimeSpan value. This field is read-only.")]
+        TimeSpan MinValue { get; }
 
-        // public static readonly TimeSpan MaxValue;
-        // public static readonly TimeSpan MinValue;
-        // public const long TicksPerDay = 864000000000;
-        // public const long TicksPerHour = 36000000000;
-        // public const long TicksPerMillisecond = 10000;
-        // public const long TicksPerMinute = 600000000;
-        // public const long TicksPerSecond = 10000000;
-        // public static readonly TimeSpan Zero;
+        [Description("Represents the number of ticks in 1 day. This field is constant.")]
+        long TicksPerDay { get; }
+
+        [Description("Represents the number of ticks in 1 hour. This field is constant.")]
+        long TicksPerHour { get; }
+
+        [Description("Represents the number of ticks in 1 millisecond. This field is constant.")]
+        long TicksPerMillisecond { get; }
+
+        [Description("Represents the number of ticks in 1 minute. This field is constant.")]
+        long TicksPerMinute { get; }
+
+        [Description("Represents the number of ticks in 1 second.")]
+        long TicksPerSecond { get; }
+
+        [Description("Represents the zero TimeSpan value. This field is read-only.")]
+        TimeSpan Zero { get; }
 
         // Properties
+
         int Days { get; }
         int Hours { get; }
         int Milliseconds { get; }

@@ -15,8 +15,8 @@ namespace DotNetLib.System
     public class DateTime : IDateTime
     {
         private GSystem.DateTime dateTimeObject;
-        public static readonly DateTime dtMaxValue = new DateTime(GSystem.DateTime.MaxValue);
-        public static readonly DateTime dtMinValue = new DateTime(GSystem.DateTime.MinValue);
+        public static readonly DateTime maxValueObject = new DateTime(GSystem.DateTime.MaxValue);
+        public static readonly DateTime minValueObject = new DateTime(GSystem.DateTime.MinValue);
         //public static readonly DateTime dtUnixEpoch = new DateTime(GSystem.DateTime.UnixEpoch);
 
         //Constructors
@@ -135,12 +135,12 @@ namespace DotNetLib.System
         /// <summary>
         /// Represents the largest possible value of DateTime. This field is read-only.
         /// </summary>
-        public DateTime MaxValue => dtMaxValue;
+        public DateTime MaxValue => maxValueObject;
 
         /// <summary>
         /// Represents the smallest possible value of DateTime. This field is read-only.
         /// </summary>
-        public DateTime MinValue => dtMinValue;
+        public DateTime MinValue => minValueObject;
 
         /// <summary>
         /// The value of this constant is equivalent to 00:00:00.0000000 UTC, January 1, 1970, in the Gregorian calendar. UnixEpoch defines the point in time when Unix time is equal to 0.

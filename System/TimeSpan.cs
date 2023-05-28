@@ -11,6 +11,10 @@ namespace DotNetLib.System
     {
         private GSystem.TimeSpan timeSpanObject;
 
+        private static readonly TimeSpan tsMaxValue = new TimeSpan(GSystem.TimeSpan.MaxValue);
+        private static readonly TimeSpan tsMinValue = new TimeSpan(GSystem.TimeSpan.MinValue);
+        private static readonly TimeSpan tsZero = new TimeSpan(GSystem.TimeSpan.Zero);
+
         //Constructors
         public TimeSpan()
         {
@@ -52,18 +56,24 @@ namespace DotNetLib.System
             return new TimeSpan(days, hours, minutes, seconds, milliseconds);
         }
 
-
-
         // Fields
 
-        public readonly TimeSpan MaxValue;
-        // public static readonly TimeSpan MinValue;
-        // public const long TicksPerDay = 864000000000;
-        // public const long TicksPerHour = 36000000000;
-        // public const long TicksPerMillisecond = 10000;
-        // public const long TicksPerMinute = 600000000;
-        // public const long TicksPerSecond = 10000000;
-        // public static readonly TimeSpan Zero;
+        public TimeSpan MaxValue => tsMaxValue;
+        
+        public TimeSpan MinValue => tsMinValue;
+
+        public long TicksPerDay => GSystem.TimeSpan.TicksPerDay;
+        
+        public long TicksPerHour => GSystem.TimeSpan.TicksPerHour;
+
+        public long TicksPerMillisecond => GSystem.TimeSpan.TicksPerMillisecond;
+
+        public long TicksPerMinute => GSystem.TimeSpan.TicksPerMinute;
+
+        public long TicksPerSecond => GSystem.TimeSpan.TicksPerSecond;
+
+        public TimeSpan Zero => tsZero;
+
 
         //Properties
         internal GSystem.TimeSpan TimeSpanObject
