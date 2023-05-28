@@ -35,7 +35,7 @@ namespace DotNetLib.System
     [ClassInterface(ClassInterfaceType.None)]
     public class TimeZoneInfo : ITimeZoneInfo
     {
-        private GSystem.TimeZoneInfo objTimeZoneInfo;
+        private GSystem.TimeZoneInfo timeZoneInfoObject;
 
         private static ReadOnlyCollection cachedSystemTimeZones = PopulateAllSystemTimeZones();
         private static TimeZoneInfo cachedLocal = new TimeZoneInfo(GSystem.TimeZoneInfo.Local);
@@ -45,27 +45,28 @@ namespace DotNetLib.System
         {
         }
 
-        internal TimeZoneInfo(GSystem.TimeZoneInfo objTimeZoneInfo)
+        internal TimeZoneInfo(GSystem.TimeZoneInfo timeZoneInfoObject)
         {
-            this.timeZoneInfo = objTimeZoneInfo;
-        }
-
-        internal GSystem.TimeZoneInfo timeZoneInfo
-        {
-            get { return this.objTimeZoneInfo; }
-            set { objTimeZoneInfo = value; }  // set method for instance of the TimeZoneInfo class is immutable.
+            this.TimeZoneInfoObject = timeZoneInfoObject;
         }
 
         // Properties
+
+        internal GSystem.TimeZoneInfo TimeZoneInfoObject
+        {
+            get { return this.timeZoneInfoObject; }
+            set { this.timeZoneInfoObject = value; }  // set method for instance of the TimeZoneInfo class is immutable.
+        }
+
         public TimeSpan BaseUtcOffset
         { 
-            get {return new TimeSpan(this.objTimeZoneInfo.BaseUtcOffset);}
+            get {return new TimeSpan(this.timeZoneInfoObject.BaseUtcOffset);}
         }
-        public string DaylightName => this.objTimeZoneInfo.DaylightName;
+        public string DaylightName => this.timeZoneInfoObject.DaylightName;
 
-        public string DisplayName => this.objTimeZoneInfo.DisplayName;
+        public string DisplayName => this.timeZoneInfoObject.DisplayName;
 
-        public string Id => this.objTimeZoneInfo.Id;
+        public string Id => this.timeZoneInfoObject.Id;
 
 
         // TODO: Update to check if cachedLocal is null, if null create TimeZoneInfo, return cachedLocal ??
@@ -75,9 +76,9 @@ namespace DotNetLib.System
             //get { return new TimeZoneInfo(GSystem.TimeZoneInfo.Local); }
         }
 
-        public string StandardName => this.objTimeZoneInfo.StandardName;
+        public string StandardName => this.timeZoneInfoObject.StandardName;
 
-        public bool SupportsDaylightSavingTime => this.objTimeZoneInfo.SupportsDaylightSavingTime;
+        public bool SupportsDaylightSavingTime => this.timeZoneInfoObject.SupportsDaylightSavingTime;
 
 
         // TODO: Update to check if cachedUtc is null, if null create TimeZoneInfo, return cachedUtc
@@ -102,17 +103,17 @@ namespace DotNetLib.System
 
         public DateTime ConvertTime(DateTime dateTime, TimeZoneInfo destinationTimeZone)
         {
-            return new DateTime(GSystem.TimeZoneInfo.ConvertTime(dateTime.DateTimeObject, destinationTimeZone.timeZoneInfo));
+            return new DateTime(GSystem.TimeZoneInfo.ConvertTime(dateTime.DateTimeObject, destinationTimeZone.TimeZoneInfoObject));
         }
 
         public DateTimeOffset ConvertTime2(DateTimeOffset dateTimeOffset, TimeZoneInfo destinationTimeZone)
         {
-            return new DateTimeOffset(GSystem.TimeZoneInfo.ConvertTime(dateTimeOffset.DateTimeOffsetObject, destinationTimeZone.objTimeZoneInfo));
+            return new DateTimeOffset(GSystem.TimeZoneInfo.ConvertTime(dateTimeOffset.DateTimeOffsetObject, destinationTimeZone.timeZoneInfoObject));
         }
 
         public DateTime ConvertTime3(DateTime dateTime, TimeZoneInfo sourceTimeZone, TimeZoneInfo destinationTimeZone)
         {
-            return new DateTime(GSystem.TimeZoneInfo.ConvertTime(dateTime.DateTimeObject, sourceTimeZone.timeZoneInfo ,destinationTimeZone.timeZoneInfo));
+            return new DateTime(GSystem.TimeZoneInfo.ConvertTime(dateTime.DateTimeObject, sourceTimeZone.TimeZoneInfoObject ,destinationTimeZone.TimeZoneInfoObject));
         }
 
         public DateTime ConvertTimeBySystemTimeZoneId(DateTime dateTime, string destinationTimeZoneId)
@@ -132,7 +133,7 @@ namespace DotNetLib.System
 
         public DateTime ConvertTimeFromUtc(DateTime dateTime, TimeZoneInfo destinationTimeZone)
         {
-            return new DateTime(GSystem.TimeZoneInfo.ConvertTimeFromUtc(dateTime.DateTimeObject, destinationTimeZone.timeZoneInfo));
+            return new DateTime(GSystem.TimeZoneInfo.ConvertTimeFromUtc(dateTime.DateTimeObject, destinationTimeZone.TimeZoneInfoObject));
         }
 
         public DateTime ConvertTimeToUtc(DateTime dateTime)
@@ -141,7 +142,7 @@ namespace DotNetLib.System
         }
         public DateTime ConvertTimeToUtc2(DateTime dateTime, TimeZoneInfo sourceTimeZone)
         {
-            return new DateTime(GSystem.TimeZoneInfo.ConvertTimeToUtc(dateTime.DateTimeObject, sourceTimeZone.timeZoneInfo));
+            return new DateTime(GSystem.TimeZoneInfo.ConvertTimeToUtc(dateTime.DateTimeObject, sourceTimeZone.TimeZoneInfoObject));
         }
 
         public TimeZoneInfo CreateCustomTimeZone(string id, TimeSpan baseUtcOffset, string displayName, string standardDisplayName)
@@ -154,12 +155,12 @@ namespace DotNetLib.System
 
         public bool Equals(TimeZoneInfo other)
         {
-            return this.objTimeZoneInfo.Equals(other.timeZoneInfo);
+            return this.timeZoneInfoObject.Equals(other.TimeZoneInfoObject);
         }
 
         public bool Equals2(object obj)
         {
-            return this.objTimeZoneInfo.Equals(obj);
+            return this.timeZoneInfoObject.Equals(obj);
         }
 
         public TimeZoneInfo FindSystemTimeZoneById(string id)
@@ -177,7 +178,7 @@ namespace DotNetLib.System
         public TimeSpan[] GetAmbiguousTimeOffsets(DateTime dateTime)
         {
 
-            GSystem.TimeSpan[] offsets = this.objTimeZoneInfo.GetAmbiguousTimeOffsets(dateTime.DateTimeObject);
+            GSystem.TimeSpan[] offsets = this.timeZoneInfoObject.GetAmbiguousTimeOffsets(dateTime.DateTimeObject);
 
             // Convert GSystem.TimeSpan[] offsets to DotNetLib.TimeSpan[]
             TimeSpan[] timeSpans = new TimeSpan[offsets.Length];
@@ -191,7 +192,7 @@ namespace DotNetLib.System
 
         public TimeSpan[] GetAmbiguousTimeOffsets2(DateTimeOffset dateTimeOffset)
         {
-            GSystem.TimeSpan[] offsets = this.objTimeZoneInfo.GetAmbiguousTimeOffsets(dateTimeOffset.DateTimeOffsetObject);
+            GSystem.TimeSpan[] offsets = this.timeZoneInfoObject.GetAmbiguousTimeOffsets(dateTimeOffset.DateTimeOffsetObject);
 
             // Convert GSystem.TimeSpan[] offsets to DotNetLib.TimeSpan[]
             TimeSpan[] timeSpans = new TimeSpan[offsets.Length];
@@ -205,7 +206,7 @@ namespace DotNetLib.System
 
         public override int GetHashCode()
         { 
-            return this.objTimeZoneInfo.GetHashCode();
+            return this.timeZoneInfoObject.GetHashCode();
         }
 
 
@@ -222,52 +223,52 @@ namespace DotNetLib.System
 
         public TimeSpan GetUtcOffset(DateTime dateTime)
         {
-            return new TimeSpan(objTimeZoneInfo.GetUtcOffset(dateTime.DateTimeObject));
+            return new TimeSpan(timeZoneInfoObject.GetUtcOffset(dateTime.DateTimeObject));
         }
 
         public TimeSpan GetUtcOffset2(DateTimeOffset dateTimeOffset)
         {
-            return new TimeSpan(objTimeZoneInfo.GetUtcOffset(dateTimeOffset.DateTimeOffsetObject));
+            return new TimeSpan(timeZoneInfoObject.GetUtcOffset(dateTimeOffset.DateTimeOffsetObject));
         }
 
         public bool HasSameRules(TimeZoneInfo other)
         {
-            return this.objTimeZoneInfo.HasSameRules(other.objTimeZoneInfo);
+            return this.timeZoneInfoObject.HasSameRules(other.timeZoneInfoObject);
         }
 
         public bool IsAmbiguousTime(DateTime dateTime)
         {
-            return this.objTimeZoneInfo.IsAmbiguousTime(dateTime.DateTimeObject);
+            return this.timeZoneInfoObject.IsAmbiguousTime(dateTime.DateTimeObject);
         }
 
         public bool IsAmbiguousTime2(DateTimeOffset dateTimeOffset)
         {
-            return this.objTimeZoneInfo.IsAmbiguousTime(dateTimeOffset.DateTimeOffsetObject);
+            return this.timeZoneInfoObject.IsAmbiguousTime(dateTimeOffset.DateTimeOffsetObject);
         }
 
         public bool IsDaylightSavingTime(DateTime dateTime)
         {
-            return this.objTimeZoneInfo.IsDaylightSavingTime(dateTime.DateTimeObject);
+            return this.timeZoneInfoObject.IsDaylightSavingTime(dateTime.DateTimeObject);
         }
 
         public bool IsDaylightSavingTime2(DateTimeOffset dateTimeOffset)
         {
-            return this.objTimeZoneInfo.IsDaylightSavingTime(dateTimeOffset.DateTimeOffsetObject);
+            return this.timeZoneInfoObject.IsDaylightSavingTime(dateTimeOffset.DateTimeOffsetObject);
         }
 
         public bool IsInvalidTime(DateTime dateTime)
         {
-            return this.objTimeZoneInfo.IsInvalidTime(dateTime.DateTimeObject);
+            return this.timeZoneInfoObject.IsInvalidTime(dateTime.DateTimeObject);
         }
 
         public string ToSerializedString()
         {
-            return this.objTimeZoneInfo.ToSerializedString();
+            return this.timeZoneInfoObject.ToSerializedString();
         }
 
         public override string ToString()
         { 
-            return this.objTimeZoneInfo.ToString();
+            return this.timeZoneInfoObject.ToString();
         }
 
         //Populate a ReadOnlyCollection of system time zones from ReadOnlyCollection<TimeZoneInfo> from TimeZoneInfo.GetSystemTimeZones()
