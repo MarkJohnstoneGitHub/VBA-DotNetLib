@@ -14,6 +14,10 @@
   
   Unit testing will be done once VBA wrappers for COM objects implemented.
   
+  Investigating auto generation of VBA COM object wrapper class.  Use either Type Library info or C# reflection.  
+  
+  Currently type lib info can obtain all object details expect for class and method description attributes.
+  
  **Dependencies:**
    
 [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/DotNetLib/blob/main/bin/Release/DotNetLib.tlb)
