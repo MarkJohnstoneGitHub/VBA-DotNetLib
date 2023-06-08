@@ -54,7 +54,7 @@ If the .NET Framework isn't installed see [Download .NET Framework](https://dotn
  
  **Development Notes**
   
-  As COM Interlop doesn't support generic types required to convert to it's non-generic equivalent.
+  As COM Interlop doesn't support generic types required to convert or wrap to its non-generic equivalent.
   
   How to treat generic types returned? eg. public static System.Collections.ObjectModel.ReadOnlyCollection<TimeZoneInfo> GetSystemTimeZones()
   
