@@ -14,9 +14,13 @@
   
   Unit testing will be done once VBA wrappers for COM objects implemented.
   
-  Investigating auto generation of VBA COM object wrapper class.  Use either Type Library info or C# reflection.  
+  Investigating auto generation of VBA COM object wrapper class.
   
-  Currently type lib info can obtain all object details expect for class and method description attributes.
+  Currently for type library info can obtain all object details expect for class and method description attributes.
+  
+  Use either Type Library info or C# reflection.  See: [Refactor-COM-object-to-VBA-COM-wrapper-class](https://github.com/MarkJohnstoneGitHub/Refactor-COM-object-to-VBA-COM-wrapper-class)
+  
+
   
  **Dependencies:**
    
