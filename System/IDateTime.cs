@@ -10,6 +10,7 @@ namespace DotNetLib.System
 {
     [ComVisible(true)]
     [Guid("FC2EAD4C-E155-4A9B-989A-A6D93BAF4738")]
+    [Description("Represents an instant in time, typically expressed as a date and time of day.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface IDateTime
     {
@@ -27,65 +28,120 @@ namespace DotNetLib.System
         System.DateTime CreateFromDateTimeKind(int year, int month, int day, int hour, int minute, int second, int millisecond, DateTimeKind kind);
 
         //Fields
-        [Description("Represents the largest possible value of DateTime. This field is read-only.")]
-        DateTime MaxValue { get; }
+        DateTime MaxValue 
+        {
+            [Description("Represents the largest possible value of DateTime. This field is read-only.")]
+            get; 
+        }
 
-        [Description("Represents the smallest possible value of DateTime. This field is read-only.")]
-        DateTime MinValue { get; }
+        DateTime MinValue 
+        {
+            [Description("Represents the smallest possible value of DateTime. This field is read-only.")]
+            get; 
+        }
         //DateTime UnixEpoch { get; }
 
         //Properties
 
-        [Description("Gets the date component of this instance.")]
-        DateTime Date { get; }
+        DateTime Date 
+        {
+            [Description("Gets the date component of this instance.")]
+            get;
+        }
 
-        [Description("Gets the day of the month represented by this instance.")]
-        int Day { get; }
+        int Day 
+        {
+            [Description("Gets the day of the month represented by this instance.")]
+            get; 
+        }
 
-        [Description("Gets the day of the week represented by this instance.")]
-        DayOfWeek DayOfWeek { get; }
+        DayOfWeek DayOfWeek 
+        {
+            [Description("Gets the day of the week represented by this instance.")]
+            get; 
+        }
 
-        [Description("Gets the day of the year represented by this instance.")]
-        int DayOfYear { get; }
+        int DayOfYear 
+        {
+            [Description("Gets the day of the year represented by this instance.")]
+            get; 
+        }
 
-        [Description("Gets the hour component of the date represented by this instance.")]
-        int Hour { get; }
+        int Hour 
+        {
+            [Description("Gets the hour component of the date represented by this instance.")]
+            get; 
+        }
 
-        [Description("Gets a value that indicates whether the time represented by this instance is based on local time, Coordinated Universal Time (UTC), or neither.")]
-        DateTimeKind Kind { get; }
+        DateTimeKind Kind 
+        {
+            [Description("Gets a value that indicates whether the time represented by this instance is based on local time, Coordinated Universal Time (UTC), or neither.")]
+            get;
+        }
+
         //int Microsecond { get; }
 
-        [Description("Gets the milliseconds component of the date represented by this instance.")]
-        int Millisecond { get; }
+        int Millisecond 
+        {
+            [Description("Gets the milliseconds component of the date represented by this instance.")]
+            get;
+        }
 
-        [Description("Gets the minute component of the date represented by this instance.")]
-        int Minute { get; }
+        int Minute 
+        {
+            [Description("Gets the minute component of the date represented by this instance.")]
+            get;
+        }
 
-        [Description("Gets the month component of the date represented by this instance.")]
-        int Month { get; }
+        int Month 
+        {
+            [Description("Gets the month component of the date represented by this instance.")]
+            get;
+        }
 
         //int Nanosecond { get; }
 
-        [Description("Gets a DateTime object that is set to the current date and time on this computer, expressed as the local time.")]
-        DateTime Now { get; }
+        DateTime Now
+        {
+            [Description("Gets a DateTime object that is set to the current date and time on this computer, expressed as the local time.")]
+            get;
+        }
 
-        [Description("Gets the seconds component of the date represented by this instance.")]
-        int Second { get; }
+        int Second 
+        {
+            [Description("Gets the seconds component of the date represented by this instance.")]
+            get;
+        }
 
-        [Description("Gets the number of ticks that represent the date and time of this instance.")]
-        long Ticks { get; }
+        long Ticks 
+        {
+            [Description("Gets the number of ticks that represent the date and time of this instance.")]
+            get;
+        }
 
-        [Description("Gets the time of day for this instance.")]
-        TimeSpan TimeOfDay { get; }
+        TimeSpan TimeOfDay 
+        {
+            [Description("Gets the time of day for this instance.")]
+            get;
+        }
 
-        [Description("Gets the current date.")]
-        DateTime Today { get; }
+        DateTime Today 
+        {
+            [Description("Gets the current date.")]
+            get;
+        }
 
-        [Description("Gets a DateTime object that is set to the current date and time on this computer, expressed as the Coordinated Universal Time (UTC).")]
-        DateTime UtcNow { get; }
+        DateTime UtcNow 
+        {
+            [Description("Gets a DateTime object that is set to the current date and time on this computer, expressed as the Coordinated Universal Time (UTC).")]
+            get;
+        }
 
-        [Description("Gets the year component of the date represented by this instance.")]
-        int Year { get; }
+        int Year 
+        {
+            [Description("Gets the year component of the date represented by this instance.")]
+            get;
+        }
 
         // Methods
 
