@@ -14,6 +14,14 @@
   
   Unit testing will be done once VBA wrappers for COM objects implemented.
   
+  Investigating auto generation of VBA COM object wrapper class.
+  
+  Currently for type library info can obtain all object details expect for class and method description attributes.
+  
+  Use either Type Library info or C# reflection.  See: [Refactor-COM-object-to-VBA-COM-wrapper-class](https://github.com/MarkJohnstoneGitHub/Refactor-COM-object-to-VBA-COM-wrapper-class)
+  
+
+  
  **Dependencies:**
    
 [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/DotNetLib/blob/main/bin/Release/DotNetLib.tlb)
@@ -50,12 +58,12 @@ If the .NET Framework isn't installed see [Download .NET Framework](https://dotn
  
  **Development Notes**
   
-  As COM Interlop doesn't support generic types required to convert to it's non-generic equivalent.
+  As COM Interlop doesn't support generic types required to convert or wrap to its non-generic equivalent.
   
   How to treat generic types returned? eg. public static System.Collections.ObjectModel.ReadOnlyCollection<TimeZoneInfo> GetSystemTimeZones()
   
   
-  https://github.com/dotnet/platform-compat/blob/master/docs/DE0006.md
+  [DE0006: Non-generic collections shouldn't be used](https://github.com/dotnet/platform-compat/blob/master/docs/DE0006.md)
  
-  https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic?view=netframework-4.8.1
+  [System.Collections.Generic Namespace](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic?view=netframework-4.8.1)
  
