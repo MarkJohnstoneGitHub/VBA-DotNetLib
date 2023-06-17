@@ -224,7 +224,7 @@ namespace DotNetLib.System
         [Description("Converts the string representation of a date and time to its DateTime equivalent by using the conventions of the current culture.")]
         DateTime Parse2(string s, IFormatProvider provider);
 
-        [Description("Defines the formatting options that customize string parsing for some date and time parsing methods.\r\n\r\nThis enumeration supports a bitwise combination of its member values.")]
+        [Description("Defines the formatting options that customize string parsing for some date and time parsing methods.  This enumeration supports a bitwise combination of its member values.")]
         DateTime Parse3(string s, IFormatProvider provider, GSystem.Globalization.DateTimeStyles styles);
 
         [Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")]
@@ -273,9 +273,17 @@ namespace DotNetLib.System
         [Description("Converts the value of the current DateTime object to its equivalent short time string representation.")]
         string ToShortTimeString();
 
+        [Description("Converts the value of the current DateTime object to its equivalent string representation using the formatting conventions of the current culture.")]
+        string ToString();
 
-        [Description("")]
-        string ToString(string format = null);
+        [Description("Converts the value of the current DateTime object to its equivalent string representation using the specified format and the formatting conventions of the current culture.")]
+        string ToString2(string format);
+
+        [Description("Converts the value of the current DateTime object to its equivalent string representation using the specified culture-specific format information.")]
+        string ToString3(IFormatProvider provider);
+
+        [Description("Converts the value of the current DateTime object to its equivalent string representation using the specified format and culture-specific format information.")]
+        string ToString4(string format, IFormatProvider provider);
 
         [Description("")]
         DateTime ToUniversalTime();

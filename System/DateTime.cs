@@ -2,6 +2,7 @@
 using GSystem = global::System; // https://stackoverflow.com/questions/5681537/namespace-conflict-in-c-sharp
 using System.ComponentModel;
 using System;
+using Microsoft.SqlServer.Server;
 
 namespace DotNetLib.System
 {
@@ -618,6 +619,11 @@ namespace DotNetLib.System
             return this.dateTimeObject.ToShortTimeString();
         }
 
+        public override string ToString()
+        {
+            return this.dateTimeObject.ToString();
+        }
+
         /// <summary>
         /// Converts the value of the current DateTime object to its equivalent string representation using the specified format and the formatting conventions of the current culture.
         /// </summary>
@@ -633,10 +639,19 @@ namespace DotNetLib.System
         /// <exception cref="ArgumentOutOfRangeException"> 
         /// The date and time is outside the range of dates supported by the calendar used by the current culture.
         /// </exception>
-
-        public string ToString(string format = null)
+        public string ToString2(string format)
         {
             return this.dateTimeObject.ToString(format);
+        }
+
+        public string ToString3(IFormatProvider provider)
+        {
+            return this.dateTimeObject.ToString(provider);
+        }
+
+        public string ToString4(string format, IFormatProvider provider)
+        {
+            return this.dateTimeObject.ToString(format, provider);
         }
 
         /// <summary>
