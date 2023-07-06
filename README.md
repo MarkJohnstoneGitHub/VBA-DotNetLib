@@ -43,11 +43,12 @@ If the .NET Framework isn't installed see [Download .NET Framework](https://dotn
  For detailed explanation of class properties and properties see [netframework-4.8.1](https://learn.microsoft.com/en-us/dotnet/api/system?view=netframework-4.8.1)
  
  **Issues:**
-  - DateTime.ParseExact3 member
+  - DateTime.ParseExact3 member (fixed)
   - ```DateTime ParseExact3(string s, string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style);```
   - Appears to be an issue with parameter formats of type string array
   - Require to investigate how to correctly marshal arrays
    - See [PassingParameterArraysByReference](https://www.l3harrisgeospatial.com/docs/PassingParameterArraysByReference.html)
+   - [pass-an-array-from-vba-to-c-sharp-using-com-interop](https://stackoverflow.com/questions/2027758/pass-an-array-from-vba-to-c-sharp-using-com-interop)
  
  Currently List COM object wont allow to be created getting invalid use of New Keyword.  This will removed and replaced with it's non-generic equivalent.
  
