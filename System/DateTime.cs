@@ -537,7 +537,7 @@ namespace DotNetLib.System
             return new DateTime(GSystem.DateTime.ParseExact(s, format, provider, style));
         }
 
-        public DateTime ParseExact3(string s, string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style)
+        public DateTime ParseExact3(string s, [In] ref string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style)
         {
             return new DateTime(GSystem.DateTime.ParseExact(s, formats, provider, style));
         }

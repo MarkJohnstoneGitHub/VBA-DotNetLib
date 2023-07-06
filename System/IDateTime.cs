@@ -1,6 +1,11 @@
 ﻿// https://www.thevbahelp.com/post/calling-c-sharp-code-from-vba-com-interop
 // https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8.1
 
+// Notes
+// To fix member Parse3 passing arrays
+// https://stackoverflow.com/questions/2027758/pass-an-array-from-vba-to-c-sharp-using-com-interop
+// https://stackoverflow.com/a/2027776/10759363
+
 using GSystem = global::System;
 using System;
 using System.ComponentModel;
@@ -234,7 +239,7 @@ namespace DotNetLib.System
         DateTime ParseExact2(string s, string format, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style);
 
         [Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified array of formats, culture-specific format information, and style. The format of the string representation must match at least one of the specified formats exactly or an exception is thrown.")]
-        DateTime ParseExact3(string s, string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style);
+        DateTime ParseExact3(string s, [In] ref string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style);
 
         [Description("Creates a new DateTime object that has the same number of ticks as the specified DateTime, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified DateTimeKind value.")]
         DateTime SpecifyKind(DateTime value, DateTimeKind kind);
