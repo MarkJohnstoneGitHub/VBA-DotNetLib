@@ -18,7 +18,7 @@
   
   Currently for type library info can obtain all object details expect for class and method description attributes.
   
-  Use either Type Library info or C# reflection.  See: [Refactor-COM-object-to-VBA-COM-wrapper-class](https://github.com/MarkJohnstoneGitHub/Refactor-COM-object-to-VBA-COM-wrapper-class)
+  Use either Type Library info.  See: [Refactor-COM-object-to-VBA-COM-wrapper-class](https://github.com/MarkJohnstoneGitHub/Refactor-COM-object-to-VBA-COM-wrapper-class)
   
 
   
@@ -43,6 +43,9 @@ If the .NET Framework isn't installed see [Download .NET Framework](https://dotn
  For detailed explanation of class properties and properties see [netframework-4.8.1](https://learn.microsoft.com/en-us/dotnet/api/system?view=netframework-4.8.1)
  
  **Issues:**
+  - DateTime.ParseExact3 member
+  - ```DateTime ParseExact3(string s, string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style);```
+  - Appears to be an issue with parameter formats
  
  Currently List COM object wont allow to be created getting invalid use of New Keyword.  This will removed and replaced with it's non-generic equivalent.
  
