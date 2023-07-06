@@ -246,7 +246,7 @@ namespace DotNetLib.System
         // Methods
 
         public DateTime Add(TimeSpan value)
-        { 
+        {
             return new DateTime(this.dateTimeObject.Add(value.TimeSpanObject));
         }
 
@@ -523,18 +523,18 @@ namespace DotNetLib.System
 
         public DateTime Parse3(string s, IFormatProvider provider, GSystem.Globalization.DateTimeStyles styles)
         {
-            return new DateTime(GSystem.DateTime.Parse(s, provider,styles));
+            return new DateTime(GSystem.DateTime.Parse(s, provider, styles));
         }
 
         public DateTime ParseExact(string s, string format, IFormatProvider provider)
         {
-            return new DateTime(GSystem.DateTime.ParseExact(s,format, provider));
+            return new DateTime(GSystem.DateTime.ParseExact(s, format, provider));
 
         }
 
         public DateTime ParseExact2(string s, string format, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style)
         {
-            return new DateTime(GSystem.DateTime.ParseExact(s, format, provider,style));
+            return new DateTime(GSystem.DateTime.ParseExact(s, format, provider, style));
         }
 
         public DateTime ParseExact3(string s, string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style)
@@ -551,7 +551,6 @@ namespace DotNetLib.System
         public DateTime SpecifyKind(DateTime value, DateTimeKind kind)
         {
             return new DateTime(GSystem.DateTime.SpecifyKind(value.dateTimeObject, (GSystem.DateTimeKind)kind));
-
         }
 
         public DateTime Subtract(TimeSpan value)
@@ -565,12 +564,12 @@ namespace DotNetLib.System
         }
 
         public long ToBinary()
-        { 
+        {
             return this.dateTimeObject.ToBinary();
         }
 
         public long ToFileTime()
-        { 
+        {
             return this.dateTimeObject.ToFileTime();
         }
 
@@ -660,14 +659,21 @@ namespace DotNetLib.System
         /// <returns> An object whose Kind property is Utc, and whose value is the UTC equivalent to the value of the current DateTime object, or DateTime.MaxValue if the converted value is too large to be represented by a DateTime object, or DateTime.MinValue if the converted value is too small to be represented by a DateTime object.</returns>
         public DateTime ToUniversalTime()
         {
-            return new DateTime(this.dateTimeObject.ToUniversalTime()); 
+            return new DateTime(this.dateTimeObject.ToUniversalTime());
         }
 
         public bool TryParse(string s, out DateTime result)
         {
-            bool pvtTryParse = GSystem.DateTime.TryParse(s, out GSystem.DateTime outResult);
+            bool tryParse = GSystem.DateTime.TryParse(s, out GSystem.DateTime outResult);
             result = new DateTime(outResult);
-            return pvtTryParse;
+            return tryParse;
+        }
+
+        public bool TryParse2(string s, IFormatProvider provider, GSystem.Globalization.DateTimeStyles styles, out DateTime result)
+        {
+            bool tryParse = GSystem.DateTime.TryParse(s, provider, styles, out GSystem.DateTime outResult);
+            result = new DateTime(outResult);
+            return tryParse;
         }
 
         //Operators

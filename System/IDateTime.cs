@@ -285,38 +285,42 @@ namespace DotNetLib.System
         [Description("Converts the value of the current DateTime object to its equivalent string representation using the specified format and culture-specific format information.")]
         string ToString4(string format, IFormatProvider provider);
 
-        [Description("")]
+        [Description("Converts the value of the current DateTime object to Coordinated Universal Time (UTC).")]
         DateTime ToUniversalTime();
 
-        [Description("")]
+        [Description("Converts the specified string representation of a date and time to its DateTime equivalent and returns a value that indicates whether the conversion succeeded.")]
         bool TryParse(string s, out DateTime result);
 
+        [Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified culture-specific format information and formatting style, and returns a value that indicates whether the conversion succeeded.")]
+        bool TryParse2(string s, IFormatProvider provider, GSystem.Globalization.DateTimeStyles styles, out DateTime result);
+
+
         //Operators
-        [Description("")]
+        [Description("Adds a specified time interval to a specified date and time, yielding a new date and time.")]
         DateTime Addition(DateTime d, TimeSpan t);
 
-        [Description("")]
+        [Description("Determines whether two specified instances of DateTime are equal.")]
         bool Equality(DateTime d1, DateTime d2);
 
-        [Description("")]
+        [Description("Determines whether one specified DateTime is later than another specified DateTime.")]
         bool GreaterThan(DateTime t1, DateTime t2);
 
-        [Description("")]
+        [Description("Determines whether one specified DateTime represents a date and time that is the same as or later than another specified DateTime.")]
         bool GreaterThanOrEqual(DateTime t1, DateTime t2);
 
-        [Description("")]
+        [Description("Determines whether two specified instances of DateTime are not equal.")]
         bool Inequality(DateTime t1, DateTime t2);
 
-        [Description("")]
+        [Description("Determines whether one specified DateTime is earlier than another specified DateTime.")]
         bool LessThan(DateTime t1, DateTime t2);
 
-        [Description("")]
+        [Description("Determines whether one specified DateTime represents a date and time that is the same as or earlier than another specified DateTime.")]
         bool LessThanOrEqual(DateTime t1, DateTime t2);
 
-        [Description("")]
+        [Description("Subtracts a specified date and time from another specified date and time and returns a time interval.")]
         TimeSpan Subtraction(DateTime d1, DateTime d2);
 
-        [Description("")]
+        [Description("Subtracts a specified time interval from a specified date and time and returns a new date and time.")]
         DateTime Subtraction2(DateTime d, TimeSpan t);
 
     }
