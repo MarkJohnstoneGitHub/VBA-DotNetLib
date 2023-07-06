@@ -45,7 +45,9 @@ If the .NET Framework isn't installed see [Download .NET Framework](https://dotn
  **Issues:**
   - DateTime.ParseExact3 member
   - ```DateTime ParseExact3(string s, string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style);```
-  - Appears to be an issue with parameter formats
+  - Appears to be an issue with parameter formats of type string array
+  - Require to investigate how to correctly marshal arrays
+   - See [PassingParameterArraysByReference](https://www.l3harrisgeospatial.com/docs/PassingParameterArraysByReference.html)
  
  Currently List COM object wont allow to be created getting invalid use of New Keyword.  This will removed and replaced with it's non-generic equivalent.
  
