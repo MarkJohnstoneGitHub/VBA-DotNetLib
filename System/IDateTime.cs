@@ -29,8 +29,11 @@ namespace DotNetLib.System
         [Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and millisecond.")]
         System.DateTime CreateFromDateTime(int year, int month, int day, int hour, int minute, int second, int millisecond = 0);
 
+        [Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and Coordinated Universal Time (UTC) or local time.")]
+        System.DateTime CreateFromDateTimeKind(int year, int month, int day, int hour, int minute, int second, DateTimeKind kind);
+
         [Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time.")]
-        System.DateTime CreateFromDateTimeKind(int year, int month, int day, int hour, int minute, int second, int millisecond, DateTimeKind kind);
+        System.DateTime CreateFromDateTimeKind2(int year, int month, int day, int hour, int minute, int second, int millisecond, DateTimeKind kind);
 
         //Fields
         DateTime MaxValue 

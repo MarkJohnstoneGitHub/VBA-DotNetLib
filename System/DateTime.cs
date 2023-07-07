@@ -59,6 +59,10 @@ namespace DotNetLib.System
             this.dateTimeObject = new GSystem.DateTime(year, month, day, hour, minute, second, millisecond);
         }
 
+        public DateTime(int year, int month, int day, int hour, int minute, int second, DateTimeKind kind)
+        {
+            this.dateTimeObject = new GSystem.DateTime(year, month, day, hour, minute, second, (GSystem.DateTimeKind)kind);
+        }
         public DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond, DateTimeKind kind)
         {
             this.dateTimeObject = new GSystem.DateTime(year, month, day, hour, minute, second, millisecond, (GSystem.DateTimeKind)kind);
@@ -129,7 +133,12 @@ namespace DotNetLib.System
             return new System.DateTime(year, month, day, hour, minute, second, millisecond);
         }
 
-        public System.DateTime CreateFromDateTimeKind(int year, int month, int day, int hour, int minute, int second, int millisecond, DateTimeKind kind)
+        public System.DateTime CreateFromDateTimeKind(int year, int month, int day, int hour, int minute, int second, DateTimeKind kind)
+        {
+            return new System.DateTime(year, month, day, hour, minute, second, kind);
+        }
+
+        public System.DateTime CreateFromDateTimeKind2(int year, int month, int day, int hour, int minute, int second, int millisecond, DateTimeKind kind)
         {
             return new System.DateTime(year, month, day, hour, minute, second, millisecond, kind);
         }
