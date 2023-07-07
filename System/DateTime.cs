@@ -395,7 +395,7 @@ namespace DotNetLib.System
         /// <returns>true if the value parameter equals the value of this instance; otherwise, false.</returns>
         public bool Equals(DateTime value)
         {
-            return this.dateTimeObject.Equals(value);
+            return this.dateTimeObject.Equals(value.DateTimeObject);
         }
 
         /// <summary>
