@@ -29,64 +29,123 @@ namespace DotNetLib.System
 
         // Fields
 
-        [Description("Represents the maximum TimeSpan value. This field is read-only.")]
-        TimeSpan MaxValue { get; }
+        TimeSpan MaxValue 
+        {
+            [Description("Represents the maximum TimeSpan value. This field is read-only.")]
+            get; 
+        }
 
-        [Description("Represents the minimum TimeSpan value. This field is read-only.")]
-        TimeSpan MinValue { get; }
+        TimeSpan MinValue
+        {
+            [Description("Represents the minimum TimeSpan value. This field is read-only.")]
+            get; 
+        }
 
-        [Description("Represents the number of ticks in 1 day. This field is constant.")]
-        long TicksPerDay { get; }
+        long TicksPerDay 
+        {
+            [Description("Represents the number of ticks in 1 day. This field is constant.")]
+            get; 
+        }
 
-        [Description("Represents the number of ticks in 1 hour. This field is constant.")]
-        long TicksPerHour { get; }
+        long TicksPerHour
+        {
+            [Description("Represents the number of ticks in 1 hour. This field is constant.")]
+            get; 
+        }
 
-        [Description("Represents the number of ticks in 1 millisecond. This field is constant.")]
-        long TicksPerMillisecond { get; }
+        long TicksPerMillisecond 
+        {
+            [Description("Represents the number of ticks in 1 millisecond. This field is constant.")]
+            get;
+        }
 
-        [Description("Represents the number of ticks in 1 minute. This field is constant.")]
-        long TicksPerMinute { get; }
+        long TicksPerMinute
+        {
+            [Description("Represents the number of ticks in 1 minute. This field is constant.")]
+            get;
+        }
 
-        [Description("Represents the number of ticks in 1 second.")]
-        long TicksPerSecond { get; }
+        long TicksPerSecond 
+        {
+            [Description("Represents the number of ticks in 1 second.")]
+            get;
+        }
 
-        [Description("Represents the zero TimeSpan value. This field is read-only.")]
-        TimeSpan Zero { get; }
+        TimeSpan Zero
+        {
+            [Description("Represents the zero TimeSpan value. This field is read-only.")]
+            get;
+        }
 
         // Properties
 
-        [Description("Gets the days component of the time interval represented by the current TimeSpan structure.")]
-        int Days { get; }
+        int Days
+        {
+            [Description("Gets the days component of the time interval represented by the current TimeSpan structure.")]
+            get;
+        }
 
-        [Description("Gets the hours component of the time interval represented by the current TimeSpan structure.")]
-        int Hours { get; }
+        int Hours 
+        {
+            [Description("Gets the hours component of the time interval represented by the current TimeSpan structure.")]
+            get;
+        }
 
-        [Description("Gets the milliseconds component of the time interval represented by the current TimeSpan structure.")]
-        int Milliseconds { get; }
+        int Milliseconds 
+        {
+            [Description("Gets the milliseconds component of the time interval represented by the current TimeSpan structure.")]
+            get;
+        }
 
-        [Description("Gets the minutes component of the time interval represented by the current TimeSpan structure.")]
-        int Minutes { get; }
+        int Minutes 
+        {
+            [Description("Gets the minutes component of the time interval represented by the current TimeSpan structure.")]
+            get;
+        }
 
-        [Description("Gets the seconds component of the time interval represented by the current TimeSpan structure.")]
-        int Seconds { get; }
+        int Seconds 
+        {
+            [Description("Gets the seconds component of the time interval represented by the current TimeSpan structure.")]
+            get;
+        }
 
-        [Description("Gets the number of ticks that represent the value of the current TimeSpan structure.")]
-        long Ticks { get; }
+        long Ticks 
+        {
+            [Description("Gets the number of ticks that represent the value of the current TimeSpan structure.")]
+            get;
+        }
 
-        [Description("Gets the value of the current TimeSpan structure expressed in whole and fractional days.")]
-        double TotalDays { get; }
+        double TotalDays 
+        {
+            [Description("Gets the value of the current TimeSpan structure expressed in whole and fractional days.")]
+            get;
+        }
 
-        [Description("Gets the value of the current TimeSpan structure expressed in whole and fractional hours.")]
-        double TotalHours { get; }
+        double TotalHours 
+        {
+            [Description("Gets the value of the current TimeSpan structure expressed in whole and fractional hours.")]
+            get;
+        }
 
-        [Description("Gets the value of the current TimeSpan structure expressed in whole and fractional milliseconds.")]
-        double TotalMilliseconds { get; }
+        double TotalMilliseconds 
+        {
+            [Description("Gets the value of the current TimeSpan structure expressed in whole and fractional milliseconds.")]
+            get;
+        }
 
-        [Description("Gets the value of the current TimeSpan structure expressed in whole and fractional minutes.")]
-        double TotalMinutes { get; }
+        double TotalMinutes 
+        {
+            [Description("Gets the value of the current TimeSpan structure expressed in whole and fractional minutes.")]
+            get;
+        }
 
-        [Description("Gets the value of the current TimeSpan structure expressed in whole and fractional seconds.")]
-        double TotalSeconds { get; }
+        double TotalSeconds 
+        {
+            [Description("Gets the value of the current TimeSpan structure expressed in whole and fractional seconds.")]
+            get;
+        }
+
+        // Methods
 
         [Description("Returns a new TimeSpan object whose value is the sum of the specified TimeSpan object and this instance.")]
         TimeSpan Add(TimeSpan ts);
