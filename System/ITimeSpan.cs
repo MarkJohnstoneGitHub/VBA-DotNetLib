@@ -146,13 +146,13 @@ namespace DotNetLib.System
         TimeSpan ParseExact(string input, string format, IFormatProvider formatProvider);
 
         [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified array of format strings and culture-specific format information. The format of the string representation must match one of the specified formats exactly.")]
-        TimeSpan ParseExact2(string input, string[] formats, IFormatProvider formatProvider);
+        TimeSpan ParseExact2(string input, [In] ref string[] formats, IFormatProvider formatProvider);
 
         [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information, and styles. The format of the string representation must match the specified format exactly.")]
         TimeSpan ParseExact3(string input, string format, GSystem.IFormatProvider formatProvider, TimeSpanStyles styles);
 
         [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information, and styles. The format of the string representation must match one of the specified formats exactly")]
-        TimeSpan ParseExact4(string input, string[] formats, GSystem.IFormatProvider formatProvider, TimeSpanStyles styles);
+        TimeSpan ParseExact4(string input, [In] ref string[] formats, GSystem.IFormatProvider formatProvider, TimeSpanStyles styles);
 
         [Description("Returns a new TimeSpan object whose value is the difference between the specified TimeSpan object and this instance.")]
         TimeSpan Subtract(TimeSpan ts);
@@ -176,13 +176,13 @@ namespace DotNetLib.System
         bool TryParseExact(string input, string format, GSystem.IFormatProvider formatProvider, out TimeSpan result);
 
         [Description("Converts the specified string representation of a time interval to its TimeSpan equivalent by using the specified formats and culture-specific format information. The format of the string representation must match one of the specified formats exactly.")]
-        bool TryParseExact2(string input, string[] formats, GSystem.IFormatProvider formatProvider, out TimeSpan result);
+        bool TryParseExact2(string input, [In] ref string[] formats, GSystem.IFormatProvider formatProvider, out TimeSpan result);
 
         [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information and styles. The format of the string representation must match the specified format exactly.")]
         bool TryParseExact3(string input, string format, GSystem.IFormatProvider formatProvider, TimeSpanStyles styles, out TimeSpan result);
 
         [Description("Converts the specified string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information and styles. The format of the string representation must match one of the specified formats exactly.")]
-        bool TryParseExact4(string input, string[] formats, IFormatProvider formatProvider, TimeSpanStyles styles, out TimeSpan result);
+        bool TryParseExact4(string input, [In] ref string[] formats, IFormatProvider formatProvider, TimeSpanStyles styles, out TimeSpan result);
 
         // Operators
 

@@ -1,4 +1,4 @@
-Attribute VB_Name = "DateTimePropertyHourExample"
+Attribute VB_Name = "DateTimeHourExample"
 '@Folder("Examples.DateTime")
 
 'https://learn.microsoft.com/en-us/dotnet/api/system.datetime.hour?view=netframework-4.8.1#examples

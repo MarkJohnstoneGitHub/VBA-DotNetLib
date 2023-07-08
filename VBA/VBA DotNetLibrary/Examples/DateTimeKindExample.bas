@@ -1,4 +1,4 @@
-Attribute VB_Name = "DateTimePropertyKindExample"
+Attribute VB_Name = "DateTimeKindExample"
 '@Folder("Examples.DateTime")
 
 ' https://learn.microsoft.com/en-us/dotnet/api/system.datetime.kind?view=netframework-4.8.1#examples
@@ -63,7 +63,7 @@ Public Sub DateTimePropertyKind()
     
 End Sub
 
-Public Sub Display(title As String, inputDt As DateTime)
+Public Sub Display(ByVal title As String, ByVal inputDt As DateTime)
     Dim dispDt As DateTime
     Set dispDt = inputDt
     Dim dtString As String
@@ -96,7 +96,7 @@ Public Sub Display(title As String, inputDt As DateTime)
     Debug.Print
 End Sub
 
-Public Sub DisplayNow(title As String, inputDt As DateTime)
+Public Sub DisplayNow(ByVal title As String, ByVal inputDt As DateTime)
     Dim dtString As String
     dtString = inputDt.ToString2(datePatt)
     Debug.Print title & " " & dtString & ", Kind = " & DateTimeKindHelper.ToString(inputDt.kind)

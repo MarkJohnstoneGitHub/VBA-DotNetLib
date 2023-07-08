@@ -1,4 +1,4 @@
-Attribute VB_Name = "DateTimePropertyDayOfWeekExample"
+Attribute VB_Name = "DateTimeDayOfWeekExample"
 '@Folder("Examples.DateTime")
 Option Explicit
 
