@@ -291,7 +291,7 @@ namespace DotNetLib.System
             return new DateTimeOffset(GSystem.DateTimeOffset.ParseExact(input, format, formatProvider, styles));
         }
 
-        public DateTimeOffset ParseExact3(string input, string[] formats, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles)
+        public DateTimeOffset ParseExact3(string input, [In] ref string[] formats, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles)
         {
             return new DateTimeOffset(GSystem.DateTimeOffset.ParseExact(input, formats, formatProvider, styles));
         }
@@ -379,7 +379,7 @@ namespace DotNetLib.System
             return pvtTryParseExact;
         }
 
-        public bool TryParseExact2(string input, string[] formats, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles, out DateTimeOffset result)
+        public bool TryParseExact2(string input, [In] ref string[] formats, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles, out DateTimeOffset result)
         {
             bool pvtTryParseExact = GSystem.DateTimeOffset.TryParseExact(input, formats, formatProvider, styles, out GSystem.DateTimeOffset outResult);
             result = new DateTimeOffset(outResult);
