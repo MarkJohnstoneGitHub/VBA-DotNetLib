@@ -20,13 +20,11 @@
   
   Use either Type Library info.  See: [Refactor-COM-object-to-VBA-COM-wrapper-class](https://github.com/MarkJohnstoneGitHub/Refactor-COM-object-to-VBA-COM-wrapper-class)
   
-
-  
  **Dependencies:**
    
-[DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/DotNetLib/blob/main/bin/Release/DotNetLib.tlb)
+ - [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/DotNetLib/blob/main/bin/Release/DotNetLib.tlb)
    
-mscorlib.tlb type library eg Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.tlb
+ - mscorlib.tlb type library eg Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.tlb
 
 If the .NET Framework isn't installed see [Download .NET Framework](https://dotnet.microsoft.com/en-us/download/dotnet-framework)
 
@@ -38,14 +36,14 @@ If the .NET Framework isn't installed see [Download .NET Framework](https://dotn
  Add reference DotNetlib.tlb (Com Interlop wrappers of the .Net Framework 4.8.1)  
  Add reference mscorlib.tlb
  
- The type libraries added can be viewed under View->Object Browser and select DotNetLib 
+The type libraries added can be viewed under View->Object Browser and select DotNetLib 
  
- For detailed explanation of class properties and properties see [netframework-4.8.1](https://learn.microsoft.com/en-us/dotnet/api/system?view=netframework-4.8.1)
+For detailed explanation of class properties and properties see [netframework-4.8.1](https://learn.microsoft.com/en-us/dotnet/api/system?view=netframework-4.8.1)
+
+Ms Access database [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/DotNetLib/blob/main/VBA/VBA%20DotNetLibrary/DotNetLibrary.accdb) wrapper VBA classes for the DotNetLib.tlb.
  
  **Issues:**
   - DateTime.ParseExact3 member (fixed)
-  - ```DateTime ParseExact3(string s, string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style);```
-  - Appears to be an issue with parameter formats of type string array
   - Require to investigate how to correctly marshal arrays
    - See [PassingParameterArraysByReference](https://www.l3harrisgeospatial.com/docs/PassingParameterArraysByReference.html)
    - [pass-an-array-from-vba-to-c-sharp-using-com-interop](https://stackoverflow.com/questions/2027758/pass-an-array-from-vba-to-c-sharp-using-com-interop)
@@ -60,7 +58,8 @@ If the .NET Framework isn't installed see [Download .NET Framework](https://dotn
  
  **Testing**
  
- Only adhoc testing performed on DateTime and ListString object and appears to create the object and various methods are functional.
+ - Only adhoc testing performed on DateTime and ListString object and appears to create the object and various methods are functional.
+ - MS-Access database [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/DotNetLib/blob/main/VBA/VBA%20DotNetLibrary/DotNetLibrary.accdb) containing DateTime examples tested.
  
  **Development Notes**
   
