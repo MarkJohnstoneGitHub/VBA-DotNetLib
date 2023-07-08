@@ -24,7 +24,7 @@
    
  - [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/DotNetLib/blob/main/bin/Release/DotNetLib.tlb)
    
-mscorlib.tlb type library eg Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.tlb
+ - mscorlib.tlb type library eg Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.tlb
 
 If the .NET Framework isn't installed see [Download .NET Framework](https://dotnet.microsoft.com/en-us/download/dotnet-framework)
 
