@@ -12,6 +12,8 @@ Attribute VB_Exposed = False
 '@Folder("DotNet.System")
 '@PredeclaredId
 
+'@Dependencies DotNetLib.tlb
+
 'Notes:
 ' https://www.codevba.com/help/enum_builder.htm
 ' https://stackoverflow.com/questions/41578348/is-there-a-way-to-get-the-enums-in-vba
@@ -25,9 +27,9 @@ Option Explicit
 '@DefaultMember
 '@Description("Converts the value of a DateTimeKind to string value.")
 Public Property Get ToString(ByVal value As DotNetLib.DateTimeKind) As String
-    Select Case value
-        Case DateTimeKind_Local: ToString = "Local"
-        Case DateTimeKind_Utc: ToString = "UTC"
-        Case DateTimeKind_Unspecified: ToString = "Unspecified"
-    End Select
+   Select Case value
+      Case DateTimeKind_Local: ToString = "Local"
+      Case DateTimeKind_Utc: ToString = "UTC"
+      Case DateTimeKind_Unspecified: ToString = "Unspecified"
+   End Select
 End Property

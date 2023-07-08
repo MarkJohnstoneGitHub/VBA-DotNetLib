@@ -20,17 +20,25 @@ End Type
 Private this As TDateTimeStatic
 
 Private Sub Class_Initialize()
-    Set this.MaxValue = New DateTime
-    Set this.MaxValue.ComObject = DateTime.ComObject.MaxValue
+    With New DateTime
+        Set .DateTimeComObject = DateTime.DateTimeComObject.MaxValue
+        Set this.MaxValue = .Self
+    End With
     
-    Set this.MinValue = New DateTime
-    Set this.MinValue.ComObject = DateTime.ComObject.MinValue
+    With New DateTime
+        Set .DateTimeComObject = DateTime.DateTimeComObject.MinValue
+        Set this.MinValue = .Self
+    End With
 End Sub
 
+'@StaticField
+'@Description("Represents the largest possible value of DateTime. This field is read-only.")
 Public Property Get MaxValue() As DateTime
     Set MaxValue = this.MaxValue
 End Property
 
+'@StaticField
+'@Description("Represents the smallest possible value of DateTime. This field is read-only.")
 Public Property Get MinValue() As DateTime
     Set MinValue = this.MinValue
 End Property

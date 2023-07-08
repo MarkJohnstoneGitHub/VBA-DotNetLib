@@ -7,16 +7,16 @@ Option Explicit
 
 '@Description("The following example demonstrates the Add method. It calculates the day of the week that is 36 days (864 hours) from this moment.")
 Public Sub DateTimeAdd()
-    Dim today As DateTime
-    Set today = DateTime.Now
+    Dim Today As DateTime
+    Set Today = DateTime.Now
     
-    Dim duration As DotNetLib.TimeSpan
-    With New DotNetLib.TimeSpan
-        Set duration = .Create2(36, 0, 0, 0)
+    Dim Duration As TimeSpan
+    With New TimeSpan
+        Set Duration = .Create2(36, 0, 0, 0)
     End With
     
     Dim answer As DateTime
-    Set answer = today.Add(duration)
+    Set answer = Today.Add(Duration)
     Debug.Print answer.ToString()
 End Sub
 
