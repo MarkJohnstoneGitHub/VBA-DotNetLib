@@ -20,8 +20,6 @@
   
   Use either Type Library info.  See: [Refactor-COM-object-to-VBA-COM-wrapper-class](https://github.com/MarkJohnstoneGitHub/Refactor-COM-object-to-VBA-COM-wrapper-class)
   
-
-  
  **Dependencies:**
    
 [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/DotNetLib/blob/main/bin/Release/DotNetLib.tlb)
@@ -61,7 +59,7 @@ Ms Access database [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/
  **Testing**
  
  - Only adhoc testing performed on DateTime and ListString object and appears to create the object and various methods are functional.
- - Ms Access database [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/DotNetLib/blob/main/VBA/VBA%20DotNetLibrary/DotNetLibrary.accdb) containing examples tested.
+ - MS-Access database [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/DotNetLib/blob/main/VBA/VBA%20DotNetLibrary/DotNetLibrary.accdb) containing DateTime examples tested.
  
  **Development Notes**
   
