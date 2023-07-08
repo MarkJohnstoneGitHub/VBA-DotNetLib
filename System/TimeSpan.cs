@@ -162,7 +162,7 @@ namespace DotNetLib.System
 
         public bool Equals(TimeSpan obj)
         { 
-            return this.timeSpanObject.Equals(obj); 
+            return this.timeSpanObject.Equals(obj.TimeSpanObject); 
         }
 
         // TODO : Check Implementation
