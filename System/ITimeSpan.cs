@@ -10,6 +10,7 @@ namespace DotNetLib.System
 
     [ComVisible(true)]
     [Guid("C2F50F87-A7D4-4C32-A01B-EC750CE1B955")]
+    [Description("Represents a time interval.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface ITimeSpan
     {
