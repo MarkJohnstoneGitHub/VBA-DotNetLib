@@ -11,8 +11,6 @@ namespace DotNetLib.System
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface ITimeZoneInfo
     {
-        //Description("")]
-
         // Properties
 
         [Description("Gets the time difference between the current time zone's standard time and Coordinated Universal Time (UTC).")]
@@ -62,7 +60,6 @@ namespace DotNetLib.System
         [Description("Converts a time from one time zone to another based on time zone identifiers.")]
         DateTime ConvertTimeBySystemTimeZoneId3(DateTime dateTime, string sourceTimeZoneId, string destinationTimeZoneId);
 
-
         [Description("Converts a Coordinated Universal Time (UTC) to the time in a specified time zone.")]
         DateTime ConvertTimeFromUtc(DateTime dateTime, TimeZoneInfo destinationTimeZone);
 
@@ -95,7 +92,7 @@ namespace DotNetLib.System
         TimeZoneInfo FromSerializedString(string source);
 
         //[Description("Retrieves an array of TimeZoneInfo.AdjustmentRule objects that apply to the current TimeZoneInfo object.")]
-        //TimeZoneInfo.AdjustmentRule[] GetAdjustmentRules();
+        //TODO: TimeZoneInfo.AdjustmentRule[] GetAdjustmentRules();
 
         [Description("Returns information about the possible dates and times that an ambiguous date and time can be mapped to.")]
         TimeSpan[] GetAmbiguousTimeOffsets(DateTime dateTime);
@@ -135,7 +132,6 @@ namespace DotNetLib.System
 
         [Description("Converts the current TimeZoneInfo object to a serialized string.")]
         string ToSerializedString();
-        
         string ToString();
 
     }
