@@ -7,9 +7,13 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Attribute VB_Ext_KEY = "Rubberduck" ,"Predeclared Class Module"
-'@Folder("DotNet.System")
+'Rubberduck annotations
+'@Folder "VBADotNetLib.System"
 '@PredeclaredId
+
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 09, 2023
+'@LastModified July 09, 2023
 
 Option Explicit
 
@@ -27,35 +31,35 @@ Private this As TTimeSpanStatic
 
 Private Sub Class_Initialize()
    With New TimeSpan
-      Set .TimeSpanComObject = TimeSpan.TimeSpanComObject.MaxValue
+      Set .ComObject = TimeSpan.ComObject.MaxValue
       Set this.MaxValue = .Self
    End With
     
    With New TimeSpan
-      Set .TimeSpanComObject = TimeSpan.TimeSpanComObject.MinValue
+      Set .ComObject = TimeSpan.ComObject.MinValue
       Set this.MinValue = .Self
    End With
     
-   this.TicksPerDay = TimeSpan.TimeSpanComObject.TicksPerDay()
-   this.TicksPerHour = TimeSpan.TimeSpanComObject.TicksPerHour()
-   this.TicksPerMillisecond = TimeSpan.TimeSpanComObject.TicksPerMillisecond()
-   this.TicksPerMinute = TimeSpan.TimeSpanComObject.TicksPerMinute()
+   this.TicksPerDay = TimeSpan.ComObject.TicksPerDay()
+   this.TicksPerHour = TimeSpan.ComObject.TicksPerHour()
+   this.TicksPerMillisecond = TimeSpan.ComObject.TicksPerMillisecond()
+   this.TicksPerMinute = TimeSpan.ComObject.TicksPerMinute()
     
    With New TimeSpan
-      Set .TimeSpanComObject = TimeSpan.TimeSpanComObject.Zero
+      Set .ComObject = TimeSpan.ComObject.Zero
       Set this.Zero = .Self
    End With
 End Sub
 
 '@StaticField
 '@Description("Represents the maximum TimeSpan value. This field is read-only.")
-Public Property Get MaxValue() As DateTime
+Public Property Get MaxValue() As TimeSpan
    Set MaxValue = this.MaxValue
 End Property
 
 '@StaticField
 '@Description("Represents the minimum TimeSpan value. This field is read-only.")
-Public Property Get MinValue() As DateTime
+Public Property Get MinValue() As TimeSpan
    Set MinValue = this.MinValue
 End Property
 

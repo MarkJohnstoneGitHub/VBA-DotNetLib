@@ -1,7 +1,12 @@
 Attribute VB_Name = "DateTimeTicksExample"
-'@Folder("Examples.DateTime")
+'Rubberduck annotations
+'@Folder "VBADotNetLib.Examples.DateTime.Properties"
 
-' https://learn.microsoft.com/en-us/dotnet/api/system.datetime.ticks?view=netframework-4.8.1#examples
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 09, 2023
+'@LastModified July 09, 2023
+
+'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.ticks?view=netframework-4.8.1#examples
 
 Option Explicit
 
@@ -28,7 +33,7 @@ Public Sub DateTimeTicks()
     Debug.Print "   " & elapsedTicks & " ticks"
     Debug.Print "   " & elapsedSpan.TotalSeconds & " seconds"
     Debug.Print "   " & elapsedSpan.TotalMinutes & " minutes"
-    Debug.Print "   " & elapsedSpan.days & " days, " & elapsedSpan.hours & " hours, " & elapsedSpan.minutes & " minutes, " & elapsedSpan.seconds & " seconds"
+    Debug.Print "   " & elapsedSpan.Days & " days, " & elapsedSpan.hours & " hours, " & elapsedSpan.Minutes & " minutes, " & elapsedSpan.Seconds & " seconds"
     
 ' This example displays an output similar to the following:
 '
@@ -39,5 +44,4 @@ Public Sub DateTimeTicks()
 '    9,924,141.64 minutes
 '    6,891 days, 18 hours, 21 minutes, 38 seconds
 End Sub
-
 

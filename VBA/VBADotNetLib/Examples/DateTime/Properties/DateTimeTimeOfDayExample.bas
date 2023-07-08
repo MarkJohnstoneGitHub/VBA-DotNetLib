@@ -1,6 +1,14 @@
 Attribute VB_Name = "DateTimeTimeOfDayExample"
-'@Folder("Examples.DateTime")
+'Rubberduck annotations
+'@Folder "VBADotNetLib.Examples.DateTime.Properties"
 
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 09, 2023
+'@LastModified July 09, 2023
+
+'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.timeofday?view=netframework-4.8.1#examples
+
+'@Notes
 ' https://learn.microsoft.com/en-us/dotnet/standard/base-types/standard-timespan-format-strings
 ' https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-timespan-format-strings
 

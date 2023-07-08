@@ -1,10 +1,17 @@
 Attribute VB_Name = "DateTimeConstructorExamples"
-'@Folder("Examples.DateTime")
+'Rubberduck annotations
+'@Folder "VBADotNetLib.Examples.DateTime"
+
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 09, 2023
+'@LastModified July 09, 2023
+
+'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.-ctor?view=netframework-4.8.1#system-datetime-ctor(system-int64)
+
 Option Explicit
 
 
 '@Description("This example demonstrates the DateTime(Int64) constructor.")
-'https://learn.microsoft.com/en-us/dotnet/api/system.datetime.-ctor?view=netframework-4.8.1#system-datetime-ctor(system-int64)
 Public Sub DateTimeCreateFromTicks()
     ' Instead of using the implicit, default "G" date and time format string, we
     ' use a custom format string that aligns the results and inserts leading zeroes.

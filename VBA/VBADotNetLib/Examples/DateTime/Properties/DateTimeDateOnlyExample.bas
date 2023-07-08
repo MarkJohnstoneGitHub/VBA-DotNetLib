@@ -1,8 +1,14 @@
 Attribute VB_Name = "DateTimeDateOnlyExample"
-'@Folder("Examples.DateTime")
-Option Explicit
+'Rubberduck annotations
+'@Folder "VBADotNetLib.Examples.DateTime.Properties"
 
-' https://learn.microsoft.com/en-us/dotnet/api/system.datetime.date?view=netframework-4.8.1#examples
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 09, 2023
+'@LastModified July 09, 2023
+
+'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.date?view=netframework-4.8.1#examples
+
+Option Explicit
 
 ' The following example uses the Date property to extract the date component of
 ' a DateTime value with its time component set to zero (or 0:00:00, or midnight).

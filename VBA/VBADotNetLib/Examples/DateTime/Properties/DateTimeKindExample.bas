@@ -1,11 +1,16 @@
 Attribute VB_Name = "DateTimeKindExample"
-'@Folder("Examples.DateTime")
+'Rubberduck annotations
+'@Folder "VBADotNetLib.Examples.DateTime.Properties"
 
-' https://learn.microsoft.com/en-us/dotnet/api/system.datetime.kind?view=netframework-4.8.1#examples
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 09, 2023
+'@LastModified July 09, 2023
+
+'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.kind?view=netframework-4.8.1#examples
 
 Option Explicit
 
-Const datePatt As String = "M/d/yyyy hh:mm:ss tt"
+Private Const datePatt As String = "M/d/yyyy hh:mm:ss tt"
 
 Public Sub DateTimePropertyKind()
     ' Get the date and time for the current moment, adjusted to the local time zone.
@@ -63,7 +68,7 @@ Public Sub DateTimePropertyKind()
     
 End Sub
 
-Public Sub Display(ByVal title As String, ByVal inputDt As DateTime)
+Private Sub Display(ByVal title As String, ByVal inputDt As DateTime)
     Dim dispDt As DateTime
     Set dispDt = inputDt
     Dim dtString As String
@@ -96,7 +101,7 @@ Public Sub Display(ByVal title As String, ByVal inputDt As DateTime)
     Debug.Print
 End Sub
 
-Public Sub DisplayNow(ByVal title As String, ByVal inputDt As DateTime)
+Private Sub DisplayNow(ByVal title As String, ByVal inputDt As DateTime)
     Dim dtString As String
     dtString = inputDt.ToString2(datePatt)
     Debug.Print title & " " & dtString & ", Kind = " & DateTimeKindHelper.ToString(inputDt.kind)

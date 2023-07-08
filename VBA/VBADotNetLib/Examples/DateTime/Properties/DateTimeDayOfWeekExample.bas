@@ -1,8 +1,15 @@
 Attribute VB_Name = "DateTimeDayOfWeekExample"
-'@Folder("Examples.DateTime")
+'Rubberduck annotations
+'@Folder "VBADotNetLib.Examples.DateTime.Properties"
+
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 09, 2023
+'@LastModified July 09, 2023
+
+'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.dayofweek?view=netframework-4.8.1#examples
+
 Option Explicit
 
-' https://learn.microsoft.com/en-us/dotnet/api/system.datetime.dayofweek?view=netframework-4.8.1#examples
 '@Description("The following example demonstrates the DayOfWeek property and the DayOfWeek enumeration."
 Public Sub DateTimeDayOfWeek()
     ' Assume the current culture is en-US.
@@ -18,5 +25,4 @@ Public Sub DateTimeDayOfWeek()
 'The day of the week for 5/1/2003 is Thursday.
 
 End Sub
-
 

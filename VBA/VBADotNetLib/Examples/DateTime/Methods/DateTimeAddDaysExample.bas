@@ -1,5 +1,12 @@
 Attribute VB_Name = "DateTimeAddDaysExample"
-'@Folder("Examples.DateTime.Methods")
+'Rubberduck annotations
+'@Folder "VBADotNetLib.Examples.DateTime.Methods"
+
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 09, 2023
+'@LastModified July 09, 2023
+
+'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.adddays?view=netframework-4.8.1#examples
 
 Option Explicit
 

@@ -7,8 +7,13 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-'@Folder("DotNet.System")
+'Rubberduck annotations
+'@Folder "VBADotNetLib.System"
 '@PredeclaredId
+
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 09, 2023
+'@LastModified July 09, 2023
 
 Option Explicit
 
@@ -21,12 +26,12 @@ Private this As TDateTimeStatic
 
 Private Sub Class_Initialize()
     With New DateTime
-        Set .DateTimeComObject = DateTime.DateTimeComObject.MaxValue
+        Set .ComObject = DateTime.ComObject.MaxValue
         Set this.MaxValue = .Self
     End With
     
     With New DateTime
-        Set .DateTimeComObject = DateTime.DateTimeComObject.MinValue
+        Set .ComObject = DateTime.ComObject.MinValue
         Set this.MinValue = .Self
     End With
 End Sub

@@ -1,7 +1,12 @@
 Attribute VB_Name = "DateTimeMillisecondExample"
-'@Folder("Examples.DateTime")
+'Rubberduck annotations
+'@Folder "VBADotNetLib.Examples.DateTime.Properties"
 
-' https://learn.microsoft.com/en-us/dotnet/api/system.datetime.millisecond?view=net-7.0#examples
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 09, 2023
+'@LastModified July 09, 2023
+
+'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.millisecond?view=net-7.0#examples
 
 Option Explicit
 

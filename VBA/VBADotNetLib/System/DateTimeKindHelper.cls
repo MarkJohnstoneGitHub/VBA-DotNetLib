@@ -7,10 +7,15 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+'Rubberduck annotations
 '@ModuleDescription("DateTimeKind helper class to convert a DateTimeKind to string value.")
 '@ModuleAttribute VB_Ext_KEY, "Rubberduck", "Predeclared Class Module"
-'@Folder("DotNet.System")
+'@Folder "VBADotNetLib.System"
 '@PredeclaredId
+
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 09, 2023
+'@LastModified July 09, 2023
 
 '@Dependencies DotNetLib.tlb
 

@@ -8,17 +8,22 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Represents an instant in time, typically expressed as a date and time of day."
-'@Folder("DotNet.System")
+'Rubberduck annotations
+'@Folder "VBADotNetLib.System"
 '@PredeclaredId
 '@ModuleDescription("Represents an instant in time, typically expressed as a date and time of day.")
 
-'https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8.1
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 09, 2023
+'@LastModified July 09, 2023
 
 '@Dependencies DotNetLib.tlb, mscorlib.tlb
 
-' Remarks
+'@Remarks
 ' Renamed DotNetLib.Date to DateOnly due to VBA reserved word
 ' Added DateTimeStatic helper class for static fields MaxValue and MinValue
+
+'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8.1
 
 Option Explicit
 
@@ -36,11 +41,11 @@ Private Sub Class_Terminate()
    Set this.DotNetLibDateTime = Nothing
 End Sub
 
-Friend Property Get DateTimeComObject() As DotNetLib.DateTime
-   Set DateTimeComObject = this.DotNetLibDateTime
+Friend Property Get ComObject() As DotNetLib.DateTime
+   Set ComObject = this.DotNetLibDateTime
 End Property
 
-Friend Property Set DateTimeComObject(ByVal objDateTime As DotNetLib.DateTime)
+Friend Property Set ComObject(ByVal objDateTime As DotNetLib.DateTime)
    Set this.DotNetLibDateTime = objDateTime
 End Property
 
@@ -51,7 +56,7 @@ End Property
 '@Description("Initializes a new instance of the DateTime structure to a specified number of ticks and to Coordinated Universal Time (UTC) or local time.")
 Public Function CreateFromTicks(ByVal Ticks As LongLong, Optional ByVal kind As DotNetLib.DateTimeKind = DateTimeKind_Unspecified) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.CreateFromTicks(Ticks, kind)
+      Set .ComObject = this.DotNetLibDateTime.CreateFromTicks(Ticks, kind)
       Set CreateFromTicks = .Self
    End With
 End Function
@@ -59,7 +64,7 @@ End Function
 '@Description("Initializes a new instance of the DateTime structure to the specified year, month, and day.")
 Public Function CreateFromDate(ByVal Year As Long, ByVal Month As Long, ByVal Day As Long) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.CreateFromDate(Year, Month, Day)
+      Set .ComObject = this.DotNetLibDateTime.CreateFromDate(Year, Month, Day)
       Set CreateFromDate = .Self
    End With
 End Function
@@ -67,7 +72,7 @@ End Function
 '@Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and millisecond.")
 Public Function CreateFromDateTime(ByVal Year As Long, ByVal Month As Long, ByVal Day As Long, ByVal Hour As Long, ByVal Minute As Long, ByVal Second As Long, Optional ByVal Millisecond As Long = 0) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.CreateFromDateTime(Year, Month, Day, Hour, Minute, Second, Millisecond)
+      Set .ComObject = this.DotNetLibDateTime.CreateFromDateTime(Year, Month, Day, Hour, Minute, Second, Millisecond)
       Set CreateFromDateTime = .Self
    End With
 End Function
@@ -75,7 +80,7 @@ End Function
 '@Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and Coordinated Universal Time (UTC) or local time.")
 Public Function CreateFromDateTimeKind(ByVal Year As Long, ByVal Month As Long, ByVal Day As Long, ByVal Hour As Long, ByVal Minute As Long, ByVal Second As Long, ByVal kind As DotNetLib.DateTimeKind) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.CreateFromDateTimeKind(Year, Month, Day, Hour, Minute, Second, kind)
+      Set .ComObject = this.DotNetLibDateTime.CreateFromDateTimeKind(Year, Month, Day, Hour, Minute, Second, kind)
       Set CreateFromDateTimeKind = .Self
    End With
 End Function
@@ -83,7 +88,7 @@ End Function
 '@Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time.")
 Public Function CreateFromDateTimeKind2(ByVal Year As Long, ByVal Month As Long, ByVal Day As Long, ByVal Hour As Long, ByVal Minute As Long, ByVal Second As Long, ByVal Millisecond As Long, ByVal kind As DotNetLib.DateTimeKind) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.CreateFromDateTimeKind2(Year, Month, Day, Hour, Minute, Second, Millisecond, kind)
+      Set .ComObject = this.DotNetLibDateTime.CreateFromDateTimeKind2(Year, Month, Day, Hour, Minute, Second, Millisecond, kind)
       Set CreateFromDateTimeKind2 = .Self
    End With
 End Function
@@ -103,7 +108,7 @@ End Property
 '@Description("Gets the date component of this instance.")
 Public Property Get DateOnly() As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.Date()
+      Set .ComObject = this.DotNetLibDateTime.Date()
       Set DateOnly = .Self
    End With
 End Property
@@ -151,7 +156,7 @@ End Property
 '@Description("Gets a DateTime object that is set to the current date and time on this computer, expressed as the local time.")
 Public Property Get Now() As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.Now()
+      Set .ComObject = this.DotNetLibDateTime.Now()
       Set Now = .Self
    End With
 End Property
@@ -169,7 +174,7 @@ End Property
 '@Description("Gets the time of day for this instance.")
 Public Property Get TimeOfDay() As TimeSpan
     With New TimeSpan
-        Set .TimeSpanComObject = this.DotNetLibDateTime.TimeOfDay()
+        Set .ComObject = this.DotNetLibDateTime.TimeOfDay()
         Set TimeOfDay = .Self
     End With
 End Property
@@ -177,7 +182,7 @@ End Property
 '@Description("Gets the current date.")
 Public Property Get Today() As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.Today()
+      Set .ComObject = this.DotNetLibDateTime.Today()
       Set Today = .Self
    End With
 End Property
@@ -185,7 +190,7 @@ End Property
 '@Description("Gets a DateTime object that is set to the current date and time on this computer, expressed as the Coordinated Universal Time (UTC).")
 Public Property Get UtcNow() As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.UtcNow()
+      Set .ComObject = this.DotNetLibDateTime.UtcNow()
       Set UtcNow = .Self
    End With
 End Property
@@ -198,7 +203,7 @@ End Property
 '@Description("Returns a new DateTime that adds the value of the specified TimeSpan to the value of this instance.")
 Public Function Add(ByRef value As TimeSpan) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.Add(value.TimeSpanComObject)
+      Set .ComObject = this.DotNetLibDateTime.Add(value.ComObject)
       Set Add = .Self
    End With
 End Function
@@ -206,7 +211,7 @@ End Function
 '@Description("Returns a new DateTime that adds the specified number of days to the value of this instance.")
 Public Function AddDays(ByVal value As Double) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.AddDays(value)
+      Set .ComObject = this.DotNetLibDateTime.AddDays(value)
       Set AddDays = .Self
    End With
 End Function
@@ -214,7 +219,7 @@ End Function
 '@Description("Returns a new DateTime that adds the specified number of hours to the value of this instance.")
 Public Function AddHours(ByVal value As Double) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.AddHours(value)
+      Set .ComObject = this.DotNetLibDateTime.AddHours(value)
       Set AddHours = .Self
    End With
 End Function
@@ -222,7 +227,7 @@ End Function
 '@Description("Returns a new DateTime that adds the specified number of milliseconds to the value of this instance.")
 Public Function AddMilliseconds(ByVal value As Double) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.AddMilliseconds(value)
+      Set .ComObject = this.DotNetLibDateTime.AddMilliseconds(value)
       Set AddMilliseconds = .Self
    End With
 End Function
@@ -230,7 +235,7 @@ End Function
 '@Description("Returns a new DateTime that adds the specified number of minutes to the value of this instance.")
 Public Function AddMinutes(ByVal value As Double) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.AddMinutes(value)
+      Set .ComObject = this.DotNetLibDateTime.AddMinutes(value)
       Set AddMinutes = .Self
    End With
 End Function
@@ -238,7 +243,7 @@ End Function
 '@Description("Returns a new DateTime that adds the specified number of months to the value of this instance.")
 Public Function AddMonths(ByVal months As Long) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.AddMonths(months)
+      Set .ComObject = this.DotNetLibDateTime.AddMonths(months)
       Set AddMonths = .Self
    End With
 End Function
@@ -246,7 +251,7 @@ End Function
 '@Description("Returns a new DateTime that adds the specified number of seconds to the value of this instance.")
 Public Function AddSeconds(ByVal value As Double) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.AddSeconds(value)
+      Set .ComObject = this.DotNetLibDateTime.AddSeconds(value)
       Set AddSeconds = .Self
    End With
 End Function
@@ -254,7 +259,7 @@ End Function
 '@Description("Returns a new DateTime that adds the specified number of ticks to the value of this instance.")
 Public Function AddTicks(ByVal value As LongLong) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.AddTicks(value)
+      Set .ComObject = this.DotNetLibDateTime.AddTicks(value)
       Set AddTicks = .Self
    End With
 End Function
@@ -262,19 +267,19 @@ End Function
 '@Description("Returns a new DateTime that adds the specified number of years to the value of this instance.")
 Public Function AddYears(ByVal value As Long) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.AddYears(value)
+      Set .ComObject = this.DotNetLibDateTime.AddYears(value)
       Set AddYears = .Self
    End With
 End Function
 
 '@Description("Compares two instances of DateTime and returns an integer that indicates whether the first instance is earlier than, the same as, or later than the second instance.")
 Public Function Compare(ByRef t1 As DateTime, ByRef t2 As DateTime) As Long
-   Compare = this.DotNetLibDateTime.Compare(t1.DateTimeComObject, t2.DateTimeComObject)
+   Compare = this.DotNetLibDateTime.Compare(t1.ComObject, t2.ComObject)
 End Function
 
 '@Description("Compares the value of this instance to a specified DateTime value and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.")
 Public Function CompareTo(ByRef t As DateTime) As Long
-   CompareTo = this.DotNetLibDateTime.CompareTo(t.DateTimeComObject)
+   CompareTo = this.DotNetLibDateTime.CompareTo(t.ComObject)
 End Function
 
 '@Description("Returns the number of days in the specified month and year.")
@@ -284,7 +289,7 @@ End Function
 
 '@Description("Returns a value indicating whether the value of this instance is equal to the value of the specified DateTime instance.")
 Public Function Equals(ByRef value As DateTime) As Boolean
-   Equals = this.DotNetLibDateTime.Equals(value.DateTimeComObject)
+   Equals = this.DotNetLibDateTime.Equals(value.ComObject)
 End Function
 
 '@Description("Returns a value indicating whether this instance is equal to a specified object.")
@@ -294,13 +299,13 @@ End Function
 
 '@Description("Returns a value indicating whether two DateTime instances have the same date and time value.")
 Public Function Equals3(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
-   Equals3 = this.DotNetLibDateTime.Equals3(t1.DateTimeComObject, t2.DateTimeComObject)
+   Equals3 = this.DotNetLibDateTime.Equals3(t1.ComObject, t2.ComObject)
 End Function
 
 '@Description("Deserializes a 64-bit binary value and recreates an original serialized DateTime object.")
 Public Function FromBinary(ByVal dateData As LongLong) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.FromBinary(dateData)
+      Set .ComObject = this.DotNetLibDateTime.FromBinary(dateData)
       Set FromBinary = .Self
    End With
 End Function
@@ -308,7 +313,7 @@ End Function
 '@Description("Converts the specified Windows file time to an equivalent local time.")
 Public Function FromFileTime(ByVal fileTime As LongLong) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.FromFileTime(fileTime)
+      Set .ComObject = this.DotNetLibDateTime.FromFileTime(fileTime)
       Set FromFileTime = .Self
    End With
 End Function
@@ -316,7 +321,7 @@ End Function
 '@Description("Converts the specified Windows file time to an equivalent UTC time.")
 Public Function FromFileTimeUtc(ByVal fileTime As LongLong) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.FromFileTimeUtc(fileTime)
+      Set .ComObject = this.DotNetLibDateTime.FromFileTimeUtc(fileTime)
       Set FromFileTimeUtc = .Self
    End With
 End Function
@@ -324,7 +329,7 @@ End Function
 '@Description("Returns a DateTime equivalent to the specified OLE Automation Date.")
 Public Function FromOADate(ByVal d As Double) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.FromOADate(d)
+      Set .ComObject = this.DotNetLibDateTime.FromOADate(d)
       Set FromOADate = .Self
    End With
 End Function
@@ -352,7 +357,7 @@ End Function
 '@Description("Converts the string representation of a date and time to its DateTime equivalent by using the conventions of the current culture.")
 Public Function Parse(ByVal s As String) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.Parse(s)
+      Set .ComObject = this.DotNetLibDateTime.Parse(s)
       Set Parse = .Self
    End With
 End Function
@@ -360,7 +365,7 @@ End Function
 '@Description("Converts the string representation of a date and time to its DateTime equivalent by using the conventions of the current culture.")
 Public Function Parse2(ByVal s As String, ByRef provider As IFormatProvider) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.Parse2(s, provider)
+      Set .ComObject = this.DotNetLibDateTime.Parse2(s, provider)
       Set Parse2 = .Self
    End With
 End Function
@@ -368,7 +373,7 @@ End Function
 '@Description("Defines the formatting options that customize string parsing for some date and time parsing methods.  This enumeration supports a bitwise combination of its member values.")
 Public Function Parse3(ByVal s As String, ByRef provider As IFormatProvider, ByVal styles As DateTimeStyles) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.Parse3(s, provider, styles)
+      Set .ComObject = this.DotNetLibDateTime.Parse3(s, provider, styles)
       Set Parse3 = .Self
    End With
 End Function
@@ -376,7 +381,7 @@ End Function
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")
 Public Function ParseExact(ByVal s As String, ByVal format As String, ByRef provider As IFormatProvider) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.ParseExact(s, format, provider)
+      Set .ComObject = this.DotNetLibDateTime.ParseExact(s, format, provider)
       Set ParseExact = .Self
    End With
 End Function
@@ -384,7 +389,7 @@ End Function
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly or an exception is thrown.")
 Public Function ParseExact2(ByVal s As String, ByVal format As String, ByRef provider As IFormatProvider, ByVal style As DateTimeStyles) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.ParseExact2(s, format, provider, style)
+      Set .ComObject = this.DotNetLibDateTime.ParseExact2(s, format, provider, style)
       Set ParseExact2 = .Self
    End With
 End Function
@@ -392,7 +397,7 @@ End Function
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified array of formats, culture-specific format information, and style. The format of the string representation must match at least one of the specified formats exactly or an exception is thrown.")
 Public Function ParseExact3(ByVal s As String, ByRef formats() As String, ByRef provider As IFormatProvider, ByVal style As DateTimeStyles) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.ParseExact3(s, formats, provider, style)
+      Set .ComObject = this.DotNetLibDateTime.ParseExact3(s, formats, provider, style)
       Set ParseExact3 = .Self
    End With
 End Function
@@ -400,7 +405,7 @@ End Function
 '@Description("Creates a new DateTime object that has the same number of ticks as the specified DateTime, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified DateTimeKind value.")
 Public Function SpecifyKind(ByRef value As DateTime, ByVal kind As DotNetLib.DateTimeKind) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.SpecifyKind(value.DateTimeComObject, kind)
+      Set .ComObject = this.DotNetLibDateTime.SpecifyKind(value.ComObject, kind)
       Set SpecifyKind = .Self
    End With
 End Function
@@ -408,7 +413,7 @@ End Function
 '@Description("Returns a new DateTime that subtracts the specified duration from the value of this instance.")
 Public Function Subtract(ByRef value As TimeSpan) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.Subtract(value.TimeSpanComObject)
+      Set .ComObject = this.DotNetLibDateTime.Subtract(value.ComObject)
       Set Subtract = .Self
    End With
 End Function
@@ -416,7 +421,7 @@ End Function
 '@Description("Returns a new TimeSpan that subtracts the specified date and time from the value of this instance.")
 Public Function Subtract2(ByRef value As DateTime) As TimeSpan
     With New TimeSpan
-        Set .TimeSpanComObject = this.DotNetLibDateTime.Subtract2(value.DateTimeComObject)
+        Set .ComObject = this.DotNetLibDateTime.Subtract2(value.ComObject)
         Set Subtract2 = .Self
     End With
 End Function
@@ -439,7 +444,7 @@ End Function
 '@Description("Converts the value of the current DateTime object to local time.")
 Public Function ToLocalTime() As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.ToLocalTime()
+      Set .ComObject = this.DotNetLibDateTime.ToLocalTime()
       Set ToLocalTime = .Self
    End With
 End Function
@@ -493,63 +498,63 @@ End Function
 '@Description("Converts the value of the current DateTime object to Coordinated Universal Time (UTC).")
 Public Function ToUniversalTime() As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.ToUniversalTime()
+      Set .ComObject = this.DotNetLibDateTime.ToUniversalTime()
       Set ToUniversalTime = .Self
    End With
 End Function
 
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent and returns a value that indicates whether the conversion succeeded.")
 Public Function TryParse(ByVal s As String, ByRef result As DateTime) As Boolean
-   TryParse = this.DotNetLibDateTime.TryParse(s, result.DateTimeComObject)
+   TryParse = this.DotNetLibDateTime.TryParse(s, result.ComObject)
 End Function
 
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified culture-specific format information and formatting style, and returns a value that indicates whether the conversion succeeded.")
 Public Function TryParse2(ByVal s As String, ByRef provider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DateTime) As Boolean
-   TryParse2 = this.DotNetLibDateTime.TryParse2(s, provider, styles, result.DateTimeComObject)
+   TryParse2 = this.DotNetLibDateTime.TryParse2(s, provider, styles, result.ComObject)
 End Function
 
 '@Description("Adds a specified time interval to a specified date and time, yielding a new date and time.")
 Public Function Addition(ByRef d As DateTime, ByRef t As TimeSpan) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.Addition(d.DateTimeComObject, t.TimeSpanComObject)
+      Set .ComObject = this.DotNetLibDateTime.Addition(d.ComObject, t.ComObject)
       Set Addition = .Self
    End With
 End Function
 
 '@Description("Determines whether two specified instances of DateTime are equal.")
 Public Function Equality(ByRef d1 As DateTime, ByRef d2 As DateTime) As Boolean
-   Equality = this.DotNetLibDateTime.Equality(d1.DateTimeComObject, d2.DateTimeComObject)
+   Equality = this.DotNetLibDateTime.Equality(d1.ComObject, d2.ComObject)
 End Function
 
 '@Description("Determines whether one specified DateTime is later than another specified DateTime.")
 Public Function GreaterThan(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
-   GreaterThan = this.DotNetLibDateTime.GreaterThan(t1.DateTimeComObject, t2.DateTimeComObject)
+   GreaterThan = this.DotNetLibDateTime.GreaterThan(t1.ComObject, t2.ComObject)
 End Function
 
 '@Description("Determines whether one specified DateTime represents a date and time that is the same as or later than another specified DateTime.")
 Public Function GreaterThanOrEqual(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
-   GreaterThanOrEqual = this.DotNetLibDateTime.GreaterThanOrEqual(t1.DateTimeComObject, t2.DateTimeComObject)
+   GreaterThanOrEqual = this.DotNetLibDateTime.GreaterThanOrEqual(t1.ComObject, t2.ComObject)
 End Function
 
 '@Description("Determines whether two specified instances of DateTime are not equal.")
 Public Function Inequality(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
-   Inequality = this.DotNetLibDateTime.Inequality(t1.DateTimeComObject, t2.DateTimeComObject)
+   Inequality = this.DotNetLibDateTime.Inequality(t1.ComObject, t2.ComObject)
 End Function
 
 '@Description("Determines whether one specified DateTime is earlier than another specified DateTime.")
 Public Function LessThan(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
-   LessThan = this.DotNetLibDateTime.LessThan(t1.DateTimeComObject, t2.DateTimeComObject)
+   LessThan = this.DotNetLibDateTime.LessThan(t1.ComObject, t2.ComObject)
 End Function
 
 '@Description("Determines whether one specified DateTime represents a date and time that is the same as or earlier than another specified DateTime.")
 Public Function LessThanOrEqual(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
-   LessThanOrEqual = this.DotNetLibDateTime.LessThanOrEqual(t1.DateTimeComObject, t2.DateTimeComObject)
+   LessThanOrEqual = this.DotNetLibDateTime.LessThanOrEqual(t1.ComObject, t2.ComObject)
 End Function
 
 '@Description("Subtracts a specified date and time from another specified date and time and returns a time interval.")
 Public Function Subtraction(ByRef d1 As DateTime, ByRef d2 As DateTime) As TimeSpan
    With New TimeSpan
-      Set .TimeSpanComObject = this.DotNetLibDateTime.Subtraction(d1.DateTimeComObject, d2.DateTimeComObject)
+      Set .ComObject = this.DotNetLibDateTime.Subtraction(d1.ComObject, d2.ComObject)
       Set Subtraction = .Self
    End With
 End Function
@@ -557,7 +562,7 @@ End Function
 '@Description("Subtracts a specified time interval from a specified date and time and returns a new date and time.")
 Public Function Subtraction2(ByRef d As DateTime, ByRef t As TimeSpan) As DateTime
    With New DateTime
-      Set .DateTimeComObject = this.DotNetLibDateTime.Subtraction2(d.DateTimeComObject, t.TimeSpanComObject)
+      Set .ComObject = this.DotNetLibDateTime.Subtraction2(d.ComObject, t.ComObject)
       Set Subtraction2 = .Self
    End With
 End Function

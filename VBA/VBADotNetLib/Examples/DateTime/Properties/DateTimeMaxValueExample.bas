@@ -1,6 +1,12 @@
 Attribute VB_Name = "DateTimeMaxValueExample"
+'Rubberduck annotations
 '@IgnoreModule VariableNotUsed
-'@Folder("Examples.DateTime")
+'@Folder "VBADotNetLib.Examples.DateTime.Properties"
+
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 09, 2023
+'@LastModified July 09, 2023
+
 Option Explicit
 
 '@Description("The following example instantiates a DateTime object by passing its constructor an Int64 value that represents a number of ticks. Before invoking the constructor, the example ensures that this value is greater than or equal to DateTime.MinValue.Ticks and less than or equal to DateTime.MaxValue.Ticks. If not, it throws an ArgumentOutOfRangeException.")
@@ -22,5 +28,4 @@ Public Sub DateTimeMaxValueField()
     ' The example displays the following output:
     '   9,223,372,036,854,775,807 is greater than 3,155,378,975,999,999,999 ticks.
 End Sub
-
 

@@ -1,8 +1,13 @@
 Attribute VB_Name = "DateTimeMinValueExample"
-'@Folder("Examples.DateTime")
+'Rubberduck annotations
+'@Folder "VBADotNetLib.Examples.DateTime.Properties"
+
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 09, 2023
+'@LastModified July 09, 2023
+
 Option Explicit
 
-'@TODO Issue with equals, unitialized DateTime should be equal to MinValue?
 Public Sub DateTimeMinValueField()
     Dim date1 As DateTime
     Set date1 = New DateTime

@@ -7,9 +7,14 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+'Rubberduck annotations
 '@IgnoreModule MissingModuleAnnotation
-'@Folder("DotNet.System")
+'@Folder "VBADotNetLib.System"
 '@PredeclaredId
+
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 09, 2023
+'@LastModified July 09, 2023
 
 '@Dependencies DotNetLib.tlb
 

@@ -1,8 +1,15 @@
 Attribute VB_Name = "DateTimeDayExample"
-'@Folder("Examples.DateTime")
+'Rubberduck annotations
+'@Folder "VBADotNetLib.Examples.DateTime.Properties"
+
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 09, 2023
+'@LastModified July 09, 2023
+
+'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.day?view=netframework-4.8.1#examples
+
 Option Explicit
 
-' https://learn.microsoft.com/en-us/dotnet/api/system.datetime.day?view=netframework-4.8.1#examples
 '@Description("The following example demonstrates the Day property.")
 Public Sub DateTimePropertyDay()
     Dim moment As DateTime
