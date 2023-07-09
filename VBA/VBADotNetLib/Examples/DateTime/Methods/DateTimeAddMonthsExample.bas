@@ -15,7 +15,7 @@ Public Sub DateTimeAddMonths()
    
    Set dat = DateTime.CreateFromDate(2015, 12, 31)
    Dim ctr As Long
-   For ctr = 0 To 15 Step 1
+   For ctr = 0 To 15
       Debug.Print dat.AddMonths(ctr).ToString2("d")
    Next
    
