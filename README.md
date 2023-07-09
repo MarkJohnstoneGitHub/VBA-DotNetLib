@@ -40,7 +40,7 @@ The type libraries added can be viewed under View->Object Browser and select Dot
  
 For detailed explanation of class properties and properties see [netframework-4.8.1](https://learn.microsoft.com/en-us/dotnet/api/system?view=netframework-4.8.1)
 
-Ms Access database [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/DotNetLib/blob/main/VBA/VBA%20DotNetLibrary/DotNetLibrary.accdb) wrapper VBA classes for the DotNetLib.tlb.
+Ms Access database [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/DotNetLibrary.accdb) wrapper VBA classes for the DotNetLib.tlb.
  
  **Issues:**
   - DateTime.ParseExact3 member (fixed)
@@ -59,7 +59,7 @@ Ms Access database [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/
  **Testing**
  
  - Only adhoc testing performed on DateTime and ListString object and appears to create the object and various methods are functional.
- - MS-Access database [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/DotNetLib/blob/main/VBA/VBA%20DotNetLibrary/DotNetLibrary.accdb) containing DateTime examples tested.
+ - MS-Access database [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/DotNetLibrary.accdb) containing DateTime examples tested.
  
  **Development Notes**
   
