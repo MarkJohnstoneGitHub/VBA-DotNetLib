@@ -11,6 +11,8 @@ Attribute VB_Exposed = False
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
 
+'@Static
+
 'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
 '@LastModified July 09, 2023
@@ -36,13 +38,13 @@ Private Sub Class_Initialize()
     End With
 End Sub
 
-'@StaticField
+'@Static
 '@Description("Represents the largest possible value of DateTime. This field is read-only.")
 Public Property Get MaxValue() As DateTime
     Set MaxValue = this.MaxValue
 End Property
 
-'@StaticField
+'@Static
 '@Description("Represents the smallest possible value of DateTime. This field is read-only.")
 Public Property Get MinValue() As DateTime
     Set MinValue = this.MinValue

@@ -93,13 +93,13 @@ Public Function CreateFromDateTimeKind2(ByVal Year As Long, ByVal Month As Long,
    End With
 End Function
 
-'@StaticField
+'@Static
 '@Description("Represents the largest possible value of DateTime. This field is read-only.")
 Public Property Get MaxValue() As DateTime
    Set MaxValue = DateTimeStatic.MaxValue
 End Property
 
-'@StaticField
+'@Static
 '@Description("Represents the smallest possible value of DateTime. This field is read-only.")
 Public Property Get MinValue() As DateTime
    Set MinValue = DateTimeStatic.MinValue

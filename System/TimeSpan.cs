@@ -98,7 +98,7 @@ namespace DotNetLib.System
         internal GSystem.TimeSpan TimeSpanObject
         {
             get { return this.timeSpanObject; }
-            set { this.timeSpanObject = value; }  // set method
+            set { this.timeSpanObject = value; } 
         }
 
         public int Days => this.timeSpanObject.Days;

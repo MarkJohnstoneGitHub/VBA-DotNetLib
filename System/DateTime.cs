@@ -19,9 +19,9 @@ namespace DotNetLib.System
     public class DateTime : IDateTime
     {
         private GSystem.DateTime dateTimeObject;
-        public static readonly DateTime maxValueObject = new DateTime(GSystem.DateTime.MaxValue);
-        public static readonly DateTime minValueObject = new DateTime(GSystem.DateTime.MinValue);
-        //public static readonly DateTime dtUnixEpoch = new DateTime(GSystem.DateTime.UnixEpoch);
+        private static readonly DateTime maxValueObject = new DateTime(GSystem.DateTime.MaxValue);
+        private static readonly DateTime minValueObject = new DateTime(GSystem.DateTime.MinValue);
+        //public static readonly DateTime dtUnixEpoch = new DateTime(GSystem.DateTime.UnixEpoch);  //Not available in .netframework
 
         //Constructors
         public DateTime()

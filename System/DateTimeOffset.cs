@@ -19,8 +19,8 @@ namespace DotNetLib.System
     {
         private GSystem.DateTimeOffset dateTimeOffsetObject;
 
-        public static DateTimeOffset dtoMaxValue = new DateTimeOffset(GSystem.DateTimeOffset.MaxValue);
-        public static readonly DateTimeOffset dtoMinValue = new DateTimeOffset(GSystem.DateTimeOffset.MinValue);
+        private static DateTimeOffset dtoMaxValue = new DateTimeOffset(GSystem.DateTimeOffset.MaxValue);
+        private static readonly DateTimeOffset dtoMinValue = new DateTimeOffset(GSystem.DateTimeOffset.MinValue);
 
         // Constructors
 

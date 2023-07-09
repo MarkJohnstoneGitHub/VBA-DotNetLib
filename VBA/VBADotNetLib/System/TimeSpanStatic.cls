@@ -11,6 +11,8 @@ Attribute VB_Exposed = False
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
 
+'@Static
+
 'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
 '@LastModified July 09, 2023
@@ -24,6 +26,7 @@ Private Type TTimeSpanStatic
    TicksPerHour As LongLong
    TicksPerMillisecond As LongLong
    TicksPerMinute As LongLong
+   TicksPerSecond As LongLong
    Zero As TimeSpan
 End Type
 
@@ -44,6 +47,7 @@ Private Sub Class_Initialize()
    this.TicksPerHour = TimeSpan.ComObject.TicksPerHour()
    this.TicksPerMillisecond = TimeSpan.ComObject.TicksPerMillisecond()
    this.TicksPerMinute = TimeSpan.ComObject.TicksPerMinute()
+   this.TicksPerSecond = TimeSpan.ComObject.TicksPerSecond()
     
    With New TimeSpan
       Set .ComObject = TimeSpan.ComObject.Zero
@@ -51,42 +55,49 @@ Private Sub Class_Initialize()
    End With
 End Sub
 
-'@StaticField
+'@Static
 '@Description("Represents the maximum TimeSpan value. This field is read-only.")
 Public Property Get MaxValue() As TimeSpan
    Set MaxValue = this.MaxValue
 End Property
 
-'@StaticField
+'@Static
 '@Description("Represents the minimum TimeSpan value. This field is read-only.")
 Public Property Get MinValue() As TimeSpan
    Set MinValue = this.MinValue
 End Property
 
-'@StaticField
+'@Static
 '@Description("Represents the number of ticks in 1 day. This field is constant.")
 Public Property Get TicksPerDay() As LongLong
    TicksPerDay = this.TicksPerDay
 End Property
 
-'@StaticField
+'@Static
 '@Description("Represents the number of ticks in 1 hour. This field is constant.")
 Public Property Get TicksPerHour() As LongLong
    TicksPerHour = this.TicksPerHour
 End Property
 
-'@StaticField
+'@Static
 '@Description("Represents the number of ticks in 1 millisecond. This field is constant.")
 Public Property Get TicksPerMillisecond() As LongLong
    TicksPerMillisecond = this.TicksPerMillisecond
 End Property
 
-'@StaticField
+'@Static
 '@Description("Represents the number of ticks in 1 minute. This field is constant.")
 Public Property Get TicksPerMinute() As LongLong
    TicksPerMinute = this.TicksPerMinute
 End Property
 
+'@Static
+'@Description("Represents the number of ticks in 1 second.")
+Public Property Get TicksPerSecond() As LongLong
+   TicksPerSecond = this.TicksPerSecond
+End Property
+
+'@Static
 '@Description("Represents the zero TimeSpan value. This field is read-only.")
 Public Property Get Zero() As TimeSpan
    Set Zero = this.Zero

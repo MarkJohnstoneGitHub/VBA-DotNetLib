@@ -45,6 +45,7 @@ Friend Property Get Self() As TimeSpan
    Set Self = Me
 End Property
 
+'@Static
 '@Description("Initializes a new instance of the TimeSpan structure to the specified number of ticks.")
 Public Function CreateFromTicks(ByVal Ticks As LongLong) As TimeSpan
 Attribute CreateFromTicks.VB_Description = "Initializes a new instance of the TimeSpan structure to the specified number of ticks."
@@ -54,6 +55,7 @@ Attribute CreateFromTicks.VB_Description = "Initializes a new instance of the Ti
    End With
 End Function
 
+'@Static
 '@Description("Initializes a new instance of the TimeSpan structure to a specified number of hours, minutes, and seconds.")
 Public Function Create(ByVal hours As Long, ByVal Minutes As Long, ByVal Seconds As Long) As TimeSpan
 Attribute Create.VB_Description = "Initializes a new instance of the TimeSpan structure to a specified number of hours, minutes, and seconds."
@@ -63,6 +65,7 @@ Attribute Create.VB_Description = "Initializes a new instance of the TimeSpan st
    End With
 End Function
 
+'@Static
 '@Description("Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, and seconds.")
 Public Function Create2(ByVal Days As Long, ByVal hours As Long, ByVal Minutes As Long, ByVal Seconds As Long) As TimeSpan
 Attribute Create2.VB_Description = "Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, and seconds."
@@ -72,6 +75,7 @@ Attribute Create2.VB_Description = "Initializes a new instance of the TimeSpan s
    End With
 End Function
 
+'@Static
 '@Description("Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, seconds, and milliseconds.")
 Public Function Create3(ByVal Days As Long, ByVal hours As Long, ByVal Minutes As Long, ByVal Seconds As Long, ByVal Milliseconds As Long) As TimeSpan
 Attribute Create3.VB_Description = "Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, seconds, and milliseconds."
@@ -81,61 +85,60 @@ Attribute Create3.VB_Description = "Initializes a new instance of the TimeSpan s
    End With
 End Function
 
-'@StaticField
+'@Static
 '@Description("Represents the maximum TimeSpan value. This field is read-only.")
 Public Property Get MaxValue() As TimeSpan
 Attribute MaxValue.VB_Description = "Represents the maximum TimeSpan value. This field is read-only."
    Set MaxValue = TimeSpanStatic.MaxValue
 End Property
 
-'@StaticField
+'@Static
 '@Description("Represents the minimum TimeSpan value. This field is read-only.")
 Public Property Get MinValue() As TimeSpan
 Attribute MinValue.VB_Description = "Represents the minimum TimeSpan value. This field is read-only."
    Set MinValue = TimeSpanStatic.MinValue
 End Property
 
-'@StaticField
+'@Static
 '@Description("Represents the number of ticks in 1 day. This field is constant.")
 Public Property Get TicksPerDay() As LongLong
 Attribute TicksPerDay.VB_Description = "Represents the number of ticks in 1 day. This field is constant."
    TicksPerDay = TimeSpanStatic.TicksPerDay
 End Property
 
-'@StaticField
+'@Static
 '@Description("Represents the number of ticks in 1 hour. This field is constant.")
 Public Property Get TicksPerHour() As LongLong
 Attribute TicksPerHour.VB_Description = "Represents the number of ticks in 1 hour. This field is constant."
    TicksPerHour = TimeSpanStatic.TicksPerHour()
 End Property
 
-'@StaticField
+'@Static
 '@Description("Represents the number of ticks in 1 millisecond. This field is constant.")
 Public Property Get TicksPerMillisecond() As LongLong
 Attribute TicksPerMillisecond.VB_Description = "Represents the number of ticks in 1 millisecond. This field is constant."
    TicksPerMillisecond = TimeSpanStatic.TicksPerMillisecond()
 End Property
 
-'@StaticField
+'@Static
 '@Description("Represents the number of ticks in 1 minute. This field is constant.")
 Public Property Get TicksPerMinute() As LongLong
 Attribute TicksPerMinute.VB_Description = "Represents the number of ticks in 1 minute. This field is constant."
    TicksPerMinute = TimeSpanStatic.TicksPerMinute()
 End Property
 
+'@Static
 '@Description("Represents the number of ticks in 1 second.")
 Public Property Get TicksPerSecond() As LongLong
 Attribute TicksPerSecond.VB_Description = "Represents the number of ticks in 1 second."
-   TicksPerSecond = this.DotNetLibTimeSpan.TicksPerSecond()
+   TicksPerSecond = TimeSpanStatic.TicksPerSecond
 End Property
 
+'@Static
 '@Description("Represents the zero TimeSpan value. This field is read-only.")
 Public Property Get Zero() As TimeSpan
 Attribute Zero.VB_Description = "Represents the zero TimeSpan value. This field is read-only."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Zero()
-      Set Zero = .Self
-   End With
+   Set Zero = TimeSpanStatic.Zero
 End Property
 
 '@Description("Gets the days component of the time interval represented by the current TimeSpan structure.")
