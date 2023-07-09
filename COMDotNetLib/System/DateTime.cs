@@ -357,7 +357,7 @@ namespace DotNetLib.System
         /// <returns>A signed number indicating the relative values of this instance and the value parameter.</returns>
         public int CompareTo(DateTime value)
         {
-            return this.dateTimeObject.CompareTo(value);
+            return this.dateTimeObject.CompareTo(value.DateTimeObject);
         }
         /// <summary>
         /// Compares the value of this instance to a specified object that contains a specified DateTime value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.

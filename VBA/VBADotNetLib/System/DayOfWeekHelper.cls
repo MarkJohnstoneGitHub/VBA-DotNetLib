@@ -8,7 +8,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 'Rubberduck annotations
-'@IgnoreModule MissingModuleAnnotation
+'@IgnoreModule UnrecognizedAnnotation, MissingModuleAnnotation
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
 
@@ -16,6 +16,7 @@ Attribute VB_Exposed = False
 '@Version v1.0 July 09, 2023
 '@LastModified July 09, 2023
 
+'@Ignore SuperfluousAnnotationArgument
 '@Dependencies DotNetLib.tlb
 
 Option Explicit
@@ -23,6 +24,8 @@ Option Explicit
 '@DefaultMember
 '@Description("Converts the value of a DayOfWeek to string value.")
 Public Property Get ToString(ByVal value As DotNetLib.DayOfWeek) As String
+Attribute ToString.VB_Description = "Converts the value of a DayOfWeek to string value."
+Attribute ToString.VB_UserMemId = 0
     Select Case value
         Case DayOfWeek_Sunday: ToString = "Sunday"
         Case DayOfWeek_Monday: ToString = "Monday"

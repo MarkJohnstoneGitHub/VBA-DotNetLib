@@ -8,6 +8,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 'Rubberduck annotations
+'@IgnoreModule UnrecognizedAnnotation
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
 
@@ -41,12 +42,13 @@ End Sub
 '@Static
 '@Description("Represents the largest possible value of DateTime. This field is read-only.")
 Public Property Get MaxValue() As DateTime
+Attribute MaxValue.VB_Description = "Represents the largest possible value of DateTime. This field is read-only."
     Set MaxValue = this.MaxValue
 End Property
 
 '@Static
 '@Description("Represents the smallest possible value of DateTime. This field is read-only.")
 Public Property Get MinValue() As DateTime
+Attribute MinValue.VB_Description = "Represents the smallest possible value of DateTime. This field is read-only."
     Set MinValue = this.MinValue
 End Property
-

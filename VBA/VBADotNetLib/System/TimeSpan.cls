@@ -9,13 +9,14 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Represents a time interval."
 'Rubberduck annotations
+'@IgnoreModule UnrecognizedAnnotation
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
 '@ModuleDescription("Represents a time interval.")
 
 'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
-'@LastModified July 09, 2023
+'@LastModified July 10, 2023
 
 Option Explicit
 
@@ -57,30 +58,30 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the TimeSpan structure to a specified number of hours, minutes, and seconds.")
-Public Function Create(ByVal hours As Long, ByVal Minutes As Long, ByVal Seconds As Long) As TimeSpan
+Public Function Create(ByVal hours As Long, ByVal minutes As Long, ByVal Seconds As Long) As TimeSpan
 Attribute Create.VB_Description = "Initializes a new instance of the TimeSpan structure to a specified number of hours, minutes, and seconds."
    With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Create(hours, Minutes, Seconds)
+      Set .ComObject = this.DotNetLibTimeSpan.Create(hours, minutes, Seconds)
       Set Create = .Self
    End With
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, and seconds.")
-Public Function Create2(ByVal Days As Long, ByVal hours As Long, ByVal Minutes As Long, ByVal Seconds As Long) As TimeSpan
+Public Function Create2(ByVal Days As Long, ByVal hours As Long, ByVal minutes As Long, ByVal Seconds As Long) As TimeSpan
 Attribute Create2.VB_Description = "Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, and seconds."
    With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Create2(Days, hours, Minutes, Seconds)
+      Set .ComObject = this.DotNetLibTimeSpan.Create2(Days, hours, minutes, Seconds)
       Set Create2 = .Self
    End With
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, seconds, and milliseconds.")
-Public Function Create3(ByVal Days As Long, ByVal hours As Long, ByVal Minutes As Long, ByVal Seconds As Long, ByVal Milliseconds As Long) As TimeSpan
+Public Function Create3(ByVal Days As Long, ByVal hours As Long, ByVal minutes As Long, ByVal Seconds As Long, ByVal Milliseconds As Long) As TimeSpan
 Attribute Create3.VB_Description = "Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, seconds, and milliseconds."
    With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Create3(Days, hours, Minutes, Seconds, Milliseconds)
+      Set .ComObject = this.DotNetLibTimeSpan.Create3(Days, hours, minutes, Seconds, Milliseconds)
       Set Create3 = .Self
    End With
 End Function
@@ -160,9 +161,9 @@ Attribute Milliseconds.VB_Description = "Gets the milliseconds component of the 
 End Property
 
 '@Description("Gets the minutes component of the time interval represented by the current TimeSpan structure.")
-Public Property Get Minutes() As Long
-Attribute Minutes.VB_Description = "Gets the minutes component of the time interval represented by the current TimeSpan structure."
-   Minutes = this.DotNetLibTimeSpan.Minutes()
+Public Property Get minutes() As Long
+Attribute minutes.VB_Description = "Gets the minutes component of the time interval represented by the current TimeSpan structure."
+   minutes = this.DotNetLibTimeSpan.minutes()
 End Property
 
 '@Description("Gets the seconds component of the time interval represented by the current TimeSpan structure.")
@@ -341,6 +342,7 @@ End Function
 
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific format information.")
 Public Function Parse2(ByVal strInput As String, ByRef formatProvider As IFormatProvider) As TimeSpan
+Attribute Parse2.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific format information."
    With New TimeSpan
       Set .ComObject = this.DotNetLibTimeSpan.Parse2(strInput, formatProvider)
       Set Parse2 = .Self
@@ -349,6 +351,7 @@ End Function
 
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")
 Public Function ParseExact(ByVal strInput As String, ByVal format As String, ByRef formatProvider As IFormatProvider) As TimeSpan
+Attribute ParseExact.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly."
    With New TimeSpan
       Set .ComObject = this.DotNetLibTimeSpan.ParseExact(strInput, format, formatProvider)
       Set ParseExact = .Self
@@ -357,6 +360,7 @@ End Function
 
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified array of format strings and culture-specific format information. The format of the string representation must match one of the specified formats exactly.")
 Public Function ParseExact2(ByVal strInput As String, ByRef formats() As String, ByRef formatProvider As IFormatProvider) As TimeSpan
+Attribute ParseExact2.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified array of format strings and culture-specific format information. The format of the string representation must match one of the specified formats exactly."
    With New TimeSpan
       Set .ComObject = this.DotNetLibTimeSpan.ParseExact2(strInput, formats, formatProvider)
       Set ParseExact2 = .Self
@@ -365,6 +369,7 @@ End Function
 
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information, and styles. The format of the string representation must match the specified format exactly.")
 Public Function ParseExact3(ByVal strInput As String, ByVal format As String, ByRef formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles) As TimeSpan
+Attribute ParseExact3.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information, and styles. The format of the string representation must match the specified format exactly."
    With New TimeSpan
       Set .ComObject = this.DotNetLibTimeSpan.ParseExact3(strInput, format, formatProvider, styles)
       Set ParseExact3 = .Self
@@ -373,6 +378,7 @@ End Function
 
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information, and styles. The format of the string representation must match one of the specified formats exactly")
 Public Function ParseExact4(ByVal strInput As String, ByRef formats() As String, ByRef formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles) As TimeSpan
+Attribute ParseExact4.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information, and styles. The format of the string representation must match one of the specified formats exactly"
    With New TimeSpan
       Set .ComObject = this.DotNetLibTimeSpan.ParseExact4(strInput, formats, formatProvider, styles)
       Set ParseExact4 = .Self
@@ -416,26 +422,31 @@ End Function
 
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific formatting information, and returns a value that indicates whether the conversion succeeded.")
 Public Function TryParse2(ByVal strInput As String, ByRef formatProvider As IFormatProvider, ByRef result As TimeSpan) As Boolean
+Attribute TryParse2.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific formatting information, and returns a value that indicates whether the conversion succeeded."
    TryParse2 = this.DotNetLibTimeSpan.TryParse2(strInput, formatProvider, result.ComObject)
 End Function
 
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")
 Public Function TryParseExact(ByVal strInput As String, ByVal format As String, ByRef formatProvider As IFormatProvider, ByRef result As TimeSpan) As Boolean
+Attribute TryParseExact.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly."
    TryParseExact = this.DotNetLibTimeSpan.TryParseExact(strInput, format, formatProvider, result.ComObject)
 End Function
 
 '@Description("Converts the specified string representation of a time interval to its TimeSpan equivalent by using the specified formats and culture-specific format information. The format of the string representation must match one of the specified formats exactly.")
 Public Function TryParseExact2(ByVal strInput As String, ByRef formats() As String, ByRef formatProvider As IFormatProvider, ByRef result As TimeSpan) As Boolean
+Attribute TryParseExact2.VB_Description = "Converts the specified string representation of a time interval to its TimeSpan equivalent by using the specified formats and culture-specific format information. The format of the string representation must match one of the specified formats exactly."
    TryParseExact2 = this.DotNetLibTimeSpan.TryParseExact2(strInput, formats, formatProvider, result.ComObject)
 End Function
 
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information and styles. The format of the string representation must match the specified format exactly.")
 Public Function TryParseExact3(ByVal strInput As String, ByVal format As String, ByRef formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles, ByRef result As TimeSpan) As Boolean
+Attribute TryParseExact3.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information and styles. The format of the string representation must match the specified format exactly."
    TryParseExact3 = this.DotNetLibTimeSpan.TryParseExact3(strInput, format, formatProvider, styles, result.ComObject)
 End Function
 
 '@Description("Converts the specified string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information and styles. The format of the string representation must match one of the specified formats exactly.")
 Public Function TryParseExact4(ByVal strInput As String, ByRef formats() As String, ByRef formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles, ByRef result As TimeSpan) As Boolean
+Attribute TryParseExact4.VB_Description = "Converts the specified string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information and styles. The format of the string representation must match one of the specified formats exactly."
    TryParseExact4 = this.DotNetLibTimeSpan.TryParseExact4(strInput, formats, formatProvider, styles, result.ComObject)
 End Function
 

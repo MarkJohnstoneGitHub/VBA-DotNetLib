@@ -8,6 +8,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 'Rubberduck annotations
+'@IgnoreModule UnrecognizedAnnotation
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
 
@@ -58,47 +59,55 @@ End Sub
 '@Static
 '@Description("Represents the maximum TimeSpan value. This field is read-only.")
 Public Property Get MaxValue() As TimeSpan
+Attribute MaxValue.VB_Description = "Represents the maximum TimeSpan value. This field is read-only."
    Set MaxValue = this.MaxValue
 End Property
 
 '@Static
 '@Description("Represents the minimum TimeSpan value. This field is read-only.")
 Public Property Get MinValue() As TimeSpan
+Attribute MinValue.VB_Description = "Represents the minimum TimeSpan value. This field is read-only."
    Set MinValue = this.MinValue
 End Property
 
 '@Static
 '@Description("Represents the number of ticks in 1 day. This field is constant.")
 Public Property Get TicksPerDay() As LongLong
+Attribute TicksPerDay.VB_Description = "Represents the number of ticks in 1 day. This field is constant."
    TicksPerDay = this.TicksPerDay
 End Property
 
 '@Static
 '@Description("Represents the number of ticks in 1 hour. This field is constant.")
 Public Property Get TicksPerHour() As LongLong
+Attribute TicksPerHour.VB_Description = "Represents the number of ticks in 1 hour. This field is constant."
    TicksPerHour = this.TicksPerHour
 End Property
 
 '@Static
 '@Description("Represents the number of ticks in 1 millisecond. This field is constant.")
 Public Property Get TicksPerMillisecond() As LongLong
+Attribute TicksPerMillisecond.VB_Description = "Represents the number of ticks in 1 millisecond. This field is constant."
    TicksPerMillisecond = this.TicksPerMillisecond
 End Property
 
 '@Static
 '@Description("Represents the number of ticks in 1 minute. This field is constant.")
 Public Property Get TicksPerMinute() As LongLong
+Attribute TicksPerMinute.VB_Description = "Represents the number of ticks in 1 minute. This field is constant."
    TicksPerMinute = this.TicksPerMinute
 End Property
 
 '@Static
 '@Description("Represents the number of ticks in 1 second.")
 Public Property Get TicksPerSecond() As LongLong
+Attribute TicksPerSecond.VB_Description = "Represents the number of ticks in 1 second."
    TicksPerSecond = this.TicksPerSecond
 End Property
 
 '@Static
 '@Description("Represents the zero TimeSpan value. This field is read-only.")
 Public Property Get Zero() As TimeSpan
+Attribute Zero.VB_Description = "Represents the zero TimeSpan value. This field is read-only."
    Set Zero = this.Zero
 End Property
