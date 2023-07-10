@@ -13,7 +13,8 @@ Attribute VB_Description = "Represents an instant in time, typically expressed a
 '@PredeclaredId
 '@ModuleDescription("Represents an instant in time, typically expressed as a date and time of day.")
 
-'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Author Mark Johnstone
+'@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
 '@LastModified July 11, 2023
 

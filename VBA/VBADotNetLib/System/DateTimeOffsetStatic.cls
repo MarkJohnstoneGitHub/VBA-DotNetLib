@@ -7,7 +7,6 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Attribute VB_Ext_KEY = "Rubberduck" ,"Predeclared Class Module"
 'Rubberduck annotations
 '@ModuleAttribute VB_Ext_KEY, "Rubberduck", "Predeclared Class Module"
 '@Folder("VBADotNetLib.System")
@@ -15,7 +14,8 @@ Attribute VB_Ext_KEY = "Rubberduck" ,"Predeclared Class Module"
 
 '@Static
 
-'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Author Mark Johnstone
+'@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 11, 2023
 '@LastModified July 11, 2023
 

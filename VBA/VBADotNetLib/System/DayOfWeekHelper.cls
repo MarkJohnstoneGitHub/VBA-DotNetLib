@@ -12,12 +12,12 @@ Attribute VB_Exposed = False
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
 
-'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Author Mark Johnstone
+'@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
 '@LastModified July 09, 2023
 
-'@Ignore SuperfluousAnnotationArgument
-'@Dependencies DotNetLib.tlb
+'@ReferenceAddin DotNetLib.tlb
 
 Option Explicit
 

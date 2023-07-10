@@ -8,13 +8,13 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 'Rubberduck annotations
-'@IgnoreModule UnrecognizedAnnotation
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
 
 '@Static
 
-'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Author Mark Johnstone
+'@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
 '@LastModified July 09, 2023
 

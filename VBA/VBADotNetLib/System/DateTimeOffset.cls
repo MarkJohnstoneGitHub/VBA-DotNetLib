@@ -12,7 +12,8 @@ Attribute VB_Description = "Represents a point in time, typically expressed as a
 '@ModuleDescription("Represents a point in time, typically expressed as a date and time of day, relative to Coordinated Universal Time (UTC).")
 '@PredeclaredId
 
-'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Author Mark Johnstone
+'@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 11, 2023
 '@LastModified July 11, 2023
 
