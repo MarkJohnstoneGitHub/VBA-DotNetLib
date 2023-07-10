@@ -27,6 +27,8 @@ Attribute VB_Description = "Represents an instant in time, typically expressed a
 
 Option Explicit
 
+Private Const Arg_MustBeDateTime As String = "Object must be of type DateTime."
+
 Private Type TDateTime
    DotNetLibDateTime As DotNetLib.DateTime
 End Type
@@ -324,7 +326,14 @@ End Function
 '@Description("Compares the value of this instance to a specified object that contains a specified DateTime value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.")
 Public Function CompareTo2(ByVal value As Variant) As Long
 Attribute CompareTo2.VB_Description = "Compares the value of this instance to a specified object that contains a specified DateTime value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value."
-   CompareTo2 = this.DotNetLibDateTime.CompareTo2(value)
+   If TypeOf value Is DateTime Then
+      Dim dtValue As DateTime
+      Set dtValue = value
+      CompareTo2 = this.DotNetLibDateTime.CompareTo(dtValue.ComObject)
+   Else
+      Err.Raise 5, Arg_MustBeDateTime 'Invalid procedure call or argument
+   End If
+
 End Function
 
 '@Description("Returns the number of days in the specified month and year.")

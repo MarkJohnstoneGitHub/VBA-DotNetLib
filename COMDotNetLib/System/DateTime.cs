@@ -368,12 +368,13 @@ namespace DotNetLib.System
         //TODO : Check implementation public int CompareTo2(object value)
         public int CompareTo2(object value)
         {
-            if (value == null) return 1;
-            //if (!(value is DateTime))
-            //{
-            //    throw new ArgumentException(SR.Arg_MustBeDateTime);
-            //}
+            const string Arg_MustBeDateTime = "Object must be of type DateTime.";
 
+            if (value == null) return 1;
+            if (!(value is DateTime))
+            {
+                throw new ArgumentException(Arg_MustBeDateTime);
+            }
             return Compare(this, (DateTime)value);
         }
 

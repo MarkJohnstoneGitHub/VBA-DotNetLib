@@ -59,3 +59,27 @@ Private Function DateComparisonResultToString(ByVal value As DateComparisonResul
       Case TheSame: DateComparisonResultToString = "TheSame"
    End Select
 End Function
+
+Public Sub DateTimeCompareTo2()
+   Dim theDay As DateTime
+   Set theDay = DateTime.CreateFromDate(DateTime.Today.Year, 7, 28)
+   Dim compareValue As Long
+   On Error GoTo ErrorHandler
+      compareValue = theDay.CompareTo2(DateTime.Today)
+   On Error GoTo 0
+   If (compareValue < 0) Then
+      Debug.Print theDay.ToString2("d") & " is in the past."
+   ElseIf (compareValue = 0) Then
+      Debug.Print theDay.ToString2("d") & " is today!"
+   Else ' compareValue > 0
+      Debug.Print theDay.ToString2("d") & " has not come yet."
+   End If
+
+CleanExit:
+Exit Sub
+    
+ErrorHandler:
+   Debug.Print "Value is not a DateTime"
+   Debug.Print Err.Number, Err.Description
+   Resume CleanExit
+End Sub
