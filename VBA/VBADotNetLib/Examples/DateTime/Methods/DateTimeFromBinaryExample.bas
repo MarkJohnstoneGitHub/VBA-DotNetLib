@@ -16,11 +16,8 @@ Public Sub DateTimeFromBinary()
    Dim binLocal As LongLong
    binLocal = localDate.ToBinary()
    
-   '@TODO Implement wrapper for DotNetLib.TimeZoneInfo
-   Dim tzi As DotNetLib.TimeZoneInfo
-   Set tzi = New DotNetLib.TimeZoneInfo
-   If (tzi.Local.IsInvalidTime(localDate.ComObject)) Then
-      Debug.Print localDate.ToString & " is an invalid time in the " & tzi.Local.StandardName
+   If (TimeZoneInfo.Locale.IsInvalidTime(localDate)) Then
+      Debug.Print localDate.ToString & " is an invalid time in the " & TimeZoneInfo.Locale.StandardName
    End If
    Dim localDate2 As DateTime
    Set localDate2 = DateTime.FromBinary(binLocal)
