@@ -33,70 +33,133 @@ namespace DotNetLib.System
 
         // Fields
 
-        [Description("Represents the greatest possible value of DateTimeOffset. This field is read-only.")]
-        DateTimeOffset MaxValue { get; }
+        DateTimeOffset MaxValue 
+        {
+            [Description("Represents the greatest possible value of DateTimeOffset. This field is read-only.")]
+            get;
+        }
 
-        [Description("Represents the earliest possible DateTimeOffset value. This field is read-only.")]
-        DateTimeOffset MinValue { get; }
+        DateTimeOffset MinValue 
+        {
+            [Description("Represents the earliest possible DateTimeOffset value. This field is read-only.")]
+            get;
+        }
 
         // Properties
 
-        [Description("Gets a DateTime value that represents the date component of the current DateTimeOffset object.")]
-        DateTime Date { get; }
+        DateTime Date 
+        {
+            [Description("Gets a DateTime value that represents the date component of the current DateTimeOffset object.")]
+            get;
+        }
 
-        [Description("Gets a DateTime value that represents the date and time of the current DateTimeOffset object.")]
-        DateTime DateTime { get; }
+        DateTime DateTime 
+        {
+            [Description("Gets a DateTime value that represents the date and time of the current DateTimeOffset object.")]
+            get;
+        }
 
-        [Description("Gets the day of the month represented by the current DateTimeOffset object.")]
-        int Day { get; }
+        int Day 
+        {
+            [Description("Gets the day of the month represented by the current DateTimeOffset object.")]
+            get;
+        }
 
-        [Description("Gets the day of the week represented by the current DateTimeOffset object.")]
-        DayOfWeek DayOfWeek { get; }
+        DayOfWeek DayOfWeek 
+        {
+            [Description("Gets the day of the week represented by the current DateTimeOffset object.")]
+            get;
+        }
 
-        [Description("Gets the day of the year represented by the current DateTimeOffset object.")]
-        int DayOfYear { get; }
+        int DayOfYear 
+        {
+            [Description("Gets the day of the year represented by the current DateTimeOffset object.")]
+            get;
+        }
 
-        [Description("Gets the hour component of the time represented by the current DateTimeOffset object.")]
-        int Hour { get; }
+        int Hour 
+        {
+            [Description("Gets the hour component of the time represented by the current DateTimeOffset object.")]
+            get;
+        }
 
-        [Description("Gets a DateTime value that represents the local date and time of the current DateTimeOffset object.")]
-        DateTime LocalDateTime { get; }
+        DateTime LocalDateTime 
+        {
+            [Description("Gets a DateTime value that represents the local date and time of the current DateTimeOffset object.")]
+            get;
+        }
 
-        [Description("Gets the millisecond component of the time represented by the current DateTimeOffset object.")]
-        int Millisecond { get; }
+        int Millisecond 
+        {
+            [Description("Gets the millisecond component of the time represented by the current DateTimeOffset object.")]
+            get;
+        }
 
-        [Description("Gets the minute component of the time represented by the current DateTimeOffset object.")]
-        int Minute { get; }
+        int Minute 
+        {
+            [Description("Gets the minute component of the time represented by the current DateTimeOffset object.")]
+            get;
+        }
 
-        [Description("Gets the month component of the date represented by the current DateTimeOffset object.")]
-        int Month { get; }
+        int Month 
+        {
+            [Description("Gets the month component of the date represented by the current DateTimeOffset object.")]
+            get;
+        }
 
-        [Description("Gets a DateTimeOffset object that is set to the current date and time on the current computer, with the offset set to the local time's offset from Coordinated Universal Time (UTC).")]
-        DateTimeOffset Now { get; }
+        DateTimeOffset Now 
+        {
+            [Description("Gets a DateTimeOffset object that is set to the current date and time on the current computer, with the offset set to the local time's offset from Coordinated Universal Time (UTC).")]
+            get;
+        }
 
-        [Description("Gets the time's offset from Coordinated Universal Time (UTC).")]
-        TimeSpan Offset { get; }
+        TimeSpan Offset 
+        {
+            [Description("Gets the time's offset from Coordinated Universal Time (UTC).")]
+            get;
+        }
 
-        [Description("Gets the second component of the clock time represented by the current DateTimeOffset object.")]
-        int Second { get; }
+        int Second 
+        {
+            [Description("Gets the second component of the clock time represented by the current DateTimeOffset object.")]
+            get;
+        }
 
-        [Description("Gets the number of ticks that represents the date and time of the current DateTimeOffset object in clock time.")]
-        long Ticks { get; }
+        long Ticks 
+        {
+            [Description("Gets the number of ticks that represents the date and time of the current DateTimeOffset object in clock time.")]
+            get;
+        }
 
-        [Description("Gets the time of day for the current DateTimeOffset object.")]
-        TimeSpan TimeOfDay { get; }
+        TimeSpan TimeOfDay 
+        {
+            [Description("Gets the time of day for the current DateTimeOffset object.")]
+            get;
+        }
 
-        [Description("Gets a DateTime value that represents the Coordinated Universal Time (UTC) date and time of the current DateTimeOffset object.")]
-        DateTime UtcDateTime { get; }
+        DateTime UtcDateTime 
+        {
+            [Description("Gets a DateTime value that represents the Coordinated Universal Time (UTC) date and time of the current DateTimeOffset object.")]
+            get;
+        }
 
-        [Description("Gets a DateTimeOffset object whose date and time are set to the current Coordinated Universal Time (UTC) date and time and whose offset is Zero.")]
-        DateTimeOffset UtcNow { get; }
+        DateTimeOffset UtcNow 
+        {
+            [Description("Gets a DateTimeOffset object whose date and time are set to the current Coordinated Universal Time (UTC) date and time and whose offset is Zero.")]
+            get;
+        }
 
-        [Description("Gets the number of ticks that represents the date and time of the current DateTimeOffset object in Coordinated Universal Time (UTC).")]
-        long UtcTicks { get; }
+        long UtcTicks 
+        {
+            [Description("Gets the number of ticks that represents the date and time of the current DateTimeOffset object in Coordinated Universal Time (UTC).")]
+            get;
+        }
 
-        [Description("Gets the year component of the date represented by the current DateTimeOffset object.")]
-        int Year { get; }
+        int Year 
+        {
+            [Description("Gets the year component of the date represented by the current DateTimeOffset object.")]
+            get;
+        }
 
         // Methods
 
