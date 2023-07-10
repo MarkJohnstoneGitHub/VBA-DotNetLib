@@ -30,13 +30,12 @@ If the .NET Framework isn't installed see [Download .NET Framework](https://dotn
 
  **Usage:**
  
- 1) Either building the project in Visual Studio which registers the DotNetLib.tlb or run RegAsm.exe in administrator to register the type library DotNetLib.tlb.
+ 1) Either building the project in Visual Studio which registers the DotNetLib.tlb or run RegAsm.exe in administrator to register the type library [DotNetLib.tlb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release).
     - Eg. To register C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe DotNetLib.dll /tlb 
     - Eg. To unregister C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe DotNetLib.dll /tlb /unregister
  2) Eg In MS-Access, MS-Excel see Tools->References
- 
- Add reference DotNetlib.tlb (Com Interlop wrappers of the .Net Framework 4.8.1)  i.e. browse to location where stored 
- Add reference mscorlib.tlb
+   - Add reference DotNetlib.tlb (Com Interlop wrappers of the .Net Framework 4.8.1)  i.e. browse to location where stored 
+   - Add reference mscorlib.tlb
  
 The type libraries added can be viewed under View->Object Browser and select DotNetLib 
  
