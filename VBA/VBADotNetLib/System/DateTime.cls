@@ -336,6 +336,7 @@ Attribute CompareTo2.VB_Description = "Compares the value of this instance to a 
 
 End Function
 
+'@Static
 '@Description("Returns the number of days in the specified month and year.")
 Public Function DaysInMonth(ByVal Year As Long, ByVal Month As Long) As Long
 Attribute DaysInMonth.VB_Description = "Returns the number of days in the specified month and year."
