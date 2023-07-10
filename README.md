@@ -1,24 +1,18 @@
 # VBA DotNetLib COM Interlop
  COM Interlop wrappers of the .Net Framework 4.8.1
  
-  Aim: To create .Net Framework 4.8.1 Com Interlop wrappers using C# for VBA 64 to enable various data types in VBA with early and late binding.
- 
- Then in VBA create predeclared class wrappers for the DotNetLib.tlb COM objects.
+  Aim: To create .Net Framework 4.8.1 Com Interlop wrappers using C# to implement in VBA 64 to enable various .Net Framework data types in VBA with early and/or late binding. Then in VBA create predeclared class wrappers for the DotNetLib.tlb COM objects.
  
  Classes initally focussing on are  [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8.1), [DateTimeOffset](https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=netframework-4.8.1) [TimeSpan](https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8.1),  [TimeZoneInfo](https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo?view=netframework-4.8.1) and associated classes.
  
   **Status:**
   
-  Initial development.  Adhoc testing for DateTime only done, DateTimeOffset, TimeZoneInfo, TimeSpan implemented thou not tested, 
+  Initial development.  Adhoc testing and examplesfor DateTime only done, DateTimeOffset, TimeZoneInfo, TimeSpan implemented thou not tested, 
   ReadOnlyCollection implemented thou not tested.  TimeZoneInfo.GetSystemTimes returns a ReadOnlyCollection which isn't tested. 
   
-  Unit testing will be done once VBA wrappers for COM objects implemented.
+  Unit testing aim to do once VBA wrappers for COM objects implemented.
   
-  Investigating auto generation of VBA COM object wrapper class.
-  
-  Currently for type library info can obtain all object details expect for class and method description attributes.
-  
-  Use either Type Library info.  See: [Refactor-COM-object-to-VBA-COM-wrapper-class](https://github.com/MarkJohnstoneGitHub/Refactor-COM-object-to-VBA-COM-wrapper-class)
+  Investigating auto generation of VBA COM object wrapper class. See: [Refactor-COM-object-to-VBA-COM-wrapper-class](https://github.com/MarkJohnstoneGitHub/Refactor-COM-object-to-VBA-COM-wrapper-class)
   
  **Dependencies:**
    
@@ -31,9 +25,13 @@ If the .NET Framework isn't installed see [Download .NET Framework](https://dotn
  **Usage:**
  
  1) Either building the project in Visual Studio which registers the DotNetLib.tlb or run RegAsm.exe in administrator to register the type library [DotNetLib.tlb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release).
-    - Eg. To register C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe DotNetLib.dll /tlb 
-    - Eg. To unregister C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe DotNetLib.dll /tlb /unregister
- 2) Eg In MS-Access, MS-Excel see Tools->References
+    - Currently manually installation and registration for type library [DotNetLib.tlb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
+    - Copy the [DotNetLib.tlb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release) files to a location which don't intend to change eg. C:\ProgramData\DotNetLib then register the DotNetLib type library
+    - Eg. To register C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe C:\ProgramData\DotNetLib\DotNetLib.dll /tlb 
+    - Eg. To unregister C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe C:\ProgramData\DotNetLib\DotNetLib.dll /tlb /unregister
+    - If the files are moved will require to unregister and register manually.
+ 3) Eg In MS-Access, MS-Excel see Tools->References
+   - For [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/DotNetLibrary.accdb) references may be required to be fixed by removing and adding back in.
    - Add reference DotNetlib.tlb (Com Interlop wrappers of the .Net Framework 4.8.1)  i.e. browse to location where stored 
    - Add reference mscorlib.tlb
  
