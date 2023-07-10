@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "restore": {
+    "H:\\Users\\Me\\source\\repos\\DotNetLib\\COMDotNetLib\\DotNetLib.csproj": {}
+  },
+  "projects": {
+    "H:\\Users\\Me\\source\\repos\\DotNetLib\\COMDotNetLib\\DotNetLib.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "H:\\Users\\Me\\source\\repos\\DotNetLib\\COMDotNetLib\\DotNetLib.csproj",
+        "projectName": "DotNetLib",
+        "projectPath": "H:\\Users\\Me\\source\\repos\\DotNetLib\\COMDotNetLib\\DotNetLib.csproj",
+        "packagesPath": "D:\\Users\\Me\\.nuget\\packages\\",
+        "outputPath": "H:\\Users\\Me\\source\\repos\\DotNetLib\\COMDotNetLib\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "H:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "D:\\Users\\Me\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "D:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "D:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "D:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "J:\\Programming\\NuGet": {},
+          "J:\\Programming\\Selenium\\selenium-dotnet-3.14.0\\dist": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "dependencies": {
+            "System.Runtime.InteropServices": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
