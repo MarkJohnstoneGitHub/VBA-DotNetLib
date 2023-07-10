@@ -1,24 +1,18 @@
 # VBA DotNetLib COM Interlop
  COM Interlop wrappers of the .Net Framework 4.8.1
  
-  Aim: To create .Net Framework 4.8.1 Com Interlop wrappers using C# for VBA 64 to enable various data types in VBA with early and late binding.
- 
- Then in VBA create predeclared class wrappers for the DotNetLib.tlb COM objects.
+  Aim: To create .Net Framework 4.8.1 Com Interlop wrappers using C# to implement in VBA 64 to enable various .Net Framework data types in VBA with early and/or late binding. Then in VBA create predeclared class wrappers for the DotNetLib.tlb COM objects.
  
  Classes initally focussing on are  [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8.1), [DateTimeOffset](https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=netframework-4.8.1) [TimeSpan](https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8.1),  [TimeZoneInfo](https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo?view=netframework-4.8.1) and associated classes.
  
   **Status:**
   
-  Initial development.  Adhoc testing for DateTime only done, DateTimeOffset, TimeZoneInfo, TimeSpan implemented thou not tested, 
+  Initial development.  Adhoc testing and examplesfor DateTime only done, DateTimeOffset, TimeZoneInfo, TimeSpan implemented thou not tested, 
   ReadOnlyCollection implemented thou not tested.  TimeZoneInfo.GetSystemTimes returns a ReadOnlyCollection which isn't tested. 
   
-  Unit testing will be done once VBA wrappers for COM objects implemented.
+  Unit testing aim to do once VBA wrappers for COM objects implemented.
   
-  Investigating auto generation of VBA COM object wrapper class.
-  
-  Currently for type library info can obtain all object details expect for class and method description attributes.
-  
-  Use either Type Library info.  See: [Refactor-COM-object-to-VBA-COM-wrapper-class](https://github.com/MarkJohnstoneGitHub/Refactor-COM-object-to-VBA-COM-wrapper-class)
+  Investigating auto generation of VBA COM object wrapper class. See: [Refactor-COM-object-to-VBA-COM-wrapper-class](https://github.com/MarkJohnstoneGitHub/Refactor-COM-object-to-VBA-COM-wrapper-class)
   
  **Dependencies:**
    
