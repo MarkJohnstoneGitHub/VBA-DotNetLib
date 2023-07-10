@@ -4,38 +4,63 @@ using System.Runtime.InteropServices;
 
 namespace DotNetLib.System
 {
-    // https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8.1
+    // https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo?view=netframework-4.8.1
 
     [ComVisible(true)]
     [Guid("3484FC28-42F0-4BCA-A5C4-F7AF3DD4D441")]
+    [Description("Represents any time zone in the world.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface ITimeZoneInfo
     {
         // Properties
 
-        [Description("Gets the time difference between the current time zone's standard time and Coordinated Universal Time (UTC).")]
-        TimeSpan BaseUtcOffset { get; }
+        TimeSpan BaseUtcOffset 
+        {
+            [Description("Gets the time difference between the current time zone's standard time and Coordinated Universal Time (UTC).")]
+            get; 
+        }
 
-        [Description("Gets the display name for the current time zone's daylight saving time.")]
-        string DaylightName { get; }
+        string DaylightName 
+        {
+            [Description("Gets the display name for the current time zone's daylight saving time.")]
+            get; 
+        }
 
-        [Description("Gets the general display name that represents the time zone.")]
-        string DisplayName { get; }
+        string DisplayName 
+        {
+            [Description("Gets the general display name that represents the time zone.")]
+            get;
+        }
         
-        [Description("Gets the time zone identifier.")]
-        string Id { get; }
+        string Id
+        {
+            [Description("Gets the time zone identifier.")]
+            get;
+        }
 
-        [Description("Gets a TimeZoneInfo object that represents the local time zone.")]
-        TimeZoneInfo Local { get; }
+        TimeZoneInfo Local
+        {
+            [Description("Gets a TimeZoneInfo object that represents the local time zone.")]
+            get;
+        }
 
-        [Description("Gets the display name for the time zone's standard time.")]
-        string StandardName { get; }
+        string StandardName 
+        {
+            [Description("Gets the display name for the time zone's standard time.")]
+            get;
+        }
 
-        [Description("Gets a value indicating whether the time zone has any daylight saving time rules.")]
-        bool SupportsDaylightSavingTime { get; }
+        bool SupportsDaylightSavingTime
+        {
+            [Description("Gets a value indicating whether the time zone has any daylight saving time rules.")]
+            get;
+        }
         
-        [Description("Gets a TimeZoneInfo object that represents the Coordinated Universal Time (UTC) zone.")]
-        TimeZoneInfo Utc { get; }
+        TimeZoneInfo Utc
+        {
+            [Description("Gets a TimeZoneInfo object that represents the Coordinated Universal Time (UTC) zone.")]
+            get;
+        }
 
         // Methods
 
@@ -86,7 +111,6 @@ namespace DotNetLib.System
 
         [Description("Instantiates a new TimeZoneInfo object based on its identifier.")]
         TimeZoneInfo FindSystemTimeZoneById(string id);
-
 
         [Description("Deserializes a string to re-create an original serialized TimeZoneInfo object.")]
         TimeZoneInfo FromSerializedString(string source);
