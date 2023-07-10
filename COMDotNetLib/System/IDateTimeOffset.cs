@@ -5,8 +5,11 @@ using System;
 
 namespace DotNetLib.System
 {
+    // https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=netframework-4.8.1
+
     [ComVisible(true)]
     [Guid("818900B7-0353-45FA-8038-1C550219FD04")]
+    [Description("Represents a point in time, typically expressed as a date and time of day, relative to Coordinated Universal Time (UTC).")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
 
     public interface IDateTimeOffset

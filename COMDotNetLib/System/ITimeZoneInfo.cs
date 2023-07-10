@@ -8,6 +8,7 @@ namespace DotNetLib.System
 
     [ComVisible(true)]
     [Guid("3484FC28-42F0-4BCA-A5C4-F7AF3DD4D441")]
+    [TypeLibTypeAttribute(TypeLibTypeFlags.FPreDeclId)] //The type is predefined. The client application should automatically create a single instance of the object that has this attribute. 
     [Description("Represents any time zone in the world.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface ITimeZoneInfo
