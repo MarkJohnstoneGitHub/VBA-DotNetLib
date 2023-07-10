@@ -250,18 +250,40 @@ Attribute FromSerializedString.VB_Description = "Deserializes a string to re-cre
    End With
 End Function
 
-'@TODO Require to convert to an array of wrapped  DotNetLib.TimeSpan
 '@Description("Returns information about the possible dates and times that an ambiguous date and time can be mapped to.")
-Public Function GetAmbiguousTimeOffsets(ByRef DateTime As DateTime) As DotNetLib.TimeSpan()
+Public Function GetAmbiguousTimeOffsets(ByRef DateTime As DateTime) As TimeSpan()
 Attribute GetAmbiguousTimeOffsets.VB_Description = "Returns information about the possible dates and times that an ambiguous date and time can be mapped to."
-   GetAmbiguousTimeOffsets = this.DotNetLibTimeZoneInfo.GetAmbiguousTimeOffsets(DateTime.ComObject)
+   Dim ambiguousTimeOffsets() As DotNetLib.TimeSpan
+   ambiguousTimeOffsets = this.DotNetLibTimeZoneInfo.GetAmbiguousTimeOffsets(DateTime.ComObject)
+   
+   Dim output() As TimeSpan
+   ReDim output(UBound(ambiguousTimeOffsets))
+   Dim arrayIndex As Long
+   For arrayIndex = LBound(ambiguousTimeOffsets) To UBound(ambiguousTimeOffsets)
+      With New TimeSpan
+         Set .ComObject = ambiguousTimeOffsets(arrayIndex)
+         Set output(arrayIndex) = .Self
+      End With
+   Next arrayIndex
+   GetAmbiguousTimeOffsets = output
 End Function
 
-'@TODO Require to convert to an array of wrapped  DotNetLib.TimeSpan
 '@Description("Returns information about the possible dates and times that an ambiguous date and time can be mapped to.")
-Public Function GetAmbiguousTimeOffsets2(ByRef DateTimeOffset As DateTimeOffset) As DotNetLib.TimeSpan()
+Public Function GetAmbiguousTimeOffsets2(ByRef DateTimeOffset As DateTimeOffset) As TimeSpan()
 Attribute GetAmbiguousTimeOffsets2.VB_Description = "Returns information about the possible dates and times that an ambiguous date and time can be mapped to."
-   GetAmbiguousTimeOffsets2 = this.DotNetLibTimeZoneInfo.GetAmbiguousTimeOffsets2(DateTimeOffset.ComObject)
+   Dim ambiguousTimeOffsets() As DotNetLib.TimeSpan
+   ambiguousTimeOffsets = this.DotNetLibTimeZoneInfo.GetAmbiguousTimeOffsets2(DateTimeOffset.ComObject)
+   
+   Dim output() As TimeSpan
+   ReDim output(UBound(ambiguousTimeOffsets))
+   Dim arrayIndex As Long
+   For arrayIndex = LBound(ambiguousTimeOffsets) To UBound(ambiguousTimeOffsets)
+      With New TimeSpan
+         Set .ComObject = ambiguousTimeOffsets(arrayIndex)
+         Set output(arrayIndex) = .Self
+      End With
+   Next arrayIndex
+   GetAmbiguousTimeOffsets2 = output
 End Function
 
 '@Description("Serves as a hash function for hashing algorithms and data structures such as hash tables.")
