@@ -352,7 +352,13 @@ End Function
 '@Description("Returns a value indicating whether this instance is equal to a specified object.")
 Public Function Equals2(ByVal value As Variant) As Boolean
 Attribute Equals2.VB_Description = "Returns a value indicating whether this instance is equal to a specified object."
-   Equals2 = this.DotNetLibDateTime.Equals2(value)
+   If TypeOf value Is DateTime Then
+      Dim dtValue As DateTime
+      Set dtValue = value
+      Equals2 = this.DotNetLibDateTime.Equals(dtValue.ComObject)
+   Else
+      Err.Raise 5, Arg_MustBeDateTime 'Invalid procedure call or argument
+   End If
 End Function
 
 '@Description("Returns a value indicating whether two DateTime instances have the same date and time value.")
