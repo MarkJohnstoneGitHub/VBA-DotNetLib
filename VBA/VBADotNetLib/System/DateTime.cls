@@ -209,6 +209,7 @@ Attribute TimeOfDay.VB_Description = "Gets the time of day for this instance."
     End With
 End Property
 
+'@Static
 '@Description("Gets the current date.")
 Public Property Get Today() As DateTime
 Attribute Today.VB_Description = "Gets the current date."
@@ -218,6 +219,7 @@ Attribute Today.VB_Description = "Gets the current date."
    End With
 End Property
 
+'@Static
 '@Description("Gets a DateTime object that is set to the current date and time on this computer, expressed as the Coordinated Universal Time (UTC).")
 Public Property Get UtcNow() As DateTime
 Attribute UtcNow.VB_Description = "Gets a DateTime object that is set to the current date and time on this computer, expressed as the Coordinated Universal Time (UTC)."
@@ -314,6 +316,7 @@ Attribute AddYears.VB_Description = "Returns a new DateTime that adds the specif
    End With
 End Function
 
+'@Static
 '@Description("Compares two instances of DateTime and returns an integer that indicates whether the first instance is earlier than, the same as, or later than the second instance.")
 Public Function Compare(ByRef t1 As DateTime, ByRef t2 As DateTime) As Long
 Attribute Compare.VB_Description = "Compares two instances of DateTime and returns an integer that indicates whether the first instance is earlier than, the same as, or later than the second instance."
@@ -371,6 +374,7 @@ Attribute Equals3.VB_Description = "Returns a value indicating whether two DateT
    Equals3 = this.DotNetLibDateTime.Equals3(t1.ComObject, t2.ComObject)
 End Function
 
+'@Static
 '@Description("Deserializes a 64-bit binary value and recreates an original serialized DateTime object.")
 Public Function FromBinary(ByVal dateData As LongLong) As DateTime
 Attribute FromBinary.VB_Description = "Deserializes a 64-bit binary value and recreates an original serialized DateTime object."
@@ -380,6 +384,7 @@ Attribute FromBinary.VB_Description = "Deserializes a 64-bit binary value and re
    End With
 End Function
 
+'@Static
 '@Description("Converts the specified Windows file time to an equivalent local time.")
 Public Function FromFileTime(ByVal fileTime As LongLong) As DateTime
 Attribute FromFileTime.VB_Description = "Converts the specified Windows file time to an equivalent local time."
@@ -389,6 +394,7 @@ Attribute FromFileTime.VB_Description = "Converts the specified Windows file tim
    End With
 End Function
 
+'@Static
 '@Description("Converts the specified Windows file time to an equivalent UTC time.")
 Public Function FromFileTimeUtc(ByVal fileTime As LongLong) As DateTime
 Attribute FromFileTimeUtc.VB_Description = "Converts the specified Windows file time to an equivalent UTC time."
@@ -398,6 +404,7 @@ Attribute FromFileTimeUtc.VB_Description = "Converts the specified Windows file 
    End With
 End Function
 
+'@Static
 '@Description("Returns a DateTime equivalent to the specified OLE Automation Date.")
 Public Function FromOADate(ByVal d As Double) As DateTime
 Attribute FromOADate.VB_Description = "Returns a DateTime equivalent to the specified OLE Automation Date."
@@ -425,12 +432,14 @@ Attribute IsDaylightSavingTime.VB_Description = "Indicates whether this instance
    IsDaylightSavingTime = this.DotNetLibDateTime.IsDaylightSavingTime()
 End Function
 
+'@Static
 '@Description("Returns an indication whether the specified year is a leap year.")
 Public Function IsLeapYear(ByVal Year As Long) As Boolean
 Attribute IsLeapYear.VB_Description = "Returns an indication whether the specified year is a leap year."
    IsLeapYear = this.DotNetLibDateTime.IsLeapYear(Year)
 End Function
 
+'@Static
 '@Description("Converts the string representation of a date and time to its DateTime equivalent by using the conventions of the current culture.")
 Public Function Parse(ByVal s As String) As DateTime
 Attribute Parse.VB_Description = "Converts the string representation of a date and time to its DateTime equivalent by using the conventions of the current culture."
@@ -440,6 +449,7 @@ Attribute Parse.VB_Description = "Converts the string representation of a date a
    End With
 End Function
 
+'@Static
 '@Description("Converts the string representation of a date and time to its DateTime equivalent by using the conventions of the current culture.")
 Public Function Parse2(ByVal s As String, ByRef provider As IFormatProvider) As DateTime
 Attribute Parse2.VB_Description = "Converts the string representation of a date and time to its DateTime equivalent by using the conventions of the current culture."
@@ -449,6 +459,7 @@ Attribute Parse2.VB_Description = "Converts the string representation of a date 
    End With
 End Function
 
+'@Static
 '@Description("Defines the formatting options that customize string parsing for some date and time parsing methods.  This enumeration supports a bitwise combination of its member values.")
 Public Function Parse3(ByVal s As String, ByRef provider As IFormatProvider, ByVal styles As DateTimeStyles) As DateTime
 Attribute Parse3.VB_Description = "Defines the formatting options that customize string parsing for some date and time parsing methods.  This enumeration supports a bitwise combination of its member values."
@@ -458,6 +469,7 @@ Attribute Parse3.VB_Description = "Defines the formatting options that customize
    End With
 End Function
 
+'@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")
 Public Function ParseExact(ByVal s As String, ByVal format As String, ByRef provider As IFormatProvider) As DateTime
 Attribute ParseExact.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly."
@@ -467,6 +479,7 @@ Attribute ParseExact.VB_Description = "Converts the specified string representat
    End With
 End Function
 
+'@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly or an exception is thrown.")
 Public Function ParseExact2(ByVal s As String, ByVal format As String, ByRef provider As IFormatProvider, ByVal style As DateTimeStyles) As DateTime
 Attribute ParseExact2.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly or an exception is thrown."
@@ -476,6 +489,7 @@ Attribute ParseExact2.VB_Description = "Converts the specified string representa
    End With
 End Function
 
+'@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified array of formats, culture-specific format information, and style. The format of the string representation must match at least one of the specified formats exactly or an exception is thrown.")
 Public Function ParseExact3(ByVal s As String, ByRef formats() As String, ByRef provider As IFormatProvider, ByVal style As DateTimeStyles) As DateTime
 Attribute ParseExact3.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified array of formats, culture-specific format information, and style. The format of the string representation must match at least one of the specified formats exactly or an exception is thrown."
@@ -485,6 +499,7 @@ Attribute ParseExact3.VB_Description = "Converts the specified string representa
    End With
 End Function
 
+'@Static
 '@Description("Creates a new DateTime object that has the same number of ticks as the specified DateTime, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified DateTimeKind value.")
 Public Function SpecifyKind(ByRef value As DateTime, ByVal kind As DotNetLib.DateTimeKind) As DateTime
 Attribute SpecifyKind.VB_Description = "Creates a new DateTime object that has the same number of ticks as the specified DateTime, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified DateTimeKind value."
@@ -604,12 +619,14 @@ Attribute ToUniversalTime.VB_Description = "Converts the value of the current Da
    End With
 End Function
 
+'@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent and returns a value that indicates whether the conversion succeeded.")
 Public Function TryParse(ByVal s As String, ByRef result As DateTime) As Boolean
 Attribute TryParse.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent and returns a value that indicates whether the conversion succeeded."
    TryParse = this.DotNetLibDateTime.TryParse(s, result.ComObject)
 End Function
 
+'@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified culture-specific format information and formatting style, and returns a value that indicates whether the conversion succeeded.")
 Public Function TryParse2(ByVal s As String, ByRef provider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DateTime) As Boolean
 Attribute TryParse2.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified culture-specific format information and formatting style, and returns a value that indicates whether the conversion succeeded."
