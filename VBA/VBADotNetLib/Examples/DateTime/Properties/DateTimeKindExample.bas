@@ -6,7 +6,7 @@ Attribute VB_Name = "DateTimeKindExample"
 '@Version v1.0 July 09, 2023
 '@LastModified July 09, 2023
 
-'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.kind?view=netframework-4.8.1#examples
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.kind?view=netframework-4.8.1#examples
 
 Option Explicit
 

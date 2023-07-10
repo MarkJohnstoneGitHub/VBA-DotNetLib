@@ -8,7 +8,6 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 'Rubberduck annotations
-'@IgnoreModule UnrecognizedAnnotation
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
 

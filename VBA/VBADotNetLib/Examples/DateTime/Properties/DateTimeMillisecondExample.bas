@@ -1,4 +1,5 @@
 Attribute VB_Name = "DateTimeMillisecondExample"
+'@IgnoreModule UnrecognizedAnnotation
 'Rubberduck annotations
 '@Folder "VBADotNetLib.Examples.DateTime.Properties"
 
@@ -6,6 +7,8 @@ Attribute VB_Name = "DateTimeMillisecondExample"
 '@Version v1.0 July 09, 2023
 '@LastModified July 09, 2023
 
+'@Ignore SuperfluousAnnotationArgument
+'@Ignore SuperfluousAnnotationArgument
 '@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.millisecond?view=net-7.0#examples
 
 Option Explicit

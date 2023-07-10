@@ -6,7 +6,7 @@ Attribute VB_Name = "DateTimeTodayExample"
 '@Version v1.0 July 09, 2023
 '@LastModified July 09, 2023
 
-'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.today?view=netframework-4.8.1#examples
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.today?view=netframework-4.8.1#examples
 
 Option Explicit
 
@@ -16,6 +16,7 @@ Option Explicit
 ' third call to the ToString(String) method uses the g format specifier to
 ' include the time component, which is zero.
 Public Sub DateTimeToday()
+Attribute DateTimeToday.VB_Description = "The following example uses the Date property to retrieve the current date."
     ' Get the current date.
     Dim thisDay As DateTime
     Set thisDay = DateTime.Today
@@ -34,4 +35,3 @@ Public Sub DateTimeToday()
 '    Thursday, May 03, 2012
 '    5/3/2012 12:00 AM
 End Sub
-

@@ -5,7 +5,7 @@ Attribute VB_Name = "DateTimeAddSecondsExample"
 '@Version v1.0 July 10, 2023
 '@LastModified July 10, 2023
 
-'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.addseconds?view=netframework-4.8.1#examples
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.addseconds?view=netframework-4.8.1#examples
 
 Option Explicit
 

@@ -9,7 +9,6 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Represents an instant in time, typically expressed as a date and time of day."
 'Rubberduck annotations
-'@IgnoreModule UnrecognizedAnnotation
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
 '@ModuleDescription("Represents an instant in time, typically expressed as a date and time of day.")
@@ -18,15 +17,13 @@ Attribute VB_Description = "Represents an instant in time, typically expressed a
 '@Version v1.0 July 09, 2023
 '@LastModified July 10, 2023
 
-'@Ignore SuperfluousAnnotationArgument
-'@Dependencies DotNetLib.tlb, mscorlib.tlb
+'@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
-'@Remarks
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8.1
+
+'@Notes
 ' Renamed DotNetLib.Date to DateOnly due to VBA reserved word
 ' Added DateTimeStatic helper class for static fields MaxValue and MinValue
-
-'@Ignore SuperfluousAnnotationArgument
-'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8.1
 
 Option Explicit
 

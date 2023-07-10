@@ -6,7 +6,7 @@ Attribute VB_Name = "DateTimeTicksExample"
 '@Version v1.0 July 09, 2023
 '@LastModified July 09, 2023
 
-'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.ticks?view=netframework-4.8.1#examples
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.ticks?view=netframework-4.8.1#examples
 
 Option Explicit
 
@@ -33,7 +33,7 @@ Public Sub DateTimeTicks()
     Debug.Print "   " & elapsedTicks & " ticks"
     Debug.Print "   " & elapsedSpan.TotalSeconds & " seconds"
     Debug.Print "   " & elapsedSpan.TotalMinutes & " minutes"
-    Debug.Print "   " & elapsedSpan.Days & " days, " & elapsedSpan.hours & " hours, " & elapsedSpan.Minutes & " minutes, " & elapsedSpan.Seconds & " seconds"
+    Debug.Print "   " & elapsedSpan.Days & " days, " & elapsedSpan.hours & " hours, " & elapsedSpan.minutes & " minutes, " & elapsedSpan.Seconds & " seconds"
     
 ' This example displays an output similar to the following:
 '

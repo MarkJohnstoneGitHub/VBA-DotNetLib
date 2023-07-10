@@ -6,12 +6,13 @@ Attribute VB_Name = "DateTimeDayOfYearExample"
 '@Version v1.0 July 09, 2023
 '@LastModified July 09, 2023
 
-'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.dayofyear?view=netframework-4.8.1#examples
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.dayofyear?view=netframework-4.8.1#examples
 
 Option Explicit
 
 '@Description("The following example displays the day of the year of December 31 for the years 2010-2020 in the Gregorian calendar. Note that the example shows that December 31 is the 366th day of the year in leap years.")
 Public Sub DateTimeDayOfYear()
+Attribute DateTimeDayOfYear.VB_Description = "The following example displays the day of the year of December 31 for the years 2010-2020 in the Gregorian calendar. Note that the example shows that December 31 is the 366th day of the year in leap years."
     Dim dec31 As DateTime
     Set dec31 = DateTime.CreateFromDate(2010, 12, 31)
     
@@ -37,4 +38,3 @@ Public Sub DateTimeDayOfYear()
 '       12/31/2019: day 365 of 2019
 '       12/31/2020: day 366 of 2020 (Leap Year)
 End Sub
-

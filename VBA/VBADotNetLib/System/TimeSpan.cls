@@ -9,7 +9,6 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Represents a time interval."
 'Rubberduck annotations
-'@IgnoreModule UnrecognizedAnnotation
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
 '@ModuleDescription("Represents a time interval.")
@@ -17,6 +16,10 @@ Attribute VB_Description = "Represents a time interval."
 'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
 '@LastModified July 10, 2023
+
+'@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
+
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8.1
 
 Option Explicit
 
@@ -58,30 +61,30 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the TimeSpan structure to a specified number of hours, minutes, and seconds.")
-Public Function Create(ByVal hours As Long, ByVal minutes As Long, ByVal Seconds As Long) As TimeSpan
+Public Function Create(ByVal Hours As Long, ByVal Minutes As Long, ByVal Seconds As Long) As TimeSpan
 Attribute Create.VB_Description = "Initializes a new instance of the TimeSpan structure to a specified number of hours, minutes, and seconds."
    With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Create(hours, minutes, Seconds)
+      Set .ComObject = this.DotNetLibTimeSpan.Create(Hours, Minutes, Seconds)
       Set Create = .Self
    End With
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, and seconds.")
-Public Function Create2(ByVal Days As Long, ByVal hours As Long, ByVal minutes As Long, ByVal Seconds As Long) As TimeSpan
+Public Function Create2(ByVal Days As Long, ByVal Hours As Long, ByVal Minutes As Long, ByVal Seconds As Long) As TimeSpan
 Attribute Create2.VB_Description = "Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, and seconds."
    With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Create2(Days, hours, minutes, Seconds)
+      Set .ComObject = this.DotNetLibTimeSpan.Create2(Days, Hours, Minutes, Seconds)
       Set Create2 = .Self
    End With
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, seconds, and milliseconds.")
-Public Function Create3(ByVal Days As Long, ByVal hours As Long, ByVal minutes As Long, ByVal Seconds As Long, ByVal Milliseconds As Long) As TimeSpan
+Public Function Create3(ByVal Days As Long, ByVal Hours As Long, ByVal Minutes As Long, ByVal Seconds As Long, ByVal Milliseconds As Long) As TimeSpan
 Attribute Create3.VB_Description = "Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, seconds, and milliseconds."
    With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Create3(Days, hours, minutes, Seconds, Milliseconds)
+      Set .ComObject = this.DotNetLibTimeSpan.Create3(Days, Hours, Minutes, Seconds, Milliseconds)
       Set Create3 = .Self
    End With
 End Function
@@ -149,9 +152,9 @@ Attribute Days.VB_Description = "Gets the days component of the time interval re
 End Property
 
 '@Description("Gets the hours component of the time interval represented by the current TimeSpan structure.")
-Public Property Get hours() As Long
-Attribute hours.VB_Description = "Gets the hours component of the time interval represented by the current TimeSpan structure."
-   hours = this.DotNetLibTimeSpan.hours()
+Public Property Get Hours() As Long
+Attribute Hours.VB_Description = "Gets the hours component of the time interval represented by the current TimeSpan structure."
+   Hours = this.DotNetLibTimeSpan.Hours()
 End Property
 
 '@Description("Gets the milliseconds component of the time interval represented by the current TimeSpan structure.")
@@ -161,9 +164,9 @@ Attribute Milliseconds.VB_Description = "Gets the milliseconds component of the 
 End Property
 
 '@Description("Gets the minutes component of the time interval represented by the current TimeSpan structure.")
-Public Property Get minutes() As Long
-Attribute minutes.VB_Description = "Gets the minutes component of the time interval represented by the current TimeSpan structure."
-   minutes = this.DotNetLibTimeSpan.minutes()
+Public Property Get Minutes() As Long
+Attribute Minutes.VB_Description = "Gets the minutes component of the time interval represented by the current TimeSpan structure."
+   Minutes = this.DotNetLibTimeSpan.Minutes()
 End Property
 
 '@Description("Gets the seconds component of the time interval represented by the current TimeSpan structure.")

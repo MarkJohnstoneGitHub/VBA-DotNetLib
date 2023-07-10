@@ -6,7 +6,7 @@ Attribute VB_Name = "DateTimeUtcNowExample"
 '@Version v1.0 July 09, 2023
 '@LastModified July 09, 2023
 
-'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.utcnow?view=netframework-4.8.1#examples
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.utcnow?view=netframework-4.8.1#examples
 
 Option Explicit
 
@@ -34,6 +34,7 @@ Private Const datePatt As String = "M/d/yyyy hh:mm:ss tt"
 
 '@Description("The following example uses the SpecifyKind method to demonstrate how the Kind property influences the ToLocalTime and ToUniversalTime conversion methods.")
 Public Sub DateTimeUtcNow()
+Attribute DateTimeUtcNow.VB_Description = "The following example uses the SpecifyKind method to demonstrate how the Kind property influences the ToLocalTime and ToUniversalTime conversion methods."
     ' Get the date and time for the current moment, adjusted
     ' to the local time zone.
     Dim saveNow As DateTime

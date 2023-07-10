@@ -1,7 +1,11 @@
 Attribute VB_Name = "DateTimeAddMillisecondsExample"
 '@Folder("VBADotNetLib.Examples.DateTime.Methods")
 
-'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.addmilliseconds?view=netframework-4.8.1#examples
+'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 10, 2023
+'@LastModified July 10, 2023
+
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.addmilliseconds?view=netframework-4.8.1#examples
 
 Option Explicit
 
@@ -13,6 +17,7 @@ Option Explicit
 ' rounded before performing the addition; the DateTime value that results from adding 1.5 milliseconds
 ' to the original date is 2 milliseconds greater than the original date.
 Public Sub DateTimeAddMilliseconds()
+Attribute DateTimeAddMilliseconds.VB_Description = "The following example uses the AddMilliseconds method to add one millisecond and 1.5 milliseconds to a DateTime value."
    Dim dateFormat As String
    dateFormat = "MM/dd/yyyy hh:mm:ss.fffffff"
    Dim date1 As DateTime
@@ -40,4 +45,3 @@ Public Sub DateTimeAddMilliseconds()
 '    Difference between dates: 00:00:00.0020000 (20,000 ticks)
 
 End Sub
-

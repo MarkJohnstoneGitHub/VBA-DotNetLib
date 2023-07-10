@@ -6,12 +6,13 @@ Attribute VB_Name = "DateTimeAddHoursExample"
 '@Version v1.0 July 09, 2023
 '@LastModified July 09, 2023
 
-'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.addhours?view=netframework-4.8.1#examples
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.addhours?view=netframework-4.8.1#examples
 
 Option Explicit
 
 '@Description("The following example uses the AddHours method to add a number of whole and fractional values to a date and time. It also illustrates the loss of precision caused by passing the method a value that includes a fractional component.")
 Public Sub DateTimeAddHours()
+Attribute DateTimeAddHours.VB_Description = "The following example uses the AddHours method to add a number of whole and fractional values to a date and time. It also illustrates the loss of precision caused by passing the method a value that includes a fractional component."
    Dim hours() As Double
    hours = ArrayDouble(0.08333, 0.16667, 0.25, 0.33333, 0.5, 0.66667, 1, 2, 29, 30, 31, 90, 365)
    
@@ -39,4 +40,3 @@ Public Sub DateTimeAddHours()
 '    3/1/2009 12:00:00 PM + 90 hour(s) = 3/5/2009 6:00:00 AM
 '    3/1/2009 12:00:00 PM + 365 hour(s) = 3/16/2009 5:00:00 PM
 End Sub
-

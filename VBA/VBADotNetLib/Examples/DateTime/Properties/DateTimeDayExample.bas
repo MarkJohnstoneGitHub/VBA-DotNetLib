@@ -12,6 +12,7 @@ Option Explicit
 
 '@Description("The following example demonstrates the Day property.")
 Public Sub DateTimePropertyDay()
+Attribute DateTimePropertyDay.VB_Description = "The following example demonstrates the Day property."
     Dim moment As DateTime
     Set moment = DateTime.CreateFromDateTime(1999, 1, 13, 3, 57, 32, 11)
     
@@ -51,4 +52,3 @@ Public Sub DateTimePropertyDay()
     Debug.Print "Millisecond "; pvtMillisecond
     
 End Sub
-

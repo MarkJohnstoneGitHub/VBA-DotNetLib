@@ -5,12 +5,13 @@ Attribute VB_Name = "DateTimeCompareExample"
 '@Version v1.0 July 10, 2023
 '@LastModified July 10, 2023
 
-'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.compare?view=netframework-4.8.1#examples
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.compare?view=netframework-4.8.1#examples
 
 Option Explicit
 
 '@Description("The following example demonstrates the Compare method.")
 Public Sub DateTimeCompare()
+Attribute DateTimeCompare.VB_Description = "The following example demonstrates the Compare method."
    Dim date1 As DateTime
    Set date1 = DateTime.CreateFromDateTime(2009, 8, 1, 0, 0, 0)
    Dim date2 As DateTime

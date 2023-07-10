@@ -5,12 +5,13 @@ Attribute VB_Name = "DateTimeAddMinutesExample"
 '@Version v1.0 July 10, 2023
 '@LastModified July 10, 2023
 
-'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.addminutes?view=netframework-4.8.1#examples
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.addminutes?view=netframework-4.8.1#examples
 
 Option Explicit
 
 '@Description("The following example uses the AddMinutes method to add a number of whole and fractional values to a date and time.")
 Public Sub DateTimeAddMinutes()
+Attribute DateTimeAddMinutes.VB_Description = "The following example uses the AddMinutes method to add a number of whole and fractional values to a date and time."
    Dim dateValue As DateTime
    Set dateValue = DateTime.CreateFromDateTime(2013, 9, 15, 12, 0, 0)
    
@@ -41,4 +42,3 @@ Public Sub DateTimeAddMinutes()
 '    9/15/2013 12:00:00 PM + 1440 minute(s) = 9/16/2013 12:00:00 PM
 
 End Sub
-
