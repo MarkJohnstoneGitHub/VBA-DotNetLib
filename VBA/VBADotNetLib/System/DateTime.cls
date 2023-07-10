@@ -15,11 +15,14 @@ Attribute VB_Description = "Represents an instant in time, typically expressed a
 
 'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
-'@LastModified July 10, 2023
+'@LastModified July 11, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8.1
+
+'@Remarks
+' Generated from DotNetLib.tlb using https://github.com/MarkJohnstoneGitHub/Refactor-COM-object-to-VBA-COM-wrapper-class
 
 '@Notes
 ' Renamed DotNetLib.Date to DateOnly due to VBA reserved word
@@ -361,6 +364,7 @@ Attribute Equals2.VB_Description = "Returns a value indicating whether this inst
    End If
 End Function
 
+'@Static
 '@Description("Returns a value indicating whether two DateTime instances have the same date and time value.")
 Public Function Equals3(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
 Attribute Equals3.VB_Description = "Returns a value indicating whether two DateTime instances have the same date and time value."
@@ -612,6 +616,7 @@ Attribute TryParse2.VB_Description = "Converts the specified string representati
    TryParse2 = this.DotNetLibDateTime.TryParse2(s, provider, styles, result.ComObject)
 End Function
 
+'@Static
 '@Description("Adds a specified time interval to a specified date and time, yielding a new date and time.")
 Public Function Addition(ByRef d As DateTime, ByRef t As TimeSpan) As DateTime
 Attribute Addition.VB_Description = "Adds a specified time interval to a specified date and time, yielding a new date and time."
@@ -621,42 +626,49 @@ Attribute Addition.VB_Description = "Adds a specified time interval to a specifi
    End With
 End Function
 
+'@Static
 '@Description("Determines whether two specified instances of DateTime are equal.")
 Public Function Equality(ByRef d1 As DateTime, ByRef d2 As DateTime) As Boolean
 Attribute Equality.VB_Description = "Determines whether two specified instances of DateTime are equal."
    Equality = this.DotNetLibDateTime.Equality(d1.ComObject, d2.ComObject)
 End Function
 
+'@Static
 '@Description("Determines whether one specified DateTime is later than another specified DateTime.")
 Public Function GreaterThan(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
 Attribute GreaterThan.VB_Description = "Determines whether one specified DateTime is later than another specified DateTime."
    GreaterThan = this.DotNetLibDateTime.GreaterThan(t1.ComObject, t2.ComObject)
 End Function
 
+'@Static
 '@Description("Determines whether one specified DateTime represents a date and time that is the same as or later than another specified DateTime.")
 Public Function GreaterThanOrEqual(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
 Attribute GreaterThanOrEqual.VB_Description = "Determines whether one specified DateTime represents a date and time that is the same as or later than another specified DateTime."
    GreaterThanOrEqual = this.DotNetLibDateTime.GreaterThanOrEqual(t1.ComObject, t2.ComObject)
 End Function
 
+'@Static
 '@Description("Determines whether two specified instances of DateTime are not equal.")
 Public Function Inequality(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
 Attribute Inequality.VB_Description = "Determines whether two specified instances of DateTime are not equal."
    Inequality = this.DotNetLibDateTime.Inequality(t1.ComObject, t2.ComObject)
 End Function
 
+'@Static
 '@Description("Determines whether one specified DateTime is earlier than another specified DateTime.")
 Public Function LessThan(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
 Attribute LessThan.VB_Description = "Determines whether one specified DateTime is earlier than another specified DateTime."
    LessThan = this.DotNetLibDateTime.LessThan(t1.ComObject, t2.ComObject)
 End Function
 
+'@Static
 '@Description("Determines whether one specified DateTime represents a date and time that is the same as or earlier than another specified DateTime.")
 Public Function LessThanOrEqual(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
 Attribute LessThanOrEqual.VB_Description = "Determines whether one specified DateTime represents a date and time that is the same as or earlier than another specified DateTime."
    LessThanOrEqual = this.DotNetLibDateTime.LessThanOrEqual(t1.ComObject, t2.ComObject)
 End Function
 
+'@Static
 '@Description("Subtracts a specified date and time from another specified date and time and returns a time interval.")
 Public Function Subtraction(ByRef d1 As DateTime, ByRef d2 As DateTime) As TimeSpan
 Attribute Subtraction.VB_Description = "Subtracts a specified date and time from another specified date and time and returns a time interval."
@@ -666,6 +678,7 @@ Attribute Subtraction.VB_Description = "Subtracts a specified date and time from
    End With
 End Function
 
+'@Static
 '@Description("Subtracts a specified time interval from a specified date and time and returns a new date and time.")
 Public Function Subtraction2(ByRef d As DateTime, ByRef t As TimeSpan) As DateTime
 Attribute Subtraction2.VB_Description = "Subtracts a specified time interval from a specified date and time and returns a new date and time."
