@@ -31,6 +31,7 @@ If the .NET Framework isn't installed see [Download .NET Framework](https://dotn
     - Eg. To unregister C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe C:\ProgramData\DotNetLib\DotNetLib.dll /tlb /unregister
     - If the files are moved will require to unregister and register manually.
  3) Eg In MS-Access, MS-Excel see Tools->References
+   - For [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/DotNetLibrary.accdb) references may be required to be fixed by removing and adding back in.
    - Add reference DotNetlib.tlb (Com Interlop wrappers of the .Net Framework 4.8.1)  i.e. browse to location where stored 
    - Add reference mscorlib.tlb
  
