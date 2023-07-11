@@ -28,7 +28,7 @@ Public Sub DateTimeParse()
    If Err.Number = 0 Then
       Debug.Print "'" & dateString & "' converted to " & dateValue.ToString & "."
    Else
-      If Err.Number = Arg_FormatException Then
+      If Err.Number = COM_HResult.FormatException Then
          Debug.Print "Unable to convert '" & dateString & "'."
       Else
          Debug.Print Err.Number, Err.Description
@@ -44,7 +44,7 @@ Public Sub DateTimeParse()
    If Err.Number = 0 Then
       Debug.Print "'" & dateString & "' converted to " & dateValue.ToString & "."
    Else
-      If Err.Number = Arg_FormatException Then
+      If Err.Number = COM_HResult.FormatException Then
          Debug.Print "Unable to convert '" & dateString & "'."
       Else
          Debug.Print Err.Number, Err.Description
@@ -56,5 +56,4 @@ Public Sub DateTimeParse()
 '       '2/16/2008 12:15:12 PM' converted to 2/16/2008 12:15:12 PM.
 '       Unable to convert '16/02/2008 12:15:12'.
 End Sub
-
 
