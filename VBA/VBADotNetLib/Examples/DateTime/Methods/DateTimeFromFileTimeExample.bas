@@ -20,7 +20,7 @@ Public Sub DateTimeFromFileTime()
    
    Dim date2 As DateTime
    Set date2 = DateTime.FromFileTime(ft)
-   Debug.Print date1.ToString & " -> " & date2
+   Debug.Print date1.ToString & " -> " & date2.ToString
    
 ' The example displays the following output for local time zone of AUS Eastern Standard Time:
 '       Invalid Time: True
