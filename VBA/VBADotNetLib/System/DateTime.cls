@@ -8,6 +8,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Represents an instant in time, typically expressed as a date and time of day."
+'@IgnoreModule UnassignedVariableUsage, VariableNotAssigned
 'Rubberduck annotations
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
@@ -237,7 +238,7 @@ Attribute Year.VB_Description = "Gets the year component of the date represented
 End Property
 
 '@Description("Returns a new DateTime that adds the value of the specified TimeSpan to the value of this instance.")
-Public Function Add(ByRef value As TimeSpan) As DateTime
+Public Function Add(ByVal value As TimeSpan) As DateTime
 Attribute Add.VB_Description = "Returns a new DateTime that adds the value of the specified TimeSpan to the value of this instance."
    With New DateTime
       Set .ComObject = this.DotNetLibDateTime.Add(value.ComObject)
@@ -319,13 +320,13 @@ End Function
 
 '@Static
 '@Description("Compares two instances of DateTime and returns an integer that indicates whether the first instance is earlier than, the same as, or later than the second instance.")
-Public Function Compare(ByRef t1 As DateTime, ByRef t2 As DateTime) As Long
+Public Function Compare(ByVal t1 As DateTime, ByVal t2 As DateTime) As Long
 Attribute Compare.VB_Description = "Compares two instances of DateTime and returns an integer that indicates whether the first instance is earlier than, the same as, or later than the second instance."
    Compare = this.DotNetLibDateTime.Compare(t1.ComObject, t2.ComObject)
 End Function
 
 '@Description("Compares the value of this instance to a specified DateTime value and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.")
-Public Function CompareTo(ByRef t As DateTime) As Long
+Public Function CompareTo(ByVal t As DateTime) As Long
 Attribute CompareTo.VB_Description = "Compares the value of this instance to a specified DateTime value and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value."
    CompareTo = this.DotNetLibDateTime.CompareTo(t.ComObject)
 End Function
@@ -351,7 +352,7 @@ Attribute DaysInMonth.VB_Description = "Returns the number of days in the specif
 End Function
 
 '@Description("Returns a value indicating whether the value of this instance is equal to the value of the specified DateTime instance.")
-Public Function Equals(ByRef value As DateTime) As Boolean
+Public Function Equals(ByVal value As DateTime) As Boolean
 Attribute Equals.VB_Description = "Returns a value indicating whether the value of this instance is equal to the value of the specified DateTime instance."
    Equals = this.DotNetLibDateTime.Equals(value.ComObject)
 End Function
@@ -370,7 +371,7 @@ End Function
 
 '@Static
 '@Description("Returns a value indicating whether two DateTime instances have the same date and time value.")
-Public Function Equals3(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
+Public Function Equals3(ByVal t1 As DateTime, ByVal t2 As DateTime) As Boolean
 Attribute Equals3.VB_Description = "Returns a value indicating whether two DateTime instances have the same date and time value."
    Equals3 = this.DotNetLibDateTime.Equals3(t1.ComObject, t2.ComObject)
 End Function
@@ -452,7 +453,7 @@ End Function
 
 '@Static
 '@Description("Converts the string representation of a date and time to its DateTime equivalent by using the conventions of the current culture.")
-Public Function Parse2(ByVal s As String, ByRef provider As IFormatProvider) As DateTime
+Public Function Parse2(ByVal s As String, ByVal provider As IFormatProvider) As DateTime
 Attribute Parse2.VB_Description = "Converts the string representation of a date and time to its DateTime equivalent by using the conventions of the current culture."
    With New DateTime
       Set .ComObject = this.DotNetLibDateTime.Parse2(s, provider)
@@ -462,7 +463,7 @@ End Function
 
 '@Static
 '@Description("Defines the formatting options that customize string parsing for some date and time parsing methods.  This enumeration supports a bitwise combination of its member values.")
-Public Function Parse3(ByVal s As String, ByRef provider As IFormatProvider, ByVal styles As DateTimeStyles) As DateTime
+Public Function Parse3(ByVal s As String, ByVal provider As IFormatProvider, ByVal styles As DateTimeStyles) As DateTime
 Attribute Parse3.VB_Description = "Defines the formatting options that customize string parsing for some date and time parsing methods.  This enumeration supports a bitwise combination of its member values."
    With New DateTime
       Set .ComObject = this.DotNetLibDateTime.Parse3(s, provider, styles)
@@ -472,7 +473,7 @@ End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")
-Public Function ParseExact(ByVal s As String, ByVal format As String, ByRef provider As IFormatProvider) As DateTime
+Public Function ParseExact(ByVal s As String, ByVal format As String, ByVal provider As IFormatProvider) As DateTime
 Attribute ParseExact.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly."
    With New DateTime
       Set .ComObject = this.DotNetLibDateTime.ParseExact(s, format, provider)
@@ -482,7 +483,7 @@ End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly or an exception is thrown.")
-Public Function ParseExact2(ByVal s As String, ByVal format As String, ByRef provider As IFormatProvider, ByVal style As DateTimeStyles) As DateTime
+Public Function ParseExact2(ByVal s As String, ByVal format As String, ByVal provider As IFormatProvider, ByVal style As DateTimeStyles) As DateTime
 Attribute ParseExact2.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly or an exception is thrown."
    With New DateTime
       Set .ComObject = this.DotNetLibDateTime.ParseExact2(s, format, provider, style)
@@ -492,7 +493,7 @@ End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified array of formats, culture-specific format information, and style. The format of the string representation must match at least one of the specified formats exactly or an exception is thrown.")
-Public Function ParseExact3(ByVal s As String, ByRef formats() As String, ByRef provider As IFormatProvider, ByVal style As DateTimeStyles) As DateTime
+Public Function ParseExact3(ByVal s As String, ByRef formats() As String, ByVal provider As IFormatProvider, ByVal style As DateTimeStyles) As DateTime
 Attribute ParseExact3.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified array of formats, culture-specific format information, and style. The format of the string representation must match at least one of the specified formats exactly or an exception is thrown."
    With New DateTime
       Set .ComObject = this.DotNetLibDateTime.ParseExact3(s, formats, provider, style)
@@ -502,7 +503,7 @@ End Function
 
 '@Static
 '@Description("Creates a new DateTime object that has the same number of ticks as the specified DateTime, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified DateTimeKind value.")
-Public Function SpecifyKind(ByRef value As DateTime, ByVal Kind As DotNetLib.DateTimeKind) As DateTime
+Public Function SpecifyKind(ByVal value As DateTime, ByVal Kind As DotNetLib.DateTimeKind) As DateTime
 Attribute SpecifyKind.VB_Description = "Creates a new DateTime object that has the same number of ticks as the specified DateTime, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified DateTimeKind value."
    With New DateTime
       Set .ComObject = this.DotNetLibDateTime.SpecifyKind(value.ComObject, Kind)
@@ -511,7 +512,7 @@ Attribute SpecifyKind.VB_Description = "Creates a new DateTime object that has t
 End Function
 
 '@Description("Returns a new DateTime that subtracts the specified duration from the value of this instance.")
-Public Function Subtract(ByRef value As TimeSpan) As DateTime
+Public Function Subtract(ByVal value As TimeSpan) As DateTime
 Attribute Subtract.VB_Description = "Returns a new DateTime that subtracts the specified duration from the value of this instance."
    With New DateTime
       Set .ComObject = this.DotNetLibDateTime.Subtract(value.ComObject)
@@ -520,7 +521,7 @@ Attribute Subtract.VB_Description = "Returns a new DateTime that subtracts the s
 End Function
 
 '@Description("Returns a new TimeSpan that subtracts the specified date and time from the value of this instance.")
-Public Function Subtract2(ByRef value As DateTime) As TimeSpan
+Public Function Subtract2(ByVal value As DateTime) As TimeSpan
 Attribute Subtract2.VB_Description = "Returns a new TimeSpan that subtracts the specified date and time from the value of this instance."
     With New TimeSpan
         Set .ComObject = this.DotNetLibDateTime.Subtract2(value.ComObject)
@@ -600,13 +601,13 @@ Attribute ToString2.VB_Description = "Converts the value of the current DateTime
 End Function
 
 '@Description("Converts the value of the current DateTime object to its equivalent string representation using the specified culture-specific format information.")
-Public Function ToString3(ByRef provider As IFormatProvider) As String
+Public Function ToString3(ByVal provider As IFormatProvider) As String
 Attribute ToString3.VB_Description = "Converts the value of the current DateTime object to its equivalent string representation using the specified culture-specific format information."
    ToString3 = this.DotNetLibDateTime.ToString3(provider)
 End Function
 
 '@Description("Converts the value of the current DateTime object to its equivalent string representation using the specified format and culture-specific format information.")
-Public Function ToString4(ByVal format As String, ByRef provider As IFormatProvider) As String
+Public Function ToString4(ByVal format As String, ByVal provider As IFormatProvider) As String
 Attribute ToString4.VB_Description = "Converts the value of the current DateTime object to its equivalent string representation using the specified format and culture-specific format information."
    ToString4 = this.DotNetLibDateTime.ToString4(format, provider)
 End Function
@@ -634,14 +635,19 @@ End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified culture-specific format information and formatting style, and returns a value that indicates whether the conversion succeeded.")
-Public Function TryParse2(ByVal s As String, ByRef provider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DateTime) As Boolean
+Public Function TryParse2(ByVal s As String, ByVal provider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DateTime) As Boolean
 Attribute TryParse2.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified culture-specific format information and formatting style, and returns a value that indicates whether the conversion succeeded."
-   TryParse2 = this.DotNetLibDateTime.TryParse2(s, provider, styles, result.ComObject)
+   Dim outResult As DotNetLib.DateTime
+   TryParse2 = this.DotNetLibDateTime.TryParse2(s, provider, styles, outResult)
+   With New DateTime
+      Set .ComObject = outResult
+      Set result = .Self
+   End With
 End Function
 
 '@Static
 '@Description("Adds a specified time interval to a specified date and time, yielding a new date and time.")
-Public Function Addition(ByRef d As DateTime, ByRef t As TimeSpan) As DateTime
+Public Function Addition(ByVal d As DateTime, ByVal t As TimeSpan) As DateTime
 Attribute Addition.VB_Description = "Adds a specified time interval to a specified date and time, yielding a new date and time."
    With New DateTime
       Set .ComObject = this.DotNetLibDateTime.Addition(d.ComObject, t.ComObject)
@@ -651,49 +657,49 @@ End Function
 
 '@Static
 '@Description("Determines whether two specified instances of DateTime are equal.")
-Public Function Equality(ByRef d1 As DateTime, ByRef d2 As DateTime) As Boolean
+Public Function Equality(ByVal d1 As DateTime, ByVal d2 As DateTime) As Boolean
 Attribute Equality.VB_Description = "Determines whether two specified instances of DateTime are equal."
    Equality = this.DotNetLibDateTime.Equality(d1.ComObject, d2.ComObject)
 End Function
 
 '@Static
 '@Description("Determines whether one specified DateTime is later than another specified DateTime.")
-Public Function GreaterThan(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
+Public Function GreaterThan(ByVal t1 As DateTime, ByVal t2 As DateTime) As Boolean
 Attribute GreaterThan.VB_Description = "Determines whether one specified DateTime is later than another specified DateTime."
    GreaterThan = this.DotNetLibDateTime.GreaterThan(t1.ComObject, t2.ComObject)
 End Function
 
 '@Static
 '@Description("Determines whether one specified DateTime represents a date and time that is the same as or later than another specified DateTime.")
-Public Function GreaterThanOrEqual(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
+Public Function GreaterThanOrEqual(ByVal t1 As DateTime, ByVal t2 As DateTime) As Boolean
 Attribute GreaterThanOrEqual.VB_Description = "Determines whether one specified DateTime represents a date and time that is the same as or later than another specified DateTime."
    GreaterThanOrEqual = this.DotNetLibDateTime.GreaterThanOrEqual(t1.ComObject, t2.ComObject)
 End Function
 
 '@Static
 '@Description("Determines whether two specified instances of DateTime are not equal.")
-Public Function Inequality(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
+Public Function Inequality(ByVal t1 As DateTime, ByVal t2 As DateTime) As Boolean
 Attribute Inequality.VB_Description = "Determines whether two specified instances of DateTime are not equal."
    Inequality = this.DotNetLibDateTime.Inequality(t1.ComObject, t2.ComObject)
 End Function
 
 '@Static
 '@Description("Determines whether one specified DateTime is earlier than another specified DateTime.")
-Public Function LessThan(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
+Public Function LessThan(ByVal t1 As DateTime, ByVal t2 As DateTime) As Boolean
 Attribute LessThan.VB_Description = "Determines whether one specified DateTime is earlier than another specified DateTime."
    LessThan = this.DotNetLibDateTime.LessThan(t1.ComObject, t2.ComObject)
 End Function
 
 '@Static
 '@Description("Determines whether one specified DateTime represents a date and time that is the same as or earlier than another specified DateTime.")
-Public Function LessThanOrEqual(ByRef t1 As DateTime, ByRef t2 As DateTime) As Boolean
+Public Function LessThanOrEqual(ByVal t1 As DateTime, ByVal t2 As DateTime) As Boolean
 Attribute LessThanOrEqual.VB_Description = "Determines whether one specified DateTime represents a date and time that is the same as or earlier than another specified DateTime."
    LessThanOrEqual = this.DotNetLibDateTime.LessThanOrEqual(t1.ComObject, t2.ComObject)
 End Function
 
 '@Static
 '@Description("Subtracts a specified date and time from another specified date and time and returns a time interval.")
-Public Function Subtraction(ByRef d1 As DateTime, ByRef d2 As DateTime) As TimeSpan
+Public Function Subtraction(ByVal d1 As DateTime, ByVal d2 As DateTime) As TimeSpan
 Attribute Subtraction.VB_Description = "Subtracts a specified date and time from another specified date and time and returns a time interval."
    With New TimeSpan
       Set .ComObject = this.DotNetLibDateTime.Subtraction(d1.ComObject, d2.ComObject)
@@ -703,7 +709,7 @@ End Function
 
 '@Static
 '@Description("Subtracts a specified time interval from a specified date and time and returns a new date and time.")
-Public Function Subtraction2(ByRef d As DateTime, ByRef t As TimeSpan) As DateTime
+Public Function Subtraction2(ByVal d As DateTime, ByVal t As TimeSpan) As DateTime
 Attribute Subtraction2.VB_Description = "Subtracts a specified time interval from a specified date and time and returns a new date and time."
    With New DateTime
       Set .ComObject = this.DotNetLibDateTime.Subtraction2(d.ComObject, t.ComObject)
