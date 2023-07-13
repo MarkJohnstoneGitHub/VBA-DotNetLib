@@ -19,11 +19,8 @@ Attribute DateTimeToLongDateString.VB_Description = "The following example demon
    Set dateAndTime = DateTime.CreateFromDateTime(2001, 5, 16, 3, 2, 15)
    
    Debug.Print "Long date string:  " & dateAndTime.ToLongDateString()
-
    Debug.Print "Long time string:  " & dateAndTime.ToLongTimeString()
-   
    Debug.Print "Short date string: " & dateAndTime.ToShortDateString()
-   
    Debug.Print "Short time string: " & dateAndTime.ToShortTimeString()
    
 End Sub

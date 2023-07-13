@@ -16,7 +16,7 @@ Attribute VB_Description = "Represents an instant in time, typically expressed a
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
-'@LastModified July 11, 2023
+'@LastModified July 14, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -61,10 +61,10 @@ End Property
 
 '@Static
 '@Description("Initializes a new instance of the DateTime structure to a specified number of ticks and to Coordinated Universal Time (UTC) or local time.")
-Public Function CreateFromTicks(ByVal Ticks As LongLong, Optional ByVal kind As DotNetLib.DateTimeKind = DateTimeKind_Unspecified) As DateTime
+Public Function CreateFromTicks(ByVal Ticks As LongLong, Optional ByVal Kind As DotNetLib.DateTimeKind = DateTimeKind_Unspecified) As DateTime
 Attribute CreateFromTicks.VB_Description = "Initializes a new instance of the DateTime structure to a specified number of ticks and to Coordinated Universal Time (UTC) or local time."
    With New DateTime
-      Set .ComObject = this.DotNetLibDateTime.CreateFromTicks(Ticks, kind)
+      Set .ComObject = this.DotNetLibDateTime.CreateFromTicks(Ticks, Kind)
       Set CreateFromTicks = .Self
    End With
 End Function
@@ -91,20 +91,20 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and Coordinated Universal Time (UTC) or local time.")
-Public Function CreateFromDateTimeKind(ByVal Year As Long, ByVal Month As Long, ByVal Day As Long, ByVal Hour As Long, ByVal Minute As Long, ByVal Second As Long, ByVal kind As DotNetLib.DateTimeKind) As DateTime
+Public Function CreateFromDateTimeKind(ByVal Year As Long, ByVal Month As Long, ByVal Day As Long, ByVal Hour As Long, ByVal Minute As Long, ByVal Second As Long, ByVal Kind As DotNetLib.DateTimeKind) As DateTime
 Attribute CreateFromDateTimeKind.VB_Description = "Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and Coordinated Universal Time (UTC) or local time."
    With New DateTime
-      Set .ComObject = this.DotNetLibDateTime.CreateFromDateTimeKind(Year, Month, Day, Hour, Minute, Second, kind)
+      Set .ComObject = this.DotNetLibDateTime.CreateFromDateTimeKind(Year, Month, Day, Hour, Minute, Second, Kind)
       Set CreateFromDateTimeKind = .Self
    End With
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time.")
-Public Function CreateFromDateTimeKind2(ByVal Year As Long, ByVal Month As Long, ByVal Day As Long, ByVal Hour As Long, ByVal Minute As Long, ByVal Second As Long, ByVal Millisecond As Long, ByVal kind As DotNetLib.DateTimeKind) As DateTime
+Public Function CreateFromDateTimeKind2(ByVal Year As Long, ByVal Month As Long, ByVal Day As Long, ByVal Hour As Long, ByVal Minute As Long, ByVal Second As Long, ByVal Millisecond As Long, ByVal Kind As DotNetLib.DateTimeKind) As DateTime
 Attribute CreateFromDateTimeKind2.VB_Description = "Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time."
    With New DateTime
-      Set .ComObject = this.DotNetLibDateTime.CreateFromDateTimeKind2(Year, Month, Day, Hour, Minute, Second, Millisecond, kind)
+      Set .ComObject = this.DotNetLibDateTime.CreateFromDateTimeKind2(Year, Month, Day, Hour, Minute, Second, Millisecond, Kind)
       Set CreateFromDateTimeKind2 = .Self
    End With
 End Function
@@ -157,9 +157,9 @@ Attribute Hour.VB_Description = "Gets the hour component of the date represented
 End Property
 
 '@Description("Gets a value that indicates whether the time represented by this instance is based on local time, Coordinated Universal Time (UTC), or neither.")
-Public Property Get kind() As DotNetLib.DateTimeKind
-Attribute kind.VB_Description = "Gets a value that indicates whether the time represented by this instance is based on local time, Coordinated Universal Time (UTC), or neither."
-   kind = this.DotNetLibDateTime.kind()
+Public Property Get Kind() As DotNetLib.DateTimeKind
+Attribute Kind.VB_Description = "Gets a value that indicates whether the time represented by this instance is based on local time, Coordinated Universal Time (UTC), or neither."
+   Kind = this.DotNetLibDateTime.Kind()
 End Property
 
 '@Description("Gets the milliseconds component of the date represented by this instance.")
@@ -502,10 +502,10 @@ End Function
 
 '@Static
 '@Description("Creates a new DateTime object that has the same number of ticks as the specified DateTime, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified DateTimeKind value.")
-Public Function SpecifyKind(ByRef value As DateTime, ByVal kind As DotNetLib.DateTimeKind) As DateTime
+Public Function SpecifyKind(ByRef value As DateTime, ByVal Kind As DotNetLib.DateTimeKind) As DateTime
 Attribute SpecifyKind.VB_Description = "Creates a new DateTime object that has the same number of ticks as the specified DateTime, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified DateTimeKind value."
    With New DateTime
-      Set .ComObject = this.DotNetLibDateTime.SpecifyKind(value.ComObject, kind)
+      Set .ComObject = this.DotNetLibDateTime.SpecifyKind(value.ComObject, Kind)
       Set SpecifyKind = .Self
    End With
 End Function
@@ -624,7 +624,12 @@ End Function
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent and returns a value that indicates whether the conversion succeeded.")
 Public Function TryParse(ByVal s As String, ByRef result As DateTime) As Boolean
 Attribute TryParse.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent and returns a value that indicates whether the conversion succeeded."
-   TryParse = this.DotNetLibDateTime.TryParse(s, result.ComObject)
+   Dim outResult As DotNetLib.DateTime
+   TryParse = this.DotNetLibDateTime.TryParse(s, outResult)
+   With New DateTime
+      Set .ComObject = outResult
+      Set result = .Self
+   End With
 End Function
 
 '@Static
