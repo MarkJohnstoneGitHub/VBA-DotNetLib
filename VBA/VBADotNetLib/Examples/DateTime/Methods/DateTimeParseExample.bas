@@ -28,7 +28,7 @@ Public Sub DateTimeParse()
    If Err.Number = 0 Then
       Debug.Print "'" & dateString & "' converted to " & dateValue.ToString & "."
    Else
-      If Err.Number = COM_HResult.FormatException Then
+      If Err.Number = COMHResult.FormatException Then
          Debug.Print "Unable to convert '" & dateString & "'."
       Else
          Debug.Print Err.Number, Err.Description
@@ -44,7 +44,7 @@ Public Sub DateTimeParse()
    If Err.Number = 0 Then
       Debug.Print "'" & dateString & "' converted to " & dateValue.ToString & "."
    Else
-      If Err.Number = COM_HResult.FormatException Then
+      If Err.Number = COMHResult.FormatException Then
          Debug.Print "Unable to convert '" & dateString & "'."
       Else
          Debug.Print Err.Number, Err.Description

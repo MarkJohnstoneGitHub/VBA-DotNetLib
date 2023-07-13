@@ -4,6 +4,10 @@ using System;
 using System.ComponentModel;
 using DotNetLib.System.Collections;
 
+using System.Runtime.InteropServices.ComTypes;
+using TYPEATTR = System.Runtime.InteropServices.ComTypes.TYPEATTR;
+using TYPEFLAGS = System.Runtime.InteropServices.ComTypes.TYPEFLAGS;
+
 namespace DotNetLib.System
 {
     // https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo?view=netframework-4.8.1
@@ -32,7 +36,8 @@ namespace DotNetLib.System
     [ComVisible(true)]
     [Description("Represents any time zone in the world.")]
     [Guid("A27D393F-5F4D-4F9B-9A5C-A72D980C802A")]
-    [TypeLibTypeAttribute(TypeLibTypeFlags.FPreDeclId)] //The type is predefined. The client application should automatically create a single instance of the object that has this attribute. 
+    //TypeLibTypeAttribute(TypeLibTypeFlags.FPreDeclId)] //The type is predefined. The client application should automatically create a single instance of the object that has this attribute. 
+    [TypeLibType(TypeLibTypeFlags.FPreDeclId | TypeLibTypeFlags.FCanCreate )] //The type is predefined. The client application should automatically create a single instance of the object that has this attribute. 
     [ProgId("DotNetLib.System.TimeZoneInfo")]
     [ClassInterface(ClassInterfaceType.None)]
     public class TimeZoneInfo : ITimeZoneInfo
