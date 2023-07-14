@@ -12,7 +12,7 @@ Attribute VB_Exposed = False
 
 'Copyright(c) 2023 Mark Johnstone
 'MarkJohnstoneGitHub/VBA-dotnet-CorLib is licensed under the MIT License
-'@Version v1.0 February 10, 2023
+'@Version v1.0 July 14, 2023
 '@LastModified July 14, 2023
 
 Option Explicit

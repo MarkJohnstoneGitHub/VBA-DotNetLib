@@ -15,11 +15,11 @@ Attribute DateTimeAddMinutes.VB_Description = "The following example uses the Ad
    Dim dateValue As DateTime
    Set dateValue = DateTime.CreateFromDateTime(2013, 9, 15, 12, 0, 0)
    
-   Dim minutes() As Double
-   minutes = ArrayDouble(0.01667, 0.08333, 0.16667, 0.25, 0.33333, 0.5, 0.66667, 1, 2, 15, 30, 17, 45, 60, 180, 60 * 24)
+   Dim Minutes() As Double
+   Minutes = Doubles.ToArray(0.01667, 0.08333, 0.16667, 0.25, 0.33333, 0.5, 0.66667, 1, 2, 15, 30, 17, 45, 60, 180, 60 * 24)
     
    Dim varMinute As Variant
-   For Each varMinute In minutes
+   For Each varMinute In Minutes
       Debug.Print dateValue.ToString & " + " & varMinute & " minute(s) = " & dateValue.AddMinutes(varMinute).ToString
    Next
    
