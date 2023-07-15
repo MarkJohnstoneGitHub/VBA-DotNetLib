@@ -10,6 +10,7 @@ Attribute VB_Name = "TimeSpanCreate2Example"
 
 Option Explicit
 
+'The following example creates several TimeSpan objects using the constructor overload that initializes a TimeSpan to a specified number of days, hours, minutes, and seconds.")
 Public Sub TimeSpanCreate()
    Debug.Print "Constructor", "Value"
    Debug.Print "-----------", "-----"

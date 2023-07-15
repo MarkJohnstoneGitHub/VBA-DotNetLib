@@ -32,7 +32,7 @@ Public Sub TimeSpanCreateFromTicks()
 End Sub
 
 '@Description("'The following example creates several TimeSpan objects using the constructor overload that initializes a TimeSpan to a specified number of ticks.")
-Public Sub CreateTimeSpan(ByVal pTicks As LongLong)
+Private Sub CreateTimeSpan(ByVal pTicks As LongLong)
 Attribute CreateTimeSpan.VB_Description = "'The following example creates several TimeSpan objects using the constructor overload that initializes a TimeSpan to a specified number of ticks."
    Dim elapsedTime As TimeSpan
    Set elapsedTime = TimeSpan.CreateFromTicks(pTicks)
