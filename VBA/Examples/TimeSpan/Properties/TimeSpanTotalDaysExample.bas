@@ -19,7 +19,6 @@ Attribute TimeSpanTotalDays.VB_Description = "The following example instantiates
    Dim interval As TimeSpan
    Set interval = TimeSpan.Create3(3, 16, 42, 45, 750)
    Debug.Print "Value of TimeSpan: " & interval.ToString
-   'Console.WriteLine("Value of TimeSpan: {0}", interval)
    
    Debug.Print interval.TotalDays & " days, as follows:"
    Debug.Print "   Days:         " & interval.Days
