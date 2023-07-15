@@ -42,7 +42,6 @@ For detailed explanation of class properties and properties see [netframework-4.
 Ms Access database [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/DotNetLibrary.accdb) wrapper VBA classes for the DotNetLib.tlb.
  
  **Issues:**
-  - DateTime.ParseExact3 member (fixed)
   - Require to investigate how to correctly marshal arrays
    - See [PassingParameterArraysByReference](https://www.l3harrisgeospatial.com/docs/PassingParameterArraysByReference.html)
    - [pass-an-array-from-vba-to-c-sharp-using-com-interop](https://stackoverflow.com/questions/2027758/pass-an-array-from-vba-to-c-sharp-using-com-interop)
