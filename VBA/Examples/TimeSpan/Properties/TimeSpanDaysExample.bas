@@ -15,27 +15,27 @@ Public Sub TimeSpanDays()
 Attribute TimeSpanDays.VB_Description = "The following example creates several TimeSpan objects and displays the Days property of each."
 
    ' Create and display a TimeSpan value of 1 tick.
-   Debug.Print "TimeSpan( 1 )"
+   Debug.Print "TimeSpan.CreateFromTicks( 1 )"
    ShowTimeSpanProperties TimeSpan.CreateFromTicks(1)
    Debug.Print
    
    ' Create a TimeSpan value with a large number of ticks.
-   Debug.Print "TimeSpan( 111222333444555 )"
+   Debug.Print "TimeSpan.CreateFromTicks( 111222333444555 )"
    ShowTimeSpanProperties TimeSpan.CreateFromTicks(111222333444555#)
    Debug.Print
    
    ' This TimeSpan has all fields specified.
-   Debug.Print "TimeSpan( 10, 20, 30, 40, 50 )"
+   Debug.Print "TimeSpanCreate3( 10, 20, 30, 40, 50 )"
    ShowTimeSpanProperties TimeSpan.Create3(10, 20, 30, 40, 50)
    Debug.Print
    
    ' This TimeSpan has all fields overflowing.
-   Debug.Print "TimeSpan( 1111, 2222, 3333, 4444, 5555 )"
+   Debug.Print "TimeSpan.Create3( 1111, 2222, 3333, 4444, 5555 )"
    ShowTimeSpanProperties TimeSpan.Create3(1111, 2222, 3333, 4444, 5555)
    Debug.Print
    
    ' This TimeSpan is based on a number of days.
-   Debug.Print "FromDays( 20.84745602 )"
+   Debug.Print "TimeSpan.FromDays( 20.84745602 )"
    ShowTimeSpanProperties TimeSpan.FromDays(20.84745602)
 End Sub
 
