@@ -12,6 +12,7 @@ Option Explicit
 
 '@Description("The following example creates several TimeSpan objects using the constructor overload that initializes a TimeSpan to a specified number of hours, minutes, and seconds.")
 Public Sub TimeSpanCreate()
+Attribute TimeSpanCreate.VB_Description = "The following example creates several TimeSpan objects using the constructor overload that initializes a TimeSpan to a specified number of hours, minutes, and seconds."
    Debug.Print "This example of the TimeSpan( int, int, int )" & VBA.vbNewLine & "constructor generates the following output." & VBA.vbNewLine
    Debug.Print "Constructor", "Value"
    Debug.Print "-----------", "-----"
@@ -37,7 +38,7 @@ Public Sub TimeSpanCreate()
 '*/
 End Sub
 
-Private Sub CreateTimeSpan(Hours As Long, Minutes As Long, Seconds As Long)
+Private Sub CreateTimeSpan(ByVal Hours As Long, ByVal Minutes As Long, ByVal Seconds As Long)
    Dim elapsedTime As TimeSpan
    Set elapsedTime = TimeSpan.Create(Hours, Minutes, Seconds)
 
