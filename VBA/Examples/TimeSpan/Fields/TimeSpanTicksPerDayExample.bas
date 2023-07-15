@@ -12,9 +12,10 @@ Option Explicit
 
 '@Description("The following example references and displays the value of the TicksPerDay field.")
 Public Sub TimeSpanTicksPerDay()
-   ' Display the maximum  TimeSpan value.
-   Debug.Print "TimeSpan.TicksPerDay: " & TimeSpan.TicksPerDay
+Attribute TimeSpanTicksPerDay.VB_Description = "The following example references and displays the value of the TicksPerDay field."
+   ' Display the TimeSpan.TicksPerDay.
+   Debug.Print "TimeSpan.TicksPerDay : " & TimeSpan.TicksPerDay
    
 ' Output:
-' TimeSpan.TicksPerDay: 864000000000
+' TimeSpan.TicksPerDay : 864000000000
 End Sub
