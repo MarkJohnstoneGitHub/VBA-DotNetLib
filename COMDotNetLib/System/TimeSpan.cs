@@ -217,6 +217,10 @@ namespace DotNetLib.System
             return this.timeSpanObject.GetHashCode(); 
         }
 
+        //public TimeSpan Multiply(double factor)
+        //{
+        //    return new TimeSpan(this.timeSpanObject.Multiply(factor));
+        //}
         public TimeSpan Negate()
         {
             return new TimeSpan(this.timeSpanObject.Negate());

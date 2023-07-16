@@ -193,6 +193,9 @@ namespace DotNetLib.System
         [Description("Returns a hash code for this instance.")]
         int GetHashCode();
 
+        //[Description("Returns a new TimeSpan object which value is the result of multiplication of this instance and the specified factor.")]
+        //TimeSpan Multiply(double factor);
+
         [Description("Returns a new TimeSpan object whose value is the negated value of this instance.")]
         TimeSpan Negate();
 
