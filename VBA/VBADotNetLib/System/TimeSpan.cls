@@ -8,6 +8,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Represents a time interval."
+'@IgnoreModule UnassignedVariableUsage, VariableNotAssigned
 'Rubberduck annotations
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
@@ -351,7 +352,6 @@ Attribute Parse.VB_Description = "Converts the string representation of a time i
 End Function
 
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific format information.")
-'@Ignore UseMeaningfulName
 Public Function Parse2(ByVal strInput As String, ByVal formatProvider As IFormatProvider) As TimeSpan
 Attribute Parse2.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific format information."
    With New TimeSpan
@@ -370,7 +370,6 @@ Attribute ParseExact.VB_Description = "Converts the string representation of a t
 End Function
 
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified array of format strings and culture-specific format information. The format of the string representation must match one of the specified formats exactly.")
-'@Ignore UseMeaningfulName
 Public Function ParseExact2(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider) As TimeSpan
 Attribute ParseExact2.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified array of format strings and culture-specific format information. The format of the string representation must match one of the specified formats exactly."
    With New TimeSpan
@@ -380,7 +379,6 @@ Attribute ParseExact2.VB_Description = "Converts the string representation of a 
 End Function
 
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information, and styles. The format of the string representation must match the specified format exactly.")
-'@Ignore UseMeaningfulName
 Public Function ParseExact3(ByVal strInput As String, ByVal format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles) As TimeSpan
 Attribute ParseExact3.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information, and styles. The format of the string representation must match the specified format exactly."
    With New TimeSpan
@@ -390,7 +388,6 @@ Attribute ParseExact3.VB_Description = "Converts the string representation of a 
 End Function
 
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information, and styles. The format of the string representation must match one of the specified formats exactly")
-'@Ignore UseMeaningfulName
 Public Function ParseExact4(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles) As TimeSpan
 Attribute ParseExact4.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information, and styles. The format of the string representation must match one of the specified formats exactly"
    With New TimeSpan
@@ -400,7 +397,6 @@ Attribute ParseExact4.VB_Description = "Converts the string representation of a 
 End Function
 
 '@Description("Returns a new TimeSpan object whose value is the difference between the specified TimeSpan object and this instance.")
-'@Ignore UseMeaningfulName
 Public Function Subtract(ByVal ts As TimeSpan) As TimeSpan
 Attribute Subtract.VB_Description = "Returns a new TimeSpan object whose value is the difference between the specified TimeSpan object and this instance."
    With New TimeSpan
@@ -418,14 +414,12 @@ Attribute ToString.VB_UserMemId = 0
 End Property
 
 '@Description("Converts the value of the current TimeSpan object to its equivalent string representation by using the specified format.")
-'@Ignore UseMeaningfulName
 Public Function ToString2(ByVal format As String) As String
 Attribute ToString2.VB_Description = "Converts the value of the current TimeSpan object to its equivalent string representation by using the specified format."
    ToString2 = this.DotNetLibTimeSpan.ToString2(format)
 End Function
 
 '@Description("Converts the value of the current TimeSpan object to its equivalent string representation by using the specified format and culture-specific formatting information.")
-'@Ignore UseMeaningfulName
 Public Function ToString3(ByVal format As String, ByVal formatProvider As IFormatProvider) As String
 Attribute ToString3.VB_Description = "Converts the value of the current TimeSpan object to its equivalent string representation by using the specified format and culture-specific formatting information."
    ToString3 = this.DotNetLibTimeSpan.ToString3(format, formatProvider)
@@ -443,7 +437,6 @@ Attribute TryParse.VB_Description = "Converts the string representation of a tim
 End Function
 
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific formatting information, and returns a value that indicates whether the conversion succeeded.")
-'@Ignore UseMeaningfulName
 Public Function TryParse2(ByVal strInput As String, ByVal formatProvider As IFormatProvider, ByRef result As TimeSpan) As Boolean
 Attribute TryParse2.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific formatting information, and returns a value that indicates whether the conversion succeeded."
    Dim outResult As DotNetLib.TimeSpan
@@ -553,7 +546,6 @@ Attribute Subtraction.VB_Description = "Subtracts a specified TimeSpan from anot
 End Function
 
 '@Description("Returns a TimeSpan whose value is the negated value of the specified instance.")
-'@Ignore UseMeaningfulName
 Public Function UnaryNegation(ByVal t As TimeSpan) As TimeSpan
 Attribute UnaryNegation.VB_Description = "Returns a TimeSpan whose value is the negated value of the specified instance."
    With New TimeSpan
@@ -563,7 +555,6 @@ Attribute UnaryNegation.VB_Description = "Returns a TimeSpan whose value is the 
 End Function
 
 '@Description("Returns the specified instance of TimeSpan.")
-'@Ignore UseMeaningfulName
 Public Function UnaryPlus(ByVal t As TimeSpan) As TimeSpan
 Attribute UnaryPlus.VB_Description = "Returns the specified instance of TimeSpan."
    With New TimeSpan
