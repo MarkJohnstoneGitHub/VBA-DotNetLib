@@ -13,7 +13,7 @@ Attribute VB_Exposed = False
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 16, 2023
-'@LastModified July 16, 2023
+'@LastModified July 17, 2023
 
 '@TODO Work in progress
 
@@ -48,15 +48,14 @@ End Sub
 'Return value of False indictates that errors occurred and not all items where transfered to destination array
 Public Function TryToArray(ByRef destination As Variant, ParamArray values() As Variant) As Boolean
 Attribute TryToArray.VB_Description = "Copies a ParamArray of vaules or objects to an array of a type."
-   If VBA.IsArray(destination) Then
+   On Error Resume Next
+   If (TryToArray = VBA.IsArray(destination)) Then
       Dim resize As Boolean
       resize = False
       
       ReDim destination(LBound(values) To UBound(values))
       Dim index As Long
       Dim varValue As Variant
-      TryToArray = True 'If an error occurs set to false
-      On Error Resume Next
       For Each varValue In values
          If IsObject(varValue) Then
             Set destination(index) = varValue
