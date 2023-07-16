@@ -20,17 +20,15 @@ End Function
 
 '@TODO Pass in an error object i.e. Exception eg. FormatError
 'Public Function Catch(Optional ByVal errorInfo As IException) As Boolean
-Public Function Catch(Optional ByVal error As COMHResult) As Boolean
-   If Err.Number = error Then
+Public Function Catch(Optional ByVal errorNumber As Long) As Boolean
+   If Err.Number = errorNumber Then
       Catch = True
    Else
-      If error = 0 Then 'i.e. optional
+      If errorNumber = 0 Then 'i.e. optional
          If Err.Number <> 0 Then
             Catch = True
          End If
       End If
    End If
 End Function
-
-
 
