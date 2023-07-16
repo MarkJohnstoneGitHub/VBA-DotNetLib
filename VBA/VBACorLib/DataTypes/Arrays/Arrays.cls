@@ -115,12 +115,7 @@ Attribute IsAllocated.VB_Description = "Returns if an array variable is initiali
        ' is True, the array is allocated. Otherwise,
        ' the array is not allocated.
        '''''''''''''''''''''''''''''''''''''''
-       If LBound(source) <= UBound(source) Then
-           ' no error. array has been allocated.
-           IsAllocated = True
-       Else
-           IsAllocated = False
-       End If
+       IsAllocated = (LBound(source) <= UBound(source))
    Else
        ' error. unallocated array
        IsAllocated = False
