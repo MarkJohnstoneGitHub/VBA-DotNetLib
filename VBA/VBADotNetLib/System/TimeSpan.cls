@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents a time interval."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
-'@LastModified July 17, 2023
+'@LastModified July 18, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -227,6 +227,7 @@ Attribute Add.VB_Description = "Returns a new TimeSpan object whose value is the
    End With
 End Function
 
+'@Static
 '@Description("Compares two TimeSpan values and returns an integer that indicates whether the first value is shorter than, equal to, or longer than the second value.")
 Public Function Compare(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As Long
 Attribute Compare.VB_Description = "Compares two TimeSpan values and returns an integer that indicates whether the first value is shorter than, equal to, or longer than the second value."
@@ -240,7 +241,6 @@ Attribute CompareTo.VB_Description = "Compares this instance to a specified Time
 End Function
 
 '@Description("Compares this instance to a specified object and returns an integer that indicates whether this instance is shorter than, equal to, or longer than the specified object.")
-'@Ignore UseMeaningfulName
 Public Function CompareTo2(ByVal value As Variant) As Long
 Attribute CompareTo2.VB_Description = "Compares this instance to a specified object and returns an integer that indicates whether this instance is shorter than, equal to, or longer than the specified object."
    CompareTo2 = this.DotNetLibTimeSpan.CompareTo2(value)
@@ -267,12 +267,14 @@ Attribute Equals2.VB_Description = "Returns a value indicating whether this inst
    Equals2 = this.DotNetLibTimeSpan.Equals2(value)
 End Function
 
+'@Static
 '@Description("Returns a value that indicates whether two specified instances of TimeSpan are equal.")
 Public Function Equals3(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As Boolean
 Attribute Equals3.VB_Description = "Returns a value that indicates whether two specified instances of TimeSpan are equal."
    Equals3 = this.DotNetLibTimeSpan.Equals3(t1.ComObject, t2.ComObject)
 End Function
 
+'@Static
 '@Description("Returns a TimeSpan that represents a specified number of days, where the specification is accurate to the nearest millisecond.")
 Public Function FromDays(ByVal value As Double) As TimeSpan
 Attribute FromDays.VB_Description = "Returns a TimeSpan that represents a specified number of days, where the specification is accurate to the nearest millisecond."
@@ -282,6 +284,7 @@ Attribute FromDays.VB_Description = "Returns a TimeSpan that represents a specif
    End With
 End Function
 
+'@Static
 '@Description("Returns a TimeSpan that represents a specified number of hours, where the specification is accurate to the nearest millisecond.")
 Public Function FromHours(ByVal value As Double) As TimeSpan
 Attribute FromHours.VB_Description = "Returns a TimeSpan that represents a specified number of hours, where the specification is accurate to the nearest millisecond."
@@ -291,6 +294,7 @@ Attribute FromHours.VB_Description = "Returns a TimeSpan that represents a speci
    End With
 End Function
 
+'@Static
 '@Description("Returns a TimeSpan that represents a specified number of milliseconds.")
 Public Function FromMilliseconds(ByVal value As Double) As TimeSpan
 Attribute FromMilliseconds.VB_Description = "Returns a TimeSpan that represents a specified number of milliseconds."
@@ -300,6 +304,7 @@ Attribute FromMilliseconds.VB_Description = "Returns a TimeSpan that represents 
    End With
 End Function
 
+'@Static
 '@Description("Returns a TimeSpan that represents a specified number of minutes, where the specification is accurate to the nearest millisecond.")
 Public Function FromMinutes(ByVal value As Double) As TimeSpan
 Attribute FromMinutes.VB_Description = "Returns a TimeSpan that represents a specified number of minutes, where the specification is accurate to the nearest millisecond."
@@ -309,6 +314,7 @@ Attribute FromMinutes.VB_Description = "Returns a TimeSpan that represents a spe
    End With
 End Function
 
+'@Static
 '@Description("Returns a TimeSpan that represents a specified number of seconds, where the specification is accurate to the nearest millisecond.")
 Public Function FromSeconds(ByVal value As Double) As TimeSpan
 Attribute FromSeconds.VB_Description = "Returns a TimeSpan that represents a specified number of seconds, where the specification is accurate to the nearest millisecond."
@@ -318,6 +324,7 @@ Attribute FromSeconds.VB_Description = "Returns a TimeSpan that represents a spe
    End With
 End Function
 
+'@Static
 '@Description("Returns a TimeSpan that represents a specified time, where the specification is in units of ticks.")
 Public Function FromTicks(ByVal value As LongLong) As TimeSpan
 Attribute FromTicks.VB_Description = "Returns a TimeSpan that represents a specified time, where the specification is in units of ticks."
@@ -342,6 +349,7 @@ Attribute Negate.VB_Description = "Returns a new TimeSpan object whose value is 
    End With
 End Function
 
+'@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent.")
 Public Function Parse(ByVal s As String) As TimeSpan
 Attribute Parse.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent."
@@ -351,6 +359,7 @@ Attribute Parse.VB_Description = "Converts the string representation of a time i
    End With
 End Function
 
+'@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific format information.")
 Public Function Parse2(ByVal strInput As String, ByVal formatProvider As IFormatProvider) As TimeSpan
 Attribute Parse2.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific format information."
@@ -360,6 +369,7 @@ Attribute Parse2.VB_Description = "Converts the string representation of a time 
    End With
 End Function
 
+'@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")
 Public Function ParseExact(ByVal strInput As String, ByVal format As String, ByVal formatProvider As IFormatProvider) As TimeSpan
 Attribute ParseExact.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly."
@@ -369,6 +379,7 @@ Attribute ParseExact.VB_Description = "Converts the string representation of a t
    End With
 End Function
 
+'@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified array of format strings and culture-specific format information. The format of the string representation must match one of the specified formats exactly.")
 Public Function ParseExact2(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider) As TimeSpan
 Attribute ParseExact2.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified array of format strings and culture-specific format information. The format of the string representation must match one of the specified formats exactly."
@@ -378,6 +389,7 @@ Attribute ParseExact2.VB_Description = "Converts the string representation of a 
    End With
 End Function
 
+'@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information, and styles. The format of the string representation must match the specified format exactly.")
 Public Function ParseExact3(ByVal strInput As String, ByVal format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles) As TimeSpan
 Attribute ParseExact3.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information, and styles. The format of the string representation must match the specified format exactly."
@@ -387,6 +399,7 @@ Attribute ParseExact3.VB_Description = "Converts the string representation of a 
    End With
 End Function
 
+'@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information, and styles. The format of the string representation must match one of the specified formats exactly")
 Public Function ParseExact4(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles) As TimeSpan
 Attribute ParseExact4.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information, and styles. The format of the string representation must match one of the specified formats exactly"
@@ -425,6 +438,7 @@ Attribute ToString3.VB_Description = "Converts the value of the current TimeSpan
    ToString3 = this.DotNetLibTimeSpan.ToString3(format, formatProvider)
 End Function
 
+'@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent and returns a value that indicates whether the conversion succeeded.")
 Public Function TryParse(ByVal s As String, ByRef result As TimeSpan) As Boolean
 Attribute TryParse.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent and returns a value that indicates whether the conversion succeeded."
@@ -436,6 +450,7 @@ Attribute TryParse.VB_Description = "Converts the string representation of a tim
    End With
 End Function
 
+'@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific formatting information, and returns a value that indicates whether the conversion succeeded.")
 Public Function TryParse2(ByVal strInput As String, ByVal formatProvider As IFormatProvider, ByRef result As TimeSpan) As Boolean
 Attribute TryParse2.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific formatting information, and returns a value that indicates whether the conversion succeeded."
@@ -447,6 +462,7 @@ Attribute TryParse2.VB_Description = "Converts the string representation of a ti
    End With
 End Function
 
+'@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")
 Public Function TryParseExact(ByVal strInput As String, ByVal format As String, ByVal formatProvider As IFormatProvider, ByRef result As TimeSpan) As Boolean
 Attribute TryParseExact.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly."
@@ -458,6 +474,7 @@ Attribute TryParseExact.VB_Description = "Converts the string representation of 
    End With
 End Function
 
+'@Static
 '@Description("Converts the specified string representation of a time interval to its TimeSpan equivalent by using the specified formats and culture-specific format information. The format of the string representation must match one of the specified formats exactly.")
 Public Function TryParseExact2(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByRef result As TimeSpan) As Boolean
 Attribute TryParseExact2.VB_Description = "Converts the specified string representation of a time interval to its TimeSpan equivalent by using the specified formats and culture-specific format information. The format of the string representation must match one of the specified formats exactly."
@@ -469,6 +486,7 @@ Attribute TryParseExact2.VB_Description = "Converts the specified string represe
    End With
 End Function
 
+'@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information and styles. The format of the string representation must match the specified format exactly.")
 Public Function TryParseExact3(ByVal strInput As String, ByVal format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles, ByRef result As TimeSpan) As Boolean
 Attribute TryParseExact3.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information and styles. The format of the string representation must match the specified format exactly."
@@ -480,6 +498,7 @@ Attribute TryParseExact3.VB_Description = "Converts the string representation of
    End With
 End Function
 
+'@Static
 '@Description("Converts the specified string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information and styles. The format of the string representation must match one of the specified formats exactly.")
 Public Function TryParseExact4(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles, ByRef result As TimeSpan) As Boolean
 Attribute TryParseExact4.VB_Description = "Converts the specified string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information and styles. The format of the string representation must match one of the specified formats exactly."
@@ -491,6 +510,7 @@ Attribute TryParseExact4.VB_Description = "Converts the specified string represe
    End With
 End Function
 
+'@Static
 '@Description("Adds two specified TimeSpan instances.")
 Public Function Addition(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As TimeSpan
 Attribute Addition.VB_Description = "Adds two specified TimeSpan instances."
@@ -500,42 +520,49 @@ Attribute Addition.VB_Description = "Adds two specified TimeSpan instances."
    End With
 End Function
 
+'@Static
 '@Description("Indicates whether two TimeSpan instances are equal.")
 Public Function Equality(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As Boolean
 Attribute Equality.VB_Description = "Indicates whether two TimeSpan instances are equal."
    Equality = this.DotNetLibTimeSpan.Equality(t1.ComObject, t2.ComObject)
 End Function
 
+'@Static
 '@Description("Indicates whether a specified TimeSpan is greater than another specified TimeSpan.")
 Public Function GreaterThan(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As Boolean
 Attribute GreaterThan.VB_Description = "Indicates whether a specified TimeSpan is greater than another specified TimeSpan."
    GreaterThan = this.DotNetLibTimeSpan.GreaterThan(t1.ComObject, t2.ComObject)
 End Function
 
+'@Static
 '@Description("Indicates whether a specified TimeSpan is greater than or equal to another specified TimeSpan.")
 Public Function GreaterThanOrEqual(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As Boolean
 Attribute GreaterThanOrEqual.VB_Description = "Indicates whether a specified TimeSpan is greater than or equal to another specified TimeSpan."
    GreaterThanOrEqual = this.DotNetLibTimeSpan.GreaterThanOrEqual(t1.ComObject, t2.ComObject)
 End Function
 
+'@Static
 '@Description("Indicates whether two TimeSpan instances are not equal.")
 Public Function Inequality(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As Boolean
 Attribute Inequality.VB_Description = "Indicates whether two TimeSpan instances are not equal."
    Inequality = this.DotNetLibTimeSpan.Inequality(t1.ComObject, t2.ComObject)
 End Function
 
+'@Static
 '@Description("Indicates whether a specified TimeSpan is less than another specified TimeSpan.")
 Public Function LessThan(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As Boolean
 Attribute LessThan.VB_Description = "Indicates whether a specified TimeSpan is less than another specified TimeSpan."
    LessThan = this.DotNetLibTimeSpan.LessThan(t1.ComObject, t2.ComObject)
 End Function
 
+'@Static
 '@Description("Indicates whether a specified TimeSpan is less than or equal to another specified TimeSpan.")
 Public Function LessThanOrEqual(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As Boolean
 Attribute LessThanOrEqual.VB_Description = "Indicates whether a specified TimeSpan is less than or equal to another specified TimeSpan."
    LessThanOrEqual = this.DotNetLibTimeSpan.LessThanOrEqual(t1.ComObject, t2.ComObject)
 End Function
 
+'@Static
 '@Description("Subtracts a specified TimeSpan from another specified TimeSpan.")
 Public Function Subtraction(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As TimeSpan
 Attribute Subtraction.VB_Description = "Subtracts a specified TimeSpan from another specified TimeSpan."
@@ -545,6 +572,7 @@ Attribute Subtraction.VB_Description = "Subtracts a specified TimeSpan from anot
    End With
 End Function
 
+'@Static
 '@Description("Returns a TimeSpan whose value is the negated value of the specified instance.")
 Public Function UnaryNegation(ByVal t As TimeSpan) As TimeSpan
 Attribute UnaryNegation.VB_Description = "Returns a TimeSpan whose value is the negated value of the specified instance."
@@ -554,6 +582,7 @@ Attribute UnaryNegation.VB_Description = "Returns a TimeSpan whose value is the 
    End With
 End Function
 
+'@Static
 '@Description("Returns the specified instance of TimeSpan.")
 Public Function UnaryPlus(ByVal t As TimeSpan) As TimeSpan
 Attribute UnaryPlus.VB_Description = "Returns the specified instance of TimeSpan."
