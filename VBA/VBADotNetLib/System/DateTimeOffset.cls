@@ -8,6 +8,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Represents a point in time, typically expressed as a date and time of day, relative to Coordinated Universal Time (UTC)."
+'@IgnoreModule UnassignedVariableUsage, VariableNotAssigned
 '@Folder "VBADotNetLib.System"
 '@ModuleDescription("Represents a point in time, typically expressed as a date and time of day, relative to Coordinated Universal Time (UTC).")
 '@PredeclaredId
@@ -15,7 +16,7 @@ Attribute VB_Description = "Represents a point in time, typically expressed as a
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 11, 2023
-'@LastModified July 17, 2023
+'@LastModified July 18, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -554,27 +555,45 @@ End Function
 '@Description("Tries to converts a specified string representation of a date and time to its DateTimeOffset equivalent, and returns a value that indicates whether the conversion succeeded.")
 Public Function TryParse(ByVal strInput As String, ByRef result As DateTimeOffset) As Boolean
 Attribute TryParse.VB_Description = "Tries to converts a specified string representation of a date and time to its DateTimeOffset equivalent, and returns a value that indicates whether the conversion succeeded."
-   TryParse = this.DotNetLibDateTimeOffset.TryParse(strInput, result.ComObject)
+   Dim outResult As DotNetLib.DateTimeOffset
+   TryParse = this.DotNetLibDateTimeOffset.TryParse(strInput, outResult)
+   With New DateTimeOffset
+      Set .ComObject = outResult
+      Set result = .Self
+   End With
 End Function
 
 '@Description("Tries to convert a specified string representation of a date and time to its DateTimeOffset equivalent, and returns a value that indicates whether the conversion succeeded.")
-'@Ignore UseMeaningfulName
 Public Function TryParse2(ByVal strInput As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DateTimeOffset) As Boolean
 Attribute TryParse2.VB_Description = "Tries to convert a specified string representation of a date and time to its DateTimeOffset equivalent, and returns a value that indicates whether the conversion succeeded."
-   TryParse2 = this.DotNetLibDateTimeOffset.TryParse2(strInput, formatProvider, styles, result.ComObject)
+   Dim outResult As DotNetLib.DateTimeOffset
+   TryParse2 = this.DotNetLibDateTimeOffset.TryParse2(strInput, formatProvider, styles, outResult)
+   With New DateTimeOffset
+      Set .ComObject = outResult
+      Set result = .Self
+   End With
 End Function
 
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly.")
 Public Function TryParseExact(ByVal strInput As String, ByVal format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DateTimeOffset) As Boolean
 Attribute TryParseExact.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly."
-   TryParseExact = this.DotNetLibDateTimeOffset.TryParseExact(strInput, format, formatProvider, styles, result.ComObject)
+   Dim outResult As DotNetLib.DateTimeOffset
+   TryParseExact = this.DotNetLibDateTimeOffset.TryParseExact(strInput, format, formatProvider, styles, outResult)
+   With New DateTimeOffset
+      Set .ComObject = outResult
+      Set result = .Self
+   End With
 End Function
 
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified array of formats, culture-specific format information, and style. The format of the string representation must match one of the specified formats exactly.")
-'@Ignore UseMeaningfulName
 Public Function TryParseExact2(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DateTimeOffset) As Boolean
 Attribute TryParseExact2.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified array of formats, culture-specific format information, and style. The format of the string representation must match one of the specified formats exactly."
-   TryParseExact2 = this.DotNetLibDateTimeOffset.TryParseExact2(strInput, formats, formatProvider, styles, result.ComObject)
+   Dim outResult As DotNetLib.DateTimeOffset
+   TryParseExact2 = this.DotNetLibDateTimeOffset.TryParseExact2(strInput, formats, formatProvider, styles, outResult)
+   With New DateTimeOffset
+      Set .ComObject = outResult
+      Set result = .Self
+   End With
 End Function
 
 '@Description("Adds a specified time interval to a DateTimeOffset object that has a specified date and time, and yields a DateTimeOffset object that has new a date and time.")
