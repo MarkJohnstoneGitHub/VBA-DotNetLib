@@ -9,7 +9,7 @@
   
   Initial development.  
   - Adhoc testing and [DateTime examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples/DateTime) for DateTime.
-  - Adhoc testing and examples [TimeSpan examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples/TimeSpan) for TimeSpan. 
+  - Adhoc testing and [TimeSpan examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples/TimeSpan) for TimeSpan. 
   - DateTimeOffset, TimeZoneInfo implemented thou not tested.
   - ReadOnlyCollection implemented thou not tested.  TimeZoneInfo.GetSystemTimes returns a ReadOnlyCollection which isn't tested. 
   - Unit testing aim to do once VBA wrappers for COM objects implemented.
