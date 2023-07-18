@@ -1,4 +1,4 @@
-Attribute VB_Name = "DateTimeOffsetDateExample"
+Attribute VB_Name = "DateTimeOffsetDateOnlyExample"
 '@Folder("VBADotNetLib.Examples.DateTimeOffset.Properties")
 
 '@Author Mark Johnstone
@@ -11,8 +11,8 @@ Attribute VB_Name = "DateTimeOffsetDateExample"
 Option Explicit
 
 '@Description("The following example retrieves the value of the Date property for a specific date. It then displays that value to the console using some standard and custom date-only format specifiers.")
-Public Sub DateTimeOffsetDate()
-Attribute DateTimeOffsetDate.VB_Description = "The following example retrieves the value of the Date property for a specific date. It then displays that value to the console using some standard and custom date-only format specifiers."
+Public Sub DateTimeOffsetDateOnly()
+Attribute DateTimeOffsetDateOnly.VB_Description = "The following example retrieves the value of the Date property for a specific date. It then displays that value to the console using some standard and custom date-only format specifiers."
    ' Illustrate Date property and date formatting
    Dim thisDate As DateTimeOffset
    Set thisDate = DateTimeOffset.CreateFromDateTimeParts(2008, 3, 17, 1, 32, 0, TimeSpan.Create(-5, 0, 0))
