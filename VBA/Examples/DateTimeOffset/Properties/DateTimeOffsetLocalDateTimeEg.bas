@@ -1,4 +1,4 @@
-Attribute VB_Name = "DateTimeOffsetLocalDateTimeExample"
+Attribute VB_Name = "DateTimeOffsetLocalDateTimeEg"
 '@Folder("VBADotNetLib.Examples.DateTimeOffset.Properties")
 
 '@Author Mark Johnstone

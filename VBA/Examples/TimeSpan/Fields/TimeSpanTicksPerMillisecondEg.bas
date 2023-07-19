@@ -1,4 +1,4 @@
-Attribute VB_Name = "TimeSpanTicksPerMillisecondExample"
+Attribute VB_Name = "TimeSpanTicksPerMillisecondEg"
 '@Folder("VBADotNetLib.Examples.TimeSpan.Fields")
 
 '@Author Mark Johnstone

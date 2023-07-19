@@ -1,4 +1,4 @@
-Attribute VB_Name = "DateTimeOffsetCreateFromDateTimeParts2Example"
+Attribute VB_Name = "DTOCreateFromDateTimeParts2Eg"
 '@Folder("VBADotNetLib.Examples.DateTimeOffset.Constructors")
 
 '@Author Mark Johnstone

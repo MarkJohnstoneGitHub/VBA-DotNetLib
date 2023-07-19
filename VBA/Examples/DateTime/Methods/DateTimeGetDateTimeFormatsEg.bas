@@ -1,4 +1,4 @@
-Attribute VB_Name = "DateTimeGetDateTimeFormatsExample"
+Attribute VB_Name = "DateTimeGetDateTimeFormatsEg"
 '@Folder("VBADotNetLib.Examples.DateTime.Methods")
 
 '@Author Mark Johnstone
@@ -12,6 +12,7 @@ Option Explicit
 
 '@Description("The following example demonstrates the DateTime.GetDateTimeFormats() method. It displays the string representation of a date using all possible standard date and time formats in the computer's current culture, which in this case is en-US."
 Public Sub DateTimeGetDateTimeFormats()
+   '@Ignore UseMeaningfulName
    Dim july28 As DateTime
    Set july28 = DateTime.CreateFromDateTime(2009, 7, 28, 5, 23, 15, 16)
    

@@ -1,4 +1,4 @@
-Attribute VB_Name = "DateTimeOffsetMillisecondExample"
+Attribute VB_Name = "DateTimeOffsetMillisecondEg"
 '@Folder("VBADotNetLib.Examples.DateTimeOffset.Properties")
 
 '@Author Mark Johnstone
