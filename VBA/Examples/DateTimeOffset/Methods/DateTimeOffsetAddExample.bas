@@ -26,7 +26,6 @@ Public Sub DateTimeOffsetAdd()
    Debug.Print "Takeoff is scheduled for " & takeOff.ToString2("d") & " at " & takeOff.ToString2("T") & "."
    
    Dim ctr As Long
-   
    For ctr = LBound(flightTimes) To UBound(flightTimes)
       Set currentTime = currentTime.Add(flightTimes(ctr))
       Debug.Print "Destination #" & ctr + 1 & " at " & currentTime.ToString()
