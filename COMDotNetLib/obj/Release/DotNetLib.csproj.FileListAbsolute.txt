@@ -5,10 +5,3 @@ H:\Users\Me\source\repos\DotNetLib\obj\Release\DotNetLib.csproj.AssemblyReferenc
 H:\Users\Me\source\repos\DotNetLib\obj\Release\DotNetLib.csproj.CoreCompileInputs.cache
 H:\Users\Me\source\repos\DotNetLib\obj\Release\DotNetLib.dll
 H:\Users\Me\source\repos\DotNetLib\obj\Release\DotNetLib.pdb
-H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Release\DotNetLib.dll
-H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Release\DotNetLib.pdb
-H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Release\DotNetLib.tlb
-H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\obj\Release\DotNetLib.csproj.AssemblyReference.cache
-H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\obj\Release\DotNetLib.csproj.CoreCompileInputs.cache
-H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\obj\Release\DotNetLib.dll
-H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\obj\Release\DotNetLib.pdb

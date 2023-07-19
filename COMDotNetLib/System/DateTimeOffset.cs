@@ -180,6 +180,11 @@ namespace DotNetLib.System
             return new DateTimeOffset(this.dateTimeOffsetObject.AddDays(days));
         }
 
+        public DateTimeOffset AddHours(double hours)
+        {
+            return new DateTimeOffset(this.dateTimeOffsetObject.AddHours(hours));
+        }
+
         public DateTimeOffset AddMilliseconds(double milliseconds)
         {
             return new DateTimeOffset(this.dateTimeOffsetObject.AddMilliseconds(milliseconds));
