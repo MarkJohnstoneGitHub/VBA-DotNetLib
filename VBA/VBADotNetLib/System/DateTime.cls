@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents an instant in time, typically expressed a
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
-'@LastModified July 14, 2023
+'@LastModified July 20, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -341,7 +341,6 @@ Attribute CompareTo2.VB_Description = "Compares the value of this instance to a 
    Else
       Err.Raise 5, Arg_MustBeDateTime 'Invalid procedure call or argument
    End If
-
 End Function
 
 '@Static
@@ -364,8 +363,6 @@ Attribute Equals2.VB_Description = "Returns a value indicating whether this inst
       Dim dtValue As DateTime
       Set dtValue = value
       Equals2 = this.DotNetLibDateTime.Equals(dtValue.ComObject)
-   Else
-      Err.Raise 5, Arg_MustBeDateTime 'Invalid procedure call or argument
    End If
 End Function
 
@@ -473,20 +470,20 @@ End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")
-Public Function ParseExact(ByVal s As String, ByVal format As String, ByVal provider As IFormatProvider) As DateTime
+Public Function ParseExact(ByVal s As String, ByVal Format As String, ByVal provider As IFormatProvider) As DateTime
 Attribute ParseExact.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly."
    With New DateTime
-      Set .ComObject = this.DotNetLibDateTime.ParseExact(s, format, provider)
+      Set .ComObject = this.DotNetLibDateTime.ParseExact(s, Format, provider)
       Set ParseExact = .Self
    End With
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly or an exception is thrown.")
-Public Function ParseExact2(ByVal s As String, ByVal format As String, ByVal provider As IFormatProvider, ByVal style As DateTimeStyles) As DateTime
+Public Function ParseExact2(ByVal s As String, ByVal Format As String, ByVal provider As IFormatProvider, ByVal style As DateTimeStyles) As DateTime
 Attribute ParseExact2.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly or an exception is thrown."
    With New DateTime
-      Set .ComObject = this.DotNetLibDateTime.ParseExact2(s, format, provider, style)
+      Set .ComObject = this.DotNetLibDateTime.ParseExact2(s, Format, provider, style)
       Set ParseExact2 = .Self
    End With
 End Function
@@ -595,9 +592,9 @@ Attribute ToString.VB_UserMemId = 0
 End Property
 
 '@Description("Converts the value of the current DateTime object to its equivalent string representation using the specified format and the formatting conventions of the current culture.")
-Public Function ToString2(ByVal format As String) As String
+Public Function ToString2(ByVal Format As String) As String
 Attribute ToString2.VB_Description = "Converts the value of the current DateTime object to its equivalent string representation using the specified format and the formatting conventions of the current culture."
-   ToString2 = this.DotNetLibDateTime.ToString2(format)
+   ToString2 = this.DotNetLibDateTime.ToString2(Format)
 End Function
 
 '@Description("Converts the value of the current DateTime object to its equivalent string representation using the specified culture-specific format information.")
@@ -607,9 +604,9 @@ Attribute ToString3.VB_Description = "Converts the value of the current DateTime
 End Function
 
 '@Description("Converts the value of the current DateTime object to its equivalent string representation using the specified format and culture-specific format information.")
-Public Function ToString4(ByVal format As String, ByVal provider As IFormatProvider) As String
+Public Function ToString4(ByVal Format As String, ByVal provider As IFormatProvider) As String
 Attribute ToString4.VB_Description = "Converts the value of the current DateTime object to its equivalent string representation using the specified format and culture-specific format information."
-   ToString4 = this.DotNetLibDateTime.ToString4(format, provider)
+   ToString4 = this.DotNetLibDateTime.ToString4(Format, provider)
 End Function
 
 '@Description("Converts the value of the current DateTime object to Coordinated Universal Time (UTC).")
