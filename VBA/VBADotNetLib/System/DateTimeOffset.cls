@@ -16,7 +16,7 @@ Attribute VB_Description = "Represents a point in time, typically expressed as a
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 11, 2023
-'@LastModified July 20, 2023
+'@LastModified July 21, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -132,7 +132,7 @@ End Property
 Public Property Get DateTime() As DateTime
 Attribute DateTime.VB_Description = "Gets a DateTime value that represents the date and time of the current DateTimeOffset object."
    With New DateTime
-      Set .ComObject = this.DotNetLibDateTimeOffset.Date()
+      Set .ComObject = this.DotNetLibDateTimeOffset.DateTime()
       Set DateTime = .Self
    End With
 End Property
@@ -512,6 +512,7 @@ End Function
 Public Property Get ToString() As String
 Attribute ToString.VB_Description = "Converts the value of the current DateTimeOffset object to its equivalent string representation."
 Attribute ToString.VB_UserMemId = 0
+   
    ToString = this.DotNetLibDateTimeOffset.ToString()
 End Property
 
