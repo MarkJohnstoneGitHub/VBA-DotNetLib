@@ -63,7 +63,6 @@ Attribute CreateFromDateTime.VB_Description = "Initializes a new instance of the
 End Function
 
 '@Description("Initializes a new instance of the DateTimeOffset structure using the specified DateTime value and offset.")
-'@Ignore UseMeaningfulName
 Public Function CreateFromDateTime2(ByVal DateTime As DateTime, ByVal Offset As TimeSpan) As DateTimeOffset
 Attribute CreateFromDateTime2.VB_Description = "Initializes a new instance of the DateTimeOffset structure using the specified DateTime value and offset."
    With New DateTimeOffset
@@ -82,7 +81,6 @@ Attribute CreateFromDateTimeParts.VB_Description = "Initializes a new instance o
 End Function
 
 '@Description("Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, millisecond, and offset.")
-'@Ignore UseMeaningfulName
 Public Function CreateFromDateTimeParts2(ByVal Year As Long, ByVal Month As Long, ByVal Day As Long, ByVal Hour As Long, ByVal Minute As Long, ByVal Second As Long, ByVal Millisecond As Long, ByVal Offset As TimeSpan) As DateTimeOffset
 Attribute CreateFromDateTimeParts2.VB_Description = "Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, millisecond, and offset."
    With New DateTimeOffset
@@ -91,8 +89,9 @@ Attribute CreateFromDateTimeParts2.VB_Description = "Initializes a new instance 
    End With
 End Function
 
-'@Ignore UseMeaningfulName
+'@Description("Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, millisecond, and offset of a specified calendar.")
 Public Function CreateFromDateTimeParts3(ByVal Year As Long, ByVal Month As Long, ByVal Day As Long, ByVal Hour As Long, ByVal Minute As Long, ByVal Second As Long, ByVal Millisecond As Long, ByVal calendar As calendar, ByVal Offset As TimeSpan) As DateTimeOffset
+Attribute CreateFromDateTimeParts3.VB_Description = "Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, millisecond, and offset of a specified calendar."
    With New DateTimeOffset
       Set .ComObject = this.DotNetLibDateTimeOffset.CreateFromDateTimeParts3(Year, Month, Day, Hour, Minute, Second, Millisecond, calendar, Offset.ComObject)
       Set CreateFromDateTimeParts3 = .Self
@@ -358,14 +357,16 @@ Attribute Equals.VB_Description = "Determines whether the current DateTimeOffset
 End Function
 
 '@Description("Determines whether a DateTimeOffset object represents the same point in time as a specified object.")
-'@Ignore UseMeaningfulName
 Public Function Equals2(ByVal obj As Variant) As Boolean
 Attribute Equals2.VB_Description = "Determines whether a DateTimeOffset object represents the same point in time as a specified object."
-   Equals2 = this.DotNetLibDateTimeOffset.Equals2(obj)
+   If TypeOf value Is DateTimeOffset Then
+      Dim dtoValue As DateTimeOffset
+      Set dtValue = value
+      Equals2 = this.DotNetLibDateTimeOffset.Equals(dtoValue.ComObject)
+   End If
 End Function
 
 '@Description("Determines whether two specified DateTimeOffset objects represent the same point in time.")
-'@Ignore UseMeaningfulName
 Public Function Equals3(ByVal first As DateTimeOffset, ByVal Second As DateTimeOffset) As Boolean
 Attribute Equals3.VB_Description = "Determines whether two specified DateTimeOffset objects represent the same point in time."
    Equals3 = this.DotNetLibDateTimeOffset.Equals3(first.ComObject, Second.ComObject)
@@ -420,7 +421,6 @@ Attribute Parse.VB_Description = "Converts the specified string representation o
 End Function
 
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified culture-specific format information.")
-'@Ignore UseMeaningfulName
 Public Function Parse2(ByVal strInput As String, ByVal formatProvider As IFormatProvider) As DateTimeOffset
 Attribute Parse2.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified culture-specific format information."
    With New DateTimeOffset
@@ -430,7 +430,6 @@ Attribute Parse2.VB_Description = "Converts the specified string representation 
 End Function
 
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified culture-specific format information and formatting style.")
-'@Ignore UseMeaningfulName
 Public Function Parse3(ByVal strInput As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles) As DateTimeOffset
 Attribute Parse3.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified culture-specific format information and formatting style."
    With New DateTimeOffset
@@ -449,7 +448,6 @@ Attribute ParseExact.VB_Description = "Converts the specified string representat
 End Function
 
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly.")
-'@Ignore UseMeaningfulName
 Public Function ParseExact2(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles) As DateTimeOffset
 Attribute ParseExact2.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly."
    With New DateTimeOffset
@@ -459,7 +457,6 @@ Attribute ParseExact2.VB_Description = "Converts the specified string representa
 End Function
 
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified formats, culture-specific format information, and style. The format of the string representation must match one of the specified formats exactly.")
-'@Ignore UseMeaningfulName
 Public Function ParseExact3(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles) As DateTimeOffset
 Attribute ParseExact3.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified formats, culture-specific format information, and style. The format of the string representation must match one of the specified formats exactly."
    With New DateTimeOffset
@@ -478,7 +475,6 @@ Attribute Subtract.VB_Description = "Subtracts a DateTimeOffset value that repre
 End Function
 
 '@Description("Subtracts a specified time interval from the current DateTimeOffset object.")
-'@Ignore UseMeaningfulName
 Public Function Subtract2(ByVal value As TimeSpan) As DateTimeOffset
 Attribute Subtract2.VB_Description = "Subtracts a specified time interval from the current DateTimeOffset object."
    With New DateTimeOffset
@@ -520,21 +516,18 @@ Attribute ToString.VB_UserMemId = 0
 End Property
 
 '@Description("Converts the value of the current DateTimeOffset object to its equivalent string representation using the specified format.")
-'@Ignore UseMeaningfulName
 Public Function ToString2(ByVal Format As String) As String
 Attribute ToString2.VB_Description = "Converts the value of the current DateTimeOffset object to its equivalent string representation using the specified format."
    ToString2 = this.DotNetLibDateTimeOffset.ToString2(Format)
 End Function
 
 '@Description("Converts the value of the current DateTimeOffset object to its equivalent string representation using the specified culture-specific formatting information.")
-'@Ignore UseMeaningfulName
 Public Function ToString3(ByVal formatProvider As IFormatProvider) As String
 Attribute ToString3.VB_Description = "Converts the value of the current DateTimeOffset object to its equivalent string representation using the specified culture-specific formatting information."
    ToString3 = this.DotNetLibDateTimeOffset.ToString3(formatProvider)
 End Function
 
 '@Description("Converts the value of the current DateTimeOffset object to its equivalent string representation using the specified format and culture-specific format information.")
-'@Ignore UseMeaningfulName
 Public Function ToString4(ByVal Format As String, ByVal formatProvider As IFormatProvider) As String
 Attribute ToString4.VB_Description = "Converts the value of the current DateTimeOffset object to its equivalent string representation using the specified format and culture-specific format information."
    ToString4 = this.DotNetLibDateTimeOffset.ToString4(Format, formatProvider)
@@ -669,7 +662,6 @@ Attribute Subtraction.VB_Description = "Subtracts one DateTimeOffset object from
 End Function
 
 '@Description("Subtracts a specified time interval from a specified date and time, and yields a new date and time.")
-'@Ignore UseMeaningfulName
 Public Function Subtraction2(ByVal DateTimeOffset As DateTimeOffset, ByVal TimeSpan As TimeSpan) As DateTimeOffset
 Attribute Subtraction2.VB_Description = "Subtracts a specified time interval from a specified date and time, and yields a new date and time."
    With New DateTimeOffset
