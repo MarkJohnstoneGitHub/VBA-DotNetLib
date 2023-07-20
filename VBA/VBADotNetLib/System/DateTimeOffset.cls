@@ -359,9 +359,9 @@ End Function
 '@Description("Determines whether a DateTimeOffset object represents the same point in time as a specified object.")
 Public Function Equals2(ByVal obj As Variant) As Boolean
 Attribute Equals2.VB_Description = "Determines whether a DateTimeOffset object represents the same point in time as a specified object."
-   If TypeOf value Is DateTimeOffset Then
+   If TypeOf obj Is DateTimeOffset Then
       Dim dtoValue As DateTimeOffset
-      Set dtValue = value
+      Set dtoValue = obj
       Equals2 = this.DotNetLibDateTimeOffset.Equals(dtoValue.ComObject)
    End If
 End Function
