@@ -6,7 +6,7 @@ Attribute VB_Name = "DateTimeOffsetSubtractExample"
 '@Version v1.0 July 21, 2023
 '@LastModified July 21, 2023
 
-'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.subtract?view=net-7.0#system-datetimeoffset-subtract(system-datetimeoffset)
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.subtract?view=netframework-4.8.1#system-datetimeoffset-subtract(system-datetimeoffset)
 
 Option Explicit
 
@@ -26,14 +26,14 @@ Attribute DateTimeOffsetSubtract.VB_Description = "The following example illustr
                 "(" & secondDate.ToString() & ")" & ": " & _
                 difference.Days & " days, " & _
                 difference.Hours & ":" & _
-                Format(difference.Minutes, "00")
+                Format$(difference.Minutes, "00")
             
     Set difference = firstDate.Subtract(thirdDate)
     Debug.Print "(" & firstDate.ToString() & ")" & " - " & _
                 "(" & secondDate.ToString() & ")" & ": " & _
                 difference.Days & " days, " & _
                 difference.Hours & ":" & _
-                Format(difference.Minutes, "00")
+                Format$(difference.Minutes, "00")
 
 ' The example produces the following output:
 '    (10/25/2018 6:00:00 PM -07:00) - (10/25/2018 6:00:00 PM -05:00): 0 days, 2:00

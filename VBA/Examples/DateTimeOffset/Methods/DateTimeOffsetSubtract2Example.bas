@@ -6,7 +6,7 @@ Attribute VB_Name = "DateTimeOffsetSubtract2Example"
 '@Version v1.0 July 21, 2023
 '@LastModified July 21, 2023
 
-'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.subtract?view=net-7.0#system-datetimeoffset-subtract(system-timespan)
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.subtract?view=netframework-4.8.1#system-datetimeoffset-subtract(system-timespan)
 
 Option Explicit
 
