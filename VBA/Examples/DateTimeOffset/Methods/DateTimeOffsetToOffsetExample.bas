@@ -1,5 +1,6 @@
 Attribute VB_Name = "DateTimeOffsetToOffsetExample"
 '@Folder("VBADotNetLib.Examples.DateTimeOffset.Methods")
+
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 21, 2023
