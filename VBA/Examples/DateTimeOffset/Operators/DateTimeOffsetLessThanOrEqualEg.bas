@@ -23,7 +23,7 @@ Attribute DateTimeOffsetLessThanOrEqual.VB_Description = "The LessThanOrEqual me
     Dim date4 As DateTimeOffset
     Set date4 = date1
     
-    Debug.Print DateTimeOffset.LessThanOrEqual(date1, date2)   ' Displays False
+    Debug.Print DateTimeOffset.LessThanOrEqual(date1, date2)   ' Displays True
     Debug.Print DateTimeOffset.LessThanOrEqual(date1, date3)   ' Displays False
     Debug.Print DateTimeOffset.LessThanOrEqual(date1, date4)   ' Displays True
 End Sub
