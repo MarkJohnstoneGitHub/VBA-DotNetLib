@@ -3,7 +3,7 @@ Attribute VB_Name = "ErrorHandling"
 
 'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 13, 2023
-'@LastModified July 17, 2023
+'@LastModified July 23, 2023
 
 '@TODO Work in progress
 
@@ -18,17 +18,17 @@ Public Function Try() As Boolean
    End If
 End Function
 
+'Public Function Catch(Optional ByVal errorInfo As IException) As Boolean
 '@TODO Pass in an error object i.e. Exception eg. FormatError
 'Public Function Catch(Optional ByVal errorInfo As IException) As Boolean
-Public Function Catch(Optional ByVal errorNumber As Long) As Boolean
-   If Err.Number = errorNumber Then
-      Catch = True
-   Else
-      If errorNumber = 0 Then 'i.e. optional
-         If Err.Number <> 0 Then
+Public Function Catch(Optional ByVal errorNumber As Variant) As Boolean
+    If IsMissing(errorNumber) Then
+        If Err.Number <> 0 Then
             Catch = True
-         End If
-      End If
-   End If
+        End If
+    ElseIf Err.Number = errorNumber Then
+        Catch = True
+    End If
 End Function
+
 
