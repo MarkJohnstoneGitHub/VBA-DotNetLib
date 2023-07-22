@@ -26,20 +26,4 @@ Attribute TimeZoneInfoClearCachedData.VB_Description = "Cached time zone data in
         Debug.Print Err.Description
     End If
     On Error GoTo 0 'Stop code and display error
-   
 End Sub
-
-
-'TimeZoneInfo cst = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
-'TimeZoneInfo local = TimeZoneInfo.Local;
-'Console.WriteLine(TimeZoneInfo.ConvertTime(DateTime.Now, local, cst));
-'
-'TimeZoneInfo.ClearCachedData();
-'Try
-'{
-'   Console.WriteLine(TimeZoneInfo.ConvertTime(DateTime.Now, local, cst));
-'}
-'catch (ArgumentException e)
-'{
-'   Console.WriteLine(e.GetType().Name + "\n   " + e.Message);
-'}
