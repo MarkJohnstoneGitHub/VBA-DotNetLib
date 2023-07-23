@@ -1,4 +1,4 @@
-Attribute VB_Name = "TimeZoneInfoConvertTimeToUtcEg"
+Attribute VB_Name = "TimeZoneInfoConvertTimeTo2UtcEg"
 '@Folder("VBADotNetLib.Examples.TimeZoneInfo.Methods")
 
 '@Author Mark Johnstone
@@ -14,7 +14,7 @@ Option Explicit
 ' converts it to Coordinated Universal Time (UTC), then converts it to Tokyo
 ' Standard Time, and finally converts from Tokyo Standard Time back to UTC.
 ' Note that the two UTC times are identical.
-Public Sub TimeZoneInfoConvertTimeToUtc()
+Public Sub TimeZoneInfoConvertTimeToUtc2()
     Dim thisTime As DateTime
     Set thisTime = DateTime.Now
     Debug.Print "Time in " & IIf(TimeZoneInfo.Locale.IsDaylightSavingTime(thisTime), TimeZoneInfo.Locale.DaylightName, TimeZoneInfo.Locale.StandardName) & _
