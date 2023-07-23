@@ -29,8 +29,6 @@ Attribute TimeZoneInfoConvertTime2.VB_Description = "The following example conve
                     DateTimeOffset.CreateFromDateTime2(time1, TimeSpan.Zero), _
                     DateTimeOffset.CreateFromDateTime2(time2, TimeZoneInfo.Locale.GetUtcOffset(time2)), _
                     DateTimeOffset.CreateFromDateTime2(time2.AddHours(3), TimeZoneInfo.Locale.GetUtcOffset(time2.AddHours(3)))
-                    
-
     
     ' Retrieve the time zone for Eastern Standard Time (U.S. and Canada).
     Dim est As TimeZoneInfo
