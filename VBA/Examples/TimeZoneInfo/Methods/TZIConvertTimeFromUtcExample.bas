@@ -4,7 +4,7 @@ Attribute VB_Name = "TZIConvertTimeFromUtcExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 23, 2023
-'@LastModified July 23, 2023
+'@LastModified July 24, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.converttimefromutc?view=netframework-4.8.1
 
@@ -30,4 +30,5 @@ Attribute TimeZoneInfoConvertTimeFromUtc.VB_Description = "The following example
     ElseIf Catch(InvalidTimeZoneException) Then
         Debug.Print "Registry data on the Central Standard Time zone has been corrupted."
     End If
+    On Error GoTo 0 'Stop code and display error
 End Sub
