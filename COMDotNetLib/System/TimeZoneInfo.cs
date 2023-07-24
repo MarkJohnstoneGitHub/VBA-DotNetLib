@@ -198,7 +198,8 @@ namespace DotNetLib.System
             int i = 0;
             foreach (GSystem.TimeSpan offset in offsets)
             {
-                timeSpans[i++].TimeSpanObject = offset;
+                timeSpans[i] = new TimeSpan(offset);
+                i++;
             }
             return timeSpans;
         }
@@ -212,7 +213,8 @@ namespace DotNetLib.System
             int i = 0;
             foreach (GSystem.TimeSpan offset in offsets)
             {
-                timeSpans[i++].TimeSpanObject = offset;
+                timeSpans[i] = new TimeSpan(offset);
+                i++;
             }
             return timeSpans;
         }
