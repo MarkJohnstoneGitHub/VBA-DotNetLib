@@ -55,7 +55,7 @@ Ms Access database [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/
  
  **Issues:**
   - TimeZoneInfo.Local renamed member to Locale.  May cause issues when for interfaces may require renaming in type library? Alternative name?
-  - TimeZoneInfo.GetAmbiguousTimeOffsets Throwing error require to investigate.
+  - TimeZoneInfo.GetAmbiguousTimeOffsets Throwing error require to investigate. Fixed
   - Require to investigate how to correctly marshal arrays
   - See [PassingParameterArraysByReference](https://www.l3harrisgeospatial.com/docs/PassingParameterArraysByReference.html)
   - [pass-an-array-from-vba-to-c-sharp-using-com-interop](https://stackoverflow.com/questions/2027758/pass-an-array-from-vba-to-c-sharp-using-com-interop)
