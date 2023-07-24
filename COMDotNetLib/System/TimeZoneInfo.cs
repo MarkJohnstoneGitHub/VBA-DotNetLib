@@ -169,7 +169,11 @@ namespace DotNetLib.System
 
         public bool Equals2(object obj)
         {
-            return Equals(obj as TimeZoneInfo);
+            if (!(obj is TimeZoneInfo tzi))
+            {
+                return false;
+            }
+            return Equals(tzi);
         }
 
         public TimeZoneInfo FindSystemTimeZoneById(string id)

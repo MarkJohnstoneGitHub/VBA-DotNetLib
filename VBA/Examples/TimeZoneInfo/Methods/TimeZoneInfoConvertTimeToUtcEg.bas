@@ -6,7 +6,7 @@ Attribute VB_Name = "TimeZoneInfoConvertTimeToUtcEg"
 '@Version v1.0 July 24, 2023
 '@LastModified July 24, 2023
 
-'@Referencehttps://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.converttimetoutc?view=netframework-4.8.1#system-timezoneinfo-converttimetoutc(system-datetime)
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.converttimetoutc?view=netframework-4.8.1#system-timezoneinfo-converttimetoutc(system-datetime)
 
 Option Explicit
 
