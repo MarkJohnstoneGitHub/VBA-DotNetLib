@@ -12,6 +12,7 @@ Option Explicit
 
 '@Description("The following example uses the Equals(TimeZoneInfo) method to determine whether the local time zone is Pacific Time or Eastern Time.")
 Public Sub TimeZoneInfoEquals()
+Attribute TimeZoneInfoEquals.VB_Description = "The following example uses the Equals(TimeZoneInfo) method to determine whether the local time zone is Pacific Time or Eastern Time."
     Dim thisTimeZone As TimeZoneInfo
     Dim zone1 As TimeZoneInfo
     Dim zone2 As TimeZoneInfo
