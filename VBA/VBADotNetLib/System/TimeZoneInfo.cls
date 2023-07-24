@@ -255,10 +255,10 @@ Attribute FromSerializedString.VB_Description = "Deserializes a string to re-cre
 End Function
 
 '@Description("Returns information about the possible dates and times that an ambiguous date and time can be mapped to.")
-Public Function GetAmbiguousTimeOffsets(ByVal DateTime As DateTime) As TimeSpan()
+Public Function GetAmbiguousTimeOffsets(ByVal dt As DateTime) As TimeSpan()
 Attribute GetAmbiguousTimeOffsets.VB_Description = "Returns information about the possible dates and times that an ambiguous date and time can be mapped to."
    Dim ambiguousTimeOffsets() As DotNetLib.TimeSpan
-   ambiguousTimeOffsets = this.DotNetLibTimeZoneInfo.GetAmbiguousTimeOffsets(DateTime.ComObject)
+   ambiguousTimeOffsets = this.DotNetLibTimeZoneInfo.GetAmbiguousTimeOffsets(dt.ComObject)
    
    Dim output() As TimeSpan
    ReDim output(UBound(ambiguousTimeOffsets))
@@ -273,10 +273,10 @@ Attribute GetAmbiguousTimeOffsets.VB_Description = "Returns information about th
 End Function
 
 '@Description("Returns information about the possible dates and times that an ambiguous date and time can be mapped to.")
-Public Function GetAmbiguousTimeOffsets2(ByVal DateTimeOffset As DateTimeOffset) As TimeSpan()
+Public Function GetAmbiguousTimeOffsets2(ByVal dto As DateTimeOffset) As TimeSpan()
 Attribute GetAmbiguousTimeOffsets2.VB_Description = "Returns information about the possible dates and times that an ambiguous date and time can be mapped to."
    Dim ambiguousTimeOffsets() As DotNetLib.TimeSpan
-   ambiguousTimeOffsets = this.DotNetLibTimeZoneInfo.GetAmbiguousTimeOffsets2(DateTimeOffset.ComObject)
+   ambiguousTimeOffsets = this.DotNetLibTimeZoneInfo.GetAmbiguousTimeOffsets2(dto.ComObject)
    
    Dim output() As TimeSpan
    ReDim output(UBound(ambiguousTimeOffsets))
