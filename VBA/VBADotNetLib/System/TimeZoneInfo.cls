@@ -16,7 +16,7 @@ Attribute VB_Description = "Represents any time zone in the world."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 11, 2023
-'@LastModified July 22, 2023
+'@LastModified July 24, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -77,7 +77,6 @@ Attribute DisplayName.VB_Description = "Gets the general display name that repre
 End Property
 
 '@Description("Gets the time zone identifier.")
-'@Ignore UseMeaningfulName
 Public Property Get Id() As String
 Attribute Id.VB_Description = "Gets the time zone identifier."
    Id = this.DotNetLibTimeZoneInfo.Id()
@@ -131,7 +130,6 @@ End Function
 
 '@Static
 '@Description("Converts a time to the time in a particular time zone.")
-'@Ignore UseMeaningfulName
 Public Function ConvertTime2(ByVal DateTimeOffset As DateTimeOffset, ByVal destinationTimeZone As TimeZoneInfo) As DateTimeOffset
 Attribute ConvertTime2.VB_Description = "Converts a time to the time in a particular time zone."
    With New DateTimeOffset
@@ -142,7 +140,6 @@ End Function
 
 '@Static
 '@Description("Converts a time from one time zone to another.")
-'@Ignore UseMeaningfulName
 Public Function ConvertTime3(ByVal DateTime As DateTime, ByVal sourceTimeZone As TimeZoneInfo, ByVal destinationTimeZone As TimeZoneInfo) As DateTime
 Attribute ConvertTime3.VB_Description = "Converts a time from one time zone to another."
    With New DateTime
@@ -163,7 +160,6 @@ End Function
 
 '@Static
 '@Description("Converts a time to the time in another time zone based on the time zone's identifier.")
-'@Ignore UseMeaningfulName
 Public Function ConvertTimeBySystemTimeZoneId2(ByVal DateTimeOffset As DateTimeOffset, ByVal destinationTimeZoneId As String) As DateTimeOffset
 Attribute ConvertTimeBySystemTimeZoneId2.VB_Description = "Converts a time to the time in another time zone based on the time zone's identifier."
    With New DateTimeOffset
@@ -174,7 +170,6 @@ End Function
 
 '@Static
 '@Description("Converts a time from one time zone to another based on time zone identifiers.")
-'@Ignore UseMeaningfulName
 Public Function ConvertTimeBySystemTimeZoneId3(ByVal DateTime As DateTime, ByVal sourceTimeZoneId As String, ByVal destinationTimeZoneId As String) As DateTime
 Attribute ConvertTimeBySystemTimeZoneId3.VB_Description = "Converts a time from one time zone to another based on time zone identifiers."
    With New DateTime
@@ -205,7 +200,6 @@ End Function
 
 '@Static
 '@Description("Converts the time in a specified time zone to Coordinated Universal Time (UTC).")
-'@Ignore UseMeaningfulName
 Public Function ConvertTimeToUtc2(ByVal DateTime As DateTime, ByVal sourceTimeZone As TimeZoneInfo) As DateTime
 Attribute ConvertTimeToUtc2.VB_Description = "Converts the time in a specified time zone to Coordinated Universal Time (UTC)."
    With New DateTime
@@ -216,7 +210,6 @@ End Function
 
 '@Static
 '@Description("Creates a custom time zone with a specified identifier, an offset from Coordinated Universal Time (UTC), a display name, and a standard time display name.")
-'@Ignore UseMeaningfulName
 Public Function CreateCustomTimeZone(ByVal Id As String, ByVal BaseUtcOffset As TimeSpan, ByVal DisplayName As String, ByVal standardDisplayName As String) As TimeZoneInfo
 Attribute CreateCustomTimeZone.VB_Description = "Creates a custom time zone with a specified identifier, an offset from Coordinated Universal Time (UTC), a display name, and a standard time display name."
    With New TimeZoneInfo
@@ -232,15 +225,17 @@ Attribute Equals.VB_Description = "Determines whether the current TimeZoneInfo o
 End Function
 
 '@Description("Determines whether the current TimeZoneInfo object and another object are equal.")
-'@Ignore UseMeaningfulName
 Public Function Equals2(ByVal obj As Variant) As Boolean
 Attribute Equals2.VB_Description = "Determines whether the current TimeZoneInfo object and another object are equal."
-   Equals2 = this.DotNetLibTimeZoneInfo.Equals2(obj)
+   If TypeOf obj Is TimeZoneInfo Then
+      Dim tzi As TimeZoneInfo
+      Set tzi = obj
+      Equals2 = this.DotNetLibTimeZoneInfo.Equals(tzi.ComObject)
+   End If
 End Function
 
 '@Static
 '@Description("Instantiates a new TimeZoneInfo object based on its identifier.")
-'@Ignore UseMeaningfulName
 Public Function FindSystemTimeZoneById(ByVal Id As String) As TimeZoneInfo
 Attribute FindSystemTimeZoneById.VB_Description = "Instantiates a new TimeZoneInfo object based on its identifier."
    With New TimeZoneInfo
@@ -278,7 +273,6 @@ Attribute GetAmbiguousTimeOffsets.VB_Description = "Returns information about th
 End Function
 
 '@Description("Returns information about the possible dates and times that an ambiguous date and time can be mapped to.")
-'@Ignore UseMeaningfulName
 Public Function GetAmbiguousTimeOffsets2(ByVal DateTimeOffset As DateTimeOffset) As TimeSpan()
 Attribute GetAmbiguousTimeOffsets2.VB_Description = "Returns information about the possible dates and times that an ambiguous date and time can be mapped to."
    Dim ambiguousTimeOffsets() As DotNetLib.TimeSpan
@@ -341,7 +335,6 @@ Attribute IsAmbiguousTime.VB_Description = "Determines whether a particular date
 End Function
 
 '@Description("Determines whether a particular date and time in a particular time zone is ambiguous and can be mapped to two or more Coordinated Universal Time (UTC) times.")
-'@Ignore UseMeaningfulName
 Public Function IsAmbiguousTime2(ByVal DateTimeOffset As DateTimeOffset) As Boolean
 Attribute IsAmbiguousTime2.VB_Description = "Determines whether a particular date and time in a particular time zone is ambiguous and can be mapped to two or more Coordinated Universal Time (UTC) times."
    IsAmbiguousTime2 = this.DotNetLibTimeZoneInfo.IsAmbiguousTime2(DateTimeOffset.ComObject)
@@ -354,7 +347,6 @@ Attribute IsDaylightSavingTime.VB_Description = "Indicates whether a specified d
 End Function
 
 '@Description("Indicates whether a specified date and time falls in the range of daylight saving time for the time zone of the current TimeZoneInfo object.")
-'@Ignore UseMeaningfulName
 Public Function IsDaylightSavingTime2(ByVal DateTimeOffset As DateTimeOffset) As Boolean
 Attribute IsDaylightSavingTime2.VB_Description = "Indicates whether a specified date and time falls in the range of daylight saving time for the time zone of the current TimeZoneInfo object."
    IsDaylightSavingTime2 = this.DotNetLibTimeZoneInfo.IsDaylightSavingTime2(DateTimeOffset.ComObject)
