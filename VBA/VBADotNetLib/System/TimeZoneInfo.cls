@@ -16,7 +16,7 @@ Attribute VB_Description = "Represents any time zone in the world."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 11, 2023
-'@LastModified July 24, 2023
+'@LastModified July 26, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -120,90 +120,90 @@ End Sub
 
 '@Static
 '@Description("Converts a time to the time in a particular time zone.")
-Public Function ConvertTime(ByVal DateTime As DateTime, ByVal destinationTimeZone As TimeZoneInfo) As DateTime
+Public Function ConvertTime(ByVal sourceDateTime As DateTime, ByVal destinationTimeZone As TimeZoneInfo) As DateTime
 Attribute ConvertTime.VB_Description = "Converts a time to the time in a particular time zone."
    With New DateTime
-      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTime(DateTime.ComObject, destinationTimeZone.ComObject)
+      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTime(sourceDateTime.ComObject, destinationTimeZone.ComObject)
       Set ConvertTime = .Self
    End With
 End Function
 
 '@Static
 '@Description("Converts a time to the time in a particular time zone.")
-Public Function ConvertTime2(ByVal DateTimeOffset As DateTimeOffset, ByVal destinationTimeZone As TimeZoneInfo) As DateTimeOffset
+Public Function ConvertTime2(ByVal sourceDateTimeOffset As DateTimeOffset, ByVal destinationTimeZone As TimeZoneInfo) As DateTimeOffset
 Attribute ConvertTime2.VB_Description = "Converts a time to the time in a particular time zone."
    With New DateTimeOffset
-      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTime2(DateTimeOffset.ComObject, destinationTimeZone.ComObject)
+      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTime2(sourceDateTimeOffset.ComObject, destinationTimeZone.ComObject)
       Set ConvertTime2 = .Self
    End With
 End Function
 
 '@Static
 '@Description("Converts a time from one time zone to another.")
-Public Function ConvertTime3(ByVal DateTime As DateTime, ByVal sourceTimeZone As TimeZoneInfo, ByVal destinationTimeZone As TimeZoneInfo) As DateTime
+Public Function ConvertTime3(ByVal sourceDateTime As DateTime, ByVal sourceTimeZone As TimeZoneInfo, ByVal destinationTimeZone As TimeZoneInfo) As DateTime
 Attribute ConvertTime3.VB_Description = "Converts a time from one time zone to another."
    With New DateTime
-      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTime3(DateTime.ComObject, sourceTimeZone.ComObject, destinationTimeZone.ComObject)
+      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTime3(sourceDateTime.ComObject, sourceTimeZone.ComObject, destinationTimeZone.ComObject)
       Set ConvertTime3 = .Self
    End With
 End Function
 
 '@Static
 '@Description("Converts a time to the time in another time zone based on the time zone's identifier.")
-Public Function ConvertTimeBySystemTimeZoneId(ByVal DateTime As DateTime, ByVal destinationTimeZoneId As String) As DateTime
+Public Function ConvertTimeBySystemTimeZoneId(ByVal sourceDateTime As DateTime, ByVal destinationTimeZoneId As String) As DateTime
 Attribute ConvertTimeBySystemTimeZoneId.VB_Description = "Converts a time to the time in another time zone based on the time zone's identifier."
    With New DateTime
-      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTimeBySystemTimeZoneId(DateTime.ComObject, destinationTimeZoneId)
+      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTimeBySystemTimeZoneId(sourceDateTime.ComObject, destinationTimeZoneId)
       Set ConvertTimeBySystemTimeZoneId = .Self
    End With
 End Function
 
 '@Static
 '@Description("Converts a time to the time in another time zone based on the time zone's identifier.")
-Public Function ConvertTimeBySystemTimeZoneId2(ByVal DateTimeOffset As DateTimeOffset, ByVal destinationTimeZoneId As String) As DateTimeOffset
+Public Function ConvertTimeBySystemTimeZoneId2(ByVal sourceDateTimeOffset As DateTimeOffset, ByVal destinationTimeZoneId As String) As DateTimeOffset
 Attribute ConvertTimeBySystemTimeZoneId2.VB_Description = "Converts a time to the time in another time zone based on the time zone's identifier."
    With New DateTimeOffset
-      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTimeBySystemTimeZoneId2(DateTimeOffset.ComObject, destinationTimeZoneId)
+      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTimeBySystemTimeZoneId2(sourceDateTimeOffset.ComObject, destinationTimeZoneId)
       Set ConvertTimeBySystemTimeZoneId2 = .Self
    End With
 End Function
 
 '@Static
 '@Description("Converts a time from one time zone to another based on time zone identifiers.")
-Public Function ConvertTimeBySystemTimeZoneId3(ByVal DateTime As DateTime, ByVal sourceTimeZoneId As String, ByVal destinationTimeZoneId As String) As DateTime
+Public Function ConvertTimeBySystemTimeZoneId3(ByVal sourceDateTime As DateTime, ByVal sourceTimeZoneId As String, ByVal destinationTimeZoneId As String) As DateTime
 Attribute ConvertTimeBySystemTimeZoneId3.VB_Description = "Converts a time from one time zone to another based on time zone identifiers."
    With New DateTime
-      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTimeBySystemTimeZoneId3(DateTime.ComObject, sourceTimeZoneId, destinationTimeZoneId)
+      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTimeBySystemTimeZoneId3(sourceDateTime.ComObject, sourceTimeZoneId, destinationTimeZoneId)
       Set ConvertTimeBySystemTimeZoneId3 = .Self
    End With
 End Function
 
 '@Static
 '@Description("Converts a Coordinated Universal Time (UTC) to the time in a specified time zone.")
-Public Function ConvertTimeFromUtc(ByVal DateTime As DateTime, ByVal destinationTimeZone As TimeZoneInfo) As DateTime
+Public Function ConvertTimeFromUtc(ByVal sourceDateTime As DateTime, ByVal destinationTimeZone As TimeZoneInfo) As DateTime
 Attribute ConvertTimeFromUtc.VB_Description = "Converts a Coordinated Universal Time (UTC) to the time in a specified time zone."
    With New DateTime
-      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTimeFromUtc(DateTime.ComObject, destinationTimeZone.ComObject)
+      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTimeFromUtc(sourceDateTime.ComObject, destinationTimeZone.ComObject)
       Set ConvertTimeFromUtc = .Self
    End With
 End Function
 
 '@Static
 '@Description("Converts the specified date and time to Coordinated Universal Time (UTC).")
-Public Function ConvertTimeToUtc(ByVal DateTime As DateTime) As DateTime
+Public Function ConvertTimeToUtc(ByVal sourceDateTime As DateTime) As DateTime
 Attribute ConvertTimeToUtc.VB_Description = "Converts the specified date and time to Coordinated Universal Time (UTC)."
    With New DateTime
-      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTimeToUtc(DateTime.ComObject)
+      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTimeToUtc(sourceDateTime.ComObject)
       Set ConvertTimeToUtc = .Self
    End With
 End Function
 
 '@Static
 '@Description("Converts the time in a specified time zone to Coordinated Universal Time (UTC).")
-Public Function ConvertTimeToUtc2(ByVal DateTime As DateTime, ByVal sourceTimeZone As TimeZoneInfo) As DateTime
+Public Function ConvertTimeToUtc2(ByVal sourceDateTime As DateTime, ByVal sourceTimeZone As TimeZoneInfo) As DateTime
 Attribute ConvertTimeToUtc2.VB_Description = "Converts the time in a specified time zone to Coordinated Universal Time (UTC)."
    With New DateTime
-      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTimeToUtc2(DateTime.ComObject, sourceTimeZone.ComObject)
+      Set .ComObject = this.DotNetLibTimeZoneInfo.ConvertTimeToUtc2(sourceDateTime.ComObject, sourceTimeZone.ComObject)
       Set ConvertTimeToUtc2 = .Self
    End With
 End Function
@@ -255,10 +255,10 @@ Attribute FromSerializedString.VB_Description = "Deserializes a string to re-cre
 End Function
 
 '@Description("Returns information about the possible dates and times that an ambiguous date and time can be mapped to.")
-Public Function GetAmbiguousTimeOffsets(ByVal dt As DateTime) As TimeSpan()
+Public Function GetAmbiguousTimeOffsets(ByVal sourceDateTime As DateTime) As TimeSpan()
 Attribute GetAmbiguousTimeOffsets.VB_Description = "Returns information about the possible dates and times that an ambiguous date and time can be mapped to."
    Dim ambiguousTimeOffsets() As DotNetLib.TimeSpan
-   ambiguousTimeOffsets = this.DotNetLibTimeZoneInfo.GetAmbiguousTimeOffsets(dt.ComObject)
+   ambiguousTimeOffsets = this.DotNetLibTimeZoneInfo.GetAmbiguousTimeOffsets(sourceDateTime.ComObject)
    
    Dim output() As TimeSpan
    ReDim output(UBound(ambiguousTimeOffsets))
@@ -273,10 +273,10 @@ Attribute GetAmbiguousTimeOffsets.VB_Description = "Returns information about th
 End Function
 
 '@Description("Returns information about the possible dates and times that an ambiguous date and time can be mapped to.")
-Public Function GetAmbiguousTimeOffsets2(ByVal dto As DateTimeOffset) As TimeSpan()
+Public Function GetAmbiguousTimeOffsets2(ByVal sourceDateTimeOffset As DateTimeOffset) As TimeSpan()
 Attribute GetAmbiguousTimeOffsets2.VB_Description = "Returns information about the possible dates and times that an ambiguous date and time can be mapped to."
    Dim ambiguousTimeOffsets() As DotNetLib.TimeSpan
-   ambiguousTimeOffsets = this.DotNetLibTimeZoneInfo.GetAmbiguousTimeOffsets2(dto.ComObject)
+   ambiguousTimeOffsets = this.DotNetLibTimeZoneInfo.GetAmbiguousTimeOffsets2(sourceDateTimeOffset.ComObject)
    
    Dim output() As TimeSpan
    ReDim output(UBound(ambiguousTimeOffsets))
@@ -304,20 +304,20 @@ Attribute GetSystemTimeZones.VB_Description = "Returns a sorted collection of al
 End Function
 
 '@Description("Calculates the offset or difference between the time in this time zone and Coordinated Universal Time (UTC) for a particular date and time.")
-Public Function GetUtcOffset(ByVal DateTime As DateTime) As TimeSpan
+Public Function GetUtcOffset(ByVal sourceDateTime As DateTime) As TimeSpan
 Attribute GetUtcOffset.VB_Description = "Calculates the offset or difference between the time in this time zone and Coordinated Universal Time (UTC) for a particular date and time."
    With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeZoneInfo.GetUtcOffset(DateTime.ComObject)
+      Set .ComObject = this.DotNetLibTimeZoneInfo.GetUtcOffset(sourceDateTime.ComObject)
       Set GetUtcOffset = .Self
    End With
 End Function
 
 '@Description("Calculates the offset or difference between the time in this time zone and Coordinated Universal Time (UTC) for a particular date and time.")
 '@Ignore UseMeaningfulName
-Public Function GetUtcOffset2(ByVal DateTimeOffset As DateTimeOffset) As TimeSpan
+Public Function GetUtcOffset2(ByVal sourceDateTimeOffset As DateTimeOffset) As TimeSpan
 Attribute GetUtcOffset2.VB_Description = "Calculates the offset or difference between the time in this time zone and Coordinated Universal Time (UTC) for a particular date and time."
    With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeZoneInfo.GetUtcOffset2(DateTimeOffset.ComObject)
+      Set .ComObject = this.DotNetLibTimeZoneInfo.GetUtcOffset2(sourceDateTimeOffset.ComObject)
       Set GetUtcOffset2 = .Self
    End With
 End Function
@@ -329,33 +329,33 @@ Attribute HasSameRules.VB_Description = "Indicates whether the current object an
 End Function
 
 '@Description("Determines whether a particular date and time in a particular time zone is ambiguous and can be mapped to two or more Coordinated Universal Time (UTC) times.")
-Public Function IsAmbiguousTime(ByVal DateTime As DateTime) As Boolean
+Public Function IsAmbiguousTime(ByVal sourceDateTime As DateTime) As Boolean
 Attribute IsAmbiguousTime.VB_Description = "Determines whether a particular date and time in a particular time zone is ambiguous and can be mapped to two or more Coordinated Universal Time (UTC) times."
-   IsAmbiguousTime = this.DotNetLibTimeZoneInfo.IsAmbiguousTime(DateTime.ComObject)
+   IsAmbiguousTime = this.DotNetLibTimeZoneInfo.IsAmbiguousTime(sourceDateTime.ComObject)
 End Function
 
 '@Description("Determines whether a particular date and time in a particular time zone is ambiguous and can be mapped to two or more Coordinated Universal Time (UTC) times.")
-Public Function IsAmbiguousTime2(ByVal DateTimeOffset As DateTimeOffset) As Boolean
+Public Function IsAmbiguousTime2(ByVal sourceDateTimeOffset As DateTimeOffset) As Boolean
 Attribute IsAmbiguousTime2.VB_Description = "Determines whether a particular date and time in a particular time zone is ambiguous and can be mapped to two or more Coordinated Universal Time (UTC) times."
-   IsAmbiguousTime2 = this.DotNetLibTimeZoneInfo.IsAmbiguousTime2(DateTimeOffset.ComObject)
+   IsAmbiguousTime2 = this.DotNetLibTimeZoneInfo.IsAmbiguousTime2(sourceDateTimeOffset.ComObject)
 End Function
 
 '@Description("Indicates whether a specified date and time falls in the range of daylight saving time for the time zone of the current TimeZoneInfo object.")
-Public Function IsDaylightSavingTime(ByVal DateTime As DateTime) As Boolean
+Public Function IsDaylightSavingTime(ByVal sourceDateTime As DateTime) As Boolean
 Attribute IsDaylightSavingTime.VB_Description = "Indicates whether a specified date and time falls in the range of daylight saving time for the time zone of the current TimeZoneInfo object."
-   IsDaylightSavingTime = this.DotNetLibTimeZoneInfo.IsDaylightSavingTime(DateTime.ComObject)
+   IsDaylightSavingTime = this.DotNetLibTimeZoneInfo.IsDaylightSavingTime(sourceDateTime.ComObject)
 End Function
 
 '@Description("Indicates whether a specified date and time falls in the range of daylight saving time for the time zone of the current TimeZoneInfo object.")
-Public Function IsDaylightSavingTime2(ByVal DateTimeOffset As DateTimeOffset) As Boolean
+Public Function IsDaylightSavingTime2(ByVal sourceDateTimeOffset As DateTimeOffset) As Boolean
 Attribute IsDaylightSavingTime2.VB_Description = "Indicates whether a specified date and time falls in the range of daylight saving time for the time zone of the current TimeZoneInfo object."
-   IsDaylightSavingTime2 = this.DotNetLibTimeZoneInfo.IsDaylightSavingTime2(DateTimeOffset.ComObject)
+   IsDaylightSavingTime2 = this.DotNetLibTimeZoneInfo.IsDaylightSavingTime2(sourceDateTimeOffset.ComObject)
 End Function
 
 '@Description("Indicates whether a particular date and time is invalid.")
-Public Function IsInvalidTime(ByVal DateTime As DateTime) As Boolean
+Public Function IsInvalidTime(ByVal sourceDateTime As DateTime) As Boolean
 Attribute IsInvalidTime.VB_Description = "Indicates whether a particular date and time is invalid."
-   IsInvalidTime = this.DotNetLibTimeZoneInfo.IsInvalidTime(DateTime.ComObject)
+   IsInvalidTime = this.DotNetLibTimeZoneInfo.IsInvalidTime(sourceDateTime.ComObject)
 End Function
 
 '@Description("Converts the current TimeZoneInfo object to a serialized string.")
