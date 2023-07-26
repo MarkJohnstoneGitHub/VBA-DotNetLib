@@ -1,6 +1,8 @@
 ﻿using GSystem = global::System;
 using System.Runtime.InteropServices;
 using System.ComponentModel;
+using System;
+using System.Collections.ObjectModel;
 
 namespace DotNetLib.System.Collections
 {
@@ -9,11 +11,10 @@ namespace DotNetLib.System.Collections
     [Description("Provides the base class for a generic read-only collection.")]
     [Guid("E4643BBE-74AF-467D-8DF3-06B681E93E4C")]
     [ProgId("DotNetLib.System.Collections.ReadOnlyCollection")]
-    [ClassInterface(ClassInterfaceType.AutoDual)]
+    [ClassInterface(ClassInterfaceType.None)]
 
-    public class ReadOnlyCollection : GSystem.Collections.ReadOnlyCollectionBase
+    public class ReadOnlyCollection : GSystem.Collections.ReadOnlyCollectionBase, IReadOnlyCollection
     {
-
         public ReadOnlyCollection()
         {
         }
@@ -27,7 +28,6 @@ namespace DotNetLib.System.Collections
         {
             return new ReadOnlyCollection(sourceList);
         }
-
 
         public object this[int index]
         {
@@ -47,11 +47,10 @@ namespace DotNetLib.System.Collections
             return (InnerList.Contains(value));
         }
 
-        public void CopyTo(object[] array, int index)
-        { 
+        public void CopyTo([In, Out] ref object[] array, int index)
+        {
             InnerList.CopyTo(array, index);
         }
-
         public override GSystem.Collections.IEnumerator GetEnumerator()
         { 
             return InnerList.GetEnumerator(); 
@@ -61,5 +60,6 @@ namespace DotNetLib.System.Collections
         {
             return InnerList.ToArray();
         }
+
     }
 }

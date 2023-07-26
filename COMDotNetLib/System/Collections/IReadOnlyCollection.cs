@@ -11,7 +11,7 @@ namespace DotNetLib.System.Collections
     public interface IReadOnlyCollection
     {
         [Description("Initializes a new instance of the ReadOnlyCollection<T> class that is a read-only wrapper around the specified list.")]
-        ReadOnlyCollection Create(IList list);
+        ReadOnlyCollection Create(GSystem.Collections.IList list);
 
         [Description("Gets the number of elements contained in the ReadOnlyCollection<T> instance.")]
         int Count { get; }
@@ -23,7 +23,7 @@ namespace DotNetLib.System.Collections
         bool Contains(object Index);
 
         [Description("Copies the entire ReadOnlyCollection<T> to a compatible one-dimensional Array, starting at the specified index of the target array.")]
-        void CopyTo(object[] array, int index);
+        void CopyTo([In][Out] ref object[] array, int index);
 
         [Description("Returns an enumerator that iterates through the ReadOnlyCollection<T>.")]
         GSystem.Collections.IEnumerator GetEnumerator();
