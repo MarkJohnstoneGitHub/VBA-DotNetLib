@@ -63,8 +63,6 @@ Ms Access database [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/
  
  Currently List COM object wont allow to be created getting invalid use of New Keyword.  This will removed and replaced with it's non-generic equivalent.
  
- Anticipate the ReadOnlyCollection may have a similar issue. It has been updated thou not tested.
- 
  Require to consider how to handle generic types in COM Interlop as not supported, possible work around implement each type separately, which enforces type safety.  
  
  Or replace with non-generic equivalent.  To enforce type safety in VBA create a custom wrapper for the collection on the non-generic collection.
