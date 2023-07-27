@@ -81,7 +81,7 @@ Or replace with non-generic equivalent.  To enforce type safety in VBA create a 
  
  **Things To do**
  
- Implement IFormatProvider, an object that supplies culture-specific formatting information for the following:
+ Implement IFormatProvider an object that supplies culture-specific formatting information for the following:
  - DateTime.Parse2
  - DateTime.Parse3
  - DateTime.ParseExact
