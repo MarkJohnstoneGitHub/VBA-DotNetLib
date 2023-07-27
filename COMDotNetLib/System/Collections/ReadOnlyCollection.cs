@@ -24,10 +24,14 @@ namespace DotNetLib.System.Collections
             InnerList.AddRange(sourceList);
         }
 
+        // Constructors
+        
         public ReadOnlyCollection Create(GSystem.Collections.IList sourceList)
         {
             return new ReadOnlyCollection(sourceList);
         }
+
+        // Properties
 
         public object this[int index]
         {
@@ -36,6 +40,8 @@ namespace DotNetLib.System.Collections
                 return (InnerList[index]);
             }
         }
+
+        // Methods
 
         public int IndexOf(object value)
         {

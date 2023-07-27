@@ -10,14 +10,22 @@ namespace DotNetLib.System.Collections
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface IReadOnlyCollection
     {
+        //Constructors
         [Description("Initializes a new instance of the ReadOnlyCollection<T> class that is a read-only wrapper around the specified list.")]
         ReadOnlyCollection Create(GSystem.Collections.IList list);
 
-        [Description("Gets the number of elements contained in the ReadOnlyCollection<T> instance.")]
-        int Count { get; }
+        //Properties
+        int Count
+        {
+            [Description("Gets the number of elements contained in the ReadOnlyCollection<T> instance.")]
+            get;
+        }
 
-        [Description("Gets the element at the specified index.")]
-        object this[int index] { get; }
+        object this[int index]
+        {
+            [Description("Gets the element at the specified index.")]
+            get; 
+        }
 
         [Description("Determines whether an element is in the ReadOnlyCollection<T>.")]
         bool Contains(object Index);
