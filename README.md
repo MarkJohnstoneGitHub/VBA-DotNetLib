@@ -56,16 +56,15 @@ Ms Access database [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/
  
  **Issues:**
   - TimeZoneInfo.Local renamed member to Locale.  May cause issues when for interfaces may require renaming in type library? Alternative name?
-  - TimeZoneInfo.GetAmbiguousTimeOffsets Throwing error require to investigate. Fixed
-  - Require to investigate how to correctly marshal arrays
+  - Require to investigate how to correctly marshal arrays 
   - See [PassingParameterArraysByReference](https://www.l3harrisgeospatial.com/docs/PassingParameterArraysByReference.html)
   - [pass-an-array-from-vba-to-c-sharp-using-com-interop](https://stackoverflow.com/questions/2027758/pass-an-array-from-vba-to-c-sharp-using-com-interop)
  
- Currently List COM object wont allow to be created getting invalid use of New Keyword.  This will removed and replaced with it's non-generic equivalent.
+Currently List COM object wont allow to be created getting invalid use of New Keyword.  This will removed and replaced with it's non-generic equivalent.
  
- Require to consider how to handle generic types in COM Interlop as not supported, possible work around implement each type separately, which enforces type safety.  
+Require to consider how to handle generic types in COM Interlop as not supported, possible work around implement each type separately, which enforces type safety.  
  
- Or replace with non-generic equivalent.  To enforce type safety in VBA create a custom wrapper for the collection on the non-generic collection.
+Or replace with non-generic equivalent.  To enforce type safety in VBA create a custom wrapper for the collection on the non-generic collection.
  
  
  **Development Notes**
@@ -78,4 +77,29 @@ Ms Access database [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/
   [DE0006: Non-generic collections shouldn't be used](https://github.com/dotnet/platform-compat/blob/master/docs/DE0006.md)
  
   [System.Collections.Generic Namespace](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic?view=netframework-4.8.1)
+
+ 
+ **Things To do**
+ Implement IFormatProvider, an object that supplies culture-specific formatting information for the following:
+ - DateTime.Parse2
+ - DateTime.Parse3
+ - DateTime.ParseExact
+ - DateTime.ParseExact2
+ - DateTime.ParseExact3
+ - DateTime.ToString3
+ - DateTime.ToString4
+ - DateTime.TryParse2
+ - DateTimeOffset.Parse2
+ - DateTimeOffset.Parse3
+ - DateTimeOffset.ParseExact
+ - DateTimeOffset.ParseExact2
+ - DateTimeOffset.ParseExact3
+ - DateTimeOffset.ToString3
+ - DateTimeOffset.ToString4
+ - DateTimeOffset.TryParse2
+ - DateTimeOffset.TryParseExact
+ - DateTimeOffset.TryParseExact2
+ - TimeSpan.Parse2
+ - TimeSpan.ToString3
+ - TimeSpan.TryParse2
  
