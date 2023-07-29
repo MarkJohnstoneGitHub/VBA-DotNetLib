@@ -185,7 +185,7 @@ namespace DotNetLib.System
         int Compare(DateTime t1, DateTime t2);
 
         [Description("Compares the value of this instance to a specified DateTime value and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.")]
-        int CompareTo(DateTime t);
+        int CompareTo(DateTime value);
 
         [Description("Compares the value of this instance to a specified object that contains a specified DateTime value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.")]
         int CompareTo2(object value);
