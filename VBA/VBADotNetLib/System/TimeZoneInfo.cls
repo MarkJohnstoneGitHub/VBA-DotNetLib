@@ -16,18 +16,18 @@ Attribute VB_Description = "Represents any time zone in the world."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 11, 2023
-'@LastModified July 26, 2023
+'@LastModified July 30, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo?view=netframework-4.8.1
 
 '@Remarks
-' Generated from DotNetLib.tlb using https://github.com/MarkJohnstoneGitHub/Refactor-COM-object-to-VBA-COM-wrapper-class
 ' Renamed DotNetlib.TimeZoneInfo.Local to Locale due to VBA reserved word
 
-
 Option Explicit
+
+Implements ITimeZoneInfo
 
 Private Type TTimeZoneInfo
    DotNetLibTimeZoneInfo As DotNetLib.TimeZoneInfo
@@ -54,6 +54,10 @@ End Property
 Friend Property Get Self() As TimeZoneInfo
    Set Self = Me
 End Property
+
+'--------------------------------------------------------------------
+'Properties
+'--------------------------------------------------------------------
 
 '@Description("Gets the time difference between the current time zone's standard time and Coordinated Universal Time (UTC).")
 Public Property Get BaseUtcOffset() As TimeSpan
@@ -111,6 +115,10 @@ Attribute Utc.VB_Description = "Gets a TimeZoneInfo object that represents the C
       Set Utc = .Self
    End With
 End Property
+
+'--------------------------------------------------------------------
+'Methods
+'--------------------------------------------------------------------
 
 '@Description("Clears cached time zone data.")
 Public Sub ClearCachedData()
@@ -313,7 +321,6 @@ Attribute GetUtcOffset.VB_Description = "Calculates the offset or difference bet
 End Function
 
 '@Description("Calculates the offset or difference between the time in this time zone and Coordinated Universal Time (UTC) for a particular date and time.")
-'@Ignore UseMeaningfulName
 Public Function GetUtcOffset2(ByVal sourceDateTimeOffset As DateTimeOffset) As TimeSpan
 Attribute GetUtcOffset2.VB_Description = "Calculates the offset or difference between the time in this time zone and Coordinated Universal Time (UTC) for a particular date and time."
    With New TimeSpan
@@ -365,7 +372,93 @@ Attribute ToSerializedString.VB_Description = "Converts the current TimeZoneInfo
 End Function
 
 '@DefaultMember
+'@Description("Returns the current TimeZoneInfo object's display name.")
 Public Property Get ToString() As String
+Attribute ToString.VB_Description = "Returns the current TimeZoneInfo object's display name."
 Attribute ToString.VB_UserMemId = 0
    ToString = this.DotNetLibTimeZoneInfo.ToString()
+End Property
+
+'--------------------------------------------------------------------
+'Interface ITimeZoneInfo
+'--------------------------------------------------------------------
+
+Private Property Get ITimeZoneInfo_BaseUtcOffset() As TimeSpan
+    Set ITimeZoneInfo_BaseUtcOffset = BaseUtcOffset
+End Property
+
+Private Property Get ITimeZoneInfo_DaylightName() As String
+    ITimeZoneInfo_DaylightName = DaylightName
+End Property
+
+Private Property Get ITimeZoneInfo_DisplayName() As String
+    ITimeZoneInfo_DisplayName = DisplayName
+End Property
+
+Private Property Get ITimeZoneInfo_Id() As String
+    ITimeZoneInfo_Id = Id
+End Property
+
+Private Property Get ITimeZoneInfo_StandardName() As String
+    ITimeZoneInfo_StandardName = StandardName
+End Property
+
+Private Property Get ITimeZoneInfo_SupportsDaylightSavingTime() As Boolean
+    ITimeZoneInfo_SupportsDaylightSavingTime = SupportsDaylightSavingTime
+End Property
+
+Private Function ITimeZoneInfo_Equals(ByVal other As TimeZoneInfo) As Boolean
+    ITimeZoneInfo_Equals = Equals(other)
+End Function
+
+Private Function ITimeZoneInfo_GetAmbiguousTimeOffsets(ByVal sourceDateTime As DateTime) As TimeSpan()
+    ITimeZoneInfo_GetAmbiguousTimeOffsets = GetAmbiguousTimeOffsets(sourceDateTime)
+End Function
+
+Private Function ITimeZoneInfo_GetAmbiguousTimeOffsets2(ByVal sourceDateTimeOffset As DateTimeOffset) As TimeSpan()
+    ITimeZoneInfo_GetAmbiguousTimeOffsets2 = GetAmbiguousTimeOffsets2(sourceDateTimeOffset)
+End Function
+
+Private Function ITimeZoneInfo_GetHashCode() As Long
+    ITimeZoneInfo_GetHashCode = GetHashCode()
+End Function
+
+Private Function ITimeZoneInfo_GetUtcOffset(ByVal sourceDateTime As DateTime) As TimeSpan
+    Set ITimeZoneInfo_GetUtcOffset = GetUtcOffset(sourceDateTime)
+End Function
+
+Private Function ITimeZoneInfo_GetUtcOffset2(ByVal sourceDateTimeOffset As DateTimeOffset) As TimeSpan
+    Set ITimeZoneInfo_GetUtcOffset2 = GetUtcOffset2(sourceDateTimeOffset)
+End Function
+
+Private Function ITimeZoneInfo_HasSameRules(ByVal other As TimeZoneInfo) As Boolean
+    ITimeZoneInfo_HasSameRules = HasSameRules(other)
+End Function
+
+Private Function ITimeZoneInfo_IsAmbiguousTime(ByVal sourceDateTime As DateTime) As Boolean
+    ITimeZoneInfo_IsAmbiguousTime = IsAmbiguousTime(sourceDateTime)
+End Function
+
+Private Function ITimeZoneInfo_IsAmbiguousTime2(ByVal sourceDateTimeOffset As DateTimeOffset) As Boolean
+    ITimeZoneInfo_IsAmbiguousTime2 = IsAmbiguousTime2(sourceDateTimeOffset)
+End Function
+
+Private Function ITimeZoneInfo_IsDaylightSavingTime(ByVal sourceDateTime As DateTime) As Boolean
+    ITimeZoneInfo_IsDaylightSavingTime = IsDaylightSavingTime(sourceDateTime)
+End Function
+
+Private Function ITimeZoneInfo_IsDaylightSavingTime2(ByVal sourceDateTimeOffset As DateTimeOffset) As Boolean
+    ITimeZoneInfo_IsDaylightSavingTime2 = IsDaylightSavingTime2(sourceDateTimeOffset)
+End Function
+
+Private Function ITimeZoneInfo_IsInvalidTime(ByVal sourceDateTime As DateTime) As Boolean
+    ITimeZoneInfo_IsInvalidTime = IsInvalidTime(sourceDateTime)
+End Function
+
+Private Function ITimeZoneInfo_ToSerializedString() As String
+    ITimeZoneInfo_ToSerializedString = ToSerializedString()
+End Function
+
+Private Property Get ITimeZoneInfo_ToString() As String
+    ITimeZoneInfo_ToString = ToString
 End Property

@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeZoneInfoHasSameRulesExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 26, 2023
-'@LastModified July 26, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.hassamerules?view=netframework-4.8.1#examples
 
@@ -14,7 +14,7 @@ Option Explicit
 ' and macOS have the same offset from Coordinated Universal Time (UTC) and the same adjustment rules.
 ' The following example displays a list of these time zones to the console.
 Public Sub TimeZoneInfoHasSameRules()
-    Dim timeZones As IReadOnlyCollection
+    Dim timeZones As DotNetLib.IReadOnlyCollection
     Set timeZones = TimeZoneInfo.GetSystemTimeZones()
     Dim timeZoneArray() As Variant
     ReDim timeZoneArray(timeZones.Count - 1)
@@ -24,7 +24,7 @@ Public Sub TimeZoneInfoHasSameRules()
     Dim ctr As Long
     For ctr = UBound(timeZoneArray) To LBound(timeZoneArray) Step -1
         ' Get next item from top
-        Dim thisTimeZone As ITimeZoneInfo
+        Dim thisTimeZone As DotNetLib.ITimeZoneInfo
         Set thisTimeZone = timeZoneArray(ctr)
         Dim compareCtr As Long
         compareCtr = 0
