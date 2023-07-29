@@ -16,7 +16,7 @@ Attribute VB_Description = "Represents a point in time, typically expressed as a
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 11, 2023
-'@LastModified July 29, 2023
+'@LastModified July 30, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -25,7 +25,6 @@ Attribute VB_Description = "Represents a point in time, typically expressed as a
 Option Explicit
 
 Implements IDateTimeOffset
-
 
 Private Type TDateTimeOffset
    DotNetLibDateTimeOffset As DotNetLib.DateTimeOffset
@@ -727,14 +726,14 @@ End Function
 'Interface IDateTimeOffset
 '--------------------------------------------------------------------
 
-Private Property Get IDateTimeOffset_DateOnly() As IDateTime
+Private Property Get IDateTimeOffset_DateOnly() As DateTime
     With New DateTime
         Set .ComObject = this.DotNetLibDateTimeOffset.Date()
         Set IDateTimeOffset_DateOnly = .Self
     End With
 End Property
 
-Private Property Get IDateTimeOffset_DateTime() As IDateTime
+Private Property Get IDateTimeOffset_DateTime() As DateTime
     With New DateTime
         Set .ComObject = this.DotNetLibDateTimeOffset.DateTime()
         Set IDateTimeOffset_DateTime = .Self
@@ -757,7 +756,7 @@ Private Property Get IDateTimeOffset_Hour() As Long
     IDateTimeOffset_Hour = this.DotNetLibDateTimeOffset.Hour()
 End Property
 
-Private Property Get IDateTimeOffset_LocalDateTime() As IDateTime
+Private Property Get IDateTimeOffset_LocalDateTime() As DateTime
     With New DateTime
         Set .ComObject = this.DotNetLibDateTimeOffset.LocalDateTime()
         Set IDateTimeOffset_LocalDateTime = .Self
@@ -776,7 +775,7 @@ Private Property Get IDateTimeOffset_Month() As Long
     IDateTimeOffset_Month = this.DotNetLibDateTimeOffset.Month()
 End Property
 
-Private Property Get IDateTimeOffset_Offset() As ITimeSpan
+Private Property Get IDateTimeOffset_Offset() As TimeSpan
     With New TimeSpan
         Set .ComObject = this.DotNetLibDateTimeOffset.Offset()
         Set IDateTimeOffset_Offset = .Self
@@ -791,14 +790,14 @@ Private Property Get IDateTimeOffset_Ticks() As LongLong
     IDateTimeOffset_Ticks = this.DotNetLibDateTimeOffset.Ticks()
 End Property
 
-Private Property Get IDateTimeOffset_TimeOfDay() As ITimeSpan
+Private Property Get IDateTimeOffset_TimeOfDay() As TimeSpan
     With New TimeSpan
         Set .ComObject = this.DotNetLibDateTimeOffset.TimeOfDay()
         Set IDateTimeOffset_TimeOfDay = .Self
     End With
 End Property
 
-Private Property Get IDateTimeOffset_UtcDateTime() As IDateTime
+Private Property Get IDateTimeOffset_UtcDateTime() As DateTime
     With New DateTime
         Set .ComObject = this.DotNetLibDateTimeOffset.UtcDateTime()
         Set IDateTimeOffset_UtcDateTime = .Self
@@ -813,63 +812,63 @@ Private Property Get IDateTimeOffset_Year() As Long
     IDateTimeOffset_Year = this.DotNetLibDateTimeOffset.Year()
 End Property
 
-Private Function IDateTimeOffset_Add(ByVal TimeSpan As TimeSpan) As IDateTimeOffset
+Private Function IDateTimeOffset_Add(ByVal TimeSpan As TimeSpan) As DateTimeOffset
     With New DateTimeOffset
         Set .ComObject = this.DotNetLibDateTimeOffset.Add(TimeSpan.ComObject)
         Set IDateTimeOffset_Add = .Self
     End With
 End Function
 
-Private Function IDateTimeOffset_AddDays(ByVal Days As Double) As IDateTimeOffset
+Private Function IDateTimeOffset_AddDays(ByVal Days As Double) As DateTimeOffset
     With New DateTimeOffset
         Set .ComObject = this.DotNetLibDateTimeOffset.AddDays(Days)
         Set IDateTimeOffset_AddDays = .Self
     End With
 End Function
 
-Private Function IDateTimeOffset_AddHours(ByVal Hours As Double) As IDateTimeOffset
+Private Function IDateTimeOffset_AddHours(ByVal Hours As Double) As DateTimeOffset
     With New DateTimeOffset
         Set .ComObject = this.DotNetLibDateTimeOffset.AddHours(Hours)
         Set IDateTimeOffset_AddHours = .Self
     End With
 End Function
 
-Private Function IDateTimeOffset_AddMilliseconds(ByVal Milliseconds As Double) As IDateTimeOffset
+Private Function IDateTimeOffset_AddMilliseconds(ByVal Milliseconds As Double) As DateTimeOffset
     With New DateTimeOffset
         Set .ComObject = this.DotNetLibDateTimeOffset.AddMilliseconds(Milliseconds)
         Set IDateTimeOffset_AddMilliseconds = .Self
     End With
 End Function
 
-Private Function IDateTimeOffset_AddMinutes(ByVal Minutes As Double) As IDateTimeOffset
+Private Function IDateTimeOffset_AddMinutes(ByVal Minutes As Double) As DateTimeOffset
     With New DateTimeOffset
         Set .ComObject = this.DotNetLibDateTimeOffset.AddMinutes(Minutes)
         Set IDateTimeOffset_AddMinutes = .Self
     End With
 End Function
 
-Private Function IDateTimeOffset_AddMonths(ByVal months As Long) As IDateTimeOffset
+Private Function IDateTimeOffset_AddMonths(ByVal months As Long) As DateTimeOffset
     With New DateTimeOffset
         Set .ComObject = this.DotNetLibDateTimeOffset.AddMonths(months)
         Set IDateTimeOffset_AddMonths = .Self
     End With
 End Function
 
-Private Function IDateTimeOffset_AddSeconds(ByVal Seconds As Double) As IDateTimeOffset
+Private Function IDateTimeOffset_AddSeconds(ByVal Seconds As Double) As DateTimeOffset
     With New DateTimeOffset
         Set .ComObject = this.DotNetLibDateTimeOffset.AddSeconds(Seconds)
         Set IDateTimeOffset_AddSeconds = .Self
     End With
 End Function
 
-Private Function IDateTimeOffset_AddTicks(ByVal Ticks As LongLong) As IDateTimeOffset
+Private Function IDateTimeOffset_AddTicks(ByVal Ticks As LongLong) As DateTimeOffset
     With New DateTimeOffset
         Set .ComObject = this.DotNetLibDateTimeOffset.AddTicks(Ticks)
         Set IDateTimeOffset_AddTicks = .Self
     End With
 End Function
 
-Private Function IDateTimeOffset_AddYears(ByVal years As Long) As IDateTimeOffset
+Private Function IDateTimeOffset_AddYears(ByVal years As Long) As DateTimeOffset
     With New DateTimeOffset
         Set .ComObject = this.DotNetLibDateTimeOffset.AddYears(years)
         Set IDateTimeOffset_AddYears = .Self
@@ -892,14 +891,14 @@ Private Function IDateTimeOffset_GetHashCode() As Long
    IDateTimeOffset_GetHashCode = this.DotNetLibDateTimeOffset.GetHashCode()
 End Function
 
-Private Function IDateTimeOffset_Subtract(ByVal value As DateTimeOffset) As ITimeSpan
+Private Function IDateTimeOffset_Subtract(ByVal value As DateTimeOffset) As TimeSpan
     With New TimeSpan
         Set .ComObject = this.DotNetLibDateTimeOffset.Subtract(value.ComObject)
         Set IDateTimeOffset_Subtract = .Self
     End With
 End Function
 
-Private Function IDateTimeOffset_Subtract2(ByVal value As TimeSpan) As IDateTimeOffset
+Private Function IDateTimeOffset_Subtract2(ByVal value As TimeSpan) As DateTimeOffset
     With New DateTimeOffset
         Set .ComObject = this.DotNetLibDateTimeOffset.Subtract2(value.ComObject)
         Set IDateTimeOffset_Subtract2 = .Self
@@ -910,14 +909,14 @@ Private Function IDateTimeOffset_ToFileTime() As LongLong
     IDateTimeOffset_ToFileTime = this.DotNetLibDateTimeOffset.ToFileTime()
 End Function
 
-Private Function IDateTimeOffset_ToLocalTime() As IDateTimeOffset
+Private Function IDateTimeOffset_ToLocalTime() As DateTimeOffset
     With New DateTimeOffset
         Set .ComObject = this.DotNetLibDateTimeOffset.ToLocalTime()
         Set IDateTimeOffset_ToLocalTime = .Self
     End With
 End Function
 
-Private Function IDateTimeOffset_ToOffset(ByVal Offset As TimeSpan) As IDateTimeOffset
+Private Function IDateTimeOffset_ToOffset(ByVal Offset As TimeSpan) As DateTimeOffset
     With New DateTimeOffset
         Set .ComObject = this.DotNetLibDateTimeOffset.ToOffset(Offset.ComObject)
         Set IDateTimeOffset_ToOffset = .Self

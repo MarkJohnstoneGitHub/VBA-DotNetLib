@@ -16,12 +16,12 @@ Attribute VB_Description = "Represents an instant in time, typically expressed a
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 29, 2023
-'@LastModified July 29, 2023
+'@LastModified July 30, 2023
 
 Option Explicit
 
 '@Description("Gets the date component of this instance.")
-Public Property Get DateOnly() As IDateTime
+Public Property Get DateOnly() As DateTime
 Attribute DateOnly.VB_Description = "Gets the date component of this instance."
 End Property
 
@@ -86,47 +86,47 @@ Attribute Year.VB_Description = "Gets the year component of the date represented
 End Property
 
 '@Description("Returns a new DateTime that adds the value of the specified TimeSpan to the value of this instance.")
-Public Function Add(ByVal value As TimeSpan) As IDateTime
+Public Function Add(ByVal value As TimeSpan) As DateTime
 Attribute Add.VB_Description = "Returns a new DateTime that adds the value of the specified TimeSpan to the value of this instance."
 End Function
 
 '@Description("Returns a new DateTime that adds the specified number of days to the value of this instance.")
-Public Function AddDays(ByVal value As Double) As IDateTime
+Public Function AddDays(ByVal value As Double) As DateTime
 Attribute AddDays.VB_Description = "Returns a new DateTime that adds the specified number of days to the value of this instance."
 End Function
 
 '@Description("Returns a new DateTime that adds the specified number of hours to the value of this instance.")
-Public Function AddHours(ByVal value As Double) As IDateTime
+Public Function AddHours(ByVal value As Double) As DateTime
 Attribute AddHours.VB_Description = "Returns a new DateTime that adds the specified number of hours to the value of this instance."
 End Function
 
 '@Description("Returns a new DateTime that adds the specified number of milliseconds to the value of this instance.")
-Public Function AddMilliseconds(ByVal value As Double) As IDateTime
+Public Function AddMilliseconds(ByVal value As Double) As DateTime
 Attribute AddMilliseconds.VB_Description = "Returns a new DateTime that adds the specified number of milliseconds to the value of this instance."
 End Function
 
 '@Description("Returns a new DateTime that adds the specified number of minutes to the value of this instance.")
-Public Function AddMinutes(ByVal value As Double) As IDateTime
+Public Function AddMinutes(ByVal value As Double) As DateTime
 Attribute AddMinutes.VB_Description = "Returns a new DateTime that adds the specified number of minutes to the value of this instance."
 End Function
 
 '@Description("Returns a new DateTime that adds the specified number of months to the value of this instance.")
-Public Function AddMonths(ByVal months As Long) As IDateTime
+Public Function AddMonths(ByVal months As Long) As DateTime
 Attribute AddMonths.VB_Description = "Returns a new DateTime that adds the specified number of months to the value of this instance."
 End Function
 
 '@Description("Returns a new DateTime that adds the specified number of seconds to the value of this instance.")
-Public Function AddSeconds(ByVal value As Double) As IDateTime
+Public Function AddSeconds(ByVal value As Double) As DateTime
 Attribute AddSeconds.VB_Description = "Returns a new DateTime that adds the specified number of seconds to the value of this instance."
 End Function
 
 '@Description("Returns a new DateTime that adds the specified number of ticks to the value of this instance.")
-Public Function AddTicks(ByVal value As LongLong) As IDateTime
+Public Function AddTicks(ByVal value As LongLong) As DateTime
 Attribute AddTicks.VB_Description = "Returns a new DateTime that adds the specified number of ticks to the value of this instance."
 End Function
 
 '@Description("Returns a new DateTime that adds the specified number of years to the value of this instance.")
-Public Function AddYears(ByVal value As Long) As IDateTime
+Public Function AddYears(ByVal value As Long) As DateTime
 Attribute AddYears.VB_Description = "Returns a new DateTime that adds the specified number of years to the value of this instance."
 End Function
 
@@ -156,7 +156,7 @@ Attribute IsDaylightSavingTime.VB_Description = "Indicates whether this instance
 End Function
 
 '@Description("Returns a new DateTime that subtracts the specified duration from the value of this instance.")
-Public Function Subtract(ByVal value As TimeSpan) As IDateTime
+Public Function Subtract(ByVal value As TimeSpan) As DateTime
 Attribute Subtract.VB_Description = "Returns a new DateTime that subtracts the specified duration from the value of this instance."
 End Function
 
@@ -181,7 +181,7 @@ Attribute ToFileTimeUtc.VB_Description = "Converts the value of the current Date
 End Function
 
 '@Description("Converts the value of the current DateTime object to local time.")
-Public Function ToLocalTime() As IDateTime
+Public Function ToLocalTime() As DateTime
 Attribute ToLocalTime.VB_Description = "Converts the value of the current DateTime object to local time."
 End Function
 
@@ -231,6 +231,6 @@ Attribute ToString4.VB_Description = "Converts the value of the current DateTime
 End Function
 
 '@Description("Converts the value of the current DateTime object to Coordinated Universal Time (UTC).")
-Public Function ToUniversalTime() As IDateTime
+Public Function ToUniversalTime() As DateTime
 Attribute ToUniversalTime.VB_Description = "Converts the value of the current DateTime object to Coordinated Universal Time (UTC)."
 End Function

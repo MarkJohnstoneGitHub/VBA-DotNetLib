@@ -13,7 +13,7 @@ Attribute VB_Exposed = False
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 29, 2023
-'@LastModified July 29, 2023
+'@LastModified July 30, 2023
 
 Option Explicit
 

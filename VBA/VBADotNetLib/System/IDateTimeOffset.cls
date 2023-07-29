@@ -15,7 +15,7 @@ Attribute VB_Description = "Represents a point in time, typically expressed as a
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 29, 2023
-'@LastModified July 29, 2023
+'@LastModified July 30, 2023
 
 Option Explicit
 
@@ -24,12 +24,12 @@ Option Explicit
 '--------------------------------------------------------------------
 
 '@Description("Gets a DateTime value that represents the date component of the current DateTimeOffset object.")
-Public Property Get DateOnly() As IDateTime
+Public Property Get DateOnly() As DateTime
 Attribute DateOnly.VB_Description = "Gets a DateTime value that represents the date component of the current DateTimeOffset object."
 End Property
 
 '@Description("Gets a DateTime value that represents the date and time of the current DateTimeOffset object.")
-Public Property Get DateTime() As IDateTime
+Public Property Get DateTime() As DateTime
 Attribute DateTime.VB_Description = "Gets a DateTime value that represents the date and time of the current DateTimeOffset object."
 End Property
 
@@ -54,7 +54,7 @@ Attribute Hour.VB_Description = "Gets the hour component of the time represented
 End Property
 
 '@Description("Gets a DateTime value that represents the local date and time of the current DateTimeOffset object.")
-Public Property Get LocalDateTime() As IDateTime
+Public Property Get LocalDateTime() As DateTime
 Attribute LocalDateTime.VB_Description = "Gets a DateTime value that represents the local date and time of the current DateTimeOffset object."
 End Property
 
@@ -74,7 +74,7 @@ Attribute Month.VB_Description = "Gets the month component of the date represent
 End Property
 
 '@Description("Gets the time's offset from Coordinated Universal Time (UTC).")
-Public Property Get Offset() As ITimeSpan
+Public Property Get Offset() As TimeSpan
 Attribute Offset.VB_Description = "Gets the time's offset from Coordinated Universal Time (UTC)."
 End Property
 
@@ -89,12 +89,12 @@ Attribute Ticks.VB_Description = "Gets the number of ticks that represents the d
 End Property
 
 '@Description("Gets the time of day for the current DateTimeOffset object.")
-Public Property Get TimeOfDay() As ITimeSpan
+Public Property Get TimeOfDay() As TimeSpan
 Attribute TimeOfDay.VB_Description = "Gets the time of day for the current DateTimeOffset object."
 End Property
 
 '@Description("Gets a DateTime value that represents the Coordinated Universal Time (UTC) date and time of the current DateTimeOffset object.")
-Public Property Get UtcDateTime() As IDateTime
+Public Property Get UtcDateTime() As DateTime
 Attribute UtcDateTime.VB_Description = "Gets a DateTime value that represents the Coordinated Universal Time (UTC) date and time of the current DateTimeOffset object."
 End Property
 
@@ -112,47 +112,47 @@ End Property
 'Methods
 '--------------------------------------------------------------------
 '@Description("Returns a new DateTimeOffset object that adds a specified time interval to the value of this instance.")
-Public Function Add(ByVal TimeSpan As TimeSpan) As IDateTimeOffset
+Public Function Add(ByVal TimeSpan As TimeSpan) As DateTimeOffset
 Attribute Add.VB_Description = "Returns a new DateTimeOffset object that adds a specified time interval to the value of this instance."
 End Function
 
 '@Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional days to the value of this instance.")
-Public Function AddDays(ByVal Days As Double) As IDateTimeOffset
+Public Function AddDays(ByVal Days As Double) As DateTimeOffset
 Attribute AddDays.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of whole and fractional days to the value of this instance."
 End Function
 
 '@Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional hours to the value of this instance.")
-Public Function AddHours(ByVal Hours As Double) As IDateTimeOffset
+Public Function AddHours(ByVal Hours As Double) As DateTimeOffset
 Attribute AddHours.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of whole and fractional hours to the value of this instance."
 End Function
 
 '@Description("Returns a new DateTimeOffset object that adds a specified number of milliseconds to the value of this instance.")
-Public Function AddMilliseconds(ByVal Milliseconds As Double) As IDateTimeOffset
+Public Function AddMilliseconds(ByVal Milliseconds As Double) As DateTimeOffset
 Attribute AddMilliseconds.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of milliseconds to the value of this instance."
 End Function
 
 '@Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional minutes to the value of this instance.")
-Public Function AddMinutes(ByVal Minutes As Double) As IDateTimeOffset
+Public Function AddMinutes(ByVal Minutes As Double) As DateTimeOffset
 Attribute AddMinutes.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of whole and fractional minutes to the value of this instance."
 End Function
 
 '@Description("Returns a new DateTimeOffset object that adds a specified number of months to the value of this instance.")
-Public Function AddMonths(ByVal months As Long) As IDateTimeOffset
+Public Function AddMonths(ByVal months As Long) As DateTimeOffset
 Attribute AddMonths.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of months to the value of this instance."
 End Function
 
 '@Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional seconds to the value of this instance.")
-Public Function AddSeconds(ByVal Seconds As Double) As IDateTimeOffset
+Public Function AddSeconds(ByVal Seconds As Double) As DateTimeOffset
 Attribute AddSeconds.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of whole and fractional seconds to the value of this instance."
 End Function
 
 '@Description("Returns a new DateTimeOffset object that adds a specified number of ticks to the value of this instance.")
-Public Function AddTicks(ByVal Ticks As LongLong) As IDateTimeOffset
+Public Function AddTicks(ByVal Ticks As LongLong) As DateTimeOffset
 Attribute AddTicks.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of ticks to the value of this instance."
 End Function
 
 '@Description("Returns a new DateTimeOffset object that adds a specified number of years to the value of this instance.")
-Public Function AddYears(ByVal years As Long) As IDateTimeOffset
+Public Function AddYears(ByVal years As Long) As DateTimeOffset
 Attribute AddYears.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of years to the value of this instance."
 End Function
 
@@ -177,12 +177,12 @@ Attribute GetHashCode.VB_Description = "Returns the hash code for the current Da
 End Function
 
 '@Description("Subtracts a DateTimeOffset value that represents a specific date and time from the current DateTimeOffset object.")
-Public Function Subtract(ByVal value As DateTimeOffset) As ITimeSpan
+Public Function Subtract(ByVal value As DateTimeOffset) As TimeSpan
 Attribute Subtract.VB_Description = "Subtracts a DateTimeOffset value that represents a specific date and time from the current DateTimeOffset object."
 End Function
 
 '@Description("Subtracts a specified time interval from the current DateTimeOffset object.")
-Public Function Subtract2(ByVal value As TimeSpan) As IDateTimeOffset
+Public Function Subtract2(ByVal value As TimeSpan) As DateTimeOffset
 Attribute Subtract2.VB_Description = "Subtracts a specified time interval from the current DateTimeOffset object."
 End Function
 
@@ -192,12 +192,12 @@ Attribute ToFileTime.VB_Description = "Converts the value of the current DateTim
 End Function
 
 '@Description("Converts the current DateTimeOffset object to a DateTimeOffset object that represents the local time.")
-Public Function ToLocalTime() As IDateTimeOffset
+Public Function ToLocalTime() As DateTimeOffset
 Attribute ToLocalTime.VB_Description = "Converts the current DateTimeOffset object to a DateTimeOffset object that represents the local time."
 End Function
 
 '@Description("Converts the value of the current DateTimeOffset object to the date and time specified by an offset value.")
-Public Function ToOffset(ByVal Offset As TimeSpan) As IDateTimeOffset
+Public Function ToOffset(ByVal Offset As TimeSpan) As DateTimeOffset
 Attribute ToOffset.VB_Description = "Converts the value of the current DateTimeOffset object to the date and time specified by an offset value."
 End Function
 
