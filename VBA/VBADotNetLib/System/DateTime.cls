@@ -23,9 +23,6 @@ Attribute VB_Description = "Represents an instant in time, typically expressed a
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8.1
 
-'@Remarks
-' Generated from DotNetLib.tlb using https://github.com/MarkJohnstoneGitHub/Refactor-COM-object-to-VBA-COM-wrapper-class
-
 '@Notes
 ' Renamed DotNetLib.Date to DateOnly due to VBA reserved word
 ' Added DateTimeStatic helper class for static fields MaxValue and MinValue
@@ -61,6 +58,10 @@ End Property
 Friend Property Get Self() As DateTime
    Set Self = Me
 End Property
+
+'--------------------------------------------------------------------
+'Constructors
+'--------------------------------------------------------------------
 
 '@Static
 '@Description("Initializes a new instance of the DateTime structure to a specified number of ticks and to Coordinated Universal Time (UTC) or local time.")
@@ -112,6 +113,10 @@ Attribute CreateFromDateTimeKind2.VB_Description = "Initializes a new instance o
    End With
 End Function
 
+'--------------------------------------------------------------------
+'Fields
+'--------------------------------------------------------------------
+
 '@Static
 '@Description("Represents the largest possible value of DateTime. This field is read-only.")
 Public Property Get MaxValue() As DateTime
@@ -125,6 +130,10 @@ Public Property Get MinValue() As DateTime
 Attribute MinValue.VB_Description = "Represents the smallest possible value of DateTime. This field is read-only."
    Set MinValue = DateTimeStatic.MinValue
 End Property
+
+'--------------------------------------------------------------------
+'Properties
+'--------------------------------------------------------------------
 
 '@Description("Gets the date component of this instance.")
 Public Property Get DateOnly() As DateTime
@@ -239,6 +248,10 @@ Public Property Get Year() As Long
 Attribute Year.VB_Description = "Gets the year component of the date represented by this instance."
    Year = this.DotNetLibDateTime.Year()
 End Property
+
+'--------------------------------------------------------------------
+'Methods
+'--------------------------------------------------------------------
 
 '@Description("Returns a new DateTime that adds the value of the specified TimeSpan to the value of this instance.")
 Public Function Add(ByVal value As TimeSpan) As DateTime
@@ -646,6 +659,10 @@ Attribute TryParse2.VB_Description = "Converts the specified string representati
     End With
 End Function
 
+'--------------------------------------------------------------------
+'Operators
+'--------------------------------------------------------------------
+
 '@Static
 '@Description("Adds a specified time interval to a specified date and time, yielding a new date and time.")
 Public Function Addition(ByVal D As DateTime, ByVal T As TimeSpan) As DateTime
@@ -718,9 +735,9 @@ Attribute Subtraction2.VB_Description = "Subtracts a specified time interval fro
    End With
 End Function
 
-'------------------------------------------------------------------
+'--------------------------------------------------------------------
 'Interface IDateTime
-'------------------------------------------------------------------
+'--------------------------------------------------------------------
 
 Private Property Get IDateTime_DateOnly() As IDateTime
     With New DateTime

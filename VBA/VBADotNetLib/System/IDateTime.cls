@@ -7,9 +7,11 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = False
+Attribute VB_Description = "Represents an instant in time, typically expressed as a date and time of day."
 'Rubberduck annotations
 '@Folder("VBADotNetLib.System")
 '@ModuleDescription("Represents an instant in time, typically expressed as a date and time of day.")
+'@Interface
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
