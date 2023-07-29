@@ -112,7 +112,9 @@ Or replace with non-generic equivalent.  To enforce type safety in VBA create a 
   - [Calendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.calendar?view=netframework-4.8.1)
 
 VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
+
 VBA Wrapper for ReadOnlyCollection
+
 Possibly implement interfaces in DotNetLib type library as work around for [VBA Interface not showing property in watch window](https://stackoverflow.com/questions/61232755/vba-interface-not-showing-property-in-watch-window). Would require renaming COM interfaces eg ICOMDateTime, ICOMDateTimeOffset, ICOMTimeSpan, ICOMTimeZoneInfo and create interfaces IDateTime, IDateTimeOffset,ITimeSpan, ITimeZoneInfo etc. 
  
   
