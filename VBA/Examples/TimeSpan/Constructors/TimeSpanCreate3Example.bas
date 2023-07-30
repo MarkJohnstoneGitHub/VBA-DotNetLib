@@ -4,9 +4,9 @@ Attribute VB_Name = "TimeSpanCreate3Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 16, 2023
-'@LastModified July 16, 2023
+'@LastModified July 30, 2023
 
-'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.-ctor?view=net-7.0#system-timespan-ctor(system-int32-system-int32-system-int32-system-int32-system-int32)
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.-ctor?view=netframework-4.8.1#system-timespan-ctor(system-int32-system-int32-system-int32-system-int32-system-int32)
 
 Option Explicit
 
@@ -22,6 +22,8 @@ Attribute TimeSpanCreate3.VB_Description = "The following example creates severa
    CreateTimeSpan 1111, 2222, 3333, 4444, 5555
    CreateTimeSpan 1111, -2222, -3333, -4444, -5555
    CreateTimeSpan 99999, 99999, 99999, 99999, 99999
+End Sub
+
 '/*
 'This example of the TimeSpan( int, int, int, int, int )
 'constructor generates the following output.
@@ -35,10 +37,9 @@ Attribute TimeSpanCreate3.VB_Description = "The following example creates severa
 'TimeSpan( 1111, -2222, -3333, -4444, -5555 )       1016.01:12:50.4450000
 'TimeSpan( 99999, 99999, 99999, 99999, 99999 )    104236.05:27:18.9990000
 '*/
-End Sub
 
 Private Sub CreateTimeSpan(ByVal Days As Long, ByVal Hours As Long, ByVal Minutes As Long, ByVal Seconds As Long, ByVal millisec As Long)
-   Dim elapsedTime As TimeSpan
+   Dim elapsedTime As ITimeSpan
    Set elapsedTime = TimeSpan.Create3(Days, Hours, Minutes, Seconds, millisec)
 
    ' Format the constructor for display.

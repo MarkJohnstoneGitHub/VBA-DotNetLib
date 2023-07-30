@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeSpanToStringExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 17, 2023
-'@LastModified July 17, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.tostring?view=netframework-4.8.1#system-timespan-tostring
 
@@ -13,7 +13,7 @@ Option Explicit
 '@Description("The following example displays the strings returned by calling the ToString method with a number of TimeSpan values.")
 Public Sub TimeSpanToString()
 Attribute TimeSpanToString.VB_Description = "The following example displays the strings returned by calling the ToString method with a number of TimeSpan values."
-   Dim span As TimeSpan
+   Dim span As ITimeSpan
    ' Initialize a time span to zero.
    Set span = TimeSpan.Zero
    Debug.Print span.ToString()
@@ -41,6 +41,7 @@ Attribute TimeSpanToString.VB_Description = "The following example displays the 
    ' Initialize a timespan to 25 milliseconds.
    Set span = TimeSpan.Create3(0, 0, 0, 0, 25)
    Debug.Print span.ToString
+End Sub
 
 ' The example displays the following output:
 '        00:00:00
@@ -50,15 +51,13 @@ Attribute TimeSpanToString.VB_Description = "The following example displays the 
 '        99.23:59:59.9990000
 '        03:00:00
 '        00:00:00.0250000
-End Sub
-
 
 '@Description("The following example uses standard and custom TimeSpan format strings to display the string representation of each element in an array of TimeSpan values.")
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.tostring?view=netframework-4.8.1#system-timespan-tostring(system-string)
 Public Sub TimeSpanToString2()
 Attribute TimeSpanToString2.VB_Description = "The following example uses standard and custom TimeSpan format strings to display the string representation of each element in an array of TimeSpan values."
    ' Create an array of timespan intervals.
-   Dim spans() As TimeSpan
+   Dim spans() As ITimeSpan
    Objects.ToArray spans, _
       TimeSpan.Zero, _
       TimeSpan.Create3(-14, 0, 0, 0, 0), _
@@ -74,7 +73,7 @@ Attribute TimeSpanToString2.VB_Description = "The following example uses standar
    ' Calculate a new time interval by adding each element to the base interval.
    Dim varSpan As Variant
    For Each varSpan In spans
-      Dim span As TimeSpan
+      Dim span As ITimeSpan
       Set span = varSpan
       
       Dim fmt As Variant
@@ -83,7 +82,8 @@ Attribute TimeSpanToString2.VB_Description = "The following example uses standar
       Next
       Debug.Print
    Next
-   
+End Sub
+
 ' The example displays the following output:
 '       c: 00:00:00
 '       g: 0:00:00
@@ -126,4 +126,3 @@ Attribute TimeSpanToString2.VB_Description = "The following example uses standar
 '       G: 0:00:00:00.0250000
 '       hh\:mm\:ss: 00:00:00
 '       %m' min.': 0 min.
-End Sub

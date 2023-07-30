@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeAddHoursExample"
 
 'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
-'@LastModified July 09, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.addhours?view=netframework-4.8.1#examples
 
@@ -16,14 +16,15 @@ Attribute DateTimeAddHours.VB_Description = "The following example uses the AddH
    Dim Hours() As Double
    Hours = Doubles.ToArray(0.08333, 0.16667, 0.25, 0.33333, 0.5, 0.66667, 1, 2, 29, 30, 31, 90, 365)
    
-   Dim dateValue As DateTime
+   Dim dateValue As IDateTime
    Set dateValue = DateTime.CreateFromDateTime(2009, 3, 1, 12, 0, 0)
    
    Dim varHour As Variant
    For Each varHour In Hours
       Debug.Print dateValue.ToString & " + " & varHour & " hour(s) = " & dateValue.AddHours(varHour).ToString
    Next
-   
+End Sub
+
 ' The example displays the following output on a system whose current
 ' culture is en-US:
 '    3/1/2009 12:00:00 PM + 0.08333 hour(s) = 3/1/2009 12:04:59 PM
@@ -39,4 +40,3 @@ Attribute DateTimeAddHours.VB_Description = "The following example uses the AddH
 '    3/1/2009 12:00:00 PM + 31 hour(s) = 3/2/2009 7:00:00 PM
 '    3/1/2009 12:00:00 PM + 90 hour(s) = 3/5/2009 6:00:00 AM
 '    3/1/2009 12:00:00 PM + 365 hour(s) = 3/16/2009 5:00:00 PM
-End Sub

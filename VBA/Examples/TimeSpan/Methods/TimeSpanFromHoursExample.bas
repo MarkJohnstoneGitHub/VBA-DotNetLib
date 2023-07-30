@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeSpanFromHoursExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 16, 2023
-'@LastModified July 16, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.fromhours?view=netframework-4.8.1#examples
 
@@ -26,7 +26,18 @@ Attribute TimeSpanFromHours.VB_Description = "The following example creates seve
    GenTimeSpanFromHours 1
    GenTimeSpanFromHours 24
    GenTimeSpanFromHours 500.3389445
-   
+End Sub
+
+Private Sub GenTimeSpanFromHours(ByVal Hours As Double)
+   ' Create a TimeSpan object and TimeSpan string from
+   ' a number of hours.
+   Dim interval As ITimeSpan
+   Set interval = TimeSpan.FromHours(Hours)
+   Dim timeInterval As String
+   timeInterval = interval.ToString()
+   Debug.Print Hours, timeInterval
+End Sub
+
 '/*
 'This example of TimeSpan.FromHours( double )
 'generates the following output.
@@ -44,14 +55,3 @@ Attribute TimeSpanFromHours.VB_Description = "The following example creates seve
 '                   24        1.00:00:00
 '          500.3389445       20.20:20:20.2000000
 '*/
-End Sub
-
-Private Sub GenTimeSpanFromHours(ByVal Hours As Double)
-   ' Create a TimeSpan object and TimeSpan string from
-   ' a number of hours.
-   Dim interval As TimeSpan
-   Set interval = TimeSpan.FromHours(Hours)
-   Dim timeInterval As String
-   timeInterval = interval.ToString()
-   Debug.Print Hours, timeInterval
-End Sub

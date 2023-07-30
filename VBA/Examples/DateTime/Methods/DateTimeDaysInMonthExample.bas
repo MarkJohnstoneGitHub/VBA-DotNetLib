@@ -3,7 +3,7 @@ Attribute VB_Name = "DateTimeDaysInMonthExample"
 
 'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 10, 2023
-'@LastModified July 10, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.daysinmonth?view=netframework-4.8.1#examples
 
@@ -16,7 +16,6 @@ Public Sub DateTimeDaysInMonth()
    Const Feb As Long = 2
    
    Dim daysInJuly As Long
-   
    daysInJuly = DateTime.DaysInMonth(2001, July)
    Debug.Print daysInJuly
    
@@ -29,9 +28,9 @@ Public Sub DateTimeDaysInMonth()
    Dim daysInFebLeap As Long
    daysInFebLeap = DateTime.DaysInMonth(1996, Feb)
    Debug.Print daysInFebLeap
-   
+End Sub
+
 ' The example displays the following output:
 '       31
 '       28
 '       29
-End Sub

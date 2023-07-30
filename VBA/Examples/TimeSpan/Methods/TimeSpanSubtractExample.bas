@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeSpanSubtractExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 17, 2023
-'@LastModified July 17, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.subtract?view=netframework-4.8.1#examples
 
@@ -15,11 +15,11 @@ Option Explicit
 ' the example uses conditional logic to include a negative sign with negative time intervals.
 Public Sub TimeSpanSubtract()
 Attribute TimeSpanSubtract.VB_Description = "The following example uses the Subtract method to calculate the difference between a single TimeSpan value and each of the time intervals in an array."
-   Dim baseTimeSpan As TimeSpan
+   Dim baseTimeSpan As ITimeSpan
    Set baseTimeSpan = TimeSpan.Create2(1, 12, 15, 16)
    
    ' Create an array of timespan intervals.
-   Dim intervals() As TimeSpan
+   Dim intervals() As ITimeSpan
    Objects.ToArray intervals, _
       TimeSpan.FromDays(1.5), _
       TimeSpan.FromHours(1.5), _
@@ -31,7 +31,7 @@ Attribute TimeSpanSubtract.VB_Description = "The following example uses the Subt
    ' Calculate a new time interval by adding each element to the base interval.
    Dim varInterval As Variant
    For Each varInterval In intervals
-      Dim interval As TimeSpan
+      Dim interval As ITimeSpan
       Set interval = varInterval
       
       Debug.Print baseTimeSpan.ToString2("g") & _
@@ -42,7 +42,8 @@ Attribute TimeSpanSubtract.VB_Description = "The following example uses the Subt
             IIf(TimeSpan.LessThan(baseTimeSpan, interval.Duration()), "-", VBA.vbNullString) & _
             baseTimeSpan.Subtract(interval).ToString2("%d\:hh\:mm\:ss\.ffff")
    Next
-   
+End Sub
+
 ' The example displays the following output:
 '       1:12:15:16 - 1:12:00:00.0000 = 0:00:15:16.0000
 '       1:12:15:16 - 0:01:30:00.0000 = 1:10:45:16.0000
@@ -50,4 +51,3 @@ Attribute TimeSpanSubtract.VB_Description = "The following example uses the Subt
 '       1:12:15:16 - 0:00:00:00.5050 = 1:12:15:15.4950
 '       1:12:15:16 - 1:17:32:20.0000 = -0:05:17:04.0000
 '       1:12:15:16 - -0:07:30:00.0000 = 1:19:45:16.0000
-End Sub

@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeSpanFromSecondsExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 16, 2023
-'@LastModified July 16, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.fromseconds?view=netframework-4.8.1#examples
 
@@ -26,7 +26,18 @@ Attribute TimeSpanFromSeconds.VB_Description = "The following example creates se
    GenTimeSpanFromSeconds 3600
    GenTimeSpanFromSeconds 86400
    GenTimeSpanFromSeconds 1801220.2
-   
+End Sub
+
+Private Sub GenTimeSpanFromSeconds(ByVal Seconds As Double)
+   ' Create a TimeSpan object and TimeSpan string from
+   ' a number of seconds.
+   Dim interval As ITimeSpan
+   Set interval = TimeSpan.FromSeconds(Seconds)
+   Dim timeInterval As String
+   timeInterval = interval.ToString()
+   Debug.Print Seconds, timeInterval
+End Sub
+
 '/*
 'This example of TimeSpan.FromSeconds( double )
 'generates the following output.
@@ -44,14 +55,3 @@ Attribute TimeSpanFromSeconds.VB_Description = "The following example creates se
 '                86400        1.00:00:00
 '            1801220.2       20.20:20:20.2000000
 '*/
-End Sub
-
-Private Sub GenTimeSpanFromSeconds(ByVal Seconds As Double)
-   ' Create a TimeSpan object and TimeSpan string from
-   ' a number of seconds.
-   Dim interval As TimeSpan
-   Set interval = TimeSpan.FromSeconds(Seconds)
-   Dim timeInterval As String
-   timeInterval = interval.ToString()
-   Debug.Print Seconds, timeInterval
-End Sub

@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeKindExample"
 
 'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
-'@LastModified July 09, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.kind?view=netframework-4.8.1#examples
 
@@ -12,16 +12,18 @@ Option Explicit
 
 Private Const datePatt As String = "M/d/yyyy hh:mm:ss tt"
 
+'@Description("The following example uses the SpecifyKind method to demonstrate how the Kind property influences the ToLocalTime and ToUniversalTime conversion methods.")
 Public Sub DateTimePropertyKind()
+Attribute DateTimePropertyKind.VB_Description = "The following example uses the SpecifyKind method to demonstrate how the Kind property influences the ToLocalTime and ToUniversalTime conversion methods."
     ' Get the date and time for the current moment, adjusted to the local time zone.
-    Dim saveNow As DateTime
+    Dim saveNow As IDateTime
     Set saveNow = DateTime.Now
     
     ' Get the date and time for the current moment expressed
     ' as coordinated universal time (UTC).
-    Dim saveUtcNow As DateTime
+    Dim saveUtcNow As IDateTime
     Set saveUtcNow = DateTime.UtcNow
-    Dim myDt As DateTime
+    Dim myDt As IDateTime
     
     ' Display the value and Kind property of the current moment
     ' expressed as UTC and local time.
@@ -45,7 +47,47 @@ Public Sub DateTimePropertyKind()
     
     Set myDt = DateTime.SpecifyKind(saveNow, DateTimeKind.DateTimeKind_Unspecified)
     Display "Unspecified: .....", myDt
+End Sub
+
+Private Sub Display(ByVal title As String, ByVal inputDt As IDateTime)
+    Dim dispDt As IDateTime
+    Set dispDt = inputDt
+    Dim dtString As String
+
+    ' Display the original DateTime.
     
+    dtString = dispDt.ToString2(datePatt)
+    Debug.Print title & " " & dtString & ", Kind = " & DateTimeKindHelper.ToString(dispDt.Kind)
+
+    ' Convert inputDt to local time and display the result.
+    ' If inputDt.Kind is DateTimeKind.Utc, the conversion is performed.
+    ' If inputDt.Kind is DateTimeKind.Local, the conversion is not performed.
+    ' If inputDt.Kind is DateTimeKind.Unspecified, the conversion is
+    ' performed as if inputDt was universal time.
+    
+     Set dispDt = inputDt.ToLocalTime()
+     dtString = dispDt.ToString2(datePatt)
+     Debug.Print "  ToLocalTime:     " & dtString & ", Kind = " & DateTimeKindHelper.ToString(dispDt.Kind)
+     
+    ' Convert inputDt to universal time and display the result.
+    ' If inputDt.Kind is DateTimeKind.Utc, the conversion is not performed.
+    ' If inputDt.Kind is DateTimeKind.Local, the conversion is performed.
+    ' If inputDt.Kind is DateTimeKind.Unspecified, the conversion is
+    ' performed as if inputDt was local time.
+
+    Set dispDt = inputDt.ToUniversalTime()
+    dtString = dispDt.ToString2(datePatt)
+    
+    Debug.Print "  ToUniversalTime: " & dtString & ", Kind = " & DateTimeKindHelper.ToString(dispDt.Kind)
+    Debug.Print
+End Sub
+
+Private Sub DisplayNow(ByVal title As String, ByVal inputDt As IDateTime)
+    Dim dtString As String
+    dtString = inputDt.ToString2(datePatt)
+    Debug.Print title & " " & dtString & ", Kind = " & DateTimeKindHelper.ToString(inputDt.Kind)
+End Sub
+
 '/*
 'This code example produces the following results:
 '
@@ -65,45 +107,3 @@ Public Sub DateTimePropertyKind()
 '  ToUniversalTime: 5/6/2005 09:34:42 PM, Kind = Utc
 '
 '*/
-    
-End Sub
-
-Private Sub Display(ByVal title As String, ByVal inputDt As DateTime)
-    Dim dispDt As DateTime
-    Set dispDt = inputDt
-    Dim dtString As String
-
-    ' Display the original DateTime.
-    
-    dtString = dispDt.ToString2(datePatt)
-    Debug.Print title & " " & dtString & ", Kind = " & DateTimeKindHelper.ToString(dispDt.kind)
-
-    ' Convert inputDt to local time and display the result.
-    ' If inputDt.Kind is DateTimeKind.Utc, the conversion is performed.
-    ' If inputDt.Kind is DateTimeKind.Local, the conversion is not performed.
-    ' If inputDt.Kind is DateTimeKind.Unspecified, the conversion is
-    ' performed as if inputDt was universal time.
-    
-     Set dispDt = inputDt.ToLocalTime()
-     dtString = dispDt.ToString2(datePatt)
-     Debug.Print "  ToLocalTime:     " & dtString & ", Kind = " & DateTimeKindHelper.ToString(dispDt.kind)
-     
-    ' Convert inputDt to universal time and display the result.
-    ' If inputDt.Kind is DateTimeKind.Utc, the conversion is not performed.
-    ' If inputDt.Kind is DateTimeKind.Local, the conversion is performed.
-    ' If inputDt.Kind is DateTimeKind.Unspecified, the conversion is
-    ' performed as if inputDt was local time.
-
-    Set dispDt = inputDt.ToUniversalTime()
-    dtString = dispDt.ToString2(datePatt)
-    
-    Debug.Print "  ToUniversalTime: " & dtString & ", Kind = " & DateTimeKindHelper.ToString(dispDt.kind)
-    Debug.Print
-End Sub
-
-Private Sub DisplayNow(ByVal title As String, ByVal inputDt As DateTime)
-    Dim dtString As String
-    dtString = inputDt.ToString2(datePatt)
-    Debug.Print title & " " & dtString & ", Kind = " & DateTimeKindHelper.ToString(inputDt.kind)
-End Sub
-

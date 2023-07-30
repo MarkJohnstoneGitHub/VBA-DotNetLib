@@ -23,12 +23,9 @@ Attribute VB_Description = "Represents a time interval."
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8.1
 
-'@Remarks
-' Generated from DotNetLib.tlb using https://github.com/MarkJohnstoneGitHub/Refactor-COM-object-to-VBA-COM-wrapper-class
-
 Option Explicit
 
-Implements ITimeSpan
+Implements DotNetLib.ITimeSpan
 
 Private Type TTimeSpan
    DotNetLibTimeSpan As DotNetLib.TimeSpan
@@ -62,7 +59,7 @@ End Property
 
 '@Static
 '@Description("Initializes a new instance of the TimeSpan structure to the specified number of ticks.")
-Public Function CreateFromTicks(ByVal Ticks As LongLong) As ITimeSpan
+Public Function CreateFromTicks(ByVal Ticks As LongLong) As TimeSpan
 Attribute CreateFromTicks.VB_Description = "Initializes a new instance of the TimeSpan structure to the specified number of ticks."
    With New TimeSpan
       Set .ComObject = this.DotNetLibTimeSpan.CreateFromTicks(Ticks)
@@ -72,7 +69,7 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the TimeSpan structure to a specified number of hours, minutes, and seconds.")
-Public Function Create(ByVal Hours As Long, ByVal Minutes As Long, ByVal Seconds As Long) As ITimeSpan
+Public Function Create(ByVal Hours As Long, ByVal Minutes As Long, ByVal Seconds As Long) As TimeSpan
 Attribute Create.VB_Description = "Initializes a new instance of the TimeSpan structure to a specified number of hours, minutes, and seconds."
    With New TimeSpan
       Set .ComObject = this.DotNetLibTimeSpan.Create(Hours, Minutes, Seconds)
@@ -82,7 +79,7 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, and seconds.")
-Public Function Create2(ByVal Days As Long, ByVal Hours As Long, ByVal Minutes As Long, ByVal Seconds As Long) As ITimeSpan
+Public Function Create2(ByVal Days As Long, ByVal Hours As Long, ByVal Minutes As Long, ByVal Seconds As Long) As TimeSpan
 Attribute Create2.VB_Description = "Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, and seconds."
    With New TimeSpan
       Set .ComObject = this.DotNetLibTimeSpan.Create2(Days, Hours, Minutes, Seconds)
@@ -92,7 +89,7 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, seconds, and milliseconds.")
-Public Function Create3(ByVal Days As Long, ByVal Hours As Long, ByVal Minutes As Long, ByVal Seconds As Long, ByVal Milliseconds As Long) As ITimeSpan
+Public Function Create3(ByVal Days As Long, ByVal Hours As Long, ByVal Minutes As Long, ByVal Seconds As Long, ByVal Milliseconds As Long) As TimeSpan
 Attribute Create3.VB_Description = "Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, seconds, and milliseconds."
    With New TimeSpan
       Set .ComObject = this.DotNetLibTimeSpan.Create3(Days, Hours, Minutes, Seconds, Milliseconds)
@@ -106,14 +103,14 @@ End Function
 
 '@Static
 '@Description("Represents the maximum TimeSpan value. This field is read-only.")
-Public Property Get MaxValue() As ITimeSpan
+Public Property Get MaxValue() As TimeSpan
 Attribute MaxValue.VB_Description = "Represents the maximum TimeSpan value. This field is read-only."
    Set MaxValue = TimeSpanStatic.MaxValue
 End Property
 
 '@Static
 '@Description("Represents the minimum TimeSpan value. This field is read-only.")
-Public Property Get MinValue() As ITimeSpan
+Public Property Get MinValue() As TimeSpan
 Attribute MinValue.VB_Description = "Represents the minimum TimeSpan value. This field is read-only."
    Set MinValue = TimeSpanStatic.MinValue
 End Property
@@ -155,7 +152,7 @@ End Property
 
 '@Static
 '@Description("Represents the zero TimeSpan value. This field is read-only.")
-Public Property Get Zero() As ITimeSpan
+Public Property Get Zero() As TimeSpan
 Attribute Zero.VB_Description = "Represents the zero TimeSpan value. This field is read-only."
    Set Zero = TimeSpanStatic.Zero
 End Property
@@ -613,7 +610,7 @@ Attribute UnaryPlus.VB_Description = "Returns the specified instance of TimeSpan
 End Function
 
 '--------------------------------------------------------------------
-'Interface ITimeSpan
+'Interface DotNetLib.ITimeSpan
 '--------------------------------------------------------------------
 
 Private Property Get ITimeSpan_Days() As Long
@@ -660,19 +657,19 @@ Private Property Get ITimeSpan_TotalSeconds() As Double
     ITimeSpan_TotalSeconds = TotalSeconds
 End Property
 
-Private Function ITimeSpan_Add(ByVal ts As TimeSpan) As TimeSpan
+Private Function ITimeSpan_Add(ByVal ts As ITimeSpan) As ITimeSpan
     Set ITimeSpan_Add = Add(ts)
 End Function
 
-Private Function ITimeSpan_CompareTo(ByVal value As TimeSpan) As Long
+Private Function ITimeSpan_CompareTo(ByVal value As ITimeSpan) As Long
     ITimeSpan_CompareTo = CompareTo(value)
 End Function
 
-Private Function ITimeSpan_Duration() As TimeSpan
+Private Function ITimeSpan_Duration() As ITimeSpan
     Set ITimeSpan_Duration = Duration()
 End Function
 
-Private Function ITimeSpan_Equals(ByVal value As TimeSpan) As Boolean
+Private Function ITimeSpan_Equals(ByVal value As ITimeSpan) As Boolean
     ITimeSpan_Equals = Equals(value)
 End Function
 
@@ -680,11 +677,11 @@ Private Function ITimeSpan_GetHashCode() As Long
     ITimeSpan_GetHashCode = GetHashCode()
 End Function
 
-Private Function ITimeSpan_Negate() As TimeSpan
+Private Function ITimeSpan_Negate() As ITimeSpan
     Set ITimeSpan_Negate = Negate()
 End Function
 
-Private Function ITimeSpan_Subtract(ByVal ts As TimeSpan) As TimeSpan
+Private Function ITimeSpan_Subtract(ByVal ts As ITimeSpan) As ITimeSpan
     Set ITimeSpan_Subtract = Subtract(ts)
 End Function
 
@@ -699,3 +696,4 @@ End Function
 Private Function ITimeSpan_ToString3(ByVal Format As String, ByVal formatProvider As IFormatProvider) As String
     ITimeSpan_ToString3 = ToString3(Format, formatProvider)
 End Function
+

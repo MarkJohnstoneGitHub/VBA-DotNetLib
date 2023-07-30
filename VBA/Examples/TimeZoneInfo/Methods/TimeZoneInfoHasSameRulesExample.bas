@@ -8,13 +8,14 @@ Attribute VB_Name = "TimeZoneInfoHasSameRulesExample"
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.hassamerules?view=netframework-4.8.1#examples
 
+'@TODO Issue with CopyTo
 Option Explicit
 
 ' Typically, a number of time zones defined in the registry on Windows and the ICU Library on Linux
 ' and macOS have the same offset from Coordinated Universal Time (UTC) and the same adjustment rules.
 ' The following example displays a list of these time zones to the console.
 Public Sub TimeZoneInfoHasSameRules()
-    Dim timeZones As DotNetLib.IReadOnlyCollection
+    Dim timeZones As DotNetLib.ReadOnlyCollection
     Set timeZones = TimeZoneInfo.GetSystemTimeZones()
     Dim timeZoneArray() As Variant
     ReDim timeZoneArray(timeZones.Count - 1)
@@ -24,7 +25,7 @@ Public Sub TimeZoneInfoHasSameRules()
     Dim ctr As Long
     For ctr = UBound(timeZoneArray) To LBound(timeZoneArray) Step -1
         ' Get next item from top
-        Dim thisTimeZone As DotNetLib.ITimeZoneInfo
+        Dim thisTimeZone As DotNetLib.IComTimeZoneInfo
         Set thisTimeZone = timeZoneArray(ctr)
         Dim compareCtr As Long
         compareCtr = 0

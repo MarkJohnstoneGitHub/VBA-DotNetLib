@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeGetDateTimeFormatsEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 11, 2023
-'@LastModified July 11, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.getdatetimeformats?view=netframework-4.8.1
 
@@ -12,8 +12,7 @@ Option Explicit
 
 '@Description("The following example demonstrates the DateTime.GetDateTimeFormats() method. It displays the string representation of a date using all possible standard date and time formats in the computer's current culture, which in this case is en-US."
 Public Sub DateTimeGetDateTimeFormats()
-   '@Ignore UseMeaningfulName
-   Dim july28 As DateTime
+   Dim july28 As IDateTime
    Set july28 = DateTime.CreateFromDateTime(2009, 7, 28, 5, 23, 15, 16)
    
    Dim july28Formats() As String
@@ -24,6 +23,7 @@ Public Sub DateTimeGetDateTimeFormats()
    For Each varFormat In july28Formats
       Debug.Print varFormat
    Next
+End Sub
 
 'The example displays the following output:
 '
@@ -160,6 +160,3 @@ Public Sub DateTimeGetDateTimeFormats()
 '28 July, 2009 12:23:15
 'July , 2009
 'July , 2009
-   
-End Sub
-

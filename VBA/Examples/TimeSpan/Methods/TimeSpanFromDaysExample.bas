@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeSpanFromDaysExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 16, 2023
-'@LastModified July 16, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.fromdays?view=netframework-4.8.1#examples
 
@@ -26,7 +26,18 @@ Attribute TimeSpanFromDays.VB_Description = "The following example creates sever
    GenTimeSpanFromDays 0.041666666
    GenTimeSpanFromDays 1
    GenTimeSpanFromDays 20.84745602
-   
+End Sub
+
+Private Sub GenTimeSpanFromDays(ByVal Days As Double)
+   ' Create a TimeSpan object and TimeSpan string from
+   ' a number of days.
+   Dim interval As ITimeSpan
+   Set interval = TimeSpan.FromDays(Days)
+   Dim timeInterval As String
+   timeInterval = interval.ToString()
+   Debug.Print Days, timeInterval
+End Sub
+
 '/*
 'This example of TimeSpan.FromDays( double )
 'generates the following output.
@@ -44,14 +55,3 @@ Attribute TimeSpanFromDays.VB_Description = "The following example creates sever
 '                    1        1.00:00:00
 '          20.84745602       20.20:20:20.2000000
 '*/
-End Sub
-
-Private Sub GenTimeSpanFromDays(ByVal Days As Double)
-   ' Create a TimeSpan object and TimeSpan string from
-   ' a number of days.
-   Dim interval As TimeSpan
-   Set interval = TimeSpan.FromDays(Days)
-   Dim timeInterval As String
-   timeInterval = interval.ToString()
-   Debug.Print Days, timeInterval
-End Sub

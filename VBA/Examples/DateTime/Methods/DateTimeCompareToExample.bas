@@ -3,7 +3,7 @@ Attribute VB_Name = "DateTimeCompareToExample"
 
 'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 10, 2023
-'@LastModified July 10, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.compareto?view=netframework-4.8.1#system-datetime-compareto(system-datetime)
 
@@ -21,18 +21,17 @@ Private Enum DateComparisonResult
 End Enum
 
 Public Sub DateTimeCompareTo()
-   Dim thisDate As DateTime
+   Dim thisDate As IDateTime
    Set thisDate = DateTime.Today
    
    ' Define two DateTime objects for today's date
    ' next year and last year
-   Dim thisDateNextYear As DateTime
-   Dim thisDateLastYear As DateTime
+   Dim thisDateNextYear As IDateTime
+   Dim thisDateLastYear As IDateTime
 
    ' Call AddYears instance method to add/substract 1 year
    Set thisDateNextYear = thisDate.AddYears(1)
    Set thisDateLastYear = thisDate.AddYears(-1)
-   
    
    ' Compare dates
    Dim comparison As DateComparisonResult
@@ -45,12 +44,11 @@ Public Sub DateTimeCompareTo()
    comparison = thisDate.CompareTo(thisDateNextYear)
    Debug.Print "CompareTo method returns " & comparison & ": " & _
       thisDate.ToString2("d") & " is " & DateComparisonResultToString(comparison) & " than " & thisDateNextYear.ToString2("d")
-      
+End Sub
+
 ' If run on October 20, 2006, the example produces the following output:
 '    CompareTo method returns 1: 10/20/2006 is later than 10/20/2005
 '    CompareTo method returns -1: 10/20/2006 is earlier than 10/20/2007
-   
-End Sub
 
 Private Function DateComparisonResultToString(ByVal value As DateComparisonResult) As String
    Select Case value
@@ -83,3 +81,4 @@ ErrorHandler:
    Debug.Print Err.Number, Err.Description
    Resume CleanExit
 End Sub
+

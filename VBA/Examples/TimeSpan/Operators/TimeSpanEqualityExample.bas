@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeSpanEqualityExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 17, 2023
-'@LastModified July 17, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.op_equality?view=netframework-4.8.1#examples
 
@@ -13,7 +13,7 @@ Option Explicit
 '@Description("The following example compares several TimeSpan objects to a reference TimeSpan using the Equality operator.")
 Public Sub TimeSpanEquality()
 Attribute TimeSpanEquality.VB_Description = "The following example compares several TimeSpan objects to a reference TimeSpan using the Equality operator."
-   Dim left As TimeSpan
+   Dim left As ITimeSpan
    Set left = TimeSpan.Create(2, 0, 0)
    
    Debug.Print "This example of the TimeSpan relational operators generates " & VBA.vbNewLine & _
@@ -27,7 +27,19 @@ Attribute TimeSpanEquality.VB_Description = "The following example compares seve
    CompareTimeSpans left, TimeSpan.Create(2, 0, 1), "TimeSpan( 2, 0, 1 )"
    CompareTimeSpans left, TimeSpan.Create(2, 0, -1), "TimeSpan( 2, 0, -1 )"
    CompareTimeSpans left, TimeSpan.FromDays(1 / 12), "TimeSpan.FromDays( 1 / 12 )"
-   
+End Sub
+
+Private Sub CompareTimeSpans(ByVal left As ITimeSpan, ByVal right As ITimeSpan, ByVal rightText As String)
+   Debug.Print
+   Debug.Print "Right: " + rightText & "     " & right.ToString()
+   Debug.Print "Left == Right", TimeSpan.Equality(left, right)
+   Debug.Print "Left >  Right", TimeSpan.GreaterThan(left, right)
+   Debug.Print "Left >= Right", TimeSpan.GreaterThanOrEqual(left, right)
+   Debug.Print "Left != Right", TimeSpan.Inequality(left, right)
+   Debug.Print "Left <  Right", TimeSpan.LessThan(left, right)
+   Debug.Print "Left <= Right", TimeSpan.LessThanOrEqual(left, right)
+End Sub
+
 '/*
 'This example of the TimeSpan relational operators generates
 'the following output. It creates several different TimeSpan
@@ -67,15 +79,3 @@ Attribute TimeSpanEquality.VB_Description = "The following example compares seve
 '                     Left <  Right    False
 '                     Left <= Right    True
 '*/
-End Sub
-
-Private Sub CompareTimeSpans(ByVal left As TimeSpan, ByVal right As TimeSpan, ByVal rightText As String)
-   Debug.Print
-   Debug.Print "Right: " + rightText & "     " & right.ToString()
-   Debug.Print "Left == Right", TimeSpan.Equality(left, right)
-   Debug.Print "Left >  Right", TimeSpan.GreaterThan(left, right)
-   Debug.Print "Left >= Right", TimeSpan.GreaterThanOrEqual(left, right)
-   Debug.Print "Left != Right", TimeSpan.Inequality(left, right)
-   Debug.Print "Left <  Right", TimeSpan.LessThan(left, right)
-   Debug.Print "Left <= Right", TimeSpan.LessThanOrEqual(left, right)
-End Sub

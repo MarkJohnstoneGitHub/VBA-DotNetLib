@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeSpanFromTicksExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 16, 2023
-'@LastModified July 16, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.fromticks?view=netframework-4.8.1#examples
 
@@ -26,7 +26,18 @@ Attribute TimeSpanFromTicks.VB_Description = "The following example creates seve
    GenTimeSpanFromTicks 36000000000#
    GenTimeSpanFromTicks 864000000000#
    GenTimeSpanFromTicks 18012202000000#
-   
+End Sub
+
+Private Sub GenTimeSpanFromTicks(ByVal Ticks As LongLong)
+   ' Create a TimeSpan object and TimeSpan string from
+   ' a number of seconds.
+   Dim interval As ITimeSpan
+   Set interval = TimeSpan.FromTicks(Ticks)
+   Dim timeInterval As String
+   timeInterval = interval.ToString()
+   Debug.Print Ticks, timeInterval
+End Sub
+
 '/*
 'This example of TimeSpan.FromTicks( long )
 'generates the following output.
@@ -44,14 +55,3 @@ Attribute TimeSpanFromTicks.VB_Description = "The following example creates seve
 '         864000000000        1.00:00:00
 '       18012202000000       20.20:20:20.2000000
 '*/
-End Sub
-
-Private Sub GenTimeSpanFromTicks(ByVal Ticks As LongLong)
-   ' Create a TimeSpan object and TimeSpan string from
-   ' a number of seconds.
-   Dim interval As TimeSpan
-   Set interval = TimeSpan.FromTicks(Ticks)
-   Dim timeInterval As String
-   timeInterval = interval.ToString()
-   Debug.Print Ticks, timeInterval
-End Sub

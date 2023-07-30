@@ -29,7 +29,7 @@ Attribute VB_Description = "Represents an instant in time, typically expressed a
 
 Option Explicit
 
-Implements IDateTime
+Implements DotNetLib.IDateTime
 
 Private Const Arg_MustBeDateTime As String = "Object must be of type DateTime."
 
@@ -139,7 +139,7 @@ End Property
 Public Property Get DateOnly() As DateTime
 Attribute DateOnly.VB_Description = "Gets the date component of this instance."
    With New DateTime
-      Set .ComObject = this.DotNetLibDateTime.Date()
+      Set .ComObject = this.DotNetLibDateTime.DateOnly()
       Set DateOnly = .Self
    End With
 End Property
@@ -422,10 +422,10 @@ End Function
 
 '@Static
 '@Description("Returns a DateTime equivalent to the specified OLE Automation Date.")
-Public Function FromOADate(ByVal D As Double) As DateTime
+Public Function FromOADate(ByVal oaDate As Date) As DateTime
 Attribute FromOADate.VB_Description = "Returns a DateTime equivalent to the specified OLE Automation Date."
    With New DateTime
-      Set .ComObject = this.DotNetLibDateTime.FromOADate(D)
+      Set .ComObject = this.DotNetLibDateTime.FromOADate(oaDate)
       Set FromOADate = .Self
    End With
 End Function
@@ -583,7 +583,7 @@ Attribute ToLongTimeString.VB_Description = "Converts the value of the current D
 End Function
 
 '@Description("Converts the value of this instance to the equivalent OLE Automation date.")
-Public Function ToOADate() As Double
+Public Function ToOADate() As Date
 Attribute ToOADate.VB_Description = "Converts the value of this instance to the equivalent OLE Automation date."
    ToOADate = this.DotNetLibDateTime.ToOADate()
 End Function
@@ -665,10 +665,10 @@ End Function
 
 '@Static
 '@Description("Adds a specified time interval to a specified date and time, yielding a new date and time.")
-Public Function Addition(ByVal D As DateTime, ByVal T As TimeSpan) As DateTime
+Public Function Addition(ByVal dt As DateTime, ByVal ts As TimeSpan) As DateTime
 Attribute Addition.VB_Description = "Adds a specified time interval to a specified date and time, yielding a new date and time."
     With New DateTime
-        Set .ComObject = this.DotNetLibDateTime.Addition(D.ComObject, T.ComObject)
+        Set .ComObject = this.DotNetLibDateTime.Addition(dt.ComObject, ts.ComObject)
         Set Addition = .Self
     End With
 End Function
@@ -736,222 +736,176 @@ Attribute Subtraction2.VB_Description = "Subtracts a specified time interval fro
 End Function
 
 '--------------------------------------------------------------------
-'Interface IDateTime
+'Interface IDateTime DotNetLib
 '--------------------------------------------------------------------
-
-Private Property Get IDateTime_DateOnly() As DateTime
-    With New DateTime
-        Set .ComObject = this.DotNetLibDateTime.Date()
-        Set IDateTime_DateOnly = .Self
-    End With
+Private Property Get IDateTime_DateOnly() As IDateTime
+    Set IDateTime_DateOnly = DateOnly()
 End Property
 
 Private Property Get IDateTime_Day() As Long
-    IDateTime_Day = this.DotNetLibDateTime.Day()
+    IDateTime_Day = Day()
 End Property
 
-Private Property Get IDateTime_DayOfWeek() As DayOfWeek
-    IDateTime_DayOfWeek = this.DotNetLibDateTime.DayOfWeek()
+Private Property Get IDateTime_DayOfWeek() As DotNetLib.DayOfWeek
+    IDateTime_DayOfWeek = DayOfWeek()
 End Property
 
 Private Property Get IDateTime_DayOfYear() As Long
-    IDateTime_DayOfYear = this.DotNetLibDateTime.DayOfYear()
+    IDateTime_DayOfYear = DayOfYear()
 End Property
 
 Private Property Get IDateTime_Hour() As Long
-    IDateTime_Hour = this.DotNetLibDateTime.Hour()
+    IDateTime_Hour = Hour()
 End Property
 
-Private Property Get IDateTime_Kind() As DateTimeKind
-    IDateTime_Kind = this.DotNetLibDateTime.Kind()
+Private Property Get IDateTime_Kind() As DotNetLib.DateTimeKind
+    IDateTime_Kind = Kind()
 End Property
 
 Private Property Get IDateTime_Millisecond() As Long
-    IDateTime_Millisecond = this.DotNetLibDateTime.Millisecond()
+    IDateTime_Millisecond = Millisecond()
 End Property
 
 Private Property Get IDateTime_Minute() As Long
-    IDateTime_Minute = this.DotNetLibDateTime.Minute()
+    IDateTime_Minute = Minute()
 End Property
 
 Private Property Get IDateTime_Month() As Long
-    IDateTime_Month = this.DotNetLibDateTime.Month()
+    IDateTime_Month = Month()
 End Property
 
 Private Property Get IDateTime_Second() As Long
-    IDateTime_Second = this.DotNetLibDateTime.Second()
+    IDateTime_Second = Second()
 End Property
 
 Private Property Get IDateTime_Ticks() As LongLong
-    IDateTime_Ticks = this.DotNetLibDateTime.Ticks()
+    IDateTime_Ticks = Ticks()
 End Property
 
-Private Property Get IDateTime_TimeOfDay() As TimeSpan
-    With New TimeSpan
-        Set .ComObject = this.DotNetLibDateTime.TimeOfDay()
-        Set IDateTime_TimeOfDay = .Self
-    End With
+Private Property Get IDateTime_TimeOfDay() As ITimeSpan
+    Set IDateTime_TimeOfDay = TimeOfDay
 End Property
 
 Private Property Get IDateTime_Year() As Long
-   IDateTime_Year = this.DotNetLibDateTime.Year()
+   IDateTime_Year = Year()
 End Property
 
-Private Function IDateTime_Add(ByVal value As TimeSpan) As DateTime
-    With New DateTime
-        Set .ComObject = this.DotNetLibDateTime.Add(value.ComObject)
-        Set IDateTime_Add = .Self
-    End With
+Private Function IDateTime_Add(ByVal value As ITimeSpan) As IDateTime
+    Set IDateTime_Add = Add(value)
 End Function
 
-Private Function IDateTime_AddDays(ByVal value As Double) As DateTime
-    With New DateTime
-        Set .ComObject = this.DotNetLibDateTime.AddDays(value)
-        Set IDateTime_AddDays = .Self
-    End With
+Private Function IDateTime_AddDays(ByVal value As Double) As IDateTime
+    Set IDateTime_AddDays = AddDays(value)
 End Function
 
-Private Function IDateTime_AddHours(ByVal value As Double) As DateTime
-    With New DateTime
-        Set .ComObject = this.DotNetLibDateTime.AddHours(value)
-        Set IDateTime_AddHours = .Self
-    End With
+Private Function IDateTime_AddHours(ByVal value As Double) As IDateTime
+    Set IDateTime_AddHours = AddHours(value)
 End Function
 
-Private Function IDateTime_AddMilliseconds(ByVal value As Double) As DateTime
-    With New DateTime
-        Set .ComObject = this.DotNetLibDateTime.AddMilliseconds(value)
-        Set IDateTime_AddMilliseconds = .Self
-    End With
+Private Function IDateTime_AddMilliseconds(ByVal value As Double) As IDateTime
+    Set IDateTime_AddMilliseconds = AddMilliseconds(value)
 End Function
 
-Private Function IDateTime_AddMinutes(ByVal value As Double) As DateTime
-    With New DateTime
-        Set .ComObject = this.DotNetLibDateTime.AddMinutes(value)
-        Set IDateTime_AddMinutes = .Self
-    End With
+Private Function IDateTime_AddMinutes(ByVal value As Double) As IDateTime
+    Set IDateTime_AddMinutes = AddMinutes(value)
 End Function
 
-Private Function IDateTime_AddMonths(ByVal months As Long) As DateTime
-    With New DateTime
-        Set .ComObject = this.DotNetLibDateTime.AddMonths(months)
-        Set IDateTime_AddMonths = .Self
-    End With
+Private Function IDateTime_AddMonths(ByVal months As Long) As IDateTime
+    Set IDateTime_AddMonths = AddMonths(months)
 End Function
 
-Private Function IDateTime_AddSeconds(ByVal value As Double) As DateTime
-    With New DateTime
-        Set .ComObject = this.DotNetLibDateTime.AddSeconds(value)
-        Set IDateTime_AddSeconds = .Self
-    End With
+Private Function IDateTime_AddSeconds(ByVal value As Double) As IDateTime
+    Set IDateTime_AddSeconds = AddSeconds(value)
 End Function
 
-Private Function IDateTime_AddTicks(ByVal value As LongLong) As DateTime
-    With New DateTime
-        Set .ComObject = this.DotNetLibDateTime.AddTicks(value)
-        Set IDateTime_AddTicks = .Self
-    End With
+Private Function IDateTime_AddTicks(ByVal value As LongLong) As IDateTime
+    Set IDateTime_AddTicks = AddTicks(value)
 End Function
 
-Private Function IDateTime_AddYears(ByVal value As Long) As DateTime
-    With New DateTime
-        Set .ComObject = this.DotNetLibDateTime.AddYears(value)
-        Set IDateTime_AddYears = .Self
-    End With
+Private Function IDateTime_AddYears(ByVal value As Long) As IDateTime
+    Set IDateTime_AddYears = AddYears(value)
 End Function
 
-Private Function IDateTime_CompareTo(ByVal value As DateTime) As Long
-    IDateTime_CompareTo = this.DotNetLibDateTime.CompareTo(value.ComObject)
+Private Function IDateTime_CompareTo(ByVal value As IDateTime) As Long
+    IDateTime_CompareTo = CompareTo(value)
 End Function
 
-Private Function IDateTime_Equals(ByVal value As DateTime) As Boolean
-    IDateTime_Equals = this.DotNetLibDateTime.Equals(value.ComObject)
+Private Function IDateTime_Equals(ByVal value As IDateTime) As Boolean
+    IDateTime_Equals = Equals(value)
 End Function
 
 Private Function IDateTime_GetDateTimeFormats() As String()
-    IDateTime_GetDateTimeFormats = this.DotNetLibDateTime.GetDateTimeFormats()
+    IDateTime_GetDateTimeFormats = GetDateTimeFormats()
 End Function
 
 Private Function IDateTime_GetHashCode() As Long
-    IDateTime_GetHashCode = this.DotNetLibDateTime.GetHashCode()
+    IDateTime_GetHashCode = GetHashCode()
 End Function
 
 Private Function IDateTime_IsDaylightSavingTime() As Boolean
-    IDateTime_IsDaylightSavingTime = this.DotNetLibDateTime.IsDaylightSavingTime()
+    IDateTime_IsDaylightSavingTime = IsDaylightSavingTime()
 End Function
 
-Private Function IDateTime_Subtract(ByVal value As TimeSpan) As DateTime
-    With New DateTime
-        Set .ComObject = this.DotNetLibDateTime.Subtract(value.ComObject)
-        Set IDateTime_Subtract = .Self
-    End With
+Private Function IDateTime_Subtract(ByVal value As ITimeSpan) As IDateTime
+    Set IDateTime_Subtract = Subtract(value)
 End Function
 
-Private Function IDateTime_Subtract2(ByVal value As DateTime) As TimeSpan
-    With New TimeSpan
-        Set .ComObject = this.DotNetLibDateTime.Subtract2(value.ComObject)
-        Set IDateTime_Subtract2 = .Self
-    End With
+Private Function IDateTime_Subtract2(ByVal value As IDateTime) As ITimeSpan
+    Set IDateTime_Subtract2 = Subtract2(value)
 End Function
 
 Private Function IDateTime_ToBinary() As LongLong
-    IDateTime_ToBinary = this.DotNetLibDateTime.ToBinary()
+    IDateTime_ToBinary = ToBinary()
 End Function
 
 Private Function IDateTime_ToFileTime() As LongLong
-    IDateTime_ToFileTime = this.DotNetLibDateTime.ToFileTime()
+    IDateTime_ToFileTime = ToFileTime()
 End Function
 
 Private Function IDateTime_ToFileTimeUtc() As LongLong
-    IDateTime_ToFileTimeUtc = this.DotNetLibDateTime.ToFileTimeUtc()
+    IDateTime_ToFileTimeUtc = ToFileTimeUtc()
 End Function
 
-Private Function IDateTime_ToLocalTime() As DateTime
-    With New DateTime
-        Set .ComObject = this.DotNetLibDateTime.ToLocalTime()
-        Set IDateTime_ToLocalTime = .Self
-    End With
+Private Function IDateTime_ToLocalTime() As IDateTime
+    Set IDateTime_ToLocalTime = ToLocalTime()
 End Function
 
 Private Function IDateTime_ToLongDateString() As String
-    IDateTime_ToLongDateString = this.DotNetLibDateTime.ToLongDateString()
+    IDateTime_ToLongDateString = ToLongDateString()
 End Function
 
 Private Function IDateTime_ToLongTimeString() As String
-    IDateTime_ToLongTimeString = this.DotNetLibDateTime.ToLongTimeString()
+    IDateTime_ToLongTimeString = ToLongTimeString()
 End Function
 
 Private Function IDateTime_ToOADate() As Double
-    IDateTime_ToOADate = this.DotNetLibDateTime.ToOADate()
+    IDateTime_ToOADate = ToOADate()
 End Function
 
 Private Function IDateTime_ToShortDateString() As String
-    IDateTime_ToShortDateString = this.DotNetLibDateTime.ToShortDateString()
+    IDateTime_ToShortDateString = ToShortDateString()
 End Function
 
 Private Function IDateTime_ToShortTimeString() As String
-    IDateTime_ToShortTimeString = this.DotNetLibDateTime.ToShortTimeString()
+    IDateTime_ToShortTimeString = ToShortTimeString()
 End Function
 
 Private Property Get IDateTime_ToString() As String
-    IDateTime_ToString = this.DotNetLibDateTime.ToString()
+    IDateTime_ToString = ToString()
 End Property
 
 Private Function IDateTime_ToString2(ByVal Format As String) As String
-    IDateTime_ToString2 = this.DotNetLibDateTime.ToString2(Format)
+    IDateTime_ToString2 = ToString2(Format)
 End Function
 
 Private Function IDateTime_ToString3(ByVal provider As IFormatProvider) As String
-    IDateTime_ToString3 = this.DotNetLibDateTime.ToString3(provider)
+    IDateTime_ToString3 = ToString3(provider)
 End Function
 
 Private Function IDateTime_ToString4(ByVal Format As String, ByVal provider As IFormatProvider) As String
-    IDateTime_ToString4 = this.DotNetLibDateTime.ToString4(Format, provider)
+    IDateTime_ToString4 = ToString4(Format, provider)
 End Function
 
-Private Function IDateTime_ToUniversalTime() As DateTime
-    With New DateTime
-        Set .ComObject = this.DotNetLibDateTime.ToUniversalTime()
-        Set IDateTime_ToUniversalTime = .Self
-    End With
+Private Function IDateTime_ToUniversalTime() As IDateTime
+    Set IDateTime_ToUniversalTime = ToUniversalTime()
 End Function

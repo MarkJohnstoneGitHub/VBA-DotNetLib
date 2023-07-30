@@ -2,9 +2,10 @@ Attribute VB_Name = "DateTimeTimeOfDayExample"
 'Rubberduck annotations
 '@Folder "VBADotNetLib.Examples.DateTime.Properties"
 
-'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Author Mark Johnstone
+'@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
-'@LastModified July 09, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.timeofday?view=netframework-4.8.1#examples
 
@@ -15,7 +16,7 @@ Attribute VB_Name = "DateTimeTimeOfDayExample"
 Option Explicit
 
 Public Sub DateTimeTimeOfDay()
-    Dim dates(3) As DateTime
+    Dim dates(3) As IDateTime
     
     Set dates(0) = DateTime.Now
     Set dates(1) = DateTime.CreateFromDateTime(2013, 9, 14, 9, 28, 0)
@@ -24,12 +25,13 @@ Public Sub DateTimeTimeOfDay()
     
     Dim varDateTime As Variant
     For Each varDateTime In dates    ' Iterate through each element.
-        Dim dtObject As DateTime
+        Dim dtObject As IDateTime
         Set dtObject = varDateTime
         Debug.Print "Day: " & dtObject.DateOnly.ToString2("d") & " Time: " & dtObject.TimeOfDay.ToString2("g")
         Debug.Print "Day: " & dtObject.ToString2("d") & " Time: " & dtObject.ToString2("t")
     Next
-    
+End Sub
+
 ' The example displays output like the following:
 '    Day: 7/25/2012 Time: 10:08:12.9713744
 '    Day: 7/25/2012 Time: 10:08 AM
@@ -42,6 +44,3 @@ Public Sub DateTimeTimeOfDay()
 '
 '    Day: 12/25/1979 Time: 14:30:00
 '    Day: 12/25/1979 Time: 2:30 PM
-    
-End Sub
-

@@ -4,9 +4,9 @@ Attribute VB_Name = "TimeSpanGetHashCodeExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 17, 2023
-'@LastModified July 17, 2023
+'@LastModified July 30, 2023
 
-'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.gethashcode?view=net-7.0#examples
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.gethashcode?view=netframework-4.8.1#examples
 
 Option Explicit
 
@@ -32,7 +32,19 @@ Attribute TimeSpanGetHashCode.VB_Description = "The following example generates 
    DisplayHashCode TimeSpan.Create2(100, 0, 0, 0)
    DisplayHashCode TimeSpan.Create3(100, 0, 0, 0, 1)
    DisplayHashCode TimeSpan.Create2(100, 0, 0, 1)
+End Sub
+
+Private Sub DisplayHashCode(ByVal interval As ITimeSpan)
+   ' Create a hash code and a string representation of
+   ' the TimeSpan parameter.
+   Dim timeInterval As String
+   timeInterval = interval.ToString()
+   Dim hashCode As Long
+   hashCode = interval.GetHashCode()
    
+   Debug.Print timeInterval, "   0x" & Hex$(hashCode), hashCode
+End Sub
+
 '/*
 'This example of TimeSpan.GetHashCode( ) generates the following
 'output, which displays the hash codes of representative TimeSpan
@@ -57,15 +69,3 @@ Attribute TimeSpanGetHashCode.VB_Description = "The following example generates 
 '  100.00:00:00.0010000   0x914F6984, -1857066620
 '  100.00:00:01           0x91E7D814, -1847076844
 '*/
-End Sub
-
-Private Sub DisplayHashCode(ByVal interval As TimeSpan)
-   ' Create a hash code and a string representation of
-   ' the TimeSpan parameter.
-   Dim timeInterval As String
-   timeInterval = interval.ToString()
-   Dim hashCode As Long
-   hashCode = interval.GetHashCode()
-   
-   Debug.Print timeInterval, "   0x" & Hex$(hashCode), hashCode
-End Sub

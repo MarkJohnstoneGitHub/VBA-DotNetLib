@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeSpanParseExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 17, 2023
-'@LastModified July 17, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.parse?view=netframework-4.8.1#system-timespan-parse(system-string)
 
@@ -21,7 +21,7 @@ Attribute TimeSpanParse.VB_Description = "The following example uses the Parse m
    Dim value As Variant
    For Each value In values
       On Error Resume Next
-      Dim ts As TimeSpan
+      Dim ts As ITimeSpan
       Set ts = TimeSpan.Parse(value)
       If Try Then
          Debug.Print value & " --> " & ts.ToString2("c")
@@ -34,7 +34,8 @@ Attribute TimeSpanParse.VB_Description = "The following example uses the Parse m
       End If
    Next
    On Error GoTo 0 'Stop code and display error
-   
+End Sub
+
 ' The example displays the following output:
 '6 --> 6.00:00:00
 '6:12 --> 06:12:00
@@ -44,4 +45,3 @@ Attribute TimeSpanParse.VB_Description = "The following example uses the Parse m
 '6:12:14:45.3448 --> 6.12:14:45.3448000
 '6:12:14:45,3448: Bad Format
 '6:34:14:45: Overflow
-End Sub

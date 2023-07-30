@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeParseExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 12, 2023
-'@LastModified July 12, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.parse?view=netframework-4.8.1#system-datetime-parse(system-string)
 
@@ -19,7 +19,7 @@ Public Sub DateTimeParse()
    ' The date is February 16, 2008, 12 hours, 15 minutes and 12 seconds.
    '
    ' Use standard en-US date and time value
-   Dim dateValue As DateTime
+   Dim dateValue As IDateTime
    Dim dateString As String
    dateString = "2/16/2008 12:15:12 PM"
    
@@ -51,9 +51,8 @@ Public Sub DateTimeParse()
       End If
    End If
    On Error GoTo 0 'reset error handling
-   
+End Sub
+
 ' The example displays the following output to the console:
 '       '2/16/2008 12:15:12 PM' converted to 2/16/2008 12:15:12 PM.
 '       Unable to convert '16/02/2008 12:15:12'.
-End Sub
-

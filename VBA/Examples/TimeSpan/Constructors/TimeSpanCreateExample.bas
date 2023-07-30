@@ -4,9 +4,9 @@ Attribute VB_Name = "TimeSpanCreateExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 15, 2023
-'@LastModified July 15, 2023
+'@LastModified July 30, 2023
 
-'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.-ctor?view=net-7.0#system-timespan-ctor(system-int32-system-int32-system-int32)
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.-ctor?view=netframework-4.8.1#system-timespan-ctor(system-int32-system-int32-system-int32)
 
 Option Explicit
 
@@ -22,7 +22,20 @@ Attribute TimeSpanCreate.VB_Description = "The following example creates several
    CreateTimeSpan 1000, 2000, 3000
    CreateTimeSpan 1000, -2000, -3000
    CreateTimeSpan 999999, 999999, 999999
+End Sub
+
+Private Sub CreateTimeSpan(ByVal Hours As Long, ByVal Minutes As Long, ByVal Seconds As Long)
+   Dim elapsedTime As ITimeSpan
+   Set elapsedTime = TimeSpan.Create(Hours, Minutes, Seconds)
+
+   ' Format the constructor for display.
+   Dim ctor As String
+   ctor = "TimeSpan( " & Hours & ", " & Minutes & ", " & Seconds & " )"
    
+   ' Display the constructor and its value.
+   Debug.Print ctor, elapsedTime.ToString()
+End Sub
+
 '/*
 'This example of the TimeSpan( int, int, int )
 'constructor generates the following output.
@@ -36,16 +49,3 @@ Attribute TimeSpanCreate.VB_Description = "The following example creates several
 'TimeSpan( 1000, -2000, -3000 )            40.05:50:00
 'TimeSpan( 999999, 999999, 999999 )     42372.15:25:39
 '*/
-End Sub
-
-Private Sub CreateTimeSpan(ByVal Hours As Long, ByVal Minutes As Long, ByVal Seconds As Long)
-   Dim elapsedTime As TimeSpan
-   Set elapsedTime = TimeSpan.Create(Hours, Minutes, Seconds)
-
-   ' Format the constructor for display.
-   Dim ctor As String
-   ctor = "TimeSpan( " & Hours & ", " & Minutes & ", " & Seconds & " )"
-   
-   ' Display the constructor and its value.
-   Debug.Print ctor, elapsedTime.ToString()
-End Sub

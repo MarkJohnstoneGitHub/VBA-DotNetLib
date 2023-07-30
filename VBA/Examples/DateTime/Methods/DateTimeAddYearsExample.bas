@@ -3,7 +3,7 @@ Attribute VB_Name = "DateTimeAddYearsExample"
 
 'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 10, 2023
-'@LastModified July 10, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.addyears?view=netframework-4.8.1
 
@@ -12,7 +12,7 @@ Option Explicit
 ' The following example illustrates using the AddYears method with a DateTime value that represents a leap year day.
 ' It displays the date for the fifteen years prior to and the fifteen years that follow February 29, 2000.
 Public Sub DateTimeAddYears()
-   Dim baseDate As DateTime
+   Dim baseDate As IDateTime
    Set baseDate = DateTime.CreateFromDate(2000, 2, 29)
    Debug.Print "    Base Date:        " & baseDate.ToString2("d") & VBA.vbNewLine
 
@@ -27,7 +27,8 @@ Public Sub DateTimeAddYears()
    For ctr = 1 To 15
       Debug.Print ctr & " year(s) ago:        " & baseDate.AddYears(ctr).ToString2("d")
    Next
-   
+End Sub
+
 ' The example displays the following output:
 '           Base Date:        2/29/2000
 '
@@ -62,5 +63,3 @@ Public Sub DateTimeAddYears()
 '       13 year(s) from now:   2/28/2013
 '       14 year(s) from now:   2/28/2014
 '       15 year(s) from now:   2/28/2015
-  
-End Sub

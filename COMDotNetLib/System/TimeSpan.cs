@@ -2,7 +2,6 @@
 using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System;
-using Microsoft.SqlServer.Server;
 using DotNetLib.System.Globalization;
 
 namespace DotNetLib.System
@@ -16,7 +15,7 @@ namespace DotNetLib.System
     [ProgId("DotNetLib.System.TimeSpan")]
     [Description("Represents a time interval.")]
     [ClassInterface(ClassInterfaceType.None)]
-    public class TimeSpan : ITimeSpan
+    public class TimeSpan : IComTimeSpan
     {
         private GSystem.TimeSpan timeSpanObject;
 

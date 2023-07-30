@@ -2,7 +2,6 @@
 using GSystem = global::System; // https://stackoverflow.com/questions/5681537/namespace-conflict-in-c-sharp
 using System.ComponentModel;
 using System;
-using Microsoft.SqlServer.Server;
 
 namespace DotNetLib.System
 {
@@ -16,7 +15,7 @@ namespace DotNetLib.System
     [ProgId("DotNetLib.System.DateTime")]
     [Description("Represents an instant in time, typically expressed as a date and time of day.")]
     [ClassInterface(ClassInterfaceType.None)]
-    public class DateTime : IDateTime
+    public class DateTime : IComDateTime
     {
         private GSystem.DateTime dateTimeObject;
         private static readonly DateTime maxValueObject = new DateTime(GSystem.DateTime.MaxValue);
@@ -167,7 +166,7 @@ namespace DotNetLib.System
             //set { objDateTime = value; }  // set method
         }
 
-        public DateTime Date => new DateTime(this.dateTimeObject.Date);
+        public DateTime DateOnly => new DateTime(this.dateTimeObject.Date);
 
         /// <summary>
         /// Gets the day of the month represented by this instance.

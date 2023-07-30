@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeSpanTryParseExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 17, 2023
-'@LastModified July 17, 2023
+'@LastModified July 30, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.tryparse?view=netframework-4.8.1
 
@@ -40,6 +40,20 @@ Attribute TimeSpanTryParse.VB_Description = "'The following example uses the Try
    ParseTimeSpan "10."
    ParseTimeSpan "10.12"
    ParseTimeSpan "10.12:00"
+End Sub
+
+Private Sub ParseTimeSpan(ByVal intervalStr As String)
+   ' Parse the parameter, and then convert it back to a string.
+   Dim intervalVal As ITimeSpan
+
+   If (TimeSpan.TryParse(intervalStr, intervalVal)) Then
+      Dim intervalToStr As String
+      intervalToStr = intervalVal.ToString()
+      Debug.Print intervalStr, , intervalToStr
+   Else  ' Handle failure of TryParse method.
+      Debug.Print intervalStr, , "Parse operation failed."
+   End If
+End Sub
 
 ' Output:
 '   String to Parse             TimeSpan
@@ -68,17 +82,3 @@ Attribute TimeSpanTryParse.VB_Description = "'The following example uses the Try
 '   10.                         Parse operation failed.
 '   10.12                       Parse operation failed.
 '   10.12:00                    10.12:00:00
-End Sub
-
-Private Sub ParseTimeSpan(ByVal intervalStr As String)
-   ' Parse the parameter, and then convert it back to a string.
-   Dim intervalVal As TimeSpan
-
-   If (TimeSpan.TryParse(intervalStr, intervalVal)) Then
-      Dim intervalToStr As String
-      intervalToStr = intervalVal.ToString()
-      Debug.Print intervalStr, , intervalToStr
-   Else  ' Handle failure of TryParse method.
-      Debug.Print intervalStr, , "Parse operation failed."
-   End If
-End Sub
