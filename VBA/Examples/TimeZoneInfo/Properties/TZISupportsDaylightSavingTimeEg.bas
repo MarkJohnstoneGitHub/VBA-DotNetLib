@@ -4,7 +4,7 @@ Attribute VB_Name = "TZISupportsDaylightSavingTimeEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 30, 2023
+'@LastModified July 31, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.supportsdaylightsavingtime?view=netframework-4.8.1#examples
 
@@ -20,7 +20,7 @@ Public Sub TimeZoneInfoSupportsDaylightSavingTime()
     
     Dim varZone As Variant
     For Each varZone In zones
-        Dim zone As DotNetLib.ITimeZoneInfo
+        Dim zone As DotNetLib.TimeZoneInfo
         Set zone = varZone
         If (Not zone.SupportsDaylightSavingTime) Then
             Debug.Print zone.DisplayName

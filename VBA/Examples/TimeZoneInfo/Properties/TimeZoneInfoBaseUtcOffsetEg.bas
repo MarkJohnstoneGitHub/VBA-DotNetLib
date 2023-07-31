@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeZoneInfoBaseUtcOffsetEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 22, 2023
+'@LastModified July 31, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.baseutcoffset?view=netframework-4.8.1#examples
 
@@ -13,7 +13,7 @@ Option Explicit
 '@Description("The following example uses the BaseUtcOffset property to display the difference between the local time and Coordinated Universal Time (UTC).")
 Public Sub TimeZoneInfoBaseUtcOffset()
 Attribute TimeZoneInfoBaseUtcOffset.VB_Description = "The following example uses the BaseUtcOffset property to display the difference between the local time and Coordinated Universal Time (UTC)."
-    Dim localZone As TimeZoneInfo
+    Dim localZone As ITimeZoneInfo
     Set localZone = TimeZoneInfo.Locale
     Debug.Print "The " & localZone.DisplayName & " time zone is " & _
                 Abs(localZone.BaseUtcOffset.Hours) & ":" & _

@@ -4,15 +4,14 @@ Attribute VB_Name = "TimeZoneInfoConvertTimeExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 23, 2023
-'@LastModified July 23, 2023
+'@LastModified July 31, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.converttime?view=netframework-4.8.1#system-timezoneinfo-converttime(system-datetime-system-timezoneinfo)
 
 Option Explicit
 
 Public Sub TimeZoneInfoConvertTime()
-
-    Dim times() As DateTime
+    Dim times() As IDateTime
     Objects.ToArray times, _
                     DateTime.CreateFromDateTime(2010, 1, 1, 0, 1, 0), _
                     DateTime.CreateFromDateTimeKind(2010, 1, 1, 0, 1, 0, DateTimeKind.DateTimeKind_Utc), _
@@ -23,7 +22,7 @@ Public Sub TimeZoneInfoConvertTime()
     TimeZoneInfo.ClearCachedData 'Clear incase timezone was changed.
     
     ' Retrieve the time zone for Eastern Standard Time (U.S. and Canada).
-    Dim est As TimeZoneInfo
+    Dim est As ITimeZoneInfo
     On Error Resume Next
     Set est = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time")
     If Catch(TimeZoneNotFoundException) Then
@@ -40,9 +39,9 @@ Public Sub TimeZoneInfoConvertTime()
     ' Convert each time in the array.
     Dim varTimeToConvert As Variant
     For Each varTimeToConvert In times
-        Dim timeToConvert As DateTime
+        Dim timeToConvert As IDateTime
         Set timeToConvert = varTimeToConvert
-        Dim targetTime As DateTime
+        Dim targetTime As IDateTime
         Set targetTime = TimeZoneInfo.ConvertTime(timeToConvert, est)
         
         Debug.Print "Converted " & timeToConvert.ToString() & _

@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeZoneInfoConvertTime2Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 23, 2023
-'@LastModified July 23, 2023
+'@LastModified July 31, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.converttime?view=netframework-4.8.1#system-timezoneinfo-converttime(system-datetimeoffset-system-timezoneinfo)
 
@@ -18,12 +18,12 @@ Attribute TimeZoneInfoConvertTime2.VB_Description = "The following example conve
     TimeZoneInfo.ClearCachedData 'Clear incase timezone was changed.
     
     ' Define times to be converted.
-    Dim time1 As DateTime
+    Dim time1 As IDateTime
     Set time1 = DateTime.CreateFromDateTime(2010, 1, 1, 12, 1, 0)
-    Dim time2 As DateTime
+    Dim time2 As IDateTime
     Set time2 = DateTime.CreateFromDateTime(2010, 11, 6, 23, 30, 0)
     
-    Dim times() As DateTimeOffset
+    Dim times() As IDateTimeOffset
     Objects.ToArray times, _
                     DateTimeOffset.CreateFromDateTime2(time1, TimeZoneInfo.Locale.GetUtcOffset(time1)), _
                     DateTimeOffset.CreateFromDateTime2(time1, TimeSpan.Zero), _
@@ -31,7 +31,7 @@ Attribute TimeZoneInfoConvertTime2.VB_Description = "The following example conve
                     DateTimeOffset.CreateFromDateTime2(time2.AddHours(3), TimeZoneInfo.Locale.GetUtcOffset(time2.AddHours(3)))
     
     ' Retrieve the time zone for Eastern Standard Time (U.S. and Canada).
-    Dim est As TimeZoneInfo
+    Dim est As ITimeZoneInfo
     On Error Resume Next
     Set est = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time")
     If Catch(TimeZoneNotFoundException) Then
@@ -48,10 +48,10 @@ Attribute TimeZoneInfoConvertTime2.VB_Description = "The following example conve
     ' Convert each time in the array.
     Dim varTimeToConvert As Variant
     For Each varTimeToConvert In times
-        Dim timeToConvert As DateTimeOffset
+        Dim timeToConvert As IDateTimeOffset
         Set timeToConvert = varTimeToConvert
         
-        Dim targetTime As DateTimeOffset
+        Dim targetTime As IDateTimeOffset
         Set targetTime = TimeZoneInfo.ConvertTime2(timeToConvert, est)
         Debug.Print "Converted " & timeToConvert.ToString() & _
                      " to " & targetTime.ToString() & "."

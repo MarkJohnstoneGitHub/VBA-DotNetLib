@@ -4,7 +4,7 @@ Attribute VB_Name = "TZIGetAmbiguousTimeOffsetsEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 24, 2023
-'@LastModified July 24, 2023
+'@LastModified July 31, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.getambiguoustimeoffsets?view=netframework-4.8.1
 
@@ -30,8 +30,8 @@ Public Sub TimeZoneInfoGetAmbiguousTimeOffsets()
     ShowPossibleUtcTimes DateTime.CreateFromDateTimeKind(2007, 11, 4, 7, 0, 0, DateTimeKind.DateTimeKind_Utc), TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time")
 End Sub
 
-Private Sub ShowPossibleUtcTimes(ByVal ambiguousTime As DateTime, ByVal timeZone As TimeZoneInfo)
-    Dim pvtAmbiguousTime As DateTime
+Private Sub ShowPossibleUtcTimes(ByVal ambiguousTime As IDateTime, ByVal timeZone As ITimeZoneInfo)
+    Dim pvtAmbiguousTime As IDateTime
     Set pvtAmbiguousTime = ambiguousTime
     
     ' Determine if time is ambiguous in target time zone
@@ -66,11 +66,10 @@ Private Sub ShowPossibleUtcTimes(ByVal ambiguousTime As DateTime, ByVal timeZone
             Set pvtAmbiguousTime = TimeZoneInfo.ConvertTime3(pvtAmbiguousTime, TimeZoneInfo.Utc, timeZone)
         End If
 
-        
         ' Display each offset and its mapping to UTC
         Dim varOffset As Variant
         For Each varOffset In offsets
-            Dim tzOffset As TimeSpan
+            Dim tzOffset As ITimeSpan
             Set tzOffset = varOffset
             If (tzOffset.Equals(timeZone.BaseUtcOffset)) Then
                 Debug.Print "If " & pvtAmbiguousTime.ToString() & _

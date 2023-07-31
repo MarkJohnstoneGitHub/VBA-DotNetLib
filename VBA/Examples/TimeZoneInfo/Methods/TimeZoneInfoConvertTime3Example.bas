@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeZoneInfoConvertTime3Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 23, 2023
-'@LastModified July 23, 2023
+'@LastModified July 31, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.converttime?view=netframework-4.8.1#system-timezoneinfo-converttime(system-datetime-system-timezoneinfo-system-timezoneinfo)
 
@@ -13,10 +13,10 @@ Option Explicit
 '@Description("The following example illustrates the use of the ConvertTime(DateTime, TimeZoneInfo, TimeZoneInfo) method to convert from Hawaiian Standard Time to local time.")
 Public Sub TimeZoneInfoConvertTime3()
 Attribute TimeZoneInfoConvertTime3.VB_Description = "The following example illustrates the use of the ConvertTime(DateTime, TimeZoneInfo, TimeZoneInfo) method to convert from Hawaiian Standard Time to local time."
-    Dim hwTime As DateTime
+    Dim hwTime As IDateTime
     Set hwTime = DateTime.CreateFromDateTime(2007, 2, 1, 8, 0, 0)
     On Error Resume Next
-    Dim hwZone As TimeZoneInfo
+    Dim hwZone As ITimeZoneInfo
     Set hwZone = TimeZoneInfo.FindSystemTimeZoneById("Hawaiian Standard Time")
     If Try() Then
         Debug.Print hwTime.ToString() & " " & _

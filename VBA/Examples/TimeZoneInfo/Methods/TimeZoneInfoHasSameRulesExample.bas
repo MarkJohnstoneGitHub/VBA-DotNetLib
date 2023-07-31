@@ -4,11 +4,10 @@ Attribute VB_Name = "TimeZoneInfoHasSameRulesExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 26, 2023
-'@LastModified July 30, 2023
+'@LastModified July 31, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.hassamerules?view=netframework-4.8.1#examples
 
-'@TODO Issue with CopyTo
 Option Explicit
 
 ' Typically, a number of time zones defined in the registry on Windows and the ICU Library on Linux
@@ -25,7 +24,7 @@ Public Sub TimeZoneInfoHasSameRules()
     Dim ctr As Long
     For ctr = UBound(timeZoneArray) To LBound(timeZoneArray) Step -1
         ' Get next item from top
-        Dim thisTimeZone As DotNetLib.IComTimeZoneInfo
+        Dim thisTimeZone As DotNetLib.TimeZoneInfo
         Set thisTimeZone = timeZoneArray(ctr)
         Dim compareCtr As Long
         compareCtr = 0

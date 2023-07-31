@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeZoneInfoConvertTimeToUtcEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 24, 2023
-'@LastModified July 24, 2023
+'@LastModified July 31, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.converttimetoutc?view=netframework-4.8.1#system-timezoneinfo-converttimetoutc(system-datetime)
 
@@ -14,7 +14,7 @@ Option Explicit
 ' is DateTimeKind.Utc, DateTimeKind.Local, and DateTimeKind.Unspecified, respectively.
 ' It also illustrates the conversion of ambiguous and invalid times.
 Public Sub TimeZoneInfoConvertTimeToUtc()
-    Dim datNowLocal As DateTime
+    Dim datNowLocal As IDateTime
     Set datNowLocal = DateTime.Now
     Debug.Print "Converting " & datNowLocal.ToString() & ", Kind " & _
                 DateTimeKindHelper.ToString(datNowLocal.Kind) & ":"
@@ -22,7 +22,7 @@ Public Sub TimeZoneInfoConvertTimeToUtc()
                 DateTimeKindHelper.ToString(TimeZoneInfo.ConvertTimeToUtc(datNowLocal).Kind)
     Debug.Print
     
-    Dim datNowUtc As DateTime
+    Dim datNowUtc As IDateTime
     Set datNowUtc = DateTime.UtcNow
     Debug.Print "Converting " & datNowUtc.ToString() & ", Kind " & _
                 DateTimeKindHelper.ToString(datNowUtc.Kind) & ":"
@@ -30,7 +30,7 @@ Public Sub TimeZoneInfoConvertTimeToUtc()
                 DateTimeKindHelper.ToString(TimeZoneInfo.ConvertTimeToUtc(datNowUtc).Kind)
     Debug.Print
     
-    Dim datNow As DateTime
+    Dim datNow As IDateTime
     Set datNow = DateTime.CreateFromDateTime(2007, 10, 26, 13, 32, 0)
     Debug.Print "Converting " & datNow.ToString() & ", Kind " & _
                 DateTimeKindHelper.ToString(datNow.Kind) & ":"
@@ -38,7 +38,7 @@ Public Sub TimeZoneInfoConvertTimeToUtc()
                 DateTimeKindHelper.ToString(TimeZoneInfo.ConvertTimeToUtc(datNow).Kind)
     Debug.Print
     
-    Dim datAmbiguous As DateTime
+    Dim datAmbiguous As IDateTime
     Set datAmbiguous = DateTime.CreateFromDateTime(2007, 11, 4, 1, 30, 0)
     Debug.Print "Converting " & datAmbiguous.ToString() & ", Kind " & _
                 DateTimeKindHelper.ToString(datAmbiguous.Kind) & ":" & _
@@ -47,7 +47,7 @@ Public Sub TimeZoneInfoConvertTimeToUtc()
                 DateTimeKindHelper.ToString(TimeZoneInfo.ConvertTimeToUtc(datAmbiguous).Kind)
     Debug.Print
     
-    Dim datInvalid As DateTime
+    Dim datInvalid As IDateTime
     Set datInvalid = DateTime.CreateFromDateTime(2007, 3, 11, 2, 30, 0)
     Debug.Print "Converting " & datInvalid.ToString() & ", Kind " & _
                 DateTimeKindHelper.ToString(datInvalid.Kind) & ":" & _
@@ -63,7 +63,7 @@ Public Sub TimeZoneInfoConvertTimeToUtc()
     On Error GoTo 0 'Stop code and display error
     Debug.Print
 
-    Dim datNearMax As DateTime
+    Dim datNearMax As IDateTime
     Set datNearMax = DateTime.CreateFromDateTime(9999, 12, 31, 22, 0, 0)
     
     Debug.Print "Converting " & datNearMax.ToString() & ", Kind " & _

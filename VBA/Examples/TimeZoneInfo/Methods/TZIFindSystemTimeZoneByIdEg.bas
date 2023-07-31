@@ -4,7 +4,7 @@ Attribute VB_Name = "TZIFindSystemTimeZoneByIdEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 24, 2023
-'@LastModified July 24, 2023
+'@LastModified July 31, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.findsystemtimezonebyid?view=netframework-4.8.1#examples
 
@@ -16,16 +16,16 @@ Option Explicit
 Public Sub TimeZoneInfoFindSystemTimeZoneById()
 Attribute TimeZoneInfoFindSystemTimeZoneById.VB_Description = "The following example uses the FindSystemTimeZoneById method to retrieve the Tokyo Standard Time zone."
     ' Get time in local time zone
-    Dim thisTime As DateTime
+    Dim thisTime As IDateTime
     Set thisTime = DateTime.Now
     Debug.Print "Time in " & IIf(TimeZoneInfo.Locale.IsDaylightSavingTime(thisTime), TimeZoneInfo.Locale.DaylightName, TimeZoneInfo.Locale.StandardName) & _
                 " zone: " & thisTime.ToString()
     Debug.Print "   UTC Time: " & TimeZoneInfo.ConvertTimeToUtc2(thisTime, TimeZoneInfo.Locale).ToString()
 
     ' Get Tokyo Standard Time zone
-    Dim tst As TimeZoneInfo
+    Dim tst As ITimeZoneInfo
     Set tst = TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")
-    Dim tstTime As DateTime
+    Dim tstTime As IDateTime
     Set tstTime = TimeZoneInfo.ConvertTime3(thisTime, TimeZoneInfo.Locale, tst)
     Debug.Print "Time in " & IIf(tst.IsDaylightSavingTime(thisTime), tst.DaylightName, tst.StandardName) & _
                 " zone: " & thisTime.ToString()

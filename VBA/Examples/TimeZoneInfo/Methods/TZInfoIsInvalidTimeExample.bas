@@ -4,7 +4,7 @@ Attribute VB_Name = "TZInfoIsInvalidTimeExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 27, 2023
-'@LastModified July 27, 2023
+'@LastModified July 31, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.isinvalidtime?view=netframework-4.8.1#examples
 
@@ -18,12 +18,12 @@ Option Explicit
 ' 2:59 A.M. on April 2, 2006, are invalid.
 Public Sub TimeZoneInfoIsInvalidTime()
     ' Specify DateTimeKind in Date constructor
-    Dim baseTime As DateTime
+    Dim baseTime As IDateTime
     Set baseTime = DateTime.CreateFromDateTimeKind(2007, 3, 11, 1, 59, 0, DateTimeKind.DateTimeKind_Unspecified)
-    Dim newTime  As DateTime
+    Dim newTime  As IDateTime
     
     ' Get Pacific Standard Time zone
-    Dim pstZone As TimeZoneInfo
+    Dim pstZone As ITimeZoneInfo
     Set pstZone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")
 
     ' List possible invalid times for a 63-minute interval, from 1:59 AM to 3:01 AM

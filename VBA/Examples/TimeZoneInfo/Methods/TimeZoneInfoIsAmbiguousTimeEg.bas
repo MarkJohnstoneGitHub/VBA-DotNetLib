@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeZoneInfoIsAmbiguousTimeEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 27, 2023
-'@LastModified July 27, 2023
+'@LastModified July 31, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.isambiguoustime?view=netframework-4.8.1
 
@@ -18,12 +18,12 @@ Option Explicit
 ' on November 4, 2007, are ambiguous.
 Public Sub TimeZoneInfoIsAmbiguousTime()
     ' Specify DateTimeKind in Date constructor
-    Dim baseTime As DateTime
+    Dim baseTime As IDateTime
     Set baseTime = DateTime.CreateFromDateTimeKind(2007, 11, 4, 0, 59, 0, DateTimeKind.DateTimeKind_Unspecified)
-    Dim newTime  As DateTime
+    Dim newTime  As IDateTime
     
     ' Get Pacific Standard Time zone
-    Dim pstZone As TimeZoneInfo
+    Dim pstZone As ITimeZoneInfo
     Set pstZone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")
 
     ' List possible ambiguous times for 63-minute interval, from 12:59 AM to 2:01 AM

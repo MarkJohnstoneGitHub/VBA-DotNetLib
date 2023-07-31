@@ -87,7 +87,7 @@ Attribute Id.VB_Description = "Gets the time zone identifier."
 End Property
 
 '@Description("Gets a TimeZoneInfo object that represents the local time zone.")
-Public Property Get Locale() As TimeZoneInfo
+Public Property Get Locale() As ITimeZoneInfo
 Attribute Locale.VB_Description = "Gets a TimeZoneInfo object that represents the local time zone."
    With New TimeZoneInfo
       Set .ComObject = this.DotNetLibTimeZoneInfo.Local()
