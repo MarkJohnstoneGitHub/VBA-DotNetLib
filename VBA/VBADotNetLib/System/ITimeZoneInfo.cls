@@ -13,7 +13,7 @@ Attribute VB_Exposed = False
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 30, 2023
-'@LastModified July 30, 2023
+'@LastModified July 31, 2023
 
 Option Explicit
 
@@ -50,6 +50,11 @@ End Property
 '@Description("Determines whether the current TimeZoneInfo object and another TimeZoneInfo object are equal.")
 Public Function Equals(ByVal other As TimeZoneInfo) As Boolean
 Attribute Equals.VB_Description = "Determines whether the current TimeZoneInfo object and another TimeZoneInfo object are equal."
+End Function
+
+'@Description("Determines whether the current TimeZoneInfo object and another object are equal.")
+Public Function Equals2(ByVal obj As Variant) As Boolean
+Attribute Equals2.VB_Description = "Determines whether the current TimeZoneInfo object and another object are equal."
 End Function
 
 '@Description("Returns information about the possible dates and times that an ambiguous date and time can be mapped to.")

@@ -16,7 +16,7 @@ Attribute VB_Description = "Represents any time zone in the world."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 11, 2023
-'@LastModified July 30, 2023
+'@LastModified July 31, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -235,16 +235,18 @@ End Function
 '@Description("Determines whether the current TimeZoneInfo object and another object are equal.")
 Public Function Equals2(ByVal obj As Variant) As Boolean
 Attribute Equals2.VB_Description = "Determines whether the current TimeZoneInfo object and another object are equal."
-   If TypeOf obj Is TimeZoneInfo Then
-      Dim tzi As TimeZoneInfo
-      Set tzi = obj
-      Equals2 = this.DotNetLibTimeZoneInfo.Equals(tzi.ComObject)
-   End If
+    If Not obj Is Nothing Then
+        If TypeOf obj Is TimeZoneInfo Then
+           Dim tzi As TimeZoneInfo
+           Set tzi = obj
+           Equals2 = this.DotNetLibTimeZoneInfo.Equals(tzi.ComObject)
+        End If
+    End If
 End Function
 
 '@Static
 '@Description("Instantiates a new TimeZoneInfo object based on its identifier.")
-Public Function FindSystemTimeZoneById(ByVal Id As String) As TimeZoneInfo
+Public Function FindSystemTimeZoneById(ByVal Id As String) As ITimeZoneInfo
 Attribute FindSystemTimeZoneById.VB_Description = "Instantiates a new TimeZoneInfo object based on its identifier."
    With New TimeZoneInfo
       Set .ComObject = this.DotNetLibTimeZoneInfo.FindSystemTimeZoneById(Id)
@@ -409,6 +411,12 @@ End Property
 
 Private Function ITimeZoneInfo_Equals(ByVal other As TimeZoneInfo) As Boolean
     ITimeZoneInfo_Equals = Equals(other)
+End Function
+
+'@Description("Determines whether the current TimeZoneInfo object and another object are equal.")
+Public Function ITimeZoneInfo_Equals2(ByVal obj As Variant) As Boolean
+Attribute ITimeZoneInfo_Equals2.VB_Description = "Determines whether the current TimeZoneInfo object and another object are equal."
+    ITimeZoneInfo_Equals2 = Equals2(obj)
 End Function
 
 Private Function ITimeZoneInfo_GetAmbiguousTimeOffsets(ByVal sourceDateTime As DateTime) As TimeSpan()
