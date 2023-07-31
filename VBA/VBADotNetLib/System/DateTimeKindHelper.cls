@@ -10,14 +10,13 @@ Attribute VB_Exposed = False
 Attribute VB_Description = "DateTimeKind helper class to convert a DateTimeKind to string value."
 'Rubberduck annotations
 '@ModuleDescription("DateTimeKind helper class to convert a DateTimeKind to string value.")
-'@ModuleAttribute VB_Ext_KEY, "Rubberduck", "Predeclared Class Module"
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
-'@LastModified July 11, 2023
+'@LastModified July 31, 2023
 
 '@ReferenceAddin DotNetLib.tlb
 

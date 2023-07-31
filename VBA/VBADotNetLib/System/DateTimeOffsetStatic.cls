@@ -8,7 +8,6 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 'Rubberduck annotations
-'@ModuleAttribute VB_Ext_KEY, "Rubberduck", "Predeclared Class Module"
 '@Folder("VBADotNetLib.System")
 '@PredeclaredId
 
@@ -17,7 +16,7 @@ Attribute VB_Exposed = False
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 11, 2023
-'@LastModified July 11, 2023
+'@LastModified July 31, 2023
 
 Option Explicit
 
