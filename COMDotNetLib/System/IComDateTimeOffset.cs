@@ -50,7 +50,7 @@ namespace DotNetLib.System
 
         // Properties
 
-        DateTime Date 
+        DateTime DateOnly 
         {
             [Description("Gets a DateTime value that represents the date component of the current DateTimeOffset object.")]
             get;

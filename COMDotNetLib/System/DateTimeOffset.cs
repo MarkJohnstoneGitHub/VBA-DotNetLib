@@ -105,7 +105,8 @@ namespace DotNetLib.System
             get { return this.dateTimeOffsetObject; }
         }
 
-        public DateTime Date
+        //Note: Renamed to DateOnly to avoid issues with VBA reserved word Date
+        public DateTime DateOnly            
         {
             get { return new DateTime(this.dateTimeOffsetObject.Date); }
         }

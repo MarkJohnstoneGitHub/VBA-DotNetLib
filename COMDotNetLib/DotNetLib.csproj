@@ -70,6 +70,7 @@
     <Compile Include="System\IComDateTimeOffset.cs" />
     <Compile Include="System\IComTimeSpan.cs" />
     <Compile Include="System\IComTimeZoneInfo.cs" />
+    <Compile Include="System\IDateTimeOffset.cs" />
     <Compile Include="System\ITimeSpan.cs" />
     <Compile Include="System\TimeSpan.cs" />
     <Compile Include="System\TimeZoneInfo.cs" />
