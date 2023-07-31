@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeOffsetToString2Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 22, 2023
+'@LastModified July 31, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.tostring?view=netframework-4.8.1#system-datetimeoffset-tostring(system-string)
 
@@ -14,7 +14,7 @@ Option Explicit
 ' The output is formatted by using the en-us culture.
 Public Sub DateTimeOffsetToString2()
 Attribute DateTimeOffsetToString2.VB_Description = "The following example displays a DateTimeOffset object to the console using each of the standard date and time format specifiers."
-    Dim outputDate As DateTimeOffset
+    Dim outputDate As IDateTimeOffset
     Set outputDate = DateTimeOffset.CreateFromDateTimeParts(2007, 10, 31, 21, 0, 0, TimeSpan.Create(-8, 0, 0))
     Dim specifier As String
     

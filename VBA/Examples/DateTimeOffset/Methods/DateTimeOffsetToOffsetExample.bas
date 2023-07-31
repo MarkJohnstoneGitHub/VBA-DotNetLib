@@ -4,19 +4,18 @@ Attribute VB_Name = "DateTimeOffsetToOffsetExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 21, 2023
-'@LastModified July 21, 2023
+'@LastModified July 31, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.tooffset?view=netframework-4.8.1#examples
 
 Option Explicit
 
-Private sourceTime As DateTimeOffset
+Private sourceTime As IDateTimeOffset
 
 '@Description("The following example illustrates how to use the ToOffset method to convert a DateTimeOffset object to a DateTimeOffset object with a different offset.")
 Public Sub DateTimeOffsetToOffset()
 Attribute DateTimeOffsetToOffset.VB_Description = "The following example illustrates how to use the ToOffset method to convert a DateTimeOffset object to a DateTimeOffset object with a different offset."
-    'Dim sourceTime As DateTimeOffset
-    Dim targetTime As DateTimeOffset
+    Dim targetTime As IDateTimeOffset
     Set sourceTime = DateTimeOffset.CreateFromDateTimeParts(2007, 9, 1, 9, 30, 0, TimeSpan.Create(-5, 0, 0))
     
     ' Convert to same time (return sourceTime unchanged)
@@ -36,12 +35,12 @@ Attribute DateTimeOffsetToOffset.VB_Description = "The following example illustr
     ShowDateAndTimeInfo targetTime
 End Sub
 
-Private Sub ShowDateAndTimeInfo(ByVal newTime As DateTimeOffset)
+Private Sub ShowDateAndTimeInfo(ByVal newTime As IDateTimeOffset)
     Debug.Print sourceTime.ToString() & " converts to " & newTime.ToString()
                 
     Debug.Print sourceTime.ToString() & " and " & newTime.ToString() & " are equal: " & _
                 sourceTime.Equals(newTime)
-
+                
     Debug.Print sourceTime.ToString() & " and " & newTime.ToString() & " are identical: " & _
                 sourceTime.EqualsExact(newTime)
     Debug.Print

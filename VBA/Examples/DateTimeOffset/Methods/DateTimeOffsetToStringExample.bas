@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeOffsetToStringExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 21, 2023
-'@LastModified July 21, 2023
+'@LastModified July 31, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.tostring?view=netframework-4.8.1#system-datetimeoffset-tostring
 
@@ -13,7 +13,7 @@ Option Explicit
 '@Description("The following example illustrates calls to the ToString() method and displays its output on a system whose current culture is en-us.")
 Public Sub DateTimeOffsetToString()
 Attribute DateTimeOffsetToString.VB_Description = "The following example illustrates calls to the ToString() method and displays its output on a system whose current culture is en-us."
-    Dim thisDate As DateTimeOffset
+    Dim thisDate As IDateTimeOffset
     Set thisDate = DateTimeOffset.UtcNow
     Debug.Print thisDate.ToString()         ' Displays 3/28/2007 7:13:50 PM +00:00
     
@@ -30,4 +30,3 @@ End Sub
 ' 3/28/2007 7:13:50 PM +00:00
 ' 3/28/2007 12:13:50 PM -07:00
 ' 3/28/2007 12:13:50 PM -07:00
-

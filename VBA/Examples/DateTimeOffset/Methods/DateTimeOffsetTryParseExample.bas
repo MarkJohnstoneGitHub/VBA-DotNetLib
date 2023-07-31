@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeOffsetTryParseExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 22, 2023
+'@LastModified July 31, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.tryparse?view=netframework-4.8.1#system-datetimeoffset-tryparse(system-string-system-datetimeoffset@)
 
@@ -13,7 +13,7 @@ Option Explicit
 '@Description("The following example calls the TryParse(String, DateTimeOffset) method to parse several strings with various date and time formats.")
 Public Sub DateTimeOffsetTryParse()
 Attribute DateTimeOffsetTryParse.VB_Description = "The following example calls the TryParse(String, DateTimeOffset) method to parse several strings with various date and time formats."
-    Dim parsedDate As DateTimeOffset
+    Dim parsedDate As IDateTimeOffset
     Dim dateString As String
     
     '// String with date only

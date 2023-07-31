@@ -302,92 +302,94 @@ End Function
 '@Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional hours to the value of this instance.")
 Public Function AddHours(ByVal Hours As Double) As DateTimeOffset
 Attribute AddHours.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of whole and fractional hours to the value of this instance."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.AddHours(Hours)
-      Set AddHours = .Self
-   End With
+    With New DateTimeOffset
+        Set .ComObject = this.DotNetLibDateTimeOffset.AddHours(Hours)
+        Set AddHours = .Self
+    End With
 End Function
 
 '@Description("Returns a new DateTimeOffset object that adds a specified number of milliseconds to the value of this instance.")
 Public Function AddMilliseconds(ByVal Milliseconds As Double) As DateTimeOffset
 Attribute AddMilliseconds.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of milliseconds to the value of this instance."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.AddMilliseconds(Milliseconds)
-      Set AddMilliseconds = .Self
-   End With
+    With New DateTimeOffset
+        Set .ComObject = this.DotNetLibDateTimeOffset.AddMilliseconds(Milliseconds)
+        Set AddMilliseconds = .Self
+    End With
 End Function
 
 '@Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional minutes to the value of this instance.")
 Public Function AddMinutes(ByVal Minutes As Double) As DateTimeOffset
 Attribute AddMinutes.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of whole and fractional minutes to the value of this instance."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.AddMinutes(Minutes)
-      Set AddMinutes = .Self
-   End With
+    With New DateTimeOffset
+        Set .ComObject = this.DotNetLibDateTimeOffset.AddMinutes(Minutes)
+        Set AddMinutes = .Self
+    End With
 End Function
 
 '@Description("Returns a new DateTimeOffset object that adds a specified number of months to the value of this instance.")
 Public Function AddMonths(ByVal months As Long) As DateTimeOffset
 Attribute AddMonths.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of months to the value of this instance."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.AddMonths(months)
-      Set AddMonths = .Self
-   End With
+    With New DateTimeOffset
+        Set .ComObject = this.DotNetLibDateTimeOffset.AddMonths(months)
+        Set AddMonths = .Self
+    End With
 End Function
 
 '@Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional seconds to the value of this instance.")
 Public Function AddSeconds(ByVal Seconds As Double) As DateTimeOffset
 Attribute AddSeconds.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of whole and fractional seconds to the value of this instance."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.AddSeconds(Seconds)
-      Set AddSeconds = .Self
-   End With
+    With New DateTimeOffset
+        Set .ComObject = this.DotNetLibDateTimeOffset.AddSeconds(Seconds)
+        Set AddSeconds = .Self
+    End With
 End Function
 
 '@Description("Returns a new DateTimeOffset object that adds a specified number of ticks to the value of this instance.")
 Public Function AddTicks(ByVal Ticks As LongLong) As DateTimeOffset
 Attribute AddTicks.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of ticks to the value of this instance."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.AddTicks(Ticks)
-      Set AddTicks = .Self
-   End With
+    With New DateTimeOffset
+        Set .ComObject = this.DotNetLibDateTimeOffset.AddTicks(Ticks)
+        Set AddTicks = .Self
+    End With
 End Function
 
 '@Description("Returns a new DateTimeOffset object that adds a specified number of years to the value of this instance.")
 Public Function AddYears(ByVal years As Long) As DateTimeOffset
 Attribute AddYears.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of years to the value of this instance."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.AddYears(years)
-      Set AddYears = .Self
-   End With
+    With New DateTimeOffset
+        Set .ComObject = this.DotNetLibDateTimeOffset.AddYears(years)
+        Set AddYears = .Self
+    End With
 End Function
 
 '@Static
 '@Description("Compares two DateTimeOffset objects and indicates whether the first is earlier than the second, equal to the second, or later than the second.")
 Public Function Compare(ByVal first As DateTimeOffset, ByVal Second As DateTimeOffset) As Long
 Attribute Compare.VB_Description = "Compares two DateTimeOffset objects and indicates whether the first is earlier than the second, equal to the second, or later than the second."
-   Compare = this.DotNetLibDateTimeOffset.Compare(first.ComObject, Second.ComObject)
+    Compare = this.DotNetLibDateTimeOffset.Compare(first.ComObject, Second.ComObject)
 End Function
 
 '@Description("Compares the current DateTimeOffset object to a specified DateTimeOffset object and indicates whether the current object is earlier than, the same as, or later than the second DateTimeOffset object.")
 Public Function CompareTo(ByVal other As DateTimeOffset) As Long
 Attribute CompareTo.VB_Description = "Compares the current DateTimeOffset object to a specified DateTimeOffset object and indicates whether the current object is earlier than, the same as, or later than the second DateTimeOffset object."
-   CompareTo = this.DotNetLibDateTimeOffset.CompareTo(other.ComObject)
+    CompareTo = this.DotNetLibDateTimeOffset.CompareTo(other.ComObject)
 End Function
 
 '@Description("Determines whether the current DateTimeOffset object represents the same point in time as a specified DateTimeOffset object.")
 Public Function Equals(ByVal other As DateTimeOffset) As Boolean
 Attribute Equals.VB_Description = "Determines whether the current DateTimeOffset object represents the same point in time as a specified DateTimeOffset object."
-   Equals = this.DotNetLibDateTimeOffset.Equals(other.ComObject)
+    Equals = this.DotNetLibDateTimeOffset.Equals(other.ComObject)
 End Function
 
 '@Description("Determines whether a DateTimeOffset object represents the same point in time as a specified object.")
 Public Function Equals2(ByVal obj As Variant) As Boolean
 Attribute Equals2.VB_Description = "Determines whether a DateTimeOffset object represents the same point in time as a specified object."
-   If TypeOf obj Is DateTimeOffset Then
-      Dim dtoValue As DateTimeOffset
-      Set dtoValue = obj
-      Equals2 = this.DotNetLibDateTimeOffset.Equals(dtoValue.ComObject)
+    If Not obj Is Nothing Then
+        If TypeOf obj Is DateTimeOffset Then
+            Dim dtoValue As DateTimeOffset
+            Set dtoValue = obj
+            Equals2 = this.DotNetLibDateTimeOffset.Equals(dtoValue.ComObject)
+        End If
    End If
 End Function
 
@@ -839,7 +841,7 @@ Private Function IDateTimeOffset_Equals(ByVal other As IDateTimeOffset) As Boole
 End Function
 
 Private Function IDateTimeOffset_Equals2(ByVal obj As Variant) As Boolean
-    IDateTimeOffset_Equals2 = Equals(obj)
+    IDateTimeOffset_Equals2 = Equals2(obj)
 End Function
 
 Private Function IDateTimeOffset_EqualsExact(ByVal other As IDateTimeOffset) As Boolean

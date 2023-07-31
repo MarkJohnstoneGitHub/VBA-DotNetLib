@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents a time interval."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
-'@LastModified July 30, 2023
+'@LastModified July 31, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -262,22 +262,29 @@ End Function
 '@Description("Returns a new TimeSpan object whose value is the absolute value of the current TimeSpan object.")
 Public Function Duration() As TimeSpan
 Attribute Duration.VB_Description = "Returns a new TimeSpan object whose value is the absolute value of the current TimeSpan object."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Duration()
-      Set Duration = .Self
-   End With
+    With New TimeSpan
+        Set .ComObject = this.DotNetLibTimeSpan.Duration()
+        Set Duration = .Self
+    End With
 End Function
 
 '@Description("Returns a value indicating whether this instance is equal to a specified TimeSpan object.")
 Public Function Equals(ByVal value As TimeSpan) As Boolean
 Attribute Equals.VB_Description = "Returns a value indicating whether this instance is equal to a specified TimeSpan object."
-   Equals = this.DotNetLibTimeSpan.Equals(value.ComObject)
+    Equals = this.DotNetLibTimeSpan.Equals(value.ComObject)
 End Function
 
+'@Override
 '@Description("Returns a value indicating whether this instance is equal to a specified object.")
 Public Function Equals2(ByVal value As Variant) As Boolean
 Attribute Equals2.VB_Description = "Returns a value indicating whether this instance is equal to a specified object."
-   Equals2 = this.DotNetLibTimeSpan.Equals2(value)
+    If Not value Is Nothing Then
+        If TypeOf value Is TimeSpan Then
+            Dim tsValue As TimeSpan
+            Set tsValue = value
+            Equals2 = this.DotNetLibTimeSpan.Equals(tsValue.ComObject)
+        End If
+   End If
 End Function
 
 '@Static

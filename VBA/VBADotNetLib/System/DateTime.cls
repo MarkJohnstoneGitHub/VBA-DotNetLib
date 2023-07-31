@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents an instant in time, typically expressed a
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
-'@LastModified July 30, 2023
+'@LastModified July 31, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -376,11 +376,13 @@ End Function
 '@Description("Returns a value indicating whether this instance is equal to a specified object.")
 Public Function Equals2(ByVal value As Variant) As Boolean
 Attribute Equals2.VB_Description = "Returns a value indicating whether this instance is equal to a specified object."
-   If TypeOf value Is DateTime Then
-      Dim dtValue As DateTime
-      Set dtValue = value
-      Equals2 = this.DotNetLibDateTime.Equals(dtValue.ComObject)
-   End If
+    If Not value Is Nothing Then
+        If TypeOf value Is DateTime Then
+            Dim dtValue As DateTime
+            Set dtValue = value
+            Equals2 = this.DotNetLibDateTime.Equals(dtValue.ComObject)
+        End If
+    End If
 End Function
 
 '@Static
