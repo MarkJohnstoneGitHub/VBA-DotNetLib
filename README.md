@@ -1,7 +1,6 @@
-# VBA DotNetLib COM Interlop
- COM Interlop wrappers of the .Net Framework 4.8.1
+# VBA DotNetLib COM Interlop wrappers of the .Net Framework 4.8.1
  
- Aim: To create .Net Framework 4.8.1 Com Interlop wrappers using C# to implement in VBA 64 to enable various .Net Framework data types in VBA with early and/or late binding. Then in VBA create predeclared class wrappers for the DotNetLib.tlb COM objects.  Compatibility intially only VBA 64 on Windows as can only test on windows 64 bit of MS-Office.
+**Aim:** To create .Net Framework 4.8.1 Com Interlop wrappers using C# to implement in VBA 64 to enable various .Net Framework data types in VBA with early and/or late binding. Then in VBA create predeclared class wrappers for the DotNetLib.tlb COM objects.  Compatibility intially only VBA 64 on Windows as can only test on windows 64 bit of MS-Office.
  
 Classes initally focussing on are [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8.1), [DateTimeOffset](https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=netframework-4.8.1), [TimeSpan](https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8.1),  [TimeZoneInfo](https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo?view=netframework-4.8.1) and associated classes.
 
@@ -12,7 +11,7 @@ Classes initally focussing on are [DateTime](https://learn.microsoft.com/en-us/d
 **August 4th, 2023** Currently rewritting the DotNetLib type library and VBA DotNetLib wrappers to use the [Singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern).
 Where static members are in a Factory/Singleton classs and instances will be programmed against an interface.  To be published ASAP.  It shouldn't effect most examples as they have already been converted to program against an interface.
 
-Initial developement.
+**Initial developement.**
  - API of the type library and VBA COM wrapper classes may be altered during initial development.
  - Implemented the following C# COM Interlop wrappers of the .Net Framework 4.8.1 [DotNetLib type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib), see [DotNetLib.tlb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
      - [DateTime](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/DateTime.cs)
