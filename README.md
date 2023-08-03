@@ -8,7 +8,8 @@ Classes initally focussing on are [DateTime](https://learn.microsoft.com/en-us/d
  The API for the .Net class may be required to be altered due to VBA reserved words. See [reserved-word-list](https://www.engram9.info/access-2007-vba/reserved-word-list.html).
  
 **Status:**
-August 4th, 2023 Currently rewritting the type library and VBA DotNetLib wrappers to use the [Singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern).
+
+**August 4th, 2023** Currently rewritting the type library and VBA DotNetLib wrappers to use the [Singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern).
 Where static members are in a Factory/Singleton classs and instances will be programmed against an interface.  To be published in the ASAP.
 
 Initial developement.
