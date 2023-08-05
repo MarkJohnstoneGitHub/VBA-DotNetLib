@@ -1,13 +1,13 @@
-﻿using GSystem = global::System;
+﻿// https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=netframework-4.8.1
+// https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/DateTimeOffset.cs
+
+using GSystem = global::System;
 using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System;
 
 namespace DotNetLib.System
 {
-    // https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=netframework-4.8.1
-    // https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/DateTimeOffset.cs
-
     // TODO : Explict Interface Implementations
 
     [ComVisible(true)]
@@ -15,12 +15,13 @@ namespace DotNetLib.System
     [Guid("27660912-6101-4779-B4E0-24F2B164B334")]
     [ProgId("DotNetLib.System.DateTimeOffset")]
     [ClassInterface(ClassInterfaceType.None)]
-    public class DateTimeOffset : IComDateTimeOffset
+    public class DateTimeOffset : IDateTimeOffset, IDateTimeOffsetSingleton
     {
         private GSystem.DateTimeOffset dateTimeOffsetObject;
 
-        private static DateTimeOffset dtoMaxValue = new DateTimeOffset(GSystem.DateTimeOffset.MaxValue);
-        private static readonly DateTimeOffset dtoMinValue = new DateTimeOffset(GSystem.DateTimeOffset.MinValue);
+        // Static Fields
+        private static readonly IDateTimeOffset dtoMaxValue = new DateTimeOffset(GSystem.DateTimeOffset.MaxValue);
+        private static readonly IDateTimeOffset dtoMinValue = new DateTimeOffset(GSystem.DateTimeOffset.MinValue);
 
         // Constructors
 
@@ -64,39 +65,39 @@ namespace DotNetLib.System
             dateTimeOffsetObject = new GSystem.DateTimeOffset(year, month, day, hour, minute, second, millisecond, calendar, offset.TimeSpanObject);
         }
 
-        public DateTimeOffset CreateFromDateTime(DateTime dateTime)
+        public IDateTimeOffset CreateFromDateTime(DateTime pDateTime)
         {
-            return new DateTimeOffset(dateTime);
+            return new DateTimeOffset(pDateTime);
         }
 
-        public DateTimeOffset CreateFromDateTime2(DateTime dateTime, TimeSpan offset)
+        public IDateTimeOffset CreateFromDateTime2(DateTime pDateTime, TimeSpan pOffset)
         {
-            return new DateTimeOffset(dateTime, offset);
+            return new DateTimeOffset(pDateTime, pOffset);
         }
 
-        public DateTimeOffset CreateFromDateTimeParts(int year, int month, int day, int hour, int minute, int second, TimeSpan offset)
+        public IDateTimeOffset CreateFromDateTimeParts(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, TimeSpan pOffset)
         {
-            return new DateTimeOffset(year, month, day, hour, minute, second, offset);
+            return new DateTimeOffset(pYear, pMonth, pDay, pHour, pMinute, pSecond, pOffset);
         }
 
-        public DateTimeOffset CreateFromDateTimeParts2(int year, int month, int day, int hour, int minute, int second, int millisecond, TimeSpan offset)
+        public IDateTimeOffset CreateFromDateTimeParts2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, TimeSpan pOffset)
         {
-            return new DateTimeOffset(year, month, day, hour, minute, second, millisecond, offset);
+            return new DateTimeOffset(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pOffset);
         }
 
-        public DateTimeOffset CreateFromDateTimeParts3(int year, int month, int day, int hour, int minute, int second, int millisecond, GSystem.Globalization.Calendar calendar, TimeSpan offset)
+        public IDateTimeOffset CreateFromDateTimeParts3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, GSystem.Globalization.Calendar pCalendar, TimeSpan pOffset)
         {
-            return new DateTimeOffset(year, month, day, hour, minute, second, millisecond, calendar, offset);
+            return new DateTimeOffset(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pCalendar, pOffset);
         }
 
-        public DateTimeOffset CreateFromTicks(long ticks, TimeSpan offset)
+        public IDateTimeOffset CreateFromTicks(long pTicks, TimeSpan pOffset)
         {
-            return new DateTimeOffset(ticks, offset);
+            return new DateTimeOffset(pTicks, pOffset);
         }
 
         // Fields
-        public DateTimeOffset MaxValue => dtoMaxValue;
-        public DateTimeOffset MinValue => dtoMinValue;
+        public IDateTimeOffset MaxValue => dtoMaxValue;
+        public IDateTimeOffset MinValue => dtoMinValue;
 
         // Properties
 
@@ -106,12 +107,12 @@ namespace DotNetLib.System
         }
 
         //Note: Renamed to DateOnly to avoid issues with VBA reserved word Date
-        public DateTime DateOnly            
+        public IDateTime DateOnly            
         {
             get { return new DateTime(this.dateTimeOffsetObject.Date); }
         }
 
-        public DateTime DateTime
+        public IDateTime DateTime
         {
             get { return new DateTime(this.dateTimeOffsetObject.DateTime); }
         }
@@ -125,7 +126,7 @@ namespace DotNetLib.System
 
         public int Hour => this.dateTimeOffsetObject.Hour;
 
-        public DateTime LocalDateTime
+        public IDateTime LocalDateTime
         {
             get { return new DateTime(this.dateTimeOffsetObject.LocalDateTime); }
         }
@@ -136,12 +137,12 @@ namespace DotNetLib.System
 
         public int Month => this.dateTimeOffsetObject.Month;
 
-        public DateTimeOffset Now
+        public IDateTimeOffset Now
         {
             get { return new DateTimeOffset(GSystem.DateTimeOffset.Now); }
         }
 
-        public TimeSpan Offset
+        public ITimeSpan Offset
         {
             get { return new TimeSpan(this.dateTimeOffsetObject.Offset); }
         }
@@ -150,17 +151,17 @@ namespace DotNetLib.System
 
         public long Ticks => this.dateTimeOffsetObject.Ticks;
 
-        public TimeSpan TimeOfDay
+        public ITimeSpan TimeOfDay
         {
             get { return new TimeSpan(this.dateTimeOffsetObject.TimeOfDay); }
         }
 
-        public DateTime UtcDateTime
+        public IDateTime UtcDateTime
         {
             get { return new DateTime(this.dateTimeOffsetObject.UtcDateTime); }
         }
 
-        public DateTimeOffset UtcNow
+        public IDateTimeOffset UtcNow
         {
             get { return new DateTimeOffset(GSystem.DateTimeOffset.UtcNow); }
         }
@@ -171,47 +172,47 @@ namespace DotNetLib.System
 
         // Methods
 
-        public DateTimeOffset Add(TimeSpan timeSpan)
+        public IDateTimeOffset Add(TimeSpan ts)
         {
-            return new DateTimeOffset(this.dateTimeOffsetObject.Add(timeSpan.TimeSpanObject));
+            return new DateTimeOffset(this.dateTimeOffsetObject.Add(ts.TimeSpanObject));
         }
 
-        public DateTimeOffset AddDays(double days)
+        public IDateTimeOffset AddDays(double days)
         {
             return new DateTimeOffset(this.dateTimeOffsetObject.AddDays(days));
         }
 
-        public DateTimeOffset AddHours(double hours)
+        public IDateTimeOffset AddHours(double hours)
         {
             return new DateTimeOffset(this.dateTimeOffsetObject.AddHours(hours));
         }
 
-        public DateTimeOffset AddMilliseconds(double milliseconds)
+        public IDateTimeOffset AddMilliseconds(double pMilliseconds)
         {
-            return new DateTimeOffset(this.dateTimeOffsetObject.AddMilliseconds(milliseconds));
+            return new DateTimeOffset(this.dateTimeOffsetObject.AddMilliseconds(pMilliseconds));
         }
 
-        public DateTimeOffset AddMinutes(double minutes)
+        public IDateTimeOffset AddMinutes(double minutes)
         {
             return new DateTimeOffset(this.dateTimeOffsetObject.AddMinutes(minutes));
         }
 
-        public DateTimeOffset AddMonths(int months)
+        public IDateTimeOffset AddMonths(int months)
         {
             return new DateTimeOffset(this.dateTimeOffsetObject.AddMonths(months));
         }
 
-        public DateTimeOffset AddSeconds(double seconds)
+        public IDateTimeOffset AddSeconds(double pSeconds)
         {
-            return new DateTimeOffset(this.dateTimeOffsetObject.AddSeconds(seconds));
+            return new DateTimeOffset(this.dateTimeOffsetObject.AddSeconds(pSeconds));
         }
 
-        public DateTimeOffset AddTicks(long ticks)
+        public IDateTimeOffset AddTicks(long ticks)
         {
             return new DateTimeOffset(this.dateTimeOffsetObject.AddTicks(ticks));
         }
 
-        public DateTimeOffset AddYears(int years)
+        public IDateTimeOffset AddYears(int years)
         {
             return new DateTimeOffset(this.dateTimeOffsetObject.AddYears(years));
         }
@@ -223,12 +224,24 @@ namespace DotNetLib.System
 
         public int CompareTo(DateTimeOffset other)
         {
-            return this.dateTimeOffsetObject.CompareTo(other.dateTimeOffsetObject);
+            return this.dateTimeOffsetObject.CompareTo(other.DateTimeOffsetObject);
+        }
+
+        public int CompareTo2(object value)
+        {
+            const string Arg_MustBeDateTimeOffset = "Object must be of type (DateTimeOffset.";
+
+            if (value == null) return 1;
+            if (!(value is DateTimeOffset dto))
+            {
+                throw new ArgumentException(Arg_MustBeDateTimeOffset);
+            }
+            return this.CompareTo(dto);
         }
 
         public bool Equals(DateTimeOffset other)
         {
-            return this.dateTimeOffsetObject.Equals(other.dateTimeOffsetObject);
+            return this.dateTimeOffsetObject.Equals(other.DateTimeOffsetObject);
         }
 
         // Checks if this DateTimeOffset is equal to a given object. Returns
@@ -236,10 +249,9 @@ namespace DotNetLib.System
         // is equal to the value of this DateTimeOffset. Returns false
         // otherwise.
         //
-        // TODO : Check implementation
         public bool Equals2(object obj)
         {
-            return obj is DateTimeOffset && UtcDateTime.Equals(((DateTimeOffset)obj).UtcDateTime);
+            return obj is DateTimeOffset dto && this.dateTimeOffsetObject == dto.DateTimeOffsetObject;
         }
 
         public bool Equals3(DateTimeOffset first, DateTimeOffset second)
@@ -249,22 +261,22 @@ namespace DotNetLib.System
 
         public bool EqualsExact(DateTimeOffset other)
         {
-            return this.dateTimeOffsetObject.EqualsExact(other.dateTimeOffsetObject);
+            return this.dateTimeOffsetObject.EqualsExact(other.DateTimeOffsetObject);
         }
 
-        public DateTimeOffset FromFileTime(long fileTime)
+        public IDateTimeOffset FromFileTime(long fileTime)
         {
             return new DateTimeOffset(GSystem.DateTimeOffset.FromFileTime(fileTime));
         }
 
-        public DateTimeOffset FromUnixTimeMilliseconds(long milliseconds)
+        public IDateTimeOffset FromUnixTimeMilliseconds(long pMilliseconds)
         {
-            return new DateTimeOffset(GSystem.DateTimeOffset.FromUnixTimeMilliseconds(milliseconds));
+            return new DateTimeOffset(GSystem.DateTimeOffset.FromUnixTimeMilliseconds(pMilliseconds));
         }
 
-        public DateTimeOffset FromUnixTimeSeconds(long seconds)
+        public IDateTimeOffset FromUnixTimeSeconds(long pSeconds)
         {
-            return new DateTimeOffset(GSystem.DateTimeOffset.FromUnixTimeSeconds(seconds));
+            return new DateTimeOffset(GSystem.DateTimeOffset.FromUnixTimeSeconds(pSeconds));
         }
 
         public override int GetHashCode()
@@ -272,42 +284,42 @@ namespace DotNetLib.System
             return this.dateTimeOffsetObject.GetHashCode();
         }
 
-        public DateTimeOffset Parse(string input)
+        public IDateTimeOffset Parse(string input)
         {
             return new DateTimeOffset(GSystem.DateTimeOffset.Parse(input));
         }
 
-        public DateTimeOffset Parse2(string input, IFormatProvider formatProvider)
+        public IDateTimeOffset Parse2(string input, IFormatProvider formatProvider)
         {
             return new DateTimeOffset(GSystem.DateTimeOffset.Parse(input, formatProvider));
         }
 
-        public DateTimeOffset Parse3(string input, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles)
+        public IDateTimeOffset Parse3(string input, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles)
         {
             return new DateTimeOffset(GSystem.DateTimeOffset.Parse(input, formatProvider, styles));
         }
 
-        public DateTimeOffset ParseExact(string input, string format, IFormatProvider formatProvider)
+        public IDateTimeOffset ParseExact(string input, string format, IFormatProvider formatProvider)
         {
             return new DateTimeOffset(GSystem.DateTimeOffset.ParseExact(input, format, formatProvider));
         }
 
-        public DateTimeOffset ParseExact2(string input, string format, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles)
+        public IDateTimeOffset ParseExact2(string input, string format, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles)
         {
             return new DateTimeOffset(GSystem.DateTimeOffset.ParseExact(input, format, formatProvider, styles));
         }
 
-        public DateTimeOffset ParseExact3(string input, [In] ref string[] formats, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles)
+        public IDateTimeOffset ParseExact3(string input, [In] ref string[] formats, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles)
         {
             return new DateTimeOffset(GSystem.DateTimeOffset.ParseExact(input, formats, formatProvider, styles));
         }
 
-        public TimeSpan Subtract(DateTimeOffset value)
+        public ITimeSpan Subtract(DateTimeOffset value)
         {
-            return new TimeSpan(this.dateTimeOffsetObject.Subtract(value.dateTimeOffsetObject));
+            return new TimeSpan(this.dateTimeOffsetObject.Subtract(value.DateTimeOffsetObject));
         }
 
-        public DateTimeOffset Subtract2(TimeSpan value)
+        public IDateTimeOffset Subtract2(TimeSpan value)
         {
             return new DateTimeOffset(this.dateTimeOffsetObject.Subtract(value.TimeSpanObject));
         }
@@ -317,12 +329,12 @@ namespace DotNetLib.System
             return this.dateTimeOffsetObject.ToFileTime();
         }
 
-        public DateTimeOffset ToLocalTime()
+        public IDateTimeOffset ToLocalTime()
         {
             return new DateTimeOffset(this.dateTimeOffsetObject.ToLocalTime());
         }
 
-        public DateTimeOffset ToOffset(TimeSpan offset)
+        public IDateTimeOffset ToOffset(TimeSpan offset)
         {
             return new DateTimeOffset(this.dateTimeOffsetObject.ToOffset(offset.TimeSpanObject));
         }
@@ -347,7 +359,7 @@ namespace DotNetLib.System
             return this.dateTimeOffsetObject.ToString(format, formatProvider);
         }
 
-        public DateTimeOffset ToUniversalTime()
+        public IDateTimeOffset ToUniversalTime()
         {
             return new DateTimeOffset(this.dateTimeOffsetObject.ToUniversalTime());
         }
@@ -394,7 +406,7 @@ namespace DotNetLib.System
 
         // Operators
 
-        public DateTimeOffset Addition(DateTimeOffset dateTimeOffset, TimeSpan timeSpan)
+        public IDateTimeOffset Addition(DateTimeOffset dateTimeOffset, TimeSpan timeSpan)
         {
             return new DateTimeOffset(dateTimeOffset.DateTimeOffsetObject + timeSpan.TimeSpanObject);
         }
@@ -414,7 +426,7 @@ namespace DotNetLib.System
             return (left.DateTimeOffsetObject  >= right.DateTimeOffsetObject);
         }
 
-        public DateTimeOffset Implicit(DateTime dateTime) =>
+        public IDateTimeOffset Implicit(DateTime dateTime) =>
             new DateTimeOffset(dateTime);
 
         public bool Inequality(DateTimeOffset left, DateTimeOffset right)
@@ -432,18 +444,14 @@ namespace DotNetLib.System
             return (left.DateTimeOffsetObject <= right.DateTimeOffsetObject);
         }
 
-        public TimeSpan Subtraction(DateTimeOffset left, DateTimeOffset right)
+        public ITimeSpan Subtraction(DateTimeOffset left, DateTimeOffset right)
         {
             return new TimeSpan(left.DateTimeOffsetObject - right.DateTimeOffsetObject);
         }
 
-        public DateTimeOffset Subtraction2(DateTimeOffset dateTimeOffset, TimeSpan timeSpan)
+        public IDateTimeOffset Subtraction2(DateTimeOffset dateTimeOffset, TimeSpan timeSpan)
         {
             return new DateTimeOffset(dateTimeOffset.DateTimeOffsetObject - timeSpan.TimeSpanObject);
         }
-
-
     }
-
-
 }

@@ -4,9 +4,9 @@ Attribute VB_Name = "DateTimeOffsetEquals2Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 21, 2023
-'@LastModified July 31, 2023
+'@LastModified August 4, 2023
 
-'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.equals?view=net-7.0#system-datetimeoffset-equals(system-object)
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.equals?view=netframework-4.8.1#system-datetimeoffset-equals(system-object)
 
 Option Explicit
 

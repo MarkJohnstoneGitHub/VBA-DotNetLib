@@ -4,14 +4,13 @@ Attribute VB_Name = "DTOGreaterThanOrEqualExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 31, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.op_greaterthanorequal?view=netframework-4.8.1
 
 Option Explicit
 
 '@Description("The GreaterThan method defines the operation of the greater than or equal to operator for DateTimeOffset objects.")
-' It enables code such as the following:
 Public Sub DateTimeOffsetGreaterThanOrEqual()
 Attribute DateTimeOffsetGreaterThanOrEqual.VB_Description = "The GreaterThan method defines the operation of the greater than or equal to operator for DateTimeOffset objects."
     Dim date1 As IDateTimeOffset

@@ -8,50 +8,40 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Represents a time interval."
-'@IgnoreModule UnassignedVariableUsage, VariableNotAssigned
 'Rubberduck annotations
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
 '@ModuleDescription("Represents a time interval.")
 
+'@Singleton
+
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
-'@Version v1.0 July 09, 2023
-'@LastModified July 31, 2023
+'@Version v2.0 August 4, 2023
+'@LastModified August 4, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8.1
 
+'@Remarks
+' Singleton class for TimeSpan containing constructors and static members.
+
 Option Explicit
 
-Implements DotNetLib.ITimeSpan
-
 Private Type TTimeSpan
-   DotNetLibTimeSpan As DotNetLib.TimeSpan
+    TimeSpanSingleton As DotNetLib.ITimeSpanSingleton
 End Type
 
 Private this As TTimeSpan
 
 Private Sub Class_Initialize()
-   Set this.DotNetLibTimeSpan = New DotNetLib.TimeSpan
+    Set this.TimeSpanSingleton = New DotNetLib.TimeSpan
 End Sub
 
 Private Sub Class_Terminate()
-   Set this.DotNetLibTimeSpan = Nothing
+    Set this.TimeSpanSingleton = Nothing
 End Sub
-
-Friend Property Get ComObject() As DotNetLib.TimeSpan
-   Set ComObject = this.DotNetLibTimeSpan
-End Property
-
-Friend Property Set ComObject(ByVal objTimeSpan As DotNetLib.TimeSpan)
-   Set this.DotNetLibTimeSpan = objTimeSpan
-End Property
-
-Friend Property Get Self() As TimeSpan
-   Set Self = Me
-End Property
 
 '--------------------------------------------------------------------
 'Constructors
@@ -59,42 +49,30 @@ End Property
 
 '@Static
 '@Description("Initializes a new instance of the TimeSpan structure to the specified number of ticks.")
-Public Function CreateFromTicks(ByVal Ticks As LongLong) As TimeSpan
+Public Function CreateFromTicks(ByVal pTicks As LongLong) As DotNetLib.ITimeSpan
 Attribute CreateFromTicks.VB_Description = "Initializes a new instance of the TimeSpan structure to the specified number of ticks."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.CreateFromTicks(Ticks)
-      Set CreateFromTicks = .Self
-   End With
+    Set CreateFromTicks = this.TimeSpanSingleton.CreateFromTicks(pTicks)
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the TimeSpan structure to a specified number of hours, minutes, and seconds.")
-Public Function Create(ByVal Hours As Long, ByVal Minutes As Long, ByVal Seconds As Long) As TimeSpan
+Public Function Create(ByVal pHours As Long, ByVal pMinutes As Long, ByVal pSeconds As Long) As DotNetLib.ITimeSpan
 Attribute Create.VB_Description = "Initializes a new instance of the TimeSpan structure to a specified number of hours, minutes, and seconds."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Create(Hours, Minutes, Seconds)
-      Set Create = .Self
-   End With
+    Set Create = this.TimeSpanSingleton.Create(pHours, pMinutes, pSeconds)
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, and seconds.")
-Public Function Create2(ByVal Days As Long, ByVal Hours As Long, ByVal Minutes As Long, ByVal Seconds As Long) As TimeSpan
+Public Function Create2(ByVal pDays As Long, ByVal pHours As Long, ByVal pMinutes As Long, ByVal pSeconds As Long) As DotNetLib.ITimeSpan
 Attribute Create2.VB_Description = "Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, and seconds."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Create2(Days, Hours, Minutes, Seconds)
-      Set Create2 = .Self
-   End With
+    Set Create2 = this.TimeSpanSingleton.Create2(pDays, pHours, pMinutes, pSeconds)
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, seconds, and milliseconds.")
-Public Function Create3(ByVal Days As Long, ByVal Hours As Long, ByVal Minutes As Long, ByVal Seconds As Long, ByVal Milliseconds As Long) As TimeSpan
+Public Function Create3(ByVal pDays As Long, ByVal pHours As Long, ByVal pMinutes As Long, ByVal pSeconds As Long, ByVal pMilliseconds As Long) As DotNetLib.ITimeSpan
 Attribute Create3.VB_Description = "Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, seconds, and milliseconds."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Create3(Days, Hours, Minutes, Seconds, Milliseconds)
-      Set Create3 = .Self
-   End With
+    Set Create3 = this.TimeSpanSingleton.Create3(pDays, pHours, pMinutes, pSeconds, pMilliseconds)
 End Function
 
 '--------------------------------------------------------------------
@@ -103,431 +81,202 @@ End Function
 
 '@Static
 '@Description("Represents the maximum TimeSpan value. This field is read-only.")
-Public Property Get MaxValue() As TimeSpan
+Public Property Get MaxValue() As DotNetLib.ITimeSpan
 Attribute MaxValue.VB_Description = "Represents the maximum TimeSpan value. This field is read-only."
-   Set MaxValue = TimeSpanStatic.MaxValue
+    Set MaxValue = this.TimeSpanSingleton.MaxValue
 End Property
 
 '@Static
 '@Description("Represents the minimum TimeSpan value. This field is read-only.")
-Public Property Get MinValue() As TimeSpan
+Public Property Get MinValue() As DotNetLib.ITimeSpan
 Attribute MinValue.VB_Description = "Represents the minimum TimeSpan value. This field is read-only."
-   Set MinValue = TimeSpanStatic.MinValue
+    Set MinValue = this.TimeSpanSingleton.MinValue
 End Property
 
 '@Static
 '@Description("Represents the number of ticks in 1 day. This field is constant.")
 Public Property Get TicksPerDay() As LongLong
 Attribute TicksPerDay.VB_Description = "Represents the number of ticks in 1 day. This field is constant."
-   TicksPerDay = TimeSpanStatic.TicksPerDay
+    TicksPerDay = this.TimeSpanSingleton.TicksPerDay
 End Property
 
 '@Static
 '@Description("Represents the number of ticks in 1 hour. This field is constant.")
 Public Property Get TicksPerHour() As LongLong
 Attribute TicksPerHour.VB_Description = "Represents the number of ticks in 1 hour. This field is constant."
-   TicksPerHour = TimeSpanStatic.TicksPerHour()
+    TicksPerHour = this.TimeSpanSingleton.TicksPerHour()
 End Property
 
 '@Static
 '@Description("Represents the number of ticks in 1 millisecond. This field is constant.")
 Public Property Get TicksPerMillisecond() As LongLong
 Attribute TicksPerMillisecond.VB_Description = "Represents the number of ticks in 1 millisecond. This field is constant."
-   TicksPerMillisecond = TimeSpanStatic.TicksPerMillisecond()
+    TicksPerMillisecond = this.TimeSpanSingleton.TicksPerMillisecond()
 End Property
 
 '@Static
 '@Description("Represents the number of ticks in 1 minute. This field is constant.")
 Public Property Get TicksPerMinute() As LongLong
 Attribute TicksPerMinute.VB_Description = "Represents the number of ticks in 1 minute. This field is constant."
-   TicksPerMinute = TimeSpanStatic.TicksPerMinute()
+    TicksPerMinute = this.TimeSpanSingleton.TicksPerMinute()
 End Property
 
 '@Static
 '@Description("Represents the number of ticks in 1 second.")
 Public Property Get TicksPerSecond() As LongLong
 Attribute TicksPerSecond.VB_Description = "Represents the number of ticks in 1 second."
-   TicksPerSecond = TimeSpanStatic.TicksPerSecond
+    TicksPerSecond = this.TimeSpanSingleton.TicksPerSecond
 End Property
 
 '@Static
 '@Description("Represents the zero TimeSpan value. This field is read-only.")
-Public Property Get Zero() As TimeSpan
+Public Property Get Zero() As DotNetLib.ITimeSpan
 Attribute Zero.VB_Description = "Represents the zero TimeSpan value. This field is read-only."
-   Set Zero = TimeSpanStatic.Zero
-End Property
-
-'--------------------------------------------------------------------
-'Properties
-'--------------------------------------------------------------------
-
-'@Description("Gets the days component of the time interval represented by the current TimeSpan structure.")
-Public Property Get Days() As Long
-Attribute Days.VB_Description = "Gets the days component of the time interval represented by the current TimeSpan structure."
-   Days = this.DotNetLibTimeSpan.Days()
-End Property
-
-'@Description("Gets the hours component of the time interval represented by the current TimeSpan structure.")
-Public Property Get Hours() As Long
-Attribute Hours.VB_Description = "Gets the hours component of the time interval represented by the current TimeSpan structure."
-   Hours = this.DotNetLibTimeSpan.Hours()
-End Property
-
-'@Description("Gets the milliseconds component of the time interval represented by the current TimeSpan structure.")
-Public Property Get Milliseconds() As Long
-Attribute Milliseconds.VB_Description = "Gets the milliseconds component of the time interval represented by the current TimeSpan structure."
-   Milliseconds = this.DotNetLibTimeSpan.Milliseconds()
-End Property
-
-'@Description("Gets the minutes component of the time interval represented by the current TimeSpan structure.")
-Public Property Get Minutes() As Long
-Attribute Minutes.VB_Description = "Gets the minutes component of the time interval represented by the current TimeSpan structure."
-   Minutes = this.DotNetLibTimeSpan.Minutes()
-End Property
-
-'@Description("Gets the seconds component of the time interval represented by the current TimeSpan structure.")
-Public Property Get Seconds() As Long
-Attribute Seconds.VB_Description = "Gets the seconds component of the time interval represented by the current TimeSpan structure."
-   Seconds = this.DotNetLibTimeSpan.Seconds()
-End Property
-
-'@Description("Gets the number of ticks that represent the value of the current TimeSpan structure.")
-Public Property Get Ticks() As LongLong
-Attribute Ticks.VB_Description = "Gets the number of ticks that represent the value of the current TimeSpan structure."
-   Ticks = this.DotNetLibTimeSpan.Ticks()
-End Property
-
-'@Description("Gets the value of the current TimeSpan structure expressed in whole and fractional days.")
-Public Property Get TotalDays() As Double
-Attribute TotalDays.VB_Description = "Gets the value of the current TimeSpan structure expressed in whole and fractional days."
-   TotalDays = this.DotNetLibTimeSpan.TotalDays()
-End Property
-
-'@Description("Gets the value of the current TimeSpan structure expressed in whole and fractional hours.")
-Public Property Get TotalHours() As Double
-Attribute TotalHours.VB_Description = "Gets the value of the current TimeSpan structure expressed in whole and fractional hours."
-   TotalHours = this.DotNetLibTimeSpan.TotalHours()
-End Property
-
-'@Description("Gets the value of the current TimeSpan structure expressed in whole and fractional milliseconds.")
-Public Property Get TotalMilliseconds() As Double
-Attribute TotalMilliseconds.VB_Description = "Gets the value of the current TimeSpan structure expressed in whole and fractional milliseconds."
-   TotalMilliseconds = this.DotNetLibTimeSpan.TotalMilliseconds()
-End Property
-
-'@Description("Gets the value of the current TimeSpan structure expressed in whole and fractional minutes.")
-Public Property Get TotalMinutes() As Double
-Attribute TotalMinutes.VB_Description = "Gets the value of the current TimeSpan structure expressed in whole and fractional minutes."
-   TotalMinutes = this.DotNetLibTimeSpan.TotalMinutes()
-End Property
-
-'@Description("Gets the value of the current TimeSpan structure expressed in whole and fractional seconds.")
-Public Property Get TotalSeconds() As Double
-Attribute TotalSeconds.VB_Description = "Gets the value of the current TimeSpan structure expressed in whole and fractional seconds."
-   TotalSeconds = this.DotNetLibTimeSpan.TotalSeconds()
+    Set Zero = this.TimeSpanSingleton.Zero
 End Property
 
 '--------------------------------------------------------------------
 'Methods
 '--------------------------------------------------------------------
 
-'@Description("Returns a new TimeSpan object whose value is the sum of the specified TimeSpan object and this instance.")
-Public Function Add(ByVal ts As TimeSpan) As TimeSpan
-Attribute Add.VB_Description = "Returns a new TimeSpan object whose value is the sum of the specified TimeSpan object and this instance."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Add(ts.ComObject)
-      Set Add = .Self
-   End With
-End Function
-
 '@Static
 '@Description("Compares two TimeSpan values and returns an integer that indicates whether the first value is shorter than, equal to, or longer than the second value.")
-Public Function Compare(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As Long
+Public Function Compare(ByVal t1 As DotNetLib.TimeSpan, ByVal t2 As DotNetLib.TimeSpan) As Long
 Attribute Compare.VB_Description = "Compares two TimeSpan values and returns an integer that indicates whether the first value is shorter than, equal to, or longer than the second value."
-   Compare = this.DotNetLibTimeSpan.Compare(t1.ComObject, t2.ComObject)
-End Function
-
-'@Description("Compares this instance to a specified TimeSpan object and returns an integer that indicates whether this instance is shorter than, equal to, or longer than the TimeSpan object.")
-Public Function CompareTo(ByVal value As TimeSpan) As Long
-Attribute CompareTo.VB_Description = "Compares this instance to a specified TimeSpan object and returns an integer that indicates whether this instance is shorter than, equal to, or longer than the TimeSpan object."
-   CompareTo = this.DotNetLibTimeSpan.CompareTo(value.ComObject)
-End Function
-
-'@Description("Compares this instance to a specified object and returns an integer that indicates whether this instance is shorter than, equal to, or longer than the specified object.")
-Public Function CompareTo2(ByVal value As Variant) As Long
-Attribute CompareTo2.VB_Description = "Compares this instance to a specified object and returns an integer that indicates whether this instance is shorter than, equal to, or longer than the specified object."
-   CompareTo2 = this.DotNetLibTimeSpan.CompareTo2(value)
-End Function
-
-'@Description("Returns a new TimeSpan object whose value is the absolute value of the current TimeSpan object.")
-Public Function Duration() As TimeSpan
-Attribute Duration.VB_Description = "Returns a new TimeSpan object whose value is the absolute value of the current TimeSpan object."
-    With New TimeSpan
-        Set .ComObject = this.DotNetLibTimeSpan.Duration()
-        Set Duration = .Self
-    End With
-End Function
-
-'@Description("Returns a value indicating whether this instance is equal to a specified TimeSpan object.")
-Public Function Equals(ByVal value As TimeSpan) As Boolean
-Attribute Equals.VB_Description = "Returns a value indicating whether this instance is equal to a specified TimeSpan object."
-    Equals = this.DotNetLibTimeSpan.Equals(value.ComObject)
-End Function
-
-'@Override
-'@Description("Returns a value indicating whether this instance is equal to a specified object.")
-Public Function Equals2(ByVal value As Variant) As Boolean
-Attribute Equals2.VB_Description = "Returns a value indicating whether this instance is equal to a specified object."
-    If Not value Is Nothing Then
-        If TypeOf value Is TimeSpan Then
-            Dim tsValue As TimeSpan
-            Set tsValue = value
-            Equals2 = this.DotNetLibTimeSpan.Equals(tsValue.ComObject)
-        End If
-   End If
+    Compare = this.TimeSpanSingleton.Compare(t1, t2)
 End Function
 
 '@Static
 '@Description("Returns a value that indicates whether two specified instances of TimeSpan are equal.")
-Public Function Equals3(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As Boolean
+Public Function Equals3(ByVal t1 As DotNetLib.TimeSpan, ByVal t2 As DotNetLib.TimeSpan) As Boolean
 Attribute Equals3.VB_Description = "Returns a value that indicates whether two specified instances of TimeSpan are equal."
-   Equals3 = this.DotNetLibTimeSpan.Equals3(t1.ComObject, t2.ComObject)
+    Equals3 = this.TimeSpanSingleton.Equals3(t1, t2)
 End Function
 
 '@Static
 '@Description("Returns a TimeSpan that represents a specified number of days, where the specification is accurate to the nearest millisecond.")
-Public Function FromDays(ByVal value As Double) As TimeSpan
+Public Function FromDays(ByVal value As Double) As DotNetLib.ITimeSpan
 Attribute FromDays.VB_Description = "Returns a TimeSpan that represents a specified number of days, where the specification is accurate to the nearest millisecond."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.FromDays(value)
-      Set FromDays = .Self
-   End With
+    Set FromDays = this.TimeSpanSingleton.FromDays(value)
 End Function
 
 '@Static
 '@Description("Returns a TimeSpan that represents a specified number of hours, where the specification is accurate to the nearest millisecond.")
-Public Function FromHours(ByVal value As Double) As TimeSpan
+Public Function FromHours(ByVal value As Double) As DotNetLib.ITimeSpan
 Attribute FromHours.VB_Description = "Returns a TimeSpan that represents a specified number of hours, where the specification is accurate to the nearest millisecond."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.FromHours(value)
-      Set FromHours = .Self
-   End With
+    Set FromHours = this.TimeSpanSingleton.FromHours(value)
 End Function
 
 '@Static
 '@Description("Returns a TimeSpan that represents a specified number of milliseconds.")
-Public Function FromMilliseconds(ByVal value As Double) As TimeSpan
+Public Function FromMilliseconds(ByVal value As Double) As DotNetLib.ITimeSpan
 Attribute FromMilliseconds.VB_Description = "Returns a TimeSpan that represents a specified number of milliseconds."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.FromMilliseconds(value)
-      Set FromMilliseconds = .Self
-   End With
+    Set FromMilliseconds = this.TimeSpanSingleton.FromMilliseconds(value)
 End Function
 
 '@Static
 '@Description("Returns a TimeSpan that represents a specified number of minutes, where the specification is accurate to the nearest millisecond.")
-Public Function FromMinutes(ByVal value As Double) As TimeSpan
+Public Function FromMinutes(ByVal value As Double) As DotNetLib.ITimeSpan
 Attribute FromMinutes.VB_Description = "Returns a TimeSpan that represents a specified number of minutes, where the specification is accurate to the nearest millisecond."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.FromMinutes(value)
-      Set FromMinutes = .Self
-   End With
+    Set FromMinutes = this.TimeSpanSingleton.FromMinutes(value)
 End Function
 
 '@Static
 '@Description("Returns a TimeSpan that represents a specified number of seconds, where the specification is accurate to the nearest millisecond.")
-Public Function FromSeconds(ByVal value As Double) As TimeSpan
+Public Function FromSeconds(ByVal value As Double) As DotNetLib.ITimeSpan
 Attribute FromSeconds.VB_Description = "Returns a TimeSpan that represents a specified number of seconds, where the specification is accurate to the nearest millisecond."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.FromSeconds(value)
-      Set FromSeconds = .Self
-   End With
+    Set FromSeconds = this.TimeSpanSingleton.FromSeconds(value)
 End Function
 
 '@Static
 '@Description("Returns a TimeSpan that represents a specified time, where the specification is in units of ticks.")
-Public Function FromTicks(ByVal value As LongLong) As TimeSpan
+Public Function FromTicks(ByVal value As LongLong) As DotNetLib.ITimeSpan
 Attribute FromTicks.VB_Description = "Returns a TimeSpan that represents a specified time, where the specification is in units of ticks."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.FromTicks(value)
-      Set FromTicks = .Self
-   End With
-End Function
-
-'@Description("Returns a hash code for this instance.")
-Public Function GetHashCode() As Long
-Attribute GetHashCode.VB_Description = "Returns a hash code for this instance."
-   GetHashCode = this.DotNetLibTimeSpan.GetHashCode()
-End Function
-
-'@Description("Returns a new TimeSpan object whose value is the negated value of this instance.")
-Public Function Negate() As TimeSpan
-Attribute Negate.VB_Description = "Returns a new TimeSpan object whose value is the negated value of this instance."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Negate()
-      Set Negate = .Self
-   End With
+    Set FromTicks = this.TimeSpanSingleton.FromTicks(value)
 End Function
 
 '@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent.")
-Public Function Parse(ByVal s As String) As TimeSpan
+Public Function Parse(ByVal s As String) As DotNetLib.ITimeSpan
 Attribute Parse.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Parse(s)
-      Set Parse = .Self
-   End With
+    Set Parse = this.TimeSpanSingleton.Parse(s)
 End Function
 
 '@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific format information.")
-Public Function Parse2(ByVal strInput As String, ByVal formatProvider As IFormatProvider) As TimeSpan
+Public Function Parse2(ByVal strInput As String, ByVal formatProvider As IFormatProvider) As DotNetLib.ITimeSpan
 Attribute Parse2.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific format information."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Parse2(strInput, formatProvider)
-      Set Parse2 = .Self
-   End With
+    Set Parse2 = this.TimeSpanSingleton.Parse2(strInput, formatProvider)
 End Function
 
 '@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")
-Public Function ParseExact(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider) As TimeSpan
+Public Function ParseExact(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider) As DotNetLib.ITimeSpan
 Attribute ParseExact.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.ParseExact(strInput, Format, formatProvider)
-      Set ParseExact = .Self
-   End With
+    Set ParseExact = this.TimeSpanSingleton.ParseExact(strInput, Format, formatProvider)
 End Function
 
 '@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified array of format strings and culture-specific format information. The format of the string representation must match one of the specified formats exactly.")
-Public Function ParseExact2(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider) As TimeSpan
+Public Function ParseExact2(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider) As DotNetLib.ITimeSpan
 Attribute ParseExact2.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified array of format strings and culture-specific format information. The format of the string representation must match one of the specified formats exactly."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.ParseExact2(strInput, formats, formatProvider)
-      Set ParseExact2 = .Self
-   End With
+    Set ParseExact2 = this.TimeSpanSingleton.ParseExact2(strInput, formats, formatProvider)
 End Function
 
 '@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information, and styles. The format of the string representation must match the specified format exactly.")
-Public Function ParseExact3(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles) As TimeSpan
+Public Function ParseExact3(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles) As DotNetLib.ITimeSpan
 Attribute ParseExact3.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information, and styles. The format of the string representation must match the specified format exactly."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.ParseExact3(strInput, Format, formatProvider, styles)
-      Set ParseExact3 = .Self
-   End With
+    Set ParseExact3 = this.TimeSpanSingleton.ParseExact3(strInput, Format, formatProvider, styles)
 End Function
 
 '@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information, and styles. The format of the string representation must match one of the specified formats exactly")
-Public Function ParseExact4(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles) As TimeSpan
+Public Function ParseExact4(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles) As DotNetLib.ITimeSpan
 Attribute ParseExact4.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information, and styles. The format of the string representation must match one of the specified formats exactly"
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.ParseExact4(strInput, formats, formatProvider, styles)
-      Set ParseExact4 = .Self
-   End With
-End Function
-
-'@Description("Returns a new TimeSpan object whose value is the difference between the specified TimeSpan object and this instance.")
-Public Function Subtract(ByVal ts As TimeSpan) As TimeSpan
-Attribute Subtract.VB_Description = "Returns a new TimeSpan object whose value is the difference between the specified TimeSpan object and this instance."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Subtract(ts.ComObject)
-      Set Subtract = .Self
-   End With
-End Function
-
-'@DefaultMember
-'@Description("Converts the value of the current TimeSpan object to its equivalent string representation.")
-Public Property Get ToString() As String
-Attribute ToString.VB_Description = "Converts the value of the current TimeSpan object to its equivalent string representation."
-Attribute ToString.VB_UserMemId = 0
-   ToString = this.DotNetLibTimeSpan.ToString()
-End Property
-
-'@Description("Converts the value of the current TimeSpan object to its equivalent string representation by using the specified format.")
-Public Function ToString2(ByVal Format As String) As String
-Attribute ToString2.VB_Description = "Converts the value of the current TimeSpan object to its equivalent string representation by using the specified format."
-   ToString2 = this.DotNetLibTimeSpan.ToString2(Format)
-End Function
-
-'@Description("Converts the value of the current TimeSpan object to its equivalent string representation by using the specified format and culture-specific formatting information.")
-Public Function ToString3(ByVal Format As String, ByVal formatProvider As IFormatProvider) As String
-Attribute ToString3.VB_Description = "Converts the value of the current TimeSpan object to its equivalent string representation by using the specified format and culture-specific formatting information."
-   ToString3 = this.DotNetLibTimeSpan.ToString3(Format, formatProvider)
+    Set ParseExact4 = this.TimeSpanSingleton.ParseExact4(strInput, formats, formatProvider, styles)
 End Function
 
 '@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent and returns a value that indicates whether the conversion succeeded.")
-Public Function TryParse(ByVal s As String, ByRef result As TimeSpan) As Boolean
+Public Function TryParse(ByVal s As String, ByRef result As DotNetLib.TimeSpan) As Boolean
 Attribute TryParse.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent and returns a value that indicates whether the conversion succeeded."
-   Dim outResult As DotNetLib.TimeSpan
-   TryParse = this.DotNetLibTimeSpan.TryParse(s, outResult)
-   With New TimeSpan
-      Set .ComObject = outResult
-      Set result = .Self
-   End With
+    TryParse = this.TimeSpanSingleton.TryParse(s, result)
 End Function
 
 '@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific formatting information, and returns a value that indicates whether the conversion succeeded.")
-Public Function TryParse2(ByVal strInput As String, ByVal formatProvider As IFormatProvider, ByRef result As TimeSpan) As Boolean
+Public Function TryParse2(ByVal strInput As String, ByVal formatProvider As IFormatProvider, ByRef result As DotNetLib.TimeSpan) As Boolean
 Attribute TryParse2.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific formatting information, and returns a value that indicates whether the conversion succeeded."
-   Dim outResult As DotNetLib.TimeSpan
-   TryParse2 = this.DotNetLibTimeSpan.TryParse2(strInput, formatProvider, outResult)
-   With New TimeSpan
-      Set .ComObject = outResult
-      Set result = .Self
-   End With
+    TryParse2 = this.TimeSpanSingleton.TryParse2(strInput, formatProvider, result)
 End Function
 
 '@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")
-Public Function TryParseExact(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByRef result As TimeSpan) As Boolean
+Public Function TryParseExact(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByRef result As DotNetLib.TimeSpan) As Boolean
 Attribute TryParseExact.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly."
-   Dim outResult As DotNetLib.TimeSpan
-   TryParseExact = this.DotNetLibTimeSpan.TryParseExact(strInput, Format, formatProvider, outResult)
-   With New TimeSpan
-      Set .ComObject = outResult
-      Set result = .Self
-   End With
+    TryParseExact = this.TimeSpanSingleton.TryParseExact(strInput, Format, formatProvider, result)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a time interval to its TimeSpan equivalent by using the specified formats and culture-specific format information. The format of the string representation must match one of the specified formats exactly.")
-Public Function TryParseExact2(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByRef result As TimeSpan) As Boolean
+Public Function TryParseExact2(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByRef result As DotNetLib.TimeSpan) As Boolean
 Attribute TryParseExact2.VB_Description = "Converts the specified string representation of a time interval to its TimeSpan equivalent by using the specified formats and culture-specific format information. The format of the string representation must match one of the specified formats exactly."
-   Dim outResult As DotNetLib.TimeSpan
-   TryParseExact2 = this.DotNetLibTimeSpan.TryParseExact2(strInput, formats, formatProvider, outResult)
-   With New TimeSpan
-      Set .ComObject = outResult
-      Set result = .Self
-   End With
+    TryParseExact2 = this.TimeSpanSingleton.TryParseExact2(strInput, formats, formatProvider, result)
 End Function
 
 '@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information and styles. The format of the string representation must match the specified format exactly.")
-Public Function TryParseExact3(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles, ByRef result As TimeSpan) As Boolean
+Public Function TryParseExact3(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles, ByRef result As DotNetLib.TimeSpan) As Boolean
 Attribute TryParseExact3.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information and styles. The format of the string representation must match the specified format exactly."
-   Dim outResult As DotNetLib.TimeSpan
-   TryParseExact3 = this.DotNetLibTimeSpan.TryParseExact3(strInput, Format, formatProvider, styles, outResult)
-   With New TimeSpan
-      Set .ComObject = outResult
-      Set result = .Self
-   End With
+    TryParseExact3 = this.TimeSpanSingleton.TryParseExact3(strInput, Format, formatProvider, styles, result)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information and styles. The format of the string representation must match one of the specified formats exactly.")
-Public Function TryParseExact4(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles, ByRef result As TimeSpan) As Boolean
+Public Function TryParseExact4(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles, ByRef result As DotNetLib.TimeSpan) As Boolean
 Attribute TryParseExact4.VB_Description = "Converts the specified string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information and styles. The format of the string representation must match one of the specified formats exactly."
-   Dim outResult As DotNetLib.TimeSpan
-   TryParseExact4 = this.DotNetLibTimeSpan.TryParseExact4(strInput, formats, formatProvider, styles, outResult)
-   With New TimeSpan
-      Set .ComObject = outResult
-      Set result = .Self
-   End With
+    TryParseExact4 = this.TimeSpanSingleton.TryParseExact4(strInput, formats, formatProvider, styles, result)
 End Function
 
 '--------------------------------------------------------------------
@@ -536,171 +285,70 @@ End Function
 
 '@Static
 '@Description("Adds two specified TimeSpan instances.")
-Public Function Addition(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As TimeSpan
+Public Function Addition(ByVal t1 As DotNetLib.TimeSpan, ByVal t2 As DotNetLib.TimeSpan) As DotNetLib.ITimeSpan
 Attribute Addition.VB_Description = "Adds two specified TimeSpan instances."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Addition(t1.ComObject, t2.ComObject)
-      Set Addition = .Self
-   End With
+    Set Addition = this.TimeSpanSingleton.Addition(t1, t2)
 End Function
 
 '@Static
 '@Description("Indicates whether two TimeSpan instances are equal.")
-Public Function Equality(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As Boolean
+Public Function Equality(ByVal t1 As DotNetLib.TimeSpan, ByVal t2 As DotNetLib.TimeSpan) As Boolean
 Attribute Equality.VB_Description = "Indicates whether two TimeSpan instances are equal."
-   Equality = this.DotNetLibTimeSpan.Equality(t1.ComObject, t2.ComObject)
+    Equality = this.TimeSpanSingleton.Equality(t1, t2)
 End Function
 
 '@Static
 '@Description("Indicates whether a specified TimeSpan is greater than another specified TimeSpan.")
-Public Function GreaterThan(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As Boolean
+Public Function GreaterThan(ByVal t1 As DotNetLib.TimeSpan, ByVal t2 As DotNetLib.TimeSpan) As Boolean
 Attribute GreaterThan.VB_Description = "Indicates whether a specified TimeSpan is greater than another specified TimeSpan."
-   GreaterThan = this.DotNetLibTimeSpan.GreaterThan(t1.ComObject, t2.ComObject)
+    GreaterThan = this.TimeSpanSingleton.GreaterThan(t1, t2)
 End Function
 
 '@Static
 '@Description("Indicates whether a specified TimeSpan is greater than or equal to another specified TimeSpan.")
-Public Function GreaterThanOrEqual(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As Boolean
+Public Function GreaterThanOrEqual(ByVal t1 As DotNetLib.TimeSpan, ByVal t2 As DotNetLib.TimeSpan) As Boolean
 Attribute GreaterThanOrEqual.VB_Description = "Indicates whether a specified TimeSpan is greater than or equal to another specified TimeSpan."
-   GreaterThanOrEqual = this.DotNetLibTimeSpan.GreaterThanOrEqual(t1.ComObject, t2.ComObject)
+    GreaterThanOrEqual = this.TimeSpanSingleton.GreaterThanOrEqual(t1, t2)
 End Function
 
 '@Static
 '@Description("Indicates whether two TimeSpan instances are not equal.")
-Public Function Inequality(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As Boolean
+Public Function Inequality(ByVal t1 As DotNetLib.TimeSpan, ByVal t2 As DotNetLib.TimeSpan) As Boolean
 Attribute Inequality.VB_Description = "Indicates whether two TimeSpan instances are not equal."
-   Inequality = this.DotNetLibTimeSpan.Inequality(t1.ComObject, t2.ComObject)
+    Inequality = this.TimeSpanSingleton.Inequality(t1, t2)
 End Function
 
 '@Static
 '@Description("Indicates whether a specified TimeSpan is less than another specified TimeSpan.")
-Public Function LessThan(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As Boolean
+Public Function LessThan(ByVal t1 As DotNetLib.TimeSpan, ByVal t2 As DotNetLib.TimeSpan) As Boolean
 Attribute LessThan.VB_Description = "Indicates whether a specified TimeSpan is less than another specified TimeSpan."
-   LessThan = this.DotNetLibTimeSpan.LessThan(t1.ComObject, t2.ComObject)
+    LessThan = this.TimeSpanSingleton.LessThan(t1, t2)
 End Function
 
 '@Static
 '@Description("Indicates whether a specified TimeSpan is less than or equal to another specified TimeSpan.")
-Public Function LessThanOrEqual(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As Boolean
+Public Function LessThanOrEqual(ByVal t1 As DotNetLib.TimeSpan, ByVal t2 As DotNetLib.TimeSpan) As Boolean
 Attribute LessThanOrEqual.VB_Description = "Indicates whether a specified TimeSpan is less than or equal to another specified TimeSpan."
-   LessThanOrEqual = this.DotNetLibTimeSpan.LessThanOrEqual(t1.ComObject, t2.ComObject)
+    LessThanOrEqual = this.TimeSpanSingleton.LessThanOrEqual(t1, t2)
 End Function
 
 '@Static
 '@Description("Subtracts a specified TimeSpan from another specified TimeSpan.")
-Public Function Subtraction(ByVal t1 As TimeSpan, ByVal t2 As TimeSpan) As TimeSpan
+Public Function Subtraction(ByVal t1 As DotNetLib.TimeSpan, ByVal t2 As DotNetLib.TimeSpan) As DotNetLib.ITimeSpan
 Attribute Subtraction.VB_Description = "Subtracts a specified TimeSpan from another specified TimeSpan."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.Subtraction(t1.ComObject, t2.ComObject)
-      Set Subtraction = .Self
-   End With
+    Set Subtraction = this.TimeSpanSingleton.Subtraction(t1, t2)
 End Function
 
 '@Static
 '@Description("Returns a TimeSpan whose value is the negated value of the specified instance.")
-Public Function UnaryNegation(ByVal T As TimeSpan) As TimeSpan
+Public Function UnaryNegation(ByVal ts As DotNetLib.TimeSpan) As DotNetLib.ITimeSpan
 Attribute UnaryNegation.VB_Description = "Returns a TimeSpan whose value is the negated value of the specified instance."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.UnaryNegation(T.ComObject)
-      Set UnaryNegation = .Self
-   End With
+    Set UnaryNegation = this.TimeSpanSingleton.UnaryNegation(ts)
 End Function
 
 '@Static
 '@Description("Returns the specified instance of TimeSpan.")
-Public Function UnaryPlus(ByVal T As TimeSpan) As TimeSpan
+Public Function UnaryPlus(ByVal ts As DotNetLib.TimeSpan) As DotNetLib.ITimeSpan
 Attribute UnaryPlus.VB_Description = "Returns the specified instance of TimeSpan."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibTimeSpan.UnaryPlus(T.ComObject)
-      Set UnaryPlus = .Self
-   End With
+    Set UnaryPlus = this.TimeSpanSingleton.UnaryPlus(ts)
 End Function
-
-'--------------------------------------------------------------------
-'Interface DotNetLib.ITimeSpan
-'--------------------------------------------------------------------
-
-Private Property Get ITimeSpan_Days() As Long
-    ITimeSpan_Days = Days
-End Property
-
-Private Property Get ITimeSpan_Hours() As Long
-    ITimeSpan_Hours = Hours
-End Property
-
-Private Property Get ITimeSpan_Milliseconds() As Long
-    ITimeSpan_Milliseconds = Milliseconds
-End Property
-
-Private Property Get ITimeSpan_Minutes() As Long
-    ITimeSpan_Minutes = Minutes
-End Property
-
-Private Property Get ITimeSpan_Seconds() As Long
-    ITimeSpan_Seconds = Seconds
-End Property
-
-Private Property Get ITimeSpan_Ticks() As LongLong
-    ITimeSpan_Ticks = Ticks
-End Property
-
-Private Property Get ITimeSpan_TotalDays() As Double
-    ITimeSpan_TotalDays = TotalDays
-End Property
-
-Private Property Get ITimeSpan_TotalHours() As Double
-    ITimeSpan_TotalHours = TotalHours
-End Property
-
-Private Property Get ITimeSpan_TotalMilliseconds() As Double
-    ITimeSpan_TotalMilliseconds = TotalMilliseconds
-End Property
-
-Private Property Get ITimeSpan_TotalMinutes() As Double
-    ITimeSpan_TotalMinutes = TotalMinutes
-End Property
-
-Private Property Get ITimeSpan_TotalSeconds() As Double
-    ITimeSpan_TotalSeconds = TotalSeconds
-End Property
-
-Private Function ITimeSpan_Add(ByVal ts As ITimeSpan) As ITimeSpan
-    Set ITimeSpan_Add = Add(ts)
-End Function
-
-Private Function ITimeSpan_CompareTo(ByVal value As ITimeSpan) As Long
-    ITimeSpan_CompareTo = CompareTo(value)
-End Function
-
-Private Function ITimeSpan_Duration() As ITimeSpan
-    Set ITimeSpan_Duration = Duration()
-End Function
-
-Private Function ITimeSpan_Equals(ByVal value As ITimeSpan) As Boolean
-    ITimeSpan_Equals = Equals(value)
-End Function
-
-Private Function ITimeSpan_GetHashCode() As Long
-    ITimeSpan_GetHashCode = GetHashCode()
-End Function
-
-Private Function ITimeSpan_Negate() As ITimeSpan
-    Set ITimeSpan_Negate = Negate()
-End Function
-
-Private Function ITimeSpan_Subtract(ByVal ts As ITimeSpan) As ITimeSpan
-    Set ITimeSpan_Subtract = Subtract(ts)
-End Function
-
-Private Property Get ITimeSpan_ToString() As String
-    ITimeSpan_ToString = ToString
-End Property
-
-Private Function ITimeSpan_ToString2(ByVal Format As String) As String
-    ITimeSpan_ToString2 = ToString2(Format)
-End Function
-
-Private Function ITimeSpan_ToString3(ByVal Format As String, ByVal formatProvider As IFormatProvider) As String
-    ITimeSpan_ToString3 = ToString3(Format, formatProvider)
-End Function
-

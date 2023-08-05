@@ -1,9 +1,10 @@
 Attribute VB_Name = "DateTimeDaysInMonthExample"
 '@Folder("VBADotNetLib.Examples.DateTime.Methods")
 
-'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Author Mark Johnstone
+'@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 10, 2023
-'@LastModified July 30, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.daysinmonth?view=netframework-4.8.1#examples
 

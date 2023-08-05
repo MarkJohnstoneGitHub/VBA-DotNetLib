@@ -13,12 +13,12 @@ Option Explicit
 '@Description("The following example retrieves a collection of time zone objects that represent the time zones defined on a computer.")
 Public Sub TimeZoneInfoGetSystemTimeZones()
 Attribute TimeZoneInfoGetSystemTimeZones.VB_Description = "The following example retrieves a collection of time zone objects that represent the time zones defined on a computer."
-    Dim timeZones As IReadOnlyCollection
+    Dim timeZones As ReadOnlyCollection
     Set timeZones = TimeZoneInfo.GetSystemTimeZones()
     
     Dim varTimeZone As Variant
     For Each varTimeZone In timeZones
-        Dim timeZone As DotNetLib.TimeZoneInfo
+        Dim timeZone As ITimeZoneInfo
         Set timeZone = varTimeZone
         Dim hasDST As Boolean
         hasDST = timeZone.SupportsDaylightSavingTime

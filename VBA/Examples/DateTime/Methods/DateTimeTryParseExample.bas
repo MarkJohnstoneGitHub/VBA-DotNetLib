@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeTryParseExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 14, 2023
-'@LastModified July 30, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tryparse?view=netframework-4.8.1
 
@@ -21,15 +21,17 @@ Attribute DateTimeTryParse.VB_Description = "The following example passes a numb
                                  "Fri, 15 May 2009 20:10:57 GMT")
    
    'Debug.Print "Attempting to parse strings using " & CultureInfo.CurrentCulture.Name
-   Dim dateValue As IDateTime
-   Dim dateString As Variant
-   For Each dateString In dateStrings
-      If (DateTime.TryParse(dateString, dateValue)) Then
-         Debug.Print "  Converted '" & dateString & "' to " & dateValue.ToString() & " (" & dateValue.Kind & ")"
-      Else
-         Debug.Print "  Unable to parse '" & dateString & "'."
-      End If
-   Next
+    Dim dateValue As IDateTime
+    Dim dateString As Variant
+    For Each dateString In dateStrings
+        If (DateTime.TryParse(dateString, dateValue)) Then
+              Debug.Print "  Converted '" & dateString & "' to " & _
+                        dateValue.ToString() & _
+                        " (" & DateTimeKindHelper.ToString(dateValue.Kind) & ")"
+        Else
+           Debug.Print "  Unable to parse '" & dateString & "'."
+        End If
+    Next
 End Sub
 
 ' The example displays output like the following:

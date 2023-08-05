@@ -4,13 +4,13 @@ Attribute VB_Name = "DateTimeParseExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 12, 2023
-'@LastModified July 30, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.parse?view=netframework-4.8.1#system-datetime-parse(system-string)
 
 '@Notes
 ' https://stackoverflow.com/questions/44638867/vba-excel-try-catch
-' FormatException Err.Number -2146233033 See enum ResourceKey
+' FormatException Err.Number -2146233033 See enum COMHResult
 
 Option Explicit
 

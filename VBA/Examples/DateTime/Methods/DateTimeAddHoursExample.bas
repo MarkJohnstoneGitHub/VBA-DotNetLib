@@ -2,9 +2,10 @@ Attribute VB_Name = "DateTimeAddHoursExample"
 'Rubberduck annotations
 '@Folder "VBADotNetLib.Examples.DateTime.Methods"
 
-'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
-'@Version v1.0 July 09, 2023
-'@LastModified July 30, 2023
+'@Author Mark Johnstone
+'@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 9, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.addhours?view=netframework-4.8.1#examples
 
@@ -13,14 +14,14 @@ Option Explicit
 '@Description("The following example uses the AddHours method to add a number of whole and fractional values to a date and time. It also illustrates the loss of precision caused by passing the method a value that includes a fractional component.")
 Public Sub DateTimeAddHours()
 Attribute DateTimeAddHours.VB_Description = "The following example uses the AddHours method to add a number of whole and fractional values to a date and time. It also illustrates the loss of precision caused by passing the method a value that includes a fractional component."
-   Dim Hours() As Double
-   Hours = Doubles.ToArray(0.08333, 0.16667, 0.25, 0.33333, 0.5, 0.66667, 1, 2, 29, 30, 31, 90, 365)
+   Dim pvtHours() As Double
+   pvtHours = Doubles.ToArray(0.08333, 0.16667, 0.25, 0.33333, 0.5, 0.66667, 1, 2, 29, 30, 31, 90, 365)
    
    Dim dateValue As IDateTime
    Set dateValue = DateTime.CreateFromDateTime(2009, 3, 1, 12, 0, 0)
    
    Dim varHour As Variant
-   For Each varHour In Hours
+   For Each varHour In pvtHours
       Debug.Print dateValue.ToString & " + " & varHour & " hour(s) = " & dateValue.AddHours(varHour).ToString
    Next
 End Sub

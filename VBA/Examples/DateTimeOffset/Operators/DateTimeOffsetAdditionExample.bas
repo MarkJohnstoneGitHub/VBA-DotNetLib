@@ -4,14 +4,13 @@ Attribute VB_Name = "DateTimeOffsetAdditionExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 31, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.op_addition?view=netframework-4.8.1
 
 Option Explicit
 
 '@Description("The Addition method defines the addition operation for DateTimeOffset values.")
-' It enables code such as the following:
 Public Sub DateTimeOffsetAddition()
 Attribute DateTimeOffsetAddition.VB_Description = "The Addition method defines the addition operation for DateTimeOffset values."
     Dim date1 As IDateTimeOffset

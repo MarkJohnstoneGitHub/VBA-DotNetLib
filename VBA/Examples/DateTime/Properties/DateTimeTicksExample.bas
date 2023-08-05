@@ -5,7 +5,7 @@ Attribute VB_Name = "DateTimeTicksExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
-'@LastModified July 30, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.ticks?view=netframework-4.8.1#examples
 
@@ -28,10 +28,10 @@ Attribute DateTimeTicks.VB_Description = "The following example uses the Ticks p
     Dim elapsedSpan As ITimeSpan
     Set elapsedSpan = TimeSpan.CreateFromTicks(elapsedTicks)
     Debug.Print "Elapsed from the beginning of the century to " & currentDate.ToString2("f")
-    Debug.Print "   " & elapsedTicks * 100 & " nanoseconds"
-    Debug.Print "   " & elapsedTicks & " ticks"
-    Debug.Print "   " & elapsedSpan.TotalSeconds & " seconds"
-    Debug.Print "   " & elapsedSpan.TotalMinutes & " minutes"
+    Debug.Print "   " & VBA.Format$(elapsedTicks * 100, "#,##0") & " nanoseconds"
+    Debug.Print "   " & VBA.Format$(elapsedTicks, "#,##0") & " ticks"
+    Debug.Print "   " & VBA.Format$(elapsedSpan.TotalSeconds, "#,##0.00") & " seconds"
+    Debug.Print "   " & VBA.Format$(elapsedSpan.TotalMinutes, "#,##0.00") & " minutes"
     Debug.Print "   " & elapsedSpan.Days & " days, " & elapsedSpan.Hours & " hours, " & elapsedSpan.Minutes & " minutes, " & elapsedSpan.Seconds & " seconds"
 End Sub
 

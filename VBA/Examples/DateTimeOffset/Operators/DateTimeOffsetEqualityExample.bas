@@ -4,14 +4,13 @@ Attribute VB_Name = "DateTimeOffsetEqualityExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 31, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.op_equality?view=netframework-4.8.1
 
 Option Explicit
 
 '@Description("The Equality method defines the operation of the equality operator for DateTimeOffset objects.")
-' It enables code such as the following:
 Public Sub DateTimeOffsetEquality()
 Attribute DateTimeOffsetEquality.VB_Description = "The Equality method defines the operation of the equality operator for DateTimeOffset objects."
     Dim date1 As IDateTimeOffset

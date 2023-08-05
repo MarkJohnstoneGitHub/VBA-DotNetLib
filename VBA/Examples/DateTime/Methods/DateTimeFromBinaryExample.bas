@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeFromBinaryExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 11, 2023
-'@LastModified July 30, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.frombinary?view=netframework-4.8.1
 
@@ -28,3 +28,6 @@ End Sub
 ' The example displays the following output for the local time zone AUS Eastern Standard Time:
 '    1/10/2023 2:30:00 AM is an invalid time in the AUS Eastern Standard Time
 '    1/10/2023 2:30:00 AM = 1/10/2023 3:30:00 AM: False
+
+' The example displays the following output for the local time zone US Pacific Standard Time:
+'    10/1/2023 2:30:00 AM = 10/1/2023 2:30:00 AM: True

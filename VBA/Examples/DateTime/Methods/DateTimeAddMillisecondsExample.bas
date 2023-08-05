@@ -1,9 +1,10 @@
 Attribute VB_Name = "DateTimeAddMillisecondsExample"
 '@Folder("VBADotNetLib.Examples.DateTime.Methods")
 
-'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Author Mark Johnstone
+'@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 10, 2023
-'@LastModified July 30, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.addmilliseconds?view=netframework-4.8.1#examples
 
@@ -21,17 +22,22 @@ Attribute DateTimeAddMilliseconds.VB_Description = "The following example uses t
    dateFormat = "MM/dd/yyyy hh:mm:ss.fffffff"
    Dim date1 As IDateTime
    Set date1 = DateTime.CreateFromDateTime(2010, 9, 8, 16, 0, 0)
-   Debug.Print "Original date: " & date1.ToString2(dateFormat) & " " & date1.Ticks & " ticks" & vbNewLine
+   Debug.Print "Original date: " & date1.ToString2(dateFormat) & " " & _
+                VBA.Format$(date1.Ticks, "#,##0") & " ticks" & vbNewLine
    
    Dim date2 As IDateTime
    Set date2 = date1.AddMilliseconds(1)
-   Debug.Print "Second date:   " & date1.ToString2(dateFormat) & " " & date1.Ticks & " ticks"
-   Debug.Print "Difference between dates: " & DateTime.Subtraction(date2, date1).ToString & " (" & date2.Ticks - date1.Ticks & " ticks)" & vbNewLine
+   Debug.Print "Second date:   " & date1.ToString2(dateFormat) & " " & _
+                VBA.Format$(date1.Ticks, "#,##0") & " ticks"
+   Debug.Print "Difference between dates: " & DateTime.Subtraction(date2, date1).ToString & _
+                " (" & VBA.Format$(date2.Ticks - date1.Ticks, "#,##0") & " ticks)" & vbNewLine
    
    Dim date3 As IDateTime
    Set date3 = date1.AddMilliseconds(1.5)
-   Debug.Print "Third date:    " & date3.ToString2(dateFormat) & " " & date3.Ticks & " ticks"
-   Debug.Print "Difference between dates: " & DateTime.Subtraction(date3, date1).ToString & " (" & date3.Ticks - date1.Ticks & " ticks)"
+   Debug.Print "Third date:    " & date3.ToString2(dateFormat) & " " & _
+                VBA.Format$(date3.Ticks, "#,##0") & " ticks"
+   Debug.Print "Difference between dates: " & DateTime.Subtraction(date3, date1).ToString & _
+                " (" & VBA.Format$(date3.Ticks - date1.Ticks, "#,##0") & " ticks)"
 End Sub
 
 ' The example displays the following output:

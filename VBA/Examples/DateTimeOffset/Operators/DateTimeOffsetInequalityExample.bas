@@ -4,14 +4,13 @@ Attribute VB_Name = "DateTimeOffsetInequalityExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 31, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.op_inequality?view=netframework-4.8.1#remarks
 
 Option Explicit
 
 '@Description("The Inequality method defines the operation of the inequality operator for DateTimeOffset objects. It always returns the opposite result from Equality.")
-' The Inequality method enables code such as the following:
 Public Sub DateTimeOffsetInequality()
 Attribute DateTimeOffsetInequality.VB_Description = "The Inequality method defines the operation of the inequality operator for DateTimeOffset objects. It always returns the opposite result from Equality."
     Dim date1 As IDateTimeOffset

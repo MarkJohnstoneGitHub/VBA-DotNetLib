@@ -13,31 +13,31 @@ Option Explicit
 '@Description("The following example compares several TimeSpan objects to a reference TimeSpan using the Equality operator.")
 Public Sub TimeSpanEquality()
 Attribute TimeSpanEquality.VB_Description = "The following example compares several TimeSpan objects to a reference TimeSpan using the Equality operator."
-   Dim left As ITimeSpan
-   Set left = TimeSpan.Create(2, 0, 0)
+   Dim Left As ITimeSpan
+   Set Left = TimeSpan.Create(2, 0, 0)
    
    Debug.Print "This example of the TimeSpan relational operators generates " & VBA.vbNewLine & _
                "the following output. It creates several different TimeSpan " & VBA.vbNewLine & _
                "objects and compares them with " & _
                "a 2-hour TimeSpan." & VBA.vbNewLine
-   Debug.Print "Left: TimeSpan( 2, 0, 0 )" & "     " & left.ToString()
+   Debug.Print "Left: TimeSpan( 2, 0, 0 )" & "     " & Left.ToString()
 
    ' Create objects to compare with a 2-hour TimeSpan.
-   CompareTimeSpans left, TimeSpan.Create(0, 120, 0), "TimeSpan( 0, 120, 0 )"
-   CompareTimeSpans left, TimeSpan.Create(2, 0, 1), "TimeSpan( 2, 0, 1 )"
-   CompareTimeSpans left, TimeSpan.Create(2, 0, -1), "TimeSpan( 2, 0, -1 )"
-   CompareTimeSpans left, TimeSpan.FromDays(1 / 12), "TimeSpan.FromDays( 1 / 12 )"
+   CompareTimeSpans Left, TimeSpan.Create(0, 120, 0), "TimeSpan( 0, 120, 0 )"
+   CompareTimeSpans Left, TimeSpan.Create(2, 0, 1), "TimeSpan( 2, 0, 1 )"
+   CompareTimeSpans Left, TimeSpan.Create(2, 0, -1), "TimeSpan( 2, 0, -1 )"
+   CompareTimeSpans Left, TimeSpan.FromDays(1 / 12), "TimeSpan.FromDays( 1 / 12 )"
 End Sub
 
-Private Sub CompareTimeSpans(ByVal left As ITimeSpan, ByVal right As ITimeSpan, ByVal rightText As String)
+Private Sub CompareTimeSpans(ByVal Left As ITimeSpan, ByVal Right As ITimeSpan, ByVal rightText As String)
    Debug.Print
-   Debug.Print "Right: " + rightText & "     " & right.ToString()
-   Debug.Print "Left == Right", TimeSpan.Equality(left, right)
-   Debug.Print "Left >  Right", TimeSpan.GreaterThan(left, right)
-   Debug.Print "Left >= Right", TimeSpan.GreaterThanOrEqual(left, right)
-   Debug.Print "Left != Right", TimeSpan.Inequality(left, right)
-   Debug.Print "Left <  Right", TimeSpan.LessThan(left, right)
-   Debug.Print "Left <= Right", TimeSpan.LessThanOrEqual(left, right)
+   Debug.Print "Right: " + rightText & "     " & Right.ToString()
+   Debug.Print "Left == Right", TimeSpan.Equality(Left, Right)
+   Debug.Print "Left >  Right", TimeSpan.GreaterThan(Left, Right)
+   Debug.Print "Left >= Right", TimeSpan.GreaterThanOrEqual(Left, Right)
+   Debug.Print "Left != Right", TimeSpan.Inequality(Left, Right)
+   Debug.Print "Left <  Right", TimeSpan.LessThan(Left, Right)
+   Debug.Print "Left <= Right", TimeSpan.LessThanOrEqual(Left, Right)
 End Sub
 
 '/*

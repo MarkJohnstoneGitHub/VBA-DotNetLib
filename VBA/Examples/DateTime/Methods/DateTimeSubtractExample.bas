@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeSubtractExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 13, 2023
-'@LastModified July 30, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.subtract?view=netframework-4.8.1
 
@@ -36,7 +36,7 @@ Attribute DateTimeSubtract.VB_Description = "The following example demonstrates 
    Debug.Print diff2.ToString()
    
    ' date5 gets 4/9/1996 5:55:00 PM.
-   Dim date5 As DateTime
+   Dim date5 As IDateTime
    Set date5 = DateTime.Subtraction2(date1, diff2)
    Debug.Print date5.ToString()
 End Sub

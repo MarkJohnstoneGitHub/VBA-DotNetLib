@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeFromFileTimeExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 11, 2023
-'@LastModified July 30, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.fromfiletime?view=netframework-4.8.1
 
@@ -27,3 +27,6 @@ End Sub
 '       Invalid Time: True
 '       1/10/2023 2:30:00 AM -> 1/10/2023 3:30:00 AM
 
+' The example displays the following output for local time zone of US Pacific Standard Time:
+'    Invalid Time: False
+'    10/1/2023 2:30:00 AM -> 10/1/2023 2:30:00 AM

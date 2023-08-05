@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeOffsetTicksExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 19, 2023
-'@LastModified July 31, 2023
+'@LastModified August 4,2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.ticks?view=netframework-4.8.1#examples
 
@@ -29,7 +29,7 @@ Attribute DateTimeOffsetTicks.VB_Description = "The following example initialize
     
     Dim dto As IDateTimeOffset
     Set dto = DateTimeOffset.CreateFromTicks(pvtTicks, DateTimeOffset.Now.Offset)
-    Debug.Print "There are " & Format$(dto.Ticks, "#,###") & " ticks in " & dto.ToString() & "."
+    Debug.Print "There are " & VBA.Format$(dto.Ticks, "#,###") & " ticks in " & dto.ToString() & "."
 End Sub
 
 ' The example displays the following output:

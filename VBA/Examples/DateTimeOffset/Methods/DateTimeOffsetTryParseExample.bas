@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeOffsetTryParseExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 31, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.tryparse?view=netframework-4.8.1#system-datetimeoffset-tryparse(system-string-system-datetimeoffset@)
 
@@ -48,8 +48,7 @@ Attribute DateTimeOffsetTryParse.VB_Description = "The following example calls t
 
 End Sub
 
-' if (run on 3/29/07, the example displays the following output
-' to the console:
+' if (run on 3/29/07, the example displays the following output:
 '    05/01/2008 was converted to 5/1/2008 12:00:00 AM -07:00.
 '    11:36 PM was converted to 3/29/2007 11:36:00 PM -07:00.
 '    05/01/2008 +7:00 was converted to 5/1/2008 12:00:00 AM +07:00.

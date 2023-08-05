@@ -4,14 +4,13 @@ Attribute VB_Name = "DateTimeOffsetSubtractionEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 31, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.op_subtraction?view=netframework-4.8.1#system-datetimeoffset-op-subtraction(system-datetimeoffset-system-datetimeoffset)
 
 Option Explicit
 
 '@Description("The Subtraction method defines the subtraction operation for DateTimeOffset objects.")
-' It enables code such as the following:
 Public Sub DateTimeOffsetSubtraction()
 Attribute DateTimeOffsetSubtraction.VB_Description = "The Subtraction method defines the subtraction operation for DateTimeOffset objects."
     Dim firstDate As IDateTimeOffset
@@ -20,7 +19,7 @@ Attribute DateTimeOffsetSubtraction.VB_Description = "The Subtraction method def
     Set secondDate = DateTimeOffset.CreateFromDateTimeParts(2008, 3, 25, 18, 0, 0, TimeSpan.Create(-5, 0, 0))
     Dim thirdDate As IDateTimeOffset
     Set thirdDate = DateTimeOffset.CreateFromDateTimeParts(2008, 2, 28, 9, 0, 0, TimeSpan.Create(-7, 0, 0))
-    Dim difference As TimeSpan
+    Dim difference As ITimeSpan
     
     Set difference = DateTimeOffset.Subtraction(firstDate, secondDate)
     Debug.Print "(" & firstDate.ToString() & ")" & " - " & _

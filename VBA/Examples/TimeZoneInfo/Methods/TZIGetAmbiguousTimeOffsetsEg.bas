@@ -4,7 +4,7 @@ Attribute VB_Name = "TZIGetAmbiguousTimeOffsetsEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 24, 2023
-'@LastModified July 31, 2023
+'@LastModified August 1, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.getambiguoustimeoffsets?view=netframework-4.8.1
 
@@ -53,7 +53,7 @@ Private Sub ShowPossibleUtcTimes(ByVal ambiguousTime As IDateTime, ByVal timeZon
                     originalTimeZoneName & " maps to the following possible times:"
                     
         ' Get ambiguous offsets
-        Dim offsets() As TimeSpan
+        Dim offsets() As ITimeSpan
         offsets = timeZone.GetAmbiguousTimeOffsets(pvtAmbiguousTime)
         ' Handle times not in time zone of timeZone argument
         ' Local time where timeZone is not local zone

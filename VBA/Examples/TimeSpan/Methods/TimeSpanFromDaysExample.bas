@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeSpanFromDaysExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 16, 2023
-'@LastModified July 30, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.fromdays?view=netframework-4.8.1#examples
 
@@ -13,8 +13,8 @@ Option Explicit
 '@Description("The following example creates several TimeSpan objects using the FromDays method.")
 Public Sub TimeSpanFromDays()
 Attribute TimeSpanFromDays.VB_Description = "The following example creates several TimeSpan objects using the FromDays method."
-   Debug.Print "FromDays", "TimeSpan"
-   Debug.Print "--------", "--------"
+   Debug.Print Align("FromDays", 25, Justify_Right) & Align("TimeSpan", 25, Justify_Right)
+   Debug.Print Align("----------------", 25, Justify_Right) & Align("----------------", 25, Justify_Right)
    
    GenTimeSpanFromDays 0.000000006
    GenTimeSpanFromDays 0.000000017
@@ -35,7 +35,7 @@ Private Sub GenTimeSpanFromDays(ByVal Days As Double)
    Set interval = TimeSpan.FromDays(Days)
    Dim timeInterval As String
    timeInterval = interval.ToString()
-   Debug.Print Days, timeInterval
+   Debug.Print Align(Days, 25, Justify.Justify_Right) & Align(timeInterval, 25, Justify.Justify_Right)
 End Sub
 
 '/*

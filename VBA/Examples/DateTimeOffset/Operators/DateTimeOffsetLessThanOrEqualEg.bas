@@ -4,14 +4,13 @@ Attribute VB_Name = "DateTimeOffsetLessThanOrEqualEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 31, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.op_lessthanorequal?view=netframework-4.8.1#remarks
 
 Option Explicit
 
 '@Description("The LessThanOrEqual method defines the operation of the less than or equal to operator for DateTimeOffset objects.")
-' It enables code such as the following:
 Public Sub DateTimeOffsetLessThanOrEqual()
 Attribute DateTimeOffsetLessThanOrEqual.VB_Description = "The LessThanOrEqual method defines the operation of the less than or equal to operator for DateTimeOffset objects."
     Dim date1 As IDateTimeOffset

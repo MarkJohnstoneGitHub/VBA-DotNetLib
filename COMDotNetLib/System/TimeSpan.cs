@@ -1,4 +1,7 @@
-﻿using GSystem = global::System;
+﻿// https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8
+// https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/TimeSpan.cs
+
+using GSystem = global::System;
 using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System;
@@ -6,22 +9,19 @@ using DotNetLib.System.Globalization;
 
 namespace DotNetLib.System
 {
-
-    // https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8
-    // https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/TimeSpan.cs
-
     [ComVisible(true)]
     [Guid("B73DFD69-6C69-4CFC-89F2-1C344228A9D4")]
     [ProgId("DotNetLib.System.TimeSpan")]
     [Description("Represents a time interval.")]
     [ClassInterface(ClassInterfaceType.None)]
-    public class TimeSpan : IComTimeSpan
+    public class TimeSpan : ITimeSpan, ITimeSpanSingleton
     {
         private GSystem.TimeSpan timeSpanObject;
 
-        private static readonly TimeSpan tsMaxValue = new TimeSpan(GSystem.TimeSpan.MaxValue);
-        private static readonly TimeSpan tsMinValue = new TimeSpan(GSystem.TimeSpan.MinValue);
-        private static readonly TimeSpan tsZero = new TimeSpan(GSystem.TimeSpan.Zero);
+        // Static Fields
+        private static readonly ITimeSpan tsMaxValue = new TimeSpan(GSystem.TimeSpan.MaxValue);
+        private static readonly ITimeSpan tsMinValue = new TimeSpan(GSystem.TimeSpan.MinValue);
+        private static readonly ITimeSpan tsZero = new TimeSpan(GSystem.TimeSpan.Zero);
 
         //Constructors
         public TimeSpan()
@@ -34,51 +34,51 @@ namespace DotNetLib.System
             this.timeSpanObject = value;
         }
 
-        public TimeSpan(long ticks)
+        internal TimeSpan(long ticks)
         {
             this.timeSpanObject = new GSystem.TimeSpan(ticks);
         }
 
-        public TimeSpan(int hours, int minutes, int seconds)
+        internal TimeSpan(int hours, int minutes, int seconds)
         {
             this.timeSpanObject = new GSystem.TimeSpan(hours, minutes, seconds);
         }
 
-        public TimeSpan(int days, int hours, int minutes, int seconds)
+        internal TimeSpan(int days, int hours, int minutes, int seconds)
         {
             this.timeSpanObject = new GSystem.TimeSpan(days, hours, minutes, seconds);
         }
 
-        public TimeSpan(int days, int hours, int minutes, int seconds, int milliseconds)
+        internal TimeSpan(int days, int hours, int minutes, int seconds, int milliseconds)
         {
             this.timeSpanObject = new GSystem.TimeSpan(days, hours, minutes, seconds, milliseconds);   
         }
 
-        public TimeSpan CreateFromTicks(long ticks)
+        public ITimeSpan CreateFromTicks(long ticks)
         {
             return new TimeSpan(ticks);
         }
 
-        public TimeSpan Create(int hours, int minutes, int seconds)
+        public ITimeSpan Create(int pHours, int pMinutes, int pSeconds)
         {
-            return new TimeSpan(hours, minutes, seconds);
+            return new TimeSpan(pHours, pMinutes, pSeconds);
         }
 
-        public TimeSpan Create2(int days, int hours, int minutes, int seconds)
+        public ITimeSpan Create2(int pDays, int pHours, int pMinutes, int pSeconds)
         {
-            return new TimeSpan(days, hours, minutes, seconds);
+            return new TimeSpan(pDays, pHours, pMinutes, pSeconds);
         }
 
-        public TimeSpan Create3(int days, int hours, int minutes, int seconds, int milliseconds)
+        public ITimeSpan Create3(int pDays, int pHours, int pMinutes, int pSeconds, int pMilliseconds)
         {
-            return new TimeSpan(days, hours, minutes, seconds, milliseconds);
+            return new TimeSpan(pDays, pHours, pMinutes, pSeconds, pMilliseconds);
         }
 
         // Fields
 
-        public TimeSpan MaxValue => tsMaxValue;
+        public ITimeSpan MaxValue => tsMaxValue;
         
-        public TimeSpan MinValue => tsMinValue;
+        public ITimeSpan MinValue => tsMinValue;
 
         public long TicksPerDay => GSystem.TimeSpan.TicksPerDay;
         
@@ -90,7 +90,7 @@ namespace DotNetLib.System
 
         public long TicksPerSecond => GSystem.TimeSpan.TicksPerSecond;
 
-        public TimeSpan Zero => tsZero;
+        public ITimeSpan Zero => tsZero;
 
 
         //Properties
@@ -124,37 +124,34 @@ namespace DotNetLib.System
 
 
         //Methods
-        public TimeSpan Add(TimeSpan ts)
+        public ITimeSpan Add(TimeSpan ts)
         {
-            return new TimeSpan(this.timeSpanObject.Add(ts.timeSpanObject));
+            return new TimeSpan(this.timeSpanObject.Add(ts.TimeSpanObject));
         }
 
-        public int Compare(TimeSpan t1, TimeSpan t2)
+        public int Compare(TimeSpan ts1, TimeSpan ts2)
         {
-            return GSystem.TimeSpan.Compare(t1.timeSpanObject, t2.timeSpanObject);  
+            return GSystem.TimeSpan.Compare(ts1.TimeSpanObject,ts2.TimeSpanObject);  
         }
 
         public int CompareTo(TimeSpan value)
         {
-            return this.timeSpanObject.CompareTo(value.timeSpanObject);
+            return this.timeSpanObject.CompareTo(value.TimeSpanObject);
         }
 
-        // TODO : Check implementation
         public int CompareTo2(object value)
         {
-            if (value == null) return 1;
-            return this.timeSpanObject.CompareTo((TimeSpan)value);
+            const string Arg_MustBeTimeSpan = "Object must be of type TimeSpan.";
 
-            //if (value == null) return 1;
-            //if (!(value is TimeSpan))
-            //    throw new ArgumentException(SR.Arg_MustBeTimeSpan);
-            //long t = ((TimeSpan)value)._ticks;
-            //if (_ticks > t) return 1;
-            //if (_ticks < t) return -1;
-            //return 0;
+            if (value == null) return 1;
+            if (!(value is TimeSpan ts))
+            {
+                throw new ArgumentException(Arg_MustBeTimeSpan);
+            }
+            return this.CompareTo(ts);
         }
 
-        public TimeSpan Duration()
+        public ITimeSpan Duration()
         {
             return new TimeSpan(this.timeSpanObject.Duration());
         }
@@ -167,46 +164,40 @@ namespace DotNetLib.System
         // TODO : Check Implementation
         public bool Equals2(object value)
         {
-            return value is TimeSpan ts && this.timeSpanObject == ts.timeSpanObject;
-
-            //if (value is TimeSpan)
-            //{
-            //    return this.timeSpanObject.Equals((TimeSpan)value);
-            //}
-            //return false;
+            return value is TimeSpan ts && this.timeSpanObject == ts.TimeSpanObject;
         }
 
         public bool Equals3(TimeSpan t1, TimeSpan t2)
         { 
-            return GSystem.TimeSpan.Equals(t1.timeSpanObject,t2.timeSpanObject); 
+            return GSystem.TimeSpan.Equals(t1.TimeSpanObject, t2.TimeSpanObject); 
         }
 
-        public TimeSpan FromDays(double value)
+        public ITimeSpan FromDays(double value)
         {
             return new TimeSpan(GSystem.TimeSpan.FromDays(value));
         }
 
-        public TimeSpan FromHours(double value)
+        public ITimeSpan FromHours(double value)
         {
             return new TimeSpan(GSystem.TimeSpan.FromHours(value));
         }
 
-        public TimeSpan FromMilliseconds(double value)
+        public ITimeSpan FromMilliseconds(double value)
         {
             return new TimeSpan(GSystem.TimeSpan.FromMilliseconds(value));
         }
 
-        public TimeSpan FromMinutes(double value)
+        public ITimeSpan FromMinutes(double value)
         {
             return new TimeSpan(GSystem.TimeSpan.FromMinutes(value));
         }
 
-        public TimeSpan FromSeconds(double value)
+        public ITimeSpan FromSeconds(double value)
         {
             return new TimeSpan(GSystem.TimeSpan.FromSeconds(value));
         }
 
-        public TimeSpan FromTicks(long value)
+        public ITimeSpan FromTicks(long value)
         {
             return new TimeSpan(GSystem.TimeSpan.FromTicks(value));
         }
@@ -220,44 +211,44 @@ namespace DotNetLib.System
         //{
         //    return new TimeSpan(this.timeSpanObject.Multiply(factor));
         //}
-        public TimeSpan Negate()
+        public ITimeSpan Negate()
         {
             return new TimeSpan(this.timeSpanObject.Negate());
         }
 
-        public TimeSpan Parse(string s)
+        public ITimeSpan Parse(string s)
         {
             return new TimeSpan(GSystem.TimeSpan.Parse(s));
         }
 
-        public TimeSpan Parse2(string input, GSystem.IFormatProvider formatProvider)
+        public ITimeSpan Parse2(string input, GSystem.IFormatProvider formatProvider)
         {
             return new TimeSpan(GSystem.TimeSpan.Parse(input,formatProvider));
         }
 
-        public TimeSpan ParseExact(string input, string format, GSystem.IFormatProvider formatProvider)
+        public ITimeSpan ParseExact(string input, string format, GSystem.IFormatProvider formatProvider)
         {
             return new TimeSpan(GSystem.TimeSpan.ParseExact(input,format, formatProvider));
         }
 
-        public TimeSpan ParseExact2(string input, [In] ref string[] formats, GSystem.IFormatProvider formatProvider)
+        public ITimeSpan ParseExact2(string input, [In] ref string[] formats, GSystem.IFormatProvider formatProvider)
         {
             return new TimeSpan(GSystem.TimeSpan.ParseExact(input, formats, formatProvider));
         }
 
-        public TimeSpan ParseExact3(string input, string format, GSystem.IFormatProvider formatProvider, TimeSpanStyles styles)
+        public ITimeSpan ParseExact3(string input, string format, GSystem.IFormatProvider formatProvider, TimeSpanStyles styles)
         {
             return new TimeSpan(GSystem.TimeSpan.ParseExact(input, format, formatProvider, (GSystem.Globalization.TimeSpanStyles)styles));
         }
 
-        public TimeSpan ParseExact4(string input, [In] ref string[] formats, GSystem.IFormatProvider formatProvider, TimeSpanStyles styles)
+        public ITimeSpan ParseExact4(string input, [In] ref string[] formats, GSystem.IFormatProvider formatProvider, TimeSpanStyles styles)
         {
             return new TimeSpan(GSystem.TimeSpan.ParseExact(input, formats, formatProvider, (GSystem.Globalization.TimeSpanStyles)styles));
         }
 
-        public TimeSpan Subtract(TimeSpan ts)
+        public ITimeSpan Subtract(TimeSpan ts)
         {
-            return new TimeSpan(this.timeSpanObject.Subtract(ts.timeSpanObject));
+            return new TimeSpan(this.timeSpanObject.Subtract(ts.TimeSpanObject));
         }
 
 
@@ -322,50 +313,50 @@ namespace DotNetLib.System
 
         public TimeSpan Addition(TimeSpan t1, TimeSpan t2)
         {
-            return new TimeSpan(t1.timeSpanObject + t2.TimeSpanObject);
+            return new TimeSpan(t1.TimeSpanObject + t2.TimeSpanObject);
         }
 
         public bool Equality(TimeSpan t1, TimeSpan t2)
         {
-            return (t1.timeSpanObject == t2.timeSpanObject);
+            return (t1.TimeSpanObject == t2.TimeSpanObject);
         }
 
         public bool GreaterThan(TimeSpan t1, TimeSpan t2)
         {
-            return (t1.timeSpanObject > t2.timeSpanObject);
+            return (t1.TimeSpanObject > t2.TimeSpanObject);
         }
 
         public bool GreaterThanOrEqual(TimeSpan t1, TimeSpan t2)
         {
-            return (t1.timeSpanObject >= t2.timeSpanObject);
+            return (t1.TimeSpanObject >= t2.TimeSpanObject);
         }
         public bool Inequality(TimeSpan t1, TimeSpan t2)
         {
-            return (t1.timeSpanObject != t2.timeSpanObject);
+            return (t1.TimeSpanObject != t2.TimeSpanObject);
         }
 
         public bool LessThan(TimeSpan t1, TimeSpan t2)
         {
-            return (t1.timeSpanObject < t2.timeSpanObject);
+            return (t1.TimeSpanObject < t2.TimeSpanObject);
         }
         public bool LessThanOrEqual(TimeSpan t1, TimeSpan t2)
         {
-            return (t1.timeSpanObject <= t2.timeSpanObject);
+            return (t1.TimeSpanObject <= t2.TimeSpanObject);
         }
 
-        public TimeSpan Subtraction(TimeSpan t1, TimeSpan t2)
+        public ITimeSpan Subtraction(TimeSpan t1, TimeSpan t2)
         {
-            return new TimeSpan(t1.timeSpanObject - t2.timeSpanObject);
+            return new TimeSpan(t1.TimeSpanObject - t2.TimeSpanObject);
         }
 
-        public TimeSpan UnaryNegation(TimeSpan t)
+        public ITimeSpan UnaryNegation(TimeSpan ts)
         {
-            return new TimeSpan(-t.timeSpanObject);
+            return new TimeSpan(-ts.TimeSpanObject);
         }
 
-        public TimeSpan UnaryPlus(TimeSpan t)
+        public ITimeSpan UnaryPlus(TimeSpan ts)
         {
-            return new TimeSpan(+ t.timeSpanObject);
+            return new TimeSpan(+ts.TimeSpanObject);
         }
 
 

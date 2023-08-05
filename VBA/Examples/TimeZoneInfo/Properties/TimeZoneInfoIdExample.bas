@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeZoneInfoIdExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 30, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.id?view=netframework-4.8.1#examples
 
@@ -20,7 +20,7 @@ Attribute TimeZoneInfoId.VB_Description = "The following example lists the ident
     
     Dim varZone As Variant
     For Each varZone In zones
-        Dim myZone As DotNetLib.IComTimeZoneInfo
+        Dim myZone As ITimeZoneInfo
         Set myZone = varZone
         Debug.Print myZone.Id
     Next

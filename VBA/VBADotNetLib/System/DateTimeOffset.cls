@@ -8,49 +8,39 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Represents a point in time, typically expressed as a date and time of day, relative to Coordinated Universal Time (UTC)."
-'@IgnoreModule UnassignedVariableUsage, VariableNotAssigned
 '@Folder "VBADotNetLib.System"
 '@ModuleDescription("Represents a point in time, typically expressed as a date and time of day, relative to Coordinated Universal Time (UTC).")
 '@PredeclaredId
 
+'@Singleton
+
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
-'@Version v1.0 July 11, 2023
-'@LastModified July 31, 2023
+'@Version v2.0 August 4, 2023
+'@LastModified August 4, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=netframework-4.8.1
 
+'@Remarks
+' Singleton class for DateTimeOffset containing constructors and static members.
+
 Option Explicit
 
-Implements DotNetLib.IDateTimeOffset
-
 Private Type TDateTimeOffset
-   DotNetLibDateTimeOffset As DotNetLib.DateTimeOffset
+    DateTimeOffsetSingleton As DotNetLib.IDateTimeOffsetSingleton
 End Type
 
 Private this As TDateTimeOffset
 
 Private Sub Class_Initialize()
-   Set this.DotNetLibDateTimeOffset = New DotNetLib.DateTimeOffset
+    Set this.DateTimeOffsetSingleton = New DotNetLib.DateTimeOffset
 End Sub
 
 Private Sub Class_Terminate()
-   Set this.DotNetLibDateTimeOffset = Nothing
+    Set this.DateTimeOffsetSingleton = Nothing
 End Sub
-
-Friend Property Get ComObject() As DotNetLib.DateTimeOffset
-   Set ComObject = this.DotNetLibDateTimeOffset
-End Property
-
-Friend Property Set ComObject(ByVal objDateTimeOffset As DotNetLib.DateTimeOffset)
-   Set this.DotNetLibDateTimeOffset = objDateTimeOffset
-End Property
-
-Friend Property Get Self() As DateTimeOffset
-   Set Self = Me
-End Property
 
 '--------------------------------------------------------------------
 'Constructors
@@ -58,61 +48,43 @@ End Property
 
 '@Static
 '@Description("Initializes a new instance of the DateTimeOffset structure using the specified DateTime value.")
-Public Function CreateFromDateTime(ByVal DateTime As DateTime) As DateTimeOffset
+Public Function CreateFromDateTime(ByVal pDateTime As DotNetLib.DateTime) As IDateTimeOffset
 Attribute CreateFromDateTime.VB_Description = "Initializes a new instance of the DateTimeOffset structure using the specified DateTime value."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.CreateFromDateTime(DateTime.ComObject)
-      Set CreateFromDateTime = .Self
-   End With
+    Set CreateFromDateTime = this.DateTimeOffsetSingleton.CreateFromDateTime(pDateTime)
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the DateTimeOffset structure using the specified DateTime value and offset.")
-Public Function CreateFromDateTime2(ByVal DateTime As DateTime, ByVal Offset As TimeSpan) As DateTimeOffset
+Public Function CreateFromDateTime2(ByVal pDateTime As DotNetLib.DateTime, ByVal pOffset As DotNetLib.TimeSpan) As IDateTimeOffset
 Attribute CreateFromDateTime2.VB_Description = "Initializes a new instance of the DateTimeOffset structure using the specified DateTime value and offset."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.CreateFromDateTime2(DateTime.ComObject, Offset.ComObject)
-      Set CreateFromDateTime2 = .Self
-   End With
+    Set CreateFromDateTime2 = this.DateTimeOffsetSingleton.CreateFromDateTime2(pDateTime, pOffset)
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, and offset.")
-Public Function CreateFromDateTimeParts(ByVal Year As Long, ByVal Month As Long, ByVal Day As Long, ByVal Hour As Long, ByVal Minute As Long, ByVal Second As Long, ByVal Offset As TimeSpan) As DateTimeOffset
+Public Function CreateFromDateTimeParts(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pHour As Long, ByVal pMinute As Long, ByVal pSecond As Long, ByVal pOffset As DotNetLib.TimeSpan) As IDateTimeOffset
 Attribute CreateFromDateTimeParts.VB_Description = "Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, and offset."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.CreateFromDateTimeParts(Year, Month, Day, Hour, Minute, Second, Offset.ComObject)
-      Set CreateFromDateTimeParts = .Self
-   End With
+    Set CreateFromDateTimeParts = this.DateTimeOffsetSingleton.CreateFromDateTimeParts(pYear, pMonth, pDay, pHour, pMinute, pSecond, pOffset)
 End Function
 
 '@Description("Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, millisecond, and offset.")
-Public Function CreateFromDateTimeParts2(ByVal Year As Long, ByVal Month As Long, ByVal Day As Long, ByVal Hour As Long, ByVal Minute As Long, ByVal Second As Long, ByVal Millisecond As Long, ByVal Offset As TimeSpan) As DateTimeOffset
+Public Function CreateFromDateTimeParts2(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pHour As Long, ByVal pMinute As Long, ByVal pSecond As Long, ByVal pMillisecond As Long, ByVal pOffset As DotNetLib.TimeSpan) As IDateTimeOffset
 Attribute CreateFromDateTimeParts2.VB_Description = "Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, millisecond, and offset."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.CreateFromDateTimeParts2(Year, Month, Day, Hour, Minute, Second, Millisecond, Offset.ComObject)
-      Set CreateFromDateTimeParts2 = .Self
-   End With
+    Set CreateFromDateTimeParts2 = this.DateTimeOffsetSingleton.CreateFromDateTimeParts2(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pOffset)
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, millisecond, and offset of a specified calendar.")
-Public Function CreateFromDateTimeParts3(ByVal Year As Long, ByVal Month As Long, ByVal Day As Long, ByVal Hour As Long, ByVal Minute As Long, ByVal Second As Long, ByVal Millisecond As Long, ByVal calendar As calendar, ByVal Offset As TimeSpan) As DateTimeOffset
+Public Function CreateFromDateTimeParts3(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pHour As Long, ByVal pMinute As Long, ByVal pSecond As Long, ByVal pMillisecond As Long, ByVal pCalendar As Calendar, ByVal pOffset As DotNetLib.TimeSpan) As IDateTimeOffset
 Attribute CreateFromDateTimeParts3.VB_Description = "Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, millisecond, and offset of a specified calendar."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.CreateFromDateTimeParts3(Year, Month, Day, Hour, Minute, Second, Millisecond, calendar, Offset.ComObject)
-      Set CreateFromDateTimeParts3 = .Self
-   End With
+    Set CreateFromDateTimeParts3 = this.DateTimeOffsetSingleton.CreateFromDateTimeParts3(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pCalendar, pOffset)
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the DateTimeOffset structure using the specified number of ticks and offset.")
-Public Function CreateFromTicks(ByVal Ticks As LongLong, ByVal Offset As TimeSpan) As DateTimeOffset
+Public Function CreateFromTicks(ByVal pTicks As LongLong, ByVal pOffset As DotNetLib.TimeSpan) As IDateTimeOffset
 Attribute CreateFromTicks.VB_Description = "Initializes a new instance of the DateTimeOffset structure using the specified number of ticks and offset."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.CreateFromTicks(Ticks, Offset.ComObject)
-      Set CreateFromTicks = .Self
-   End With
+    Set CreateFromTicks = this.DateTimeOffsetSingleton.CreateFromTicks(pTicks, pOffset)
 End Function
 
 '--------------------------------------------------------------------
@@ -121,521 +93,149 @@ End Function
 
 '@Static
 '@Description("Represents the greatest possible value of DateTimeOffset. This field is read-only.")
-Public Property Get MaxValue() As DateTimeOffset
+Public Property Get MaxValue() As IDateTimeOffset
 Attribute MaxValue.VB_Description = "Represents the greatest possible value of DateTimeOffset. This field is read-only."
-   Set MaxValue = DateTimeOffsetStatic.MaxValue
+   Set MaxValue = this.DateTimeOffsetSingleton.MaxValue
 End Property
 
 '@Static
 '@Description("Represents the earliest possible DateTimeOffset value. This field is read-only.")
-Public Property Get MinValue() As DateTimeOffset
+Public Property Get MinValue() As IDateTimeOffset
 Attribute MinValue.VB_Description = "Represents the earliest possible DateTimeOffset value. This field is read-only."
-   Set MinValue = DateTimeOffsetStatic.MinValue
+   Set MinValue = this.DateTimeOffsetSingleton.MinValue
 End Property
 
 '--------------------------------------------------------------------
 'Properties
 '--------------------------------------------------------------------
 
-'@Description("Gets a DateTime value that represents the date component of the current DateTimeOffset object.")
-Public Property Get DateOnly() As DateTime
-Attribute DateOnly.VB_Description = "Gets a DateTime value that represents the date component of the current DateTimeOffset object."
-   With New DateTime
-      Set .ComObject = this.DotNetLibDateTimeOffset.DateOnly()
-      Set DateOnly = .Self
-   End With
-End Property
-
-'@Description("Gets a DateTime value that represents the date and time of the current DateTimeOffset object.")
-Public Property Get DateTime() As DateTime
-Attribute DateTime.VB_Description = "Gets a DateTime value that represents the date and time of the current DateTimeOffset object."
-   With New DateTime
-      Set .ComObject = this.DotNetLibDateTimeOffset.DateTime()
-      Set DateTime = .Self
-   End With
-End Property
-
-'@Description("Gets the day of the month represented by the current DateTimeOffset object.")
-Public Property Get Day() As Long
-Attribute Day.VB_Description = "Gets the day of the month represented by the current DateTimeOffset object."
-   Day = this.DotNetLibDateTimeOffset.Day()
-End Property
-
-'@Description("Gets the day of the week represented by the current DateTimeOffset object.")
-Public Property Get DayOfWeek() As DotNetLib.DayOfWeek
-Attribute DayOfWeek.VB_Description = "Gets the day of the week represented by the current DateTimeOffset object."
-   DayOfWeek = this.DotNetLibDateTimeOffset.DayOfWeek()
-End Property
-
-'@Description("Gets the day of the year represented by the current DateTimeOffset object.")
-Public Property Get DayOfYear() As Long
-Attribute DayOfYear.VB_Description = "Gets the day of the year represented by the current DateTimeOffset object."
-   DayOfYear = this.DotNetLibDateTimeOffset.DayOfYear()
-End Property
-
-'@Description("Gets the hour component of the time represented by the current DateTimeOffset object.")
-Public Property Get Hour() As Long
-Attribute Hour.VB_Description = "Gets the hour component of the time represented by the current DateTimeOffset object."
-   Hour = this.DotNetLibDateTimeOffset.Hour()
-End Property
-
-'@Description("Gets a DateTime value that represents the local date and time of the current DateTimeOffset object.")
-Public Property Get LocalDateTime() As DateTime
-Attribute LocalDateTime.VB_Description = "Gets a DateTime value that represents the local date and time of the current DateTimeOffset object."
-   With New DateTime
-      Set .ComObject = this.DotNetLibDateTimeOffset.LocalDateTime()
-      Set LocalDateTime = .Self
-   End With
-End Property
-
-'@Description("Gets the millisecond component of the time represented by the current DateTimeOffset object.")
-Public Property Get Millisecond() As Long
-Attribute Millisecond.VB_Description = "Gets the millisecond component of the time represented by the current DateTimeOffset object."
-   Millisecond = this.DotNetLibDateTimeOffset.Millisecond()
-End Property
-
-'@Description("Gets the minute component of the time represented by the current DateTimeOffset object.")
-Public Property Get Minute() As Long
-Attribute Minute.VB_Description = "Gets the minute component of the time represented by the current DateTimeOffset object."
-   Minute = this.DotNetLibDateTimeOffset.Minute()
-End Property
-
-'@Description("Gets the month component of the date represented by the current DateTimeOffset object.")
-Public Property Get Month() As Long
-Attribute Month.VB_Description = "Gets the month component of the date represented by the current DateTimeOffset object."
-   Month = this.DotNetLibDateTimeOffset.Month()
-End Property
-
 '@Static
 '@Description("Gets a DateTimeOffset object that is set to the current date and time on the current computer, with the offset set to the local time's offset from Coordinated Universal Time (UTC).")
-Public Property Get Now() As DateTimeOffset
+Public Property Get Now() As IDateTimeOffset
 Attribute Now.VB_Description = "Gets a DateTimeOffset object that is set to the current date and time on the current computer, with the offset set to the local time's offset from Coordinated Universal Time (UTC)."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.Now()
-      Set Now = .Self
-   End With
-End Property
-
-'@Description("Gets the time's offset from Coordinated Universal Time (UTC).")
-Public Property Get Offset() As TimeSpan
-Attribute Offset.VB_Description = "Gets the time's offset from Coordinated Universal Time (UTC)."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibDateTimeOffset.Offset()
-      Set Offset = .Self
-   End With
-End Property
-
-'@Description("Gets the second component of the clock time represented by the current DateTimeOffset object.")
-Public Property Get Second() As Long
-Attribute Second.VB_Description = "Gets the second component of the clock time represented by the current DateTimeOffset object."
-   Second = this.DotNetLibDateTimeOffset.Second()
-End Property
-
-'@Description("Gets the number of ticks that represents the date and time of the current DateTimeOffset object in clock time.")
-Public Property Get Ticks() As LongLong
-Attribute Ticks.VB_Description = "Gets the number of ticks that represents the date and time of the current DateTimeOffset object in clock time."
-   Ticks = this.DotNetLibDateTimeOffset.Ticks()
-End Property
-
-'@Description("Gets the time of day for the current DateTimeOffset object.")
-Public Property Get TimeOfDay() As TimeSpan
-Attribute TimeOfDay.VB_Description = "Gets the time of day for the current DateTimeOffset object."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibDateTimeOffset.TimeOfDay()
-      Set TimeOfDay = .Self
-   End With
-End Property
-
-'@Description("Gets a DateTime value that represents the Coordinated Universal Time (UTC) date and time of the current DateTimeOffset object.")
-Public Property Get UtcDateTime() As DateTime
-Attribute UtcDateTime.VB_Description = "Gets a DateTime value that represents the Coordinated Universal Time (UTC) date and time of the current DateTimeOffset object."
-   With New DateTime
-      Set .ComObject = this.DotNetLibDateTimeOffset.UtcDateTime()
-      Set UtcDateTime = .Self
-   End With
+    Set Now = this.DateTimeOffsetSingleton.Now()
 End Property
 
 '@Static
 '@Description("Gets a DateTimeOffset object whose date and time are set to the current Coordinated Universal Time (UTC) date and time and whose offset is Zero.")
-Public Property Get UtcNow() As DateTimeOffset
+Public Property Get UtcNow() As IDateTimeOffset
 Attribute UtcNow.VB_Description = "Gets a DateTimeOffset object whose date and time are set to the current Coordinated Universal Time (UTC) date and time and whose offset is Zero."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.UtcNow()
-      Set UtcNow = .Self
-   End With
-End Property
-
-'@Description("Gets the number of ticks that represents the date and time of the current DateTimeOffset object in Coordinated Universal Time (UTC).")
-Public Property Get UtcTicks() As LongLong
-Attribute UtcTicks.VB_Description = "Gets the number of ticks that represents the date and time of the current DateTimeOffset object in Coordinated Universal Time (UTC)."
-   UtcTicks = this.DotNetLibDateTimeOffset.UtcTicks()
-End Property
-
-'@Description("Gets the year component of the date represented by the current DateTimeOffset object.")
-Public Property Get Year() As Long
-Attribute Year.VB_Description = "Gets the year component of the date represented by the current DateTimeOffset object."
-   Year = this.DotNetLibDateTimeOffset.Year()
+    Set UtcNow = this.DateTimeOffsetSingleton.UtcNow()
 End Property
 
 '--------------------------------------------------------------------
 'Methods
 '--------------------------------------------------------------------
 
-'@Description("Returns a new DateTimeOffset object that adds a specified time interval to the value of this instance.")
-Public Function Add(ByVal TimeSpan As TimeSpan) As DateTimeOffset
-Attribute Add.VB_Description = "Returns a new DateTimeOffset object that adds a specified time interval to the value of this instance."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.Add(TimeSpan.ComObject)
-      Set Add = .Self
-   End With
-End Function
-
-'@Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional days to the value of this instance.")
-Public Function AddDays(ByVal Days As Double) As DateTimeOffset
-Attribute AddDays.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of whole and fractional days to the value of this instance."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.AddDays(Days)
-      Set AddDays = .Self
-   End With
-End Function
-
-'@Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional hours to the value of this instance.")
-Public Function AddHours(ByVal Hours As Double) As DateTimeOffset
-Attribute AddHours.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of whole and fractional hours to the value of this instance."
-    With New DateTimeOffset
-        Set .ComObject = this.DotNetLibDateTimeOffset.AddHours(Hours)
-        Set AddHours = .Self
-    End With
-End Function
-
-'@Description("Returns a new DateTimeOffset object that adds a specified number of milliseconds to the value of this instance.")
-Public Function AddMilliseconds(ByVal Milliseconds As Double) As DateTimeOffset
-Attribute AddMilliseconds.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of milliseconds to the value of this instance."
-    With New DateTimeOffset
-        Set .ComObject = this.DotNetLibDateTimeOffset.AddMilliseconds(Milliseconds)
-        Set AddMilliseconds = .Self
-    End With
-End Function
-
-'@Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional minutes to the value of this instance.")
-Public Function AddMinutes(ByVal Minutes As Double) As DateTimeOffset
-Attribute AddMinutes.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of whole and fractional minutes to the value of this instance."
-    With New DateTimeOffset
-        Set .ComObject = this.DotNetLibDateTimeOffset.AddMinutes(Minutes)
-        Set AddMinutes = .Self
-    End With
-End Function
-
-'@Description("Returns a new DateTimeOffset object that adds a specified number of months to the value of this instance.")
-Public Function AddMonths(ByVal months As Long) As DateTimeOffset
-Attribute AddMonths.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of months to the value of this instance."
-    With New DateTimeOffset
-        Set .ComObject = this.DotNetLibDateTimeOffset.AddMonths(months)
-        Set AddMonths = .Self
-    End With
-End Function
-
-'@Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional seconds to the value of this instance.")
-Public Function AddSeconds(ByVal Seconds As Double) As DateTimeOffset
-Attribute AddSeconds.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of whole and fractional seconds to the value of this instance."
-    With New DateTimeOffset
-        Set .ComObject = this.DotNetLibDateTimeOffset.AddSeconds(Seconds)
-        Set AddSeconds = .Self
-    End With
-End Function
-
-'@Description("Returns a new DateTimeOffset object that adds a specified number of ticks to the value of this instance.")
-Public Function AddTicks(ByVal Ticks As LongLong) As DateTimeOffset
-Attribute AddTicks.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of ticks to the value of this instance."
-    With New DateTimeOffset
-        Set .ComObject = this.DotNetLibDateTimeOffset.AddTicks(Ticks)
-        Set AddTicks = .Self
-    End With
-End Function
-
-'@Description("Returns a new DateTimeOffset object that adds a specified number of years to the value of this instance.")
-Public Function AddYears(ByVal years As Long) As DateTimeOffset
-Attribute AddYears.VB_Description = "Returns a new DateTimeOffset object that adds a specified number of years to the value of this instance."
-    With New DateTimeOffset
-        Set .ComObject = this.DotNetLibDateTimeOffset.AddYears(years)
-        Set AddYears = .Self
-    End With
+'@Static
+'@Description("Compares two DateTimeOffset objects and indicates whether the first is earlier than the second, equal to the second, or later than the second.")
+Public Function Compare(ByVal first As DotNetLib.DateTimeOffset, ByVal Second As DotNetLib.DateTimeOffset) As Long
+Attribute Compare.VB_Description = "Compares two DateTimeOffset objects and indicates whether the first is earlier than the second, equal to the second, or later than the second."
+    Compare = this.DateTimeOffsetSingleton.Compare(first, Second)
 End Function
 
 '@Static
-'@Description("Compares two DateTimeOffset objects and indicates whether the first is earlier than the second, equal to the second, or later than the second.")
-Public Function Compare(ByVal first As DateTimeOffset, ByVal Second As DateTimeOffset) As Long
-Attribute Compare.VB_Description = "Compares two DateTimeOffset objects and indicates whether the first is earlier than the second, equal to the second, or later than the second."
-    Compare = this.DotNetLibDateTimeOffset.Compare(first.ComObject, Second.ComObject)
-End Function
-
-'@Description("Compares the current DateTimeOffset object to a specified DateTimeOffset object and indicates whether the current object is earlier than, the same as, or later than the second DateTimeOffset object.")
-Public Function CompareTo(ByVal other As DateTimeOffset) As Long
-Attribute CompareTo.VB_Description = "Compares the current DateTimeOffset object to a specified DateTimeOffset object and indicates whether the current object is earlier than, the same as, or later than the second DateTimeOffset object."
-    CompareTo = this.DotNetLibDateTimeOffset.CompareTo(other.ComObject)
-End Function
-
-'@Description("Determines whether the current DateTimeOffset object represents the same point in time as a specified DateTimeOffset object.")
-Public Function Equals(ByVal other As DateTimeOffset) As Boolean
-Attribute Equals.VB_Description = "Determines whether the current DateTimeOffset object represents the same point in time as a specified DateTimeOffset object."
-    Equals = this.DotNetLibDateTimeOffset.Equals(other.ComObject)
-End Function
-
-'@Description("Determines whether a DateTimeOffset object represents the same point in time as a specified object.")
-Public Function Equals2(ByVal obj As Variant) As Boolean
-Attribute Equals2.VB_Description = "Determines whether a DateTimeOffset object represents the same point in time as a specified object."
-    If Not obj Is Nothing Then
-        If TypeOf obj Is DateTimeOffset Then
-            Dim dtoValue As DateTimeOffset
-            Set dtoValue = obj
-            Equals2 = this.DotNetLibDateTimeOffset.Equals(dtoValue.ComObject)
-        End If
-   End If
-End Function
-
 '@Description("Determines whether two specified DateTimeOffset objects represent the same point in time.")
-Public Function Equals3(ByVal first As DateTimeOffset, ByVal Second As DateTimeOffset) As Boolean
+Public Function Equals3(ByVal first As DotNetLib.DateTimeOffset, ByVal Second As DotNetLib.DateTimeOffset) As Boolean
 Attribute Equals3.VB_Description = "Determines whether two specified DateTimeOffset objects represent the same point in time."
-   Equals3 = this.DotNetLibDateTimeOffset.Equals3(first.ComObject, Second.ComObject)
+    Equals3 = this.DateTimeOffsetSingleton.Equals3(first, Second)
 End Function
 
 '@Description("Determines whether the current DateTimeOffset object represents the same time and has the same offset as a specified DateTimeOffset object.")
-Public Function EqualsExact(ByVal other As DateTimeOffset) As Boolean
+Public Function EqualsExact(ByVal other As DotNetLib.DateTimeOffset) As Boolean
 Attribute EqualsExact.VB_Description = "Determines whether the current DateTimeOffset object represents the same time and has the same offset as a specified DateTimeOffset object."
-   EqualsExact = this.DotNetLibDateTimeOffset.EqualsExact(other.ComObject)
+    EqualsExact = this.DateTimeOffsetSingleton.EqualsExact(other)
 End Function
 
 '@Static
 '@Description("Converts the specified Windows file time to an equivalent local time.")
-Public Function FromFileTime(ByVal fileTime As LongLong) As DateTimeOffset
+Public Function FromFileTime(ByVal fileTime As LongLong) As IDateTimeOffset
 Attribute FromFileTime.VB_Description = "Converts the specified Windows file time to an equivalent local time."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.FromFileTime(fileTime)
-      Set FromFileTime = .Self
-   End With
+    Set FromFileTime = this.DateTimeOffsetSingleton.FromFileTime(fileTime)
 End Function
 
 '@Static
 '@Description("Converts a Unix time expressed as the number of milliseconds that have elapsed since 1970-01-01T00:00:00Z to a DateTimeOffset value.")
-Public Function FromUnixTimeMilliseconds(ByVal Milliseconds As LongLong) As DateTimeOffset
+Public Function FromUnixTimeMilliseconds(ByVal pMilliseconds As LongLong) As IDateTimeOffset
 Attribute FromUnixTimeMilliseconds.VB_Description = "Converts a Unix time expressed as the number of milliseconds that have elapsed since 1970-01-01T00:00:00Z to a DateTimeOffset value."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.FromUnixTimeMilliseconds(Milliseconds)
-      Set FromUnixTimeMilliseconds = .Self
-   End With
+    Set FromUnixTimeMilliseconds = this.DateTimeOffsetSingleton.FromUnixTimeMilliseconds(pMilliseconds)
 End Function
 
 '@Static
 '@Description("Converts a Unix time expressed as the number of seconds that have elapsed since 1970-01-01T00:00:00Z to a DateTimeOffset value.")
-Public Function FromUnixTimeSeconds(ByVal Seconds As LongLong) As DateTimeOffset
+Public Function FromUnixTimeSeconds(ByVal Seconds As LongLong) As IDateTimeOffset
 Attribute FromUnixTimeSeconds.VB_Description = "Converts a Unix time expressed as the number of seconds that have elapsed since 1970-01-01T00:00:00Z to a DateTimeOffset value."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.FromUnixTimeSeconds(Seconds)
-      Set FromUnixTimeSeconds = .Self
-   End With
-End Function
-
-'@Description("Returns the hash code for the current DateTimeOffset object.")
-Public Function GetHashCode() As Long
-Attribute GetHashCode.VB_Description = "Returns the hash code for the current DateTimeOffset object."
-   GetHashCode = this.DotNetLibDateTimeOffset.GetHashCode()
+    Set FromUnixTimeSeconds = this.DateTimeOffsetSingleton.FromUnixTimeSeconds(Seconds)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date, time, and offset to its DateTimeOffset equivalent.")
-Public Function Parse(ByVal strInput As String) As DateTimeOffset
+Public Function Parse(ByVal strInput As String) As IDateTimeOffset
 Attribute Parse.VB_Description = "Converts the specified string representation of a date, time, and offset to its DateTimeOffset equivalent."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.Parse(strInput)
-      Set Parse = .Self
-   End With
+    Set Parse = this.DateTimeOffsetSingleton.Parse(strInput)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified culture-specific format information.")
-Public Function Parse2(ByVal strInput As String, ByVal formatProvider As IFormatProvider) As DateTimeOffset
+Public Function Parse2(ByVal strInput As String, ByVal formatProvider As IFormatProvider) As IDateTimeOffset
 Attribute Parse2.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified culture-specific format information."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.Parse2(strInput, formatProvider)
-      Set Parse2 = .Self
-   End With
+    Set Parse2 = this.DateTimeOffsetSingleton.Parse2(strInput, formatProvider)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified culture-specific format information and formatting style.")
-Public Function Parse3(ByVal strInput As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles) As DateTimeOffset
+Public Function Parse3(ByVal strInput As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles) As IDateTimeOffset
 Attribute Parse3.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified culture-specific format information and formatting style."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.Parse3(strInput, formatProvider, styles)
-      Set Parse3 = .Self
-   End With
+    Set Parse3 = this.DateTimeOffsetSingleton.Parse3(strInput, formatProvider, styles)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")
-Public Function ParseExact(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider) As DateTimeOffset
+Public Function ParseExact(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider) As IDateTimeOffset
 Attribute ParseExact.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.ParseExact(strInput, Format, formatProvider)
-      Set ParseExact = .Self
-   End With
+    Set ParseExact = this.DateTimeOffsetSingleton.ParseExact(strInput, Format, formatProvider)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly.")
-Public Function ParseExact2(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles) As DateTimeOffset
+Public Function ParseExact2(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles) As IDateTimeOffset
 Attribute ParseExact2.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.ParseExact2(strInput, Format, formatProvider, styles)
-      Set ParseExact2 = .Self
-   End With
+    Set ParseExact2 = this.DateTimeOffsetSingleton.ParseExact2(strInput, Format, formatProvider, styles)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified formats, culture-specific format information, and style. The format of the string representation must match one of the specified formats exactly.")
-Public Function ParseExact3(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles) As DateTimeOffset
+Public Function ParseExact3(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles) As IDateTimeOffset
 Attribute ParseExact3.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified formats, culture-specific format information, and style. The format of the string representation must match one of the specified formats exactly."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.ParseExact3(strInput, formats, formatProvider, styles)
-      Set ParseExact3 = .Self
-   End With
-End Function
-
-'@Description("Subtracts a DateTimeOffset value that represents a specific date and time from the current DateTimeOffset object.")
-Public Function Subtract(ByVal value As DateTimeOffset) As TimeSpan
-Attribute Subtract.VB_Description = "Subtracts a DateTimeOffset value that represents a specific date and time from the current DateTimeOffset object."
-   With New TimeSpan
-      Set .ComObject = this.DotNetLibDateTimeOffset.Subtract(value.ComObject)
-      Set Subtract = .Self
-   End With
-End Function
-
-'@Description("Subtracts a specified time interval from the current DateTimeOffset object.")
-Public Function Subtract2(ByVal value As TimeSpan) As DateTimeOffset
-Attribute Subtract2.VB_Description = "Subtracts a specified time interval from the current DateTimeOffset object."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.Subtract2(value.ComObject)
-      Set Subtract2 = .Self
-   End With
-End Function
-
-'@Description("Converts the value of the current DateTimeOffset object to a Windows file time.")
-Public Function ToFileTime() As LongLong
-Attribute ToFileTime.VB_Description = "Converts the value of the current DateTimeOffset object to a Windows file time."
-   ToFileTime = this.DotNetLibDateTimeOffset.ToFileTime()
-End Function
-
-'@Description("Converts the current DateTimeOffset object to a DateTimeOffset object that represents the local time.")
-Public Function ToLocalTime() As DateTimeOffset
-Attribute ToLocalTime.VB_Description = "Converts the current DateTimeOffset object to a DateTimeOffset object that represents the local time."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.ToLocalTime()
-      Set ToLocalTime = .Self
-   End With
-End Function
-
-'@Description("Converts the value of the current DateTimeOffset object to the date and time specified by an offset value.")
-Public Function ToOffset(ByVal Offset As TimeSpan) As DateTimeOffset
-Attribute ToOffset.VB_Description = "Converts the value of the current DateTimeOffset object to the date and time specified by an offset value."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.ToOffset(Offset.ComObject)
-      Set ToOffset = .Self
-   End With
-End Function
-
-'@DefaultMember
-'@Description("Converts the value of the current DateTimeOffset object to its equivalent string representation.")
-Public Property Get ToString() As String
-Attribute ToString.VB_Description = "Converts the value of the current DateTimeOffset object to its equivalent string representation."
-Attribute ToString.VB_UserMemId = 0
-   ToString = this.DotNetLibDateTimeOffset.ToString()
-End Property
-
-'@Description("Converts the value of the current DateTimeOffset object to its equivalent string representation using the specified format.")
-Public Function ToString2(ByVal Format As String) As String
-Attribute ToString2.VB_Description = "Converts the value of the current DateTimeOffset object to its equivalent string representation using the specified format."
-   ToString2 = this.DotNetLibDateTimeOffset.ToString2(Format)
-End Function
-
-'@Description("Converts the value of the current DateTimeOffset object to its equivalent string representation using the specified culture-specific formatting information.")
-Public Function ToString3(ByVal formatProvider As IFormatProvider) As String
-Attribute ToString3.VB_Description = "Converts the value of the current DateTimeOffset object to its equivalent string representation using the specified culture-specific formatting information."
-   ToString3 = this.DotNetLibDateTimeOffset.ToString3(formatProvider)
-End Function
-
-'@Description("Converts the value of the current DateTimeOffset object to its equivalent string representation using the specified format and culture-specific format information.")
-Public Function ToString4(ByVal Format As String, ByVal formatProvider As IFormatProvider) As String
-Attribute ToString4.VB_Description = "Converts the value of the current DateTimeOffset object to its equivalent string representation using the specified format and culture-specific format information."
-   ToString4 = this.DotNetLibDateTimeOffset.ToString4(Format, formatProvider)
-End Function
-
-'@Description("Converts the current DateTimeOffset object to a DateTimeOffset value that represents the Coordinated Universal Time (UTC).")
-Public Function ToUniversalTime() As DateTimeOffset
-Attribute ToUniversalTime.VB_Description = "Converts the current DateTimeOffset object to a DateTimeOffset value that represents the Coordinated Universal Time (UTC)."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.ToUniversalTime()
-      Set ToUniversalTime = .Self
-   End With
-End Function
-
-'@Description("Returns the number of milliseconds that have elapsed since 1970-01-01T00:00:00.000Z.")
-Public Function ToUnixTimeMilliseconds() As LongLong
-Attribute ToUnixTimeMilliseconds.VB_Description = "Returns the number of milliseconds that have elapsed since 1970-01-01T00:00:00.000Z."
-   ToUnixTimeMilliseconds = this.DotNetLibDateTimeOffset.ToUnixTimeMilliseconds()
-End Function
-
-'@Description("Returns the number of seconds that have elapsed since 1970-01-01T00:00:00Z.")
-Public Function ToUnixTimeSeconds() As LongLong
-Attribute ToUnixTimeSeconds.VB_Description = "Returns the number of seconds that have elapsed since 1970-01-01T00:00:00Z."
-   ToUnixTimeSeconds = this.DotNetLibDateTimeOffset.ToUnixTimeSeconds()
+    Set ParseExact3 = this.DateTimeOffsetSingleton.ParseExact3(strInput, formats, formatProvider, styles)
 End Function
 
 '@Static
 '@Description("Tries to converts a specified string representation of a date and time to its DateTimeOffset equivalent, and returns a value that indicates whether the conversion succeeded.")
-Public Function TryParse(ByVal strInput As String, ByRef result As DateTimeOffset) As Boolean
+Public Function TryParse(ByVal strInput As String, ByRef result As DotNetLib.DateTimeOffset) As Boolean
 Attribute TryParse.VB_Description = "Tries to converts a specified string representation of a date and time to its DateTimeOffset equivalent, and returns a value that indicates whether the conversion succeeded."
-   Dim outResult As DotNetLib.DateTimeOffset
-   TryParse = this.DotNetLibDateTimeOffset.TryParse(strInput, outResult)
-   With New DateTimeOffset
-      Set .ComObject = outResult
-      Set result = .Self
-   End With
+    TryParse = this.DateTimeOffsetSingleton.TryParse(strInput, result)
 End Function
 
 '@Static
 '@Description("Tries to convert a specified string representation of a date and time to its DateTimeOffset equivalent, and returns a value that indicates whether the conversion succeeded.")
-Public Function TryParse2(ByVal strInput As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DateTimeOffset) As Boolean
+Public Function TryParse2(ByVal strInput As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DotNetLib.DateTimeOffset) As Boolean
 Attribute TryParse2.VB_Description = "Tries to convert a specified string representation of a date and time to its DateTimeOffset equivalent, and returns a value that indicates whether the conversion succeeded."
-   Dim outResult As DotNetLib.DateTimeOffset
-   TryParse2 = this.DotNetLibDateTimeOffset.TryParse2(strInput, formatProvider, styles, outResult)
-   With New DateTimeOffset
-      Set .ComObject = outResult
-      Set result = .Self
-   End With
+    TryParse2 = this.DateTimeOffsetSingleton.TryParse2(strInput, formatProvider, styles, result)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly.")
-Public Function TryParseExact(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DateTimeOffset) As Boolean
+Public Function TryParseExact(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DotNetLib.DateTimeOffset) As Boolean
 Attribute TryParseExact.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly."
-   Dim outResult As DotNetLib.DateTimeOffset
-   TryParseExact = this.DotNetLibDateTimeOffset.TryParseExact(strInput, Format, formatProvider, styles, outResult)
-   With New DateTimeOffset
-      Set .ComObject = outResult
-      Set result = .Self
-   End With
+    TryParseExact = this.DateTimeOffsetSingleton.TryParseExact(strInput, Format, formatProvider, styles, result)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified array of formats, culture-specific format information, and style. The format of the string representation must match one of the specified formats exactly.")
-Public Function TryParseExact2(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DateTimeOffset) As Boolean
+Public Function TryParseExact2(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DotNetLib.DateTimeOffset) As Boolean
 Attribute TryParseExact2.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified array of formats, culture-specific format information, and style. The format of the string representation must match one of the specified formats exactly."
-   Dim outResult As DotNetLib.DateTimeOffset
-   TryParseExact2 = this.DotNetLibDateTimeOffset.TryParseExact2(strInput, formats, formatProvider, styles, outResult)
-   With New DateTimeOffset
-      Set .ComObject = outResult
-      Set result = .Self
-   End With
+    TryParseExact2 = this.DateTimeOffsetSingleton.TryParseExact2(strInput, formats, formatProvider, styles, result)
 End Function
 
 '--------------------------------------------------------------------
@@ -644,259 +244,70 @@ End Function
 
 '@Static
 '@Description("Adds a specified time interval to a DateTimeOffset object that has a specified date and time, and yields a DateTimeOffset object that has new a date and time.")
-Public Function Addition(ByVal DateTimeOffset As DateTimeOffset, ByVal TimeSpan As TimeSpan) As DateTimeOffset
+Public Function Addition(ByVal pDateTimeOffset As DotNetLib.DateTimeOffset, ByVal pTimeSpan As DotNetLib.TimeSpan) As IDateTimeOffset
 Attribute Addition.VB_Description = "Adds a specified time interval to a DateTimeOffset object that has a specified date and time, and yields a DateTimeOffset object that has new a date and time."
-   With New DateTimeOffset
-      Set .ComObject = this.DotNetLibDateTimeOffset.Addition(DateTimeOffset.ComObject, TimeSpan.ComObject)
-      Set Addition = .Self
-   End With
+    Set Addition = this.DateTimeOffsetSingleton.Addition(pDateTimeOffset, pTimeSpan)
 End Function
 
 '@Static
 '@Description("Determines whether two specified DateTimeOffset objects represent the same point in time.")
-Public Function Equality(ByVal left As DateTimeOffset, ByVal right As DateTimeOffset) As Boolean
+Public Function Equality(ByVal Left As DotNetLib.DateTimeOffset, ByVal Right As DotNetLib.DateTimeOffset) As Boolean
 Attribute Equality.VB_Description = "Determines whether two specified DateTimeOffset objects represent the same point in time."
-   Equality = this.DotNetLibDateTimeOffset.Equality(left.ComObject, right.ComObject)
+   Equality = this.DateTimeOffsetSingleton.Equality(Left, Right)
 End Function
 
 '@Static
 '@Description("Determines whether one specified DateTimeOffset object is greater than (or later than) a second specified DateTimeOffset object.")
-Public Function GreaterThan(ByVal left As DateTimeOffset, ByVal right As DateTimeOffset) As Boolean
+Public Function GreaterThan(ByVal Left As DotNetLib.DateTimeOffset, ByVal Right As DotNetLib.DateTimeOffset) As Boolean
 Attribute GreaterThan.VB_Description = "Determines whether one specified DateTimeOffset object is greater than (or later than) a second specified DateTimeOffset object."
-    GreaterThan = this.DotNetLibDateTimeOffset.GreaterThan(left.ComObject, right.ComObject)
+    GreaterThan = this.DateTimeOffsetSingleton.GreaterThan(Left, Right)
 End Function
 
 '@Static
 '@Description("Determines whether one specified DateTimeOffset object is greater than or equal to a second specified DateTimeOffset object.")
-Public Function GreaterThanOrEqual(ByVal left As DateTimeOffset, ByVal right As DateTimeOffset) As Boolean
+Public Function GreaterThanOrEqual(ByVal Left As DotNetLib.DateTimeOffset, ByVal Right As DotNetLib.DateTimeOffset) As Boolean
 Attribute GreaterThanOrEqual.VB_Description = "Determines whether one specified DateTimeOffset object is greater than or equal to a second specified DateTimeOffset object."
-    GreaterThanOrEqual = this.DotNetLibDateTimeOffset.GreaterThanOrEqual(left.ComObject, right.ComObject)
+    GreaterThanOrEqual = this.DateTimeOffsetSingleton.GreaterThanOrEqual(Left, Right)
 End Function
 
 '@Static
 '@Description("Defines an implicit conversion of a DateTime object to a DateTimeOffset object.")
-Public Function Implicit(ByVal DateTime As DateTime) As DateTimeOffset
+Public Function Implicit(ByVal DateTime As DotNetLib.DateTime) As IDateTimeOffset
 Attribute Implicit.VB_Description = "Defines an implicit conversion of a DateTime object to a DateTimeOffset object."
-    With New DateTimeOffset
-        Set .ComObject = this.DotNetLibDateTimeOffset.Implicit(DateTime.ComObject)
-        Set Implicit = .Self
-    End With
+    Set Implicit = this.DateTimeOffsetSingleton.Implicit(DateTime)
 End Function
 
 '@Static
 '@Description("Determines whether two specified DateTimeOffset objects refer to different points in time.")
-Public Function Inequality(ByVal left As DateTimeOffset, ByVal right As DateTimeOffset) As Boolean
+Public Function Inequality(ByVal Left As DotNetLib.DateTimeOffset, ByVal Right As DotNetLib.DateTimeOffset) As Boolean
 Attribute Inequality.VB_Description = "Determines whether two specified DateTimeOffset objects refer to different points in time."
-    Inequality = this.DotNetLibDateTimeOffset.Inequality(left.ComObject, right.ComObject)
+    Inequality = this.DateTimeOffsetSingleton.Inequality(Left, Right)
 End Function
 
 '@Static
 '@Description("Determines whether one specified DateTimeOffset object is less than a second specified DateTimeOffset object.")
-Public Function LessThan(ByVal left As DateTimeOffset, ByVal right As DateTimeOffset) As Boolean
+Public Function LessThan(ByVal Left As DotNetLib.DateTimeOffset, ByVal Right As DotNetLib.DateTimeOffset) As Boolean
 Attribute LessThan.VB_Description = "Determines whether one specified DateTimeOffset object is less than a second specified DateTimeOffset object."
-   LessThan = this.DotNetLibDateTimeOffset.LessThan(left.ComObject, right.ComObject)
+   LessThan = this.DateTimeOffsetSingleton.LessThan(Left, Right)
 End Function
 
 '@Static
 '@Description("Determines whether one specified DateTimeOffset object is less than or equal to a second specified DateTimeOffset object.")
-Public Function LessThanOrEqual(ByVal left As DateTimeOffset, ByVal right As DateTimeOffset) As Boolean
+Public Function LessThanOrEqual(ByVal Left As DotNetLib.DateTimeOffset, ByVal Right As DotNetLib.DateTimeOffset) As Boolean
 Attribute LessThanOrEqual.VB_Description = "Determines whether one specified DateTimeOffset object is less than or equal to a second specified DateTimeOffset object."
-    LessThanOrEqual = this.DotNetLibDateTimeOffset.LessThanOrEqual(left.ComObject, right.ComObject)
+    LessThanOrEqual = this.DateTimeOffsetSingleton.LessThanOrEqual(Left, Right)
 End Function
 
 '@Static
 '@Description("Subtracts one DateTimeOffset object from another and yields a time interval.")
-Public Function Subtraction(ByVal left As DateTimeOffset, ByVal right As DateTimeOffset) As TimeSpan
+Public Function Subtraction(ByVal Left As DotNetLib.DateTimeOffset, ByVal Right As DotNetLib.DateTimeOffset) As ITimeSpan
 Attribute Subtraction.VB_Description = "Subtracts one DateTimeOffset object from another and yields a time interval."
-    With New TimeSpan
-        Set .ComObject = this.DotNetLibDateTimeOffset.Subtraction(left.ComObject, right.ComObject)
-        Set Subtraction = .Self
-    End With
+    Set Subtraction = this.DateTimeOffsetSingleton.Subtraction(Left, Right)
 End Function
 
 '@Static
 '@Description("Subtracts a specified time interval from a specified date and time, and yields a new date and time.")
-Public Function Subtraction2(ByVal DateTimeOffset As DateTimeOffset, ByVal TimeSpan As TimeSpan) As DateTimeOffset
+Public Function Subtraction2(ByVal DateTimeOffset As DotNetLib.DateTimeOffset, ByVal TimeSpan As DotNetLib.TimeSpan) As IDateTimeOffset
 Attribute Subtraction2.VB_Description = "Subtracts a specified time interval from a specified date and time, and yields a new date and time."
-    With New DateTimeOffset
-        Set .ComObject = this.DotNetLibDateTimeOffset.Subtraction2(DateTimeOffset.ComObject, TimeSpan.ComObject)
-        Set Subtraction2 = .Self
-    End With
+    Set Subtraction2 = this.DateTimeOffsetSingleton.Subtraction2(DateTimeOffset, TimeSpan)
 End Function
-
-'--------------------------------------------------------------------
-'Interface DotNetLib.IDateTimeOffset
-'--------------------------------------------------------------------
-
-Private Property Get IDateTimeOffset_DateOnly() As IDateTime
-    Set IDateTimeOffset_DateOnly = DateOnly()
-End Property
-
-Private Property Get IDateTimeOffset_DateTime() As IDateTime
-    Set IDateTimeOffset_DateTime = DateTime()
-End Property
-
-Private Property Get IDateTimeOffset_Day() As Long
-    IDateTimeOffset_Day = Day()
-End Property
-
-Private Property Get IDateTimeOffset_DayOfWeek() As DotNetLib.DayOfWeek
-    IDateTimeOffset_DayOfWeek = DayOfWeek()
-End Property
-
-Private Property Get IDateTimeOffset_DayOfYear() As Long
-    IDateTimeOffset_DayOfYear = DayOfYear()
-End Property
-
-Private Property Get IDateTimeOffset_Hour() As Long
-    IDateTimeOffset_Hour = Hour()
-End Property
-
-Private Property Get IDateTimeOffset_LocalDateTime() As IDateTime
-    Set IDateTimeOffset_LocalDateTime = LocalDateTime()
-End Property
-
-Private Property Get IDateTimeOffset_Millisecond() As Long
-    IDateTimeOffset_Millisecond = Millisecond()
-End Property
-
-Private Property Get IDateTimeOffset_Minute() As Long
-    IDateTimeOffset_Minute = Minute()
-End Property
-
-Private Property Get IDateTimeOffset_Month() As Long
-    IDateTimeOffset_Month = Month()
-End Property
-
-Private Property Get IDateTimeOffset_Offset() As ITimeSpan
-    Set IDateTimeOffset_Offset = Offset()
-End Property
-
-Private Property Get IDateTimeOffset_Second() As Long
-    IDateTimeOffset_Second = Second()
-End Property
-
-Private Property Get IDateTimeOffset_Ticks() As LongLong
-    IDateTimeOffset_Ticks = Ticks()
-End Property
-
-Private Property Get IDateTimeOffset_TimeOfDay() As ITimeSpan
-    Set IDateTimeOffset_TimeOfDay = TimeOfDay()
-End Property
-
-Private Property Get IDateTimeOffset_UtcDateTime() As IDateTime
-    Set IDateTimeOffset_UtcDateTime = UtcDateTime()
-End Property
-
-Private Property Get IDateTimeOffset_UtcTicks() As LongLong
-    IDateTimeOffset_UtcTicks = UtcTicks()
-End Property
-
-Private Property Get IDateTimeOffset_Year() As Long
-    IDateTimeOffset_Year = Year()
-End Property
-
-Private Function IDateTimeOffset_Add(ByVal ts As ITimeSpan) As IDateTimeOffset
-    Set IDateTimeOffset_Add = Add(ts)
-End Function
-
-Private Function IDateTimeOffset_AddDays(ByVal Days As Double) As IDateTimeOffset
-    Set IDateTimeOffset_AddDays = AddDays(Days)
-End Function
-
-Private Function IDateTimeOffset_AddHours(ByVal Hours As Double) As IDateTimeOffset
-    Set IDateTimeOffset_AddHours = AddHours(Hours)
-End Function
-
-Private Function IDateTimeOffset_AddMilliseconds(ByVal Milliseconds As Double) As IDateTimeOffset
-    Set IDateTimeOffset_AddMilliseconds = AddMilliseconds(Milliseconds)
-End Function
-
-Private Function IDateTimeOffset_AddMinutes(ByVal Minutes As Double) As IDateTimeOffset
-    Set IDateTimeOffset_AddMinutes = AddMinutes(Minutes)
-End Function
-
-Private Function IDateTimeOffset_AddMonths(ByVal months As Long) As IDateTimeOffset
-    Set IDateTimeOffset_AddMonths = AddMonths(months)
-End Function
-
-Private Function IDateTimeOffset_AddSeconds(ByVal Seconds As Double) As IDateTimeOffset
-    Set IDateTimeOffset_AddSeconds = AddSeconds(Seconds)
-End Function
-
-Private Function IDateTimeOffset_AddTicks(ByVal Ticks As LongLong) As IDateTimeOffset
-    Set IDateTimeOffset_AddTicks = AddTicks(Ticks)
-End Function
-
-Private Function IDateTimeOffset_AddYears(ByVal years As Long) As IDateTimeOffset
-    Set IDateTimeOffset_AddYears = AddYears(years)
-End Function
-
-Private Function IDateTimeOffset_CompareTo(ByVal other As IDateTimeOffset) As Long
-    IDateTimeOffset_CompareTo = CompareTo(other)
-End Function
-
-Private Function IDateTimeOffset_Equals(ByVal other As IDateTimeOffset) As Boolean
-    IDateTimeOffset_Equals = Equals(other)
-End Function
-
-Private Function IDateTimeOffset_Equals2(ByVal obj As Variant) As Boolean
-    IDateTimeOffset_Equals2 = Equals2(obj)
-End Function
-
-Private Function IDateTimeOffset_EqualsExact(ByVal other As IDateTimeOffset) As Boolean
-    IDateTimeOffset_EqualsExact = EqualsExact(other)
-End Function
-
-Private Function IDateTimeOffset_GetHashCode() As Long
-   IDateTimeOffset_GetHashCode = GetHashCode()
-End Function
-
-Private Function IDateTimeOffset_Subtract(ByVal value As IDateTimeOffset) As ITimeSpan
-    Set IDateTimeOffset_Subtract = Subtract(value)
-End Function
-
-Private Function IDateTimeOffset_Subtract2(ByVal value As ITimeSpan) As IDateTimeOffset
-    Set IDateTimeOffset_Subtract2 = Subtract2(value)
-End Function
-
-Private Function IDateTimeOffset_ToFileTime() As LongLong
-    IDateTimeOffset_ToFileTime = ToFileTime()
-End Function
-
-Private Function IDateTimeOffset_ToLocalTime() As IDateTimeOffset
-    Set IDateTimeOffset_ToLocalTime = ToLocalTime()
-End Function
-
-Private Function IDateTimeOffset_ToOffset(ByVal Offset As ITimeSpan) As IDateTimeOffset
-    Set IDateTimeOffset_ToOffset = ToOffset(Offset)
-End Function
-
-Private Property Get IDateTimeOffset_ToString() As String
-    IDateTimeOffset_ToString = ToString()
-End Property
-
-Private Function IDateTimeOffset_ToString2(ByVal Format As String) As String
-    IDateTimeOffset_ToString2 = ToString2(Format)
-End Function
-
-Private Function IDateTimeOffset_ToString3(ByVal formatProvider As IFormatProvider) As String
-    IDateTimeOffset_ToString3 = ToString3(formatProvider)
-End Function
-
-Private Function IDateTimeOffset_ToString4(ByVal Format As String, ByVal formatProvider As IFormatProvider) As String
-    IDateTimeOffset_ToString4 = ToString4(Format, formatProvider)
-End Function
-
-Private Function IDateTimeOffset_ToUniversalTime() As IDateTimeOffset
-    Set IDateTimeOffset_ToUniversalTime = ToUniversalTime()
-End Function
-
-Private Function IDateTimeOffset_ToUnixTimeMilliseconds() As LongLong
-    IDateTimeOffset_ToUnixTimeMilliseconds = ToUnixTimeMilliseconds()
-End Function
-
-Private Function IDateTimeOffset_ToUnixTimeSeconds() As LongLong
-    IDateTimeOffset_ToUnixTimeSeconds = ToUnixTimeSeconds()
-End Function
-

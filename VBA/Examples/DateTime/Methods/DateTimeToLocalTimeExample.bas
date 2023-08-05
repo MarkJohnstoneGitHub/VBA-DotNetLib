@@ -55,6 +55,10 @@ Attribute DateTimeToLocalTime.VB_Description = "The following example demonstrat
    On Error GoTo 0 'Stop code and display error. End of Try, Catch block
 End Sub
 
+' Output for US Pacific time zone
+'    12/10/2015 6:18:00 AM local time is 12/10/2015 2:18:00 PM universal time.
+'    12/10/2015 6:18:00 AM universal time is 12/9/2015 10:18:00 PM local time.
+
 ' Output for Aus Eastern time zone
-' 12/10/2015 6:18:00 AM local time is 11/10/2015 7:18:00 PM universal time.
-' 12/10/2015 6:18:00 AM universal time is 12/10/2015 5:18:00 PM local time.
+'    12/10/2015 6:18:00 AM local time is 11/10/2015 7:18:00 PM universal time.
+'    12/10/2015 6:18:00 AM universal time is 12/10/2015 5:18:00 PM local time.

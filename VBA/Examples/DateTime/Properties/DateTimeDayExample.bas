@@ -1,12 +1,12 @@
 Attribute VB_Name = "DateTimeDayExample"
-'Rubberduck annotations
 '@Folder "VBADotNetLib.Examples.DateTime.Properties"
 
-'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
-'@Version v1.0 July 09, 2023
-'@LastModified July 30, 2023
+'@Author Mark Johnstone
+'@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 9, 2023
+'@LastModified August 4, 2023
 
-'@DotNetReference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.day?view=netframework-4.8.1#examples
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.day?view=netframework-4.8.1#examples
 
 Option Explicit
 
@@ -50,5 +50,14 @@ Attribute DateTimePropertyDay.VB_Description = "The following example demonstrat
     Dim pvtMillisecond As Long
     pvtMillisecond = moment.Millisecond
     Debug.Print "Millisecond "; pvtMillisecond
-    
 End Sub
+
+' Output:
+'    Year 1999
+'    Month 1
+'    Day 13
+'    Hour 3
+'    Minute 57
+'    Second 32
+'    Millisecond 11
+

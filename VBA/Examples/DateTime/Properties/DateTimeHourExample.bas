@@ -1,10 +1,10 @@
 Attribute VB_Name = "DateTimeHourExample"
-'Rubberduck annotations
 '@Folder "VBADotNetLib.Examples.DateTime.Properties"
 
-'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
-'@Version v1.0 July 09, 2023
-'@LastModified July 30, 2023
+'@Author Mark Johnstone
+'@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 July 9, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.hour?view=netframework-4.8.1#examples
 

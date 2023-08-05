@@ -1,12 +1,10 @@
 Attribute VB_Name = "DateTimeMaxValueExample"
-'Rubberduck annotations
-'@IgnoreModule VariableNotUsed
 '@Folder "VBADotNetLib.Examples.DateTime.Fields"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
-'@Version v1.0 July 09, 2023
-'@LastModified July 30, 2023
+'@Version v1.0 July 9, 2023
+'@LastModified August 3, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.maxvalue?view=netframework-4.8.1#examples
 
@@ -19,14 +17,15 @@ Attribute DateTimeMaxValue.VB_Description = "The following example instantiates 
     Dim numberOfTicks As LongLong
     numberOfTicks = "9223372036854775807" 'Int64.MaxValue
     
-    Dim validDate As IDateTime
     ' Validate the value.
     If (numberOfTicks >= DateTime.MinValue.Ticks And numberOfTicks <= DateTime.MaxValue.Ticks) Then
+        Dim validDate As IDateTime
         Set validDate = DateTime.CreateFromTicks(numberOfTicks)
+        Debug.Print validDate.ToString()
     ElseIf (numberOfTicks < DateTime.MinValue.Ticks) Then
         Debug.Print numberOfTicks & " is less than " & DateTime.MinValue.Ticks & " ticks."
     Else
-        Debug.Print numberOfTicks & " is greater than " & DateTime.MaxValue.Ticks & " ticks."
+        Debug.Print VBA.Format$(numberOfTicks, "#,##0") & " is greater than " & VBA.Format$(DateTime.MaxValue.Ticks, "#,##0") & " ticks."
     End If
 End Sub
 

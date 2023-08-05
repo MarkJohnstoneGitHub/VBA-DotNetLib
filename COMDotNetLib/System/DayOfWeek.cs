@@ -1,5 +1,6 @@
-﻿using System.Runtime.InteropServices;
+﻿// https://learn.microsoft.com/en-us/dotnet/api/system.dayofweek?view=netframework-4.8.1
 
+using System.Runtime.InteropServices;
 
 namespace DotNetLib.System
 {

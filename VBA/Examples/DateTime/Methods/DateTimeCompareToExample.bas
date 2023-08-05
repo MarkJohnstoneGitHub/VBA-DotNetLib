@@ -1,9 +1,10 @@
 Attribute VB_Name = "DateTimeCompareToExample"
 '@Folder("VBADotNetLib.Examples.DateTime.Methods")
 
-'https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Author Mark Johnstone
+'@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 10, 2023
-'@LastModified July 30, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.compareto?view=netframework-4.8.1#system-datetime-compareto(system-datetime)
 
@@ -38,17 +39,15 @@ Public Sub DateTimeCompareTo()
    ' Compare today to last year
    comparison = thisDate.CompareTo(thisDateLastYear)
    Debug.Print "CompareTo method returns " & comparison & ": " & _
-      thisDate.ToString2("d") & " is " & DateComparisonResultToString(comparison) & " than " & thisDateLastYear.ToString2("d")
+                thisDate.ToString2("d") & " is " & _
+                DateComparisonResultToString(comparison) & " than " & thisDateLastYear.ToString2("d")
    
    ' Compare today to last year
    comparison = thisDate.CompareTo(thisDateNextYear)
    Debug.Print "CompareTo method returns " & comparison & ": " & _
-      thisDate.ToString2("d") & " is " & DateComparisonResultToString(comparison) & " than " & thisDateNextYear.ToString2("d")
+                thisDate.ToString2("d") & " is " & _
+                DateComparisonResultToString(comparison) & " than " & thisDateNextYear.ToString2("d")
 End Sub
-
-' If run on October 20, 2006, the example produces the following output:
-'    CompareTo method returns 1: 10/20/2006 is later than 10/20/2005
-'    CompareTo method returns -1: 10/20/2006 is earlier than 10/20/2007
 
 Private Function DateComparisonResultToString(ByVal value As DateComparisonResult) As String
    Select Case value
@@ -59,7 +58,7 @@ Private Function DateComparisonResultToString(ByVal value As DateComparisonResul
 End Function
 
 Public Sub DateTimeCompareTo2()
-   Dim theDay As DateTime
+   Dim theDay As IDateTime
    Set theDay = DateTime.CreateFromDate(DateTime.Today.Year, 7, 28)
    Dim compareValue As Long
    On Error GoTo ErrorHandler
@@ -81,4 +80,8 @@ ErrorHandler:
    Debug.Print Err.Number, Err.Description
    Resume CleanExit
 End Sub
+
+' If run on October 20, 2006, the example produces the following output:
+'    CompareTo method returns 1: 10/20/2006 is later than 10/20/2005
+'    CompareTo method returns -1: 10/20/2006 is earlier than 10/20/2007
 

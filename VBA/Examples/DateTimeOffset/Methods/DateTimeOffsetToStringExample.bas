@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeOffsetToStringExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 21, 2023
-'@LastModified July 31, 2023
+'@LastModified August 4, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.tostring?view=netframework-4.8.1#system-datetimeoffset-tostring
 
@@ -29,4 +29,4 @@ End Sub
 ' Output :
 ' 3/28/2007 7:13:50 PM +00:00
 ' 3/28/2007 12:13:50 PM -07:00
-' 3/28/2007 12:13:50 PM -07:00
+' 3/28/2007 12:13:50 PM -05:00

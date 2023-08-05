@@ -1,6 +1,7 @@
-﻿using System.Runtime.InteropServices;
-
+﻿// https://learn.microsoft.com/en-us/dotnet/api/system.datetimekind?view=netframework-4.8.1
 // https://stackoverflow.com/questions/11647647/how-to-expose-an-enum-defined-in-a-com-library-via-interop-as-the-return-type-of
+
+using System.Runtime.InteropServices;
 
 namespace DotNetLib.System
 {

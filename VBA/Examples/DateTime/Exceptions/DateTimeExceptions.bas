@@ -1,12 +1,12 @@
 Attribute VB_Name = "DateTimeExceptions"
-'@Folder("VBADotNetLib.Examples.DateTime")
+'@Folder("VBADotNetLib.Examples.DateTime.Exceptions")
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 12, 2023
-'@LastModified July 30, 2023
+'@LastModified August 4, 2023
 
-' Notes
+'@Notes
 ' https://www.automateexcel.com/vba/error-handling/
 
 Option Explicit

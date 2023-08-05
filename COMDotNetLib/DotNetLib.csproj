@@ -28,7 +28,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x64</PlatformTarget>
@@ -65,13 +65,14 @@
     <Compile Include="System\DateTimeOffset.cs" />
     <Compile Include="System\DayOfWeek.cs" />
     <Compile Include="System\Globalization\TimeSpanStyles.cs" />
-    <Compile Include="System\IComDateTime.cs" />
-    <Compile Include="System\IDateTime.cs" />
-    <Compile Include="System\IComDateTimeOffset.cs" />
-    <Compile Include="System\IComTimeSpan.cs" />
-    <Compile Include="System\IComTimeZoneInfo.cs" />
-    <Compile Include="System\IDateTimeOffset.cs" />
-    <Compile Include="System\ITimeSpan.cs" />
+    <Compile Include="System\Interfaces\IDateTimeSingleton.cs" />
+    <Compile Include="System\Interfaces\IDateTime.cs" />
+    <Compile Include="System\Interfaces\IDateTimeOffsetSingleton.cs" />
+    <Compile Include="System\Interfaces\ITimeSpanSingleton.cs" />
+    <Compile Include="System\Interfaces\ITimeZoneInfoSingleton.cs" />
+    <Compile Include="System\Interfaces\IDateTimeOffset.cs" />
+    <Compile Include="System\Interfaces\ITimeSpan.cs" />
+    <Compile Include="System\Interfaces\ITimeZoneInfo.cs" />
     <Compile Include="System\TimeSpan.cs" />
     <Compile Include="System\TimeZoneInfo.cs" />
   </ItemGroup>
