@@ -60,7 +60,7 @@ For the creation and access of static members use its corresponding Singleton/Fa
  
 For detailed explanation of class properties see [netframework-4.8.1](https://learn.microsoft.com/en-us/dotnet/api/system?view=netframework-4.8.1)
 
-Ms Access database [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/DotNetLibrary.accdb) wrapper VBA classes and [examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples) for the DotNetLib.tlb.
+Ms Access database [VBADotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/MS-Access) wrapper VBA classes and [examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples) for the DotNetLib.tlb.
 
  
  **Issues:**
