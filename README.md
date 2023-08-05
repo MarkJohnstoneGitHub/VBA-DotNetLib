@@ -13,6 +13,11 @@ Classes initally focussing on are [DateTime](https://learn.microsoft.com/en-us/d
 Rewrote the DotNetLib type library and VBA DotNetLib wrappers to use the [Singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern).
 Where static members are in a Factory/Singleton classs and instances may be programmed against an interface.
 
+Currently the default interfaces IDateTime, IDateTimeOffset, ITimeSpan, ITimeZoneInfo for its corresponding COM object isn't displayed in the VBA Object browser or editor thou accessible. Can program either directly against the COM Object eg. '''Dim myDateTime as DotNetLib.DateTime''' or its interface '''Dim myDateTime as IDateTime.''' 
+
+For the creation and access of static members use its corresponding Singleton/Factory class eg '''Set myDateTime = DateTime.CreateFromDate(2010, 8, 18)'''
+
+
 **Initial developement.**
  - API of the type library and VBA COM wrapper classes may be altered during initial development.
  - Implemented the following C# COM Interlop wrappers of the .Net Framework 4.8.1 [DotNetLib type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib), see [DotNetLib.tlb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
