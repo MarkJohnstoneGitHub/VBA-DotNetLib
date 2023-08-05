@@ -8,8 +8,9 @@ Classes initally focussing on are [DateTime](https://learn.microsoft.com/en-us/d
  
 **Status:**
 
-**August 4th, 2023** Currently rewritting the DotNetLib type library and VBA DotNetLib wrappers to use the [Singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern).
-Where static members are in a Factory/Singleton classs and instances will be programmed against an interface.  It shouldn't effect most examples as they have already been converted to program against an interface. Progress implemented type library DotNetLib, implemented VBA COM wrapper currrently testing against examples.  To be published ASAP after testing.
+**DotNetLib Version 1.1 Update August 5th, 2023** 
+Rewrote the DotNetLib type library and VBA DotNetLib wrappers to use the [Singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern).
+Where static members are in a Factory/Singleton classs and instances will be programmed against an interface.
 
 **Initial developement.**
  - API of the type library and VBA COM wrapper classes may be altered during initial development.
