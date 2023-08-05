@@ -1,4 +1,4 @@
-# VBA DotNetLib COM Interlop wrappers of the .Net Framework 4.8.1
+# VBA DotNetLib COM Interop wrappers of the .Net Framework 4.8.1
  
 **Aim:** To create .Net Framework 4.8.1 Com Interlop wrappers using C# to implement in VBA 64 to enable various .Net Framework data types in VBA with early and/or late binding. Then in VBA create predeclared class wrappers for the DotNetLib.tlb COM objects.  Compatibility intially only VBA 64 on Windows as can only test on windows 64 bit of MS-Office.
  
