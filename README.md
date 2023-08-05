@@ -119,6 +119,7 @@ Or replace with non-generic equivalent.  To enforce type safety in VBA create a 
  Will require implementing the following:
   - [Cultureinfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8.1) and associated classes
   - [Calendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.calendar?view=netframework-4.8.1)
+  - [DateTimeFormat](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1)
 
 VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
 
