@@ -1,11 +1,10 @@
 Attribute VB_Name = "HResults"
-'@IgnoreModule ConstantNotUsed
 '@Folder("VBADotNetLib.System")
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 12 2023
-'@LastModified July 23, 2023
+'@LastModified August 9, 2023
 
 ' https://referencesource.microsoft.com/#mscorlib/system/__hresults.cs
 ' https://powershellexplained.com/2017-04-07-all-dotnet-exception-list/
@@ -32,6 +31,6 @@ Public Enum COMHResult
     OverflowException = COR_E_OVERFLOW
     TimeZoneNotFoundException = COR_E_EXCEPTION
     InvalidTimeZoneException = COR_E_EXCEPTION '@TODO Check
+    CultureNotFoundException = COR_E_ARGUMENT
 End Enum
-
 
