@@ -12,6 +12,7 @@ Option Explicit
 
 '@Description("The following example demonstrates the CultureTypes enumeration and the CultureTypes property.")
 Public Sub CultureInfoCultureTypes()
+Attribute CultureInfoCultureTypes.VB_Description = "The following example demonstrates the CultureTypes enumeration and the CultureTypes property."
     Dim cultures() As DotNetLib.CultureInfo
     cultures = CultureInfo.GetCultures(CultureTypes.CultureTypes_AllCultures)
     Dim varCultureInfo As Variant
