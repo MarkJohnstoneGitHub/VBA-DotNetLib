@@ -1,6 +1,5 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8
-
-//Notes: https://www.geeksforgeeks.org/c-sharp-inheritance-in-interfaces/
+// Notes: https://www.geeksforgeeks.org/c-sharp-inheritance-in-interfaces/
 
 using DotNetLib.System.Globalization;
 using System;

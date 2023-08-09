@@ -14,6 +14,7 @@ namespace DotNetLib.System
     [ProgId("DotNetLib.System.TimeSpan")]
     [Description("Represents a time interval.")]
     [ClassInterface(ClassInterfaceType.None)]
+    [ComDefaultInterface(typeof(ITimeSpan))]
     public class TimeSpan : ITimeSpan, ITimeSpanSingleton
     {
         private GSystem.TimeSpan timeSpanObject;

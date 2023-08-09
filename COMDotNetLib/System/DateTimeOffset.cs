@@ -15,6 +15,7 @@ namespace DotNetLib.System
     [Guid("27660912-6101-4779-B4E0-24F2B164B334")]
     [ProgId("DotNetLib.System.DateTimeOffset")]
     [ClassInterface(ClassInterfaceType.None)]
+    [ComDefaultInterface(typeof(IDateTimeOffset))]
     public class DateTimeOffset : IDateTimeOffset, IDateTimeOffsetSingleton
     {
         private GSystem.DateTimeOffset dateTimeOffsetObject;

@@ -41,6 +41,7 @@ namespace DotNetLib.System
     [TypeLibType(TypeLibTypeFlags.FPreDeclId | TypeLibTypeFlags.FCanCreate )] //The type is predefined. The client application should automatically create a single instance of the object that has this attribute. 
     [ProgId("DotNetLib.System.TimeZoneInfo")]
     [ClassInterface(ClassInterfaceType.None)]
+    [ComDefaultInterface(typeof(ITimeZoneInfo))]
     public class TimeZoneInfo : ITimeZoneInfo, ITimeZoneInfoSingleton
     {
         private GSystem.TimeZoneInfo timeZoneInfoObject;

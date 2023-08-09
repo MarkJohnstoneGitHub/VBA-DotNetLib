@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using GSystem = global::System; // https://stackoverflow.com/questions/5681537/namespace-conflict-in-c-sharp
 using System.ComponentModel;
 using System;
+using DotNetLib.System.Globalization;
 
 namespace DotNetLib.System
 {
@@ -15,6 +16,7 @@ namespace DotNetLib.System
     [ProgId("DotNetLib.System.DateTime")]
     [Description("Represents an instant in time, typically expressed as a date and time of day.")]
     [ClassInterface(ClassInterfaceType.None)]
+    [ComDefaultInterface(typeof(IDateTime))]
     public class DateTime : IDateTime,IDateTimeSingleton
     {
         private GSystem.DateTime dateTimeObject;
@@ -168,7 +170,7 @@ namespace DotNetLib.System
             //set { objDateTime = value; }  // set method
         }
 
-        public IDateTime DateOnly => new DateTime(this.dateTimeObject.Date);
+        public IDateTime DateOnly => new DateTime(this.dateTimeObject.Date);  //@TODO check implementation
 
         /// <summary>
         /// Gets the pDay of the pMonth represented by this instance.

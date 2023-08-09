@@ -64,6 +64,12 @@
     <Compile Include="System\DateTimeKind.cs" />
     <Compile Include="System\DateTimeOffset.cs" />
     <Compile Include="System\DayOfWeek.cs" />
+    <Compile Include="System\Globalization\GregorianCalendar.cs" />
+    <Compile Include="System\Globalization\CultureInfo.cs" />
+    <Compile Include="System\Globalization\CultureInfoSingleton.cs" />
+    <Compile Include="System\Globalization\ICalendar.cs" />
+    <Compile Include="System\Globalization\ICultureInfo.cs" />
+    <Compile Include="System\Globalization\ICultureInfoSingleton.cs" />
     <Compile Include="System\Globalization\TimeSpanStyles.cs" />
     <Compile Include="System\Interfaces\IDateTimeSingleton.cs" />
     <Compile Include="System\Interfaces\IDateTime.cs" />
