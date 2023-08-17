@@ -1,5 +1,5 @@
 Attribute VB_Name = "TZIConvertTimeBySystemTZIdEg"
-'@Folder("VBADotNetLib.Examples.TimeZoneInfo.Methods")
+'@Folder "Examples.System.TimeZoneInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -42,3 +42,5 @@ End Sub
 '    New Delhi: 31/07/2023 4:51:27 PM
 '    Beijing: 31/07/2023 7:21:27 PM
 '    Tokyo: 31/07/2023 8:21:27 PM
+
+

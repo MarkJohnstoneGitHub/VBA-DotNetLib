@@ -1,5 +1,5 @@
 Attribute VB_Name = "TimeSpanTotalMillisecondsExample"
-'@Folder("VBADotNetLib.Examples.TimeSpan.Properties")
+'@Folder "Examples.System.TimeSpan.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

@@ -1,5 +1,5 @@
 Attribute VB_Name = "TimeSpanMinValueExample"
-'@Folder("VBADotNetLib.Examples.TimeSpan.Fields")
+'@Folder "Examples.System.TimeSpan.Fields"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

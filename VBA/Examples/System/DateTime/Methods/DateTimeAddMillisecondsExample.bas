@@ -1,5 +1,5 @@
 Attribute VB_Name = "DateTimeAddMillisecondsExample"
-'@Folder("VBADotNetLib.Examples.DateTime.Methods")
+'@Folder "Examples.System.DateTime.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -23,21 +23,21 @@ Attribute DateTimeAddMilliseconds.VB_Description = "The following example uses t
    Dim date1 As IDateTime
    Set date1 = DateTime.CreateFromDateTime(2010, 9, 8, 16, 0, 0)
    Debug.Print "Original date: " & date1.ToString2(dateFormat) & " " & _
-                VBA.Format$(date1.Ticks, "#,##0") & " ticks" & vbNewLine
+                VBA.format$(date1.Ticks, "#,##0") & " ticks" & vbNewLine
    
    Dim date2 As IDateTime
    Set date2 = date1.AddMilliseconds(1)
    Debug.Print "Second date:   " & date1.ToString2(dateFormat) & " " & _
-                VBA.Format$(date1.Ticks, "#,##0") & " ticks"
+                VBA.format$(date1.Ticks, "#,##0") & " ticks"
    Debug.Print "Difference between dates: " & DateTime.Subtraction(date2, date1).ToString & _
-                " (" & VBA.Format$(date2.Ticks - date1.Ticks, "#,##0") & " ticks)" & vbNewLine
+                " (" & VBA.format$(date2.Ticks - date1.Ticks, "#,##0") & " ticks)" & vbNewLine
    
    Dim date3 As IDateTime
    Set date3 = date1.AddMilliseconds(1.5)
    Debug.Print "Third date:    " & date3.ToString2(dateFormat) & " " & _
-                VBA.Format$(date3.Ticks, "#,##0") & " ticks"
+                VBA.format$(date3.Ticks, "#,##0") & " ticks"
    Debug.Print "Difference between dates: " & DateTime.Subtraction(date3, date1).ToString & _
-                " (" & VBA.Format$(date3.Ticks - date1.Ticks, "#,##0") & " ticks)"
+                " (" & VBA.format$(date3.Ticks - date1.Ticks, "#,##0") & " ticks)"
 End Sub
 
 ' The example displays the following output:

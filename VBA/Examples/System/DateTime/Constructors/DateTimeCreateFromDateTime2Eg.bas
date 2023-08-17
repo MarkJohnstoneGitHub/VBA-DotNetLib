@@ -1,5 +1,5 @@
 Attribute VB_Name = "DateTimeCreateFromDateTime2Eg"
-'@Folder("VBADotNetLib.Examples.DateTime.Constructors")
+'@Folder "Examples.System.DateTime.Constructors"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

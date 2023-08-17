@@ -1,5 +1,5 @@
 Attribute VB_Name = "DateTimeMaxValueExample"
-'@Folder "VBADotNetLib.Examples.DateTime.Fields"
+'@Folder "Examples.System.DateTime.Fields"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -25,7 +25,7 @@ Attribute DateTimeMaxValue.VB_Description = "The following example instantiates 
     ElseIf (numberOfTicks < DateTime.MinValue.Ticks) Then
         Debug.Print numberOfTicks & " is less than " & DateTime.MinValue.Ticks & " ticks."
     Else
-        Debug.Print VBA.Format$(numberOfTicks, "#,##0") & " is greater than " & VBA.Format$(DateTime.MaxValue.Ticks, "#,##0") & " ticks."
+        Debug.Print VBA.format$(numberOfTicks, "#,##0") & " is greater than " & VBA.format$(DateTime.MaxValue.Ticks, "#,##0") & " ticks."
     End If
 End Sub
 

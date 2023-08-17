@@ -1,5 +1,5 @@
 Attribute VB_Name = "DateTimeEquals3Example"
-'@Folder "VBADotNetLib.Examples.System.DateTime.Methods"
+'@Folder "Examples.System.DateTime.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

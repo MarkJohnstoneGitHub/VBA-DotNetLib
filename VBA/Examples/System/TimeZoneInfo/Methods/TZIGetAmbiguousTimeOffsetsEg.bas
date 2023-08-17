@@ -1,5 +1,5 @@
 Attribute VB_Name = "TZIGetAmbiguousTimeOffsetsEg"
-'@Folder("VBADotNetLib.Examples.TimeZoneInfo.Methods")
+'@Folder "Examples.System.TimeZoneInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -105,4 +105,5 @@ End Sub
 '    If 11/4/2007 1:00:00 AM is Central Standard Time, 11/4/2007 7:00:00 AM UTC
 '    If 11/4/2007 1:00:00 AM is Central Daylight Time, 11/4/2007 6:00:00 AM UTC
 '
+
 

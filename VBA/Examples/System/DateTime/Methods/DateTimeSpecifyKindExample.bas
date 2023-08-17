@@ -1,5 +1,5 @@
 Attribute VB_Name = "DateTimeSpecifyKindExample"
-'@Folder("VBADotNetLib.Examples.DateTime.Methods")
+'@Folder "Examples.System.DateTime.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -23,7 +23,7 @@ Public Sub DateTimeSpecifyKind()
     ' as coordinated universal time (UTC).
     Dim saveUtcNow As IDateTime
     Set saveUtcNow = DateTime.UtcNow
-    Dim myDt As IDateTime
+    Dim myDT As IDateTime
     
     ' Display the value and Kind property of the current moment
     ' expressed as UTC and local time.
@@ -33,20 +33,20 @@ Public Sub DateTimeSpecifyKind()
     
     ' Change the Kind property of the current moment to
     ' DateTimeKind.Utc and display the result.
-    Set myDt = DateTime.SpecifyKind(saveNow, DateTimeKind.DateTimeKind_Utc)
-    Display "Utc: .............", myDt
+    Set myDT = DateTime.SpecifyKind(saveNow, DateTimeKind.DateTimeKind_Utc)
+    Display "Utc: .............", myDT
     
     ' Change the Kind property of the current moment to
     ' DateTimeKind.Local and display the result.
 
-    Set myDt = DateTime.SpecifyKind(saveNow, DateTimeKind.DateTimeKind_Local)
-    Display "Local: ...........", myDt
+    Set myDT = DateTime.SpecifyKind(saveNow, DateTimeKind.DateTimeKind_Local)
+    Display "Local: ...........", myDT
     
     ' Change the Kind property of the current moment to
     ' DateTimeKind.Unspecified and display the result.
     
-    Set myDt = DateTime.SpecifyKind(saveNow, DateTimeKind.DateTimeKind_Unspecified)
-    Display "Unspecified: .....", myDt
+    Set myDT = DateTime.SpecifyKind(saveNow, DateTimeKind.DateTimeKind_Unspecified)
+    Display "Unspecified: .....", myDT
 End Sub
 
 Private Sub Display(ByVal title As String, ByVal inputDt As IDateTime)

@@ -1,5 +1,5 @@
 Attribute VB_Name = "DateTimeCompareToExample"
-'@Folder("VBADotNetLib.Examples.DateTime.Methods")
+'@Folder "Examples.System.DateTime.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -84,4 +84,5 @@ End Sub
 ' If run on October 20, 2006, the example produces the following output:
 '    CompareTo method returns 1: 10/20/2006 is later than 10/20/2005
 '    CompareTo method returns -1: 10/20/2006 is earlier than 10/20/2007
+
 

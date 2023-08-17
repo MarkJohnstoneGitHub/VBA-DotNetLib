@@ -1,6 +1,6 @@
 Attribute VB_Name = "DateTimeDayOfYearExample"
 'Rubberduck annotations
-'@Folder "VBADotNetLib.Examples.DateTime.Properties"
+'@Folder "Examples.System.DateTime.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

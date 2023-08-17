@@ -1,5 +1,5 @@
 Attribute VB_Name = "TimeSpanCreateFromTicksExample"
-'@Folder("VBADotNetLib.Examples.TimeSpan.Constructors")
+'@Folder "Examples.System.TimeSpan.Constructors"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

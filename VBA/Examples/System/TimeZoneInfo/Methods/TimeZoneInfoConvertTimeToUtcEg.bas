@@ -1,5 +1,5 @@
 Attribute VB_Name = "TimeZoneInfoConvertTimeToUtcEg"
-'@Folder("VBADotNetLib.Examples.TimeZoneInfo.Methods")
+'@Folder "Examples.System.TimeZoneInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -94,3 +94,5 @@ End Sub
 '    Converting 12/31/9999 10:00:00 PM, Kind Unspecified
 '       ConvertTimeToUtc: 12/31/9999 11:59:59 PM, Kind Utc
 '
+
+

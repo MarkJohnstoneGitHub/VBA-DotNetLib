@@ -1,5 +1,5 @@
 Attribute VB_Name = "TZIConvertTimeFromUtcExample"
-'@Folder("VBADotNetLib.Examples.TimeZoneInfo.Methods")
+'@Folder "Examples.System.TimeZoneInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -35,4 +35,3 @@ End Sub
 
 'Output:
 'The date and time are 31/07/2023 6:23:03 AM Central Summer Time
-

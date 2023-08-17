@@ -1,5 +1,5 @@
 Attribute VB_Name = "TimeZoneInfoConvertTimeTo2UtcEg"
-'@Folder("VBADotNetLib.Examples.TimeZoneInfo.Methods")
+'@Folder "Examples.System.TimeZoneInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -37,3 +37,5 @@ End Sub
 '          UTC Time: 12/6/2013 6:57:51 PM
 '       Time in Tokyo Standard Time zone: 12/7/2013 3:57:51 AM
 '          UTC Time: 12/6/2013 6:57:51 PM
+
+

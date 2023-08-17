@@ -1,5 +1,5 @@
 Attribute VB_Name = "TimeSpanGetHashCodeExample"
-'@Folder("VBADotNetLib.Examples.TimeSpan.Methods")
+'@Folder "Examples.System.TimeSpan.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

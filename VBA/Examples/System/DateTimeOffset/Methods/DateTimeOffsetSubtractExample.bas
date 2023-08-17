@@ -1,5 +1,5 @@
 Attribute VB_Name = "DateTimeOffsetSubtractExample"
-'@Folder("VBADotNetLib.Examples.DateTimeOffset.Methods")
+'@Folder "Examples.System.DateTimeOffset.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -26,14 +26,14 @@ Attribute DateTimeOffsetSubtract.VB_Description = "The following example illustr
                 "(" & secondDate.ToString() & ")" & ": " & _
                 difference.Days & " days, " & _
                 difference.Hours & ":" & _
-                Format$(difference.Minutes, "00")
+                format$(difference.Minutes, "00")
             
     Set difference = firstDate.Subtract(thirdDate)
     Debug.Print "(" & firstDate.ToString() & ")" & " - " & _
                 "(" & secondDate.ToString() & ")" & ": " & _
                 difference.Days & " days, " & _
                 difference.Hours & ":" & _
-                Format$(difference.Minutes, "00")
+                format$(difference.Minutes, "00")
 End Sub
 
 ' The example produces the following output:

@@ -1,6 +1,6 @@
 Attribute VB_Name = "DateTimeUtcNowExample"
 'Rubberduck annotations
-'@Folder "VBADotNetLib.Examples.DateTime.Properties"
+'@Folder "Examples.System.DateTime.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -46,7 +46,7 @@ Attribute DateTimeUtcNow.VB_Description = "The following example uses the Specif
     
     Dim saveUtcNow As IDateTime
     Set saveUtcNow = DateTime.UtcNow
-    Dim myDt As IDateTime
+    Dim myDT As IDateTime
     
     ' Display the value and Kind property of the current moment
     ' expressed as UTC and local time.
@@ -56,18 +56,18 @@ Attribute DateTimeUtcNow.VB_Description = "The following example uses the Specif
     
     ' Change the Kind property of the current moment to
     ' DateTimeKind.Utc and display the result.
-    Set myDt = DateTime.SpecifyKind(saveNow, DateTimeKind.DateTimeKind_Utc)
-    Display "Utc: .............", myDt
+    Set myDT = DateTime.SpecifyKind(saveNow, DateTimeKind.DateTimeKind_Utc)
+    Display "Utc: .............", myDT
 
     ' Change the Kind property of the current moment to
     ' DateTimeKind.Local and display the result.
-    Set myDt = DateTime.SpecifyKind(saveNow, DateTimeKind.DateTimeKind_Local)
-    Display "Local: ...........", myDt
+    Set myDT = DateTime.SpecifyKind(saveNow, DateTimeKind.DateTimeKind_Local)
+    Display "Local: ...........", myDT
 
     ' Change the Kind property of the current moment to
     ' DateTimeKind.Unspecified and display the result.
-    Set myDt = DateTime.SpecifyKind(saveNow, DateTimeKind.DateTimeKind_Unspecified)
-    Display "Unspecified: .....", myDt
+    Set myDT = DateTime.SpecifyKind(saveNow, DateTimeKind.DateTimeKind_Unspecified)
+    Display "Unspecified: .....", myDT
 End Sub
 
 ' Display the value and Kind property for DateTime.Now and DateTime.UtcNow.

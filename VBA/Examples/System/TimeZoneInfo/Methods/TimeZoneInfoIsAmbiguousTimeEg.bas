@@ -1,5 +1,5 @@
 Attribute VB_Name = "TimeZoneInfoIsAmbiguousTimeEg"
-'@Folder("VBADotNetLib.Examples.TimeZoneInfo.Methods")
+'@Folder "Examples.System.TimeZoneInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -100,4 +100,5 @@ End Sub
 '    4/11/2007 1:59:00 AM is ambiguous: True
 '    4/11/2007 2:00:00 AM is ambiguous: False
 '    4/11/2007 2:01:00 AM is ambiguous: False
+
 

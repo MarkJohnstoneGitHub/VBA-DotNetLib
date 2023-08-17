@@ -1,5 +1,5 @@
 Attribute VB_Name = "TimeZoneInfoLocaleExample"
-'@Folder("VBADotNetLib.Examples.TimeZoneInfo.Properties")
+'@Folder "Examples.System.TimeZoneInfo.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

@@ -1,5 +1,5 @@
 Attribute VB_Name = "TimeZoneInfoHasSameRulesExample"
-'@Folder("VBADotNetLib.Examples.TimeZoneInfo.Methods")
+'@Folder "Examples.System.TimeZoneInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -57,3 +57,5 @@ End Sub
 '    Central Europe Standard Time has the same rules as W. Europe Standard Time
 '    Greenwich Standard Time has the same rules as Coordinated Universal Time
 '    Canada Central Standard Time has the same rules as Central America Standard Time
+
+

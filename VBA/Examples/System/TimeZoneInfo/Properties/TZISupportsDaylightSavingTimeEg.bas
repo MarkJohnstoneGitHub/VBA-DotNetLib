@@ -1,5 +1,5 @@
 Attribute VB_Name = "TZISupportsDaylightSavingTimeEg"
-'@Folder("VBADotNetLib.Examples.TimeZoneInfo.Properties")
+'@Folder "Examples.System.TimeZoneInfo.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -73,5 +73,4 @@ End Sub
 '(UTC+12:00) Coordinated Universal Time+12
 '(UTC+13:00) Coordinated Universal Time+13
 '(UTC+14:00) Kiritimati Island
-
 

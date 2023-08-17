@@ -1,5 +1,5 @@
 Attribute VB_Name = "TimeSpanTotalDaysExample"
-'@Folder("VBADotNetLib.Examples.TimeSpan.Properties")
+'@Folder "Examples.System.TimeSpan.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -36,4 +36,3 @@ End Sub
 '          Minutes:       42
 '          Seconds:       45
 '          Milliseconds: 750
-

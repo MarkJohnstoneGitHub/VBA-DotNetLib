@@ -1,5 +1,5 @@
 Attribute VB_Name = "CultureInfoExample"
-'@Folder("VBADotNetLib.Examples.System.Globalization.CultureInfo")
+'@Folder "Examples.System.Globalization.CultureInfo"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

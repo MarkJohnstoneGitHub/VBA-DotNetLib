@@ -1,6 +1,6 @@
 Attribute VB_Name = "DateTimeMinValueExample"
 'Rubberduck annotations
-'@Folder "VBADotNetLib.Examples.DateTime.Fields"
+'@Folder "Examples.System.DateTime.Fields"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

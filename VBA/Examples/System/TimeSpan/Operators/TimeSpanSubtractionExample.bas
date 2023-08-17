@@ -1,5 +1,5 @@
 Attribute VB_Name = "TimeSpanSubtractionExample"
-'@Folder("VBADotNetLib.Examples.TimeSpan.Operators")
+'@Folder "Examples.System.TimeSpan.Operators"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

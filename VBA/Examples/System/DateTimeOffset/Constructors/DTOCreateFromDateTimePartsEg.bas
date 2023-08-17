@@ -1,5 +1,5 @@
 Attribute VB_Name = "DTOCreateFromDateTimePartsEg"
-'@Folder("VBADotNetLib.Examples.DateTimeOffset.Constructors")
+'@Folder "Examples.System.DateTimeOffset.Constructors"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

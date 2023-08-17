@@ -1,5 +1,5 @@
 Attribute VB_Name = "TimeSpanTicksPerMillisecondEg"
-'@Folder("VBADotNetLib.Examples.TimeSpan.Fields")
+'@Folder "Examples.System.TimeSpan.Fields"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -14,7 +14,7 @@ Option Explicit
 Public Sub TimeSpanTicksPerMillisecond()
 Attribute TimeSpanTicksPerMillisecond.VB_Description = "The following example references and displays the value of the TicksPerMillisecond field."
    ' Display the TimeSpan.TicksPerMillisecond value.
-   Debug.Print "TimeSpan.TicksPerMillisecond : " & Format$(TimeSpan.TicksPerMillisecond, "#,##0")
+   Debug.Print "TimeSpan.TicksPerMillisecond : " & format$(TimeSpan.TicksPerMillisecond, "#,##0")
 End Sub
 
 ' Output:

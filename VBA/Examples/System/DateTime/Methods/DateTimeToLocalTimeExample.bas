@@ -1,5 +1,5 @@
 Attribute VB_Name = "DateTimeToLocalTimeExample"
-'@Folder("VBADotNetLib.Examples.DateTime.Methods")
+'@Folder "Examples.System.DateTime.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

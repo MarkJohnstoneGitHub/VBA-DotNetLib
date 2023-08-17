@@ -1,5 +1,5 @@
 Attribute VB_Name = "TimeSpanZeroExample"
-'@Folder("VBADotNetLib.Examples.TimeSpan.Fields")
+'@Folder "Examples.System.TimeSpan.Fields"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

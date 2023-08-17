@@ -1,5 +1,5 @@
 Attribute VB_Name = "DateTimeAdditionExample"
-'@Folder("VBADotNetLib.Examples.DateTime.Operators")
+'@Folder "Examples.System.DateTime.Operators"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

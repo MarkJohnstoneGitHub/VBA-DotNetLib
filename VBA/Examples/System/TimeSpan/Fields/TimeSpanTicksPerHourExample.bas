@@ -1,5 +1,5 @@
 Attribute VB_Name = "TimeSpanTicksPerHourExample"
-'@Folder("VBADotNetLib.Examples.TimeSpan.Fields")
+'@Folder "Examples.System.TimeSpan.Fields"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -14,7 +14,7 @@ Option Explicit
 Public Sub TimeSpanTicksPerHour()
 Attribute TimeSpanTicksPerHour.VB_Description = "The following example references and displays the value of the TicksPerHour field."
    ' Display the TimeSpan.TicksPerHour value.
-   Debug.Print "TimeSpan.TicksPerHour : " & Format$(TimeSpan.TicksPerHour, "#,##0")
+   Debug.Print "TimeSpan.TicksPerHour : " & format$(TimeSpan.TicksPerHour, "#,##0")
 End Sub
 
 ' Output:

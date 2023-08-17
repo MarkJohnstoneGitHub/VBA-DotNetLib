@@ -211,9 +211,9 @@ End Function
 
 '@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")
-Public Function ParseExact(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider) As DotNetLib.ITimeSpan
+Public Function ParseExact(ByVal strInput As String, ByVal format As String, ByVal formatProvider As IFormatProvider) As DotNetLib.ITimeSpan
 Attribute ParseExact.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly."
-    Set ParseExact = this.TimeSpanSingleton.ParseExact(strInput, Format, formatProvider)
+    Set ParseExact = this.TimeSpanSingleton.ParseExact(strInput, format, formatProvider)
 End Function
 
 '@Static
@@ -225,9 +225,9 @@ End Function
 
 '@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information, and styles. The format of the string representation must match the specified format exactly.")
-Public Function ParseExact3(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles) As DotNetLib.ITimeSpan
+Public Function ParseExact3(ByVal strInput As String, ByVal format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles) As DotNetLib.ITimeSpan
 Attribute ParseExact3.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information, and styles. The format of the string representation must match the specified format exactly."
-    Set ParseExact3 = this.TimeSpanSingleton.ParseExact3(strInput, Format, formatProvider, styles)
+    Set ParseExact3 = this.TimeSpanSingleton.ParseExact3(strInput, format, formatProvider, styles)
 End Function
 
 '@Static
@@ -253,9 +253,9 @@ End Function
 
 '@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")
-Public Function TryParseExact(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByRef result As DotNetLib.TimeSpan) As Boolean
+Public Function TryParseExact(ByVal strInput As String, ByVal format As String, ByVal formatProvider As IFormatProvider, ByRef result As DotNetLib.TimeSpan) As Boolean
 Attribute TryParseExact.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly."
-    TryParseExact = this.TimeSpanSingleton.TryParseExact(strInput, Format, formatProvider, result)
+    TryParseExact = this.TimeSpanSingleton.TryParseExact(strInput, format, formatProvider, result)
 End Function
 
 '@Static
@@ -267,9 +267,9 @@ End Function
 
 '@Static
 '@Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information and styles. The format of the string representation must match the specified format exactly.")
-Public Function TryParseExact3(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles, ByRef result As DotNetLib.TimeSpan) As Boolean
+Public Function TryParseExact3(ByVal strInput As String, ByVal format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DotNetLib.TimeSpanStyles, ByRef result As DotNetLib.TimeSpan) As Boolean
 Attribute TryParseExact3.VB_Description = "Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information and styles. The format of the string representation must match the specified format exactly."
-    TryParseExact3 = this.TimeSpanSingleton.TryParseExact3(strInput, Format, formatProvider, styles, result)
+    TryParseExact3 = this.TimeSpanSingleton.TryParseExact3(strInput, format, formatProvider, styles, result)
 End Function
 
 '@Static

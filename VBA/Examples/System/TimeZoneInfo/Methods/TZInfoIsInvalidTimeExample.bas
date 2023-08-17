@@ -1,5 +1,5 @@
 Attribute VB_Name = "TZInfoIsInvalidTimeExample"
-'@Folder("VBADotNetLib.Examples.TimeZoneInfo.Methods")
+'@Folder "Examples.System.TimeZoneInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -102,3 +102,5 @@ End Sub
 '    11/03/2007 3:00:00 AM is invalid: False
 '    11/03/2007 3:01:00 AM is invalid: False
 '
+
+

@@ -1,5 +1,5 @@
 Attribute VB_Name = "DateTimeHourExample"
-'@Folder "VBADotNetLib.Examples.DateTime.Properties"
+'@Folder "Examples.System.DateTime.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

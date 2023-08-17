@@ -1,5 +1,5 @@
 Attribute VB_Name = "TimeSpanAddExample"
-'@Folder("VBADotNetLib.Examples.TimeSpan.Methods")
+'@Folder "Examples.System.TimeSpan.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

@@ -1,5 +1,5 @@
 Attribute VB_Name = "DateTimeExceptions"
-'@Folder("VBADotNetLib.Examples.DateTime.Exceptions")
+'@Folder "Examples.System.DateTime.Exceptions"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

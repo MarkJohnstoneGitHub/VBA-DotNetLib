@@ -1,5 +1,5 @@
 Attribute VB_Name = "DateTimeDayExample"
-'@Folder "VBADotNetLib.Examples.DateTime.Properties"
+'@Folder "Examples.System.DateTime.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -60,4 +60,3 @@ End Sub
 '    Minute 57
 '    Second 32
 '    Millisecond 11
-
