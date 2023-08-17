@@ -96,13 +96,8 @@ Or replace with non-generic equivalent.  To enforce type safety in VBA create a 
  Implement IFormatProvider an object that supplies culture-specific formatting information for the following:
  - DateTime.Parse2
  - DateTime.Parse3
- - DateTime.ParseExact
- - DateTime.ParseExact2
  - DateTime.ParseExact3
- - DateTime.ToString3
- - DateTime.ToString4
  - DateTime.TryParse2
- - DateTimeOffset.Parse2
  - DateTimeOffset.Parse3
  - DateTimeOffset.ParseExact
  - DateTimeOffset.ParseExact2
@@ -113,8 +108,6 @@ Or replace with non-generic equivalent.  To enforce type safety in VBA create a 
  - DateTimeOffset.TryParseExact
  - DateTimeOffset.TryParseExact2
  - TimeSpan.Parse2
- - TimeSpan.ToString3
- - TimeSpan.TryParse2
 
  Will require implementing the following:
   - [Cultureinfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8.1) and associated classes
