@@ -7,18 +7,18 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Attribute VB_Description = "Represents a time interval."
+Attribute VB_Description = "TimeSpan factory methods and static members."
 'Rubberduck annotations
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
-'@ModuleDescription("Represents a time interval.")
+'@ModuleDescription "TimeSpan factory methods and static members."
 
 '@Singleton
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v2.0 August 4, 2023
-'@LastModified August 4, 2023
+'@LastModified August 15, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -30,13 +30,13 @@ Attribute VB_Description = "Represents a time interval."
 Option Explicit
 
 Private Type TTimeSpan
-    TimeSpanSingleton As DotNetLib.ITimeSpanSingleton
+    TimeSpanSingleton As DotNetLib.TimeSpanSingleton
 End Type
 
 Private this As TTimeSpan
 
 Private Sub Class_Initialize()
-    Set this.TimeSpanSingleton = New DotNetLib.TimeSpan
+    Set this.TimeSpanSingleton = New DotNetLib.TimeSpanSingleton
 End Sub
 
 Private Sub Class_Terminate()
@@ -148,9 +148,9 @@ End Function
 
 '@Static
 '@Description("Returns a value that indicates whether two specified instances of TimeSpan are equal.")
-Public Function Equals3(ByVal t1 As DotNetLib.TimeSpan, ByVal t2 As DotNetLib.TimeSpan) As Boolean
-Attribute Equals3.VB_Description = "Returns a value that indicates whether two specified instances of TimeSpan are equal."
-    Equals3 = this.TimeSpanSingleton.Equals3(t1, t2)
+Public Function Equals(ByVal t1 As DotNetLib.TimeSpan, ByVal t2 As DotNetLib.TimeSpan) As Boolean
+Attribute Equals.VB_Description = "Returns a value that indicates whether two specified instances of TimeSpan are equal."
+    Equals = this.TimeSpanSingleton.Equals(t1, t2)
 End Function
 
 '@Static

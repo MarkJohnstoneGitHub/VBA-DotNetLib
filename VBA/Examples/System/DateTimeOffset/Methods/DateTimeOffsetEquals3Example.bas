@@ -1,10 +1,10 @@
 Attribute VB_Name = "DateTimeOffsetEquals3Example"
-'@Folder("VBADotNetLib.Examples.DateTimeOffset.Methods")
+'@Folder "Examples.System.DateTimeOffset.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 21, 2023
-'@LastModified July 31, 2023
+'@LastModified August 17, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.equals?view=netframework-4.8.1#system-datetimeoffset-equals(system-datetimeoffset-system-datetimeoffset)
 
@@ -19,19 +19,19 @@ Attribute DateTimeOffsetEquals3.VB_Description = "The following example illustra
     Set secondTime = firstTime
     Debug.Print firstTime.ToString() & " = " & _
                 secondTime.ToString() & ": " & _
-                DateTimeOffset.Equals3(firstTime, secondTime)
+                DateTimeOffset.Equals(firstTime, secondTime)
     
     ' The value of firstTime remains unchanged
     Set secondTime = DateTimeOffset.CreateFromDateTime2(firstTime.DateTime, TimeSpan.FromHours(firstTime.Offset.Hours + 1))
     Debug.Print firstTime.ToString() & " = " & _
                 secondTime.ToString() & ": " & _
-                DateTimeOffset.Equals3(firstTime, secondTime)
+                DateTimeOffset.Equals(firstTime, secondTime)
     
     ' value of firstTime remains unchanged
     Set secondTime = DateTimeOffset.CreateFromDateTime2(DateTime.Addition(firstTime.DateTime, TimeSpan.FromHours(1)), TimeSpan.FromHours(firstTime.Offset.Hours + 1))
     Debug.Print firstTime.ToString() & " = " & _
                 secondTime.ToString() & ": " & _
-                DateTimeOffset.Equals3(firstTime, secondTime)
+                DateTimeOffset.Equals(firstTime, secondTime)
 End Sub
 
 '  The example produces the following output:

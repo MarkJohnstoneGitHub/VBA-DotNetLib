@@ -1,32 +1,59 @@
 ﻿using GSystem = global::System;
 using GGlobalization = global::System.Globalization;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Globalization;
-using System.Data;
 
 namespace DotNetLib.System.Globalization
 {
-    [ComVisible(true)]
+    [ComVisible(false)]
     [Guid("2F14BC67-B3F9-47BB-87C8-FEA1142120CC")]
     [ProgId("DotNetLib.System.Globalization.Calendar")]
-    [Description("")]
+    [Description("Represents the Gregorian calendar.")]
     [ClassInterface(ClassInterfaceType.None)]
-    [ComDefaultInterface(typeof(ICalendar))]
+    [ComDefaultInterface(typeof(IGregorianCalendar))]
 
-    public class GregorianCalendar : GGlobalization.GregorianCalendar, ICalendar
+    public class GregorianCalendar : GGlobalization.GregorianCalendar, ICalendar, IGregorianCalendar
     {
-        int ICalendar.DaysInYearBeforeMinSupportedYear => base.DaysInYearBeforeMinSupportedYear;
 
-        DateTime ICalendar.MaxSupportedDateTime => new DateTime(base.MaxSupportedDateTime);
+        //Constructors
+        public GregorianCalendar(GGlobalization.GregorianCalendar gregorianCalendar)
+        {
+            GregorianCalendarBase = gregorianCalendar;
+        }
 
-        DateTime ICalendar.MinSupportedDateTime => new DateTime(base.MinSupportedDateTime);
+        public GregorianCalendar() : base()
+        {
+            //GregorianCalendarBase = new GGlobalization.GregorianCalendar();
+        }
 
+        public GregorianCalendar(GregorianCalendarTypes type) : base(type)
+        {
+            //GregorianCalendarBase = new GGlobalization.GregorianCalendar(type);
+        }
+
+        //Fields
+        public new int CurrentEra => CurrentEra;
+
+        public new int DaysInYearBeforeMinSupportedYear => base.DaysInYearBeforeMinSupportedYear;
+
+        public new DateTime MaxSupportedDateTime => new DateTime(base.MaxSupportedDateTime);
+
+        public new DateTime MinSupportedDateTime => new DateTime(base.MinSupportedDateTime);
+
+        public new int ADEra => GGlobalization.GregorianCalendar.ADEra;
+
+
+        // Properties
+        public GGlobalization.GregorianCalendar GregorianCalendarBase 
+        { 
+            get; 
+            set; 
+        }
+
+
+        // Methods
         public DateTime AddDays(DateTime time, int days)
         {
             return new DateTime(base.AddDays(time.DateTimeObject,days));
@@ -167,6 +194,9 @@ namespace DotNetLib.System.Globalization
             return new DateTime(base.ToDateTime(year,month,day,hour,minute,second,millisecond,era));
         }
 
-
+        public new object MemberwiseClone()
+        {
+            return new GregorianCalendar((GGlobalization.GregorianCalendar)base.MemberwiseClone());
+        }
     }
 }

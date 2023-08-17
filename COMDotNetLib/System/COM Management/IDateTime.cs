@@ -15,7 +15,7 @@ namespace DotNetLib.System
         //Properties
 
         //Note: Renamed from Date due to VBA reserved word
-        IDateTime DateOnly
+        DateTime DateOnly
         {
             [Description("Gets the date component of this instance.")]
             get;
@@ -83,7 +83,7 @@ namespace DotNetLib.System
             get;
         }
 
-        ITimeSpan TimeOfDay
+        TimeSpan TimeOfDay
         {
             [Description("Gets the time of day for this instance.")]
             get;
@@ -98,33 +98,33 @@ namespace DotNetLib.System
         // Methods
 
         [Description("Returns a new DateTime that adds the value of the specified TimeSpan to the value of this instance.")]
-        IDateTime Add(TimeSpan value);
+        DateTime Add(TimeSpan value);
 
         [Description("Returns a new DateTime that adds the specified number of days to the value of this instance.")]
-        IDateTime AddDays(double value);
+        DateTime AddDays(double value);
 
         [Description("Returns a new DateTime that adds the specified number of hours to the value of this instance.")]
-        IDateTime AddHours(double value);
+        DateTime AddHours(double value);
 
         //DateTimeTools AddMicoseconds(double value);
 
         [Description("Returns a new DateTime that adds the specified number of milliseconds to the value of this instance.")]
-        IDateTime AddMilliseconds(double value);
+        DateTime AddMilliseconds(double value);
 
         [Description("Returns a new DateTime that adds the specified number of minutes to the value of this instance.")]
-        IDateTime AddMinutes(double value);
+        DateTime AddMinutes(double value);
 
         [Description("Returns a new DateTime that adds the specified number of months to the value of this instance.")]
-        IDateTime AddMonths(int months);
+        DateTime AddMonths(int months);
 
         [Description("Returns a new DateTime that adds the specified number of seconds to the value of this instance.")]
-        IDateTime AddSeconds(double value);
+        DateTime AddSeconds(double value);
 
         [Description("Returns a new DateTime that adds the specified number of ticks to the value of this instance.")]
-        IDateTime AddTicks(long value);
+        DateTime AddTicks(long value);
 
         [Description("Returns a new DateTime that adds the specified number of years to the value of this instance.")]
-        IDateTime AddYears(int value);
+        DateTime AddYears(int value);
 
         [Description("Compares the value of this instance to a specified DateTime value and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.")]
         int CompareTo(DateTime value);
@@ -148,10 +148,10 @@ namespace DotNetLib.System
         bool IsDaylightSavingTime();
 
         [Description("Returns a new DateTime that subtracts the specified duration from the value of this instance.")]
-        IDateTime Subtract(TimeSpan value);
+        DateTime Subtract(TimeSpan value);
 
         [Description("Returns a new TimeSpan that subtracts the specified date and time from the value of this instance.")]
-        ITimeSpan Subtract2(DateTime value);
+        TimeSpan Subtract2(DateTime value);
 
         [Description("Serializes the current DateTime object to a 64-bit binary value that subsequently can be used to recreate the DateTime object.")]
         long ToBinary();
@@ -163,7 +163,7 @@ namespace DotNetLib.System
         long ToFileTimeUtc();
 
         [Description("Converts the value of the current DateTime object to local time.")]
-        IDateTime ToLocalTime();
+        DateTime ToLocalTime();
 
         [Description("Converts the value of the current DateTime object to its equivalent long date string representation.")]
         string ToLongDateString();
@@ -193,6 +193,6 @@ namespace DotNetLib.System
         string ToString4(string format, IFormatProvider provider);
 
         [Description("Converts the value of the current DateTime object to Coordinated Universal Time (UTC).")]
-        IDateTime ToUniversalTime();
+        DateTime ToUniversalTime();
     }
 }

@@ -4,9 +4,9 @@ Attribute VB_Name = "CultureInfoCreate2Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 9, 2023
-'@LastModified August 9, 2023
+'@LastModified August 13, 2023
 
-'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo.-ctor?view=netframework-4.8.1
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo.-ctor?view=netframework-4.8.1#system-globalization-cultureinfo-ctor(system-string)
 
 Option Explicit
 
@@ -22,6 +22,9 @@ Public Sub CultureInfoConstructorExample()
     End If
     Set CultureInfo.CurrentCulture = newCulture
     Debug.Print "The current culture is "; CultureInfo.CurrentCulture.Name
+    
+    ' Restore the original culture
+    Set CultureInfo.CurrentCulture = current
 End Sub
 
 ' The example displays output like the following:

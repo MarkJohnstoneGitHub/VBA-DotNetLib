@@ -18,26 +18,26 @@ namespace DotNetLib.System
         //Constructors
 
         [Description("Initializes a new instance of the TimeSpan structure to the specified number of ticks.")]
-        ITimeSpan CreateFromTicks(long ticks);
+        TimeSpan CreateFromTicks(long ticks);
 
         [Description("Initializes a new instance of the TimeSpan structure to a specified number of hours, minutes, and seconds.")]
-        ITimeSpan Create(int pHours, int pMinutes, int pSeconds);
+        TimeSpan Create(int pHours, int pMinutes, int pSeconds);
 
         [Description("Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, and seconds.")]
-        ITimeSpan Create2(int pDays, int pHours, int pMinutes, int pSeconds);
+        TimeSpan Create2(int pDays, int pHours, int pMinutes, int pSeconds);
 
         [Description("Initializes a new instance of the TimeSpan structure to a specified number of days, hours, minutes, seconds, and milliseconds.")]
-        ITimeSpan Create3(int pDays, int pHours, int pMinutes, int pSeconds, int pMilliseconds);
+        TimeSpan Create3(int pDays, int pHours, int pMinutes, int pSeconds, int pMilliseconds);
 
         // Fields
 
-        ITimeSpan MaxValue 
+        TimeSpan MaxValue 
         {
             [Description("Represents the maximum TimeSpan value. This field is read-only.")]
             get; 
         }
 
-        ITimeSpan MinValue
+        TimeSpan MinValue
         {
             [Description("Represents the minimum TimeSpan value. This field is read-only.")]
             get; 
@@ -73,7 +73,7 @@ namespace DotNetLib.System
             get;
         }
 
-        ITimeSpan Zero
+        TimeSpan Zero
         {
             [Description("Represents the zero TimeSpan value. This field is read-only.")]
             get;
@@ -88,43 +88,43 @@ namespace DotNetLib.System
         int Compare(TimeSpan t1, TimeSpan t2);
 
         [Description("Returns a value that indicates whether two specified instances of TimeSpan are equal.")]
-        bool Equals3(TimeSpan t1, TimeSpan t2);
+        bool Equals(TimeSpan t1, TimeSpan t2);
 
         [Description("Returns a TimeSpan that represents a specified number of days, where the specification is accurate to the nearest millisecond.")]
-        ITimeSpan FromDays(double value);
+        TimeSpan FromDays(double value);
 
         [Description("Returns a TimeSpan that represents a specified number of hours, where the specification is accurate to the nearest millisecond.")]
-        ITimeSpan FromHours(double value);
+        TimeSpan FromHours(double value);
 
         [Description("Returns a TimeSpan that represents a specified number of milliseconds.")]
-        ITimeSpan FromMilliseconds(double value);
+        TimeSpan FromMilliseconds(double value);
 
         [Description("Returns a TimeSpan that represents a specified number of minutes, where the specification is accurate to the nearest millisecond.")]
-        ITimeSpan FromMinutes(double value);
+        TimeSpan FromMinutes(double value);
 
         [Description("Returns a TimeSpan that represents a specified number of seconds, where the specification is accurate to the nearest millisecond.")]
-        ITimeSpan FromSeconds(double value);
+        TimeSpan FromSeconds(double value);
 
         [Description("Returns a TimeSpan that represents a specified time, where the specification is in units of ticks.")]
-        ITimeSpan FromTicks(long value);
+        TimeSpan FromTicks(long value);
 
         [Description("Converts the string representation of a time interval to its TimeSpan equivalent.")]
-        ITimeSpan Parse(string s);
+        TimeSpan Parse(string s);
 
         [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified culture-specific format information.")]
-        ITimeSpan Parse2(string input, GSystem.IFormatProvider formatProvider);
+        TimeSpan Parse2(string input, GSystem.IFormatProvider formatProvider);
 
         [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")] 
-        ITimeSpan ParseExact(string input, string format, IFormatProvider formatProvider);
+        TimeSpan ParseExact(string input, string format, IFormatProvider formatProvider);
 
         [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified array of format strings and culture-specific format information. The format of the string representation must match one of the specified formats exactly.")]
-        ITimeSpan ParseExact2(string input, [In] ref string[] formats, IFormatProvider formatProvider);
+        TimeSpan ParseExact2(string input, [In] ref string[] formats, IFormatProvider formatProvider);
 
         [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified format, culture-specific format information, and styles. The format of the string representation must match the specified format exactly.")]
-        ITimeSpan ParseExact3(string input, string format, GSystem.IFormatProvider formatProvider, TimeSpanStyles styles);
+        TimeSpan ParseExact3(string input, string format, GSystem.IFormatProvider formatProvider, TimeSpanStyles styles);
 
         [Description("Converts the string representation of a time interval to its TimeSpan equivalent by using the specified formats, culture-specific format information, and styles. The format of the string representation must match one of the specified formats exactly")]
-        ITimeSpan ParseExact4(string input, [In] ref string[] formats, GSystem.IFormatProvider formatProvider, TimeSpanStyles styles);
+        TimeSpan ParseExact4(string input, [In] ref string[] formats, GSystem.IFormatProvider formatProvider, TimeSpanStyles styles);
 
         [Description("Converts the string representation of a time interval to its TimeSpan equivalent and returns a value that indicates whether the conversion succeeded.")]
         bool TryParse(string s, out TimeSpan result);
@@ -168,12 +168,12 @@ namespace DotNetLib.System
         bool LessThanOrEqual(TimeSpan t1, TimeSpan t2);
 
         [Description("Subtracts a specified TimeSpan from another specified TimeSpan.")]
-        ITimeSpan Subtraction(TimeSpan t1, TimeSpan t2);
+        TimeSpan Subtraction(TimeSpan t1, TimeSpan t2);
 
         [Description("Returns a TimeSpan whose value is the negated value of the specified instance.")]
-        ITimeSpan UnaryNegation(TimeSpan ts);
+        TimeSpan UnaryNegation(TimeSpan ts);
 
         [Description("Returns the specified instance of TimeSpan.")]
-        ITimeSpan UnaryPlus(TimeSpan ts);
+        TimeSpan UnaryPlus(TimeSpan ts);
     }
 }

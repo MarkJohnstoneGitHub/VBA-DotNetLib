@@ -5,7 +5,6 @@ using System.Runtime.InteropServices;
 using GSystem = global::System; // https://stackoverflow.com/questions/5681537/namespace-conflict-in-c-sharp
 using System.ComponentModel;
 using System;
-using DotNetLib.System.Globalization;
 
 namespace DotNetLib.System
 {
@@ -17,13 +16,13 @@ namespace DotNetLib.System
     [Description("Represents an instant in time, typically expressed as a date and time of day.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IDateTime))]
-    public class DateTime : IDateTime,IDateTimeSingleton
+    public class DateTime : IDateTime
     {
         private GSystem.DateTime dateTimeObject;
 
         // Static Fields
-        private static readonly IDateTime maxValueObject = new DateTime(GSystem.DateTime.MaxValue);
-        private static readonly IDateTime minValueObject = new DateTime(GSystem.DateTime.MinValue);
+        private static readonly DateTime maxValueObject = new DateTime(GSystem.DateTime.MaxValue);
+        private static readonly DateTime minValueObject = new DateTime(GSystem.DateTime.MinValue);
         //public static readonly DateTime dtUnixEpoch = new DateTime(GSystem.DateTime.UnixEpoch);  //Not available in .netframework
 
         //Constructors
@@ -71,92 +70,92 @@ namespace DotNetLib.System
             this.dateTimeObject = new GSystem.DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, (GSystem.DateTimeKind)pKind);
         }
 
-        /// <summary>
-        /// Initializes a new instance of the DateTime structure to a specified number of pTicks and to Coordinated Universal Time (UTC) or local time.
-        /// </summary>
-        /// <param name="pTicks">A date and time expressed in the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 00:00:00.000 in the Gregorian calendar.</param>
-        /// <param name="pKind">One of the enumeration values that indicates whether pTicks specifies a local time, Coordinated Universal Time (UTC), or neither.</param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentOutOfRangeException"> 
-        /// pTicks is less than DateTime.MinValue or greater than DateTime.MaxValue.
-        /// </exception>
-        /// <exception cref="ArgumentException"> 
-        /// pKind is not one of the DateTimeKind values.
-        /// </exception>
-        /// 
-        public IDateTime CreateFromTicks(long pTicks, System.DateTimeKind pKind = System.DateTimeKind.Unspecified)
-        {
-            return new DateTime(pTicks, pKind);
-        }
-        public IDateTime CreateFromDate(int pYear, int pMonth, int pDay)
-        {
-            return new DateTime(pYear, pMonth, pDay);
-        }
+        ///// <summary>
+        ///// Initializes a new instance of the DateTime structure to a specified number of pTicks and to Coordinated Universal Time (UTC) or local time.
+        ///// </summary>
+        ///// <param name="pTicks">A date and time expressed in the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 00:00:00.000 in the Gregorian calendar.</param>
+        ///// <param name="pKind">One of the enumeration values that indicates whether pTicks specifies a local time, Coordinated Universal Time (UTC), or neither.</param>
+        ///// <returns></returns>
+        ///// <exception cref="ArgumentOutOfRangeException"> 
+        ///// pTicks is less than DateTime.MinValue or greater than DateTime.MaxValue.
+        ///// </exception>
+        ///// <exception cref="ArgumentException"> 
+        ///// pKind is not one of the DateTimeKind values.
+        ///// </exception>
+        ///// 
+        //public IDateTime CreateFromTicks(long pTicks, System.DateTimeKind pKind = System.DateTimeKind.Unspecified)
+        //{
+        //    return new DateTime(pTicks, pKind);
+        //}
+        //public IDateTime CreateFromDate(int pYear, int pMonth, int pDay)
+        //{
+        //    return new DateTime(pYear, pMonth, pDay);
+        //}
 
-        /// <summary>
-        /// Initializes a new instance of the DateTime structure to the specified pYear, pMonth, pDay, pHour, pMinute, pSecond, and pMillisecond.
-        /// </summary>
-        /// <param name="pYear">The pYear (1 through 9999).</param>
-        /// <param name="pMonth">The pMonth (1 through 12).</param>
-        /// <param name="pDay">The pDay (1 through the number of days in pMonth).</param>
-        /// <param name="pHour">The hours (0 through 23).</param>
-        /// <param name="pMinute">The minutes (0 through 59).</param>
-        /// <param name="pSecond">The seconds (0 through 59).</param>
-        /// <param name="pMillisecond">The milliseconds (0 through 999).</param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentOutOfRangeException">
-        /// <paramref name="pYear"/> is less than 1 or greater than 9999.
-        ///
-        /// -or-
-        ///
-        /// <paramref name="pMonth"/> is less than 1 or greater than 12.
-        ///
-        /// -or-
-        ///
-        /// <paramref name="pDay"/> is less than 1 or greater than the number of days in <paramref name="pMonth"/>.
-        ///
-        /// -or-
-        ///
-        /// <paramref name="pHour"/> is less than 0 or greater than 23.
-        ///
-        /// -or-
-        ///
-        /// <paramref name="pMinute"/> is less than 0 or greater than 59.
-        ///
-        /// -or-
-        ///
-        /// <paramref name="pSecond"/> is less than 0 or greater than 59.
-        ///
-        /// -or-
-        ///
-        /// <paramref name="pMillisecond"/> is less than 0 or greater than 999.
-        /// </exception>        
-        public IDateTime CreateFromDateTime(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond = 0)
-        {
-            return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond);
-        }
+        ///// <summary>
+        ///// Initializes a new instance of the DateTime structure to the specified pYear, pMonth, pDay, pHour, pMinute, pSecond, and pMillisecond.
+        ///// </summary>
+        ///// <param name="pYear">The pYear (1 through 9999).</param>
+        ///// <param name="pMonth">The pMonth (1 through 12).</param>
+        ///// <param name="pDay">The pDay (1 through the number of days in pMonth).</param>
+        ///// <param name="pHour">The hours (0 through 23).</param>
+        ///// <param name="pMinute">The minutes (0 through 59).</param>
+        ///// <param name="pSecond">The seconds (0 through 59).</param>
+        ///// <param name="pMillisecond">The milliseconds (0 through 999).</param>
+        ///// <returns></returns>
+        ///// <exception cref="ArgumentOutOfRangeException">
+        ///// <paramref name="pYear"/> is less than 1 or greater than 9999.
+        /////
+        ///// -or-
+        /////
+        ///// <paramref name="pMonth"/> is less than 1 or greater than 12.
+        /////
+        ///// -or-
+        /////
+        ///// <paramref name="pDay"/> is less than 1 or greater than the number of days in <paramref name="pMonth"/>.
+        /////
+        ///// -or-
+        /////
+        ///// <paramref name="pHour"/> is less than 0 or greater than 23.
+        /////
+        ///// -or-
+        /////
+        ///// <paramref name="pMinute"/> is less than 0 or greater than 59.
+        /////
+        ///// -or-
+        /////
+        ///// <paramref name="pSecond"/> is less than 0 or greater than 59.
+        /////
+        ///// -or-
+        /////
+        ///// <paramref name="pMillisecond"/> is less than 0 or greater than 999.
+        ///// </exception>        
+        //public IDateTime CreateFromDateTime(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond = 0)
+        //{
+        //    return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond);
+        //}
 
-        public IDateTime CreateFromDateTimeKind(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, DateTimeKind pKind)
-        {
-            return new System.DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pKind);
-        }
+        //public IDateTime CreateFromDateTimeKind(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, DateTimeKind pKind)
+        //{
+        //    return new System.DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pKind);
+        //}
 
-        public IDateTime CreateFromDateTimeKind2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, DateTimeKind pKind)
-        {
-            return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pKind);
-        }
+        //public IDateTime CreateFromDateTimeKind2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, DateTimeKind pKind)
+        //{
+        //    return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pKind);
+        //}
 
         //Fields
 
         /// <summary>
         /// Represents the largest possible value of DateTime. This field is read-only.
         /// </summary>
-        public IDateTime MaxValue => maxValueObject;
+        static public DateTime MaxValue => maxValueObject;
 
         /// <summary>
         /// Represents the smallest possible value of DateTime. This field is read-only.
         /// </summary>
-        public IDateTime MinValue => minValueObject;
+        static public DateTime MinValue => minValueObject;
 
         /// <summary>
         /// The value of this constant is equivalent to 00:00:00.0000000 UTC, January 1, 1970, in the Gregorian calendar. UnixEpoch defines the point in time when Unix time is equal to 0.
@@ -170,7 +169,7 @@ namespace DotNetLib.System
             //set { objDateTime = value; }  // set method
         }
 
-        public IDateTime DateOnly => new DateTime(this.dateTimeObject.Date);  //@TODO check implementation
+        public DateTime DateOnly => new DateTime(this.dateTimeObject.Date);  //@TODO check implementation
 
         /// <summary>
         /// Gets the pDay of the pMonth represented by this instance.
@@ -225,14 +224,14 @@ namespace DotNetLib.System
         /// <summary>
         /// Gets a DateTime object that is set to the current date and time on this computer, expressed as the local time.
         /// </summary>
-        public IDateTime Now => new DateTime(GSystem.DateTime.Now);
+        static public DateTime Now => new DateTime(GSystem.DateTime.Now);
 
         /// <summary>
         /// Gets the seconds component of the date represented by this instance.
         /// </summary>
         public int Second => this.dateTimeObject.Second;
 
-        public ITimeSpan TimeOfDay => new TimeSpan(this.dateTimeObject.Ticks);
+        public TimeSpan TimeOfDay => new TimeSpan(this.dateTimeObject.Ticks);
 
 
         /// <summary>
@@ -243,12 +242,12 @@ namespace DotNetLib.System
         /// <summary>
         /// Gets the current date.
         /// </summary>
-        public IDateTime Today => new DateTime(GSystem.DateTime.Today);
+        static public DateTime Today => new DateTime(GSystem.DateTime.Today);
 
         /// <summary>
         /// Gets a DateTime object that is set to the current date and time on this computer, expressed as the Coordinated Universal Time (UTC).
         /// </summary>
-        public IDateTime UtcNow => new DateTime(GSystem.DateTime.UtcNow);
+        static public DateTime UtcNow => new DateTime(GSystem.DateTime.UtcNow);
 
         /// <summary>
         /// Gets the pYear component of the date represented by this instance.
@@ -257,12 +256,12 @@ namespace DotNetLib.System
 
         // Methods
 
-        public IDateTime Add(TimeSpan value)
+        public DateTime Add(TimeSpan value)
         {
             return new DateTime(this.dateTimeObject.Add(value.TimeSpanObject));
         }
 
-        public IDateTime AddDays(double value)
+        public DateTime AddDays(double value)
         {
             return new DateTime(this.dateTimeObject.AddDays(value));
         }
@@ -272,7 +271,7 @@ namespace DotNetLib.System
         /// </summary>
         /// <param name="value">A number of whole and fractional hours. The value parameter can be negative or positive.</param>
         /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of hours represented by value.</returns>
-        public IDateTime AddHours(double value)
+        public DateTime AddHours(double value)
         {
             return new DateTime(this.dateTimeObject.AddHours(value));
         }
@@ -287,7 +286,7 @@ namespace DotNetLib.System
         /// </summary>
         /// <param name="value">A number of whole and fractional milliseconds. The value parameter can be negative or positive. Note that this value is rounded to the nearest integer.</param>
         /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of milliseconds represented by value.</returns>
-        public IDateTime AddMilliseconds(double value)
+        public DateTime AddMilliseconds(double value)
         {
             return new DateTime(this.dateTimeObject.AddMilliseconds(value));
         }
@@ -297,7 +296,7 @@ namespace DotNetLib.System
         /// </summary>
         /// <param name="value">A number of whole and fractional minutes. The value parameter can be negative or positive.</param>
         /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of minutes represented by value.An object whose value is the sum of the date and time represented by this instance and the number of minutes represented by value.</returns>
-        public IDateTime AddMinutes(double value)
+        public DateTime AddMinutes(double value)
         {
             return new DateTime(this.dateTimeObject.AddMinutes(value));
         }
@@ -307,7 +306,7 @@ namespace DotNetLib.System
         /// </summary>
         /// <param name="months">A number of months. The months parameter can be negative or positive.</param>
         /// <returns></returns>
-        public IDateTime AddMonths(int pMonths)
+        public DateTime AddMonths(int pMonths)
         {
             return new DateTime(this.dateTimeObject.AddMonths(pMonths));
         }
@@ -317,7 +316,7 @@ namespace DotNetLib.System
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public IDateTime AddSeconds(double value)
+        public DateTime AddSeconds(double value)
         {
             return new DateTime(this.dateTimeObject.AddSeconds(value));
         }
@@ -327,7 +326,7 @@ namespace DotNetLib.System
         /// </summary>
         /// <param name="value">A number of 100-nanosecond pTicks. The value parameter can be positive or negative.</param>
         /// <returns>An object whose value is the sum of the date and time represented by this instance and the time represented by value.</returns>
-        public IDateTime AddTicks(long value)
+        public DateTime AddTicks(long value)
         {
             return new DateTime(this.dateTimeObject.AddTicks(value));
         }
@@ -337,7 +336,7 @@ namespace DotNetLib.System
         /// </summary>
         /// <param name="value">A number of years. The value parameter can be negative or positive.</param>
         /// <returns>An object whose value is the sum of the date and time represented by this instance and the number of years represented by value.</returns>
-        public IDateTime AddYears(int value)
+        public DateTime AddYears(int value)
         {
             return new DateTime(this.dateTimeObject.AddYears(value));
         }
@@ -348,7 +347,7 @@ namespace DotNetLib.System
         /// <param name="t1">The first object to compare.</param>
         /// <param name="t2">The pSecond object to compare.</param>
         /// <returns>A signed number indicating the relative values of t1 and t2.</returns>
-        public int Compare(DateTime t1, DateTime t2)
+        public static int Compare(DateTime t1, DateTime t2)
         {
             return GSystem.DateTime.Compare(t1.DateTimeObject, t2.DateTimeObject);
         }
@@ -387,7 +386,7 @@ namespace DotNetLib.System
         /// <param name="year">The pYear.</param>
         /// <param name="month">The pMonth (a number ranging from 1 to 12).</param>
         /// <returns>The number of days in pMonth for the specified pYear.</returns>
-        public int DaysInMonth(int year, int month)
+        static public int DaysInMonth(int year, int month)
         {
             return GSystem.DateTime.DaysInMonth(year, month);
         }
@@ -419,7 +418,7 @@ namespace DotNetLib.System
         /// <param name="t1">The first object to compare.</param>
         /// <param name="t2">The pSecond object to compare.</param>
         /// <returns>true if the two values are equal; otherwise, false.</returns>
-        public bool Equals3(DateTime t1, DateTime t2)
+        public static bool Equals(DateTime t1, DateTime t2)
         {
             return GSystem.DateTime.Equals(t1.DateTimeObject, t2.DateTimeObject);
         }
@@ -432,7 +431,7 @@ namespace DotNetLib.System
         /// <exception cref="ArgumentException"> 
         /// <paramref name="dateData"/> is less than DateTime.MinValue or greater than DateTime.MaxValue.
         /// </exception>
-        public IDateTime FromBinary(long dateData)
+        static public DateTime FromBinary(long dateData)
         {
             return new DateTime(GSystem.DateTime.FromBinary(dateData));
         }
@@ -445,7 +444,7 @@ namespace DotNetLib.System
         /// <exception cref="ArgumentOutOfRangeException"> 
         /// <paramref name="fileTime"/> is less than 0 or represents a time greater than DateTime.MaxValue.
         /// </exception> 
-        public IDateTime FromFileTime(long fileTime)
+        static public DateTime FromFileTime(long fileTime)
         {
             return new DateTime(GSystem.DateTime.FromFileTime(fileTime));
         }
@@ -458,7 +457,7 @@ namespace DotNetLib.System
         /// <exception cref="ArgumentOutOfRangeException"> 
         /// <paramref name="fileTime"/> is less than 0 or represents a time greater than DateTime.MaxValue.
         /// </exception>         
-        public IDateTime FromFileTimeUtc(long fileTime)
+        static public DateTime FromFileTimeUtc(long fileTime)
         {
             return new DateTime(GSystem.DateTime.FromFileTimeUtc(fileTime));
         }
@@ -471,7 +470,7 @@ namespace DotNetLib.System
         /// <exception cref="ArgumentException"> 
         /// The date is not a valid OLE Automation Date value.
         /// </exception>        
-        public IDateTime FromOADate(double d)
+        static public DateTime FromOADate(double d)
         {
             return new DateTime(GSystem.DateTime.FromOADate(d));
         }
@@ -511,7 +510,7 @@ namespace DotNetLib.System
         /// <exception cref="ArgumentOutOfRangeException"> 
         /// <paramref name="year"/> is less than 1 or greater than 9999. 
         /// </exception>
-        public bool IsLeapYear(int year)
+       static public bool IsLeapYear(int year)
         {
             return GSystem.DateTime.IsLeapYear(year);
         }
@@ -524,33 +523,33 @@ namespace DotNetLib.System
         /// <exception cref="ArgumentNullException"> 
         /// <paramref name="s"/> is null.
         /// </exception>
-        public IDateTime Parse(string s)
+        static public DateTime Parse(string s)
         {
             return new DateTime(GSystem.DateTime.Parse(s));
         }
 
-        public IDateTime Parse2(string s, GSystem.IFormatProvider provider)
+        static public DateTime Parse(string s, GSystem.IFormatProvider provider)
         {
             return new DateTime(GSystem.DateTime.Parse(s, provider));
         }
 
-        public IDateTime Parse3(string s, IFormatProvider provider, GSystem.Globalization.DateTimeStyles styles)
+        static public DateTime Parse(string s, IFormatProvider provider, GSystem.Globalization.DateTimeStyles styles)
         {
             return new DateTime(GSystem.DateTime.Parse(s, provider, styles));
         }
 
-        public IDateTime ParseExact(string s, string format, IFormatProvider provider)
+        static public DateTime ParseExact(string s, string format, IFormatProvider provider)
         {
             return new DateTime(GSystem.DateTime.ParseExact(s, format, provider));
 
         }
 
-        public IDateTime ParseExact2(string s, string format, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style)
+        static public DateTime ParseExact(string s, string format, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style)
         {
             return new DateTime(GSystem.DateTime.ParseExact(s, format, provider, style));
         }
 
-        public IDateTime ParseExact3(string s, [In] ref string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style)
+        static public DateTime ParseExact(string s, [In] ref string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style)
         {
             return new DateTime(GSystem.DateTime.ParseExact(s, formats, provider, style));
         }
@@ -561,17 +560,17 @@ namespace DotNetLib.System
         /// <param name="value">A date and time.</param>
         /// <param name="pKind">One of the enumeration values that indicates whether the new object represents local time, UTC, or neither.</param>
         /// <returns>A new object that has the same number of pTicks as the object represented by the value parameter and the DateTimeKind value specified by the pKind parameter.</returns>
-        public IDateTime SpecifyKind(DateTime value, DateTimeKind pKind)
+        public static DateTime SpecifyKind(DateTime value, DateTimeKind pKind)
         {
-            return new DateTime(GSystem.DateTime.SpecifyKind(value.dateTimeObject, (GSystem.DateTimeKind)pKind));
+            return new DateTime(GSystem.DateTime.SpecifyKind(value.DateTimeObject, (GSystem.DateTimeKind)pKind));
         }
 
-        public IDateTime Subtract(TimeSpan value)
+        public DateTime Subtract(TimeSpan value)
         {
             return new DateTime(this.dateTimeObject.Subtract(value.TimeSpanObject));
         }
 
-        public ITimeSpan Subtract2(DateTime value)
+        public TimeSpan Subtract2(DateTime value)
         {
             return new TimeSpan(this.dateTimeObject.Subtract(value.DateTimeObject));
         }
@@ -595,7 +594,7 @@ namespace DotNetLib.System
         /// Converts the value of the current DateTime object to local time.
         /// </summary>
         /// <returns>An object whose Kind property is Local, and whose value is the local time equivalent to the value of the current DateTime object, or DateTime.MaxValue if the converted value is too large to be represented by a DateTime object, or DateTime.MinValue if the converted value is too small to be represented as a DateTime object.</returns>        
-        public IDateTime ToLocalTime()
+        public DateTime ToLocalTime()
         {
             return new DateTime(this.dateTimeObject.ToLocalTime());
         }
@@ -670,66 +669,81 @@ namespace DotNetLib.System
         /// Converts the value of the current DateTime object to Coordinated Universal Time (UTC).
         /// </summary>
         /// <returns> An object whose Kind property is Utc, and whose value is the UTC equivalent to the value of the current DateTime object, or DateTime.MaxValue if the converted value is too large to be represented by a DateTime object, or DateTime.MinValue if the converted value is too small to be represented by a DateTime object.</returns>
-        public IDateTime ToUniversalTime()
+        public DateTime ToUniversalTime()
         {
             return new DateTime(this.dateTimeObject.ToUniversalTime());
         }
 
-        public bool TryParse(string s, out DateTime result)
+        public static bool TryParse(string s, out DateTime result)
         {
             bool tryParse = GSystem.DateTime.TryParse(s, out GSystem.DateTime outResult);
             result = new DateTime(outResult);
             return tryParse;
         }
 
-        public bool TryParse2(string s, IFormatProvider provider, GSystem.Globalization.DateTimeStyles styles, out DateTime result)
+        public static bool TryParse(string s, IFormatProvider provider, GSystem.Globalization.DateTimeStyles styles, out DateTime result)
         {
             bool tryParse = GSystem.DateTime.TryParse(s, provider, styles, out GSystem.DateTime outResult);
             result = new DateTime(outResult);
             return tryParse;
         }
 
+        public static bool TryParseExact(string s, string format, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style, out DateTime result)
+        {
+            bool tryParseExact = GSystem.DateTime.TryParseExact(s, format,provider, style, out GSystem.DateTime outResult);
+            result = new DateTime(outResult);
+            return tryParseExact;
+        }
+
+        public static bool TryParseExact(string s, [In] string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style, out DateTime result)
+        {
+            bool tryParseExact = GSystem.DateTime.TryParseExact(s, formats, provider, style, out GSystem.DateTime outResult);
+            result = new DateTime(outResult);
+            return tryParseExact;
+        }
+
         //Operators
 
-        public IDateTime Addition(DateTime dt, TimeSpan ts)
+        public static DateTime Addition(DateTime dt, TimeSpan ts)
         {
             return new DateTime(dt.DateTimeObject + ts.TimeSpanObject);
         }
 
-        public bool Equality(DateTime d1, DateTime d2)
+        public static bool Equality(DateTime d1, DateTime d2)
         { 
             return (d1.DateTimeObject == d2.DateTimeObject); 
         }
 
-        public bool GreaterThan(DateTime t1, DateTime t2)
+        public static bool GreaterThan(DateTime t1, DateTime t2)
         {
             return (t1.DateTimeObject > t2.DateTimeObject);
         }
 
-        public bool GreaterThanOrEqual(DateTime t1, DateTime t2)
+        public static bool GreaterThanOrEqual(DateTime t1, DateTime t2)
         { 
             return (t1.DateTimeObject >= t2.DateTimeObject);
         }
-        public bool Inequality(DateTime t1, DateTime t2)
+
+        public static bool Inequality(DateTime t1, DateTime t2)
         {
             return (t1.DateTimeObject != t2.DateTimeObject);
         }
 
-        public bool LessThan(DateTime t1, DateTime t2)
+        public static bool LessThan(DateTime t1, DateTime t2)
         {
             return (t1.DateTimeObject < t2.DateTimeObject);
         }
-        public bool LessThanOrEqual(DateTime t1, DateTime t2)
+        public static bool LessThanOrEqual(DateTime t1, DateTime t2)
         {
             return (t1.DateTimeObject <= t2.DateTimeObject);
         }
 
-        public ITimeSpan Subtraction(DateTime d1, DateTime d2)
+        public static TimeSpan Subtraction(DateTime d1, DateTime d2)
         {
             return new TimeSpan(d1.DateTimeObject - d2.DateTimeObject);
         }
 
-        public IDateTime Subtraction2(DateTime d, TimeSpan t)
+        public static DateTime Subtraction(DateTime d, TimeSpan t)
         {
             return new DateTime(d.DateTimeObject - t.TimeSpanObject);
         }

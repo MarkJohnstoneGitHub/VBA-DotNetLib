@@ -14,20 +14,20 @@ namespace DotNetLib.System.Globalization
         // Constructors
 
         [Description("Initializes a new instance of the CultureInfo class based on the culture specified by the culture identifier.")]
-        ICultureInfo Create(int culture);
+        CultureInfo Create(int culture);
 
         [Description("Initializes a new instance of the CultureInfo class based on the culture specified by name.")]
-        ICultureInfo Create2(string name);
+        CultureInfo Create2(string name);
 
         [Description("Initializes a new instance of the CultureInfo class based on the culture specified by the culture identifier and on a value that specifies whether to use the user-selected culture settings from Windows.")]
-        ICultureInfo Create3(int culture, bool useUserOverride);
+        CultureInfo Create3(int culture, bool useUserOverride);
 
         [Description("Initializes a new instance of the CultureInfo class based on the culture specified by name and on a value that specifies whether to use the user-selected culture settings from Windows.")]
-        ICultureInfo Create4(string name, bool useUserOverride);
+        CultureInfo Create4(string name, bool useUserOverride);
 
         // Properties
 
-        ICultureInfo CurrentCulture
+        CultureInfo CurrentCulture
         {
             [Description("Gets or sets the CultureInfo object that represents the culture used by the current thread and task-based asynchronous operations.")]
             get;
@@ -35,7 +35,7 @@ namespace DotNetLib.System.Globalization
             set;
         }
 
-        ICultureInfo CurrentUICulture
+        CultureInfo CurrentUICulture
         {
             [Description("Gets or sets the CultureInfo object that represents the current user interface culture used by the Resource Manager to look up culture-specific resources at run time.")]
             get;
@@ -43,7 +43,7 @@ namespace DotNetLib.System.Globalization
             set;
         }
 
-        ICultureInfo DefaultThreadCurrentCulture
+        CultureInfo DefaultThreadCurrentCulture
         {
             [Description("Gets or sets the default culture for threads in the current application domain.")]
             get;
@@ -51,7 +51,7 @@ namespace DotNetLib.System.Globalization
             set;
         }
 
-        ICultureInfo DefaultThreadCurrentUICulture
+        CultureInfo DefaultThreadCurrentUICulture
         {
             [Description("Gets or sets the default UI culture for threads in the current application domain.")]
             get;
@@ -59,13 +59,13 @@ namespace DotNetLib.System.Globalization
             set;
         }
 
-        ICultureInfo InstalledUICulture
+        CultureInfo InstalledUICulture
         {
             [Description("Gets the CultureInfo that represents the culture installed with the operating system.")]
             get;
         }
 
-        ICultureInfo InvariantCulture
+        CultureInfo InvariantCulture
         {
             [Description("Gets the CultureInfo object that is culture-independent(invariant).")]
             get;
@@ -74,25 +74,25 @@ namespace DotNetLib.System.Globalization
         // Methods
 
         [Description("Creates a CultureInfo that represents the specific culture that is associated with the specified name.")]
-        ICultureInfo CreateSpecificCulture(string name);
+        CultureInfo CreateSpecificCulture(string name);
 
         // GetCultureInfo Overloads
         [Description("Retrieves a cached, read-only instance of a culture by using the specified culture identifier.")]
-        ICultureInfo GetCultureInfo(int culture);
+        CultureInfo GetCultureInfo(int culture);
 
         [Description("Retrieves a cached, read-only instance of a culture using the specified culture name.")]
-        ICultureInfo GetCultureInfo2(string name);
+        CultureInfo GetCultureInfo2(string name);
 
         [Description("Retrieves a cached, read-only instance of a culture. Parameters specify a culture that is initialized with the TextInfo and CompareInfo objects specified by another culture.")]
-        ICultureInfo GetCultureInfo3(string name, string altName);
+        CultureInfo GetCultureInfo3(string name, string altName);
 
         [Description("Deprecated. Retrieves a read-only CultureInfo object having linguistic characteristics that are identified by the specified RFC 4646 language tag.")]
-        ICultureInfo GetCultureInfoByIetfLanguageTag(string name);
+        CultureInfo GetCultureInfoByIetfLanguageTag(string name);
 
         [Description("Gets the list of supported cultures filtered by the specified CultureTypes parameter.")]
-        ICultureInfo[] GetCultures(GGlobalization.CultureTypes types);
+        CultureInfo[] GetCultures(GGlobalization.CultureTypes types);
 
         [Description("Returns a read-only wrapper around the specified CultureInfo object.")] 
-        ICultureInfo ReadOnly(ICultureInfo ci);
+        CultureInfo ReadOnly(CultureInfo ci);
     }
 }

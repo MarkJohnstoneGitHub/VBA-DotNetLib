@@ -7,18 +7,18 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Attribute VB_Description = "Provides information about a specific culture (called a locale for unmanaged code development). The information includes the names for the culture, the writing system, the calendar used, the sort order of strings, and formatting for dates and numbers."
+Attribute VB_Description = "CultureInfo factory methods and static members."
 'Rubberduck annotations
 '@Folder "VBADotNetLib.System.Globalization"
 '@PredeclaredId
-'@ModuleDescription("Provides information about a specific culture (called a locale for unmanaged code development). The information includes the names for the culture, the writing system, the calendar used, the sort order of strings, and formatting for dates and numbers.")
+'@ModuleDescription("CultureInfo factory methods and static members.")
 
 '@Singleton
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 9, 2023
-'@LastModified August 9, 2023
+'@LastModified August 17, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -30,13 +30,13 @@ Attribute VB_Description = "Provides information about a specific culture (calle
 Option Explicit
 
 Private Type TCultureInfo
-    CultureInfoSingleton As DotNetLib.ICultureInfoSingleton
+    CultureInfoSingleton As DotNetLib.CultureInfoSingleton
 End Type
 
 Private this As TCultureInfo
 
 Private Sub Class_Initialize()
-    Set this.CultureInfoSingleton = New DotNetLib.CultureInfo
+    Set this.CultureInfoSingleton = New DotNetLib.CultureInfoSingleton
 End Sub
 
 Private Sub Class_Terminate()

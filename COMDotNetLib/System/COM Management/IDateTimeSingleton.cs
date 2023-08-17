@@ -16,45 +16,45 @@ namespace DotNetLib.System
         // Constructors
 
         [Description("Initializes a new instance of the DateTime structure to a specified number of ticks and to Coordinated Universal Time (UTC) or local time.")]
-        IDateTime CreateFromTicks(long pTicks, System.DateTimeKind pKind = System.DateTimeKind.Unspecified);
+        DateTime CreateFromTicks(long pTicks, System.DateTimeKind pKind = System.DateTimeKind.Unspecified);
 
         [Description("Initializes a new instance of the DateTime structure to the specified year, month, and day.")]
-        IDateTime CreateFromDate(int pYear, int pMonth, int pDay);
+        DateTime CreateFromDate(int pYear, int pMonth, int pDay);
 
         [Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and millisecond.")]
-        IDateTime CreateFromDateTime(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond = 0);
+        DateTime CreateFromDateTime(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond = 0);
 
         [Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and Coordinated Universal Time (UTC) or local time.")]
-        IDateTime CreateFromDateTimeKind(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, DateTimeKind pKind);
+        DateTime CreateFromDateTimeKind(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, DateTimeKind pKind);
 
         [Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time.")]
-        IDateTime CreateFromDateTimeKind2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, DateTimeKind pKind);
+        DateTime CreateFromDateTimeKind2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, DateTimeKind pKind);
 
         //Fields
-        IDateTime MaxValue 
+        DateTime MaxValue 
         {
             [Description("Represents the largest possible value of DateTime. This field is read-only.")]
             get; 
         }
 
-        IDateTime MinValue 
+        DateTime MinValue 
         {
             [Description("Represents the smallest possible value of DateTime. This field is read-only.")]
             get; 
         }
-        IDateTime Now
+        DateTime Now
         {
             [Description("Gets a DateTime object that is set to the current date and time on this computer, expressed as the local time.")]
             get;
         }
 
-        IDateTime Today 
+        DateTime Today 
         {
             [Description("Gets the current date.")]
             get;
         }
 
-        IDateTime UtcNow 
+        DateTime UtcNow 
         {
             [Description("Gets a DateTime object that is set to the current date and time on this computer, expressed as the Coordinated Universal Time (UTC).")]
             get;
@@ -67,43 +67,43 @@ namespace DotNetLib.System
         int DaysInMonth(int pYear, int pMonth);
 
         [Description("Returns a value indicating whether two DateTime instances have the same date and time value.")]
-        bool Equals3(DateTime t1, DateTime t2);
+        bool Equals(DateTime t1, DateTime t2);
 
         [Description("Deserializes a 64-bit binary value and recreates an original serialized DateTime object.")]
-        IDateTime FromBinary(long dateData);
+        DateTime FromBinary(long dateData);
 
         [Description("Converts the specified Windows file time to an equivalent local time.")]
-        IDateTime FromFileTime(long fileTime);
+        DateTime FromFileTime(long fileTime);
 
         [Description("Converts the specified Windows file time to an equivalent UTC time.")]
-        IDateTime FromFileTimeUtc(long fileTime);
+        DateTime FromFileTimeUtc(long fileTime);
 
         [Description("Returns a DateTime equivalent to the specified OLE Automation Date.")]
-        IDateTime FromOADate(double d);
+        DateTime FromOADate(double d);
 
         [Description("Returns an indication whether the specified year is a leap year.")]
         bool IsLeapYear(int pYear);
 
         [Description("Converts the string representation of a date and time to its DateTime equivalent by using the conventions of the current culture.")]
-        IDateTime Parse(string s);
+        DateTime Parse(string s);
 
         [Description("Converts the string representation of a date and time to its DateTime equivalent by using the conventions of the current culture.")]
-        IDateTime Parse2(string s, IFormatProvider provider);
+        DateTime Parse2(string s, IFormatProvider provider);
 
         [Description("Defines the formatting options that customize string parsing for some date and time parsing methods.  This enumeration supports a bitwise combination of its member values.")]
-        IDateTime Parse3(string s, IFormatProvider provider, GSystem.Globalization.DateTimeStyles styles);
+        DateTime Parse3(string s, IFormatProvider provider, GSystem.Globalization.DateTimeStyles styles);
 
         [Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")]
-        IDateTime ParseExact(string s, string format, IFormatProvider provider);
+        DateTime ParseExact(string s, string format, IFormatProvider provider);
 
         [Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly or an exception is thrown.")]
-        IDateTime ParseExact2(string s, string format, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style);
+        DateTime ParseExact2(string s, string format, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style);
 
         [Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified array of formats, culture-specific format information, and style. The format of the string representation must match at least one of the specified formats exactly or an exception is thrown.")]
-        IDateTime ParseExact3(string s, [In] ref string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style);
+        DateTime ParseExact3(string s, [In] ref string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style);
 
         [Description("Creates a new DateTime object that has the same number of ticks as the specified DateTime, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified DateTimeKind value.")]
-        IDateTime SpecifyKind(DateTime value, DateTimeKind pkind);
+        DateTime SpecifyKind(DateTime value, DateTimeKind pkind);
 
         [Description("Converts the specified string representation of a date and time to its DateTime equivalent and returns a value that indicates whether the conversion succeeded.")]
         bool TryParse(string s, out DateTime result);
@@ -111,10 +111,16 @@ namespace DotNetLib.System
         [Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified culture-specific format information and formatting style, and returns a value that indicates whether the conversion succeeded.")]
         bool TryParse2(string s, IFormatProvider provider, GSystem.Globalization.DateTimeStyles styles, out DateTime result);
 
+        [Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style.")]
+        bool TryParseExact(string s, string format, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style, out DateTime result);
+
+        [Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified array of formats, culture-specific format information, and style.")]
+        bool TryParseExact2(string s, [In] ref string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style, out DateTime result);
+
         // Operators
 
         [Description("Adds a specified time interval to a specified date and time, yielding a new date and time.")]
-        IDateTime Addition(DateTime dt, TimeSpan ts);
+        DateTime Addition(DateTime dt, TimeSpan ts);
 
         [Description("Determines whether two specified instances of DateTime are equal.")]
         bool Equality(DateTime dt1, DateTime dt2);
@@ -135,10 +141,10 @@ namespace DotNetLib.System
         bool LessThanOrEqual(DateTime dt1, DateTime dt2);
 
         [Description("Subtracts a specified date and time from another specified date and time and returns a time interval.")]
-        ITimeSpan Subtraction(DateTime dt1, DateTime dt2);
+        TimeSpan Subtraction(DateTime dt1, DateTime dt2);
 
         [Description("Subtracts a specified time interval from a specified date and time and returns a new date and time.")]
-        IDateTime Subtraction2(DateTime dt, TimeSpan ts);
+        DateTime Subtraction2(DateTime dt, TimeSpan ts);
 
     }
 }

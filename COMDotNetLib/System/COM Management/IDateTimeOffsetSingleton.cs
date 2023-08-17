@@ -17,32 +17,32 @@ namespace DotNetLib.System
         // Constructors
 
         [Description("Initializes a new instance of the DateTimeOffset structure using the specified DateTime value.")]
-        IDateTimeOffset CreateFromDateTime(DateTime pDateTime);
+        DateTimeOffset CreateFromDateTime(DateTime pDateTime);
 
         [Description("Initializes a new instance of the DateTimeOffset structure using the specified DateTime value and offset.")]
-        IDateTimeOffset CreateFromDateTime2(DateTime pDateTime, TimeSpan pOffset);
+        DateTimeOffset CreateFromDateTime2(DateTime pDateTime, TimeSpan pOffset);
 
         [Description("Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, and offset.")]
-        IDateTimeOffset CreateFromDateTimeParts(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, TimeSpan pOffset);
+        DateTimeOffset CreateFromDateTimeParts(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, TimeSpan pOffset);
 
         [Description("Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, millisecond, and offset.")]
-        IDateTimeOffset CreateFromDateTimeParts2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, TimeSpan pOffset);
+        DateTimeOffset CreateFromDateTimeParts2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, TimeSpan pOffset);
 
         [Description("Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, millisecond, and offset of a specified calendar.")]
-        IDateTimeOffset CreateFromDateTimeParts3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, GSystem.Globalization.Calendar calendar, TimeSpan pOffset);
+        DateTimeOffset CreateFromDateTimeParts3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, GSystem.Globalization.Calendar calendar, TimeSpan pOffset);
 
         [Description("Initializes a new instance of the DateTimeOffset structure using the specified number of ticks and offset.")]
-        IDateTimeOffset CreateFromTicks(long pTicks, TimeSpan pOffset);
+        DateTimeOffset CreateFromTicks(long pTicks, TimeSpan pOffset);
 
         // Fields
 
-        IDateTimeOffset MaxValue 
+        DateTimeOffset MaxValue 
         {
             [Description("Represents the greatest possible value of DateTimeOffset. This field is read-only.")]
             get;
         }
 
-        IDateTimeOffset MinValue 
+        DateTimeOffset MinValue 
         {
             [Description("Represents the earliest possible DateTimeOffset value. This field is read-only.")]
             get;
@@ -50,13 +50,13 @@ namespace DotNetLib.System
 
         // Properties
 
-        IDateTimeOffset Now 
+        DateTimeOffset Now 
         {
             [Description("Gets a DateTimeOffset object that is set to the current date and time on the current computer, with the offset set to the local time's offset from Coordinated Universal Time (UTC).")]
             get;
         }
 
-        IDateTimeOffset UtcNow 
+        DateTimeOffset UtcNow 
         {
             [Description("Gets a DateTimeOffset object whose date and time are set to the current Coordinated Universal Time (UTC) date and time and whose offset is Zero.")]
             get;
@@ -68,34 +68,34 @@ namespace DotNetLib.System
         int Compare(DateTimeOffset first, DateTimeOffset second);
 
         [Description("Determines whether two specified DateTimeOffset objects represent the same point in time.")]
-        bool Equals3(DateTimeOffset first, DateTimeOffset second);
+        bool Equals(DateTimeOffset first, DateTimeOffset second);
 
         [Description("Converts the specified Windows file time to an equivalent local time.")]
-        IDateTimeOffset FromFileTime(long fileTime);
+        DateTimeOffset FromFileTime(long fileTime);
 
         [Description("Converts a Unix time expressed as the number of milliseconds that have elapsed since 1970-01-01T00:00:00Z to a DateTimeOffset value.")]
-        IDateTimeOffset FromUnixTimeMilliseconds(long pMilliseconds);
+        DateTimeOffset FromUnixTimeMilliseconds(long pMilliseconds);
 
         [Description("Converts a Unix time expressed as the number of seconds that have elapsed since 1970-01-01T00:00:00Z to a DateTimeOffset value.")]
-        IDateTimeOffset FromUnixTimeSeconds(long pSeconds);
+        DateTimeOffset FromUnixTimeSeconds(long pSeconds);
 
         [Description("Converts the specified string representation of a date, time, and offset to its DateTimeOffset equivalent.")]
-        IDateTimeOffset Parse(string input);
+        DateTimeOffset Parse(string input);
 
         [Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified culture-specific format information.")]
-        IDateTimeOffset Parse2(string input, IFormatProvider formatProvider);
+        DateTimeOffset Parse2(string input, IFormatProvider formatProvider);
 
         [Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified culture-specific format information and formatting style.")]
-        IDateTimeOffset Parse3(string input, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles);
+        DateTimeOffset Parse3(string input, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles);
 
         [Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")]
-        IDateTimeOffset ParseExact(string input, string format, IFormatProvider formatProvider);
+        DateTimeOffset ParseExact(string input, string format, IFormatProvider formatProvider);
 
         [Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly.")] 
-        IDateTimeOffset ParseExact2(string input, string format, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles);
+        DateTimeOffset ParseExact2(string input, string format, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles);
 
         [Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified formats, culture-specific format information, and style. The format of the string representation must match one of the specified formats exactly.")]
-        IDateTimeOffset ParseExact3(string input, [In] ref string[] formats, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles);
+        DateTimeOffset ParseExact3(string input, [In] ref string[] formats, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles);
 
         [Description("Tries to converts a specified string representation of a date and time to its DateTimeOffset equivalent, and returns a value that indicates whether the conversion succeeded.")]
         bool TryParse(string input, out DateTimeOffset result);
@@ -112,7 +112,7 @@ namespace DotNetLib.System
         // Operatorrs
 
         [Description("Adds a specified time interval to a DateTimeOffset object that has a specified date and time, and yields a DateTimeOffset object that has new a date and time.")]
-        IDateTimeOffset Addition (DateTimeOffset dateTimeOffset, TimeSpan timeSpan);
+        DateTimeOffset Addition (DateTimeOffset dateTimeOffset, TimeSpan timeSpan);
 
         [Description("Determines whether two specified DateTimeOffset objects represent the same point in time.")]
         bool Equality(DateTimeOffset left, DateTimeOffset right);
@@ -124,7 +124,7 @@ namespace DotNetLib.System
         bool GreaterThanOrEqual(DateTimeOffset left, DateTimeOffset right);
 
         [Description("Defines an implicit conversion of a DateTime object to a DateTimeOffset object.")]
-        IDateTimeOffset Implicit(DateTime dateTime);
+        DateTimeOffset Implicit(DateTime dateTime);
 
         [Description("Determines whether two specified DateTimeOffset objects refer to different points in time.")]
         bool Inequality(DateTimeOffset left, DateTimeOffset right);
@@ -136,9 +136,9 @@ namespace DotNetLib.System
         bool LessThanOrEqual(DateTimeOffset left, DateTimeOffset right);
 
         [Description("Subtracts one DateTimeOffset object from another and yields a time interval.")]
-        ITimeSpan Subtraction(DateTimeOffset left, DateTimeOffset right);
+        TimeSpan Subtraction(DateTimeOffset left, DateTimeOffset right);
 
         [Description("Subtracts a specified time interval from a specified date and time, and yields a new date and time.")]
-        IDateTimeOffset Subtraction2(DateTimeOffset dateTimeOffset, TimeSpan timeSpan);
+        DateTimeOffset Subtraction2(DateTimeOffset dateTimeOffset, TimeSpan timeSpan);
     }
 }

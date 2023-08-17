@@ -83,7 +83,7 @@ namespace DotNetLib.System
         }
 
         [Description("Returns a new TimeSpan object whose value is the sum of the specified TimeSpan object and this instance.")]
-        ITimeSpan Add(TimeSpan ts);
+        TimeSpan Add(TimeSpan ts);
 
         [Description("Compares this instance to a specified TimeSpan object and returns an integer that indicates whether this instance is shorter than, equal to, or longer than the TimeSpan object.")]
         int CompareTo(TimeSpan value);
@@ -92,7 +92,7 @@ namespace DotNetLib.System
         int CompareTo2(object value);
 
         [Description("Returns a new TimeSpan object whose value is the absolute value of the current TimeSpan object.")]
-        ITimeSpan Duration();
+        TimeSpan Duration();
 
         [Description("Returns a value indicating whether this instance is equal to a specified TimeSpan object.")]
         bool Equals(TimeSpan obj);
@@ -104,10 +104,10 @@ namespace DotNetLib.System
         int GetHashCode();
 
         [Description("Returns a new TimeSpan object whose value is the negated value of this instance.")]
-        ITimeSpan Negate();
+        TimeSpan Negate();
 
         [Description("Returns a new TimeSpan object whose value is the difference between the specified TimeSpan object and this instance.")]
-        ITimeSpan Subtract(TimeSpan ts);
+        TimeSpan Subtract(TimeSpan ts);
 
         [Description("Converts the value of the current TimeSpan object to its equivalent string representation.")]
         string ToString();

@@ -7,18 +7,18 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Attribute VB_Description = "Represents an instant in time, typically expressed as a date and time of day."
+Attribute VB_Description = "DateTime factory methods and static members."
 'Rubberduck annotations
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
-'@ModuleDescription("Represents an instant in time, typically expressed as a date and time of day.")
+'@ModuleDescription("DateTime factory methods and static members.")
 
 '@Singleton
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v2.0 August 4, 2023
-'@LastModified August 4, 2023
+'@LastModified August 15, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -30,13 +30,13 @@ Attribute VB_Description = "Represents an instant in time, typically expressed a
 Option Explicit
 
 Private Type TDateTime
-    DateTimeSingleton As DotNetLib.IDateTimeSingleton
+    DateTimeSingleton As DotNetLib.DateTimeSingleton
 End Type
 
 Private this As TDateTime
 
 Private Sub Class_Initialize()
-    Set this.DateTimeSingleton = New DotNetLib.DateTime
+    Set this.DateTimeSingleton = New DotNetLib.DateTimeSingleton
 End Sub
 
 Private Sub Class_Terminate()
@@ -144,9 +144,9 @@ End Function
 
 '@Static
 '@Description("Returns a value indicating whether two DateTime instances have the same date and time value.")
-Public Function Equals3(ByVal t1 As DotNetLib.DateTime, ByVal t2 As DotNetLib.DateTime) As Boolean
-Attribute Equals3.VB_Description = "Returns a value indicating whether two DateTime instances have the same date and time value."
-    Equals3 = this.DateTimeSingleton.Equals3(t1, t2)
+Public Function Equals(ByVal t1 As DotNetLib.DateTime, ByVal t2 As DotNetLib.DateTime) As Boolean
+Attribute Equals.VB_Description = "Returns a value indicating whether two DateTime instances have the same date and time value."
+    Equals = this.DateTimeSingleton.Equals(t1, t2)
 End Function
 
 '@Static
@@ -245,6 +245,20 @@ End Function
 Public Function TryParse2(ByVal s As String, ByVal provider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DotNetLib.DateTime) As Boolean
 Attribute TryParse2.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified culture-specific format information and formatting style, and returns a value that indicates whether the conversion succeeded."
     TryParse2 = this.DateTimeSingleton.TryParse2(s, provider, styles, result)
+End Function
+
+'@Static
+'@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style.")
+Public Function TryParseExact(ByVal s As String, ByVal pFormat As String, ByVal provider As IFormatProvider, ByVal style As DateTimeStyles, ByRef result As DotNetLib.DateTime) As Boolean
+Attribute TryParseExact.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style."
+    TryParseExact = this.DateTimeSingleton.TryParseExact(s, pFormat, provider, style, result)
+End Function
+
+'@Static
+'@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified array of formats, culture-specific format information, and style.")
+Public Function TryParseExact2(ByVal s As String, ByRef formats() As String, ByVal provider As IFormatProvider, ByVal style As DateTimeStyles, ByRef result As DotNetLib.DateTime) As Boolean
+Attribute TryParseExact2.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified array of formats, culture-specific format information, and style."
+    TryParseExact2 = this.DateTimeSingleton.TryParseExact2(s, formats, provider, style, result)
 End Function
 
 '--------------------------------------------------------------------

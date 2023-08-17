@@ -15,9 +15,16 @@ namespace DotNetLib.System.Globalization
     [Description("Provides information about a specific culture(called a locale for unmanaged code development). The information includes the names for the culture, the writing system, the calendar used, the sort order of strings, and formatting for dates and numbers.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(ICultureInfo))]
-    public class CultureInfo : ICultureInfo, ICultureInfoSingleton
+    public class CultureInfo : ICloneable, IFormatProvider, ICultureInfo //, ICultureInfoSingleton
     {
         private GGlobalization.CultureInfo _cultureInfo;
+
+        //private static ICultureInfo _currentCulture = new CultureInfo(GGlobalization.CultureInfo.CurrentCulture);
+        //private static ICultureInfo _currentUICulture = new CultureInfo(GGlobalization.CultureInfo.CurrentUICulture);
+        //private static ICultureInfo _defaultThreadCurrentCulture = new CultureInfo(GGlobalization.CultureInfo.DefaultThreadCurrentCulture);
+        //private static ICultureInfo _defaultThreadCurrentUICulture = new CultureInfo(GGlobalization.CultureInfo.DefaultThreadCurrentUICulture);
+        //private static ICultureInfo _installedUICulture = new CultureInfo(GGlobalization.CultureInfo.InstalledUICulture);
+        //private static ICultureInfo _invariantCulture = new CultureInfo(GGlobalization.CultureInfo.InvariantCulture);
 
         //Constructors
 
@@ -49,29 +56,6 @@ namespace DotNetLib.System.Globalization
         {
             this._cultureInfo = new GGlobalization.CultureInfo(name, useUserOverride);
         }
-
-
-        // Factory Methods
-        public ICultureInfo Create(int culture)
-        {
-            return new CultureInfo(culture);
-        }
-
-        public ICultureInfo Create2(string name)
-        {
-            return new CultureInfo(name);
-        }
-
-        public ICultureInfo Create3(int culture, bool useUserOverride)
-        {
-            return new CultureInfo(culture, useUserOverride);
-        }
-
-        public ICultureInfo Create4(string name, bool useUserOverride)
-        {
-            return new CultureInfo(name, useUserOverride);
-        }
-
 
         // Properties
 
@@ -124,7 +108,7 @@ namespace DotNetLib.System.Globalization
 
         public Calendar[] OptionalCalendars => _cultureInfo.OptionalCalendars;
 
-        public ICultureInfo Parent
+        public CultureInfo Parent
         {
             get { return new CultureInfo(_cultureInfo.Parent); }
         }
@@ -139,8 +123,7 @@ namespace DotNetLib.System.Globalization
 
         public bool UseUserOverride => _cultureInfo.UseUserOverride;
 
-        // Static
-        public ICultureInfo CurrentCulture
+        public static CultureInfo CurrentCulture
         {
             get
             {
@@ -152,8 +135,7 @@ namespace DotNetLib.System.Globalization
             }
         }
 
-        // Static
-        public ICultureInfo CurrentUICulture
+        public static CultureInfo CurrentUICulture
         {
             get
             {
@@ -165,8 +147,7 @@ namespace DotNetLib.System.Globalization
             }
         }
 
-        // Static
-        public ICultureInfo DefaultThreadCurrentCulture
+        public static CultureInfo DefaultThreadCurrentCulture
         {
             get
             {
@@ -178,8 +159,7 @@ namespace DotNetLib.System.Globalization
             }
         }
 
-        // Static
-        public ICultureInfo DefaultThreadCurrentUICulture
+        public static CultureInfo DefaultThreadCurrentUICulture
         {
             get
             {
@@ -192,7 +172,7 @@ namespace DotNetLib.System.Globalization
         }
 
         // Static
-        public ICultureInfo InstalledUICulture
+        public static CultureInfo InstalledUICulture
         {
             get
             {
@@ -201,7 +181,7 @@ namespace DotNetLib.System.Globalization
         }
 
         // Static
-        public ICultureInfo InvariantCulture
+        public static CultureInfo InvariantCulture
         {
             get
             {
@@ -209,12 +189,22 @@ namespace DotNetLib.System.Globalization
             }
         }
 
-
         // Methods
 
-        public ICultureInfo GetConsoleFallbackUICulture()
+        public CultureInfo GetConsoleFallbackUICulture()
         {
             return new CultureInfo(_cultureInfo.GetConsoleFallbackUICulture());
+        }
+
+        // https://stackoverflow.com/questions/24413077/what-is-the-best-way-to-compare-two-cultureinfo-instances
+        public override bool Equals(object value)
+        {
+            return value is CultureInfo ci && this.CultureInfoObject == ci.CultureInfoObject;
+        }
+
+        public override int GetHashCode() 
+        { 
+            return this.GetHashCode(); 
         }
 
         public override string ToString()
@@ -238,42 +228,37 @@ namespace DotNetLib.System.Globalization
             return _cultureInfo.GetFormat(formatType);
         }
 
-
         // Static
-        public ICultureInfo CreateSpecificCulture(string name)
+        public static CultureInfo CreateSpecificCulture(string name)
         {
             return new CultureInfo(GGlobalization.CultureInfo.CreateSpecificCulture(name));
         }
 
-        // GetCultureInfo Overloads
-        // Static
-        public ICultureInfo GetCultureInfo(int culture)
+        public static CultureInfo GetCultureInfo(int culture)
         {
-            return new CultureInfo(GGlobalization.CultureInfo.GetCultureInfo(culture)); 
+            return new CultureInfo(GGlobalization.CultureInfo.GetCultureInfo(culture));
         }
-        // Static
-        public ICultureInfo GetCultureInfo2(string name)
+
+        public static CultureInfo GetCultureInfo(string name)
         {
             return new CultureInfo(GGlobalization.CultureInfo.GetCultureInfo(name));
         }
-        // Static
-        public ICultureInfo GetCultureInfo3(string name, string altName)
+
+        public static CultureInfo GetCultureInfo(string name, string altName)
         {
-            return new CultureInfo(GGlobalization.CultureInfo.GetCultureInfo(name, altName)); 
+            return new CultureInfo(GGlobalization.CultureInfo.GetCultureInfo(name, altName));
         }
 
-        // Static
-        public ICultureInfo GetCultureInfoByIetfLanguageTag(string name)
+        public static CultureInfo GetCultureInfoByIetfLanguageTag(string name)
         {
-            return new CultureInfo(GGlobalization.CultureInfo.GetCultureInfoByIetfLanguageTag(name)); 
+            return new CultureInfo(GGlobalization.CultureInfo.GetCultureInfoByIetfLanguageTag(name));
         }
 
-        // Static
-        public ICultureInfo[] GetCultures(GGlobalization.CultureTypes types)
+        public static CultureInfo[] GetCultures(GGlobalization.CultureTypes types)
         {
             GGlobalization.CultureInfo[] cultures = GGlobalization.CultureInfo.GetCultures(types);
             //https://stackoverflow.com/questions/9917390/how-to-create-and-initialize-an-array-with-another-array
-            ICultureInfo[] output = new ICultureInfo[cultures.Length];
+            CultureInfo[] output = new CultureInfo[cultures.Length];
 
             int index = 0;
             foreach (GGlobalization.CultureInfo culture in cultures)
@@ -285,12 +270,10 @@ namespace DotNetLib.System.Globalization
         }
 
         // Static
-        public ICultureInfo ReadOnly(ICultureInfo ci)
+        public static CultureInfo ReadOnly(CultureInfo ci)
         {
-            return new CultureInfo(GGlobalization.CultureInfo.ReadOnly((GGlobalization.CultureInfo)ci));
+            return new CultureInfo(GGlobalization.CultureInfo.ReadOnly(ci.CultureInfoObject));
         }
-
-
 
     }
 }

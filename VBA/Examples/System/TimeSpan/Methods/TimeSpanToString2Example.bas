@@ -1,17 +1,16 @@
 Attribute VB_Name = "TimeSpanToString2Example"
-'@Folder("VBADotNetLib.Examples.TimeSpan.Methods")
+'@Folder "Examples.System.TimeSpan.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 4, 2023
-'@LastModified August 4, 2023
+'@LastModified August 16, 2023
 
-'@Reference
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.tostring?view=netframework-4.8.1#system-timespan-tostring(system-string)
 
 Option Explicit
 
 '@Description("The following example uses standard and custom TimeSpan format strings to display the string representation of each element in an array of TimeSpan values.")
-'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.tostring?view=netframework-4.8.1#system-timespan-tostring(system-string)
 Public Sub TimeSpanToString2()
 Attribute TimeSpanToString2.VB_Description = "The following example uses standard and custom TimeSpan format strings to display the string representation of each element in an array of TimeSpan values."
    ' Create an array of timespan intervals.
@@ -33,7 +32,6 @@ Attribute TimeSpanToString2.VB_Description = "The following example uses standar
    For Each varSpan In spans
       Dim span As ITimeSpan
       Set span = varSpan
-      
       Dim fmt As Variant
       For Each fmt In fmts
          Debug.Print fmt & ": " & span.ToString2(fmt)

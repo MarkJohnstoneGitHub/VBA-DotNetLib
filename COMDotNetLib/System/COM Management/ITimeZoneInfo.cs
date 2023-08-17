@@ -8,7 +8,7 @@ namespace DotNetLib.System
     {
         // Properties
 
-        ITimeSpan BaseUtcOffset
+        TimeSpan BaseUtcOffset
         {
             [Description("Gets the time difference between the current time zone's standard time and Coordinated Universal Time (UTC).")]
             get;
@@ -53,19 +53,19 @@ namespace DotNetLib.System
         bool Equals2(object obj);
 
         [Description("Returns information about the possible dates and times that an ambiguous date and time can be mapped to.")]
-        ITimeSpan[] GetAmbiguousTimeOffsets(DateTime dateTime);
+        TimeSpan[] GetAmbiguousTimeOffsets(DateTime dateTime);
 
         [Description("Returns information about the possible dates and times that an ambiguous date and time can be mapped to.")]
-        ITimeSpan[] GetAmbiguousTimeOffsets2(DateTimeOffset dateTimeOffset);
+        TimeSpan[] GetAmbiguousTimeOffsets2(DateTimeOffset dateTimeOffset);
 
         [Description("Serves as a hash function for hashing algorithms and data structures such as hash tables.")]
         int GetHashCode();
 
         [Description("Calculates the offset or difference between the time in this time zone and Coordinated Universal Time (UTC) for a particular date and time.")]
-        ITimeSpan GetUtcOffset(DateTime dateTime);
+        TimeSpan GetUtcOffset(DateTime dateTime);
 
         [Description("Calculates the offset or difference between the time in this time zone and Coordinated Universal Time (UTC) for a particular date and time.")]
-        ITimeSpan GetUtcOffset2(DateTimeOffset dateTimeOffset);
+        TimeSpan GetUtcOffset2(DateTimeOffset dateTimeOffset);
 
         [Description("Indicates whether the current object and another TimeZoneInfo object have the same adjustment rules.")]
         bool HasSameRules(TimeZoneInfo other);

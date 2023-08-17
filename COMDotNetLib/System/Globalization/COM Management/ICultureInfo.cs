@@ -24,7 +24,6 @@ namespace DotNetLib.System.Globalization
             set;
         }
 
-
         Calendar Calendar
         {
             [Description("Gets the default calendar used by the culture.")]
@@ -107,7 +106,7 @@ namespace DotNetLib.System.Globalization
             get; 
         }
 
-        ICultureInfo Parent
+        CultureInfo Parent
         {
             [Description("Gets the CultureInfo that represents the parent culture of the current CultureInfo.")]
             get;
@@ -142,7 +141,8 @@ namespace DotNetLib.System.Globalization
             [Description("Gets a value indicating whether the current CultureInfo object uses the user-selected culture settings.")]
             get;
         }
-        ICultureInfo CurrentUICulture { get; set; }
+
+        //ICultureInfo CurrentUICulture { get; set; }
 
         // Methods
 
@@ -156,7 +156,7 @@ namespace DotNetLib.System.Globalization
         bool Equals(object value);
 
         [Description("Gets an alternate user interface culture suitable for console applications when the default graphic user interface culture is unsuitable.")]
-        ICultureInfo GetConsoleFallbackUICulture();
+        CultureInfo GetConsoleFallbackUICulture();
 
         [Description("Gets the list of supported cultures filtered by the specified CultureTypes parameter.")]
         object GetFormat(Type formatType);

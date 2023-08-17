@@ -1,16 +1,28 @@
-﻿using System.ComponentModel;
+﻿// https://learn.microsoft.com/en-us/dotnet/api/system.globalization.calendar?view=netframework-4.8.1
+
+using System;
+using System.ComponentModel;
 using System.Runtime.InteropServices;
 using GGlobalization = global::System.Globalization;
 using GSystem = global::System;
 
 namespace DotNetLib.System.Globalization
 {
-    [ComVisible(true)]
+    [ComVisible(false)]
     [Guid("7CDC6E2F-4D2E-4053-9031-9F97A10260CF")]
     [Description("Represents time in divisions, such as weeks, months, and years.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface ICalendar
     {
+        //Fields
+
+        int CurrentEra
+        {
+            [Description("Represents the current era of the current calendar. The value of this field is 0.")]
+            get;
+        }
+
+        //Properties
         GGlobalization.CalendarAlgorithmType AlgorithmType 
         {
             [Description("Gets a value indicating whether the current calendar is solar-based, lunar-based, or a combination of both.")]
@@ -133,6 +145,9 @@ namespace DotNetLib.System.Globalization
 
         [Description("Returns the seconds value in the specified DateTime.")]
         int GetSecond(DateTime time);
+
+        [Description("Gets the Type of the current instance.\r\n\r\n(Inherited from Object)")]
+        Type GetType();
 
         [Description("Returns the week of the year that includes the date in the specified DateTime value.")]
         int GetWeekOfYear(DateTime time, GGlobalization.CalendarWeekRule rule, GSystem.DayOfWeek firstDayOfWeek);

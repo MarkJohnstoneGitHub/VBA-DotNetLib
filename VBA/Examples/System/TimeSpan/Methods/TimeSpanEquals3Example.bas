@@ -1,10 +1,10 @@
 Attribute VB_Name = "TimeSpanEquals3Example"
-'@Folder("VBADotNetLib.Examples.TimeSpan.Methods")
+'@Folder "Examples.System.TimeSpan.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 16, 2023
-'@LastModified August 1, 2023
+'@LastModified August 14, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.equals?view=netframework-4.8.1#system-timespan-equals(system-timespan-system-timespan)
 
@@ -25,11 +25,11 @@ Attribute TimeSpanEquals3.VB_Description = "The following example demonstrates t
    
    ' Compare the TimeSpan objects and display the results.
    Dim result As Boolean
-   result = TimeSpan.Equals3(one, two)
+   result = TimeSpan.Equals(one, two)
    
    Debug.Print "The result of comparing TimeSpan object one and two is: " & result & "."
    
-   result = TimeSpan.Equals3(one, three)
+   result = TimeSpan.Equals(one, three)
    Debug.Print "The result of comparing TimeSpan object one and three is: " & result & "."
 End Sub
 

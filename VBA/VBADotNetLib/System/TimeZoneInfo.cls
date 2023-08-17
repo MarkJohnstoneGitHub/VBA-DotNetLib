@@ -7,18 +7,18 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Attribute VB_Description = "Represents any time zone in the world."
+Attribute VB_Description = "TimeZoneInfo factory methods and static members."
 'Rubberduck annotations
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
-'@ModuleDescription("Represents any time zone in the world.")
+'@ModuleDescription("TimeZoneInfo factory methods and static members.")
 
 '@Singleton
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v2.0 August 4, 2023
-'@LastModified August 4, 2023
+'@LastModified August 17, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -31,13 +31,13 @@ Attribute VB_Description = "Represents any time zone in the world."
 Option Explicit
 
 Private Type TTimeZoneInfo
-   TZISingleton As DotNetLib.ITimeZoneInfoSingleton
+   TZISingleton As DotNetLib.TimeZoneInfoSingleton
 End Type
 
 Private this As TTimeZoneInfo
 
 Private Sub Class_Initialize()
-   Set this.TZISingleton = New DotNetLib.TimeZoneInfo
+   Set this.TZISingleton = New DotNetLib.TimeZoneInfoSingleton
 End Sub
 
 Private Sub Class_Terminate()
@@ -50,14 +50,15 @@ End Sub
 
 '@Static
 '@Description("Gets a TimeZoneInfo object that represents the local time zone.")
-Public Property Get Locale() As ITimeZoneInfo
+'@Note Rename Local to Locale due to VBA resevered word
+Public Property Get Locale() As DotNetLib.TimeZoneInfo
 Attribute Locale.VB_Description = "Gets a TimeZoneInfo object that represents the local time zone."
-    Set Locale = this.TZISingleton.Locale()
+    Set Locale = this.TZISingleton.Local
 End Property
 
 '@Static
 '@Description("Gets a TimeZoneInfo object that represents the Coordinated Universal Time (UTC) zone.")
-Public Property Get Utc() As ITimeZoneInfo
+Public Property Get Utc() As DotNetLib.TimeZoneInfo
 Attribute Utc.VB_Description = "Gets a TimeZoneInfo object that represents the Coordinated Universal Time (UTC) zone."
     Set Utc = this.TZISingleton.Utc()
 End Property
@@ -75,84 +76,84 @@ End Sub
 
 '@Static
 '@Description("Converts a time to the time in a particular time zone.")
-Public Function ConvertTime(ByVal sourceDateTime As DotNetLib.DateTime, ByVal destinationTimeZone As DotNetLib.TimeZoneInfo) As IDateTime
+Public Function ConvertTime(ByVal sourceDateTime As DotNetLib.DateTime, ByVal destinationTimeZone As DotNetLib.TimeZoneInfo) As DotNetLib.DateTime
 Attribute ConvertTime.VB_Description = "Converts a time to the time in a particular time zone."
     Set ConvertTime = this.TZISingleton.ConvertTime(sourceDateTime, destinationTimeZone)
 End Function
 
 '@Static
 '@Description("Converts a time to the time in a particular time zone.")
-Public Function ConvertTime2(ByVal sourceDateTimeOffset As DotNetLib.DateTimeOffset, ByVal destinationTimeZone As DotNetLib.TimeZoneInfo) As IDateTimeOffset
+Public Function ConvertTime2(ByVal sourceDateTimeOffset As DotNetLib.DateTimeOffset, ByVal destinationTimeZone As DotNetLib.TimeZoneInfo) As DotNetLib.DateTimeOffset
 Attribute ConvertTime2.VB_Description = "Converts a time to the time in a particular time zone."
     Set ConvertTime2 = this.TZISingleton.ConvertTime2(sourceDateTimeOffset, destinationTimeZone)
 End Function
 
 '@Static
 '@Description("Converts a time from one time zone to another.")
-Public Function ConvertTime3(ByVal sourceDateTime As DotNetLib.DateTime, ByVal sourceTimeZone As DotNetLib.TimeZoneInfo, ByVal destinationTimeZone As DotNetLib.TimeZoneInfo) As IDateTime
+Public Function ConvertTime3(ByVal sourceDateTime As DotNetLib.DateTime, ByVal sourceTimeZone As DotNetLib.TimeZoneInfo, ByVal destinationTimeZone As DotNetLib.TimeZoneInfo) As DotNetLib.DateTime
 Attribute ConvertTime3.VB_Description = "Converts a time from one time zone to another."
     Set ConvertTime3 = this.TZISingleton.ConvertTime3(sourceDateTime, sourceTimeZone, destinationTimeZone)
 End Function
 
 '@Static
 '@Description("Converts a time to the time in another time zone based on the time zone's identifier.")
-Public Function ConvertTimeBySystemTimeZoneId(ByVal sourceDateTime As DotNetLib.DateTime, ByVal destinationTimeZoneId As String) As IDateTime
+Public Function ConvertTimeBySystemTimeZoneId(ByVal sourceDateTime As DotNetLib.DateTime, ByVal destinationTimeZoneId As String) As DotNetLib.DateTime
 Attribute ConvertTimeBySystemTimeZoneId.VB_Description = "Converts a time to the time in another time zone based on the time zone's identifier."
     Set ConvertTimeBySystemTimeZoneId = this.TZISingleton.ConvertTimeBySystemTimeZoneId(sourceDateTime, destinationTimeZoneId)
 End Function
 
 '@Static
 '@Description("Converts a time to the time in another time zone based on the time zone's identifier.")
-Public Function ConvertTimeBySystemTimeZoneId2(ByVal sourceDateTimeOffset As DotNetLib.DateTimeOffset, ByVal destinationTimeZoneId As String) As IDateTimeOffset
+Public Function ConvertTimeBySystemTimeZoneId2(ByVal sourceDateTimeOffset As DotNetLib.DateTimeOffset, ByVal destinationTimeZoneId As String) As DotNetLib.DateTimeOffset
 Attribute ConvertTimeBySystemTimeZoneId2.VB_Description = "Converts a time to the time in another time zone based on the time zone's identifier."
     Set ConvertTimeBySystemTimeZoneId2 = this.TZISingleton.ConvertTimeBySystemTimeZoneId2(sourceDateTimeOffset, destinationTimeZoneId)
 End Function
 
 '@Static
 '@Description("Converts a time from one time zone to another based on time zone identifiers.")
-Public Function ConvertTimeBySystemTimeZoneId3(ByVal sourceDateTime As DotNetLib.DateTime, ByVal sourceTimeZoneId As String, ByVal destinationTimeZoneId As String) As IDateTime
+Public Function ConvertTimeBySystemTimeZoneId3(ByVal sourceDateTime As DotNetLib.DateTime, ByVal sourceTimeZoneId As String, ByVal destinationTimeZoneId As String) As DotNetLib.DateTime
 Attribute ConvertTimeBySystemTimeZoneId3.VB_Description = "Converts a time from one time zone to another based on time zone identifiers."
     Set ConvertTimeBySystemTimeZoneId3 = this.TZISingleton.ConvertTimeBySystemTimeZoneId3(sourceDateTime, sourceTimeZoneId, destinationTimeZoneId)
 End Function
 
 '@Static
 '@Description("Converts a Coordinated Universal Time (UTC) to the time in a specified time zone.")
-Public Function ConvertTimeFromUtc(ByVal sourceDateTime As DotNetLib.DateTime, ByVal destinationTimeZone As DotNetLib.TimeZoneInfo) As IDateTime
+Public Function ConvertTimeFromUtc(ByVal sourceDateTime As DotNetLib.DateTime, ByVal destinationTimeZone As DotNetLib.TimeZoneInfo) As DotNetLib.DateTime
 Attribute ConvertTimeFromUtc.VB_Description = "Converts a Coordinated Universal Time (UTC) to the time in a specified time zone."
     Set ConvertTimeFromUtc = this.TZISingleton.ConvertTimeFromUtc(sourceDateTime, destinationTimeZone)
 End Function
 
 '@Static
 '@Description("Converts the specified date and time to Coordinated Universal Time (UTC).")
-Public Function ConvertTimeToUtc(ByVal sourceDateTime As DotNetLib.DateTime) As IDateTime
+Public Function ConvertTimeToUtc(ByVal sourceDateTime As DotNetLib.DateTime) As DotNetLib.DateTime
 Attribute ConvertTimeToUtc.VB_Description = "Converts the specified date and time to Coordinated Universal Time (UTC)."
     Set ConvertTimeToUtc = this.TZISingleton.ConvertTimeToUtc(sourceDateTime)
 End Function
 
 '@Static
 '@Description("Converts the time in a specified time zone to Coordinated Universal Time (UTC).")
-Public Function ConvertTimeToUtc2(ByVal sourceDateTime As DotNetLib.DateTime, ByVal sourceTimeZone As DotNetLib.TimeZoneInfo) As IDateTime
+Public Function ConvertTimeToUtc2(ByVal sourceDateTime As DotNetLib.DateTime, ByVal sourceTimeZone As DotNetLib.TimeZoneInfo) As DotNetLib.DateTime
 Attribute ConvertTimeToUtc2.VB_Description = "Converts the time in a specified time zone to Coordinated Universal Time (UTC)."
     Set ConvertTimeToUtc2 = this.TZISingleton.ConvertTimeToUtc2(sourceDateTime, sourceTimeZone)
 End Function
 
 '@Static
 '@Description("Creates a custom time zone with a specified identifier, an offset from Coordinated Universal Time (UTC), a display name, and a standard time display name.")
-Public Function CreateCustomTimeZone(ByVal Id As String, ByVal BaseUtcOffset As DotNetLib.TimeSpan, ByVal DisplayName As String, ByVal standardDisplayName As String) As ITimeZoneInfo
+Public Function CreateCustomTimeZone(ByVal Id As String, ByVal BaseUtcOffset As DotNetLib.TimeSpan, ByVal DisplayName As String, ByVal standardDisplayName As String) As DotNetLib.TimeZoneInfo
 Attribute CreateCustomTimeZone.VB_Description = "Creates a custom time zone with a specified identifier, an offset from Coordinated Universal Time (UTC), a display name, and a standard time display name."
     Set CreateCustomTimeZone = this.TZISingleton.CreateCustomTimeZone(Id, BaseUtcOffset, DisplayName, standardDisplayName)
 End Function
 
 '@Static
 '@Description("Instantiates a new TimeZoneInfo object based on its identifier.")
-Public Function FindSystemTimeZoneById(ByVal Id As String) As ITimeZoneInfo
+Public Function FindSystemTimeZoneById(ByVal Id As String) As DotNetLib.TimeZoneInfo
 Attribute FindSystemTimeZoneById.VB_Description = "Instantiates a new TimeZoneInfo object based on its identifier."
     Set FindSystemTimeZoneById = this.TZISingleton.FindSystemTimeZoneById(Id)
 End Function
 
 '@Static
 '@Description("Deserializes a string to re-create an original serialized TimeZoneInfo object.")
-Public Function FromSerializedString(ByVal source As String) As ITimeZoneInfo
+Public Function FromSerializedString(ByVal source As String) As DotNetLib.TimeZoneInfo
 Attribute FromSerializedString.VB_Description = "Deserializes a string to re-create an original serialized TimeZoneInfo object."
     Set FromSerializedString = this.TZISingleton.FromSerializedString(source)
 End Function
