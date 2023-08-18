@@ -2,6 +2,24 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.8": {
+      "CoordinateSharp/2.19.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net40/CoordinateSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net40/CoordinateSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Runtime/4.3.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -36,6 +54,24 @@
       }
     },
     ".NETFramework,Version=v4.8/win": {
+      "CoordinateSharp/2.19.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net40/CoordinateSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net40/CoordinateSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Runtime/4.3.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -70,6 +106,24 @@
       }
     },
     ".NETFramework,Version=v4.8/win-arm64": {
+      "CoordinateSharp/2.19.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net40/CoordinateSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net40/CoordinateSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Runtime/4.3.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -104,6 +158,24 @@
       }
     },
     ".NETFramework,Version=v4.8/win-x64": {
+      "CoordinateSharp/2.19.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net40/CoordinateSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net40/CoordinateSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Runtime/4.3.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -138,6 +210,24 @@
       }
     },
     ".NETFramework,Version=v4.8/win-x86": {
+      "CoordinateSharp/2.19.1.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net40/CoordinateSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net40/CoordinateSharp.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "System.Runtime/4.3.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -173,6 +263,36 @@
     }
   },
   "libraries": {
+    "CoordinateSharp/2.19.1.1": {
+      "sha512": "3qdb6xgEUYYi3AkqhesapnpFkwgkX2mPPKwuNIogLRw9Ls6yf5CEO6sIBGMT5YHZ0RWBMMwwhEx20cHl3Z46cw==",
+      "type": "package",
+      "path": "coordinatesharp/2.19.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "128x128.png",
+        "License.txt",
+        "README.md",
+        "coordinatesharp.2.19.1.1.nupkg.sha512",
+        "coordinatesharp.nuspec",
+        "lib/net40/CoordinateSharp.dll",
+        "lib/net40/CoordinateSharp.xml",
+        "lib/net5.0/CoordinateSharp.dll",
+        "lib/net5.0/CoordinateSharp.xml",
+        "lib/net6.0/CoordinateSharp.dll",
+        "lib/net6.0/CoordinateSharp.xml",
+        "lib/net7.0/CoordinateSharp.dll",
+        "lib/net7.0/CoordinateSharp.xml",
+        "lib/netstandard1.3/CoordinateSharp.dll",
+        "lib/netstandard1.3/CoordinateSharp.xml",
+        "lib/netstandard1.4/CoordinateSharp.dll",
+        "lib/netstandard1.4/CoordinateSharp.xml",
+        "lib/netstandard2.0/CoordinateSharp.dll",
+        "lib/netstandard2.0/CoordinateSharp.xml",
+        "lib/netstandard2.1/CoordinateSharp.dll",
+        "lib/netstandard2.1/CoordinateSharp.xml"
+      ]
+    },
     "System.Runtime/4.3.0": {
       "sha512": "JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
       "type": "package",
@@ -361,6 +481,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.8": [
+      "CoordinateSharp >= 2.19.1.1",
       "System.Runtime.InteropServices >= 4.3.0"
     ]
   },
@@ -404,6 +525,10 @@
     "frameworks": {
       "net48": {
         "dependencies": {
+          "CoordinateSharp": {
+            "target": "Package",
+            "version": "[2.19.1.1, )"
+          },
           "System.Runtime.InteropServices": {
             "target": "Package",
             "version": "[4.3.0, )"

@@ -40,6 +40,10 @@
       "frameworks": {
         "net48": {
           "dependencies": {
+            "CoordinateSharp": {
+              "target": "Package",
+              "version": "[2.19.1.1, )"
+            },
             "System.Runtime.InteropServices": {
               "target": "Package",
               "version": "[4.3.0, )"

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1Y4gkZui3BCTHGoL8Ebikxy7zx2cpwanvXVoetntymLjXcLQI75n6cA7N3c4PbkU98o84jciPF8HJi7Ik0gLrw==",
+  "dgSpecHash": "UCFiD1LgzcbqGKDan5LO2/LyiPzIXTRmXy+3msJQAxdqSwJpQeTrROSNjICr0x0DlqFMj34sAlE8jvP7R4u8sg==",
   "success": true,
   "projectFilePath": "H:\\Users\\Me\\source\\repos\\DotNetLib\\COMDotNetLib\\DotNetLib.csproj",
   "expectedPackageFiles": [
+    "D:\\Users\\Me\\.nuget\\packages\\coordinatesharp\\2.19.1.1\\coordinatesharp.2.19.1.1.nupkg.sha512",
     "D:\\Users\\Me\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
     "D:\\Users\\Me\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\system.runtime.interopservices.4.3.0.nupkg.sha512"
   ],
