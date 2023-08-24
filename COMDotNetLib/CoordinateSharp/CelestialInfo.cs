@@ -5,6 +5,8 @@ using System;
 using DateTime = DotNetLib.System.DateTime;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using GCSharp = global::CoordinateSharp;
+
 
 namespace DotNetLib.CoordinateSharp
 {
@@ -23,14 +25,16 @@ namespace DotNetLib.CoordinateSharp
 
         public DateTime SunRise(double lat, double longi, DateTime date)
         {
-            Coordinate c = new Coordinate(lat, longi, date.DateTimeObject);
+            //GCSharp.Coordinate coordinate = new GCSharp.Coordinate();
+
+            GCSharp.Coordinate c = new GCSharp.Coordinate(lat, longi, date.DateTimeObject);
 
             return new DateTime(c.CelestialInfo.SunRise.Value);
         }
 
         public DateTime SunSet(double lat, double longi, DateTime date)
         {
-            Coordinate c = new Coordinate(lat, longi, date.DateTimeObject);
+            GCSharp.Coordinate c = new GCSharp.Coordinate(lat, longi, date.DateTimeObject);
 
             return new DateTime(c.CelestialInfo.SunSet.Value);
         }

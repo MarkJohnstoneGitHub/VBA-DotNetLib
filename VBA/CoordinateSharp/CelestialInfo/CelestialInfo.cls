@@ -40,9 +40,9 @@ Private Sub Class_Terminate()
 End Sub
 
 '@Description("Calcualtes sunrise time.")
-Public Function Sunrise(ByVal latitude As Double, ByVal longitude As Double, ByVal pDateTime As DotNetLib.DateTime) As DotNetLib.DateTime
-Attribute Sunrise.VB_Description = "Calcualtes sunrise time."
-   Set Sunrise = this.DotNetLibCelestialInfo.Sunrise(latitude, longitude, pDateTime)
+Public Function SunRise(ByVal latitude As Double, ByVal longitude As Double, ByVal pDateTime As DotNetLib.DateTime) As DotNetLib.DateTime
+Attribute SunRise.VB_Description = "Calcualtes sunrise time."
+   Set SunRise = this.DotNetLibCelestialInfo.SunRise(latitude, longitude, pDateTime)
 End Function
 
 '@Description("Calculates sunset time.")

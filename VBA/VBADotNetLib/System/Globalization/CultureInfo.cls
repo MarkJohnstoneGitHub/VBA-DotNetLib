@@ -182,9 +182,9 @@ Attribute GetCultureInfoByIetfLanguageTag.VB_Description = "Deprecated. Retrieve
 End Function
 
 '@Description("Gets the list of supported cultures filtered by the specified CultureTypes parameter.")
-Public Function GetCultures(ByVal types As CultureTypes) As DotNetLib.CultureInfo()
+Public Function GetCultures(ByVal Types As CultureTypes) As DotNetLib.CultureInfo()
 Attribute GetCultures.VB_Description = "Gets the list of supported cultures filtered by the specified CultureTypes parameter."
-    GetCultures = this.CultureInfoSingleton.GetCultures(types)
+    GetCultures = this.CultureInfoSingleton.GetCultures(Types)
 End Function
 
 '@Description("Returns a read-only wrapper around the specified CultureInfo object.")
