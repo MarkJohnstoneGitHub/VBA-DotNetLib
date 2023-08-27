@@ -8,7 +8,7 @@ Attribute VB_Name = "DateTimeOffsetParseExact3Eg"
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.parseexact?view=netframework-4.8.1#system-datetimeoffset-parseexact(system-string-system-string()-system-iformatprovider-system-globalization-datetimestyles)
 
-' @TODO Implement DateTimeFormat in DotNetLib
+'@TODO Implement DateTimeFormat in DotNetLib
 
 Option Explicit
 
