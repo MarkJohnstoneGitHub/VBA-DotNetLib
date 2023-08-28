@@ -15,9 +15,10 @@ namespace DotNetLib.System.Globalization
     [Description("Provides information about a specific culture(called a locale for unmanaged code development). The information includes the names for the culture, the writing system, the calendar used, the sort order of strings, and formatting for dates and numbers.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(ICultureInfo))]
-    public class CultureInfo : ICloneable, IFormatProvider, ICultureInfo //, ICultureInfoSingleton
+    public class CultureInfo : ICloneable, IFormatProvider, ICultureInfo
     {
         private GGlobalization.CultureInfo _cultureInfo;
+        private NumberFormatInfo _numberFormatInfo;
 
         //private static ICultureInfo _currentCulture = new CultureInfo(GGlobalization.CultureInfo.CurrentCulture);
         //private static ICultureInfo _currentUICulture = new CultureInfo(GGlobalization.CultureInfo.CurrentUICulture);
@@ -31,30 +32,35 @@ namespace DotNetLib.System.Globalization
         internal CultureInfo(GGlobalization.CultureInfo cultureInfo)
         {
             this._cultureInfo = cultureInfo;
+            _numberFormatInfo = new NumberFormatInfo(_cultureInfo.NumberFormat);
         }
 
-        public CultureInfo()
-        {
-        }
+        //public CultureInfo()
+        //{
+        //}
 
         public CultureInfo(int culture)
         {
             this._cultureInfo = new GGlobalization.CultureInfo(culture);
+            _numberFormatInfo = new NumberFormatInfo(_cultureInfo.NumberFormat);
         }
 
         public CultureInfo(string name)
         {
             this._cultureInfo = new GGlobalization.CultureInfo(name);
+            _numberFormatInfo = new NumberFormatInfo(_cultureInfo.NumberFormat);
         }
 
         public CultureInfo(int culture, bool useUserOverride)
         {
             this._cultureInfo = new GGlobalization.CultureInfo(culture, useUserOverride);
+            _numberFormatInfo = new NumberFormatInfo(_cultureInfo.NumberFormat);
         }
 
         public CultureInfo(string name, bool useUserOverride)
         {
             this._cultureInfo = new GGlobalization.CultureInfo(name, useUserOverride);
+            _numberFormatInfo = new NumberFormatInfo(_cultureInfo.NumberFormat);
         }
 
         // Properties
@@ -102,8 +108,8 @@ namespace DotNetLib.System.Globalization
 
         public NumberFormatInfo NumberFormat 
         { 
-            get => _cultureInfo.NumberFormat;
-            set => _cultureInfo.NumberFormat = value;
+            get => _numberFormatInfo;
+            set => _numberFormatInfo = value;
         }
 
         public Calendar[] OptionalCalendars => _cultureInfo.OptionalCalendars;
