@@ -49,6 +49,24 @@ End Sub
 
 '@Static
 '@Description("Initializes a new instance of the DateTime structure to a specified number of ticks and to Coordinated Universal Time (UTC) or local time.")
+'
+'@Parameters
+'   Ticks Int64
+'       A date and time expressed in the number of 100-nanosecond intervals that
+'       have elapsed since January 1, 0001 at 00:00:00.000 in the Gregorian calendar.
+'   Kind DateTimeKind
+'       One of the enumeration values that indicates whether ticks specifies a
+'       local time, Coordinated Universal Time (UTC), or neither.
+'
+'@Returns
+'   DotNetLib.DateTime
+
+'@Exceptions
+'   ArgumentOutOfRangeException
+'       ticks is less than DateTime.MinValue or greater than DateTime.MaxValue.
+'
+'   ArgumentException
+'       kind is not one of the DateTimeKind values.
 Public Function CreateFromTicks(ByVal pTicks As LongLong, Optional ByVal pKind As DotNetLib.DateTimeKind = DateTimeKind_Unspecified) As DotNetLib.DateTime
 Attribute CreateFromTicks.VB_Description = "Initializes a new instance of the DateTime structure to a specified number of ticks and to Coordinated Universal Time (UTC) or local time."
     Set CreateFromTicks = this.DateTimeSingleton.CreateFromTicks(pTicks, pKind)
@@ -56,6 +74,7 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the DateTime structure to the specified year, month, and day.")
+'
 '@Parameters
 '   Year Int32
 '       The year (1 through 9999).
