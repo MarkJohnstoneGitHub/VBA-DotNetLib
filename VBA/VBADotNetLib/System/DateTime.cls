@@ -18,7 +18,7 @@ Attribute VB_Description = "DateTime factory methods and static members."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v2.0 August 4, 2023
-'@LastModified August 20, 2023
+'@LastModified August 30, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -56,6 +56,24 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the DateTime structure to the specified year, month, and day.")
+'@Parameters
+'   Year Int32
+'       The year (1 through 9999).
+'   Month Int32
+'       The month (1 through 12).
+'   Day Int32
+'       The day (1 through the number of days in month).
+'
+'@Returns
+'   DotNetLib.DateTime
+'
+'@Exceptions
+'   ArgumentOutOfRangeException
+'       year is less than 1 or greater than 9999.
+'   -or-
+'       month is less than 1 or greater than 12.
+'   -or-
+'       day is less than 1 or greater than the number of days in month.
 Public Function CreateFromDate(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long) As DotNetLib.DateTime
 Attribute CreateFromDate.VB_Description = "Initializes a new instance of the DateTime structure to the specified year, month, and day."
     Set CreateFromDate = this.DateTimeSingleton.CreateFromDate(pYear, pMonth, pDay)
@@ -63,6 +81,39 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and millisecond.")
+'@Parameters
+'   Year Int32
+'       The year (1 through 9999).
+'   Month Int32
+'       The month (1 through 12).
+'   Day Int32
+'       The day (1 through the number of days in month).
+'   Hour Int32
+'       The hours (0 through 23).
+'   Minute Int32
+'       The minutes (0 through 59).
+'   Second Int32
+'       The seconds (0 through 59).
+'   Millisecond Int32
+'       The milliseconds (0 through 999).
+'@Returns
+'   DotNetLib.DateTime
+'
+'@Exceptions
+'   ArgumentOutOfRangeException
+'       year is less than 1 or greater than 9999.
+'   -or-
+'       month is less than 1 or greater than 12.
+'   -or-
+'       day is less than 1 or greater than the number of days in month.
+'   -or-
+'       hour is less than 0 or greater than 23.
+'   -or-
+'       minute is less than 0 or greater than 59.
+'   -or-
+'       second is less than 0 or greater than 59.
+'   -or-
+'       millisecond is less than 0 or greater than 999.
 Public Function CreateFromDateTime(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pHour As Long, ByVal pMinute As Long, ByVal pSecond As Long, Optional ByVal pMillisecond As Long = 0) As DotNetLib.DateTime
 Attribute CreateFromDateTime.VB_Description = "Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and millisecond."
     Set CreateFromDateTime = this.DateTimeSingleton.CreateFromDateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond)
