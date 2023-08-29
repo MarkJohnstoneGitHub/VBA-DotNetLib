@@ -10,7 +10,12 @@ Added: [CultureInfo Class](https://learn.microsoft.com/en-us/dotnet/api/system.g
 **Status:**
 
 **DotNetLib Update August 29th, 2023** 
-Added [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1)
+
+ - Added [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1)
+ - Added [NumberFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.numberformatinfo?view=netframework-4.8.1)
+ - DateTimeFormatInfo and NumberFormatInfo properties are now available for [Cultureinfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8.1)
+ - Unit Testing required to test that various DateTime,DateTimeOffset,TimeSpan parsing functions using [IFormatProvider](https://learn.microsoft.com/en-us/dotnet/api/system.iformatprovider?view=netframework-4.8.1) is functioning correctly. Adhoc testing done using examples.
+
 
 **DotNetLib Version 1.2 Update August 17th, 2023** 
 
