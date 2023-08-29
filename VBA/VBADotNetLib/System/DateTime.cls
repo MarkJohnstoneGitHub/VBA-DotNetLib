@@ -58,8 +58,7 @@ End Sub
 '       One of the enumeration values that indicates whether ticks specifies a
 '       local time, Coordinated Universal Time (UTC), or neither.
 '
-'@Returns
-'   DotNetLib.DateTime
+'@Returns DotNetLib.DateTime
 
 '@Exceptions
 '   ArgumentOutOfRangeException
@@ -83,8 +82,7 @@ End Function
 '   Day Int32
 '       The day (1 through the number of days in month).
 '
-'@Returns
-'   DotNetLib.DateTime
+'@Returns DotNetLib.DateTime
 '
 '@Exceptions
 '   ArgumentOutOfRangeException
@@ -115,8 +113,8 @@ End Function
 '       The seconds (0 through 59).
 '   Millisecond Int32
 '       The milliseconds (0 through 999).
-'@Returns
-'   DotNetLib.DateTime
+'
+'@Returns DotNetLib.DateTime
 '
 '@Exceptions
 '   ArgumentOutOfRangeException
@@ -140,6 +138,44 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and Coordinated Universal Time (UTC) or local time.")
+'
+'@Parameters
+'   Year Int32
+'       The year (1 through 9999).
+'   Month Int32
+'       The month (1 through 12).
+'   Day Int32
+'       The day (1 through the number of days in month).
+'   Hour Int32
+'       The hours (0 through 23).
+'   Minute Int32
+'       The minutes (0 through 59).
+'   Second Int32
+'       The seconds (0 through 59).
+'   Kind DateTimeKind
+'       One of the enumeration values that indicates whether year, month, day,
+'       hour, minute and second specify a local time, Coordinated Universal Time
+'       (UTC), or neither.
+'
+'@Returns DotNetLib.DateTime
+'
+'@Exceptions
+'
+'   ArgumentOutOfRangeException
+'       year is less than 1 or greater than 9999.
+'   -or-
+'       month is less than 1 or greater than 12.
+'   -or-
+'       day is less than 1 or greater than the number of days in month.
+'   -or-
+'       hour is less than 0 or greater than 23.
+'   -or-
+'       minute is less than 0 or greater than 59.
+'   -or-
+'       second is less than 0 or greater than 59.
+'
+'   ArgumentException
+'       kind is not one of the DateTimeKind values.
 Public Function CreateFromDateTimeKind(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pHour As Long, ByVal pMinute As Long, ByVal pSecond As Long, ByVal pKind As DotNetLib.DateTimeKind) As DotNetLib.DateTime
 Attribute CreateFromDateTimeKind.VB_Description = "Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and Coordinated Universal Time (UTC) or local time."
     Set CreateFromDateTimeKind = this.DateTimeSingleton.CreateFromDateTimeKind(pYear, pMonth, pDay, pHour, pMinute, pSecond, pKind)
@@ -147,6 +183,48 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time.")
+'
+'@Parameters
+'   Year Int32
+'       The year (1 through 9999).
+'   Month Int32
+'       The month (1 through 12).
+'   Day Int32
+'       The day (1 through the number of days in month).
+'   Hour Int32
+'       The hours (0 through 23).
+'   Minute Int32
+'       The minutes (0 through 59).
+'   Second Int32
+'       The seconds (0 through 59).
+'   Millisecond Int32
+'       The milliseconds (0 through 999).
+'   Kind DateTimeKind
+'       One of the enumeration values that indicates whether year, month, day,
+'       hour, minute and second specify a local time, Coordinated Universal Time
+'       (UTC), or neither.
+'
+'@Returns DotNetLib.DateTime
+'
+'@Exceptions
+'
+'   ArgumentOutOfRangeException
+'       year is less than 1 or greater than 9999.
+'   -or-
+'       month is less than 1 or greater than 12.
+'   -or-
+'       day is less than 1 or greater than the number of days in month.
+'   -or-
+'       hour is less than 0 or greater than 23.
+'   -or-
+'       minute is less than 0 or greater than 59.
+'   -or-
+'       second is less than 0 or greater than 59.
+'   -or-
+'       millisecond is less than 0 or greater than 999.
+'
+'   ArgumentException
+'       kind is not one of the DateTimeKind values.
 Public Function CreateFromDateTimeKind2(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pHour As Long, ByVal pMinute As Long, ByVal pSecond As Long, ByVal pMillisecond As Long, ByVal pKind As DotNetLib.DateTimeKind) As DotNetLib.DateTime
 Attribute CreateFromDateTimeKind2.VB_Description = "Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time."
     Set CreateFromDateTimeKind2 = this.DateTimeSingleton.CreateFromDateTimeKind2(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pKind)
