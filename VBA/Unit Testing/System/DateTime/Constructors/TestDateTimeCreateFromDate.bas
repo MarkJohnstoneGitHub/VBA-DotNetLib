@@ -1,11 +1,13 @@
 Attribute VB_Name = "TestDateTimeCreateFromDate"
+Attribute VB_Description = "Unit testing for DateTime.CreateFromDate(Int32 year, Int32 month, Int32 day)."
 '@TestModule
+'@ModuleDescription "Unit testing for DateTime.CreateFromDate(Int32 year, Int32 month, Int32 day)."
 '@Folder("Unit Testing.System.DateTime.Constructors")
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 29, 2023
-'@LastModified August 29, 2023
+'@LastModified August 30, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -24,13 +26,9 @@ Attribute VB_Name = "TestDateTimeCreateFromDate"
 '@Exceptions
 'ArgumentOutOfRangeException
 '   year is less than 1 or greater than 9999.
-'
 '-or-
-'
 '   month is less than 1 or greater than 12.
-'
 '-or-
-'
 '   day is less than 1 or greater than the number of days in month.
 
 Option Explicit
@@ -68,12 +66,12 @@ Private Sub TestMethodDateTimeCreateFromDate()
     On Error GoTo TestFail
     
     'Arrange:
-    Dim TestDateTime As DotNetLib.DateTime
+    Dim testDateTime As DotNetLib.DateTime
     
     'Act:
-    Set TestDateTime = DateTime.CreateFromDate(2010, 8, 18)
-    Set TestDateTime = DateTime.CreateFromDate(2023, 8, 29)
-    Set TestDateTime = DateTime.CreateFromDate(1999, 1, 1)
+    Set testDateTime = DateTime.CreateFromDate(2010, 8, 18)
+    Set testDateTime = DateTime.CreateFromDate(2023, 8, 29)
+    Set testDateTime = DateTime.CreateFromDate(1999, 1, 1)
 
     'Assert:
     Assert.Succeed
@@ -94,11 +92,11 @@ Private Sub TestMethodDateTimeCreateFromDateInvalidYearMin()
     On Error GoTo TestFail
     
     'Arrange:
-    Dim TestDateTime As DotNetLib.DateTime
+    Dim testDateTime As DotNetLib.DateTime
 
     'Act:
     'Invalid year parameter raise ArgumentOutOfRangeException
-    Set TestDateTime = DateTime.CreateFromDate(-1, 8, 18)
+    Set testDateTime = DateTime.CreateFromDate(-1, 8, 18)
 
 Assert:
     Assert.Fail "Expected error was not raised"
@@ -122,39 +120,11 @@ Private Sub TestMethodDateTimeCreateFromDateInvalidYearMax()
     On Error GoTo TestFail
     
     'Arrange:
-    Dim TestDateTime As DotNetLib.DateTime
+    Dim testDateTime As DotNetLib.DateTime
 
     'Act:
     'Invalid year parameter raise ArgumentOutOfRangeException
-    Set TestDateTime = DateTime.CreateFromDate(10000, 8, 18)
-
-Assert:
-    Assert.Fail "Expected error was not raised"
-
-TestExit:
-    Exit Sub
-TestFail:
-    If Err.Number = ExpectedError Then
-        Resume TestExit
-    Else
-        Resume Assert
-    End If
-End Sub
-
-'@TestMethod("DateTime CreateFromDate")
-'@Exceptions
-'ArgumentOutOfRangeException
-'   month is less than 1 or greater than 12.
-Private Sub TestMethodDateTimeCreateFromDateInvalidMonthMin()
-    Const ExpectedError As Long = ArgumentOutOfRangeException
-    On Error GoTo TestFail
-    
-    'Arrange:
-    Dim TestDateTime As DotNetLib.DateTime
-
-    'Act:
-    'Invalid year parameter raise ArgumentOutOfRangeException
-    Set TestDateTime = DateTime.CreateFromDate(2023, 0, 18)
+    Set testDateTime = DateTime.CreateFromDate(10000, 8, 18)
 
 Assert:
     Assert.Fail "Expected error was not raised"
@@ -178,11 +148,11 @@ Private Sub TestMethodDateTimeCreateFromDateInvalidMonthMax()
     On Error GoTo TestFail
     
     'Arrange:
-    Dim TestDateTime As DotNetLib.DateTime
+    Dim testDateTime As DotNetLib.DateTime
 
     'Act:
-    'Invalid year parameter raise ArgumentOutOfRangeException
-    Set TestDateTime = DateTime.CreateFromDate(2023, 13, 18)
+    'Invalid month parameter raise ArgumentOutOfRangeException
+    Set testDateTime = DateTime.CreateFromDate(2023, 13, 18)
 
 Assert:
     Assert.Fail "Expected error was not raised"
@@ -201,16 +171,16 @@ End Sub
 '@Exceptions
 'ArgumentOutOfRangeException
 '   month is less than 1 or greater than 12.
-Private Sub TestMethodDateTimeCreateFromDateInvalidDayMin()
+Private Sub TestMethodDateTimeCreateFromDateInvalidMonthMin()
     Const ExpectedError As Long = ArgumentOutOfRangeException
     On Error GoTo TestFail
     
     'Arrange:
-    Dim TestDateTime As DotNetLib.DateTime
+    Dim testDateTime As DotNetLib.DateTime
 
     'Act:
-    'Invalid year parameter raise ArgumentOutOfRangeException
-    Set TestDateTime = DateTime.CreateFromDate(2023, 8, 0)
+    'Invalid month parameter raise ArgumentOutOfRangeException
+    Set testDateTime = DateTime.CreateFromDate(2023, 0, 18)
 
 Assert:
     Assert.Fail "Expected error was not raised"
@@ -228,17 +198,45 @@ End Sub
 '@TestMethod("DateTime CreateFromDate")
 '@Exceptions
 'ArgumentOutOfRangeException
-'   month is less than 1 or greater than 12.
+'   day is less than 1 or greater than the number of days in month.
 Private Sub TestMethodDateTimeCreateFromDateInvalidDayMax()
     Const ExpectedError As Long = ArgumentOutOfRangeException
     On Error GoTo TestFail
     
     'Arrange:
-    Dim TestDateTime As DotNetLib.DateTime
+    Dim testDateTime As DotNetLib.DateTime
 
     'Act:
-    'Invalid year parameter raise ArgumentOutOfRangeException
-    Set TestDateTime = DateTime.CreateFromDate(2023, 8, 32)
+    'Invalid day parameter raise ArgumentOutOfRangeException
+    Set testDateTime = DateTime.CreateFromDate(2023, 8, 32)
+
+Assert:
+    Assert.Fail "Expected error was not raised"
+
+TestExit:
+    Exit Sub
+TestFail:
+    If Err.Number = ExpectedError Then
+        Resume TestExit
+    Else
+        Resume Assert
+    End If
+End Sub
+
+'@TestMethod("DateTime CreateFromDate")
+'@Exceptions
+'ArgumentOutOfRangeException
+'   day is less than 1 or greater than the number of days in month.
+Private Sub TestMethodDateTimeCreateFromDateInvalidDayMin()
+    Const ExpectedError As Long = ArgumentOutOfRangeException
+    On Error GoTo TestFail
+    
+    'Arrange:
+    Dim testDateTime As DotNetLib.DateTime
+
+    'Act:
+    'Invalid day parameter raise ArgumentOutOfRangeException
+    Set testDateTime = DateTime.CreateFromDate(2023, 8, 0)
 
 Assert:
     Assert.Fail "Expected error was not raised"
