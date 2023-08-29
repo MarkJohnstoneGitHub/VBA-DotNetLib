@@ -9,6 +9,9 @@ Added: [CultureInfo Class](https://learn.microsoft.com/en-us/dotnet/api/system.g
  
 **Status:**
 
+**DotNetLib Update August 29th, 2023** 
+Added [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1)
+
 **DotNetLib Version 1.2 Update August 17th, 2023** 
 
 Completed rewritting the DotNetLib type library and VBA DotNetLib wrappers to use the [Singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern).
