@@ -1,4 +1,5 @@
 Attribute VB_Name = "TestDateTimeCreateFromDateTime"
+Attribute VB_Description = "Unit testing for DateTime.CreateFromDateTime(Int32 year, Int32 month, Int32 day, Int32 hour, Int32 minute, Int32 second, Int32 [millisecond])"
 '@IgnoreModule VariableNotUsed, EmptyMethod
 '@TestModule
 '@ModuleDescription "Unit testing for DateTime.CreateFromDateTime(Int32 year, Int32 month, Int32 day, Int32 hour, Int32 minute, Int32 second, Int32 [millisecond])"
@@ -172,6 +173,35 @@ Private Sub TestMethodDateTimeCreateFromDateInvalidMonthMax()
     
     'Arrange:
     Const invalidMonth As Long = 13
+    Dim testDateTime As DotNetLib.DateTime
+
+    'Act:
+    'Invalid month parameter raise ArgumentOutOfRangeException
+    Set testDateTime = DateTime.CreateFromDateTime(2010, invalidMonth, 18, 16, 32, 18, 500)
+
+Assert:
+    Assert.Fail "Expected error was not raised"
+
+TestExit:
+    Exit Sub
+TestFail:
+    If Err.Number = ExpectedError Then
+        Resume TestExit
+    Else
+        Resume Assert
+    End If
+End Sub
+
+'@TestMethod("DateTime CreateFromDateTime")
+'@Exceptions
+'ArgumentOutOfRangeException
+'   month is less than 1 or greater than 12.
+Private Sub TestMethodDateTimeCreateFromDateInvalidMonthMin()
+    Const ExpectedError As Long = ArgumentOutOfRangeException
+    On Error GoTo TestFail
+    
+    'Arrange:
+    Const invalidMonth As Long = 0
     Dim testDateTime As DotNetLib.DateTime
 
     'Act:
@@ -480,4 +510,3 @@ TestFail:
         Resume Assert
     End If
 End Sub
-
