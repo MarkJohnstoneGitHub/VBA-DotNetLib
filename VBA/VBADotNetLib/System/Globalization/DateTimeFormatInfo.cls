@@ -26,50 +26,50 @@ Attribute VB_Description = "DateTimeFormatInfo factory methods and static member
 Option Explicit
 
 Private Type TDateTimeFormatInfo
-   DotNetLibDateTimeFormatInfoSingleton As DotNetLib.DateTimeFormatInfoSingleton
+   DateTimeFormatInfoSingleton As DotNetLib.DateTimeFormatInfoSingleton
 End Type
 
 Private this As TDateTimeFormatInfo
 
 Private Sub Class_Initialize()
-   Set this.DotNetLibDateTimeFormatInfoSingleton = New DotNetLib.DateTimeFormatInfoSingleton
+   Set this.DateTimeFormatInfoSingleton = New DotNetLib.DateTimeFormatInfoSingleton
 End Sub
 
 Private Sub Class_Terminate()
-   Set this.DotNetLibDateTimeFormatInfoSingleton = Nothing
+   Set this.DateTimeFormatInfoSingleton = Nothing
 End Sub
 
 '@Static
 '@Description("Initializes a new writable instance of the DateTimeFormatInfo class that is culture-independent (invariant).")
 Public Function Create() As DotNetLib.DateTimeFormatInfo
 Attribute Create.VB_Description = "Initializes a new writable instance of the DateTimeFormatInfo class that is culture-independent (invariant)."
-   Set Create = this.DotNetLibDateTimeFormatInfoSingleton.Create()
+   Set Create = this.DateTimeFormatInfoSingleton.Create()
 End Function
 
 '@Static
 '@Description("Gets a read-only DateTimeFormatInfo object that formats values based on the current culture.")
 Public Property Get CurrentInfo() As DotNetLib.DateTimeFormatInfo
 Attribute CurrentInfo.VB_Description = "Gets a read-only DateTimeFormatInfo object that formats values based on the current culture."
-   Set CurrentInfo = this.DotNetLibDateTimeFormatInfoSingleton.CurrentInfo()
+   Set CurrentInfo = this.DateTimeFormatInfoSingleton.CurrentInfo()
 End Property
 
 '@Static
 '@Description("Gets the default read-only DateTimeFormatInfo object that is culture-independent (invariant).")
 Public Property Get InvariantInfo() As DotNetLib.DateTimeFormatInfo
 Attribute InvariantInfo.VB_Description = "Gets the default read-only DateTimeFormatInfo object that is culture-independent (invariant)."
-   Set InvariantInfo = this.DotNetLibDateTimeFormatInfoSingleton.InvariantInfo()
+   Set InvariantInfo = this.DateTimeFormatInfoSingleton.InvariantInfo()
 End Property
 
 '@Static
 '@Description("Returns the DateTimeFormatInfo object associated with the specified IFormatProvider.")
 Public Function GetInstance(ByRef formatProvider As IFormatProvider) As DotNetLib.DateTimeFormatInfo
 Attribute GetInstance.VB_Description = "Returns the DateTimeFormatInfo object associated with the specified IFormatProvider."
-   Set GetInstance = this.DotNetLibDateTimeFormatInfoSingleton.GetInstance(formatProvider)
+   Set GetInstance = this.DateTimeFormatInfoSingleton.GetInstance(formatProvider)
 End Function
 
 '@Static
 '@Description("Returns a read-only DateTimeFormatInfo wrapper.")
 Public Function ReadOnly(ByRef dtfi As DotNetLib.DateTimeFormatInfo) As DotNetLib.DateTimeFormatInfo
 Attribute ReadOnly.VB_Description = "Returns a read-only DateTimeFormatInfo wrapper."
-   Set ReadOnly = this.DotNetLibDateTimeFormatInfoSingleton.ReadOnly(dtfi)
+   Set ReadOnly = this.DateTimeFormatInfoSingleton.ReadOnly(dtfi)
 End Function

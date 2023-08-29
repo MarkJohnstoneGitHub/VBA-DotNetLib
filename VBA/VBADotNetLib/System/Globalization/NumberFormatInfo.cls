@@ -17,7 +17,7 @@ Attribute VB_Description = "NumberFormatInfo factory methods and static members 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 28, 2023
-'@LastModified August 28, 2023
+'@LastModified August 29, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -26,50 +26,50 @@ Attribute VB_Description = "NumberFormatInfo factory methods and static members 
 Option Explicit
 
 Private Type TNumberFormatInfoSingleton
-   DotNetLibNumberFormatInfoSingleton As DotNetLib.NumberFormatInfoSingleton
+   NumberFormatInfoSingleton As DotNetLib.NumberFormatInfoSingleton
 End Type
 
 Private this As TNumberFormatInfoSingleton
 
 Private Sub Class_Initialize()
-   Set this.DotNetLibNumberFormatInfoSingleton = New DotNetLib.NumberFormatInfoSingleton
+   Set this.NumberFormatInfoSingleton = New DotNetLib.NumberFormatInfoSingleton
 End Sub
 
 Private Sub Class_Terminate()
-   Set this.DotNetLibNumberFormatInfoSingleton = Nothing
+   Set this.NumberFormatInfoSingleton = Nothing
 End Sub
 
 '@Static
 '@Description("Initializes a new writable instance of the NumberFormatInfo class that is culture-independent (invariant).")
 Public Function Create() As DotNetLib.NumberFormatInfo
 Attribute Create.VB_Description = "Initializes a new writable instance of the NumberFormatInfo class that is culture-independent (invariant)."
-   Set Create = this.DotNetLibNumberFormatInfoSingleton.Create()
+   Set Create = this.NumberFormatInfoSingleton.Create()
 End Function
 
 '@Static
 '@Description("Gets a read-only NumberFormatInfo that formats values based on the current culture.")
 Public Property Get CurrentInfo() As DotNetLib.NumberFormatInfo
 Attribute CurrentInfo.VB_Description = "Gets a read-only NumberFormatInfo that formats values based on the current culture."
-   Set CurrentInfo = this.DotNetLibNumberFormatInfoSingleton.CurrentInfo()
+   Set CurrentInfo = this.NumberFormatInfoSingleton.CurrentInfo()
 End Property
 
 '@Static
 '@Description("Gets a read-only NumberFormatInfo object that is culture-independent (invariant).")
 Public Property Get InvariantInfo() As DotNetLib.NumberFormatInfo
 Attribute InvariantInfo.VB_Description = "Gets a read-only NumberFormatInfo object that is culture-independent (invariant)."
-   Set InvariantInfo = this.DotNetLibNumberFormatInfoSingleton.InvariantInfo()
+   Set InvariantInfo = this.NumberFormatInfoSingleton.InvariantInfo()
 End Property
 
 '@Static
 '@Description("Gets the NumberFormatInfo associated with the specified IFormatProvider.")
 Public Function GetInstance(ByVal formatProvider As IFormatProvider) As DotNetLib.NumberFormatInfo
 Attribute GetInstance.VB_Description = "Gets the NumberFormatInfo associated with the specified IFormatProvider."
-   Set GetInstance = this.DotNetLibNumberFormatInfoSingleton.GetInstance(formatProvider)
+   Set GetInstance = this.NumberFormatInfoSingleton.GetInstance(formatProvider)
 End Function
 
 '@Static
 '@Description("Returns a read-only NumberFormatInfo wrapper.")
 Public Function ReadOnly(ByVal nfi As DotNetLib.NumberFormatInfo) As DotNetLib.NumberFormatInfo
 Attribute ReadOnly.VB_Description = "Returns a read-only NumberFormatInfo wrapper."
-   Set ReadOnly = this.DotNetLibNumberFormatInfoSingleton.ReadOnly(nfi)
+   Set ReadOnly = this.NumberFormatInfoSingleton.ReadOnly(nfi)
 End Function
