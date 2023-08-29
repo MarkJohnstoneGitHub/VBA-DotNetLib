@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using DotNetLib.System.Globalization;
 
 namespace DotNetLib.System
 {
@@ -96,7 +97,7 @@ namespace DotNetLib.System
 
         public DateTimeOffset Parse2(string input, IFormatProvider formatProvider)
         {
-            return new DateTimeOffset(GSystem.DateTimeOffset.Parse(input, formatProvider));
+            return DateTimeOffset.Parse(input, formatProvider); //(GSystem.DateTimeOffset.Parse(input, DateTimeFormatInfo.GetFormatProvider(formatProvider)));
         }
 
         public DateTimeOffset Parse3(string input, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles)
@@ -132,7 +133,6 @@ namespace DotNetLib.System
         public bool TryParseExact(string input, string format, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles, out DateTimeOffset result)
         {
             return DateTimeOffset.TryParseExact(input, format, formatProvider, styles, out result);
-
         }
 
         public bool TryParseExact2(string input, [In] ref string[] formats, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles, out DateTimeOffset result)

@@ -14,7 +14,7 @@ namespace DotNetLib.System.Globalization
     [Description("Provides culture-specific information for formatting and parsing numeric values.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(INumberFormatInfo))]
-    public class NumberFormatInfo : INumberFormatInfo
+    public class NumberFormatInfo : ICloneable, IFormatProvider, INumberFormatInfo
     {
         private GGlobalization.NumberFormatInfo _numberFormatInfo;
         private Func<object> clone;
@@ -218,11 +218,11 @@ namespace DotNetLib.System.Globalization
         // TODO: Check implementation
         public object GetFormat(Type formatType)
         {
-            if (_numberFormatInfo.GetFormat(formatType) == null)
+            if (!(formatType == typeof(NumberFormatInfo)))
             {
                 return null;
             }
-            return new NumberFormatInfo(_numberFormatInfo.GetFormat(formatType));
+            return _numberFormatInfo;
         }
 
         public static NumberFormatInfo GetInstance(IFormatProvider formatProvider)

@@ -17,7 +17,7 @@ namespace DotNetLib.System
     [ComDefaultInterface(typeof(ITimeSpan))]
     public class TimeSpan : ITimeSpan 
     {
-        private GSystem.TimeSpan timeSpanObject;
+        private GSystem.TimeSpan _timeSpan;
 
         // Static Fields
         private static readonly TimeSpan tsMaxValue = new TimeSpan(GSystem.TimeSpan.MaxValue);
@@ -27,32 +27,32 @@ namespace DotNetLib.System
         //Constructors
         public TimeSpan()
         {
-            timeSpanObject = new GSystem.TimeSpan();
+            _timeSpan = new GSystem.TimeSpan();
         }
 
         internal TimeSpan(GSystem.TimeSpan value)
         {
-            this.timeSpanObject = value;
+            _timeSpan = value;
         }
 
         internal TimeSpan(long ticks)
         {
-            this.timeSpanObject = new GSystem.TimeSpan(ticks);
+            _timeSpan = new GSystem.TimeSpan(ticks);
         }
 
         internal TimeSpan(int hours, int minutes, int seconds)
         {
-            this.timeSpanObject = new GSystem.TimeSpan(hours, minutes, seconds);
+            _timeSpan = new GSystem.TimeSpan(hours, minutes, seconds);
         }
 
         internal TimeSpan(int days, int hours, int minutes, int seconds)
         {
-            this.timeSpanObject = new GSystem.TimeSpan(days, hours, minutes, seconds);
+            _timeSpan = new GSystem.TimeSpan(days, hours, minutes, seconds);
         }
 
         internal TimeSpan(int days, int hours, int minutes, int seconds, int milliseconds)
         {
-            this.timeSpanObject = new GSystem.TimeSpan(days, hours, minutes, seconds, milliseconds);   
+            _timeSpan = new GSystem.TimeSpan(days, hours, minutes, seconds, milliseconds);   
         }
 
         // Fields
@@ -77,37 +77,37 @@ namespace DotNetLib.System
         //Properties
         internal GSystem.TimeSpan TimeSpanObject
         {
-            get { return this.timeSpanObject; }
-            set { this.timeSpanObject = value; } 
+            get { return this._timeSpan; }
+            set { _timeSpan = value; } 
         }
 
-        public int Days => this.timeSpanObject.Days;
+        public int Days => _timeSpan.Days;
 
-        public int Hours => this.timeSpanObject.Hours;
+        public int Hours => _timeSpan.Hours;
 
-        public int Milliseconds => this.timeSpanObject.Milliseconds;
+        public int Milliseconds => _timeSpan.Milliseconds;
 
-        public int Minutes => this.timeSpanObject.Minutes;
+        public int Minutes => _timeSpan.Minutes;
 
-        public int Seconds => this.timeSpanObject.Seconds;
+        public int Seconds => _timeSpan.Seconds;
 
-        public long Ticks => this.timeSpanObject.Ticks;
+        public long Ticks => _timeSpan.Ticks;
 
-        public double TotalDays => this.timeSpanObject.TotalDays;
+        public double TotalDays => _timeSpan.TotalDays;
 
-        public double TotalHours => this.timeSpanObject.TotalHours;
+        public double TotalHours => _timeSpan.TotalHours;
 
-        public double TotalMilliseconds => this.timeSpanObject.TotalMilliseconds;
+        public double TotalMilliseconds => _timeSpan.TotalMilliseconds;
         
-        public double TotalMinutes => this.timeSpanObject.TotalMinutes;
+        public double TotalMinutes => _timeSpan.TotalMinutes;
         
-        public double TotalSeconds => this.timeSpanObject.TotalSeconds;
+        public double TotalSeconds => _timeSpan.TotalSeconds;
 
 
         //Methods
         public TimeSpan Add(TimeSpan ts)
         {
-            return new TimeSpan(this.timeSpanObject.Add(ts.TimeSpanObject));
+            return new TimeSpan(_timeSpan.Add(ts.TimeSpanObject));
         }
 
         static public int Compare(TimeSpan ts1, TimeSpan ts2)
@@ -117,7 +117,7 @@ namespace DotNetLib.System
 
         public int CompareTo(TimeSpan value)
         {
-            return this.timeSpanObject.CompareTo(value.TimeSpanObject);
+            return _timeSpan.CompareTo(value.TimeSpanObject);
         }
 
         public int CompareTo2(object value)
@@ -134,21 +134,21 @@ namespace DotNetLib.System
 
         public TimeSpan Duration()
         {
-            return new TimeSpan(this.timeSpanObject.Duration());
+            return new TimeSpan(_timeSpan.Duration());
         }
 
         public bool Equals(TimeSpan obj)
         { 
-            return this.timeSpanObject.Equals(obj.TimeSpanObject); 
+            return _timeSpan.Equals(obj.TimeSpanObject); 
         }
 
         // TODO : Check Implementation
         public bool Equals2(object value)
         {
-            return value is TimeSpan ts && this.timeSpanObject == ts.TimeSpanObject;
+            return value is TimeSpan ts && this._timeSpan == ts.TimeSpanObject;
         }
 
-        static public bool Equals(TimeSpan t1, TimeSpan t2)
+        public static bool Equals(TimeSpan t1, TimeSpan t2)
         { 
             return GSystem.TimeSpan.Equals(t1.TimeSpanObject, t2.TimeSpanObject); 
         }
@@ -185,16 +185,17 @@ namespace DotNetLib.System
 
         public override int GetHashCode()
         { 
-            return this.timeSpanObject.GetHashCode(); 
+            return _timeSpan.GetHashCode(); 
         }
 
         //public TimeSpan Multiply(double factor)
         //{
-        //    return new TimeSpan(this.timeSpanObject.Multiply(factor));
+        //    return new TimeSpan(this._timeSpan.Multiply(factor));
         //}
+
         public TimeSpan Negate()
         {
-            return new TimeSpan(this.timeSpanObject.Negate());
+            return new TimeSpan(_timeSpan.Negate());
         }
 
         static public TimeSpan Parse(string s)
@@ -202,130 +203,130 @@ namespace DotNetLib.System
             return new TimeSpan(GSystem.TimeSpan.Parse(s));
         }
 
-        static public TimeSpan Parse(string input, GSystem.IFormatProvider formatProvider)
+        static public TimeSpan Parse(string input, IFormatProvider formatProvider)
         {
-            return new TimeSpan(GSystem.TimeSpan.Parse(input,formatProvider));
+            return new TimeSpan(GSystem.TimeSpan.Parse(input, DateTimeFormatInfo.GetFormatProvider(formatProvider)));
         }
 
-        static public TimeSpan ParseExact(string input, string format, GSystem.IFormatProvider formatProvider)
+        static public TimeSpan ParseExact(string input, string format, IFormatProvider formatProvider)
         {
-            return new TimeSpan(GSystem.TimeSpan.ParseExact(input,format, formatProvider));
+            return new TimeSpan(GSystem.TimeSpan.ParseExact(input,format, DateTimeFormatInfo.GetFormatProvider(formatProvider)));
         }
 
-        static public TimeSpan ParseExact(string input, string[] formats, GSystem.IFormatProvider formatProvider)
+        static public TimeSpan ParseExact(string input, string[] formats, IFormatProvider formatProvider)
         {
-            return new TimeSpan(GSystem.TimeSpan.ParseExact(input, formats, formatProvider));
+            return new TimeSpan(GSystem.TimeSpan.ParseExact(input, formats, DateTimeFormatInfo.GetFormatProvider(formatProvider)));
         }
 
-        static public TimeSpan ParseExact(string input, string format, GSystem.IFormatProvider formatProvider, GSystem.Globalization.TimeSpanStyles styles)
+        static public TimeSpan ParseExact(string input, string format, IFormatProvider formatProvider, GSystem.Globalization.TimeSpanStyles styles)
         {
-            return new TimeSpan(GSystem.TimeSpan.ParseExact(input, format, formatProvider, styles));
+            return new TimeSpan(GSystem.TimeSpan.ParseExact(input, format, DateTimeFormatInfo.GetFormatProvider(formatProvider), styles));
         }
 
-        static public TimeSpan ParseExact(string input, string[] formats, GSystem.IFormatProvider formatProvider, GSystem.Globalization.TimeSpanStyles styles)
+        static public TimeSpan ParseExact(string input, string[] formats, IFormatProvider formatProvider, GSystem.Globalization.TimeSpanStyles styles)
         {
-            return new TimeSpan(GSystem.TimeSpan.ParseExact(input, formats, formatProvider, styles));
+            return new TimeSpan(GSystem.TimeSpan.ParseExact(input, formats, DateTimeFormatInfo.GetFormatProvider(formatProvider), styles));
         }
 
         public TimeSpan Subtract(TimeSpan ts)
         {
-            return new TimeSpan(this.timeSpanObject.Subtract(ts.TimeSpanObject));
+            return new TimeSpan(_timeSpan.Subtract(ts.TimeSpanObject));
         }
 
         public override string ToString()
         {
-            return this.timeSpanObject.ToString();
+            return _timeSpan.ToString();
         }
 
         public string ToString2(string format)
         {
-            return this.timeSpanObject.ToString(format);
+            return _timeSpan.ToString(format);
         }
 
-        public string ToString3(string format, GSystem.IFormatProvider formatProvider)
+        public string ToString3(string format, IFormatProvider formatProvider)
         {
-            return this.timeSpanObject.ToString(format, formatProvider);
+            return _timeSpan.ToString(format, DateTimeFormatInfo.GetFormatProvider(formatProvider));
         }
 
-        static public bool TryParse(string s, out TimeSpan result)
+        public static bool TryParse(string s, out TimeSpan result)
         {
             bool tryParse = GSystem.TimeSpan.TryParse(s, out GSystem.TimeSpan outResult);
             result = new TimeSpan(outResult);
             return tryParse;
         }
 
-        static public bool TryParse(string input, GSystem.IFormatProvider formatProvider, out TimeSpan result)
+        public static bool TryParse(string input, IFormatProvider formatProvider, out TimeSpan result)
         {
-            bool tryParse = GSystem.TimeSpan.TryParse(input, formatProvider, out GSystem.TimeSpan outResult);
+            bool tryParse = GSystem.TimeSpan.TryParse(input, DateTimeFormatInfo.GetFormatProvider(formatProvider), out GSystem.TimeSpan outResult);
             result = new TimeSpan(outResult);
             return tryParse;
         }
 
-        static public bool TryParseExact(string input, string format, IFormatProvider formatProvider, out TimeSpan result)
+        public static bool TryParseExact(string input, string format, IFormatProvider formatProvider, out TimeSpan result)
         {
-            bool tryParseExact = GSystem.TimeSpan.TryParseExact(input, format, formatProvider, out GSystem.TimeSpan outResult);
+            bool tryParseExact = GSystem.TimeSpan.TryParseExact(input, format, DateTimeFormatInfo.GetFormatProvider(formatProvider), out GSystem.TimeSpan outResult);
             result = new TimeSpan(outResult);
             return tryParseExact;
         }
 
-        static public  bool TryParseExact(string input, [In] string[] formats, IFormatProvider formatProvider, out TimeSpan result)
+        public static  bool TryParseExact(string input, [In] string[] formats, IFormatProvider formatProvider, out TimeSpan result)
         {
-            bool tryParseExact = GSystem.TimeSpan.TryParseExact(input, formats, formatProvider, out GSystem.TimeSpan outResult);
+            bool tryParseExact = GSystem.TimeSpan.TryParseExact(input, formats, DateTimeFormatInfo.GetFormatProvider(formatProvider), out GSystem.TimeSpan outResult);
             result = new TimeSpan(outResult);
             return tryParseExact;
         }
 
-        static public bool TryParseExact(string input, string format, IFormatProvider formatProvider, GSystem.Globalization.TimeSpanStyles styles, out TimeSpan result)
+        public static bool TryParseExact(string input, string format, IFormatProvider formatProvider, GSystem.Globalization.TimeSpanStyles styles, out TimeSpan result)
         {
-            bool tryParseExact = GSystem.TimeSpan.TryParseExact(input, format, formatProvider, styles, out GSystem.TimeSpan outResult);
+            bool tryParseExact = GSystem.TimeSpan.TryParseExact(input, format, DateTimeFormatInfo.GetFormatProvider(formatProvider), styles, out GSystem.TimeSpan outResult);
             result = new TimeSpan(outResult);
             return tryParseExact;
         }
 
-        static public bool TryParseExact(string input, [In] string[] formats, IFormatProvider formatProvider, GSystem.Globalization.TimeSpanStyles styles, out TimeSpan result)
+        public static bool TryParseExact(string input, [In] string[] formats, IFormatProvider formatProvider, GSystem.Globalization.TimeSpanStyles styles, out TimeSpan result)
         {
-            bool tryParseExact = GSystem.TimeSpan.TryParseExact(input, formats, formatProvider, styles, out GSystem.TimeSpan outResult);
+            bool tryParseExact = GSystem.TimeSpan.TryParseExact(input, formats, DateTimeFormatInfo.GetFormatProvider(formatProvider), styles, out GSystem.TimeSpan outResult);
             result = new TimeSpan(outResult);
             return tryParseExact;
         }
 
         // Operators
 
-        static public TimeSpan Addition(TimeSpan t1, TimeSpan t2)
+        public static TimeSpan Addition(TimeSpan t1, TimeSpan t2)
         {
             return new TimeSpan(t1.TimeSpanObject + t2.TimeSpanObject);
         }
 
-        static public bool Equality(TimeSpan t1, TimeSpan t2)
+        public static bool Equality(TimeSpan t1, TimeSpan t2)
         {
             return (t1.TimeSpanObject == t2.TimeSpanObject);
         }
 
-        static public bool GreaterThan(TimeSpan t1, TimeSpan t2)
+        public static bool GreaterThan(TimeSpan t1, TimeSpan t2)
         {
             return (t1.TimeSpanObject > t2.TimeSpanObject);
         }
 
-        static public bool GreaterThanOrEqual(TimeSpan t1, TimeSpan t2)
+        public static bool GreaterThanOrEqual(TimeSpan t1, TimeSpan t2)
         {
             return (t1.TimeSpanObject >= t2.TimeSpanObject);
         }
-        static public bool Inequality(TimeSpan t1, TimeSpan t2)
+        public static bool Inequality(TimeSpan t1, TimeSpan t2)
         {
             return (t1.TimeSpanObject != t2.TimeSpanObject);
         }
 
-        static public bool LessThan(TimeSpan t1, TimeSpan t2)
+        public static bool LessThan(TimeSpan t1, TimeSpan t2)
         {
             return (t1.TimeSpanObject < t2.TimeSpanObject);
         }
         
-        static public bool LessThanOrEqual(TimeSpan t1, TimeSpan t2)
+        public static bool LessThanOrEqual(TimeSpan t1, TimeSpan t2)
         {
             return (t1.TimeSpanObject <= t2.TimeSpanObject);
         }
 
-        static public TimeSpan Subtraction(TimeSpan t1, TimeSpan t2)
+        public static TimeSpan Subtraction(TimeSpan t1, TimeSpan t2)
         {
             return new TimeSpan(t1.TimeSpanObject - t2.TimeSpanObject);
         }

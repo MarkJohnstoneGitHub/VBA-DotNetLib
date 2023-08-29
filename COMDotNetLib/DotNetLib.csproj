@@ -73,6 +73,8 @@
     <Compile Include="System\COM Management\DateTimeOffsetSingleton.cs" />
     <Compile Include="System\DayOfWeek.cs" />
     <Compile Include="System\Globalization\COM Management\INumberFormatInfoSingleton.cs" />
+    <Compile Include="System\Globalization\DateTimeFormatInfo.cs" />
+    <Compile Include="System\Globalization\COM Management\DateTimeFormatInfoSingleton.cs" />
     <Compile Include="System\Globalization\GregorianCalendar.cs" />
     <Compile Include="System\Globalization\CultureInfo.cs" />
     <Compile Include="System\Globalization\COM Management\CultureInfoSingleton.cs" />
@@ -83,6 +85,8 @@
     <Compile Include="System\Globalization\COM Management\ICultureInfoSingleton.cs" />
     <Compile Include="System\Globalization\COM Management\IGregorianCalendar.cs" />
     <Compile Include="System\Globalization\COM Management\INumberFormatInfo.cs" />
+    <Compile Include="System\Globalization\COM Management\IDateTimeFormatInfo.cs" />
+    <Compile Include="System\Globalization\COM Management\IDateTimeFormatInfoSingleton.cs" />
     <Compile Include="System\Globalization\NumberFormatInfo.cs" />
     <Compile Include="System\Globalization\COM Management\NumberFormatInfoSingleton.cs" />
     <Compile Include="System\Globalization\TimeSpanStyles.cs" />

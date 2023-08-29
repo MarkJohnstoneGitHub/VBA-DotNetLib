@@ -36,7 +36,7 @@ Public Sub DateTimeOffsetTryParseExact2()
                 "M/dd/yy H:mm zzz", "MM/dd/yy H:mm zzz", _
                 "M/d/yy H:mm zzz", "MM/d/yy H:mm zzz")
                 
-    Dim provider As IFormatProvider
+    Dim provider As DotNetLib.DateTimeFormatInfo
     Set provider = CultureInfo.InvariantCulture.DateTimeFormat
     Dim result As DotNetLib.DateTimeOffset
     Do

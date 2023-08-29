@@ -19,6 +19,7 @@ namespace DotNetLib.System.Globalization
     {
         private GGlobalization.CultureInfo _cultureInfo;
         private NumberFormatInfo _numberFormatInfo;
+        private DateTimeFormatInfo _dateTimeFormatInfo;
 
         //private static ICultureInfo _currentCulture = new CultureInfo(GGlobalization.CultureInfo.CurrentCulture);
         //private static ICultureInfo _currentUICulture = new CultureInfo(GGlobalization.CultureInfo.CurrentUICulture);
@@ -29,10 +30,9 @@ namespace DotNetLib.System.Globalization
 
         //Constructors
 
-        internal CultureInfo(GGlobalization.CultureInfo cultureInfo)
+        public CultureInfo(GGlobalization.CultureInfo cultureInfo)
         {
-            this._cultureInfo = cultureInfo;
-            _numberFormatInfo = new NumberFormatInfo(_cultureInfo.NumberFormat);
+            CultureInfoObject = cultureInfo;
         }
 
         //public CultureInfo()
@@ -41,34 +41,35 @@ namespace DotNetLib.System.Globalization
 
         public CultureInfo(int culture)
         {
-            this._cultureInfo = new GGlobalization.CultureInfo(culture);
-            _numberFormatInfo = new NumberFormatInfo(_cultureInfo.NumberFormat);
+            CultureInfoObject = new GGlobalization.CultureInfo(culture);
         }
 
         public CultureInfo(string name)
         {
-            this._cultureInfo = new GGlobalization.CultureInfo(name);
-            _numberFormatInfo = new NumberFormatInfo(_cultureInfo.NumberFormat);
+            CultureInfoObject = new GGlobalization.CultureInfo(name);
         }
 
         public CultureInfo(int culture, bool useUserOverride)
         {
-            this._cultureInfo = new GGlobalization.CultureInfo(culture, useUserOverride);
-            _numberFormatInfo = new NumberFormatInfo(_cultureInfo.NumberFormat);
+            CultureInfoObject = new GGlobalization.CultureInfo(culture, useUserOverride);
         }
 
         public CultureInfo(string name, bool useUserOverride)
         {
-            this._cultureInfo = new GGlobalization.CultureInfo(name, useUserOverride);
-            _numberFormatInfo = new NumberFormatInfo(_cultureInfo.NumberFormat);
+            CultureInfoObject = new GGlobalization.CultureInfo(name, useUserOverride);
         }
 
         // Properties
 
         public GGlobalization.CultureInfo CultureInfoObject
         {
-            get { return this._cultureInfo; }
-            set { this._cultureInfo = value; }
+            get { return _cultureInfo; }
+            set 
+            { 
+                _cultureInfo = value;
+                _numberFormatInfo = new NumberFormatInfo(_cultureInfo.NumberFormat);
+                _dateTimeFormatInfo = new DateTimeFormatInfo(_cultureInfo.DateTimeFormat);
+            }
         }
 
         public Calendar Calendar
@@ -86,10 +87,14 @@ namespace DotNetLib.System.Globalization
             get { return _cultureInfo.CultureTypes; }
         }
 
-        public DateTimeFormatInfo DateTimeFormat 
-        { 
-            get => _cultureInfo.DateTimeFormat; 
-            set => _cultureInfo.DateTimeFormat = value; 
+        public DateTimeFormatInfo DateTimeFormat
+        {
+            get => _dateTimeFormatInfo; // new DateTimeFormatInfo(_cultureInfo.DateTimeFormat)
+            set 
+            {
+                _cultureInfo.DateTimeFormat = value.DateTimeFormatInfoObject;
+                _dateTimeFormatInfo = value;
+            }
         }
 
         public string DisplayName => _cultureInfo.DisplayName;
@@ -109,11 +114,16 @@ namespace DotNetLib.System.Globalization
         public NumberFormatInfo NumberFormat 
         { 
             get => _numberFormatInfo;
-            set => _numberFormatInfo = value;
+            set
+            {
+                _numberFormatInfo = value;
+                _cultureInfo.NumberFormat = value.NumberFormatInfoObject;
+            }
         }
 
         public Calendar[] OptionalCalendars => _cultureInfo.OptionalCalendars;
 
+        //TODO : Check implementation return new?
         public CultureInfo Parent
         {
             get { return new CultureInfo(_cultureInfo.Parent); }
@@ -177,7 +187,6 @@ namespace DotNetLib.System.Globalization
             }
         }
 
-        // Static
         public static CultureInfo InstalledUICulture
         {
             get
@@ -186,7 +195,6 @@ namespace DotNetLib.System.Globalization
             }
         }
 
-        // Static
         public static CultureInfo InvariantCulture
         {
             get
@@ -226,15 +234,23 @@ namespace DotNetLib.System.Globalization
         public object Clone()
         {
             return  (CultureInfo)_cultureInfo.Clone();
-
         }
 
+        //TODO : Check implementation
+        // Also check if type is typeof mscorlib.NumberFormatInfo, mscorlib.DateTimeFormatInfo ?
         public object GetFormat(Type formatType)
         {
-            return _cultureInfo.GetFormat(formatType);
+            if (formatType == typeof(NumberFormatInfo))
+            {
+                return _cultureInfo.NumberFormat;   //NumberFormat.NumberFormatInfoObject;
+            }
+            if (formatType == typeof(DateTimeFormatInfo))
+            {
+                return _cultureInfo.DateTimeFormat; //DateTimeFormat.DateTimeFormatInfoObject;
+            }
+            return null;
         }
 
-        // Static
         public static CultureInfo CreateSpecificCulture(string name)
         {
             return new CultureInfo(GGlobalization.CultureInfo.CreateSpecificCulture(name));
