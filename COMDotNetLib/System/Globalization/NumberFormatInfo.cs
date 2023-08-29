@@ -222,7 +222,7 @@ namespace DotNetLib.System.Globalization
             {
                 return null;
             }
-            return _numberFormatInfo;
+            return this;
         }
 
         public static NumberFormatInfo GetInstance(IFormatProvider formatProvider)

@@ -236,7 +236,7 @@ namespace DotNetLib.System.Globalization
             {
                 return null;
             }
-            return _dateTimeFormatInfo;
+            return this;
         }
 
         //TODO: Could also cater for mscorlib.DateTimeFormatInfo
