@@ -14,7 +14,7 @@ Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globali
  - Added [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1)
  - Added [NumberFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.numberformatinfo?view=netframework-4.8.1)
  - DateTimeFormatInfo and NumberFormatInfo properties are now available for [Cultureinfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8.1)
- - Unit Testing required to test that various DateTime,DateTimeOffset,TimeSpan parsing functions using [IFormatProvider](https://learn.microsoft.com/en-us/dotnet/api/system.iformatprovider?view=netframework-4.8.1) is functioning correctly. Adhoc testing done using examples.
+ - Unit Testing required to test that various DateTime, DateTimeOffset, TimeSpan parsing functions using [IFormatProvider](https://learn.microsoft.com/en-us/dotnet/api/system.iformatprovider?view=netframework-4.8.1) is functioning correctly. Adhoc testing done using examples.
 
 
 **DotNetLib Version 1.2 Update August 17th, 2023** 
@@ -120,6 +120,5 @@ VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
 
 VBA Wrapper for ReadOnlyCollection
 
-Implement interfaces in DotNetLib type library as work around for [VBA Interface not showing property in watch window](https://stackoverflow.com/questions/61232755/vba-interface-not-showing-property-in-watch-window). Would require renaming COM interfaces eg ICOMDateTime, ICOMDateTimeOffset, ICOMTimeSpan, ICOMTimeZoneInfo and create interfaces IDateTime, IDateTimeOffset,ITimeSpan, ITimeZoneInfo etc. 
- 
+Implement interfaces in DotNetLib type library as work around for [VBA Interface not showing property in watch window](https://stackoverflow.com/questions/61232755/vba-interface-not-showing-property-in-watch-window). 
   
