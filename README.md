@@ -106,6 +106,7 @@ Or replace with non-generic equivalent.  To enforce type safety in VBA create a 
  **Things To do**
  
 - Unit testing using Rubberduck unit testing.
+- [Create an installer from Microsoft Visual Studio](https://www.advancedinstaller.com/user-guide/tutorial-ai-ext-vs.html#section761)
 
  Will require implementing the following:
   - [Cultureinfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8.1) and associated classes. Implemented
