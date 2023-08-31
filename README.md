@@ -8,6 +8,18 @@ Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globali
  The API for the .Net class may be required to be altered due to VBA reserved words. See [reserved-word-list](https://www.engram9.info/access-2007-vba/reserved-word-list.html).
  
 **Status:**
+**DotNetLib Update September 1st, 2023** 
+ - Fixed issues with [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1)
+ - When assigning an array to a property eg DateTimeFormatInfo.AbbreviatedDayNames Compile error: Function or interface marked as restricted, or the function uses an Automation type not supported in Visual Basic
+ - https://stackoverflow.com/questions/13185159/how-to-pass-byte-arrays-as-udt-properties-from-vb6-vba-to-c-sharp-com-dll
+ - Added members to set the various arrays replacing the set propeterty which is no longer COM visibile.
+ - SetAbbreviatedDayNames([In] ref string[] abbreviatedDayNames)
+ - SetAbbreviatedMonthGenitiveNames([In] ref string[] abbreviatedMonthGenitiveNames)
+ - SetDayNames([In] ref string[] dayNames)
+ - SetMonthGenitiveNames([In] ref string[] monthGenitiveNames)
+ - SetMonthNames([In] ref string[] monthNames)
+ - SetShortestDayNames([In] ref string[] shortestDayNames)
+
 
 **DotNetLib Update August 29th, 2023** 
 
