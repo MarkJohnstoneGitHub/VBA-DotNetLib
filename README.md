@@ -76,6 +76,9 @@ Ms Access database [VBADotNetLibrary.accdb](https://github.com/MarkJohnstoneGitH
 
  
  **Issues:**
+  - [DateTimeFormatInfo.AbbreviatedDayNames](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.abbreviateddaynames?view=netframework-4.8.1)
+    - When attempting to assign an array to DateTimeFormatInfo.AbbreviatedDayNames Compile error: Function or interface marked as restricted, or the function uses an Automation typee not supported in Visual Basic
+    - https://stackoverflow.com/questions/13185159/how-to-pass-byte-arrays-as-udt-properties-from-vb6-vba-to-c-sharp-com-dll
   - TimeZoneInfo.Local renamed member to Locale.  May cause issues when for interfaces may require renaming in type library? Alternative name?
   - Require to investigate how to correctly marshal arrays 
   - See [PassingParameterArraysByReference](https://www.l3harrisgeospatial.com/docs/PassingParameterArraysByReference.html)
@@ -106,6 +109,7 @@ Or replace with non-generic equivalent.  To enforce type safety in VBA create a 
  **Things To do**
  
 - Unit testing using Rubberduck unit testing.
+- [Create an installer from Microsoft Visual Studio](https://www.advancedinstaller.com/user-guide/tutorial-ai-ext-vs.html#section761)
 
  Will require implementing the following:
   - [Cultureinfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8.1) and associated classes. Implemented
