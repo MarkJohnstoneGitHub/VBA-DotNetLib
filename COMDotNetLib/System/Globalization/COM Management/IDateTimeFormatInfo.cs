@@ -14,29 +14,39 @@ namespace DotNetLib.System.Globalization
     {
         // Properties
 
-        string[] AbbreviatedDayNames 
+        string[] AbbreviatedDayNames
         {
             [Description("Gets or sets a one-dimensional array of type String containing the culture-specific abbreviated names of the days of the week.")]
             get;
-            [Description("Gets or sets a one-dimensional array of type String containing the culture-specific abbreviated names of the days of the week.")]
-            set;
+            //[Description("Gets or sets a one-dimensional array of type String containing the culture-specific abbreviated names of the days of the week.")]
+            //set;
         }
+
+        [Description("Sets a one-dimensional array of type String containing the culture-specific abbreviated names of the days of the week.")]
+        void SetAbbreviatedDayNames([In] ref string[] abbreviatedDayNames);
 
         string[] AbbreviatedMonthGenitiveNames
         {
             [Description("Gets or sets a string array of abbreviated month names associated with the current DateTimeFormatInfo object.")]
             get;
-            [Description("Gets or sets a string array of abbreviated month names associated with the current DateTimeFormatInfo object.")]
-            set;
+            //[Description("Gets or sets a string array of abbreviated month names associated with the current DateTimeFormatInfo object.")]
+            //set;
         }
 
-        string[] AbbreviatedMonthNames 
+        [Description("Sets a string array of abbreviated month names associated with the current DateTimeFormatInfo object.")]
+        void SetAbbreviatedMonthGenitiveNames([In] ref string[] abbreviatedMonthGenitiveNames);
+
+        string[] AbbreviatedMonthNames
         {
             [Description("Gets or sets a one-dimensional string array that contains the culture-specific abbreviated names of the months.")]
             get;
-            [Description("Gets or sets a one-dimensional string array that contains the culture-specific abbreviated names of the months.")]
-            set;
+            //[Description("Gets or sets a one-dimensional string array that contains the culture-specific abbreviated names of the months.")]
+            //set;
         }
+
+        [Description("Sets a one-dimensional string array that contains the culture-specific abbreviated names of the months.")]
+        void SetAbbreviatedMonthNames([In] ref string[] abbreviatedMonthNames);
+
 
         string AMDesignator 
         {
@@ -74,9 +84,12 @@ namespace DotNetLib.System.Globalization
         {
             [Description("Gets or sets a one-dimensional string array that contains the culture-specific full names of the days of the week.")]
             get;
-            [Description("Gets or sets a one-dimensional string array that contains the culture-specific full names of the days of the week.")]
-            set;
+            //[Description("Gets or sets a one-dimensional string array that contains the culture-specific full names of the days of the week.")]
+            //set;
         }
+
+        [Description("Sets a one-dimensional string array that contains the culture-specific full names of the days of the week.")]
+        void SetDayNames([In] ref string[] dayNames);
 
         DayOfWeek FirstDayOfWeek 
         {
@@ -128,17 +141,24 @@ namespace DotNetLib.System.Globalization
         {
             [Description("Gets or sets a string array of month names associated with the current DateTimeFormatInfo object.")]
             get;
-            [Description("Gets or sets a string array of month names associated with the current DateTimeFormatInfo object.")]
-            set;
+            //[Description("Gets or sets a string array of month names associated with the current DateTimeFormatInfo object.")]
+            //set;
         }
+
+        [Description("Sets a string array of month names associated with the current DateTimeFormatInfo object.")]
+        void SetMonthGenitiveNames([In] ref string[] monthGenitiveNames);
+
 
         string[] MonthNames 
         {
             [Description("Gets or sets a one-dimensional array of type String containing the culture-specific full names of the months.")]
             get;
-            [Description("Gets or sets a one-dimensional array of type String containing the culture-specific full names of the months.")]
-            set;
+            //[Description("Gets or sets a one-dimensional array of type String containing the culture-specific full names of the months.")]
+            //set;
         }
+
+        [Description("Sets a one-dimensional array of type String containing the culture-specific full names of the months.")]
+        void SetMonthNames([In] ref string[] monthNames);
 
         string NativeCalendarName 
         {
@@ -172,9 +192,13 @@ namespace DotNetLib.System.Globalization
         {
             [Description("Gets or sets a string array of the shortest unique abbreviated day names associated with the current DateTimeFormatInfo object.")]
             get;
-            [Description("Gets or sets a string array of the shortest unique abbreviated day names associated with the current DateTimeFormatInfo object.")]
-            set;
+            //[Description("Gets or sets a string array of the shortest unique abbreviated day names associated with the current DateTimeFormatInfo object.")]
+            //set;
         }
+
+        [Description("Sets a string array of the shortest unique abbreviated day names associated with the current DateTimeFormatInfo object.")]
+        void SetShortestDayNames([In] ref string[] shortestDayNames);
+
 
         string ShortTimePattern 
         {
@@ -251,7 +275,9 @@ namespace DotNetLib.System.Globalization
         string GetShortestDayName(DayOfWeek dayOfWeek);
 
         [Description("Sets the custom date and time format strings that correspond to a specified standard format string.")]
-        void SetAllDateTimePatterns(string[] patterns, char format);
+        void SetAllDateTimePatterns([In] ref string[] patterns, char format);
+
+
 
     }
 }

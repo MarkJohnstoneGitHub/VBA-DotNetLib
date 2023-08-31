@@ -1,4 +1,6 @@
-﻿using GGlobalization = global::System.Globalization;
+﻿// Notes : https://stackoverflow.com/questions/13185159/how-to-pass-byte-arrays-as-udt-properties-from-vb6-vba-to-c-sharp-com-dll
+
+using GGlobalization = global::System.Globalization;
 using System;
 using System.Globalization;
 using System.ComponentModel;
@@ -39,10 +41,14 @@ namespace DotNetLib.System.Globalization
             set { _dateTimeFormatInfo = value; }
         }
 
-        public string[] AbbreviatedDayNames 
+        public string[] AbbreviatedDayNames
         { 
             get => _dateTimeFormatInfo.AbbreviatedDayNames;
             set => _dateTimeFormatInfo.AbbreviatedDayNames = value;
+        }
+        public void SetAbbreviatedDayNames([In] ref string[] abbreviatedDayNames)
+        {
+            _dateTimeFormatInfo.AbbreviatedDayNames = abbreviatedDayNames;
         }
 
         public string[] AbbreviatedMonthGenitiveNames 
@@ -51,10 +57,20 @@ namespace DotNetLib.System.Globalization
             set => _dateTimeFormatInfo.AbbreviatedMonthGenitiveNames = value;
         }
 
-        public string[] AbbreviatedMonthNames 
-        { 
+        public void SetAbbreviatedMonthGenitiveNames([In] ref string[] abbreviatedMonthGenitiveNames)
+        {
+            _dateTimeFormatInfo.AbbreviatedMonthGenitiveNames = abbreviatedMonthGenitiveNames;
+        }
+
+        public string[] AbbreviatedMonthNames
+        {
             get => _dateTimeFormatInfo.AbbreviatedMonthNames;
             set => _dateTimeFormatInfo.AbbreviatedMonthNames = value;
+        }
+
+        public void SetAbbreviatedMonthNames([In] ref string[] abbreviatedMonthNames)
+        {
+            _dateTimeFormatInfo.AbbreviatedMonthNames = abbreviatedMonthNames;
         }
 
         public string AMDesignator 
@@ -90,6 +106,11 @@ namespace DotNetLib.System.Globalization
         { 
             get => _dateTimeFormatInfo.DayNames;
             set => _dateTimeFormatInfo.DayNames = value;
+        }
+
+        public void SetDayNames([In] ref string[] dayNames)
+        {
+            _dateTimeFormatInfo.DayNames = dayNames;
         }
 
         public DayOfWeek FirstDayOfWeek 
@@ -134,10 +155,21 @@ namespace DotNetLib.System.Globalization
             get => _dateTimeFormatInfo.MonthGenitiveNames; 
             set => _dateTimeFormatInfo.MonthGenitiveNames = value;
         }
+
+        public void SetMonthGenitiveNames([In] ref string[] monthGenitiveNames)
+        {
+            _dateTimeFormatInfo.MonthGenitiveNames = monthGenitiveNames;
+        }
+
         public string[] MonthNames 
         { 
             get => _dateTimeFormatInfo.MonthNames; 
             set => _dateTimeFormatInfo.MonthNames = value;
+        }
+
+        public void SetMonthNames([In] ref string[] monthNames)
+        {
+            _dateTimeFormatInfo.MonthNames = monthNames;
         }
 
         public string NativeCalendarName => _dateTimeFormatInfo.NativeCalendarName;
@@ -159,6 +191,11 @@ namespace DotNetLib.System.Globalization
         { 
             get => _dateTimeFormatInfo.ShortestDayNames; 
             set => _dateTimeFormatInfo.ShortestDayNames = value;
+        }
+
+        public void SetShortestDayNames([In] ref string[] shortestDayNames)
+        {
+            _dateTimeFormatInfo.ShortestDayNames = ShortestDayNames;
         }
 
         public string ShortTimePattern 
@@ -292,7 +329,7 @@ namespace DotNetLib.System.Globalization
             return new DateTimeFormatInfo(GGlobalization.DateTimeFormatInfo.ReadOnly(dtfi.DateTimeFormatInfoObject));
         }
 
-        public void SetAllDateTimePatterns(string[] patterns, char format)
+        public void SetAllDateTimePatterns([In] ref string[] patterns, char format)
         {
             _dateTimeFormatInfo.SetAllDateTimePatterns(patterns, format);
         }
