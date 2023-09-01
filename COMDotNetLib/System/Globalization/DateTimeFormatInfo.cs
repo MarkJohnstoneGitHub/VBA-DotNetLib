@@ -241,14 +241,22 @@ namespace DotNetLib.System.Globalization
             return _dateTimeFormatInfo.GetAbbreviatedMonthName(month);
         }
 
-        public string[] GetAllDateTimePatterns()
-        {
-            return _dateTimeFormatInfo.GetAllDateTimePatterns();
-        }
+        //public string[] GetAllDateTimePatterns()
+        //{
+        //    return _dateTimeFormatInfo.GetAllDateTimePatterns();
+        //}
 
-        public string[] GetAllDateTimePatterns2(char format)
+        public string[] GetAllDateTimePatterns(string format = null)
         {
-            return _dateTimeFormatInfo.GetAllDateTimePatterns(format);
+            if (format == null)
+            {
+                return _dateTimeFormatInfo.GetAllDateTimePatterns();
+            }
+            if (format.Length > 1)
+            {
+                throw new ArgumentException("Format specifier was invalid.", "format");
+            }
+            return _dateTimeFormatInfo.GetAllDateTimePatterns(format.ToCharArray()[0]);
         }
 
         public string GetDayName(DayOfWeek dayofweek)

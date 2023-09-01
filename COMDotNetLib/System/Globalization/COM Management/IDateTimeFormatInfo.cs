@@ -252,11 +252,11 @@ namespace DotNetLib.System.Globalization
         [Description("Returns the string containing the abbreviated name of the specified era, if an abbreviation exists.")]
         string GetAbbreviatedMonthName(int month);
 
-        [Description("Returns all the standard patterns in which date and time values can be formatted.")]
-        string[] GetAllDateTimePatterns();
-
         [Description("Returns all the patterns in which date and time values can be formatted using the specified standard format string.")]
-        string[] GetAllDateTimePatterns2(char format);
+        string[] GetAllDateTimePatterns(string format = null);
+
+        //[Description("Returns all the patterns in which date and time values can be formatted using the specified standard format string.")]
+        //string[] GetAllDateTimePatterns2(char format);
 
         [Description("Returns the culture-specific full name of the specified day of the week based on the culture associated with the current DateTimeFormatInfo object.")]
         string GetDayName(DayOfWeek dayofweek);
