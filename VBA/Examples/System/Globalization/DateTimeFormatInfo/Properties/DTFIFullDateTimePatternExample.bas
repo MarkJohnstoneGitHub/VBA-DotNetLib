@@ -11,21 +11,6 @@ Attribute VB_Name = "DTFIFullDateTimePatternExample"
 
 Option Explicit
 
-' http://blog.nkadesign.com/2013/10/01/vba-unicode-strings-and-the-windows-api/
-#If Not Mac And VBA7 Then
-    Private Declare PtrSafe Function MessageBoxU Lib "user32" Alias "MessageBoxW" _
-        (ByVal hwnd As LongPtr, _
-         ByVal lpText As LongPtr, _
-         ByVal lpCaption As LongPtr, _
-         ByVal wType As Long) As Long
-#ElseIf Not Mac Then
-    Private Declare Function MessageBoxU Lib "user32" Alias "MessageBoxW" _
-        (ByVal hwnd As Long, _
-         ByVal lpText As Long, _
-         ByVal lpCaption As Long, _
-         ByVal wType As Long) As Long
-#End If
-
 ' The following example displays the value of FullDateTimePattern for a few cultures.
 Public Sub DateTimeFormatInfoFullDateTimePattern()
     ' Displays the values of the pattern properties.
@@ -43,7 +28,7 @@ Private Sub PrintPattern(ByVal myCulture As String)
     #If Not Mac Then
         Dim messageBoxText As String
         messageBoxText = "  " & myCulture & "     " & myDTFI.FullDateTimePattern
-        MessageBoxU 0, StrPtr(messageBoxText), StrPtr("Culture FullDateTimePattern"), 0
+        WinAPIUser32.MessageBoxW 0, StrPtr(messageBoxText), StrPtr("Culture FullDateTimePattern"), 0
     #End If
 End Sub
 
