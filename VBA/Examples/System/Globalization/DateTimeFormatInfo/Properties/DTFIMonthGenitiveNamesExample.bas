@@ -70,7 +70,7 @@ Public Sub DateTimeFormatInfoMonthGenitiveNames()
     Debug.Print VBA.vbNewLine; "Change the initial DateTime format patterns for the "; VBA.vbNewLine; _
                 "'d' format specifier to my format patterns..."
     
-    Call dtfi.SetAllDateTimePatterns(myDateTimePatterns, "d")
+    dtfi.SetAllDateTimePatterns myDateTimePatterns, "d"
 
     ' Display the new DateTime format patterns for the 'd' format specifier.
     Debug.Print VBA.vbNewLine; "New DateTime format patterns for the 'd' format specifier..."
