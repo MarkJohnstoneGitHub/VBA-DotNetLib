@@ -337,9 +337,13 @@ namespace DotNetLib.System.Globalization
             return new DateTimeFormatInfo(GGlobalization.DateTimeFormatInfo.ReadOnly(dtfi.DateTimeFormatInfoObject));
         }
 
-        public void SetAllDateTimePatterns([In] ref string[] patterns, char format)
+        public void SetAllDateTimePatterns([In] ref string[] patterns, string format)
         {
-            _dateTimeFormatInfo.SetAllDateTimePatterns(patterns, format);
+            if (format.Length == 0 | format.Length > 1 )
+                {
+                throw new ArgumentException("Format specifier was invalid.", "format");
+            }
+            _dateTimeFormatInfo.SetAllDateTimePatterns(patterns, format.ToCharArray()[0]);
         }
 
     }

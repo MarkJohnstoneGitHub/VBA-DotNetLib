@@ -277,9 +277,7 @@ namespace DotNetLib.System.Globalization
         string GetShortestDayName(DayOfWeek dayOfWeek);
 
         [Description("Sets the custom date and time format strings that correspond to a specified standard format string.")]
-        void SetAllDateTimePatterns([In] ref string[] patterns, char format);
-
-
+        void SetAllDateTimePatterns([In] ref string[] patterns, string format);
 
     }
 }
