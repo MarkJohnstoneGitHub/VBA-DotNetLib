@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.ComponentModel;
+using System.Globalization;
 using System.Runtime.InteropServices;
 using GGlobalization = global::System.Globalization;
 using GSystem = global::System;
@@ -21,6 +23,7 @@ namespace DotNetLib.System.Globalization
             //[Description("Gets or sets a one-dimensional array of type String containing the culture-specific abbreviated names of the days of the week.")]
             //set;
         }
+
 
         [Description("Sets a one-dimensional array of type String containing the culture-specific abbreviated names of the days of the week.")]
         void SetAbbreviatedDayNames([In] ref string[] abbreviatedDayNames);
@@ -46,7 +49,6 @@ namespace DotNetLib.System.Globalization
 
         [Description("Sets a one-dimensional string array that contains the culture-specific abbreviated names of the months.")]
         void SetAbbreviatedMonthNames([In] ref string[] abbreviatedMonthNames);
-
 
         string AMDesignator 
         {

@@ -23,7 +23,6 @@ Public Sub DateTimeFormatInfoAbbreviatedMonthNames()
     Set ci = CultureInfo.CreateSpecificCulture("en-US")
     Dim dtfi As DotNetLib.DateTimeFormatInfo
     Set dtfi = ci.DateTimeFormat
-    Dim pvtMonthNames() As String
     
     dtfi.SetAbbreviatedMonthNames Strings.ToArray("of Jan", "of Feb", "of Mar", _
                                                 "of Apr", "of May", "of Jun", _
