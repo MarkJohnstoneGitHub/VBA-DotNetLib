@@ -9,7 +9,7 @@ Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globali
  
 **Status:**
 
-**DotNetLib Update September 2st, 2023** 
+**DotNetLib Update September 2nd, 2023** 
  - Fixed issues with [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1)
    - Changed format parameter to string from char
    - public string[] GetAllDateTimePatterns(string format = null)
