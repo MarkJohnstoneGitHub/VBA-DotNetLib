@@ -1,10 +1,11 @@
 Attribute VB_Name = "CelestialInfoSunRiseSetExample"
+'@ModuleDescription "Celestial Info example displaying sunrise and sunset for local time."
 '@Folder("CoordinateSharp.Examples.CelestialInfos")
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 19, 2023
-'@LastModified August 25, 2023
+'@LastModified September 3, 2023
 
 ' https://www.nuget.org/packages/CoordinateSharp/#readme-body-tab
 ' https://coordinatesharp.com/Help/html/T_CoordinateSharp_Celestial.htm
@@ -20,7 +21,7 @@ End Type
 
 '@Description("Melbourne, Australia sunrise and sunset for local time.")
 '@Reference https://www.timeanddate.com/sun/australia/melbourne
-'@Remarks displaying sunrise for following day? Possible CoordinateSharp bug to report.
+'@Bug Displaying sunrise for following day? Possible CoordinateSharp bug to report.
 Public Sub CelestialInfoExample()
 Attribute CelestialInfoExample.VB_Description = "Melbourne, Australia sunrise and sunset for local time."
     Dim melbourneTimeZoneId As String
@@ -34,16 +35,17 @@ Attribute CelestialInfoExample.VB_Description = "Melbourne, Australia sunrise an
     Set melbourneTZI = TimeZoneInfo.FindSystemTimeZoneById(melbourneTimeZoneId)
     
     Dim dto As DotNetLib.DateTimeOffset
-    Set dto = DateTimeOffset.CreateFromDateTime2(DateTime.CreateFromDate(2023, 8, 25), melbourneTZI.BaseUtcOffset)
+    'Set dto = DateTimeOffset.CreateFromDateTime2(DateTime.Now.DateOnly, melbourneTZI.BaseUtcOffset)
+    Set dto = DateTimeOffset.CreateFromDateTime(DateTime.UtcNow)
     
     Dim utcSunRise As DotNetLib.DateTime
-    Set utcSunRise = CelestialInfo.SunRise(melboureCoOrdinate.latitude, melboureCoOrdinate.longitude, dto.DateTime)
+    Set utcSunRise = CelestialInfo.SunRise(melboureCoOrdinate.latitude, melboureCoOrdinate.longitude, dto.UtcDateTime)
     Dim localSunRise As DotNetLib.DateTime
     Set localSunRise = TimeZoneInfo.ConvertTimeFromUtc(utcSunRise, melbourneTZI)
     Debug.Print "Melbourne,Australia SunRise : "; localSunRise.ToString
     
     Dim utcSunSet As DotNetLib.DateTime
-    Set utcSunSet = CelestialInfo.SunSet(melboureCoOrdinate.latitude, melboureCoOrdinate.longitude, dto.DateTime)
+    Set utcSunSet = CelestialInfo.SunSet(melboureCoOrdinate.latitude, melboureCoOrdinate.longitude, dto.UtcDateTime)
     Dim localSunSet As DotNetLib.DateTime
     Set localSunSet = TimeZoneInfo.ConvertTimeFromUtc(utcSunSet, melbourneTZI)
     Debug.Print "Melbourne,Australia SunSet :  "; localSunSet.ToString
@@ -79,7 +81,7 @@ Attribute CelestialInfoExample2.VB_Description = "New York City, USA sunrise and
     Set nycTZI = TimeZoneInfo.FindSystemTimeZoneById(nycTimeZoneId)
     
     Dim dto As DotNetLib.DateTimeOffset
-    Set dto = DateTimeOffset.CreateFromDateTime2(DateTime.CreateFromDate(2023, 8, 25), nycTZI.BaseUtcOffset)
+    Set dto = DateTimeOffset.CreateFromDateTime(DateTime.UtcNow)
     
     Dim utcSunRise As DotNetLib.DateTime
     Set utcSunRise = CelestialInfo.SunRise(nycCoOrdinate.latitude, nycCoOrdinate.longitude, dto.UtcDateTime)
@@ -123,16 +125,16 @@ Attribute CelestialInfoExample3.VB_Description = "Amsterdam, Netherlands sunrise
     Dim amsterdamTZI As DotNetLib.TimeZoneInfo
     Set amsterdamTZI = TimeZoneInfo.FindSystemTimeZoneById(AmsterdamTimeZoneId)
     Dim dto As DotNetLib.DateTimeOffset
-    Set dto = DateTimeOffset.CreateFromDateTime2(DateTime.CreateFromDate(2023, 8, 25), amsterdamTZI.BaseUtcOffset)
+    Set dto = DateTimeOffset.CreateFromDateTime(DateTime.UtcNow)
     
     Dim utcSunRise As DotNetLib.DateTime
-    Set utcSunRise = CelestialInfo.SunRise(amsterdamCoOrdinate.latitude, amsterdamCoOrdinate.longitude, dto.DateTime)
+    Set utcSunRise = CelestialInfo.SunRise(amsterdamCoOrdinate.latitude, amsterdamCoOrdinate.longitude, dto.UtcDateTime)
     Dim localSunRise As DotNetLib.DateTime
     Set localSunRise = TimeZoneInfo.ConvertTimeFromUtc(utcSunRise, amsterdamTZI)
     Debug.Print "Amsterdam, Netherlands sunrise : "; localSunRise.ToString
     
     Dim utcSunSet As DotNetLib.DateTime
-    Set utcSunSet = CelestialInfo.SunSet(amsterdamCoOrdinate.latitude, amsterdamCoOrdinate.longitude, dto.DateTime)
+    Set utcSunSet = CelestialInfo.SunSet(amsterdamCoOrdinate.latitude, amsterdamCoOrdinate.longitude, dto.UtcDateTime)
     Dim localSunSet As DotNetLib.DateTime
     Set localSunSet = TimeZoneInfo.ConvertTimeFromUtc(utcSunSet, amsterdamTZI)
     Debug.Print "Amsterdam, Netherlands sunset  : "; localSunSet.ToString

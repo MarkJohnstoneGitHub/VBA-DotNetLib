@@ -13,7 +13,6 @@ Attribute VB_Name = "TestDTCreateFromDateTimeKind2"
 '@References
 ' https://learn.microsoft.com/en-us/dotnet/api/system.datetime.-ctor?view=netframework-4.8.1#system-datetime-ctor(system-int32-system-int32-system-int32-system-int32-system-int32-system-int32-system-int32-system-datetimekind)
 
-Option Compare Database
 Option Explicit
 Option Private Module
 
