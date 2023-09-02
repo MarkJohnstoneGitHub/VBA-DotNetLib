@@ -256,7 +256,7 @@ namespace DotNetLib.System.Globalization
             {
                 throw new ArgumentException("Format specifier was invalid.", "format");
             }
-            return _dateTimeFormatInfo.GetAllDateTimePatterns(format.ToCharArray()[0]);
+            return _dateTimeFormatInfo.GetAllDateTimePatterns(format[0]);
         }
 
         public string GetDayName(DayOfWeek dayofweek)
@@ -343,7 +343,7 @@ namespace DotNetLib.System.Globalization
                 {
                 throw new ArgumentException("Format specifier was invalid.", "format");
             }
-            _dateTimeFormatInfo.SetAllDateTimePatterns(patterns, format.ToCharArray()[0]);
+            _dateTimeFormatInfo.SetAllDateTimePatterns(patterns, format[0]);
         }
 
     }
