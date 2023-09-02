@@ -246,6 +246,7 @@ namespace DotNetLib.System.Globalization
         //    return _dateTimeFormatInfo.GetAllDateTimePatterns();
         //}
 
+        // @Note: Changed parameter from char to string
         public string[] GetAllDateTimePatterns(string format = null)
         {
             if (format == null)
@@ -337,10 +338,11 @@ namespace DotNetLib.System.Globalization
             return new DateTimeFormatInfo(GGlobalization.DateTimeFormatInfo.ReadOnly(dtfi.DateTimeFormatInfoObject));
         }
 
+        // @Note: Changed parameter from char to string
         public void SetAllDateTimePatterns([In] ref string[] patterns, string format)
         {
-            if (format.Length == 0 | format.Length > 1 )
-                {
+            if (format.Length != 1)
+            {
                 throw new ArgumentException("Format specifier was invalid.", "format");
             }
             _dateTimeFormatInfo.SetAllDateTimePatterns(patterns, format[0]);

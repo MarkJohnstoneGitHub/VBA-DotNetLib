@@ -485,6 +485,27 @@ namespace DotNetLib.System
             return _dateTime.GetDateTimeFormats();
         }
 
+        public string[] GetDateTimeFormats2(IFormatProvider provider)
+        {
+            return _dateTime.GetDateTimeFormats(provider);
+        }
+
+        // @Note: Changed parameter from char to string
+        public string[] GetDateTimeFormats3(string format, IFormatProvider provider = null)
+        {
+            if (format.Length != 1)
+            {
+                throw new ArgumentException("Format specifier was invalid.", "format");
+            }
+
+            if (provider == null) 
+            {
+                return _dateTime.GetDateTimeFormats(format[0]);
+            }
+            return _dateTime.GetDateTimeFormats(format[0],provider);
+        }
+
+
         /// <summary>
         /// Returns the hash code for this instance.
         /// </summary>

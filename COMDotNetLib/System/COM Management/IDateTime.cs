@@ -141,6 +141,13 @@ namespace DotNetLib.System
         [Description("Converts the value of this instance to all the string representations supported by the standard date and time format specifiers.")]
         string[] GetDateTimeFormats();
 
+        [Description("Converts the value of this instance to all the string representations supported by the standard date and time format specifiers and the specified culture-specific formatting information.")]
+        string[] GetDateTimeFormats2(IFormatProvider provider);
+
+        [Description("Converts the value of this instance to all the string representations supported by the specified standard date and time format specifier and culture-specific formatting information.")]
+        string[] GetDateTimeFormats3(string format, IFormatProvider provider = null);
+
+
         [Description("Returns the hash code for this instance.")]
         int GetHashCode();
 
