@@ -487,7 +487,7 @@ namespace DotNetLib.System
 
         public string[] GetDateTimeFormats2(IFormatProvider provider)
         {
-            return _dateTime.GetDateTimeFormats(provider);
+            return _dateTime.GetDateTimeFormats(DateTimeFormatInfo.GetFormatProvider(provider));
         }
 
         // @Note: Changed parameter from char to string
@@ -502,7 +502,7 @@ namespace DotNetLib.System
             {
                 return _dateTime.GetDateTimeFormats(format[0]);
             }
-            return _dateTime.GetDateTimeFormats(format[0],provider);
+            return _dateTime.GetDateTimeFormats(format[0], DateTimeFormatInfo.GetFormatProvider(provider));
         }
 
 
