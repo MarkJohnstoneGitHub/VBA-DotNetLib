@@ -18,7 +18,7 @@ Attribute VB_Description = "CultureInfo factory methods and static members."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 9, 2023
-'@LastModified August 17, 2023
+'@LastModified September 2, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
