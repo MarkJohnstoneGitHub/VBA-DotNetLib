@@ -16,6 +16,7 @@ Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globali
    - public void SetAllDateTimePatterns([In] ref string[] patterns, string format)
 - Added overloads for [DateTime.GetDateTimeFormats](https://learn.microsoft.com/en-us/dotnet/api/system.datetime.getdatetimeformats?view=netframework-4.8.1)
    - Changed format parameter to string from char
+- Refactored [CultureInfo.cls](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/Globalization/CultureInfo.cls) renamed constructors to more meaningful names and combined overloads using an optional parameter.
      
 **DotNetLib Update September 1st, 2023** 
  - Fixed issues with [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1)
