@@ -4,7 +4,7 @@ Attribute VB_Name = "DTFIFullDateTimePatternExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 1, 2023
-'@LastModified September 1, 2023
+'@LastModified September 2, 2023
 
 '@Reference
 ' https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.fulldatetimepattern?view=netframework-4.8.1#examples
@@ -22,7 +22,7 @@ End Sub
 
 Private Sub PrintPattern(ByVal myCulture As String)
     Dim myDTFI As DotNetLib.DateTimeFormatInfo
-    Set myDTFI = CultureInfo.Create4(myCulture, False).DateTimeFormat
+    Set myDTFI = CultureInfo.CreateFromName(myCulture, False).DateTimeFormat
     Debug.Print "  "; myCulture; "     "; myDTFI.FullDateTimePattern
     
     #If Not Mac Then
@@ -37,7 +37,7 @@ End Sub
 '
 ' CULTURE    PROPERTY VALUE
 '  en-US     dddd, MMMM dd, yyyy h:mm:ss tt
-'  ja-JP     yyyy'年'M'月'd'日' H:mm:ss
+'  ja-JP     yyyy'?'M'?'d'?' H:mm:ss
 '  fr-FR     dddd d MMMM yyyy HH:mm:ss
 '
 '*/

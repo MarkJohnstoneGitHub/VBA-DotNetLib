@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeOffsetToString3Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 26, 2023
-'@LastModified August 26, 2023
+'@LastModified September 2, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.tostring?view=netframework-4.8.1#system-datetimeoffset-tostring(system-iformatprovider)
 
@@ -16,10 +16,10 @@ Public Sub DateTimeOffsetToString3()
     Dim cultures() As DotNetLib.CultureInfo
     Objects.ToArray cultures, _
         CultureInfo.InvariantCulture, _
-        CultureInfo.Create2("en-us"), _
-        CultureInfo.Create2("fr-fr"), _
-        CultureInfo.Create2("de-DE"), _
-        CultureInfo.Create2("es-ES")
+        CultureInfo.CreateFromName("en-us"), _
+        CultureInfo.CreateFromName("fr-fr"), _
+        CultureInfo.CreateFromName("de-DE"), _
+        CultureInfo.CreateFromName("es-ES")
 
     Dim thisDate As DotNetLib.DateTimeOffset
     Set thisDate = DateTimeOffset.CreateFromDateTimeParts(2007, 5, 1, 9, 0, 0, TimeSpan.Zero)
@@ -44,3 +44,4 @@ End Sub
 '    In fr-FR, 01/05/2007 09:00:00 +00:00
 '    In de-DE, 01.05.2007 09:00:00 +00:00
 '    In es-ES, 01/05/2007 9:00:00 +00:00
+

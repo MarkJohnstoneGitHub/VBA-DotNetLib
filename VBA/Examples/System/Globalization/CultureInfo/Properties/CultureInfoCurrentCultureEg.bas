@@ -4,7 +4,7 @@ Attribute VB_Name = "CultureInfoCurrentCultureEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 10, 2023
-'@LastModified August 15, 2023
+'@LastModified September 2, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo.currentculture?view=netframework-4.8.1#examples
 
@@ -17,14 +17,14 @@ Attribute CultureInfoCurrentCulture.VB_Description = "The following example demo
     Debug.Print "CurrentCulture is "; CultureInfo.CurrentCulture.Name; "."
 
     ' Change the current culture to th-TH.
-    Set CultureInfo.CurrentCulture = CultureInfo.Create4("th-TH", False)
+    Set CultureInfo.CurrentCulture = CultureInfo.CreateFromName("th-TH", False)
     Debug.Print "CurrentCulture is now "; CultureInfo.CurrentCulture.Name; "."
     
     ' Display the name of the current UI culture.
     Debug.Print "CurrentUICulture is "; CultureInfo.CurrentUICulture.Name; "."
     
     ' Change the current UI culture to ja-JP.
-    Set CultureInfo.CurrentUICulture = CultureInfo.Create4("ja-JP", False)
+    Set CultureInfo.CurrentUICulture = CultureInfo.CreateFromName("ja-JP", False)
     Debug.Print "CurrentUICulture is now "; CultureInfo.CurrentUICulture.Name; "."
 End Sub
 

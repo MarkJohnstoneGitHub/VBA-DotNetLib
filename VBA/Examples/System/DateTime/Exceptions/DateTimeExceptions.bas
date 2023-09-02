@@ -1,4 +1,5 @@
 Attribute VB_Name = "DateTimeExceptions"
+'@IgnoreModule VariableNotUsed
 '@Folder "Examples.System.DateTime.Exceptions"
 
 '@Author Mark Johnstone

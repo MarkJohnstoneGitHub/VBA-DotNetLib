@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeSpanTryParseExact4Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 16, 2023
-'@LastModified August 16, 2023
+'@LastModified September 2, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.tryparseexact?view=netframework-4.8.1#system-timespan-tryparseexact(system-string-system-string()-system-iformatprovider-system-globalization-timespanstyles-system-timespan@)
 
@@ -21,7 +21,7 @@ Public Sub TimeSpanTryParseExact4()
     formats = Strings.ToArray("%h", "g", "G")
     Dim interval As DotNetLib.TimeSpan
     Dim culture As DotNetLib.CultureInfo
-    Set culture = CultureInfo.Create2("fr-FR")
+    Set culture = CultureInfo.CreateFromName("fr-FR")
     
     ' Parse each string in inputs using formats and the fr-FR culture.
     Dim varInput As Variant
@@ -40,3 +40,4 @@ End Sub
 '       16:42 --> 16:42:00
 '       Unable to parse 1:6:52:35.0625
 '       1:6:52:35,0625 --> 1.06:52:35.0625000
+

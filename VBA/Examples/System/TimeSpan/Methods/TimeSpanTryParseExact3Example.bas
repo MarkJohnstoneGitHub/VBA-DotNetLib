@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeSpanTryParseExact3Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 16, 2023
-'@LastModified August 16, 2023
+'@LastModified September 2, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.tryparseexact?view=netframework-4.8.1#system-timespan-tryparseexact(system-string-system-string-system-iformatprovider-system-globalization-timespanstyles-system-timespan@)
 
@@ -78,7 +78,7 @@ Public Sub TimeSpanTryParseExact3()
     ' and fr-FR culture.
     intervalString = "3:17:14:48,153"
     format = "G"
-    Set culture = CultureInfo.Create2("fr-FR")
+    Set culture = CultureInfo.CreateFromName("fr-FR")
     If (TimeSpan.TryParseExact3(intervalString, format, culture, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
         Debug.Print "'"; intervalString; "' ("; format; ") --> "; interval.ToString()
     Else

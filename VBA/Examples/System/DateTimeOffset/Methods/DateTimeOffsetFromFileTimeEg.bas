@@ -1,4 +1,5 @@
 Attribute VB_Name = "DateTimeOffsetFromFileTimeEg"
+'@IgnoreModule EmptyMethod
 '@Folder "Examples.System.DateTimeOffset.Methods"
 
 '@Author Mark Johnstone

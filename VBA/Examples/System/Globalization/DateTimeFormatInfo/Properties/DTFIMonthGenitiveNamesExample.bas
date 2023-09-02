@@ -25,7 +25,7 @@ Public Sub DateTimeFormatInfoMonthGenitiveNames()
     
     ' Get the en-US culture.
     Dim ci As DotNetLib.CultureInfo
-    Set ci = CultureInfo.Create2("en-US")
+    Set ci = CultureInfo.CreateFromName("en-US")
     ' Get the DateTimeFormatInfo for the en-US culture.
     Dim dtfi As DotNetLib.DateTimeFormatInfo
     Set dtfi = ci.DateTimeFormat
@@ -146,3 +146,4 @@ End Sub
 '"MM/dd/yyyy"
 '
 '*/
+

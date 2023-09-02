@@ -4,7 +4,7 @@ Attribute VB_Name = "CultureInfoExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 9, 2023
-'@LastModified August 9, 2023
+'@LastModified September 2, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8.1
 
@@ -12,7 +12,7 @@ Option Explicit
 
 Public Sub TestCultureInfo()
     Dim culture As ICultureInfo
-    Set culture = CultureInfo.Create2("fr-FR")
+    Set culture = CultureInfo.CreateFromName("fr-FR")
     Debug.Print culture.NativeName
     Debug.Print culture.NumberFormat.CurrencySymbol
     Debug.Print culture.NumberFormat.CurrencyDecimalSeparator

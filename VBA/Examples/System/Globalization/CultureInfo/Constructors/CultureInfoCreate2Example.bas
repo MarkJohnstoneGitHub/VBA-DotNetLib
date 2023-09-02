@@ -16,9 +16,9 @@ Public Sub CultureInfoConstructorExample()
     Debug.Print "The current culture is "; current.Name
     Dim newCulture As DotNetLib.CultureInfo
     If (current.Name = ("fr-FR")) Then
-        Set newCulture = CultureInfo.Create2("fr-LU")
+        Set newCulture = CultureInfo.CreateFromName("fr-LU")
     Else
-        Set newCulture = CultureInfo.Create2("fr-FR")
+        Set newCulture = CultureInfo.CreateFromName("fr-FR")
     End If
     Set CultureInfo.CurrentCulture = newCulture
     Debug.Print "The current culture is "; CultureInfo.CurrentCulture.Name

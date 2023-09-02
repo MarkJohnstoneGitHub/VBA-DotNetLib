@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeTryParseExactExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 15, 2023
-'@LastModified August 15, 2023
+'@LastModified September 2, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tryparseexact?view=netframework-4.8.1#system-datetime-tryparseexact(system-string-system-string-system-iformatprovider-system-globalization-datetimestyles-system-datetime@)
 
@@ -19,7 +19,7 @@ Option Explicit
 Public Sub DateTimeTryParseExact()
 Attribute DateTimeTryParseExact.VB_Description = "The following example demonstrates the DateTime.TryParseExact(String, String, IFormatProvider, DateTimeStyles, DateTime) method."
     Dim enUS  As DotNetLib.CultureInfo
-    Set enUS = CultureInfo.Create2("en-US")
+    Set enUS = CultureInfo.CreateFromName("en-US")
     Dim dateValue As DotNetLib.DateTime
     
     ' Parse date with no style flags.

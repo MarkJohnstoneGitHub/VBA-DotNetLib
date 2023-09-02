@@ -18,7 +18,7 @@ Public Sub DateTimeGetDateTimeFormats2()
     Set july28 = DateTime.CreateFromDateTime(2009, 7, 28, 5, 23, 15, 16)
    
     Dim culture As DotNetLib.CultureInfo  ' Used DotNetLib.CultureInfo instead of IFormatProvider so can inspect in locals window.
-    Set culture = CultureInfo.Create4("fr-FR", True)
+    Set culture = CultureInfo.CreateFromName("fr-FR", True)
    
     ' Get the short date formats using the "fr-FR" culture.
     Dim frenchJuly28Formats() As String

@@ -4,7 +4,7 @@ Attribute VB_Name = "DTFILongTimePatternExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 1, 2023
-'@LastModified September 1, 2023
+'@LastModified September 2, 2023
 
 '@Reference
 ' https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.longtimepattern?view=netframework-4.8.1#examples
@@ -22,7 +22,7 @@ End Sub
 
 Private Sub PrintPattern(ByVal myCulture As String)
     Dim myDTFI As DotNetLib.DateTimeFormatInfo
-    Set myDTFI = CultureInfo.Create4(myCulture, False).DateTimeFormat
+    Set myDTFI = CultureInfo.CreateFromName(myCulture, False).DateTimeFormat
     Debug.Print "  "; myCulture; "     "; myDTFI.LongTimePattern
 End Sub
 

@@ -48,31 +48,17 @@ End Sub
 '--------------------------------------------------------------------
 
 '@Static
-'@Description("Initializes a new instance of the CultureInfo class based on the culture specified by the culture identifier.")
-Public Function Create(ByVal culture As Long) As DotNetLib.CultureInfo
-Attribute Create.VB_Description = "Initializes a new instance of the CultureInfo class based on the culture specified by the culture identifier."
-    Set Create = this.CultureInfoSingleton.Create(culture)
-End Function
-
-'@Static
-'@Description("Initializes a new instance of the CultureInfo class based on the culture specified by name.")
-Public Function Create2(ByVal Name As String) As DotNetLib.CultureInfo
-Attribute Create2.VB_Description = "Initializes a new instance of the CultureInfo class based on the culture specified by name."
-    Set Create2 = this.CultureInfoSingleton.Create2(Name)
-End Function
-
-'@Static
 '@Description("Initializes a new instance of the CultureInfo class based on the culture specified by the culture identifier and on a value that specifies whether to use the user-selected culture settings from Windows.")
-Public Function Create3(ByVal culture As Long, ByVal UseUserOverride As Boolean) As DotNetLib.CultureInfo
-Attribute Create3.VB_Description = "Initializes a new instance of the CultureInfo class based on the culture specified by the culture identifier and on a value that specifies whether to use the user-selected culture settings from Windows."
-    Set Create3 = this.CultureInfoSingleton.Create3(culture, UseUserOverride)
+Public Function CreateFromCultureId(ByVal culture As Long, Optional ByVal UseUserOverride As Boolean = False) As DotNetLib.CultureInfo
+Attribute CreateFromCultureId.VB_Description = "Initializes a new instance of the CultureInfo class based on the culture specified by the culture identifier and on a value that specifies whether to use the user-selected culture settings from Windows."
+    Set CreateFromCultureId = this.CultureInfoSingleton.Create3(culture, UseUserOverride)
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the CultureInfo class based on the culture specified by name and on a value that specifies whether to use the user-selected culture settings from Windows.")
-Public Function Create4(ByVal Name As String, ByVal UseUserOverride As Boolean) As DotNetLib.CultureInfo
-Attribute Create4.VB_Description = "Initializes a new instance of the CultureInfo class based on the culture specified by name and on a value that specifies whether to use the user-selected culture settings from Windows."
-    Set Create4 = this.CultureInfoSingleton.Create4(Name, UseUserOverride)
+Public Function CreateFromName(ByVal Name As String, Optional ByVal UseUserOverride As Boolean = False) As DotNetLib.CultureInfo
+Attribute CreateFromName.VB_Description = "Initializes a new instance of the CultureInfo class based on the culture specified by name and on a value that specifies whether to use the user-selected culture settings from Windows."
+    Set CreateFromName = this.CultureInfoSingleton.Create4(Name, UseUserOverride)
 End Function
 
 '--------------------------------------------------------------------

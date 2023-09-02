@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeSpanTryParse2Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 15, 2023
-'@LastModified August 15, 2023
+'@LastModified September 2, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.tryparse?view=netframework-4.8.1#system-timespan-tryparse(system-string-system-iformatprovider-system-timespan@)
 
@@ -24,8 +24,8 @@ Public Sub TimeSpanTryParse2()
     ' Create an array of four cultures.
     Dim cultures() As DotNetLib.CultureInfo
     Objects.ToArray cultures, _
-                    CultureInfo.Create2("en-US"), _
-                    CultureInfo.Create2("ru-RU"), _
+                    CultureInfo.CreateFromName("en-US"), _
+                    CultureInfo.CreateFromName("ru-RU"), _
                     CultureInfo.InvariantCulture
     
     Dim header As String
@@ -67,3 +67,4 @@ End Sub
 '    6:12:14:45.3448    6.12:14:45.3448000     Unable to Parse  6.12:14:45.3448000
 '    6:12:14:45,3448       Unable to Parse  6.12:14:45.3448000     Unable to Parse
 '    6:34:14:45            Unable to Parse     Unable to Parse     Unable to Parse
+

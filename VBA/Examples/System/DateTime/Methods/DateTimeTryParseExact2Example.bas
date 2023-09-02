@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeTryParseExact2Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 15, 2023
-'@LastModified August 15, 2023
+'@LastModified September 2, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tryparseexact?view=netframework-4.8.1#system-datetime-tryparseexact(system-string-system-string()-system-iformatprovider-system-globalization-datetimestyles-system-datetime@)
 
@@ -29,7 +29,7 @@ Public Sub DateTimeTryParseExact2()
     Dim dateString As Variant
     For Each dateString In dateStrings
         If (DateTime.TryParseExact2(dateString, formats, _
-                                    CultureInfo.Create2("en-US"), _
+                                    CultureInfo.CreateFromName("en-US"), _
                                     DateTimeStyles.DateTimeStyles_None, _
                                     dateValue)) Then
             Debug.Print "Converted '"; dateString; "' to "; dateValue.ToString(); "."
@@ -46,3 +46,4 @@ End Sub
 '       Converted '05/01/2009 06:32' to 5/1/2009 6:32:00 AM.
 '       Converted '05/01/2009 06:32:00 PM' to 5/1/2009 6:32:00 PM.
 '       Converted '05/01/2009 06:32:00' to 5/1/2009 6:32:00 AM.
+

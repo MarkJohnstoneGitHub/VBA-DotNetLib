@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeSpanToString3Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 16, 2023
-'@LastModified August 16, 2023
+'@LastModified September 2, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.tostring?view=netframework-4.8.1#system-timespan-tostring(system-string-system-iformatprovider)
 
@@ -23,8 +23,8 @@ Attribute TimeSpanToString3.VB_Description = "The following example calls the To
         TimeSpan.Create(16, 14, 30)
     Dim cultures() As DotNetLib.CultureInfo
     Objects.ToArray cultures, _
-        CultureInfo.Create2("en-US"), _
-        CultureInfo.Create2("fr-FR")
+        CultureInfo.CreateFromName("en-US"), _
+        CultureInfo.CreateFromName("fr-FR")
     Dim fmts() As String
     fmts = Strings.ToArray("c", "g", "G", "hh\:mm\:ss")
     Debug.Print "Interval"; "      Format  "; cultures(0).Name; "  "; cultures(1).Name

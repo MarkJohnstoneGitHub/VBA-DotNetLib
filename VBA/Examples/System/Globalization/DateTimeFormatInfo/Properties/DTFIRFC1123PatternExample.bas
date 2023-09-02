@@ -22,7 +22,7 @@ End Sub
 
 Private Sub PrintPattern(ByVal myCulture As String)
     Dim myDTFI As DotNetLib.DateTimeFormatInfo
-    Set myDTFI = CultureInfo.Create4(myCulture, False).DateTimeFormat
+    Set myDTFI = CultureInfo.CreateFromName(myCulture, False).DateTimeFormat
     Debug.Print "  "; myCulture; "     "; myDTFI.RFC1123Pattern
 End Sub
 

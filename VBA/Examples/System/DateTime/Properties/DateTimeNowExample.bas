@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeNowExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 14, 2023
-'@LastModified August 14, 2023
+'@LastModified September 2, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.now?view=netframework-4.8.1#examples
 
@@ -22,7 +22,7 @@ Public Sub DateTimeNow()
     Dim cultureName As Variant
     For Each cultureName In cultureNames
         Dim culture As DotNetLib.CultureInfo
-        Set culture = CultureInfo.Create2(cultureName)
+        Set culture = CultureInfo.CreateFromName(cultureName)
         Debug.Print culture.NativeName; ":"
         Debug.Print "   Local date and time: "; localDate.ToString3(culture); ", "; _
                      DateTimeKindHelper.ToString(localDate.Kind)
@@ -51,4 +51,5 @@ End Sub
 '       русский (Россия):
 '          Local date and time: 19.06.2015 10:35:50, Local
 '          UTC date and time: 19.06.2015 17:35:50, Utc
+
 

@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeOffsetToString4Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 26, 2023
-'@LastModified August 26, 2023
+'@LastModified September 2, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.tostring?view=netframework-4.8.1#system-datetimeoffset-tostring(system-string-system-iformatprovider)
 
@@ -22,8 +22,8 @@ Public Sub DateTimeOffsetToString4()
     ' Output date and time using custom format specification
     Debug.Print outputDate.ToString4(pvtFormat, Nothing)
     Debug.Print outputDate.ToString4(pvtFormat, CultureInfo.InvariantCulture)
-    Debug.Print outputDate.ToString4(pvtFormat, CultureInfo.Create2("fr-FR"))
-    Debug.Print outputDate.ToString4(pvtFormat, CultureInfo.Create2("es-ES"))
+    Debug.Print outputDate.ToString4(pvtFormat, CultureInfo.CreateFromName("fr-FR"))
+    Debug.Print outputDate.ToString4(pvtFormat, CultureInfo.CreateFromName("es-ES"))
 End Sub
 
 ' The example displays the following output to the console:
