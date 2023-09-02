@@ -4,7 +4,7 @@ Attribute VB_Name = "HResults"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 12 2023
-'@LastModified August 9, 2023
+'@LastModified September 2, 2023
 
 ' https://referencesource.microsoft.com/#mscorlib/system/__hresults.cs
 ' https://powershellexplained.com/2017-04-07-all-dotnet-exception-list/
@@ -20,6 +20,7 @@ Const COR_E_ARGUMENT            As Long = &H80070057
 Const COR_E_OVERFLOW            As Long = &H80131516
 Const COR_E_EXCEPTION           As Long = &H80131500
 Const COR_E_OUTOFMEMORY         As Long = &H8007000E
+Const COR_E_INVALIDOPERATION    As Long = &H80131509
 
 Public Enum COMHResult
     ArgumentOutOfRangeException = COR_E_ARGUMENTOUTOFRANGE
@@ -32,5 +33,5 @@ Public Enum COMHResult
     TimeZoneNotFoundException = COR_E_EXCEPTION
     InvalidTimeZoneException = COR_E_EXCEPTION '@TODO Check
     CultureNotFoundException = COR_E_ARGUMENT
+    InvalidOperationException = COR_E_INVALIDOPERATION
 End Enum
-
