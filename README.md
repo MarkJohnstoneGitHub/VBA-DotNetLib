@@ -9,6 +9,10 @@ Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globali
  
 **Status:**
 
+**DotNetLib Update September 3rd, 2023** 
+ - For DateTime and DateTimeOffset renamed DateOnly property to Date property to be consistent with .Net  Framework. 
+ - Updated all effect examples
+
 **DotNetLib Update September 2nd, 2023** 
  - Fixed issues with [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1)
    - Changed format parameter to string from char
@@ -29,7 +33,6 @@ Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globali
    - SetMonthGenitiveNames([In] ref string[] monthGenitiveNames)
    - SetMonthNames([In] ref string[] monthNames)
    - SetShortestDayNames([In] ref string[] shortestDayNames)
-
 
 **DotNetLib Update August 29th, 2023** 
 
