@@ -2,7 +2,6 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting.Messaging;
 
 namespace DotNetLib.System.Globalization
 {

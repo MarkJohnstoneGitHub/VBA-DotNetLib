@@ -1,9 +1,14 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo?view=netframework-4.8.1
 
 using System.ComponentModel;
+using System.Runtime.InteropServices;
 
 namespace DotNetLib.System
 {
+    [ComVisible(true)]
+    [Guid("FBD0888B-B887-49C0-A6FE-ACDC0A52F96E")]
+    [Description("Represents any time zone in the world.")]
+    [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface ITimeZoneInfo
     {
         // Properties

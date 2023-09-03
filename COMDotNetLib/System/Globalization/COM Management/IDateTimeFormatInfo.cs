@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.ComponentModel;
-using System.Globalization;
 using System.Runtime.InteropServices;
 using GGlobalization = global::System.Globalization;
-using GSystem = global::System;
 
 namespace DotNetLib.System.Globalization
 {
