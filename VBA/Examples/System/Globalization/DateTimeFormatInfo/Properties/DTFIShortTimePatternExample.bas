@@ -11,7 +11,7 @@ Attribute VB_Name = "DTFIShortTimePatternExample"
 
 Option Explicit
 
-' The following example displays the value of LongTimePattern for a few cultures.
+' The following example displays the value of ShortTimePattern for a few cultures.
 Public Sub DateTimeFormatInfoShortTimePattern()
     ' Displays the values of the pattern properties.
     Debug.Print " CULTURE    PROPERTY VALUE"

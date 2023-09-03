@@ -11,7 +11,7 @@ Attribute VB_Name = "DTFISortableDateTimePatternEg"
 
 Option Explicit
 
-' The following example displays the value of LongTimePattern for a few cultures.
+' The following example displays the value of SortableDateTimePattern for a few cultures.
 Public Sub DateTimeFormatInfoSortableDateTimePattern()
     ' Displays the values of the pattern properties.
     Debug.Print " CULTURE    PROPERTY VALUE"
