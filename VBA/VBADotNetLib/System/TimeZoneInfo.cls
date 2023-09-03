@@ -18,7 +18,7 @@ Attribute VB_Description = "TimeZoneInfo factory methods and static members."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v2.0 August 4, 2023
-'@LastModified August 17, 2023
+'@LastModified September 3, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
