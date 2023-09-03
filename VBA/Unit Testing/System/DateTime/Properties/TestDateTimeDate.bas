@@ -43,7 +43,7 @@ Private Sub TestCleanup()
 End Sub
 
 '@TestMethod("DateTime Properties")
-Private Sub TestingDateTimeDateOnly()
+Private Sub TestingDateTimeDate()
     On Error GoTo TestFail
     
     'Arrange:
@@ -55,7 +55,7 @@ Private Sub TestingDateTimeDateOnly()
     'Act:
     ' Get date-only portion of date, without its time.
     Dim testDateTime As DotNetLib.DateTime
-    Set testDateTime = date1.DateOnly()
+    Set testDateTime = date1.Date()
 
     'Assert:
     Assert.areEqual expectedDateOnly.Ticks, testDateTime.Ticks

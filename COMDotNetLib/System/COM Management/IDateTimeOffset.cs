@@ -14,13 +14,13 @@ namespace DotNetLib.System
     {
         // Properties
 
-        IDateTime DateOnly
+        DateTime Date
         {
             [Description("Gets a DateTime value that represents the date component of the current DateTimeOffset object.")]
             get;
         }
 
-        IDateTime DateTime
+        DateTime DateTime
         {
             [Description("Gets a DateTime value that represents the date and time of the current DateTimeOffset object.")]
             get;
@@ -51,7 +51,7 @@ namespace DotNetLib.System
         }
 
 
-        IDateTime LocalDateTime
+        DateTime LocalDateTime
         {
             [Description("Gets a DateTime value that represents the local date and time of the current DateTimeOffset object.")]
             get;
@@ -75,7 +75,7 @@ namespace DotNetLib.System
             get;
         }
 
-        ITimeSpan Offset
+        TimeSpan Offset
         {
             [Description("Gets the time's offset from Coordinated Universal Time (UTC).")]
             get;
@@ -93,13 +93,13 @@ namespace DotNetLib.System
             get;
         }
 
-        ITimeSpan TimeOfDay
+        TimeSpan TimeOfDay
         {
             [Description("Gets the time of day for the current DateTimeOffset object.")]
             get;
         }
 
-        IDateTime UtcDateTime
+        DateTime UtcDateTime
         {
             [Description("Gets a DateTime value that represents the Coordinated Universal Time (UTC) date and time of the current DateTimeOffset object.")]
             get;
@@ -120,31 +120,31 @@ namespace DotNetLib.System
         // Methods
 
         [Description("Returns a new DateTimeOffset object that adds a specified time interval to the value of this instance.")]
-        IDateTimeOffset Add(TimeSpan timeSpan);
+        DateTimeOffset Add(TimeSpan timeSpan);
 
         [Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional days to the value of this instance.")]
-        IDateTimeOffset AddDays(double pDays);
+        DateTimeOffset AddDays(double pDays);
 
         [Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional hours to the value of this instance.")]
-        IDateTimeOffset AddHours(double pHours);
+        DateTimeOffset AddHours(double pHours);
 
         [Description("Returns a new DateTimeOffset object that adds a specified number of milliseconds to the value of this instance.")]
-        IDateTimeOffset AddMilliseconds(double pMilliseconds);
+        DateTimeOffset AddMilliseconds(double pMilliseconds);
 
         [Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional minutes to the value of this instance.")]
-        IDateTimeOffset AddMinutes(double pMinutes);
+        DateTimeOffset AddMinutes(double pMinutes);
 
         [Description("Returns a new DateTimeOffset object that adds a specified number of months to the value of this instance.")]
-        IDateTimeOffset AddMonths(int pMonths);
+        DateTimeOffset AddMonths(int pMonths);
 
         [Description("Returns a new DateTimeOffset object that adds a specified number of whole and fractional seconds to the value of this instance.")]
-        IDateTimeOffset AddSeconds(double pSeconds);
+        DateTimeOffset AddSeconds(double pSeconds);
 
         [Description("Returns a new DateTimeOffset object that adds a specified number of ticks to the value of this instance.")]
-        IDateTimeOffset AddTicks(long pTicks);
+        DateTimeOffset AddTicks(long pTicks);
 
         [Description("Returns a new DateTimeOffset object that adds a specified number of years to the value of this instance.")]
-        IDateTimeOffset AddYears(int pYears);
+        DateTimeOffset AddYears(int pYears);
 
         [Description("Compares the current DateTimeOffset object to a specified DateTimeOffset object and indicates whether the current object is earlier than, the same as, or later than the second DateTimeOffset object.")]
         int CompareTo(DateTimeOffset other);
@@ -165,19 +165,19 @@ namespace DotNetLib.System
         int GetHashCode();
 
         [Description("Subtracts a DateTimeOffset value that represents a specific date and time from the current DateTimeOffset object.")]
-        ITimeSpan Subtract(DateTimeOffset value);
+        TimeSpan Subtract(DateTimeOffset value);
 
         [Description("Subtracts a specified time interval from the current DateTimeOffset object.")]
-        IDateTimeOffset Subtract2(TimeSpan value);
+        DateTimeOffset Subtract2(TimeSpan value);
 
         [Description("Converts the value of the current DateTimeOffset object to a Windows file time.")]
         long ToFileTime();
 
         [Description("Converts the current DateTimeOffset object to a DateTimeOffset object that represents the local time.")]
-        IDateTimeOffset ToLocalTime();
+        DateTimeOffset ToLocalTime();
 
         [Description("Converts the value of the current DateTimeOffset object to the date and time specified by an offset value.")]
-        IDateTimeOffset ToOffset(TimeSpan pOffset);
+        DateTimeOffset ToOffset(TimeSpan pOffset);
 
         [Description("Converts the value of the current DateTimeOffset object to its equivalent string representation.")]
         string ToString();
@@ -192,7 +192,7 @@ namespace DotNetLib.System
         string ToString4(string format, IFormatProvider formatProvider);
 
         [Description("Converts the current DateTimeOffset object to a DateTimeOffset value that represents the Coordinated Universal Time (UTC).")]
-        IDateTimeOffset ToUniversalTime();
+        DateTimeOffset ToUniversalTime();
 
         [Description("Returns the number of milliseconds that have elapsed since 1970-01-01T00:00:00.000Z.")]
         long ToUnixTimeMilliseconds();

@@ -15,7 +15,7 @@ Attribute VB_Description = "Rubberduck utility to export all components accordin
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/RubberduckUtility
 '@Version v2.0 August 18, 2023
-'@LastModified August 24, 2023
+'@LastModified September 3, 2023
 
 '@ReferenceAddin VBIDE (Microsoft Visual Basic for Applications Extensibility 5.3)
 
@@ -42,8 +42,13 @@ Attribute VB_Description = "Rubberduck utility to export all components accordin
 '   RubberduckUtility.ExportAll "C:\VBA\Output"
 
 '@Remarks
-' Warnings for invalid Rubberduck folder characters
-' Exports may fail if attempting to overwrite read only file in working directory or folder permission
+' Warnings for:
+'   Invalid Rubberduck folder characters.
+'       If invalid folder characters attempt to save to the working directory provided
+'   File name length greater than 31 characters.
+'       Module names in MS-Excel are limited to a maximum of 31 characters.
+'       MS-Access appears to be the expection to this limit.
+' Exports may fail if attempting to overwrite read only file in working directory or folder permissions.
 
 Option Explicit
 Private Const VBAErrorFileNotFound As Long = 76   ' DirectoryNotFoundException
@@ -152,6 +157,14 @@ Attribute ExportAll.VB_Description = "Export the active project components to fi
         component.Export filePath
         If Err.Number = 0 Then
             this.TotalExported = this.TotalExported + 1
+            If Len(filename) > 31 Then
+                this.ErrorLog.Add Exception.Create( _
+                                Err.Number, _
+                                "RubberduckUtility.ExportAllComponents", _
+                                "Warning file name length greater than 31 characters for: " & filename, _
+                                ExceptionSeverity.Warning)
+                                
+            End If
         ' Error may occur for attempting to overwrite read only file etc
         ElseIf (this.WorkingDirectory & DirectorySeparatorChar & filename & extension) = filePath Then
             this.ErrorLog.Add Exception.Create(Err.Number, _
@@ -162,15 +175,23 @@ Attribute ExportAll.VB_Description = "Export the active project components to fi
         Else
             ' Attempt to export to working directory
             this.ErrorLog.Add Exception.Create( _
-                                Err.Number, _
-                                "RubberduckUtility.ExportAllComponents", _
-                                "Warning export failed for: " & filePath & " exported to " & this.WorkingDirectory, _
-                                ExceptionSeverity.Warning)
+                Err.Number, _
+                "RubberduckUtility.ExportAllComponents", _
+                "Warning export failed for: " & filePath & " exported to " & this.WorkingDirectory, _
+                ExceptionSeverity.Warning)
             filePath = this.WorkingDirectory & DirectorySeparatorChar & filename & extension
             Err.Clear
             component.Export filePath
             If Err.Number = 0 Then
                 this.TotalExported = this.TotalExported + 1
+                If Len(filename) > 31 Then
+                    this.ErrorLog.Add Exception.Create( _
+                        Err.Number, _
+                        "RubberduckUtility.ExportAllComponents", _
+                        "Warning file name length greater than 31 characters for: " & filename, _
+                        ExceptionSeverity.Warning)
+                                
+                End If
             Else
                 'Export will fail if attempting to overwrite read only file in working directory or invalid folder permission
                 this.ErrorLog.Add Exception.Create( _

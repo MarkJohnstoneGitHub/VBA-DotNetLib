@@ -15,7 +15,7 @@ namespace DotNetLib.System
         //Properties
 
         //Note: Renamed from Date due to VBA reserved word
-        DateTime DateOnly
+        DateTime Date
         {
             [Description("Gets the date component of this instance.")]
             get;

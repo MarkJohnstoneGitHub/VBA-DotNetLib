@@ -1,4 +1,5 @@
 Attribute VB_Name = "CelestialInfoSunRiseSetExample"
+Attribute VB_Description = "Celestial Info example displaying sunrise and sunset for local time."
 '@ModuleDescription "Celestial Info example displaying sunrise and sunset for local time."
 '@Folder("CoordinateSharp.Examples.CelestialInfos")
 
@@ -35,7 +36,6 @@ Attribute CelestialInfoExample.VB_Description = "Melbourne, Australia sunrise an
     Set melbourneTZI = TimeZoneInfo.FindSystemTimeZoneById(melbourneTimeZoneId)
     
     Dim dto As DotNetLib.DateTimeOffset
-    'Set dto = DateTimeOffset.CreateFromDateTime2(DateTime.Now.DateOnly, melbourneTZI.BaseUtcOffset)
     Set dto = DateTimeOffset.CreateFromDateTime(DateTime.UtcNow)
     
     Dim utcSunRise As DotNetLib.DateTime

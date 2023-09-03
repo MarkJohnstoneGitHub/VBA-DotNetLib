@@ -71,81 +71,6 @@ namespace DotNetLib.System
             _dateTime = new GSystem.DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, (GSystem.DateTimeKind)pKind);
         }
 
-        ///// <summary>
-        ///// Initializes a new instance of the DateTime structure to a specified number of pTicks and to Coordinated Universal Time (UTC) or local time.
-        ///// </summary>
-        ///// <param name="pTicks">A date and time expressed in the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 00:00:00.000 in the Gregorian calendar.</param>
-        ///// <param name="pKind">One of the enumeration values that indicates whether pTicks specifies a local time, Coordinated Universal Time (UTC), or neither.</param>
-        ///// <returns></returns>
-        ///// <exception cref="ArgumentOutOfRangeException"> 
-        ///// pTicks is less than DateTime.MinValue or greater than DateTime.MaxValue.
-        ///// </exception>
-        ///// <exception cref="ArgumentException"> 
-        ///// pKind is not one of the DateTimeKind values.
-        ///// </exception>
-        ///// 
-        //public IDateTime CreateFromTicks(long pTicks, System.DateTimeKind pKind = System.DateTimeKind.Unspecified)
-        //{
-        //    return new DateTime(pTicks, pKind);
-        //}
-        //public IDateTime CreateFromDate(int pYear, int pMonth, int pDay)
-        //{
-        //    return new DateTime(pYear, pMonth, pDay);
-        //}
-
-        ///// <summary>
-        ///// Initializes a new instance of the DateTime structure to the specified pYear, pMonth, pDay, pHour, pMinute, pSecond, and pMillisecond.
-        ///// </summary>
-        ///// <param name="pYear">The pYear (1 through 9999).</param>
-        ///// <param name="pMonth">The pMonth (1 through 12).</param>
-        ///// <param name="pDay">The pDay (1 through the number of days in pMonth).</param>
-        ///// <param name="pHour">The hours (0 through 23).</param>
-        ///// <param name="pMinute">The minutes (0 through 59).</param>
-        ///// <param name="pSecond">The seconds (0 through 59).</param>
-        ///// <param name="pMillisecond">The milliseconds (0 through 999).</param>
-        ///// <returns></returns>
-        ///// <exception cref="ArgumentOutOfRangeException">
-        ///// <paramref name="pYear"/> is less than 1 or greater than 9999.
-        /////
-        ///// -or-
-        /////
-        ///// <paramref name="pMonth"/> is less than 1 or greater than 12.
-        /////
-        ///// -or-
-        /////
-        ///// <paramref name="pDay"/> is less than 1 or greater than the number of days in <paramref name="pMonth"/>.
-        /////
-        ///// -or-
-        /////
-        ///// <paramref name="pHour"/> is less than 0 or greater than 23.
-        /////
-        ///// -or-
-        /////
-        ///// <paramref name="pMinute"/> is less than 0 or greater than 59.
-        /////
-        ///// -or-
-        /////
-        ///// <paramref name="pSecond"/> is less than 0 or greater than 59.
-        /////
-        ///// -or-
-        /////
-        ///// <paramref name="pMillisecond"/> is less than 0 or greater than 999.
-        ///// </exception>        
-        //public IDateTime CreateFromDateTime(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond = 0)
-        //{
-        //    return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond);
-        //}
-
-        //public IDateTime CreateFromDateTimeKind(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, DateTimeKind pKind)
-        //{
-        //    return new System.DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pKind);
-        //}
-
-        //public IDateTime CreateFromDateTimeKind2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, DateTimeKind pKind)
-        //{
-        //    return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pKind);
-        //}
-
         //Fields
 
         /// <summary>
@@ -170,7 +95,7 @@ namespace DotNetLib.System
             //set { objDateTime = value; }  // set method
         }
 
-        public DateTime DateOnly => new DateTime(_dateTime.Date);  //@TODO check implementation
+        public DateTime Date => new DateTime(_dateTime.Date); 
 
         /// <summary>
         /// Gets the pDay of the pMonth represented by this instance.

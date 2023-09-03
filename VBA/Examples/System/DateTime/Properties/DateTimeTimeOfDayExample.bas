@@ -27,7 +27,7 @@ Public Sub DateTimeTimeOfDay()
     For Each varDateTime In dates    ' Iterate through each element.
         Dim dtObject As IDateTime
         Set dtObject = varDateTime
-        Debug.Print "Day: " & dtObject.DateOnly.ToString2("d") & " Time: " & dtObject.TimeOfDay.ToString2("g")
+        Debug.Print "Day: " & dtObject.Date.ToString2("d") & " Time: " & dtObject.TimeOfDay.ToString2("g")
         Debug.Print "Day: " & dtObject.ToString2("d") & " Time: " & dtObject.ToString2("t")
     Next
 End Sub

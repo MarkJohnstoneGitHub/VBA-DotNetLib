@@ -78,13 +78,13 @@ namespace DotNetLib.System
             get { return _dateTimeOffset; }
         }
 
-        //Note: Renamed to DateOnly to avoid issues with VBA reserved word Date
-        public IDateTime DateOnly            
+        //Note: Renamed to Date to avoid issues with VBA reserved word Date
+        public DateTime Date            
         {
             get { return new DateTime(_dateTimeOffset.Date); }
         }
 
-        public IDateTime DateTime
+        public DateTime DateTime
         {
             get { return new DateTime(_dateTimeOffset.DateTime); }
         }
@@ -98,7 +98,7 @@ namespace DotNetLib.System
 
         public int Hour => _dateTimeOffset.Hour;
 
-        public IDateTime LocalDateTime
+        public DateTime LocalDateTime
         {
             get { return new DateTime(_dateTimeOffset.LocalDateTime); }
         }
@@ -114,7 +114,7 @@ namespace DotNetLib.System
             get { return new DateTimeOffset(GSystem.DateTimeOffset.Now); }
         }
 
-        public ITimeSpan Offset
+        public TimeSpan Offset
         {
             get { return new TimeSpan(_dateTimeOffset.Offset); }
         }
@@ -123,12 +123,12 @@ namespace DotNetLib.System
 
         public long Ticks => _dateTimeOffset.Ticks;
 
-        public ITimeSpan TimeOfDay
+        public TimeSpan TimeOfDay
         {
             get { return new TimeSpan(_dateTimeOffset.TimeOfDay); }
         }
 
-        public IDateTime UtcDateTime
+        public DateTime UtcDateTime
         {
             get { return new DateTime(_dateTimeOffset.UtcDateTime); }
         }
@@ -144,47 +144,47 @@ namespace DotNetLib.System
 
         // Methods
 
-        public IDateTimeOffset Add(TimeSpan ts)
+        public DateTimeOffset Add(TimeSpan ts)
         {
             return new DateTimeOffset(_dateTimeOffset.Add(ts.TimeSpanObject));
         }
 
-        public IDateTimeOffset AddDays(double days)
+        public DateTimeOffset AddDays(double days)
         {
             return new DateTimeOffset(_dateTimeOffset.AddDays(days));
         }
 
-        public IDateTimeOffset AddHours(double hours)
+        public DateTimeOffset AddHours(double hours)
         {
             return new DateTimeOffset(_dateTimeOffset.AddHours(hours));
         }
 
-        public IDateTimeOffset AddMilliseconds(double pMilliseconds)
+        public DateTimeOffset AddMilliseconds(double pMilliseconds)
         {
             return new DateTimeOffset(_dateTimeOffset.AddMilliseconds(pMilliseconds));
         }
 
-        public IDateTimeOffset AddMinutes(double minutes)
+        public DateTimeOffset AddMinutes(double minutes)
         {
             return new DateTimeOffset(_dateTimeOffset.AddMinutes(minutes));
         }
 
-        public IDateTimeOffset AddMonths(int months)
+        public DateTimeOffset AddMonths(int months)
         {
             return new DateTimeOffset(_dateTimeOffset.AddMonths(months));
         }
 
-        public IDateTimeOffset AddSeconds(double pSeconds)
+        public DateTimeOffset AddSeconds(double pSeconds)
         {
             return new DateTimeOffset(_dateTimeOffset.AddSeconds(pSeconds));
         }
 
-        public IDateTimeOffset AddTicks(long ticks)
+        public DateTimeOffset AddTicks(long ticks)
         {
             return new DateTimeOffset(_dateTimeOffset.AddTicks(ticks));
         }
 
-        public IDateTimeOffset AddYears(int years)
+        public DateTimeOffset AddYears(int years)
         {
             return new DateTimeOffset(_dateTimeOffset.AddYears(years));
         }
@@ -286,12 +286,12 @@ namespace DotNetLib.System
             return new DateTimeOffset(GSystem.DateTimeOffset.ParseExact(input, formats, DateTimeFormatInfo.GetFormatProvider(formatProvider), styles));
         }
 
-        public ITimeSpan Subtract(DateTimeOffset value)
+        public TimeSpan Subtract(DateTimeOffset value)
         {
             return new TimeSpan(_dateTimeOffset.Subtract(value.DateTimeOffsetObject));
         }
 
-        public IDateTimeOffset Subtract2(TimeSpan value)
+        public DateTimeOffset Subtract2(TimeSpan value)
         {
             return new DateTimeOffset(_dateTimeOffset.Subtract(value.TimeSpanObject));
         }
@@ -301,12 +301,12 @@ namespace DotNetLib.System
             return _dateTimeOffset.ToFileTime();
         }
 
-        public IDateTimeOffset ToLocalTime()
+        public DateTimeOffset ToLocalTime()
         {
             return new DateTimeOffset(_dateTimeOffset.ToLocalTime());
         }
 
-        public IDateTimeOffset ToOffset(TimeSpan offset)
+        public DateTimeOffset ToOffset(TimeSpan offset)
         {
             return new DateTimeOffset(_dateTimeOffset.ToOffset(offset.TimeSpanObject));
         }
@@ -331,7 +331,7 @@ namespace DotNetLib.System
             return _dateTimeOffset.ToString(format, DateTimeFormatInfo.GetFormatProvider(formatProvider));
         }
 
-        public IDateTimeOffset ToUniversalTime()
+        public DateTimeOffset ToUniversalTime()
         {
             return new DateTimeOffset(_dateTimeOffset.ToUniversalTime());
         }
