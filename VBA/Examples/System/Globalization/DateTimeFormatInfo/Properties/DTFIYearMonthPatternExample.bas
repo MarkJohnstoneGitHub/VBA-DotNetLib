@@ -25,3 +25,13 @@ Private Sub PrintPattern(ByVal myCulture As String)
     Set myDTFI = CultureInfo.CreateFromName(myCulture, False).DateTimeFormat
     Debug.Print "  "; myCulture; "     "; myDTFI.YearMonthPattern
 End Sub
+
+'/*
+'This code produces the following output.  The question marks take the place of native script characters.
+'
+' CULTURE    PROPERTY VALUE
+'  en-US     MMMM yyyy
+'  ja-JP     yyyy?M?
+'  fr-FR     MMMM yyyy
+'
+'*/
