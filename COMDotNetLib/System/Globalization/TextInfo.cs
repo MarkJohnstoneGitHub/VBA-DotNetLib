@@ -75,6 +75,10 @@ namespace DotNetLib.System.Globalization
             return _textInfo.GetHashCode();
         }
 
+        public static TextInfo ReadOnly(TextInfo textInfo)
+        {
+            return new TextInfo(GGlobalization.TextInfo.ReadOnly(textInfo.TextInfoObject));
+        }
         public string ToLower(string str)
         {
             return _textInfo.ToLower(str);

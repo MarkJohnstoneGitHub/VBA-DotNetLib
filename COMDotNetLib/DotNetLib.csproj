@@ -88,9 +88,11 @@
     <Compile Include="System\Globalization\COM Management\IDateTimeFormatInfo.cs" />
     <Compile Include="System\Globalization\COM Management\IDateTimeFormatInfoSingleton.cs" />
     <Compile Include="System\Globalization\COM Management\ITextInfo.cs" />
+    <Compile Include="System\Globalization\COM Management\ITextInfoSingleton.cs" />
     <Compile Include="System\Globalization\NumberFormatInfo.cs" />
     <Compile Include="System\Globalization\COM Management\NumberFormatInfoSingleton.cs" />
     <Compile Include="System\Globalization\TextInfo.cs" />
+    <Compile Include="System\Globalization\COM Management\TextInfoSingleton.cs" />
     <Compile Include="System\Globalization\TimeSpanStyles.cs" />
     <Compile Include="System\COM Management\IDateTimeSingleton.cs" />
     <Compile Include="System\COM Management\IDateTime.cs" />
