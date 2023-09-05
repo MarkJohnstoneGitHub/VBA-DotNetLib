@@ -15,7 +15,7 @@ Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globali
 
 **DotNetLib Update September 3rd, 2023** 
  - For DateTime and DateTimeOffset renamed DateOnly property to Date property to be consistent with .Net  Framework. 
- - Updated all effect examples
+ - Updated all effected examples
   
  **Dependencies:**
  - [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
