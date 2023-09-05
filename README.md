@@ -9,6 +9,10 @@ Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globali
  
 **Status:**
 
+**DotNetLib Update September 5th, 2023** 
+ - Added [TextInfo Class](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.textinfo?view=netframework-4.8.1)
+ - Todo Add VBA wrapper for TextInfoSingleton for TextInfo.ReadOnly(TextInfo) method
+
 **DotNetLib Update September 3rd, 2023** 
  - For DateTime and DateTimeOffset renamed DateOnly property to Date property to be consistent with .Net  Framework. 
  - Updated all effect examples
@@ -42,6 +46,7 @@ Ms Access database [VBADotNetLibrary.accdb](https://github.com/MarkJohnstoneGitH
   - [DateTimeFormatInfo.AbbreviatedDayNames](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.abbreviateddaynames?view=netframework-4.8.1)
     - When attempting to assign an array to DateTimeFormatInfo.AbbreviatedDayNames Compile error: Function or interface marked as restricted, or the function uses an Automation typee not supported in Visual Basic
     - https://stackoverflow.com/questions/13185159/how-to-pass-byte-arrays-as-udt-properties-from-vb6-vba-to-c-sharp-com-dll
+    - Fixed by implementing set methods and making set property not COM visible.
   - TimeZoneInfo.Local renamed member to Locale.  May cause issues when for interfaces may require renaming in type library? Alternative name?
   - Require to investigate how to correctly marshal arrays 
   - See [PassingParameterArraysByReference](https://www.l3harrisgeospatial.com/docs/PassingParameterArraysByReference.html)
@@ -55,19 +60,6 @@ Currently List COM object wont allow to be created getting invalid use of New Ke
 Require to consider how to handle generic types in COM Interlop as not supported, possible work around implement each type separately, which enforces type safety.  
  
 Or replace with non-generic equivalent.  To enforce type safety in VBA create a custom wrapper for the collection on the non-generic collection.
- 
- 
- **Development Notes**
-  
-  As COM Interlop doesn't support generic types required to convert or wrap to its non-generic equivalent.
-  
-  How to treat generic types returned? eg. public static System.Collections.ObjectModel.ReadOnlyCollection<TimeZoneInfo> GetSystemTimeZones()
-  
-  
-  [DE0006: Non-generic collections shouldn't be used](https://github.com/dotnet/platform-compat/blob/master/docs/DE0006.md)
- 
-  [System.Collections.Generic Namespace](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic?view=netframework-4.8.1)
-
  
  **Things To do**
  
@@ -152,4 +144,15 @@ For the creation and access of static members use its corresponding Singleton/Fa
 VBA Wrapper for ReadOnlyCollection
 
 Implement interfaces in DotNetLib type library as work around for [VBA Interface not showing property in watch window](https://stackoverflow.com/questions/61232755/vba-interface-not-showing-property-in-watch-window). 
+
+ **Development Notes**
+  
+  As COM Interlop doesn't support generic types required to convert or wrap to its non-generic equivalent.
+  
+  How to treat generic types returned? eg. public static System.Collections.ObjectModel.ReadOnlyCollection<TimeZoneInfo> GetSystemTimeZones()
+  
+  
+  [DE0006: Non-generic collections shouldn't be used](https://github.com/dotnet/platform-compat/blob/master/docs/DE0006.md)
+ 
+  [System.Collections.Generic Namespace](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic?view=netframework-4.8.1)
   
