@@ -7,7 +7,7 @@ Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globali
 
  The API for the .Net class may be required to be altered due to VBA reserved words. See [reserved-word-list](https://www.engram9.info/access-2007-vba/reserved-word-list.html).
  
-**Status:**
+**Status: Latest Updates**
 
 **DotNetLib Update September 5th, 2023** 
  - Added [TextInfo Class](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.textinfo?view=netframework-4.8.1). Properties for [CultureInfo.TextInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo.textinfo?view=netframework-4.8.1) now available.
