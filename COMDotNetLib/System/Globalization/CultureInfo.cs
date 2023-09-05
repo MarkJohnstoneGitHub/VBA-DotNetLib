@@ -20,6 +20,7 @@ namespace DotNetLib.System.Globalization
         private GGlobalization.CultureInfo _cultureInfo;
         private NumberFormatInfo _numberFormatInfo;
         private DateTimeFormatInfo _dateTimeFormatInfo;
+        private TextInfo _textInfo;
 
         //private static ICultureInfo _currentCulture = new CultureInfo(GGlobalization.CultureInfo.CurrentCulture);
         //private static ICultureInfo _currentUICulture = new CultureInfo(GGlobalization.CultureInfo.CurrentUICulture);
@@ -69,6 +70,7 @@ namespace DotNetLib.System.Globalization
                 _cultureInfo = value;
                 _numberFormatInfo = new NumberFormatInfo(_cultureInfo.NumberFormat);
                 _dateTimeFormatInfo = new DateTimeFormatInfo(_cultureInfo.DateTimeFormat);
+                _textInfo = new TextInfo(_cultureInfo.TextInfo);
             }
         }
 
@@ -129,7 +131,7 @@ namespace DotNetLib.System.Globalization
             get { return new CultureInfo(_cultureInfo.Parent); }
         }
 
-        public TextInfo TextInfo => _cultureInfo.TextInfo;
+        public TextInfo TextInfo => _textInfo; // _cultureInfo.TextInfo;
 
         public string ThreeLetterISOLanguageName => _cultureInfo.ThreeLetterISOLanguageName;
 
@@ -213,7 +215,7 @@ namespace DotNetLib.System.Globalization
         // https://stackoverflow.com/questions/24413077/what-is-the-best-way-to-compare-two-cultureinfo-instances
         public override bool Equals(object value)
         {
-            return value is CultureInfo ci && this.CultureInfoObject == ci.CultureInfoObject;
+            return value is CultureInfo ci && CultureInfoObject == ci.CultureInfoObject;
         }
 
         public override int GetHashCode() 
