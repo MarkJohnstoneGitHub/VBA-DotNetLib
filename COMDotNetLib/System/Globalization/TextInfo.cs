@@ -17,7 +17,7 @@ namespace DotNetLib.System.Globalization
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(ITextInfo))]
 
-    public class TextInfo : ITextInfo
+    public class TextInfo : ICloneable, ITextInfo
     {
 
         private GGlobalization.TextInfo _textInfo;
@@ -57,7 +57,8 @@ namespace DotNetLib.System.Globalization
 
         public object Clone()
         {
-            throw new NotImplementedException();
+            return new TextInfo((GGlobalization.TextInfo)_textInfo.Clone());
+         
         }
 
         public override bool Equals(object obj)

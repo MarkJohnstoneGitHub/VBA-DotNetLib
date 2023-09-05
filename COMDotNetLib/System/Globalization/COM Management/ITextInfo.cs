@@ -10,7 +10,7 @@ namespace DotNetLib.System.Globalization
     [Guid("0E20DC25-693E-4F24-87E0-0ABBE5998D9F")]
     [Description("Defines text properties and behaviors, such as casing, that are specific to a writing system.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-    public interface ITextInfo : ICloneable //,IDeserializationCallback
+    public interface ITextInfo  //,IDeserializationCallback
     {
         // Properties
         int ANSICodePage 
@@ -53,7 +53,7 @@ namespace DotNetLib.System.Globalization
         {
             [Description("Gets or sets the string that separates items in a list.")]
             get;
-            [ComVisible(false)]
+            [Description("Gets or sets the string that separates items in a list.")]
             set;
         }
 
@@ -70,8 +70,8 @@ namespace DotNetLib.System.Globalization
         }
 
         //Methods
-        [ComVisible(false)]
-        new object Clone();
+        [Description("Creates a new object that is a copy of the current TextInfo object.")]
+        object Clone();
 
         [Description("Determines whether the specified object represents the same writing system as the current TextInfo object.")]
         bool Equals(object obj);
