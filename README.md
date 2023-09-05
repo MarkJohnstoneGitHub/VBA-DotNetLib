@@ -11,7 +11,7 @@ Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globali
 
 **DotNetLib Update September 5th, 2023** 
  - Added [TextInfo Class](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.textinfo?view=netframework-4.8.1). Properties for [CultureInfo.TextInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo.textinfo?view=netframework-4.8.1) now available.
- - Todo Add VBA wrapper for TextInfoSingleton for TextInfo.ReadOnly(TextInfo) method
+ - Added VBA wrapper TextInfo singleton class for TextInfo.ReadOnly(TextInfo) method.
 
 **DotNetLib Update September 3rd, 2023** 
  - For DateTime and DateTimeOffset renamed DateOnly property to Date property to be consistent with .Net  Framework. 
