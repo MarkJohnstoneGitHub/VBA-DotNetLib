@@ -12,68 +12,6 @@ Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globali
 **DotNetLib Update September 3rd, 2023** 
  - For DateTime and DateTimeOffset renamed DateOnly property to Date property to be consistent with .Net  Framework. 
  - Updated all effect examples
-
-**DotNetLib Update September 2nd, 2023** 
- - Fixed issues with [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1)
-   - Changed format parameter to string from char
-   - public string[] GetAllDateTimePatterns(string format = null)
-   - public void SetAllDateTimePatterns([In] ref string[] patterns, string format)
-- Added overloads for [DateTime.GetDateTimeFormats](https://learn.microsoft.com/en-us/dotnet/api/system.datetime.getdatetimeformats?view=netframework-4.8.1)
-   - Changed format parameter to string from char
-- Refactored [CultureInfo.cls](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/Globalization/CultureInfo.cls) renamed constructors to more meaningful names and combined overloads using an optional parameter.
-     
-**DotNetLib Update September 1st, 2023** 
- - Fixed issues with [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1)
- - When assigning an array to a property eg DateTimeFormatInfo.AbbreviatedDayNames Compile error: Function or interface marked as restricted, or the function uses an Automation type not supported in Visual Basic
- - https://stackoverflow.com/questions/13185159/how-to-pass-byte-arrays-as-udt-properties-from-vb6-vba-to-c-sharp-com-dll
- - Added members to set the various arrays replacing the set propeterty which is no longer COM visibile.
-   - SetAbbreviatedDayNames([In] ref string[] abbreviatedDayNames)
-   - SetAbbreviatedMonthGenitiveNames([In] ref string[] abbreviatedMonthGenitiveNames)
-   - SetDayNames([In] ref string[] dayNames)
-   - SetMonthGenitiveNames([In] ref string[] monthGenitiveNames)
-   - SetMonthNames([In] ref string[] monthNames)
-   - SetShortestDayNames([In] ref string[] shortestDayNames)
-
-**DotNetLib Update August 29th, 2023** 
-
- - Added [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1)
- - Added [NumberFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.numberformatinfo?view=netframework-4.8.1)
- - DateTimeFormatInfo and NumberFormatInfo properties are now available for [Cultureinfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8.1)
- - Unit Testing required to test that various DateTime, DateTimeOffset, TimeSpan parsing functions using [IFormatProvider](https://learn.microsoft.com/en-us/dotnet/api/system.iformatprovider?view=netframework-4.8.1) is functioning correctly. Adhoc testing done using examples.
-
-
-**DotNetLib Version 1.2 Update August 17th, 2023** 
-
-Completed rewritting the DotNetLib type library and VBA DotNetLib wrappers to use the [Singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern).
-Where factory methods and static members are in a singleton classs.
-
-Currently the default interfaces IDateTime, IDateTimeOffset, ITimeSpan, ITimeZoneInfo, ICultureInfo for its corresponding COM object isn't displayed in the VBA Object browser or editor thou accessible. Can program either directly against the COM Object eg. ```Dim myDateTime as DotNetLib.DateTime``` or its interface ```Dim myDateTime as IDateTime``` 
-
-For the creation and access of static members use its corresponding Singleton/Factory class eg ```Set myDateTime = DateTime.CreateFromDate(2010, 8, 18) ```
-
-
-**Initial developement.**
- - API of the type library and VBA COM wrapper classes may be altered during initial development.
- - Implemented the following C# COM Interlop wrappers of the .Net Framework 4.8.1 [DotNetLib type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib), see [DotNetLib.tlb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
-     - [DateTime](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/DateTime.cs)
-     - [DateTimeOffset](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/DateTimeOffset.cs)
-     - [TimeSpan](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/TimeSpan.cs)
-     - [TimeZoneInfo](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/TimeZoneInfo.cs)
-     - [CultureInfo](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/Globalization/CultureInfo.cls)
-     - [DateTimeKind enum](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/DateTimeKind.cs)
-     - [DayOfWeek enum ](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/DayOfWeek.cs)
-     - [TimeSpanStyles enum](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/Globalization/TimeSpanStyles.cs)
-     - [ReadOnlyCollection](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/Collections/ReadOnlyCollection.cs)
-     - Adhoc testing using VBA examples located in [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/DotNetLibrary.accdb)
-- VBA [DotNetLib.tlb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release) COM Wrappers implemented.
-  - [CultureInfo](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/Globalization/CultureInfo.cls)
-  - [DateTime](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/DateTime.cls) adhoc testing and [DateTime examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples/DateTime).
-  - [DateTimeOffset](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/DateTimeOffset.cls) adhoc testing and [DateTimeOffset examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples/DateTimeOffset).
-  - [TimeSpan](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/TimeSpan.cls) adhoc testing and [TimeSpan examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples/TimeSpan).
-  - [TimeZoneInfo](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/TimeZoneInfo.cls) adhoc testing and [TimeZoneInfo examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples/TimeZoneInfo)
-  - ReadOnlyCollection VBA wrapper to be implemented. DotNetLib.ReadOnlyCollection adhoc testing with TimeZoneInfo examples. TimeZoneInfo.GetSystemTimeZones returns a ReadOnlyCollection. 
-  - Unit testing aim to do once VBA wrappers for COM objects implemented.
-  - Investigated auto generation of VBA COM object wrapper class. See: [Refactor-COM-object-to-VBA-COM-wrapper-class](https://github.com/MarkJohnstoneGitHub/Refactor-COM-object-to-VBA-COM-wrapper-class)
   
  **Dependencies:**
  - [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
@@ -147,6 +85,69 @@ Or replace with non-generic equivalent.  To enforce type safety in VBA create a 
    - [TextInfo Class](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.textinfo?view=netframework-4.8.1)
 
 VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
+
+**Update History**
+
+**DotNetLib Update September 2nd, 2023** 
+ - Fixed issues with [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1)
+   - Changed format parameter to string from char
+   - public string[] GetAllDateTimePatterns(string format = null)
+   - public void SetAllDateTimePatterns([In] ref string[] patterns, string format)
+- Added overloads for [DateTime.GetDateTimeFormats](https://learn.microsoft.com/en-us/dotnet/api/system.datetime.getdatetimeformats?view=netframework-4.8.1)
+   - Changed format parameter to string from char
+- Refactored [CultureInfo.cls](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/Globalization/CultureInfo.cls) renamed constructors to more meaningful names and combined overloads using an optional parameter.
+     
+**DotNetLib Update September 1st, 2023** 
+ - Fixed issues with [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1)
+ - When assigning an array to a property eg DateTimeFormatInfo.AbbreviatedDayNames Compile error: Function or interface marked as restricted, or the function uses an Automation type not supported in Visual Basic
+ - https://stackoverflow.com/questions/13185159/how-to-pass-byte-arrays-as-udt-properties-from-vb6-vba-to-c-sharp-com-dll
+ - Added members to set the various arrays replacing the set propeterty which is no longer COM visibile.
+   - SetAbbreviatedDayNames([In] ref string[] abbreviatedDayNames)
+   - SetAbbreviatedMonthGenitiveNames([In] ref string[] abbreviatedMonthGenitiveNames)
+   - SetDayNames([In] ref string[] dayNames)
+   - SetMonthGenitiveNames([In] ref string[] monthGenitiveNames)
+   - SetMonthNames([In] ref string[] monthNames)
+   - SetShortestDayNames([In] ref string[] shortestDayNames)
+
+**DotNetLib Update August 29th, 2023** 
+
+ - Added [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1)
+ - Added [NumberFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.numberformatinfo?view=netframework-4.8.1)
+ - DateTimeFormatInfo and NumberFormatInfo properties are now available for [Cultureinfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8.1)
+ - Unit Testing required to test that various DateTime, DateTimeOffset, TimeSpan parsing functions using [IFormatProvider](https://learn.microsoft.com/en-us/dotnet/api/system.iformatprovider?view=netframework-4.8.1) is functioning correctly. Adhoc testing done using examples.
+
+**DotNetLib Version 1.2 Update August 17th, 2023** 
+
+Completed rewritting the DotNetLib type library and VBA DotNetLib wrappers to use the [Singleton pattern](https://en.wikipedia.org/wiki/Singleton_pattern).
+Where factory methods and static members are in a singleton classs.
+
+Currently the default interfaces IDateTime, IDateTimeOffset, ITimeSpan, ITimeZoneInfo, ICultureInfo for its corresponding COM object isn't displayed in the VBA Object browser or editor thou accessible. Can program either directly against the COM Object eg. ```Dim myDateTime as DotNetLib.DateTime``` or its interface ```Dim myDateTime as IDateTime``` 
+
+For the creation and access of static members use its corresponding Singleton/Factory class eg ```Set myDateTime = DateTime.CreateFromDate(2010, 8, 18) ```
+
+
+**Initial developement.**
+ - API of the type library and VBA COM wrapper classes may be altered during initial development.
+ - Implemented the following C# COM Interlop wrappers of the .Net Framework 4.8.1 [DotNetLib type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib), see [DotNetLib.tlb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
+     - [DateTime](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/DateTime.cs)
+     - [DateTimeOffset](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/DateTimeOffset.cs)
+     - [TimeSpan](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/TimeSpan.cs)
+     - [TimeZoneInfo](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/TimeZoneInfo.cs)
+     - [CultureInfo](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/Globalization/CultureInfo.cls)
+     - [DateTimeKind enum](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/DateTimeKind.cs)
+     - [DayOfWeek enum ](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/DayOfWeek.cs)
+     - [TimeSpanStyles enum](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/Globalization/TimeSpanStyles.cs)
+     - [ReadOnlyCollection](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/COMDotNetLib/System/Collections/ReadOnlyCollection.cs)
+     - Adhoc testing using VBA examples located in [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/DotNetLibrary.accdb)
+- VBA [DotNetLib.tlb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release) COM Wrappers implemented.
+  - [CultureInfo](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/Globalization/CultureInfo.cls)
+  - [DateTime](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/DateTime.cls) adhoc testing and [DateTime examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples/DateTime).
+  - [DateTimeOffset](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/DateTimeOffset.cls) adhoc testing and [DateTimeOffset examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples/DateTimeOffset).
+  - [TimeSpan](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/TimeSpan.cls) adhoc testing and [TimeSpan examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples/TimeSpan).
+  - [TimeZoneInfo](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/TimeZoneInfo.cls) adhoc testing and [TimeZoneInfo examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples/TimeZoneInfo)
+  - ReadOnlyCollection VBA wrapper to be implemented. DotNetLib.ReadOnlyCollection adhoc testing with TimeZoneInfo examples. TimeZoneInfo.GetSystemTimeZones returns a ReadOnlyCollection. 
+  - Unit testing aim to do once VBA wrappers for COM objects implemented.
+  - Investigated auto generation of VBA COM object wrapper class. See: [Refactor-COM-object-to-VBA-COM-wrapper-class](https://github.com/MarkJohnstoneGitHub/Refactor-COM-object-to-VBA-COM-wrapper-class)
 
 VBA Wrapper for ReadOnlyCollection
 
