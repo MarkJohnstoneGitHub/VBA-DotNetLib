@@ -35,7 +35,7 @@ namespace DotNetLib.System.Globalization
 
 
         // Properties
-        public GGlobalization.DateTimeFormatInfo DateTimeFormatInfoObject
+        public GGlobalization.DateTimeFormatInfo WrappedDateTimeFormatInfo
         {
             get { return _dateTimeFormatInfo; }
             set { _dateTimeFormatInfo = value; }
@@ -291,18 +291,18 @@ namespace DotNetLib.System.Globalization
         /// </summary>
         /// <param name="provider"></param>
         /// <returns></returns>
-        internal static GGlobalization.DateTimeFormatInfo GetFormatProvider(IFormatProvider provider)
+        internal static GGlobalization.DateTimeFormatInfo Unwrap(IFormatProvider provider)
         {
             CultureInfo cultureInfo = provider as CultureInfo;
             if (cultureInfo != null)
             {
-                return cultureInfo.DateTimeFormat.DateTimeFormatInfoObject;
+                return cultureInfo.DateTimeFormat.WrappedDateTimeFormatInfo;
             }
 
             DateTimeFormatInfo dateTimeFormatInfo = provider as DateTimeFormatInfo;
             if (dateTimeFormatInfo != null)
             {
-                return dateTimeFormatInfo.DateTimeFormatInfoObject;
+                return dateTimeFormatInfo.WrappedDateTimeFormatInfo;
             }
 
             if (provider != null)
@@ -310,17 +310,15 @@ namespace DotNetLib.System.Globalization
                 dateTimeFormatInfo = provider.GetFormat(typeof(DateTimeFormatInfo)) as DateTimeFormatInfo;
                 if (dateTimeFormatInfo != null)
                 {
-                    return dateTimeFormatInfo.DateTimeFormatInfoObject;
+                    return dateTimeFormatInfo.WrappedDateTimeFormatInfo;
                 }
             }
-
-            return CurrentInfo.DateTimeFormatInfoObject;
+            return CurrentInfo.WrappedDateTimeFormatInfo;
         }
 
         public static DateTimeFormatInfo GetInstance(IFormatProvider formatProvider)
         {
-            
-            return new DateTimeFormatInfo(GGlobalization.DateTimeFormatInfo.GetInstance(GetFormatProvider(formatProvider)));
+            return new DateTimeFormatInfo(GGlobalization.DateTimeFormatInfo.GetInstance(Unwrap(formatProvider)));
         }
 
         public string GetMonthName(int month)
@@ -335,7 +333,7 @@ namespace DotNetLib.System.Globalization
 
         public static DateTimeFormatInfo ReadOnly(DateTimeFormatInfo dtfi)
         {
-            return new DateTimeFormatInfo(GGlobalization.DateTimeFormatInfo.ReadOnly(dtfi.DateTimeFormatInfoObject));
+            return new DateTimeFormatInfo(GGlobalization.DateTimeFormatInfo.ReadOnly(dtfi.WrappedDateTimeFormatInfo));
         }
 
         // @Note: Changed parameter from char to string

@@ -92,7 +92,7 @@ namespace DotNetLib.System
 
         public DateTimeOffset Parse2(string input, IFormatProvider formatProvider)
         {
-            return DateTimeOffset.Parse(input, formatProvider); //(GSystem.DateTimeOffset.Parse(input, DateTimeFormatInfo.GetFormatProvider(formatProvider)));
+            return DateTimeOffset.Parse(input, formatProvider); //(GSystem.DateTimeOffset.Parse(input, DateTimeFormatInfo.Unwrap(formatProvider)));
         }
 
         public DateTimeOffset Parse3(string input, IFormatProvider formatProvider, GSystem.Globalization.DateTimeStyles styles)

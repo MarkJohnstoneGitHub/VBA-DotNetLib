@@ -42,6 +42,9 @@
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>DotNetLib.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -58,6 +61,7 @@
     <Compile Include="CoordinateSharp\CoordinateSingleton.cs" />
     <Compile Include="CoordinateSharp\ICelestialInfo.cs" />
     <Compile Include="CoordinateSharp\ICoordinate.cs" />
+    <Compile Include="Extensions\IWrappedObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\Collections\IList.cs" />
     <Compile Include="System\Collections\IListString.cs" />
@@ -67,6 +71,7 @@
     <Compile Include="System\Collections\ReadOnlyCollection.cs" />
     <Compile Include="System\COM Management\DateTimeSingleton.cs" />
     <Compile Include="System\COM Management\TimeSpanSingleton.cs" />
+    <Compile Include="System\ConsoleSingleton.cs" />
     <Compile Include="System\DateTime.cs" />
     <Compile Include="System\DateTimeKind.cs" />
     <Compile Include="System\DateTimeOffset.cs" />
@@ -102,6 +107,8 @@
     <Compile Include="System\COM Management\IDateTimeOffset.cs" />
     <Compile Include="System\COM Management\ITimeSpan.cs" />
     <Compile Include="System\COM Management\ITimeZoneInfo.cs" />
+    <Compile Include="Extensions\ObjectExtension.cs" />
+    <Compile Include="System\IConsoleSingleton.cs" />
     <Compile Include="System\TimeSpan.cs" />
     <Compile Include="System\TimeZoneInfo.cs" />
     <Compile Include="System\COM Management\TimeZoneInfoSingleton.cs" />

@@ -13,7 +13,6 @@ namespace DotNetLib.System
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface ITimeSpan
     {
-
         // Properties
 
         int Days
@@ -85,11 +84,11 @@ namespace DotNetLib.System
         [Description("Returns a new TimeSpan object whose value is the sum of the specified TimeSpan object and this instance.")]
         TimeSpan Add(TimeSpan ts);
 
-        [Description("Compares this instance to a specified TimeSpan object and returns an integer that indicates whether this instance is shorter than, equal to, or longer than the TimeSpan object.")]
-        int CompareTo(TimeSpan value);
-
         [Description("Compares this instance to a specified object and returns an integer that indicates whether this instance is shorter than, equal to, or longer than the specified object.")]
-        int CompareTo2(object value);
+        int CompareTo(object value);
+
+        [Description("Compares this instance to a specified TimeSpan object and returns an integer that indicates whether this instance is shorter than, equal to, or longer than the TimeSpan object.")]
+        int CompareTo2(TimeSpan value);
 
         [Description("Returns a new TimeSpan object whose value is the absolute value of the current TimeSpan object.")]
         TimeSpan Duration();

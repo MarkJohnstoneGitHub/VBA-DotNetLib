@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System;
 using DotNetLib.System.Globalization;
+using DotNetLib.Extensions;
 
 namespace DotNetLib.System
 {
@@ -17,7 +18,7 @@ namespace DotNetLib.System
     [Description("Represents an instant in time, typically expressed as a date and time of day.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IDateTime))]
-    public class DateTime : IDateTime
+    public class DateTime : IComparable, IFormattable, IDateTime, IWrappedObject
     {
         private GSystem.DateTime _dateTime;
 
@@ -89,11 +90,13 @@ namespace DotNetLib.System
         //public DateTime UnixEpoch => dtUnixEpoch;
 
         //Properties
-        internal GSystem.DateTime DateTimeObject
+        internal GSystem.DateTime WrappedDateTime
         {
             get { return _dateTime; }
-            //set { objDateTime = value; }  // set method
+            //set { objDateTime = value; }  
         }
+
+        public object WrappedObject => _dateTime;
 
         public DateTime Date => new DateTime(_dateTime.Date); 
 
@@ -184,7 +187,7 @@ namespace DotNetLib.System
 
         public DateTime Add(TimeSpan value)
         {
-            return new DateTime(_dateTime.Add(value.TimeSpanObject));
+            return new DateTime(_dateTime.Add(value.WrappedTimeSpan));
         }
 
         public DateTime AddDays(double value)
@@ -204,7 +207,7 @@ namespace DotNetLib.System
 
         //public DateTimeTools AddMicoseconds(double value)
         //{
-        //    return new DateTimeTools(this.objDateTime.AddMicoseconds(value));
+        //    return new DateTimeTools(_dateTime.AddMicoseconds(value));
         //}
 
         /// <summary>
@@ -275,7 +278,27 @@ namespace DotNetLib.System
         /// <returns>A signed number indicating the relative values of t1 and t2.</returns>
         public static int Compare(DateTime t1, DateTime t2)
         {
-            return GSystem.DateTime.Compare(t1.DateTimeObject, t2.DateTimeObject);
+            return GSystem.DateTime.Compare(t1.WrappedDateTime, t2.WrappedDateTime);
+        }
+
+        /// <summary>
+        /// Compares the value of this instance to a specified object that contains a specified DateTime value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.
+        /// </summary>
+        /// <param name="value">A boxed object to compare, or null.</param>
+        /// <returns>A signed number indicating the relative values of this instance and value.</returns>
+        /// 
+        //TODO : Check implementation public int CompareTo(object value)
+        public int CompareTo(object value)
+        {
+            return _dateTime.CompareTo(value.Unwrap()); //TODO Causing MS-Access to hang ???
+            //const string Arg_MustBeDateTime = "Object must be of type DateTime.";
+
+            //if (value == null) return 1;
+            //if (!(value is DateTime dt))
+            //{
+            //    throw new ArgumentException(Arg_MustBeDateTime);
+            //}
+            //return _dateTime.CompareTo(dt.WrappedDateTime);
         }
 
         /// <summary>
@@ -283,27 +306,9 @@ namespace DotNetLib.System
         /// </summary>
         /// <param name="value">The object to compare to the current instance.</param>
         /// <returns>A signed number indicating the relative values of this instance and the value parameter.</returns>
-        public int CompareTo(DateTime value)
+        public int CompareTo2(DateTime value)
         {
-            return _dateTime.CompareTo(value.DateTimeObject);
-        }
-        /// <summary>
-        /// Compares the value of this instance to a specified object that contains a specified DateTime value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.
-        /// </summary>
-        /// <param name="value">A boxed object to compare, or null.</param>
-        /// <returns>A signed number indicating the relative values of this instance and value.</returns>
-        /// 
-        //TODO : Check implementation public int CompareTo2(object value)
-        public int CompareTo2(object value)
-        {
-            const string Arg_MustBeDateTime = "Object must be of type DateTime.";
-
-            if (value == null) return 1;
-            if (!(value is DateTime dt))
-            {
-                throw new ArgumentException(Arg_MustBeDateTime);
-            }
-            return CompareTo(dt);
+            return _dateTime.CompareTo(value.WrappedDateTime);
         }
 
         /// <summary>
@@ -324,7 +329,7 @@ namespace DotNetLib.System
         /// <returns>true if the value parameter equals the value of this instance; otherwise, false.</returns>
         public bool Equals(DateTime value)
         {
-            return _dateTime.Equals(value.DateTimeObject);
+            return _dateTime.Equals(value.WrappedDateTime);
         }
 
         /// <summary>
@@ -335,7 +340,7 @@ namespace DotNetLib.System
         // TODO : Check implementation
         public bool Equals2(object value)
         {
-            return value is DateTime dt && _dateTime == dt.DateTimeObject;
+            return value is DateTime dt && _dateTime == dt.WrappedDateTime;
         }
 
         /// <summary>
@@ -346,7 +351,7 @@ namespace DotNetLib.System
         /// <returns>true if the two values are equal; otherwise, false.</returns>
         public static bool Equals(DateTime t1, DateTime t2)
         {
-            return GSystem.DateTime.Equals(t1.DateTimeObject, t2.DateTimeObject);
+            return GSystem.DateTime.Equals(t1.WrappedDateTime, t2.WrappedDateTime);
         }
 
         /// <summary>
@@ -412,7 +417,7 @@ namespace DotNetLib.System
 
         public string[] GetDateTimeFormats2(IFormatProvider provider)
         {
-            return _dateTime.GetDateTimeFormats(DateTimeFormatInfo.GetFormatProvider(provider));
+            return _dateTime.GetDateTimeFormats(DateTimeFormatInfo.Unwrap(provider));
         }
 
         // @Note: Changed parameter from char to string
@@ -427,7 +432,7 @@ namespace DotNetLib.System
             {
                 return _dateTime.GetDateTimeFormats(format[0]);
             }
-            return _dateTime.GetDateTimeFormats(format[0], DateTimeFormatInfo.GetFormatProvider(provider));
+            return _dateTime.GetDateTimeFormats(format[0], DateTimeFormatInfo.Unwrap(provider));
         }
 
 
@@ -477,28 +482,28 @@ namespace DotNetLib.System
 
         public static DateTime Parse(string s, IFormatProvider provider)
         {
-            return new DateTime(GSystem.DateTime.Parse(s, DateTimeFormatInfo.GetFormatProvider(provider)));
+            return new DateTime(GSystem.DateTime.Parse(s, DateTimeFormatInfo.Unwrap(provider)));
         }
 
         public static DateTime Parse(string s, IFormatProvider provider, GSystem.Globalization.DateTimeStyles styles)
         {
-            return new DateTime(GSystem.DateTime.Parse(s, DateTimeFormatInfo.GetFormatProvider(provider), styles));
+            return new DateTime(GSystem.DateTime.Parse(s, DateTimeFormatInfo.Unwrap(provider), styles));
         }
 
         public static DateTime ParseExact(string s, string format, IFormatProvider provider)
         {
-            return new DateTime(GSystem.DateTime.ParseExact(s, format, DateTimeFormatInfo.GetFormatProvider(provider)));
+            return new DateTime(GSystem.DateTime.ParseExact(s, format, DateTimeFormatInfo.Unwrap(provider)));
 
         }
 
         public static DateTime ParseExact(string s, string format, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style)
         {
-            return new DateTime(GSystem.DateTime.ParseExact(s, format, DateTimeFormatInfo.GetFormatProvider(provider), style));
+            return new DateTime(GSystem.DateTime.ParseExact(s, format, DateTimeFormatInfo.Unwrap(provider), style));
         }
 
         public static DateTime ParseExact(string s, [In] ref string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style)
         {
-            return new DateTime(GSystem.DateTime.ParseExact(s, formats, DateTimeFormatInfo.GetFormatProvider(provider), style));
+            return new DateTime(GSystem.DateTime.ParseExact(s, formats, DateTimeFormatInfo.Unwrap(provider), style));
         }
 
         /// <summary>
@@ -509,17 +514,17 @@ namespace DotNetLib.System
         /// <returns>A new object that has the same number of pTicks as the object represented by the value parameter and the DateTimeKind value specified by the pKind parameter.</returns>
         public static DateTime SpecifyKind(DateTime value, DateTimeKind pKind)
         {
-            return new DateTime(GSystem.DateTime.SpecifyKind(value.DateTimeObject, (GSystem.DateTimeKind)pKind));
+            return new DateTime(GSystem.DateTime.SpecifyKind(value.WrappedDateTime, (GSystem.DateTimeKind)pKind));
         }
 
         public DateTime Subtract(TimeSpan value)
         {
-            return new DateTime(_dateTime.Subtract(value.TimeSpanObject));
+            return new DateTime(_dateTime.Subtract(value.WrappedTimeSpan));
         }
 
         public TimeSpan Subtract2(DateTime value)
         {
-            return new TimeSpan(_dateTime.Subtract(value.DateTimeObject));
+            return new TimeSpan(_dateTime.Subtract(value.WrappedDateTime));
         }
 
         public long ToBinary()
@@ -597,19 +602,26 @@ namespace DotNetLib.System
         /// <exception cref="ArgumentOutOfRangeException"> 
         /// The date and time is outside the range of dates supported by the calendar used by the current culture.
         /// </exception>
-        public string ToString2(string format)
+        public string ToString2(string format, IFormatProvider provider = null)
         {
-            return _dateTime.ToString(format);
+            if (provider == null)
+                return _dateTime.ToString(format);
+            return _dateTime.ToString(format, DateTimeFormatInfo.Unwrap(provider));
         }
 
         public string ToString3(IFormatProvider provider)
         {
-            return _dateTime.ToString(DateTimeFormatInfo.GetFormatProvider(provider));
+            return _dateTime.ToString(DateTimeFormatInfo.Unwrap(provider));
         }
 
         public string ToString4(string format, IFormatProvider provider)
         {
-            return _dateTime.ToString(format, DateTimeFormatInfo.GetFormatProvider(provider));
+            return _dateTime.ToString(format, DateTimeFormatInfo.Unwrap(provider));
+        }
+
+        public string ToString(string format, IFormatProvider formatProvider)
+        {
+            return _dateTime.ToString(format, DateTimeFormatInfo.Unwrap(formatProvider));
         }
 
         /// <summary>
@@ -630,21 +642,21 @@ namespace DotNetLib.System
 
         public static bool TryParse(string s, IFormatProvider provider, GSystem.Globalization.DateTimeStyles styles, out DateTime result)
         {
-            bool tryParse = GSystem.DateTime.TryParse(s, DateTimeFormatInfo.GetFormatProvider(provider), styles, out GSystem.DateTime outResult);
+            bool tryParse = GSystem.DateTime.TryParse(s, DateTimeFormatInfo.Unwrap(provider), styles, out GSystem.DateTime outResult);
             result = new DateTime(outResult);
             return tryParse;
         }
 
         public static bool TryParseExact(string s, string format, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style, out DateTime result)
         {
-            bool tryParseExact = GSystem.DateTime.TryParseExact(s, format,DateTimeFormatInfo.GetFormatProvider(provider), style, out GSystem.DateTime outResult);
+            bool tryParseExact = GSystem.DateTime.TryParseExact(s, format,DateTimeFormatInfo.Unwrap(provider), style, out GSystem.DateTime outResult);
             result = new DateTime(outResult);
             return tryParseExact;
         }
 
         public static bool TryParseExact(string s, [In] string[] formats, IFormatProvider provider, GSystem.Globalization.DateTimeStyles style, out DateTime result)
         {
-            bool tryParseExact = GSystem.DateTime.TryParseExact(s, formats, DateTimeFormatInfo.GetFormatProvider(provider), style, out GSystem.DateTime outResult);
+            bool tryParseExact = GSystem.DateTime.TryParseExact(s, formats, DateTimeFormatInfo.Unwrap(provider), style, out GSystem.DateTime outResult);
             result = new DateTime(outResult);
             return tryParseExact;
         }
@@ -653,47 +665,48 @@ namespace DotNetLib.System
 
         public static DateTime Addition(DateTime dt, TimeSpan ts)
         {
-            return new DateTime(dt.DateTimeObject + ts.TimeSpanObject);
+            return new DateTime(dt.WrappedDateTime + ts.WrappedTimeSpan);
         }
 
         public static bool Equality(DateTime d1, DateTime d2)
         { 
-            return (d1.DateTimeObject == d2.DateTimeObject); 
+            return (d1.WrappedDateTime == d2.WrappedDateTime); 
         }
 
         public static bool GreaterThan(DateTime t1, DateTime t2)
         {
-            return (t1.DateTimeObject > t2.DateTimeObject);
+            return (t1.WrappedDateTime > t2.WrappedDateTime);
         }
 
         public static bool GreaterThanOrEqual(DateTime t1, DateTime t2)
         { 
-            return (t1.DateTimeObject >= t2.DateTimeObject);
+            return (t1.WrappedDateTime >= t2.WrappedDateTime);
         }
 
         public static bool Inequality(DateTime t1, DateTime t2)
         {
-            return (t1.DateTimeObject != t2.DateTimeObject);
+            return (t1.WrappedDateTime != t2.WrappedDateTime);
         }
 
         public static bool LessThan(DateTime t1, DateTime t2)
         {
-            return (t1.DateTimeObject < t2.DateTimeObject);
+            return (t1.WrappedDateTime < t2.WrappedDateTime);
         }
         public static bool LessThanOrEqual(DateTime t1, DateTime t2)
         {
-            return (t1.DateTimeObject <= t2.DateTimeObject);
+            return (t1.WrappedDateTime <= t2.WrappedDateTime);
         }
 
         public static TimeSpan Subtraction(DateTime d1, DateTime d2)
         {
-            return new TimeSpan(d1.DateTimeObject - d2.DateTimeObject);
+            return new TimeSpan(d1.WrappedDateTime - d2.WrappedDateTime);
         }
 
         public static DateTime Subtraction(DateTime d, TimeSpan t)
         {
-            return new DateTime(d.DateTimeObject - t.TimeSpanObject);
+            return new DateTime(d.WrappedDateTime - t.WrappedTimeSpan);
         }
+
 
     }
 }

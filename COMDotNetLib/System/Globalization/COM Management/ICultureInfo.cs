@@ -17,12 +17,6 @@ namespace DotNetLib.System.Globalization
     public interface ICultureInfo
     {
         // Properties
-        
-        GGlobalization.CultureInfo CultureInfoObject
-        { 
-            get;
-            set;
-        }
 
         Calendar Calendar
         {
@@ -142,8 +136,6 @@ namespace DotNetLib.System.Globalization
             get;
         }
 
-        //ICultureInfo CurrentUICulture { get; set; }
-
         // Methods
 
         [Description("Refreshes cached culture-related information.")]
@@ -166,21 +158,5 @@ namespace DotNetLib.System.Globalization
 
         [Description("Returns a string containing the name of the current CultureInfo in the format languagecode2-country/regioncode2.")]
         string ToString();
-
-
-        //https://referencesource.microsoft.com/#mscorlib/system/globalization/cultureinfo.cs,e319c6636909012f
-        //public virtual Object GetFormat(Type formatType)
-        //{
-        //    if (formatType == typeof(NumberFormatInfo))
-        //    {
-        //        return (NumberFormat);
-        //    }
-        //    if (formatType == typeof(DateTimeFormatInfo))
-        //    {
-        //        return (DateTimeFormat);
-        //    }
-        //    return (null);
-        //}
-
     }
 }

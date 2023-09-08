@@ -21,15 +21,9 @@ namespace DotNetLib.System.Globalization
         }
 
         // Properties
-        public DateTimeFormatInfo CurrentInfo
-        {
-            get => DateTimeFormatInfo.CurrentInfo;
-        }
+        public DateTimeFormatInfo CurrentInfo => DateTimeFormatInfo.CurrentInfo;
 
-        public DateTimeFormatInfo InvariantInfo
-        {
-            get => DateTimeFormatInfo.InvariantInfo;
-        }
+        public DateTimeFormatInfo InvariantInfo => DateTimeFormatInfo.InvariantInfo;
 
         // Methods
         public DateTimeFormatInfo GetInstance(IFormatProvider formatProvider)

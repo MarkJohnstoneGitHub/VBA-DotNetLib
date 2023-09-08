@@ -27,14 +27,14 @@ namespace DotNetLib.CoordinateSharp
         {
             //GCSharp.Coordinate coordinate = new GCSharp.Coordinate();
 
-            GCSharp.Coordinate c = new GCSharp.Coordinate(lat, longi, date.DateTimeObject);
+            GCSharp.Coordinate c = new GCSharp.Coordinate(lat, longi, date.WrappedDateTime);
 
             return new DateTime(c.CelestialInfo.SunRise.Value);
         }
 
         public DateTime SunSet(double lat, double longi, DateTime date)
         {
-            GCSharp.Coordinate c = new GCSharp.Coordinate(lat, longi, date.DateTimeObject);
+            GCSharp.Coordinate c = new GCSharp.Coordinate(lat, longi, date.WrappedDateTime);
 
             return new DateTime(c.CelestialInfo.SunSet.Value);
         }

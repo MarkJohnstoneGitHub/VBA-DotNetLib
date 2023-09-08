@@ -14,7 +14,6 @@ namespace DotNetLib.System
     {
         //Properties
 
-        //Note: Renamed from Date due to VBA reserved word
         DateTime Date
         {
             [Description("Gets the date component of this instance.")]
@@ -126,11 +125,11 @@ namespace DotNetLib.System
         [Description("Returns a new DateTime that adds the specified number of years to the value of this instance.")]
         DateTime AddYears(int value);
 
-        [Description("Compares the value of this instance to a specified DateTime value and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.")]
-        int CompareTo(DateTime value);
-
         [Description("Compares the value of this instance to a specified object that contains a specified DateTime value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.")]
-        int CompareTo2(object value);
+        int CompareTo(object value);
+
+        [Description("Compares the value of this instance to a specified DateTime value and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.")]
+        int CompareTo2(DateTime value);
 
         [Description("Returns a value indicating whether the value of this instance is equal to the value of the specified DateTime instance.")]
         bool Equals(DateTime value);
@@ -191,7 +190,7 @@ namespace DotNetLib.System
         string ToString();
 
         [Description("Converts the value of the current DateTime object to its equivalent string representation using the specified format and the formatting conventions of the current culture.")]
-        string ToString2(string format);
+        string ToString2(string format, IFormatProvider provider = null);
 
         [Description("Converts the value of the current DateTime object to its equivalent string representation using the specified culture-specific format information.")]
         string ToString3(IFormatProvider provider);

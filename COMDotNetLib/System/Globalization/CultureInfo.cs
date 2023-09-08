@@ -33,7 +33,7 @@ namespace DotNetLib.System.Globalization
 
         public CultureInfo(GGlobalization.CultureInfo cultureInfo)
         {
-            CultureInfoObject = cultureInfo;
+            WrappedCultureInfo = cultureInfo;
         }
 
         //public CultureInfo()
@@ -42,29 +42,29 @@ namespace DotNetLib.System.Globalization
 
         public CultureInfo(int culture)
         {
-            CultureInfoObject = new GGlobalization.CultureInfo(culture);
+            WrappedCultureInfo = new GGlobalization.CultureInfo(culture);
         }
 
         public CultureInfo(string name)
         {
-            CultureInfoObject = new GGlobalization.CultureInfo(name);
+            WrappedCultureInfo = new GGlobalization.CultureInfo(name);
         }
 
         public CultureInfo(int culture, bool useUserOverride)
         {
-            CultureInfoObject = new GGlobalization.CultureInfo(culture, useUserOverride);
+            WrappedCultureInfo = new GGlobalization.CultureInfo(culture, useUserOverride);
         }
 
         public CultureInfo(string name, bool useUserOverride)
         {
-            CultureInfoObject = new GGlobalization.CultureInfo(name, useUserOverride);
+            WrappedCultureInfo = new GGlobalization.CultureInfo(name, useUserOverride);
         }
 
         // Properties
 
-        public GGlobalization.CultureInfo CultureInfoObject
+        public GGlobalization.CultureInfo WrappedCultureInfo
         {
-            get { return _cultureInfo; }
+            get => _cultureInfo;
             set 
             { 
                 _cultureInfo = value;
@@ -74,27 +74,18 @@ namespace DotNetLib.System.Globalization
             }
         }
 
-        public Calendar Calendar
-        {
-            get { return _cultureInfo.Calendar; }
-        }
+        public Calendar Calendar => _cultureInfo.Calendar;
 
-        public CompareInfo CompareInfo
-        {
-            get { return _cultureInfo.CompareInfo; }
-        }
+        public CompareInfo CompareInfo => _cultureInfo.CompareInfo;
 
-        public CultureTypes CultureTypes
-        {
-            get { return _cultureInfo.CultureTypes; }
-        }
+        public CultureTypes CultureTypes  => _cultureInfo.CultureTypes;
 
         public DateTimeFormatInfo DateTimeFormat
         {
             get => _dateTimeFormatInfo; // new DateTimeFormatInfo(_cultureInfo.DateTimeFormat)
             set 
             {
-                _cultureInfo.DateTimeFormat = value.DateTimeFormatInfoObject;
+                _cultureInfo.DateTimeFormat = value.WrappedDateTimeFormatInfo;
                 _dateTimeFormatInfo = value;
             }
         }
@@ -119,17 +110,14 @@ namespace DotNetLib.System.Globalization
             set
             {
                 _numberFormatInfo = value;
-                _cultureInfo.NumberFormat = value.NumberFormatInfoObject;
+                _cultureInfo.NumberFormat = value.WrappedNumberFormatInfo;
             }
         }
 
         public Calendar[] OptionalCalendars => _cultureInfo.OptionalCalendars;
 
         //TODO : Check implementation return new?
-        public CultureInfo Parent
-        {
-            get { return new CultureInfo(_cultureInfo.Parent); }
-        }
+        public CultureInfo Parent => new CultureInfo(_cultureInfo.Parent);
 
         public TextInfo TextInfo => _textInfo; // _cultureInfo.TextInfo;
 
@@ -143,67 +131,32 @@ namespace DotNetLib.System.Globalization
 
         public static CultureInfo CurrentCulture
         {
-            get
-            {
-                return new CultureInfo(GGlobalization.CultureInfo.CurrentCulture);
-            }
-            set
-            {
-                GGlobalization.CultureInfo.CurrentCulture = value.CultureInfoObject;
-            }
+            get => new CultureInfo(GGlobalization.CultureInfo.CurrentCulture); 
+            set { GGlobalization.CultureInfo.CurrentCulture = value.WrappedCultureInfo; }
         }
 
         public static CultureInfo CurrentUICulture
         {
-            get
-            {
-                return new CultureInfo(GGlobalization.CultureInfo.CurrentUICulture);
-            }
-            set
-            {
-                GGlobalization.CultureInfo.CurrentUICulture = value.CultureInfoObject;
-            }
+            get => new CultureInfo(GGlobalization.CultureInfo.CurrentUICulture);
+            set { GGlobalization.CultureInfo.CurrentUICulture = value.WrappedCultureInfo; }
         }
 
         public static CultureInfo DefaultThreadCurrentCulture
         {
-            get
-            {
-                return new CultureInfo(GGlobalization.CultureInfo.DefaultThreadCurrentUICulture);
-            }
-            set
-            {
-                GGlobalization.CultureInfo.DefaultThreadCurrentCulture = value.CultureInfoObject;
-            }
+            get => new CultureInfo(GGlobalization.CultureInfo.DefaultThreadCurrentUICulture);
+            set { GGlobalization.CultureInfo.DefaultThreadCurrentCulture = value.WrappedCultureInfo;}
         }
 
         public static CultureInfo DefaultThreadCurrentUICulture
         {
-            get
-            {
-                return new CultureInfo(GGlobalization.CultureInfo.DefaultThreadCurrentUICulture);
-            }
-            set
-            {
-                GGlobalization.CultureInfo.DefaultThreadCurrentUICulture = value.CultureInfoObject;
-            }
+            get => new CultureInfo(GGlobalization.CultureInfo.DefaultThreadCurrentUICulture);
+            set { GGlobalization.CultureInfo.DefaultThreadCurrentUICulture = value.WrappedCultureInfo; }
         }
 
-        public static CultureInfo InstalledUICulture
-        {
-            get
-            {
-                return new CultureInfo(GGlobalization.CultureInfo.InstalledUICulture);
-            }
-        }
+        public static CultureInfo InstalledUICulture => new CultureInfo(GGlobalization.CultureInfo.InstalledUICulture);
 
-        public static CultureInfo InvariantCulture
-        {
-            get
-            {
-                return new CultureInfo(GGlobalization.CultureInfo.InvariantCulture);
-            }
-        }
+        public static CultureInfo InvariantCulture  => new CultureInfo(GGlobalization.CultureInfo.InvariantCulture);
+
 
         // Methods
 
@@ -215,7 +168,7 @@ namespace DotNetLib.System.Globalization
         // https://stackoverflow.com/questions/24413077/what-is-the-best-way-to-compare-two-cultureinfo-instances
         public override bool Equals(object value)
         {
-            return value is CultureInfo ci && CultureInfoObject == ci.CultureInfoObject;
+            return value is CultureInfo ci && WrappedCultureInfo == ci.WrappedCultureInfo;
         }
 
         public override int GetHashCode() 
@@ -244,11 +197,13 @@ namespace DotNetLib.System.Globalization
         {
             if (formatType == typeof(NumberFormatInfo))
             {
-                return _cultureInfo.NumberFormat;   //NumberFormat.NumberFormatInfoObject;
+                return NumberFormat;
+                //return _cultureInfo.NumberFormat;   
             }
             if (formatType == typeof(DateTimeFormatInfo))
             {
-                return _cultureInfo.DateTimeFormat; //DateTimeFormat.DateTimeFormatInfoObject;
+                return DateTimeFormat;
+                //return _cultureInfo.DateTimeFormat; 
             }
             return null;
         }
@@ -296,7 +251,7 @@ namespace DotNetLib.System.Globalization
         // Static
         public static CultureInfo ReadOnly(CultureInfo ci)
         {
-            return new CultureInfo(GGlobalization.CultureInfo.ReadOnly(ci.CultureInfoObject));
+            return new CultureInfo(GGlobalization.CultureInfo.ReadOnly(ci.WrappedCultureInfo));
         }
 
     }

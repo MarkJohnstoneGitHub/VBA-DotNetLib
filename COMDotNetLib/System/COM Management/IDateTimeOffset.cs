@@ -146,11 +146,12 @@ namespace DotNetLib.System
         [Description("Returns a new DateTimeOffset object that adds a specified number of years to the value of this instance.")]
         DateTimeOffset AddYears(int pYears);
 
-        [Description("Compares the current DateTimeOffset object to a specified DateTimeOffset object and indicates whether the current object is earlier than, the same as, or later than the second DateTimeOffset object.")]
-        int CompareTo(DateTimeOffset other);
 
         [Description("Compares the value of the current DateTimeOffset object with another object of the same type.")]
-        int CompareTo2(object value);
+        int CompareTo(object value);
+
+        [Description("Compares the current DateTimeOffset object to a specified DateTimeOffset object and indicates whether the current object is earlier than, the same as, or later than the second DateTimeOffset object.")]
+        int CompareTo2(DateTimeOffset other);
 
         [Description("Determines whether the current DateTimeOffset object represents the same point in time as a specified DateTimeOffset object.")]
         bool Equals(DateTimeOffset other);

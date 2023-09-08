@@ -34,12 +34,12 @@ namespace DotNetLib.System.Globalization
             this.clone = clone;
         }
 
-        public NumberFormatInfo(object v)
-        {
-        }
+        //public NumberFormatInfo(object v)
+        //{
+        //}
 
         // Properties
-        public GGlobalization.NumberFormatInfo NumberFormatInfoObject
+        public GGlobalization.NumberFormatInfo WrappedNumberFormatInfo
         {
             get { return this._numberFormatInfo; }
             set { this._numberFormatInfo = value; }
@@ -232,7 +232,7 @@ namespace DotNetLib.System.Globalization
 
         public static NumberFormatInfo ReadOnly(NumberFormatInfo nfi)
         { 
-            return new NumberFormatInfo(GGlobalization.NumberFormatInfo.ReadOnly(nfi.NumberFormatInfoObject)); 
+            return new NumberFormatInfo(GGlobalization.NumberFormatInfo.ReadOnly(nfi.WrappedNumberFormatInfo)); 
         }
     }
 }

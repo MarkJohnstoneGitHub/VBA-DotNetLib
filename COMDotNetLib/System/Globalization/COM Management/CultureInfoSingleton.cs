@@ -39,67 +39,31 @@ namespace DotNetLib.System.Globalization
         // Properties
         public CultureInfo CurrentCulture
         {
-            get
-            {
-                return CultureInfo.CurrentCulture;
-            }
-            set
-            {
-                CultureInfo.CurrentCulture = value;
-            }
+            get => CultureInfo.CurrentCulture;
+            set => CultureInfo.CurrentCulture = value;
         }
 
         public CultureInfo CurrentUICulture
         {
-            get
-            {
-                return CultureInfo.CurrentUICulture;
-            }
-            set
-            {
-                CultureInfo.CurrentUICulture = value;
-            }
+            get => CultureInfo.CurrentUICulture;
+            set => CultureInfo.CurrentUICulture = value;
         }
 
         public CultureInfo DefaultThreadCurrentCulture
         {
-            get
-            {
-                return CultureInfo.DefaultThreadCurrentUICulture;
-            }
-            set
-            {
-                CultureInfo.DefaultThreadCurrentCulture = value;
-            }
+            get => CultureInfo.DefaultThreadCurrentUICulture;
+            set => CultureInfo.DefaultThreadCurrentCulture = value;
         }
 
         public CultureInfo DefaultThreadCurrentUICulture
         {
-            get
-            {
-                return CultureInfo.DefaultThreadCurrentUICulture;
-            }
-            set
-            {
-                CultureInfo.DefaultThreadCurrentUICulture = value;
-            }
+            get => CultureInfo.DefaultThreadCurrentUICulture;
+            set => CultureInfo.DefaultThreadCurrentUICulture = value;
         }
 
-        public CultureInfo InstalledUICulture
-        {
-            get
-            {
-                return CultureInfo.InstalledUICulture;
-            }
-        }
+        public CultureInfo InstalledUICulture => CultureInfo.InstalledUICulture;
 
-        public CultureInfo InvariantCulture
-        {
-            get
-            {
-                return CultureInfo.InvariantCulture;
-            }
-        }
+        public CultureInfo InvariantCulture => CultureInfo.InvariantCulture;
 
         // Methods
 

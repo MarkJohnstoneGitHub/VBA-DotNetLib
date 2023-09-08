@@ -27,7 +27,7 @@ namespace DotNetLib.System.Globalization
             _textInfo = textInfo;
         }
 
-        internal GGlobalization.TextInfo TextInfoObject
+        internal GGlobalization.TextInfo WrappedTextInfo
         {
             get => _textInfo;
             set => _textInfo = value;
@@ -78,7 +78,7 @@ namespace DotNetLib.System.Globalization
 
         public static TextInfo ReadOnly(TextInfo textInfo)
         {
-            return new TextInfo(GGlobalization.TextInfo.ReadOnly(textInfo.TextInfoObject));
+            return new TextInfo(GGlobalization.TextInfo.ReadOnly(textInfo.WrappedTextInfo));
         }
         public string ToLower(string str)
         {
