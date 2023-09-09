@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeOffsetCompareToExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 20, 2023
-'@LastModified July 31, 2023
+'@LastModified September 9, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.compareto?view=netframework-4.8.1#examples
 

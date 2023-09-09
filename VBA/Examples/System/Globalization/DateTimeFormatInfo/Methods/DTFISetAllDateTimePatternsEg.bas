@@ -7,7 +7,7 @@ Attribute VB_Name = "DTFISetAllDateTimePatternsEg"
 '@LastModified September 5, 2023
 
 '@Reference
-' https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.setalldatetimepatterns?view=net-7.0#examples
+' https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.setalldatetimepatterns?view=netframework-4.8.1#examples
 
 Option Explicit
 

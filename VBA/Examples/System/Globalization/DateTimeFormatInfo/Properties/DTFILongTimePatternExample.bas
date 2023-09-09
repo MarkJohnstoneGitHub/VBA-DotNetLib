@@ -21,9 +21,9 @@ Public Sub DateTimeFormatInfoLongTimePattern()
 End Sub
 
 Private Sub PrintPattern(ByVal myCulture As String)
-    Dim myDTFI As DotNetLib.DateTimeFormatInfo
-    Set myDTFI = CultureInfo.CreateFromName(myCulture, False).DateTimeFormat
-    Debug.Print "  "; myCulture; "     "; myDTFI.LongTimePattern
+    Dim myDtfi As DotNetLib.DateTimeFormatInfo
+    Set myDtfi = CultureInfo.CreateFromName(myCulture, False).DateTimeFormat
+    Debug.Print "  "; myCulture; "     "; myDtfi.LongTimePattern
 End Sub
 
 '/*

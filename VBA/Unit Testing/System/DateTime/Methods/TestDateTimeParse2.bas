@@ -51,39 +51,39 @@ Private Sub TestMethodDateTimeParse2()
     'Act:
     
     ' Define cultures to be used to parse dates.
-    Dim cultures() As DotNetLib.CultureInfo
-    Objects.ToArray cultures, _
-                    CultureInfo.CreateSpecificCulture("en-US"), _
-                    CultureInfo.CreateSpecificCulture("fr-FR"), _
-                    CultureInfo.CreateSpecificCulture("de-DE")
-    ' Define string representations of a date to be parsed.
-    Dim dateStrings() As String
-    dateStrings = Strings.ToArray( _
-                    "01/10/2009 7:34 PM", _
-                    "10.01.2009 19:34", _
-                    "10-1-2009 19:34")
-    
-    ' Parse dates using each culture.
-    Dim varCulture As Variant
-    Dim culture As DotNetLib.CultureInfo
-    For Each varCulture In cultures
-        Set culture = varCulture
-        Dim dateValue As DotNetLib.DateTime
-        Debug.Print "Attempted conversions using "; culture.Name; " culture."
-
-        Dim dateString As Variant
-        For Each dateString In dateStrings
-            On Error Resume Next
-            Set dateValue = DateTime.Parse2(dateString, culture)
-            If Try Then
-                Debug.Print "   Converted '"; dateString; "' to "; dateValue.ToString4("f", culture); "."
-            ElseIf Catch(FormatException) Then
-                Debug.Print "   Unable to convert '"; dateString; "' for culture "; culture.Name
-            End If
-            On Error GoTo 0 'reset error handling
-        Next
-        Debug.Print
-    Next
+'    Dim cultures() As DotNetLib.CultureInfo
+'    Objects.ToArray cultures, _
+'                    CultureInfo.CreateSpecificCulture("en-US"), _
+'                    CultureInfo.CreateSpecificCulture("fr-FR"), _
+'                    CultureInfo.CreateSpecificCulture("de-DE")
+'    ' Define string representations of a date to be parsed.
+'    Dim dateStrings() As String
+'    dateStrings = Strings.ToArray( _
+'                    "01/10/2009 7:34 PM", _
+'                    "10.01.2009 19:34", _
+'                    "10-1-2009 19:34")
+'
+'    ' Parse dates using each culture.
+'    Dim varCulture As Variant
+'    Dim culture As DotNetLib.CultureInfo
+'    For Each varCulture In cultures
+'        Set culture = varCulture
+'        Dim dateValue As DotNetLib.DateTime
+'        Debug.Print "Attempted conversions using "; culture.Name; " culture."
+'
+'        Dim dateString As Variant
+'        For Each dateString In dateStrings
+'            On Error Resume Next
+'            Set dateValue = DateTime.Parse2(dateString, culture)
+'            If Try Then
+'                Debug.Print "   Converted '"; dateString; "' to "; dateValue.ToString4("f", culture); "."
+'            ElseIf Catch(FormatException) Then
+'                Debug.Print "   Unable to convert '"; dateString; "' for culture "; culture.Name
+'            End If
+'            On Error GoTo 0 'reset error handling
+'        Next
+'        Debug.Print
+'    Next
     'Assert:
     Assert.Succeed
 

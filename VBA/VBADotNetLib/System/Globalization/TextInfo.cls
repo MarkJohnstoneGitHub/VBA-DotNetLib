@@ -8,7 +8,6 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "TextInfo factory methods and static members."
-Attribute VB_Ext_KEY = "Rubberduck" ,"Predeclared Class Module"
 '@Folder("VBADotNetLib.System.Globalization")
 '@PredeclaredId
 '@ModuleDescription("TextInfo factory methods and static members.")

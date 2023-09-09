@@ -21,13 +21,13 @@ Public Sub DateTimeFormatInfoFullDateTimePattern()
 End Sub
 
 Private Sub PrintPattern(ByVal myCulture As String)
-    Dim myDTFI As DotNetLib.DateTimeFormatInfo
-    Set myDTFI = CultureInfo.CreateFromName(myCulture, False).DateTimeFormat
-    Debug.Print "  "; myCulture; "     "; myDTFI.FullDateTimePattern
+    Dim myDtfi As DotNetLib.DateTimeFormatInfo
+    Set myDtfi = CultureInfo.CreateFromName(myCulture, False).DateTimeFormat
+    Debug.Print "  "; myCulture; "     "; myDtfi.FullDateTimePattern
     
     #If Not Mac Then
         Dim messageBoxText As String
-        messageBoxText = "  " & myCulture & "     " & myDTFI.FullDateTimePattern
+        messageBoxText = "  " & myCulture & "     " & myDtfi.FullDateTimePattern
         WinAPIUser32.MessageBoxW 0, StrPtr(messageBoxText), StrPtr("Culture FullDateTimePattern"), 0
     #End If
 End Sub

@@ -21,9 +21,9 @@ Public Sub DateTimeFormatInfoYearMonthPattern()
 End Sub
 
 Private Sub PrintPattern(ByVal myCulture As String)
-    Dim myDTFI As DotNetLib.DateTimeFormatInfo
-    Set myDTFI = CultureInfo.CreateFromName(myCulture, False).DateTimeFormat
-    Debug.Print "  "; myCulture; "     "; myDTFI.YearMonthPattern
+    Dim myDtfi As DotNetLib.DateTimeFormatInfo
+    Set myDtfi = CultureInfo.CreateFromName(myCulture, False).DateTimeFormat
+    Debug.Print "  "; myCulture; "     "; myDtfi.YearMonthPattern
 End Sub
 
 '/*

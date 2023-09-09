@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeCompareToExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 10, 2023
-'@LastModified August 4, 2023
+'@LastModified September 6, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.compareto?view=netframework-4.8.1#system-datetime-compareto(system-datetime)
 
@@ -62,7 +62,7 @@ Public Sub DateTimeCompareTo2()
    Set theDay = DateTime.CreateFromDate(DateTime.Today.Year, 7, 28)
    Dim compareValue As Long
    On Error GoTo ErrorHandler
-      compareValue = theDay.CompareTo2(DateTime.Today)
+      compareValue = theDay.CompareTo(DateTime.Today)
    On Error GoTo 0
    If (compareValue < 0) Then
       Debug.Print theDay.ToString2("d") & " is in the past."
@@ -74,7 +74,7 @@ Public Sub DateTimeCompareTo2()
 
 CleanExit:
 Exit Sub
-    
+
 ErrorHandler:
    Debug.Print "Value is not a DateTime"
    Debug.Print Err.Number, Err.Description

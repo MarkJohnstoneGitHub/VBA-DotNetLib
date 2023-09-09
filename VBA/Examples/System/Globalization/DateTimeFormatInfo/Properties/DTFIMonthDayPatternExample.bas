@@ -21,13 +21,13 @@ Public Sub DateTimeFormatInfoMonthDayPattern()
 End Sub
 
 Private Sub PrintPattern(ByVal myCulture As String)
-    Dim myDTFI As DotNetLib.DateTimeFormatInfo
-    Set myDTFI = CultureInfo.CreateFromName(myCulture, False).DateTimeFormat
-    Debug.Print "  "; myCulture; "     "; myDTFI.MonthDayPattern
+    Dim myDtfi As DotNetLib.DateTimeFormatInfo
+    Set myDtfi = CultureInfo.CreateFromName(myCulture, False).DateTimeFormat
+    Debug.Print "  "; myCulture; "     "; myDtfi.MonthDayPattern
     
     #If Not Mac Then
         Dim messageBoxText As String
-        messageBoxText = "  " & myCulture & "     " & myDTFI.MonthDayPattern
+        messageBoxText = "  " & myCulture & "     " & myDtfi.MonthDayPattern
         WinAPIUser32.MessageBoxW 0, StrPtr(messageBoxText), StrPtr("Culture MonthDayPattern"), 0
     #End If
 End Sub

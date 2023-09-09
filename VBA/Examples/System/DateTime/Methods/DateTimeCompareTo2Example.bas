@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeCompareTo2Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 5, 2023
-'@LastModified August 5, 2023
+'@LastModified September 9, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.compareto?view=netframework-4.8.1#system-datetime-compareto(system-object)
 
