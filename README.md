@@ -9,14 +9,17 @@ Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globali
  
 **Status: Latest Updates**
 
+**DotNetLib Update September 9th, 2023** 
+- For DateTime, DateTimeOffset, TimeSpan
+   - Merged member ToString4(string format, IFormatProvider provider) and replace with ToString2(string format, IFormatProvider provider = null)
+   - Add  IComparable, IFormattable interfaces
+- Added Console.cls Not fully functional (Work in progress)
+
+
 **DotNetLib Update September 5th, 2023** 
  - Added [TextInfo Class](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.textinfo?view=netframework-4.8.1). Properties for [CultureInfo.TextInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo.textinfo?view=netframework-4.8.1) now available.
  - Added VBA wrapper TextInfo singleton class for TextInfo.ReadOnly(TextInfo) method.
  - Todo update [Ms-Excel VBADotNetLib.xlsm](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/Ms-Excel/VBADotNetLib.xlsm)
-
-**DotNetLib Update September 3rd, 2023** 
- - For DateTime and DateTimeOffset renamed DateOnly property to Date property to be consistent with .Net  Framework. 
- - Updated all effected examples
   
  **Dependencies:**
  - [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
@@ -80,6 +83,10 @@ Or replace with non-generic equivalent.  To enforce type safety in VBA create a 
 VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
 
 **Update History**
+
+**DotNetLib Update September 3rd, 2023** 
+ - For DateTime and DateTimeOffset renamed DateOnly property to Date property to be consistent with .Net  Framework. 
+ - Updated all effected examples
 
 **DotNetLib Update September 2nd, 2023** 
  - Fixed issues with [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1)
