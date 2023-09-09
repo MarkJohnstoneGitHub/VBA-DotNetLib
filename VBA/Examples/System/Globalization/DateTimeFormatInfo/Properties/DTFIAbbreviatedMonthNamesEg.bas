@@ -4,7 +4,7 @@ Attribute VB_Name = "DTFIAbbreviatedMonthNamesEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 1, 2023
-'@LastModified September 1, 2023
+'@LastModified September 9, 2023
 
 '@Reference
 ' https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.abbreviatedmonthnames?view=netframework-4.8.1#examples
@@ -35,7 +35,7 @@ Public Sub DateTimeFormatInfoAbbreviatedMonthNames()
     
     Dim ctr As Long
     For ctr = 0 To dtfi.Calendar.GetMonthsInYear(dat.Year) - 1
-        Debug.Print dat.AddMonths(ctr).ToString4("dd MMM yyyy", dtfi)
+        Debug.Print dat.AddMonths(ctr).ToString2("dd MMM yyyy", dtfi)
     Next
 End Sub
 

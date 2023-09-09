@@ -4,7 +4,7 @@ Attribute VB_Name = "DTFITimeSeparatorExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 4, 2023
-'@LastModified September 4, 2023
+'@LastModified September 9, 2023
 
 '@Reference
 ' https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.timeseparator?view=netframework-4.8.1#examples
@@ -27,7 +27,7 @@ Public Sub DateTimeFormatInfoTimeSeparator()
     
     Dim fmt As Variant
     For Each fmt In formats
-        Debug.Print fmt; ": "; value.ToString4(fmt, dtfi)
+        Debug.Print fmt; ": "; value.ToString2(fmt, dtfi)
     Next
     
 End Sub
