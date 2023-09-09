@@ -10,6 +10,10 @@ Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globali
 **Status: Latest Updates**
 
 **DotNetLib Update September 9th, 2023** 
+- For DateTime, DateTimeOffset, TimeSpan
+   - Merged member ToString4(string format, IFormatProvider provider) and replace with ToString2(string format, IFormatProvider provider = null)
+   - Add  IComparable, IFormattable interfaces
+- Added Console.cls Not fully functional (Work in progress)
 
 
 **DotNetLib Update September 5th, 2023** 
