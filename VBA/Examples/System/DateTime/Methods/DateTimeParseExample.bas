@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeParseExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 12, 2023
-'@LastModified August 4, 2023
+'@LastModified September 9, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.parse?view=netframework-4.8.1#system-datetime-parse(system-string)
 
@@ -14,6 +14,18 @@ Attribute VB_Name = "DateTimeParseExample"
 
 Option Explicit
 
+' The following example parses the string representation of several date and time values by:
+'
+' Using the default format provider, which provides the formatting conventions of the current
+' culture of the computer used to produce the example output. The output from this example
+' reflects the formatting conventions of the en-US culture.
+'
+' Using the default style value, which is AllowWhiteSpaces.
+'
+' It handles the FormatException exception that is thrown when the method tries to parse the
+' string representation of a date and time by using some other culture's formatting conventions.
+' It also shows how to successfully parse a date and time value that does not use the formatting
+' conventions of the current culture.
 Public Sub DateTimeParse()
    ' Assume the current culture is en-US.
    ' The date is February 16, 2008, 12 hours, 15 minutes and 12 seconds.
