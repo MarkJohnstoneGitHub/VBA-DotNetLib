@@ -290,15 +290,7 @@ namespace DotNetLib.System
         //TODO : Check implementation public int CompareTo(object value)
         public int CompareTo(object value)
         {
-            return _dateTime.CompareTo(value.Unwrap()); //TODO Causing MS-Access to hang ???
-            //const string Arg_MustBeDateTime = "Object must be of type DateTime.";
-
-            //if (value == null) return 1;
-            //if (!(value is DateTime dt))
-            //{
-            //    throw new ArgumentException(Arg_MustBeDateTime);
-            //}
-            //return _dateTime.CompareTo(dt.WrappedDateTime);
+            return _dateTime.CompareTo(value.Unwrap());
         }
 
         /// <summary>
@@ -306,9 +298,14 @@ namespace DotNetLib.System
         /// </summary>
         /// <param name="value">The object to compare to the current instance.</param>
         /// <returns>A signed number indicating the relative values of this instance and the value parameter.</returns>
-        public int CompareTo2(DateTime value)
+        public int CompareTo(DateTime value)
         {
             return _dateTime.CompareTo(value.WrappedDateTime);
+        }
+
+        public int CompareTo2(object value)
+        {
+            return _dateTime.CompareTo(value.Unwrap());
         }
 
         /// <summary>
@@ -415,13 +412,8 @@ namespace DotNetLib.System
             return _dateTime.GetDateTimeFormats();
         }
 
-        public string[] GetDateTimeFormats2(IFormatProvider provider)
-        {
-            return _dateTime.GetDateTimeFormats(DateTimeFormatInfo.Unwrap(provider));
-        }
-
         // @Note: Changed parameter from char to string
-        public string[] GetDateTimeFormats3(string format, IFormatProvider provider = null)
+        public string[] GetDateTimeFormats2(string format, IFormatProvider provider = null)
         {
             if (format.Length != 1)
             {
@@ -435,6 +427,10 @@ namespace DotNetLib.System
             return _dateTime.GetDateTimeFormats(format[0], DateTimeFormatInfo.Unwrap(provider));
         }
 
+        public string[] GetDateTimeFormats3(IFormatProvider provider)
+        {
+            return _dateTime.GetDateTimeFormats(DateTimeFormatInfo.Unwrap(provider));
+        }
 
         /// <summary>
         /// Returns the hash code for this instance.
@@ -614,10 +610,10 @@ namespace DotNetLib.System
             return _dateTime.ToString(DateTimeFormatInfo.Unwrap(provider));
         }
 
-        public string ToString4(string format, IFormatProvider provider)
-        {
-            return _dateTime.ToString(format, DateTimeFormatInfo.Unwrap(provider));
-        }
+        //public string ToString4(string format, IFormatProvider provider)
+        //{
+        //    return _dateTime.ToString(format, DateTimeFormatInfo.Unwrap(provider));
+        //}
 
         public string ToString(string format, IFormatProvider formatProvider)
         {

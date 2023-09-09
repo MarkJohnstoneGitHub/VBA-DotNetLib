@@ -125,11 +125,11 @@ namespace DotNetLib.System
         [Description("Returns a new DateTime that adds the specified number of years to the value of this instance.")]
         DateTime AddYears(int value);
 
-        [Description("Compares the value of this instance to a specified object that contains a specified DateTime value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.")]
-        int CompareTo(object value);
-
         [Description("Compares the value of this instance to a specified DateTime value and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.")]
-        int CompareTo2(DateTime value);
+        int CompareTo(DateTime value);
+
+        [Description("Compares the value of this instance to a specified object that contains a specified DateTime value, and returns an integer that indicates whether this instance is earlier than, the same as, or later than the specified DateTime value.")]
+        int CompareTo2(object value);
 
         [Description("Returns a value indicating whether the value of this instance is equal to the value of the specified DateTime instance.")]
         bool Equals(DateTime value);
@@ -140,12 +140,11 @@ namespace DotNetLib.System
         [Description("Converts the value of this instance to all the string representations supported by the standard date and time format specifiers.")]
         string[] GetDateTimeFormats();
 
-        [Description("Converts the value of this instance to all the string representations supported by the standard date and time format specifiers and the specified culture-specific formatting information.")]
-        string[] GetDateTimeFormats2(IFormatProvider provider);
-
         [Description("Converts the value of this instance to all the string representations supported by the specified standard date and time format specifier and culture-specific formatting information.")]
-        string[] GetDateTimeFormats3(string format, IFormatProvider provider = null);
+        string[] GetDateTimeFormats2(string format, IFormatProvider provider = null);
 
+        [Description("Converts the value of this instance to all the string representations supported by the standard date and time format specifiers and the specified culture-specific formatting information.")]
+        string[] GetDateTimeFormats3(IFormatProvider provider);
 
         [Description("Returns the hash code for this instance.")]
         int GetHashCode();
@@ -189,14 +188,11 @@ namespace DotNetLib.System
         [Description("Converts the value of the current DateTime object to its equivalent string representation using the formatting conventions of the current culture.")]
         string ToString();
 
-        [Description("Converts the value of the current DateTime object to its equivalent string representation using the specified format and the formatting conventions of the current culture.")]
+        [Description("Converts the value of the current DateTime object to its equivalent string representation using the specified format and culture-specific format information.")]
         string ToString2(string format, IFormatProvider provider = null);
 
         [Description("Converts the value of the current DateTime object to its equivalent string representation using the specified culture-specific format information.")]
         string ToString3(IFormatProvider provider);
-
-        [Description("Converts the value of the current DateTime object to its equivalent string representation using the specified format and culture-specific format information.")]
-        string ToString4(string format, IFormatProvider provider);
 
         [Description("Converts the value of the current DateTime object to Coordinated Universal Time (UTC).")]
         DateTime ToUniversalTime();

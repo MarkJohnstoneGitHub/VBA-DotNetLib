@@ -145,6 +145,5 @@ namespace DotNetLib.System
 
         [Description("Subtracts a specified time interval from a specified date and time and returns a new date and time.")]
         DateTime Subtraction2(DateTime dt, TimeSpan ts);
-
     }
 }

@@ -18,7 +18,7 @@ namespace DotNetLib.System
     [ProgId("DotNetLib.System.DateTimeOffset")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IDateTimeOffset))]
-    public class DateTimeOffset : IComparable, IDateTimeOffset, IWrappedObject
+    public class DateTimeOffset : IComparable, IFormattable, IDateTimeOffset, IWrappedObject
     {
         private GSystem.DateTimeOffset _dateTimeOffset;
 
@@ -173,7 +173,6 @@ namespace DotNetLib.System
         {
             //TODO : Check implementation for some reason implemented differently then DateTime and TimeSpan? Not public?
             //return _dateTimeOffset.CompareTo((GSystem.DateTimeOffset)value.Unwrap()); 
-
             const string Arg_MustBeDateTimeOffset = "Object must be of type (DateTimeOffset.";
 
             if (value == null) return 1;
@@ -184,9 +183,14 @@ namespace DotNetLib.System
             return _dateTimeOffset.CompareTo(dto.WrappedDateTimeOffset);
         }
 
-        public int CompareTo2(DateTimeOffset other)
+        public int CompareTo(DateTimeOffset other)
         {
             return _dateTimeOffset.CompareTo(other.WrappedDateTimeOffset);
+        }
+
+        public int CompareTo2(object value)
+        {
+            return CompareTo(value);
         }
 
         public bool Equals(DateTimeOffset other)
@@ -294,9 +298,16 @@ namespace DotNetLib.System
             return _dateTimeOffset.ToString();
         }
 
-        public string ToString2(string format)
+        public string ToString(string format, IFormatProvider formatProvider)
         {
-            return _dateTimeOffset.ToString(format);
+            return _dateTimeOffset.ToString(format, DateTimeFormatInfo.Unwrap(formatProvider));
+        }
+
+        public string ToString2(string format, IFormatProvider provider = null)
+        {
+            if (provider == null)
+                return _dateTimeOffset.ToString(format);
+            return _dateTimeOffset.ToString(format, DateTimeFormatInfo.Unwrap(provider));
         }
 
         public string ToString3(IFormatProvider formatProvider)
@@ -304,10 +315,10 @@ namespace DotNetLib.System
             return _dateTimeOffset.ToString(DateTimeFormatInfo.Unwrap(formatProvider));
         }
 
-        public string ToString4(string format, IFormatProvider formatProvider)
-        {
-            return _dateTimeOffset.ToString(format, DateTimeFormatInfo.Unwrap(formatProvider));
-        }
+        //public string ToString4(string format, IFormatProvider formatProvider)
+        //{
+        //    return _dateTimeOffset.ToString(format, DateTimeFormatInfo.Unwrap(formatProvider));
+        //}
 
         public DateTimeOffset ToUniversalTime()
         {

@@ -84,11 +84,11 @@ namespace DotNetLib.System
         [Description("Returns a new TimeSpan object whose value is the sum of the specified TimeSpan object and this instance.")]
         TimeSpan Add(TimeSpan ts);
 
-        [Description("Compares this instance to a specified object and returns an integer that indicates whether this instance is shorter than, equal to, or longer than the specified object.")]
-        int CompareTo(object value);
-
         [Description("Compares this instance to a specified TimeSpan object and returns an integer that indicates whether this instance is shorter than, equal to, or longer than the TimeSpan object.")]
-        int CompareTo2(TimeSpan value);
+        int CompareTo(TimeSpan value);
+
+        [Description("Compares this instance to a specified object and returns an integer that indicates whether this instance is shorter than, equal to, or longer than the specified object.")]
+        int CompareTo2(object value);
 
         [Description("Returns a new TimeSpan object whose value is the absolute value of the current TimeSpan object.")]
         TimeSpan Duration();
@@ -111,11 +111,17 @@ namespace DotNetLib.System
         [Description("Converts the value of the current TimeSpan object to its equivalent string representation.")]
         string ToString();
 
-        [Description("Converts the value of the current TimeSpan object to its equivalent string representation by using the specified format.")]
-        string ToString2(string format);
-
         [Description("Converts the value of the current TimeSpan object to its equivalent string representation by using the specified format and culture-specific formatting information.")]
-        string ToString3(string format, IFormatProvider formatProvider);
+        string ToString2(string format, IFormatProvider formatProvider = null);
+
+        //[Description("Converts the value of the current TimeSpan object to its equivalent string representation by using the specified format.")]
+        //string ToString2(string format);
+
+        //[Description("Converts the value of the current TimeSpan object to its equivalent string representation by using the specified format and culture-specific formatting information.")]
+        //string ToString3(string format, IFormatProvider formatProvider);
+
+
+
 
     }
 }

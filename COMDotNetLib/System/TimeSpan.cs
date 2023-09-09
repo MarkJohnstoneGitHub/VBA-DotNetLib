@@ -16,7 +16,7 @@ namespace DotNetLib.System
     [Description("Represents a time interval.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(ITimeSpan))]
-    public class TimeSpan : ITimeSpan, IWrappedObject 
+    public class TimeSpan : IComparable, IFormattable, ITimeSpan,  IWrappedObject 
     {
         private GSystem.TimeSpan _timeSpan;
 
@@ -121,20 +121,16 @@ namespace DotNetLib.System
         public int CompareTo(object value)
         {
             return _timeSpan.CompareTo(value.Unwrap());
-
-            //const string Arg_MustBeTimeSpan = "Object must be of type TimeSpan.";
-
-            //if (value == null) return 1;
-            //if (!(value is TimeSpan ts))
-            //{
-            //    throw new ArgumentException(Arg_MustBeTimeSpan);
-            //}
-            //return _timeSpan.CompareTo(ts.WrappedTimeSpan);
         }
 
-        public int CompareTo2(TimeSpan value)
+        public int CompareTo(TimeSpan value)
         {
             return _timeSpan.CompareTo(value.WrappedTimeSpan);
+        }
+
+        public int CompareTo2(object value)
+        {
+            return _timeSpan.CompareTo(value.Unwrap());
         }
 
         public TimeSpan Duration()
@@ -243,13 +239,15 @@ namespace DotNetLib.System
             return _timeSpan.ToString();
         }
 
-        public string ToString2(string format)
+        public string ToString(string format, IFormatProvider formatProvider)
         {
-            return _timeSpan.ToString(format);
+            return _timeSpan.ToString(format, DateTimeFormatInfo.Unwrap(formatProvider));
         }
 
-        public string ToString3(string format, IFormatProvider formatProvider)
+        public string ToString2(string format, IFormatProvider formatProvider = null)
         {
+            if (formatProvider == null)
+                return _timeSpan.ToString(format);
             return _timeSpan.ToString(format, DateTimeFormatInfo.Unwrap(formatProvider));
         }
 

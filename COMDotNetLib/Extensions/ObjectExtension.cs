@@ -1,5 +1,8 @@
-﻿namespace DotNetLib.Extensions
+﻿using System.Runtime.InteropServices;
+
+namespace DotNetLib.Extensions
 {
+    [ComVisible(false)]
     public static class ObjectExtension
     {
         public static object Unwrap(this object obj) 
