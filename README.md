@@ -51,9 +51,6 @@ Ms Access database [VBADotNetLibrary.accdb](https://github.com/MarkJohnstoneGitH
     - https://stackoverflow.com/questions/13185159/how-to-pass-byte-arrays-as-udt-properties-from-vb6-vba-to-c-sharp-com-dll
     - Fixed by implementing set methods and making set property not COM visible.
   - TimeZoneInfo.Local renamed member to Locale. 
-  - Require to investigate how to correctly marshal arrays 
-  - See [PassingParameterArraysByReference](https://www.l3harrisgeospatial.com/docs/PassingParameterArraysByReference.html)
-  - [pass-an-array-from-vba-to-c-sharp-using-com-interop](https://stackoverflow.com/questions/2027758/pass-an-array-from-vba-to-c-sharp-using-com-interop)
   - [VBA Interface not showing property in watch window](https://stackoverflow.com/questions/61232755/vba-interface-not-showing-property-in-watch-window)
    -  [how-to-get-property-values-of-classes-that-implement-an-interface-in-the-locals](https://stackoverflow.com/questions/29146243/how-to-get-property-values-of-classes-that-implement-an-interface-in-the-locals)
    -  Work around implement interfaces required in the DotNetLib type library.  They appear to work fine for type library interfaces but not VBA interfaces.
@@ -167,4 +164,8 @@ Implement interfaces in DotNetLib type library as work around for [VBA Interface
   [DE0006: Non-generic collections shouldn't be used](https://github.com/dotnet/platform-compat/blob/master/docs/DE0006.md)
  
   [System.Collections.Generic Namespace](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic?view=netframework-4.8.1)
+
+Require to investigate how to correctly marshal arrays 
+  - See [PassingParameterArraysByReference](https://www.l3harrisgeospatial.com/docs/PassingParameterArraysByReference.html)
+  - [pass-an-array-from-vba-to-c-sharp-using-com-interop](https://stackoverflow.com/questions/2027758/pass-an-array-from-vba-to-c-sharp-using-com-interop)
   
