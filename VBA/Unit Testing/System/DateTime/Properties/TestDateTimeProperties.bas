@@ -18,11 +18,17 @@ Option Private Module
 Private Assert As Object
 Private Fakes As Object
 
+Private DaysToMonth365() As Long
+Private DaysToMonth366() As Long
+
 '@ModuleInitialize
 Private Sub ModuleInitialize()
     'this method runs once per module.
     Set Assert = CreateObject("Rubberduck.AssertClass")
     Set Fakes = CreateObject("Rubberduck.FakesProvider")
+    
+    Arrays.ToArray DaysToMonth365, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365
+    Arrays.ToArray DaysToMonth366, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366
 End Sub
 
 '@ModuleCleanup
@@ -58,7 +64,7 @@ Private Sub TestingDateTimeDate()
     Set testDateTime = date1.Date()
 
     'Assert:
-    Assert.areEqual expectedDateOnly.Ticks, testDateTime.Ticks
+    Assert.areEqual testDateTime.Ticks, expectedDateOnly.Ticks
 TestExit:
     Exit Sub
 TestFail:
@@ -82,7 +88,7 @@ Attribute TestingDateTimeDay.VB_Description = "Testing the DateTime.Day property
     dayResult = moment.Day
 
     'Assert:
-    Assert.areEqual expectedDay, moment.Day
+    Assert.areEqual moment.Day, expectedDay
 TestExit:
     Exit Sub
 TestFail:
@@ -103,7 +109,7 @@ Attribute TestingDateTimeDayOfWeek.VB_Description = "Testing the DateTime.DayOfW
     'Act:
 
     'Assert:
-    Assert.areEqual DayOfWeek.DayOfWeek_Thursday, dt.DayOfWeek
+    Assert.areEqual dt.DayOfWeek, DayOfWeek.DayOfWeek_Thursday
 TestExit:
     Exit Sub
 TestFail:
@@ -151,7 +157,7 @@ Attribute TestingDateTimeHour.VB_Description = "Testing the DateTime.Hour proper
     'Act:
 
     'Assert:
-    Assert.areEqual expectedHour, moment.Hour
+    Assert.areEqual moment.Hour, expectedHour
 TestExit:
     Exit Sub
 TestFail:
@@ -160,42 +166,20 @@ TestFail:
 End Sub
 
 '@TestMethod("DateTime Properties")
-'@Description("Testing the DateTime.Minute property")
-Private Sub TestingDateTimeMinute()
-Attribute TestingDateTimeMinute.VB_Description = "Testing the DateTime.Minute property"
+'@Description("Testing the DateTime.Kind property")
+Private Sub TestingDateTimeKind()
+Attribute TestingDateTimeKind.VB_Description = "Testing the DateTime.Kind property"
     On Error GoTo TestFail
     
     'Arrange:
-    Const expectedMinute As Long = 57
-    Dim moment  As DotNetLib.DateTime
-    Set moment = DateTime.CreateFromDateTime(1999, 1, 13, 3, expectedMinute, 32, 11)
+    Const expectedMillisecond As Long = 11
+    Dim dt  As DotNetLib.DateTime
+    Set dt = DateTime.CreateFromDateTimeKind(2010, 8, 18, 16, 32, 0, DateTimeKind.DateTimeKind_Local)
     
     'Act:
 
     'Assert:
-    Assert.areEqual expectedMinute, moment.Minute
-TestExit:
-    Exit Sub
-TestFail:
-    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
-    Resume TestExit
-End Sub
-
-'@TestMethod("DateTime Properties")
-'@Description("Testing the DateTime.Second property")
-Private Sub TestingDateTimeSecond()
-Attribute TestingDateTimeSecond.VB_Description = "Testing the DateTime.Second property"
-    On Error GoTo TestFail
-    
-    'Arrange:
-    Const expectedSecond As Long = 32
-    Dim moment  As DotNetLib.DateTime
-    Set moment = DateTime.CreateFromDateTime(1999, 1, 13, 3, 57, expectedSecond, 11)
-    
-    'Act:
-
-    'Assert:
-    Assert.areEqual expectedSecond, moment.Second
+    Assert.areEqual dt.Kind, DateTimeKind.DateTimeKind_Local
 TestExit:
     Exit Sub
 TestFail:
@@ -217,7 +201,143 @@ Attribute TestingDateTimeMillisecond.VB_Description = "Testing the DateTime.Mill
     'Act:
 
     'Assert:
-    Assert.areEqual expectedMillisecond, moment.Millisecond
+    Assert.areEqual moment.Millisecond, expectedMillisecond
+TestExit:
+    Exit Sub
+TestFail:
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Resume TestExit
+End Sub
+
+'@TestMethod("DateTime Properties")
+'@Description("Testing the DateTime.Minute property")
+Private Sub TestingDateTimeMinute()
+Attribute TestingDateTimeMinute.VB_Description = "Testing the DateTime.Minute property"
+    On Error GoTo TestFail
+    
+    'Arrange:
+    Const expectedMinute As Long = 57
+    Dim moment  As DotNetLib.DateTime
+    Set moment = DateTime.CreateFromDateTime(1999, 1, 13, 3, expectedMinute, 32, 11)
+    
+    'Act:
+
+    'Assert:
+    Assert.areEqual moment.Minute, expectedMinute
+TestExit:
+    Exit Sub
+TestFail:
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Resume TestExit
+End Sub
+
+'@TestMethod("DateTime Properties")
+'@Description("Testing the DateTime.Second property")
+Private Sub TestingDateTimeSecond()
+Attribute TestingDateTimeSecond.VB_Description = "Testing the DateTime.Second property"
+    On Error GoTo TestFail
+    
+    'Arrange:
+    Const expectedSecond As Long = 32
+    Dim moment  As DotNetLib.DateTime
+    Set moment = DateTime.CreateFromDateTime(1999, 1, 13, 3, 57, expectedSecond, 11)
+    
+    'Act:
+
+    'Assert:
+    Assert.areEqual moment.Second, expectedSecond
+TestExit:
+    Exit Sub
+TestFail:
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Resume TestExit
+End Sub
+
+'@TestMethod("DateTime Properties")
+'@Description("Testing the DateTime.Ticks property")
+Private Sub TestingDateTimeTicks()
+Attribute TestingDateTimeTicks.VB_Description = "Testing the DateTime.Ticks property"
+    On Error GoTo TestFail
+    
+    'Arrange:
+    Const expectedTicks As LongLong = "638299008000000000"
+    
+    Dim inputYear As Long
+    inputYear = 2023
+    Dim inputMonth As Long
+    inputMonth = 9
+    Dim inputDay As Long
+    inputDay = 10
+    Dim inputHour As Long
+    inputHour = 0
+    Dim inputMinute As Long
+    inputMinute = 0
+    Dim inputSecond As Long
+    inputSecond = 0
+    Dim inputMillisecond As Long
+    inputMillisecond = 0
+    
+    Dim testDateTime As DotNetLib.DateTime
+    Set testDateTime = DateTime.CreateFromDateTime(inputYear, inputMonth, inputDay, inputHour, inputMinute, inputSecond, inputMillisecond)
+        
+    'Act:
+    Dim expectedTicksCalculated As LongLong
+    expectedTicksCalculated = DateToTicks(inputYear, inputMonth, inputDay) + TimeToTicks(inputHour, inputMinute, inputSecond)
+    expectedTicksCalculated = expectedTicksCalculated + inputMillisecond * TimeSpan.TicksPerMillisecond
+    
+    'Assert:
+    Assert.areEqual testDateTime.Ticks, expectedTicksCalculated
+    Assert.areEqual testDateTime.Ticks, expectedTicks
+TestExit:
+    Exit Sub
+TestFail:
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Resume TestExit
+End Sub
+
+'https://referencesource.microsoft.com/#mscorlib/system/timespan.cs,262a2ffd9cece820
+Private Function TimeToTicks(ByVal pHour As Long, ByVal pMinute As Long, ByVal pSecond As Long) As LongLong
+    Dim totalSeconds As LongLong
+    totalSeconds = CLngLng(pHour) * 3600 + pMinute * 60 + pSecond
+End Function
+
+'https://referencesource.microsoft.com/#mscorlib/system/datetime.cs,256
+Private Function DateToTicks(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long) As LongLong
+    Dim days() As Long
+    days = IIf(DateTime.IsLeapYear(pYear), DaysToMonth366, DaysToMonth365)
+    Dim y As Long
+    y = pYear - 1
+    DateToTicks = CLngLng(y * 365 + y / 4 - y / 100 + y / 400 + days(pMonth - 1) + pDay - 1) * TimeSpan.TicksPerDay
+End Function
+
+'@TestMethod("DateTime Properties")
+'@Description("Testing the DateTime.TimeOfDay property")
+Private Sub TestingDateTimeTimeOfDay()
+Attribute TestingDateTimeTimeOfDay.VB_Description = "Testing the DateTime.TimeOfDay property"
+    On Error GoTo TestFail
+    
+    'Arrange:
+    Dim pvtHours As Long
+    pvtHours = 9
+    Dim pvtMinutes As Long
+    pvtMinutes = 28
+    Dim pvtSeconds As Long
+    pvtSeconds = 0
+    
+    Dim dt  As DotNetLib.DateTime
+    Set dt = DateTime.CreateFromDateTime(2013, 9, 14, pvtHours, pvtMinutes, pvtSeconds)
+    
+    'Act:
+    Dim ts As DotNetLib.TimeSpan
+    Set ts = dt.TimeOfDay
+    
+
+    'Assert:
+    Assert.areEqual ts.Hours, pvtHours
+    Assert.areEqual ts.Minutes, pvtMinutes
+    Assert.areEqual ts.Seconds, pvtSeconds
+    Assert.areEqual ts.Milliseconds, CLng(0)
+    Assert.areEqual ts.Ticks, dt.Ticks
 TestExit:
     Exit Sub
 TestFail:
