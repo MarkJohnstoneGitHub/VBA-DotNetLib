@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeParse2Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 18, 2023
-'@LastModified August 18, 2023
+'@LastModified September 9, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.parse?view=netframework-4.8.1#system-datetime-parse(system-string-system-iformatprovider)
 
@@ -41,7 +41,7 @@ Public Sub DateTimeParse2()
             On Error Resume Next
             Set dateValue = DateTime.Parse2(dateString, culture)
             If Try Then
-                Debug.Print "   Converted '"; dateString; "' to "; dateValue.ToString4("f", culture); "."
+                Debug.Print "   Converted '"; dateString; "' to "; dateValue.ToString2("f", culture); "."
             ElseIf Catch(FormatException) Then
                 Debug.Print "   Unable to convert '"; dateString; "' for culture "; culture.Name
             End If

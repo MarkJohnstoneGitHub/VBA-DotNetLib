@@ -21,7 +21,7 @@ Attribute TimeSpanTotalHours.VB_Description = "The following example instantiate
    Debug.Print "Value of TimeSpan: " & interval.ToString
 
    Debug.Print interval.TotalHours & " hours, as follows:"
-   Debug.Print "   Hours:        " & interval.Days * 24 + interval.Hours
+   Debug.Print "   Hours:        " & interval.days * 24 + interval.Hours
    Debug.Print "   Minutes:      " & interval.Minutes
    Debug.Print "   Seconds:      " & interval.Seconds
    Debug.Print "   Milliseconds: " & interval.Milliseconds

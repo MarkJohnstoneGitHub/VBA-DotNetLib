@@ -315,11 +315,6 @@ namespace DotNetLib.System
             return _dateTimeOffset.ToString(DateTimeFormatInfo.Unwrap(formatProvider));
         }
 
-        //public string ToString4(string format, IFormatProvider formatProvider)
-        //{
-        //    return _dateTimeOffset.ToString(format, DateTimeFormatInfo.Unwrap(formatProvider));
-        //}
-
         public DateTimeOffset ToUniversalTime()
         {
             return new DateTimeOffset(_dateTimeOffset.ToUniversalTime());

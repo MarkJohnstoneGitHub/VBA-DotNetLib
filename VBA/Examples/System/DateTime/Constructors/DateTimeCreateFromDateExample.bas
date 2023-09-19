@@ -24,6 +24,7 @@ End Sub
 '      8/18/2010 12:00:00 AM
 
 
+'@TODO Implement Console to open the command window etc.
 Public Sub DateTimeCreateFromDate2()
     Dim date1 As IDateTime
     Set date1 = DateTime.CreateFromDate(2010, 8, 18)

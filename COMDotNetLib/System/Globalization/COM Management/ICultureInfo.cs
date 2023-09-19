@@ -18,11 +18,18 @@ namespace DotNetLib.System.Globalization
     {
         // Properties
 
-        Calendar Calendar
+        //Calendar Calendar
+        //{
+        //    [Description("Gets the default calendar used by the culture.")]
+        //    get;
+        //}
+
+        ICalendar Calendar
         {
             [Description("Gets the default calendar used by the culture.")]
             get;
         }
+
 
         CompareInfo CompareInfo
         {
@@ -94,10 +101,16 @@ namespace DotNetLib.System.Globalization
             set;
         }
 
-        Calendar[] OptionalCalendars 
+        //Calendar[] OptionalCalendars 
+        //{
+        //    [Description("Gets the list of calendars that can be used by the culture.")]
+        //    get; 
+        //}
+
+        ICalendar[] OptionalCalendars
         {
             [Description("Gets the list of calendars that can be used by the culture.")]
-            get; 
+            get;
         }
 
         CultureInfo Parent

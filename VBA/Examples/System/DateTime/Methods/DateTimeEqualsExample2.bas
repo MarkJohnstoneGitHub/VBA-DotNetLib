@@ -1,10 +1,10 @@
-Attribute VB_Name = "DateTimeEquals3Example"
+Attribute VB_Name = "DateTimeEqualsExample2"
 '@Folder "Examples.System.DateTime.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 4, 2023
-'@LastModified August 14, 2023
+'@LastModified September 10, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.equals?view=netframework-4.8.1#system-datetime-equals(system-datetime-system-datetime)
 Option Explicit

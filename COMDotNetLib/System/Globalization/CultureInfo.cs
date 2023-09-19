@@ -1,6 +1,7 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8.1
 // https://referencesource.microsoft.com/#mscorlib/system/globalization/cultureinfo.cs
 
+using DotNetLib.Extensions;
 using System;
 using System.ComponentModel;
 using System.Globalization;
@@ -21,6 +22,8 @@ namespace DotNetLib.System.Globalization
         private NumberFormatInfo _numberFormatInfo;
         private DateTimeFormatInfo _dateTimeFormatInfo;
         private TextInfo _textInfo;
+        private ICalendar _calendar;
+        private ICalendar[] _optionalCalendars;
 
         //private static ICultureInfo _currentCulture = new CultureInfo(GGlobalization.CultureInfo.CurrentCulture);
         //private static ICultureInfo _currentUICulture = new CultureInfo(GGlobalization.CultureInfo.CurrentUICulture);
@@ -71,10 +74,14 @@ namespace DotNetLib.System.Globalization
                 _numberFormatInfo = new NumberFormatInfo(_cultureInfo.NumberFormat);
                 _dateTimeFormatInfo = new DateTimeFormatInfo(_cultureInfo.DateTimeFormat);
                 _textInfo = new TextInfo(_cultureInfo.TextInfo);
+                _calendar = _cultureInfo.Calendar.Wrap();
+                _optionalCalendars = _cultureInfo.OptionalCalendars.Wrap();
             }
         }
 
-        public Calendar Calendar => _cultureInfo.Calendar;
+        //public Calendar Calendar => _cultureInfo.Calendar;
+
+        public ICalendar Calendar => _calendar;
 
         public CompareInfo CompareInfo => _cultureInfo.CompareInfo;
 
@@ -82,7 +89,7 @@ namespace DotNetLib.System.Globalization
 
         public DateTimeFormatInfo DateTimeFormat
         {
-            get => _dateTimeFormatInfo; // new DateTimeFormatInfo(_cultureInfo.DateTimeFormat)
+            get => _dateTimeFormatInfo;
             set 
             {
                 _cultureInfo.DateTimeFormat = value.WrappedDateTimeFormatInfo;
@@ -114,12 +121,15 @@ namespace DotNetLib.System.Globalization
             }
         }
 
-        public Calendar[] OptionalCalendars => _cultureInfo.OptionalCalendars;
+        //public Calendar[] OptionalCalendars => _cultureInfo.OptionalCalendars;
+
+        public ICalendar[] OptionalCalendars => _optionalCalendars;
+
 
         //TODO : Check implementation return new?
         public CultureInfo Parent => new CultureInfo(_cultureInfo.Parent);
 
-        public TextInfo TextInfo => _textInfo; // _cultureInfo.TextInfo;
+        public TextInfo TextInfo => _textInfo; 
 
         public string ThreeLetterISOLanguageName => _cultureInfo.ThreeLetterISOLanguageName;
 

@@ -76,7 +76,7 @@ Private Sub TestMethodDateTimeParse2()
 '            On Error Resume Next
 '            Set dateValue = DateTime.Parse2(dateString, culture)
 '            If Try Then
-'                Debug.Print "   Converted '"; dateString; "' to "; dateValue.ToString4("f", culture); "."
+'                Debug.Print "   Converted '"; dateString; "' to "; dateValue.ToString2("f", culture); "."
 '            ElseIf Catch(FormatException) Then
 '                Debug.Print "   Unable to convert '"; dateString; "' for culture "; culture.Name
 '            End If
@@ -128,7 +128,7 @@ End Sub
 '            On Error Resume Next
 '            Set dateValue = DateTime.Parse2(dateString, culture)
 '            If Try Then
-'                Debug.Print "   Converted '"; dateString; "' to "; dateValue.ToString4("f", culture); "."
+'                Debug.Print "   Converted '"; dateString; "' to "; dateValue.ToString2("f", culture); "."
 '            ElseIf Catch(FormatException) Then
 '                Debug.Print "   Unable to convert '"; dateString; "' for culture "; culture.Name
 '            End If

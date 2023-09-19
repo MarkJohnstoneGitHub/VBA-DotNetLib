@@ -4,6 +4,7 @@ using GSystem = global::System; // https://stackoverflow.com/questions/5681537/n
 using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System;
+using DotNetLib.System.Globalization;
 
 namespace DotNetLib.System
 {
@@ -29,7 +30,9 @@ namespace DotNetLib.System
         DateTimeOffset CreateFromDateTimeParts2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, TimeSpan pOffset);
 
         [Description("Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, millisecond, and offset of a specified calendar.")]
-        DateTimeOffset CreateFromDateTimeParts3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, GSystem.Globalization.Calendar calendar, TimeSpan pOffset);
+
+        DateTimeOffset CreateFromDateTimeParts3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar pCalendar, TimeSpan pOffset);
+        //DateTimeOffset CreateFromDateTimeParts3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, GSystem.Globalization.Calendar calendar, TimeSpan pOffset);
 
         [Description("Initializes a new instance of the DateTimeOffset structure using the specified number of ticks and offset.")]
         DateTimeOffset CreateFromTicks(long pTicks, TimeSpan pOffset);

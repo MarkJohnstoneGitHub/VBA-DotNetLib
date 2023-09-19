@@ -4,6 +4,8 @@ using GSystem = global::System;
 using System;
 using System.Runtime.InteropServices;
 using System.ComponentModel;
+using DotNetLib.System.Globalization;
+using DotNetLib.Extensions;
 
 namespace DotNetLib.System
 {
@@ -37,10 +39,17 @@ namespace DotNetLib.System
             return new DateTimeOffset(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pOffset);
         }
 
-        public DateTimeOffset CreateFromDateTimeParts3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, GSystem.Globalization.Calendar pCalendar, TimeSpan pOffset)
+        //public DateTimeOffset CreateFromDateTimeParts3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, GSystem.Globalization.Calendar pCalendar, TimeSpan pOffset)
+        //{
+        //    return new DateTimeOffset(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pCalendar, pOffset);
+        //}
+
+        public DateTimeOffset CreateFromDateTimeParts3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar pCalendar, TimeSpan pOffset)
         {
-            return new DateTimeOffset(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pCalendar, pOffset);
+            return new DateTimeOffset(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, (GSystem.Globalization.Calendar)pCalendar.Unwrap(), pOffset);
         }
+
+
 
         public DateTimeOffset CreateFromTicks(long pTicks, TimeSpan pOffset)
         {

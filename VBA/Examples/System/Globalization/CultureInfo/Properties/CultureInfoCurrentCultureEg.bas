@@ -39,5 +39,5 @@ Public Sub CultureInfoCurrentCultureV2()
 Attribute CultureInfoCurrentCultureV2.VB_Description = "The following example demonstrates how to change the CurrentCulture and CurrentUICulture of the current thread."
     ' Display the name of the current culture.
     Debug.Print "CurrentCulture is "; CultureInfo.CurrentCulture.Name; "."
-    Debug.Print CultureInfo.CurrentCulture.Calendar.ToString
+    Debug.Print CultureInfo.CurrentCulture.calendar.ToString
 End Sub

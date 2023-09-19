@@ -111,3 +111,4 @@ Private Sub Display(ByVal title As String, ByVal inputDt As IDateTime)
     Debug.Print "  ToUniversalTime: " & dtString & ", Kind = " & DateTimeKindHelper.ToString(dispDt.Kind)
     Debug.Print
 End Sub
+

@@ -30,9 +30,9 @@ Attribute DateTimeTicks.VB_Description = "The following example uses the Ticks p
     Debug.Print "Elapsed from the beginning of the century to " & currentDate.ToString2("f")
     Debug.Print "   " & VBA.format$(elapsedTicks * 100, "#,##0") & " nanoseconds"
     Debug.Print "   " & VBA.format$(elapsedTicks, "#,##0") & " ticks"
-    Debug.Print "   " & VBA.format$(elapsedSpan.TotalSeconds, "#,##0.00") & " seconds"
+    Debug.Print "   " & VBA.format$(elapsedSpan.totalSeconds, "#,##0.00") & " seconds"
     Debug.Print "   " & VBA.format$(elapsedSpan.TotalMinutes, "#,##0.00") & " minutes"
-    Debug.Print "   " & elapsedSpan.Days & " days, " & elapsedSpan.Hours & " hours, " & elapsedSpan.Minutes & " minutes, " & elapsedSpan.Seconds & " seconds"
+    Debug.Print "   " & elapsedSpan.days & " days, " & elapsedSpan.Hours & " hours, " & elapsedSpan.Minutes & " minutes, " & elapsedSpan.Seconds & " seconds"
 End Sub
 
 ' This example displays an output similar to the following:

@@ -34,7 +34,7 @@ Public Sub DateTimeFormatInfoAbbreviatedMonthNames()
     Set dat = DateTime.CreateFromDate(2012, 5, 28)
     
     Dim ctr As Long
-    For ctr = 0 To dtfi.Calendar.GetMonthsInYear(dat.Year) - 1
+    For ctr = 0 To dtfi.calendar.GetMonthsInYear(dat.Year) - 1
         Debug.Print dat.AddMonths(ctr).ToString2("dd MMM yyyy", dtfi)
     Next
 End Sub

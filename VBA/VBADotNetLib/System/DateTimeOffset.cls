@@ -17,7 +17,7 @@ Attribute VB_Description = "DateTimeOffset factory methods and static members."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v2.0 August 4, 2023
-'@LastModified August 17, 2023
+'@LastModified September 16, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -75,7 +75,7 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, millisecond, and offset of a specified calendar.")
-Public Function CreateFromDateTimeParts3(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pHour As Long, ByVal pMinute As Long, ByVal pSecond As Long, ByVal pMillisecond As Long, ByVal pCalendar As Calendar, ByVal pOffset As DotNetLib.TimeSpan) As DotNetLib.DateTimeOffset
+Public Function CreateFromDateTimeParts3(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pHour As Long, ByVal pMinute As Long, ByVal pSecond As Long, ByVal pMillisecond As Long, ByVal pCalendar As DotNetLib.ICalendar, ByVal pOffset As DotNetLib.TimeSpan) As DotNetLib.DateTimeOffset
 Attribute CreateFromDateTimeParts3.VB_Description = "Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, millisecond, and offset of a specified calendar."
     Set CreateFromDateTimeParts3 = this.DateTimeOffsetSingleton.CreateFromDateTimeParts3(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pCalendar, pOffset)
 End Function

@@ -1,4 +1,4 @@
-Attribute VB_Name = "RubberDuckExport"
+Attribute VB_Name = "RubberduckExport"
 Attribute VB_Description = "Rubberduck utility to export all components in the active project according to RD @Folder annotation"
 '@ModuleDescription("Rubberduck utility to export all components in the active project according to RD @Folder annotation")
 '@Folder "<Rubberduck Utilities>"
