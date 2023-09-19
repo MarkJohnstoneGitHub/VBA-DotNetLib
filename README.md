@@ -10,7 +10,7 @@ Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globali
 **Status: Latest Updates**
 
 **DotNetLib Update September 19th, 2023** 
-- Implemented ICalendar, updated CultureInfo for properties Calendar and OptionalCalendars which are now availbable and added the following calendars:
+- Implemented abstract class [Calendar ](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.calendar?view=netframework-4.8.1) as ICalendar, updated CultureInfo for properties Calendar and OptionalCalendars which are now availbable and added the following calendars:
    - [ChineseLunisolarCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.chineselunisolarcalendar?view=netframework-4.8.1)
    - [GregorianCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.gregoriancalendar?view=netframework-4.8.1)
    - [HebrewCalendar ](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.hebrewcalendar?view=netframework-4.8.1)
