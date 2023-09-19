@@ -9,6 +9,20 @@ Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globali
  
 **Status: Latest Updates**
 
+**DotNetLib Update September 19th, 2023** 
+- Implemented ICalendar, updated CultureInfo for properties Calendar and OptionalCalendars which are now availbable and added the following calendars:
+   - [ChineseLunisolarCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.chineselunisolarcalendar?view=netframework-4.8.1)
+   - [GregorianCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.gregoriancalendar?view=netframework-4.8.1)
+   - [HebrewCalendar ](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.hebrewcalendar?view=netframework-4.8.1)
+   - [HijriCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.hijricalendar?view=netframework-4.8.1)
+   - [JapaneseCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.japanesecalendar?view=netframework-4.8.1)
+   - [JulianCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.juliancalendar?view=netframework-4.8.1)
+   - [KoreanCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.koreancalendar?view=netframework-4.8.1)
+   - [PersianCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.persiancalendar?view=netframework-4.8.1)
+   - [TaiwanCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.taiwancalendar?view=netframework-4.8.1)
+   - [ThaiBuddhistCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.thaibuddhistcalendar?view=netframework-4.8.1)
+   - [UmAlQuraCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.umalquracalendar?view=netframework-4.8.1)
+
 **DotNetLib Update September 9th, 2023** 
 - API changes for DateTime, DateTimeOffset, TimeSpan
    - Merged member ToString4(string format, IFormatProvider provider) and replace with ToString2(string format, IFormatProvider provider = null)
