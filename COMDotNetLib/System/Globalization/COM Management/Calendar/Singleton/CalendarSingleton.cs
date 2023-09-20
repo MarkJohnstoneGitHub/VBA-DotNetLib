@@ -1,4 +1,4 @@
-﻿// https://learn.microsoft.com/en-us/dotnet/api/system.globalization.calendar?view=netframework-4.8.1
+﻿// https://learn.microsoft.com/en-us/dotnet/api/system.globalization.pCalendar?view=netframework-4.8.1
 // Notes: https://stackoverflow.com/questions/19075759/convert-between-calendars
 
 using GGlobalization = global::System.Globalization;
@@ -28,9 +28,9 @@ namespace DotNetLib.System.Globalization
             return GGlobalization.Calendar.Equals(objA.Unwrap(), objB.Unwrap()); 
         }
 
-        public ICalendar ReadOnly(ICalendar calendar)
+        public ICalendar ReadOnly(ICalendar pCalendar)
         {
-            return Calendar.ReadOnly((Calendar)calendar.Unwrap()).Wrap();
+            return Calendar.ReadOnly((Calendar)pCalendar.Unwrap()).Wrap();
         }
 
     }

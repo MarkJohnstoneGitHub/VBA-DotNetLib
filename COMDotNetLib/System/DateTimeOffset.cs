@@ -63,9 +63,9 @@ namespace DotNetLib.System
             _dateTimeOffset = new GSystem.DateTimeOffset(year, month, day, hour, minute, second, millisecond, offset.WrappedTimeSpan);
         }
 
-        public DateTimeOffset(int year, int month, int day, int hour, int minute, int second, int millisecond, GSystem.Globalization.Calendar calendar, TimeSpan offset)
+        public DateTimeOffset(int year, int month, int day, int hour, int minute, int second, int millisecond, GSystem.Globalization.Calendar pCalendar, TimeSpan offset)
         {
-            _dateTimeOffset = new GSystem.DateTimeOffset(year, month, day, hour, minute, second, millisecond, calendar, offset.WrappedTimeSpan);
+            _dateTimeOffset = new GSystem.DateTimeOffset(year, month, day, hour, minute, second, millisecond, pCalendar, offset.WrappedTimeSpan);
         }
 
         // Fields

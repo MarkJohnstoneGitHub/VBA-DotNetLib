@@ -2,9 +2,7 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using System.Globalization;
 using DotNetLib.System.Globalization;
-using DotNetLib.Extensions;
 
 namespace DotNetLib.System.COM_Management
 {
@@ -22,7 +20,7 @@ namespace DotNetLib.System.COM_Management
         /// <summary>
         /// Initializes a new instance of the DateTime structure to a specified number of pTicks and to Coordinated Universal Time (UTC) or local time.
         /// </summary>
-        /// <param name="pTicks">A date and time expressed in the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 00:00:00.000 in the Gregorian calendar.</param>
+        /// <param name="pTicks">A date and time expressed in the number of 100-nanosecond intervals that have elapsed since January 1, 0001 at 00:00:00.000 in the Gregorian pCalendar.</param>
         /// <param name="pKind">One of the enumeration values that indicates whether pTicks specifies a local time, Coordinated Universal Time (UTC), or neither.</param>
         /// <returns></returns>
         /// <exception cref="ArgumentOutOfRangeException"> 
@@ -41,9 +39,9 @@ namespace DotNetLib.System.COM_Management
             return new DateTime(pYear, pMonth, pDay);
         }
 
-        public DateTime CreateFromDate2(int pYear, int pMonth, int pDay, ICalendar calendar)
+        public DateTime CreateFromDate2(int pYear, int pMonth, int pDay, ICalendar pCalendar)
         {
-            return new DateTime(pYear, pMonth, pDay, calendar);
+            return new DateTime(pYear, pMonth, pDay, pCalendar);
         }
 
 
@@ -90,14 +88,14 @@ namespace DotNetLib.System.COM_Management
             return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond);
         }
 
-        public DateTime CreateFromDateTime2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, ICalendar calendar)
+        public DateTime CreateFromDateTime2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, ICalendar pCalendar)
         {
-            return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, calendar);
+            return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pCalendar);
         }
 
-        public DateTime CreateFromDateTime3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar)
+        public DateTime CreateFromDateTime3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar pCalendar)
         {
-            return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, calendar);
+            return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pCalendar);
         }
 
         public DateTime CreateFromDateTimeKind(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, DateTimeKind pKind)
@@ -110,9 +108,9 @@ namespace DotNetLib.System.COM_Management
             return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pKind);
         }
 
-        public DateTime CreateFromDateTimeKind3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar, DateTimeKind pKind)
+        public DateTime CreateFromDateTimeKind3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar pCalendar, DateTimeKind pKind)
         {
-            return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, calendar, pKind);
+            return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pCalendar, pKind);
         }
 
         //Fields
@@ -130,7 +128,7 @@ namespace DotNetLib.System.COM_Management
         // Properties
 
         /// <summary>
-        /// The value of this constant is equivalent to 00:00:00.0000000 UTC, January 1, 1970, in the Gregorian calendar. UnixEpoch defines the point in time when Unix time is equal to 0.
+        /// The value of this constant is equivalent to 00:00:00.0000000 UTC, January 1, 1970, in the Gregorian pCalendar. UnixEpoch defines the point in time when Unix time is equal to 0.
         /// </summary>
         //public DateTime UnixEpoch => dtUnixEpoch;
 

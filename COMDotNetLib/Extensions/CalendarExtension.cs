@@ -13,53 +13,53 @@ namespace DotNetLib.Extensions
     [ComVisible(false)]
     public static class CalendarExtension
     {
-        public static ICalendar Wrap(this GGlobalization.Calendar calendar)
+        public static ICalendar Wrap(this GGlobalization.Calendar pCalendar)
         {
-            if (calendar == null) 
+            if (pCalendar == null) 
             {
                 return null;
             }
-            if (calendar is GGlobalization.GregorianCalendar gregorianCalendar)
+            if (pCalendar is GGlobalization.GregorianCalendar gregorianCalendar)
             {
                 return new GregorianCalendar(gregorianCalendar);
             }
-            if (calendar is GGlobalization.PersianCalendar persianCalendar)
+            if (pCalendar is GGlobalization.PersianCalendar persianCalendar)
             {
                 return new PersianCalendar(persianCalendar);
             }
-            if (calendar is GGlobalization.UmAlQuraCalendar umAlQuraCalendar)
+            if (pCalendar is GGlobalization.UmAlQuraCalendar umAlQuraCalendar)
             {
                 return new UmAlQuraCalendar(umAlQuraCalendar);
             }
-            if (calendar is GGlobalization.ThaiBuddhistCalendar thaiBuddhistCalendar)
+            if (pCalendar is GGlobalization.ThaiBuddhistCalendar thaiBuddhistCalendar)
             {
                 return new ThaiBuddhistCalendar(thaiBuddhistCalendar);
             }
-            if (calendar is GGlobalization.HijriCalendar hijriCalendar)
+            if (pCalendar is GGlobalization.HijriCalendar hijriCalendar)
             {
                 return new HijriCalendar(hijriCalendar);
             }
-            if (calendar is GGlobalization.HebrewCalendar hebrewCalendar)
+            if (pCalendar is GGlobalization.HebrewCalendar hebrewCalendar)
             {
                 return new HebrewCalendar(hebrewCalendar);
             }
-            if (calendar is GGlobalization.JapaneseCalendar japaneseCalendar)
+            if (pCalendar is GGlobalization.JapaneseCalendar japaneseCalendar)
             {
                 return new JapaneseCalendar(japaneseCalendar);
             }
-            if (calendar is GGlobalization.KoreanCalendar koreanCalendar)
+            if (pCalendar is GGlobalization.KoreanCalendar koreanCalendar)
             {
                 return new KoreanCalendar(koreanCalendar);
             }
-            if (calendar is GGlobalization.TaiwanCalendar taiwanCalendar)
+            if (pCalendar is GGlobalization.TaiwanCalendar taiwanCalendar)
             {
                 return new TaiwanCalendar(taiwanCalendar);
             }
-            if (calendar is GGlobalization.ChineseLunisolarCalendar chineseLunisolarCalendar)
+            if (pCalendar is GGlobalization.ChineseLunisolarCalendar chineseLunisolarCalendar)
             {
                 return new ChineseLunisolarCalendar(chineseLunisolarCalendar);
             }
-            return null; //If calendar COM wrapper not implemented return null
+            return null; //If pCalendar COM wrapper not implemented return null
         }
 
         public static ICalendar[] Wrap(this GGlobalization.Calendar[] calendars) 

@@ -27,7 +27,7 @@ namespace DotNetLib.System.Globalization
         new bool Equals(object objA, object objB);
 
         [Description("Returns a read-only version of the specified Calendar object.")]
-        new ICalendar ReadOnly(ICalendar calendar);
+        new ICalendar ReadOnly(ICalendar pCalendar);
 
     }
 }

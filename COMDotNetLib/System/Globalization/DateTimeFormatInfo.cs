@@ -40,7 +40,11 @@ namespace DotNetLib.System.Globalization
         public GGlobalization.DateTimeFormatInfo WrappedDateTimeFormatInfo
         {
             get { return _dateTimeFormatInfo; }
-            set { _dateTimeFormatInfo = value; }
+            set 
+            { 
+                _dateTimeFormatInfo = value;
+                _calendar = _dateTimeFormatInfo.Calendar.Wrap();
+            }
         }
 
         public string[] AbbreviatedDayNames
@@ -80,9 +84,9 @@ namespace DotNetLib.System.Globalization
             get => _dateTimeFormatInfo.AMDesignator; 
             set => _dateTimeFormatInfo.AMDesignator = value;    
         }
-        
-        //public Calendar Calendar 
-        //{ 
+
+        //public Calendar CalendarOld
+        //{
         //    get => _dateTimeFormatInfo.Calendar;
         //    set => _dateTimeFormatInfo.Calendar = value;
         //}

@@ -63,6 +63,14 @@ namespace DotNetLib.System.Globalization
             set;
         }
 
+        //GGlobalization.Calendar CalendarOld
+        //{
+        //    [Description("Gets or sets the calendar to use for the current culture.")]
+        //    get;
+        //    [Description("Gets or sets the calendar to use for the current culture.")]
+        //    set;
+        //}
+
         GGlobalization.CalendarWeekRule CalendarWeekRule 
         {
             [Description("Gets or sets a value that specifies which rule is used to determine the first calendar week of the year.")]

@@ -23,16 +23,16 @@ namespace DotNetLib.System
         DateTime CreateFromDate(int pYear, int pMonth, int pDay);
 
         [Description("Initializes a new instance of the DateTime structure to the specified year, month, and day for the specified calendar.")]
-        DateTime CreateFromDate2(int pYear, int pMonth, int pDay, ICalendar calendar);
+        DateTime CreateFromDate2(int pYear, int pMonth, int pDay, ICalendar pCalendar);
 
         [Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and millisecond.")]
         DateTime CreateFromDateTime(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond = 0);
 
         [Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, and second for the specified calendar.")]
-        DateTime CreateFromDateTime2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, ICalendar calendar);
+        DateTime CreateFromDateTime2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, ICalendar pCalendar);
 
         [Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and millisecond for the specified calendar.")]
-        DateTime CreateFromDateTime3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar);
+        DateTime CreateFromDateTime3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar pCalendar);
 
         [Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and Coordinated Universal Time (UTC) or local time.")]
         DateTime CreateFromDateTimeKind(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, DateTimeKind pKind);
@@ -41,7 +41,7 @@ namespace DotNetLib.System
         DateTime CreateFromDateTimeKind2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, DateTimeKind pKind);
 
         [Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time for the specified calendar.")]
-        DateTime CreateFromDateTimeKind3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar, DateTimeKind pKind);
+        DateTime CreateFromDateTimeKind3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar pCalendar, DateTimeKind pKind);
 
         //Fields
         DateTime MaxValue 

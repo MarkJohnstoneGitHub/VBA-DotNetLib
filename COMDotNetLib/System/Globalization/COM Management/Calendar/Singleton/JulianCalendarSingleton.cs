@@ -36,9 +36,9 @@ namespace DotNetLib.System.Globalization
             return GGlobalization.JulianCalendar.Equals(objA.Unwrap(), objB.Unwrap());
         }
 
-        public ICalendar ReadOnly(ICalendar calendar)
+        public ICalendar ReadOnly(ICalendar pCalendar)
         {
-            return Calendar.ReadOnly((Calendar)calendar.Unwrap()).Wrap();
+            return Calendar.ReadOnly((Calendar)pCalendar.Unwrap()).Wrap();
         }
     }
 }

@@ -54,9 +54,9 @@ namespace DotNetLib.System
             _dateTime = new GSystem.DateTime(year, month, day);
         }
 
-        public DateTime(int year, int month, int day, ICalendar calendar)
+        public DateTime(int year, int month, int day, ICalendar pCalendar)
         {
-            _dateTime = new GSystem.DateTime(year, month, day, (GGlobalization.Calendar)calendar.Unwrap());
+            _dateTime = new GSystem.DateTime(year, month, day, (GGlobalization.Calendar)pCalendar.Unwrap());
         }
 
         public DateTime(int year, int month, int day, int hour, int minute, int second)
@@ -64,9 +64,9 @@ namespace DotNetLib.System
             _dateTime = new GSystem.DateTime(year, month, day, hour, minute, second);
         }
 
-        public DateTime(int year, int month, int day, int hour, int minute, int second, ICalendar calendar)
+        public DateTime(int year, int month, int day, int hour, int minute, int second, ICalendar pCalendar)
         {
-            _dateTime = new GSystem.DateTime(year, month, day, hour, minute, second, (GGlobalization.Calendar)calendar.Unwrap());
+            _dateTime = new GSystem.DateTime(year, month, day, hour, minute, second, (GGlobalization.Calendar)pCalendar.Unwrap());
         }
 
         public DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond)
@@ -74,9 +74,9 @@ namespace DotNetLib.System
             _dateTime = new GSystem.DateTime(year, month, day, hour, minute, second, millisecond);
         }
 
-        public DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond, ICalendar calendar)
+        public DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond, ICalendar pCalendar)
         {
-            _dateTime = new GSystem.DateTime(year, month, day, hour, minute, second, millisecond, (GGlobalization.Calendar)calendar.Unwrap());
+            _dateTime = new GSystem.DateTime(year, month, day, hour, minute, second, millisecond, (GGlobalization.Calendar)pCalendar.Unwrap());
         }
 
         public DateTime(int year, int month, int day, int hour, int minute, int second, DateTimeKind kind)
@@ -88,9 +88,9 @@ namespace DotNetLib.System
             _dateTime = new GSystem.DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, (GSystem.DateTimeKind)pKind);
         }
 
-        public DateTime(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar, DateTimeKind pKind)
+        public DateTime(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar pCalendar, DateTimeKind pKind)
         {
-            _dateTime = new GSystem.DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, (GGlobalization.Calendar)calendar.Unwrap(), (GSystem.DateTimeKind)pKind);
+            _dateTime = new GSystem.DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, (GGlobalization.Calendar)pCalendar.Unwrap(), (GSystem.DateTimeKind)pKind);
 
         }
 
@@ -107,7 +107,7 @@ namespace DotNetLib.System
         public static DateTime MinValue => minValueObject;
 
         /// <summary>
-        /// The value of this constant is equivalent to 00:00:00.0000000 UTC, January 1, 1970, in the Gregorian calendar. UnixEpoch defines the point in time when Unix time is equal to 0.
+        /// The value of this constant is equivalent to 00:00:00.0000000 UTC, January 1, 1970, in the Gregorian pCalendar. UnixEpoch defines the point in time when Unix time is equal to 0.
         /// </summary>
         //public DateTime UnixEpoch => dtUnixEpoch;
 
@@ -618,7 +618,7 @@ namespace DotNetLib.System
         /// <paramref name="format"/> does not contain a valid custom format pattern
         /// </exception>
         /// <exception cref="ArgumentOutOfRangeException"> 
-        /// The date and time is outside the range of dates supported by the calendar used by the current culture.
+        /// The date and time is outside the range of dates supported by the pCalendar used by the current culture.
         /// </exception>
         public string ToString2(string format, IFormatProvider provider = null)
         {

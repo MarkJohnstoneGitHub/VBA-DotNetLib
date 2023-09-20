@@ -32,15 +32,6 @@ namespace DotNetLib.System.Globalization
         public int ADEra => GGlobalization.GregorianCalendar.ADEra;
 
 
-        public ICalendar ReadOnly(ICalendar calendar)
-        {
-            //Calendar calendarUnwrapped = (Calendar)calendar.Unwrap();
-            //Calendar calendarReadOnly = Calendar.ReadOnly(calendarUnwrapped);
-            //return calendarReadOnly.Wrap();
-
-            return Calendar.ReadOnly((Calendar)calendar.Unwrap()).Wrap();
-        }
-
         // Methods
 
         public new bool Equals(object objA, object objB)
@@ -48,5 +39,9 @@ namespace DotNetLib.System.Globalization
             return GGlobalization.GregorianCalendar.Equals(objA.Unwrap(), objB.Unwrap());
         }
 
+        public ICalendar ReadOnly(ICalendar pCalendar)
+        {
+            return Calendar.ReadOnly((Calendar)pCalendar.Unwrap()).Wrap();
+        }
     }
 }
