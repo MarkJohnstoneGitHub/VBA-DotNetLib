@@ -21,7 +21,7 @@ Updated DateTime.cs, IDateTime.cs, DateTimeSingleton, IDateTimeSingleton.cs,
 - public DateTime CreateFromDateTime2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, ICalendar calendar)
 - public DateTime CreateFromDateTime3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar)
 - public DateTime CreateFromDateTimeKind3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar, DateTimeKind pKind)
-- [DateTime.cls](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/DateTime.cls) added the above new factory methods available from DotNetLib.tlb.
+- [DateTime.cls](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/DateTime.cls) added the above new factory methods available from DateTimeSingleton DotNetLib.tlb.
 - Todo added examples and testing.
 
 **DotNetLib Update September 19th, 2023** 
