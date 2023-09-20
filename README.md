@@ -39,13 +39,6 @@ Updated DateTime.cs, IDateTime.cs, DateTimeSingleton, IDateTimeSingleton.cs,
    - [TaiwanCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.taiwancalendar?view=netframework-4.8.1)
    - [ThaiBuddhistCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.thaibuddhistcalendar?view=netframework-4.8.1)
    - [UmAlQuraCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.umalquracalendar?view=netframework-4.8.1)
-
-**DotNetLib Update September 9th, 2023** 
-- API changes for DateTime, DateTimeOffset, TimeSpan
-   - Merged member ToString4(string format, IFormatProvider provider) and replace with ToString2(string format, IFormatProvider provider = null)
-   - Updated examples using ToString4(string format, IFormatProvider provider) to  use ToString2(string format, IFormatProvider provider = null) due to DotNetLib.tlb API changes.
-   - Add  IComparable, IFormattable interfaces
-- Added Console.cls Not fully functional (Work in progress)
   
  **Dependencies:**
  - [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
@@ -110,6 +103,13 @@ Or replace with non-generic equivalent.  To enforce type safety in VBA create a 
 VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
 
 **Update History**
+
+**DotNetLib Update September 9th, 2023** 
+- API changes for DateTime, DateTimeOffset, TimeSpan
+   - Merged member ToString4(string format, IFormatProvider provider) and replace with ToString2(string format, IFormatProvider provider = null)
+   - Updated examples using ToString4(string format, IFormatProvider provider) to  use ToString2(string format, IFormatProvider provider = null) due to DotNetLib.tlb API changes.
+   - Add  IComparable, IFormattable interfaces
+- Added Console.cls Not fully functional (Work in progress)
 
 **DotNetLib Update September 5th, 2023** 
  - Added [TextInfo Class](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.textinfo?view=netframework-4.8.1). Properties for [CultureInfo.TextInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo.textinfo?view=netframework-4.8.1) now available.
