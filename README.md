@@ -22,10 +22,11 @@ Updated DateTime.cs, IDateTime.cs, DateTimeSingleton, IDateTimeSingleton.cs,
 - public DateTime CreateFromDateTime3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar)
 - public DateTime CreateFromDateTimeKind3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar, DateTimeKind pKind)
 - [DateTime.cls](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/DateTime.cls) added the above new factory methods available from DateTimeSingleton DotNetLib.tlb.
-  
+ 
 Todo add examples and testing.
 - Update DotNetLib classes members that reference the Calendar class.
 - Eg. DateTime constructors, DateTimeOffset constructors
+- Updated DateTimeFormatInfo.Calendar member to use wrapped ICalendar.  DateTimeFormatInfo.Calendar property should now be available to access and set. (Require to test)
 
 **DotNetLib Update September 19th, 2023** 
 - Implemented abstract class [Calendar ](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.calendar?view=netframework-4.8.1) as ICalendar, updated CultureInfo for properties Calendar and OptionalCalendars which are now availbable and added the following calendars:
