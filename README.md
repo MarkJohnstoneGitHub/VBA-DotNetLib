@@ -24,7 +24,7 @@ Updated DateTime.cs, IDateTime.cs, DateTimeSingleton, IDateTimeSingleton.cs,
 - [DateTime.cls](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/DateTime.cls) added the above new factory methods available from DateTimeSingleton DotNetLib.tlb.
  
 Todo add examples and testing.
-- Update DotNetLib classes members that reference the Calendar class.
+- Update DotNetLib class members that reference the Calendar class.
 - Eg. DateTime constructors, DateTimeOffset constructors
 - Updated DateTimeFormatInfo.Calendar member to use wrapped ICalendar.  DateTimeFormatInfo.Calendar property should now be available to access and set. (Require to test)
 
