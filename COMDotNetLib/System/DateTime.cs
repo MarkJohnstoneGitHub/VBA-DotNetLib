@@ -2,6 +2,7 @@
 // https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/DateTime.cs
 
 using GSystem = global::System; // https://stackoverflow.com/questions/5681537/namespace-conflict-in-c-sharp
+using GGlobalization = global::System.Globalization;
 using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System;
@@ -53,14 +54,29 @@ namespace DotNetLib.System
             _dateTime = new GSystem.DateTime(year, month, day);
         }
 
+        public DateTime(int year, int month, int day, ICalendar calendar)
+        {
+            _dateTime = new GSystem.DateTime(year, month, day, (GGlobalization.Calendar)calendar.Unwrap());
+        }
+
         public DateTime(int year, int month, int day, int hour, int minute, int second)
         {
             _dateTime = new GSystem.DateTime(year, month, day, hour, minute, second);
         }
 
+        public DateTime(int year, int month, int day, int hour, int minute, int second, ICalendar calendar)
+        {
+            _dateTime = new GSystem.DateTime(year, month, day, hour, minute, second, (GGlobalization.Calendar)calendar.Unwrap());
+        }
+
         public DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond)
         {
             _dateTime = new GSystem.DateTime(year, month, day, hour, minute, second, millisecond);
+        }
+
+        public DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond, ICalendar calendar)
+        {
+            _dateTime = new GSystem.DateTime(year, month, day, hour, minute, second, millisecond, (GGlobalization.Calendar)calendar.Unwrap());
         }
 
         public DateTime(int year, int month, int day, int hour, int minute, int second, DateTimeKind kind)
@@ -70,6 +86,12 @@ namespace DotNetLib.System
         public DateTime(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, DateTimeKind pKind)
         {
             _dateTime = new GSystem.DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, (GSystem.DateTimeKind)pKind);
+        }
+
+        public DateTime(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar, DateTimeKind pKind)
+        {
+            _dateTime = new GSystem.DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, (GGlobalization.Calendar)calendar.Unwrap(), (GSystem.DateTimeKind)pKind);
+
         }
 
         //Fields

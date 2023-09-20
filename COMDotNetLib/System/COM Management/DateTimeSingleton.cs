@@ -2,6 +2,9 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using System.Globalization;
+using DotNetLib.System.Globalization;
+using DotNetLib.Extensions;
 
 namespace DotNetLib.System.COM_Management
 {
@@ -37,6 +40,12 @@ namespace DotNetLib.System.COM_Management
         {
             return new DateTime(pYear, pMonth, pDay);
         }
+
+        public DateTime CreateFromDate2(int pYear, int pMonth, int pDay, ICalendar calendar)
+        {
+            return new DateTime(pYear, pMonth, pDay, calendar);
+        }
+
 
         /// <summary>
         /// Initializes a new instance of the DateTime structure to the specified pYear, pMonth, pDay, pHour, pMinute, pSecond, and pMillisecond.
@@ -81,6 +90,16 @@ namespace DotNetLib.System.COM_Management
             return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond);
         }
 
+        public DateTime CreateFromDateTime2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, ICalendar calendar)
+        {
+            return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, calendar);
+        }
+
+        public DateTime CreateFromDateTime3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar)
+        {
+            return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, calendar);
+        }
+
         public DateTime CreateFromDateTimeKind(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, DateTimeKind pKind)
         {
             return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pKind);
@@ -89,6 +108,11 @@ namespace DotNetLib.System.COM_Management
         public DateTime CreateFromDateTimeKind2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, DateTimeKind pKind)
         {
             return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pKind);
+        }
+
+        public DateTime CreateFromDateTimeKind3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar, DateTimeKind pKind)
+        {
+            return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, calendar, pKind);
         }
 
         //Fields
