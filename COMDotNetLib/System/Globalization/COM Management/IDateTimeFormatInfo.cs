@@ -55,7 +55,7 @@ namespace DotNetLib.System.Globalization
             set;
         }
 
-        GGlobalization.Calendar Calendar 
+        ICalendar Calendar 
         {
             [Description("Gets or sets the calendar to use for the current culture.")]
             get;

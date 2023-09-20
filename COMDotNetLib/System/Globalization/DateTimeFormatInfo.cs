@@ -5,6 +5,7 @@ using System;
 using System.Globalization;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using DotNetLib.Extensions;
 
 namespace DotNetLib.System.Globalization
 {
@@ -17,20 +18,21 @@ namespace DotNetLib.System.Globalization
     public class DateTimeFormatInfo : ICloneable, IFormatProvider, IDateTimeFormatInfo
     {
         private GGlobalization.DateTimeFormatInfo _dateTimeFormatInfo;
+        private ICalendar _calendar;
 
         public DateTimeFormatInfo()
         {
-            _dateTimeFormatInfo = new GGlobalization.DateTimeFormatInfo();
+            WrappedDateTimeFormatInfo = new GGlobalization.DateTimeFormatInfo();
         }
 
         public DateTimeFormatInfo(GGlobalization.DateTimeFormatInfo dateTimeFormatInfo)
         {
-            _dateTimeFormatInfo = dateTimeFormatInfo;
+            WrappedDateTimeFormatInfo = dateTimeFormatInfo;
         }
 
         public DateTimeFormatInfo(object v)
         {
-            _dateTimeFormatInfo = (GGlobalization.DateTimeFormatInfo)v;
+            WrappedDateTimeFormatInfo = (GGlobalization.DateTimeFormatInfo)v;
         }
 
 
@@ -79,10 +81,21 @@ namespace DotNetLib.System.Globalization
             set => _dateTimeFormatInfo.AMDesignator = value;    
         }
         
-        public Calendar Calendar 
-        { 
-            get => _dateTimeFormatInfo.Calendar;
-            set => _dateTimeFormatInfo.Calendar = value;
+        //public Calendar Calendar 
+        //{ 
+        //    get => _dateTimeFormatInfo.Calendar;
+        //    set => _dateTimeFormatInfo.Calendar = value;
+        //}
+
+        public ICalendar Calendar
+        {
+            get => _calendar;
+            set 
+            { 
+                _dateTimeFormatInfo.Calendar = (GGlobalization.Calendar)value.Unwrap(); 
+                _calendar = value;
+            } 
+            
         }
 
         public CalendarWeekRule CalendarWeekRule 
