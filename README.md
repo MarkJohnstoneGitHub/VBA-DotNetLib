@@ -13,6 +13,20 @@ Added: [ChineseLunisolarCalendar](https://learn.microsoft.com/en-us/dotnet/api/s
  
 **Status: Latest Updates**
 
+**DotNetLib Update September 20th, 2023** 
+
+Updated DateTime.cs, IDateTime.cs, DateTimeSingleton, IDateTimeSingleton.cs, 
+- Added factory methods for ICalendar parameter.
+- public DateTime CreateFromDate2(int pYear, int pMonth, int pDay, ICalendar calendar)
+- public DateTime CreateFromDateTime2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, ICalendar calendar)
+- public DateTime CreateFromDateTime3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar)
+- public DateTime CreateFromDateTimeKind3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar, DateTimeKind pKind)
+- [DateTime.cls](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/DateTime.cls) added the above new factory methods available from DateTimeSingleton DotNetLib.tlb.
+  
+Todo add examples and testing.
+- Update DotNetLib classes members that reference the Calendar class.
+- Eg. DateTime constructors, DateTimeOffset constructors
+
 **DotNetLib Update September 19th, 2023** 
 - Implemented abstract class [Calendar ](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.calendar?view=netframework-4.8.1) as ICalendar, updated CultureInfo for properties Calendar and OptionalCalendars which are now availbable and added the following calendars:
    - [ChineseLunisolarCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.chineselunisolarcalendar?view=netframework-4.8.1)
@@ -27,12 +41,8 @@ Added: [ChineseLunisolarCalendar](https://learn.microsoft.com/en-us/dotnet/api/s
    - [ThaiBuddhistCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.thaibuddhistcalendar?view=netframework-4.8.1)
    - [UmAlQuraCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.umalquracalendar?view=netframework-4.8.1)
 
-**DotNetLib Update September 9th, 2023** 
-- API changes for DateTime, DateTimeOffset, TimeSpan
-   - Merged member ToString4(string format, IFormatProvider provider) and replace with ToString2(string format, IFormatProvider provider = null)
-   - Updated examples using ToString4(string format, IFormatProvider provider) to  use ToString2(string format, IFormatProvider provider = null) due to DotNetLib.tlb API changes.
-   - Add  IComparable, IFormattable interfaces
-- Added Console.cls Not fully functional (Work in progress)
+ Todo testing for creating each added calendar, CultureInfo.Calendar, CultureInfo.OptionalCalendars.  Adhoc testing not detecting any missing Calendars required for the default Calendar or optional calendars.
+ - Update [DateTimeFormatInfo.Calendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.calendar?view=netframework-4.8.1) to use  ICalendar
   
  **Dependencies:**
  - [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
@@ -86,7 +96,7 @@ Or replace with non-generic equivalent.  To enforce type safety in VBA create a 
 
  Will require implementing the following:
   - [Cultureinfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8.1) and associated classes. Implemented
-   - [Calendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.calendar?view=netframework-4.8.1) . Atm considering whether or not to implement.
+   - [Calendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.calendar?view=netframework-4.8.1) . Implemented, currently updating class members referencing the Calendar class.
    - [DateTimeFormat](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1) . Implemented.
    - [CompareInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.compareinfo?view=netframework-4.8.1)
    - [CultureTypes](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo.culturetypes?view=netframework-4.8.1)
@@ -97,6 +107,13 @@ Or replace with non-generic equivalent.  To enforce type safety in VBA create a 
 VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
 
 **Update History**
+
+**DotNetLib Update September 9th, 2023** 
+- API changes for DateTime, DateTimeOffset, TimeSpan
+   - Merged member ToString4(string format, IFormatProvider provider) and replace with ToString2(string format, IFormatProvider provider = null)
+   - Updated examples using ToString4(string format, IFormatProvider provider) to  use ToString2(string format, IFormatProvider provider = null) due to DotNetLib.tlb API changes.
+   - Add  IComparable, IFormattable interfaces
+- Added Console.cls Not fully functional (Work in progress)
 
 **DotNetLib Update September 5th, 2023** 
  - Added [TextInfo Class](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.textinfo?view=netframework-4.8.1). Properties for [CultureInfo.TextInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo.textinfo?view=netframework-4.8.1) now available.
