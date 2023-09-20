@@ -42,6 +42,7 @@ Todo add examples and testing.
    - [UmAlQuraCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.umalquracalendar?view=netframework-4.8.1)
 
  Todo testing for creating each added calendar, CultureInfo.Calendar, CultureInfo.OptionalCalendars.  Adhoc testing not detecting any missing Calendars required for the default Calendar or optional calendars.
+ - Update [DateTimeFormatInfo.Calendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.calendar?view=netframework-4.8.1) to use  ICalendar
   
  **Dependencies:**
  - [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
