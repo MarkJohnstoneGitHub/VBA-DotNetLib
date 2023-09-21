@@ -24,7 +24,7 @@ Updated DateTime.cs, IDateTime.cs, DateTimeSingleton, IDateTimeSingleton.cs,
 - [DateTime.cls](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/DateTime.cls) added the above new factory methods available from DateTimeSingleton DotNetLib.tlb.
  
 Todo add examples and testing.
-- Update DotNetLib classes members that reference the Calendar class.
+- Update DotNetLib class members that reference the Calendar class.
 - Eg. DateTime constructors, DateTimeOffset constructors
 - Updated DateTimeFormatInfo.Calendar member to use wrapped ICalendar.  DateTimeFormatInfo.Calendar property should now be available to access and set. (Require to test)
 
@@ -71,7 +71,9 @@ Todo add examples and testing.
  
 For detailed explanation of the DotNetLib class properties see [netframework-4.8.1](https://learn.microsoft.com/en-us/dotnet/api/system?view=netframework-4.8.1)
 
-Ms Access database [VBADotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/MS-Access) VBA Factory classes and [examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples) for the DotNetLib.tlb. Also a MS-Excel version [VBADotNetLib.xlsm](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Ms-Excel)
+Ms Access database [VBADotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/MS-Access) VBA Factory classes and [examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples) for the DotNetLib.tlb. Also a MS-Excel version [VBADotNetLib.xlsm](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Ms-Excel) .  
+
+Note the MS-Access contains the current version of VBADotNetLibrary and examples as the development is preformed in MS-Access and periodically exported for the MS-Excel. 
 
  
  **Issues:**
