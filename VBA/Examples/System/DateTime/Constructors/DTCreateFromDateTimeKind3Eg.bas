@@ -10,6 +10,24 @@ Attribute VB_Name = "DTCreateFromDateTimeKind3Eg"
 
 Option Explicit
 
+''
+' The following example calls the
+' DateTime(Int32, Int32, Int32, Int32, Int32, Int32, Int32, Calendar, DateTimeKind)
+' constructor twice to instantiate two DateTime values.
+' The first call instantiates a DateTime value by using a PersianCalendar object.
+' Because the Persian calendar cannot be designated as the default calendar for
+' a culture, displaying a date in the Persian calendar requires individual calls
+' to its PersianCalendar.GetMonth, PersianCalendar.GetDayOfMonth, and
+' PersianCalendar.GetYear methods.
+' The second call to the constructor instantiates a DateTime value by using a
+' HijriCalendar object.
+' The example changes the current culture to Arabic (Syria) and changes the current
+' culture's default calendar to the Hijri calendar. Because Hijri is the current
+' culture's default calendar, the Console.WriteLine method uses it to format the date.
+' When the previous current culture (which is English (United States) in this case)
+' is restored, the Console.WriteLine method uses the current culture's default
+' Gregorian calendar to format the date.
+''
 Public Sub DateTimeCreateFromDateTimeKind3()
     Debug.Print "Using the Persian Calendar:"
     Dim persian As DotNetLib.PersianCalendar
