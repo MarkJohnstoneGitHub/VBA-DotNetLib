@@ -72,9 +72,7 @@ Public Sub DateTimeCreateFromDateTimeKind3()
     fmtString = "{0} culture using the {1} calendar: {2:" + dFormat + "} {3}"
     
     Dim date2 As DotNetLib.DateTime
-    Set date2 = DateTime.CreateFromDateTime2(1431, 9, 9, 16, 32, 18, hijri)
     Set date2 = DateTime.CreateFromDateTimeKind3(1431, 9, 9, 16, 32, 18, 500, hijri, DateTimeKind.DateTimeKind_Local)
-
     Debug.Print current.ToString; " culture using the "; hijri.ToString; " calendar: "; date2.ToString2(dFormat); " "; DateTimeKindHelper.ToString(date2.Kind)
     
     ' Restore previous culture.
