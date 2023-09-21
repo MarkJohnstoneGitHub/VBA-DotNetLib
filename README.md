@@ -10,24 +10,7 @@ Added: [ChineseLunisolarCalendar](https://learn.microsoft.com/en-us/dotnet/api/s
 
 
  The API for the .Net class may be required to be altered due to VBA reserved words. See [reserved-word-list](https://www.engram9.info/access-2007-vba/reserved-word-list.html).
- 
-**Status: Latest Updates**
-
-**DotNetLib Update September 20th, 2023** 
-
-Updated DateTime.cs, IDateTime.cs, DateTimeSingleton, IDateTimeSingleton.cs, 
-- Added factory methods for ICalendar parameter.
-- public DateTime CreateFromDate2(int pYear, int pMonth, int pDay, ICalendar calendar)
-- public DateTime CreateFromDateTime2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, ICalendar calendar)
-- public DateTime CreateFromDateTime3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar)
-- public DateTime CreateFromDateTimeKind3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar, DateTimeKind pKind)
-- [DateTime.cls](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/DateTime.cls) added the above new factory methods available from DateTimeSingleton DotNetLib.tlb.
- 
-Todo add examples and testing.
-- Update DotNetLib class members that reference the Calendar class.
-- Eg. DateTime constructors, DateTimeOffset constructors
-- Updated DateTimeFormatInfo.Calendar member to use wrapped ICalendar.  DateTimeFormatInfo.Calendar property should now be available to access and set. (Require to test)
-  
+   
  **Dependencies:**
  - [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
  - mscorlib.tlb type library eg Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.tlb
@@ -93,6 +76,23 @@ Or replace with non-generic equivalent.  To enforce type safety in VBA create a 
 VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
 
 **Update History**
+
+**Status: Latest Updates**
+
+**DotNetLib Update September 20th, 2023** 
+
+Updated DateTime.cs, IDateTime.cs, DateTimeSingleton, IDateTimeSingleton.cs, 
+- Added factory methods for ICalendar parameter.
+- public DateTime CreateFromDate2(int pYear, int pMonth, int pDay, ICalendar calendar)
+- public DateTime CreateFromDateTime2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, ICalendar calendar)
+- public DateTime CreateFromDateTime3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar)
+- public DateTime CreateFromDateTimeKind3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar calendar, DateTimeKind pKind)
+- [DateTime.cls](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/DateTime.cls) added the above new factory methods available from DateTimeSingleton DotNetLib.tlb.
+ 
+Todo add examples and testing.
+- Update DotNetLib class members that reference the Calendar class.
+- Eg. DateTime constructors, DateTimeOffset constructors
+- Updated DateTimeFormatInfo.Calendar member to use wrapped ICalendar.  DateTimeFormatInfo.Calendar property should now be available to access and set. (Require to test)
 
 **DotNetLib Update September 19th, 2023** 
 - Implemented abstract class [Calendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.calendar?view=netframework-4.8.1) as ICalendar, updated CultureInfo for properties Calendar and OptionalCalendars which are now availbable and added the following calendars:
