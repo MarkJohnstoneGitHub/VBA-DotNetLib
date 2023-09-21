@@ -27,23 +27,6 @@ Todo add examples and testing.
 - Update DotNetLib class members that reference the Calendar class.
 - Eg. DateTime constructors, DateTimeOffset constructors
 - Updated DateTimeFormatInfo.Calendar member to use wrapped ICalendar.  DateTimeFormatInfo.Calendar property should now be available to access and set. (Require to test)
-
-**DotNetLib Update September 19th, 2023** 
-- Implemented abstract class [Calendar ](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.calendar?view=netframework-4.8.1) as ICalendar, updated CultureInfo for properties Calendar and OptionalCalendars which are now availbable and added the following calendars:
-   - [ChineseLunisolarCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.chineselunisolarcalendar?view=netframework-4.8.1)
-   - [GregorianCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.gregoriancalendar?view=netframework-4.8.1)
-   - [HebrewCalendar ](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.hebrewcalendar?view=netframework-4.8.1)
-   - [HijriCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.hijricalendar?view=netframework-4.8.1)
-   - [JapaneseCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.japanesecalendar?view=netframework-4.8.1)
-   - [JulianCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.juliancalendar?view=netframework-4.8.1)
-   - [KoreanCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.koreancalendar?view=netframework-4.8.1)
-   - [PersianCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.persiancalendar?view=netframework-4.8.1)
-   - [TaiwanCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.taiwancalendar?view=netframework-4.8.1)
-   - [ThaiBuddhistCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.thaibuddhistcalendar?view=netframework-4.8.1)
-   - [UmAlQuraCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.umalquracalendar?view=netframework-4.8.1)
-
- Todo testing for creating each added calendar, CultureInfo.Calendar, CultureInfo.OptionalCalendars.  Adhoc testing not detecting any missing Calendars required for the default Calendar or optional calendars.
- - Update [DateTimeFormatInfo.Calendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.calendar?view=netframework-4.8.1) to use  ICalendar
   
  **Dependencies:**
  - [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
@@ -110,6 +93,23 @@ Or replace with non-generic equivalent.  To enforce type safety in VBA create a 
 VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
 
 **Update History**
+
+**DotNetLib Update September 19th, 2023** 
+- Implemented abstract class [Calendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.calendar?view=netframework-4.8.1) as ICalendar, updated CultureInfo for properties Calendar and OptionalCalendars which are now availbable and added the following calendars:
+   - [ChineseLunisolarCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.chineselunisolarcalendar?view=netframework-4.8.1)
+   - [GregorianCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.gregoriancalendar?view=netframework-4.8.1)
+   - [HebrewCalendar ](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.hebrewcalendar?view=netframework-4.8.1)
+   - [HijriCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.hijricalendar?view=netframework-4.8.1)
+   - [JapaneseCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.japanesecalendar?view=netframework-4.8.1)
+   - [JulianCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.juliancalendar?view=netframework-4.8.1)
+   - [KoreanCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.koreancalendar?view=netframework-4.8.1)
+   - [PersianCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.persiancalendar?view=netframework-4.8.1)
+   - [TaiwanCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.taiwancalendar?view=netframework-4.8.1)
+   - [ThaiBuddhistCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.thaibuddhistcalendar?view=netframework-4.8.1)
+   - [UmAlQuraCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.umalquracalendar?view=netframework-4.8.1)
+
+ Todo testing for creating each added calendar, CultureInfo.Calendar, CultureInfo.OptionalCalendars.  Adhoc testing not detecting any missing Calendars required for the default Calendar or optional calendars.
+ - Update [DateTimeFormatInfo.Calendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.calendar?view=netframework-4.8.1) to use  ICalendar
 
 **DotNetLib Update September 9th, 2023** 
 - API changes for DateTime, DateTimeOffset, TimeSpan
