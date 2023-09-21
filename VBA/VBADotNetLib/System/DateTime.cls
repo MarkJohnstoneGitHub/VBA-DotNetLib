@@ -278,6 +278,7 @@ End Function
 '@Static
 '@Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time for the specified calendar.")
 Public Function CreateFromDateTimeKind3(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pHour As Long, ByVal pMinute As Long, ByVal pSecond As Long, ByVal pMillisecond As Long, ByVal pCalendar As DotNetLib.ICalendar, ByVal pKind As DotNetLib.DateTimeKind) As DotNetLib.DateTime
+Attribute CreateFromDateTimeKind3.VB_Description = "Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time for the specified calendar."
     Set CreateFromDateTimeKind3 = this.DateTime.CreateFromDateTimeKind3(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pCalendar, pKind)
 End Function
 
