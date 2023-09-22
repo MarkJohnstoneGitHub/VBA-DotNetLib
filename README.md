@@ -88,6 +88,12 @@ VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
 
 **Status: Latest Updates**
 
+**DotNetLib Update September 23rd, 2023** 
+
+Added [String](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1) 
+ - So far only implemented static members [String.Format](https://learn.microsoft.com/en-us/dotnet/api/system.string.format?view=netframework-4.8.1)
+ - Renamed String to Strings due to VBA reserved word.
+
 **DotNetLib Update September 22nd, 2023** 
 - Renamed abstract class ICalendar to Calendar to keep consistent with Net Framework
 - Updated VBADotNetLib for affected calendar classes and examples.
