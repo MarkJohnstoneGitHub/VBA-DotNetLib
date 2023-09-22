@@ -35,7 +35,9 @@ Public Sub TimeSpanTryParse2()
     Dim culture As DotNetLib.CultureInfo
     For Each varCulture In cultures
         Set culture = varCulture
-        header = header + IIf(culture.Equals(CultureInfo.InvariantCulture), Strings.Format("{0,20}", "Invariant"), Strings.Format("{0,20}", culture.Name))
+        header = header + IIf(culture.Equals(CultureInfo.InvariantCulture), _
+                            Strings.Format("{0,20}", "Invariant"), _
+                            Strings.Format("{0,20}", culture.Name))
     Next
     Debug.Print header
     Debug.Print
@@ -47,9 +49,9 @@ Public Sub TimeSpanTryParse2()
             Set culture = varCulture
             Dim interval As DotNetLib.TimeSpan
             If (TimeSpan.TryParse2(value, culture, interval)) Then
-                Debug.Print Strings.Format("{0,20}", interval.ToString2("c")); 'interval.ToString2("c"); "         ";
+                Debug.Print Strings.Format("{0,20}", interval.ToString2("c"));
             Else
-                Debug.Print Strings.Format("{0,20}", "Unable to Parse"); ' "Unable to Parse"; "         ";
+                Debug.Print Strings.Format("{0,20}", "Unable to Parse");
             End If
         Next
         Debug.Print
