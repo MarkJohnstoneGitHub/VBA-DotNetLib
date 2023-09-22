@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeSpanTryParse2Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 15, 2023
-'@LastModified September 2, 2023
+'@LastModified September 23, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.tryparse?view=netframework-4.8.1#system-timespan-tryparse(system-string-system-iformatprovider-system-timespan@)
 
@@ -29,26 +29,27 @@ Public Sub TimeSpanTryParse2()
                     CultureInfo.InvariantCulture
     
     Dim header As String
-    header = "String           "
+    header = Strings.Format("{0,-17}", "String")
+    
     Dim varCulture As Variant
     Dim culture As DotNetLib.CultureInfo
     For Each varCulture In cultures
         Set culture = varCulture
-        header = header & "     " & IIf(culture.Equals(CultureInfo.InvariantCulture), "Invariant", culture.Name)
+        header = header + IIf(culture.Equals(CultureInfo.InvariantCulture), Strings.Format("{0,20}", "Invariant"), Strings.Format("{0,20}", culture.Name))
     Next
     Debug.Print header
     Debug.Print
     
     Dim value As Variant
     For Each value In values
-        Debug.Print value; "           ";
+        Debug.Print Strings.Format("{0,-17}", value);
         For Each varCulture In cultures
             Set culture = varCulture
             Dim interval As DotNetLib.TimeSpan
             If (TimeSpan.TryParse2(value, culture, interval)) Then
-                Debug.Print interval.ToString2("c"); "         ";
+                Debug.Print Strings.Format("{0,20}", interval.ToString2("c")); 'interval.ToString2("c"); "         ";
             Else
-                Debug.Print "Unable to Parse"; "         ";
+                Debug.Print Strings.Format("{0,20}", "Unable to Parse"); ' "Unable to Parse"; "         ";
             End If
         Next
         Debug.Print
@@ -67,5 +68,3 @@ End Sub
 '    6:12:14:45.3448    6.12:14:45.3448000     Unable to Parse  6.12:14:45.3448000
 '    6:12:14:45,3448       Unable to Parse  6.12:14:45.3448000     Unable to Parse
 '    6:34:14:45            Unable to Parse     Unable to Parse     Unable to Parse
-
-
