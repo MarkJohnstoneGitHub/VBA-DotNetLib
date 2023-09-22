@@ -28,10 +28,10 @@ Attribute DateTimeTicks.VB_Description = "The following example uses the Ticks p
     Dim elapsedSpan As ITimeSpan
     Set elapsedSpan = TimeSpan.CreateFromTicks(elapsedTicks)
     Debug.Print "Elapsed from the beginning of the century to " & currentDate.ToString2("f")
-    Debug.Print "   " & VBA.format$(elapsedTicks * 100, "#,##0") & " nanoseconds"
-    Debug.Print "   " & VBA.format$(elapsedTicks, "#,##0") & " ticks"
-    Debug.Print "   " & VBA.format$(elapsedSpan.totalSeconds, "#,##0.00") & " seconds"
-    Debug.Print "   " & VBA.format$(elapsedSpan.TotalMinutes, "#,##0.00") & " minutes"
+    Debug.Print "   " & VBA.Format$(elapsedTicks * 100, "#,##0") & " nanoseconds"
+    Debug.Print "   " & VBA.Format$(elapsedTicks, "#,##0") & " ticks"
+    Debug.Print "   " & VBA.Format$(elapsedSpan.totalSeconds, "#,##0.00") & " seconds"
+    Debug.Print "   " & VBA.Format$(elapsedSpan.TotalMinutes, "#,##0.00") & " minutes"
     Debug.Print "   " & elapsedSpan.days & " days, " & elapsedSpan.Hours & " hours, " & elapsedSpan.Minutes & " minutes, " & elapsedSpan.Seconds & " seconds"
 End Sub
 

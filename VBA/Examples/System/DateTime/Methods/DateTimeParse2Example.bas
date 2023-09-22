@@ -23,7 +23,7 @@ Public Sub DateTimeParse2()
                     CultureInfo.CreateSpecificCulture("de-DE")
     ' Define string representations of a date to be parsed.
     Dim dateStrings() As String
-    dateStrings = Strings.ToArray( _
+    dateStrings = StringArray.ToArray( _
                     "01/10/2009 7:34 PM", _
                     "10.01.2009 19:34", _
                     "10-1-2009 19:34")
@@ -66,3 +66,4 @@ End Sub
 '          Converted '01/10/2009 7:34 PM' to Donnerstag, 1. Oktober 2009 19:34.
 '          Converted '10.01.2009 19:34' to Samstag, 10. Januar 2009 19:34.
 '          Converted '10-1-2009 19:34' to Samstag, 10. Januar 2009 19:34.
+

@@ -17,7 +17,7 @@ Option Explicit
 Public Sub TimeSpanTryParse2()
     ' Create an array of all supported standard date and time format specifiers.
     Dim values() As String
-    values = Strings.ToArray("6", "6:12", "6:12:14", "6:12:14:45", _
+    values = StringArray.ToArray("6", "6:12", "6:12:14", "6:12:14:45", _
                             "6.12:14:45", "6:12:14:45.3448", _
                             "6:12:14:45,3448", "6:34:14:45")
     
@@ -67,4 +67,5 @@ End Sub
 '    6:12:14:45.3448    6.12:14:45.3448000     Unable to Parse  6.12:14:45.3448000
 '    6:12:14:45,3448       Unable to Parse  6.12:14:45.3448000     Unable to Parse
 '    6:34:14:45            Unable to Parse     Unable to Parse     Unable to Parse
+
 

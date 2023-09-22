@@ -14,7 +14,7 @@ Option Explicit
 Public Sub DateTimeTryParse()
 Attribute DateTimeTryParse.VB_Description = "The following example passes a number of date and time strings to the DateTime.TryParse(String, DateTime) method."
    Dim dateStrings() As String
-   dateStrings = Strings.ToArray("05/01/2009 14:57:32.8", "2009-05-01 14:57:32.8", _
+   dateStrings = StringArray.ToArray("05/01/2009 14:57:32.8", "2009-05-01 14:57:32.8", _
                                  "2009-05-01T14:57:32.8375298-04:00", "5/01/2008", _
                                  "5/01/2008 14:57:32.80 -07:00", _
                                  "1 May 2008 2:57:32.8 PM", "16-05-2009 1:00:32 PM", _

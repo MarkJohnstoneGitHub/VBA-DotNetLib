@@ -26,7 +26,7 @@ Attribute TimeSpanToString2Example2.VB_Description = "The following example call
         CultureInfo.CreateFromName("en-US"), _
         CultureInfo.CreateFromName("fr-FR")
     Dim fmts() As String
-    fmts = Strings.ToArray("c", "g", "G", "hh\:mm\:ss")
+    fmts = StringArray.ToArray("c", "g", "G", "hh\:mm\:ss")
     Debug.Print "Interval"; "      Format  "; cultures(0).Name; "  "; cultures(1).Name
 
     Dim varInterval As Variant

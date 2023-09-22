@@ -14,7 +14,7 @@ Option Explicit
 Public Sub DateTimeOffsetNow()
 Attribute DateTimeOffsetNow.VB_Description = "The following example uses the Now property to retrieve the current date and time and displays it by using each of the standard date and time format strings supported by the DateTimeOffset type."
     Dim fmtStrings() As String
-    fmtStrings = Strings.ToArray("d", "D", "f", "F", "g", "G", "M", _
+    fmtStrings = StringArray.ToArray("d", "D", "f", "F", "g", "G", "M", _
                                   "R", "s", "t", "T", "u", "y")
     
     Dim value As IDateTimeOffset

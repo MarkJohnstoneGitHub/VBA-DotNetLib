@@ -14,14 +14,14 @@ Option Explicit
 ' method to ensure that a string in a number of possible formats can be successfully parsed .
 Public Sub DateTimeTryParseExact2()
     Dim formats() As String
-    formats = Strings.ToArray("M/d/yyyy h:mm:ss tt", "M/d/yyyy h:mm tt", _
+    formats = StringArray.ToArray("M/d/yyyy h:mm:ss tt", "M/d/yyyy h:mm tt", _
                             "MM/dd/yyyy hh:mm:ss", "M/d/yyyy h:mm:ss", _
                             "M/d/yyyy hh:mm tt", "M/d/yyyy hh tt", _
                             "M/d/yyyy h:mm", "M/d/yyyy h:mm", _
                             "MM/dd/yyyy hh:mm", "M/dd/yyyy hh:mm")
                             
     Dim dateStrings() As String
-    dateStrings = Strings.ToArray("5/1/2009 6:32 PM", "05/01/2009 6:32:05 PM", _
+    dateStrings = StringArray.ToArray("5/1/2009 6:32 PM", "05/01/2009 6:32:05 PM", _
                                 "5/1/2009 6:32:00", "05/01/2009 06:32", _
                                 "05/01/2009 06:32:00 PM", "05/01/2009 06:32:00")
 
@@ -46,4 +46,5 @@ End Sub
 '       Converted '05/01/2009 06:32' to 5/1/2009 6:32:00 AM.
 '       Converted '05/01/2009 06:32:00 PM' to 5/1/2009 6:32:00 PM.
 '       Converted '05/01/2009 06:32:00' to 5/1/2009 6:32:00 AM.
+
 

@@ -14,7 +14,7 @@ Option Explicit
 Public Sub TimeSpanTicksPerDay()
 Attribute TimeSpanTicksPerDay.VB_Description = "The following example references and displays the value of the TicksPerDay field."
    ' Display the TimeSpan.TicksPerDay.
-   Debug.Print "TimeSpan.TicksPerDay : " & format$(TimeSpan.TicksPerDay, "#,##0")
+   Debug.Print "TimeSpan.TicksPerDay : " & Format$(TimeSpan.TicksPerDay, "#,##0")
 End Sub
 
 ' Output:

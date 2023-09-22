@@ -17,7 +17,7 @@ Public Sub DateTimeNow()
     Set utcDate = DateTime.UtcNow
     
     Dim cultureNames() As String
-    cultureNames = Strings.ToArray("en-US", "en-GB", "fr-FR", _
+    cultureNames = StringArray.ToArray("en-US", "en-GB", "fr-FR", _
                                     "de-DE", "ru-RU")
     Dim cultureName As Variant
     For Each cultureName In cultureNames

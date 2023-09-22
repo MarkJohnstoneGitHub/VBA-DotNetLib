@@ -4,7 +4,7 @@ Attribute VB_Name = "DTFICurrentInfoExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 1, 2023
-'@LastModified September 1, 2023
+'@LastModified September 23, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.currentinfo?view=netframework-4.8.1#examples
 
@@ -20,27 +20,29 @@ Public Sub DateTimeFormatInfoCurrentInfo()
     Dim dtfi As DotNetLib.DateTimeFormatInfo
     Set dtfi = DateTimeFormatInfo.CurrentInfo
     
-    Debug.Print "Date and Time Formats for "; date1.ToString2("u"); _
-                " in the "; CultureInfo.CurrentCulture.Name; " Culture:"
-
-    Debug.Print Align("Long Date Pattern", 22, Justify_Left); " "; Align(dtfi.LongDatePattern, 20, Justify_Left);
-    Debug.Print date1.ToString2(dtfi.LongDatePattern)
-   
-    Debug.Print Align("Long Time Pattern", 22, Justify_Left); " "; Align(dtfi.LongTimePattern, 20, Justify_Left);
-    Debug.Print date1.ToString2(dtfi.LongTimePattern)
-
-    Debug.Print Align("Month/Day Pattern", 22, Justify_Left); " "; Align(dtfi.MonthDayPattern, 20, Justify_Left);
-    Debug.Print date1.ToString2(dtfi.MonthDayPattern)
-
-    Debug.Print Align("Short Date Pattern", 22, Justify_Left); " "; Align(dtfi.ShortDatePattern, 20, Justify_Left);
-    Debug.Print date1.ToString2(dtfi.ShortDatePattern)
+    Debug.Print Strings.Format("Date and Time Formats for {0:u} in the {1} Culture:", _
+                                date1, CultureInfo.CurrentCulture.Name); VBA.vbNewLine
+    Debug.Print Strings.Format("{0,-22} {1,-20} {2,-30}", "Long Date Pattern", _
+                                dtfi.LongDatePattern, _
+                                date1.ToString2(dtfi.LongDatePattern))
+    Debug.Print Strings.Format("{0,-22} {1,-20} {2,-30}", "Long Time Pattern", _
+                                dtfi.LongTimePattern, _
+                                date1.ToString2(dtfi.LongTimePattern))
+    Debug.Print Strings.Format("{0,-22} {1,-20} {2,-30}", "Month/Day Pattern", _
+                                dtfi.MonthDayPattern, _
+                                date1.ToString2(dtfi.MonthDayPattern))
     
-    Debug.Print Align("Short Time Pattern", 22, Justify_Left); " "; Align(dtfi.ShortTimePattern, 20, Justify_Left);
-    Debug.Print date1.ToString2(dtfi.ShortTimePattern)
-    
-    Debug.Print Align("YearMonthPattern", 22, Justify_Left); " "; Align(dtfi.YearMonthPattern, 20, Justify_Left);
-    Debug.Print date1.ToString2(dtfi.YearMonthPattern)
-    
+    Debug.Print Strings.Format("{0,-22} {1,-20} {2,-30}", "Short Date Pattern", _
+                                dtfi.ShortDatePattern, _
+                                date1.ToString2(dtfi.ShortDatePattern))
+
+    Debug.Print Strings.Format("{0,-22} {1,-20} {2,-30}", "Short Time Pattern", _
+                                dtfi.ShortTimePattern, _
+                                date1.ToString2(dtfi.ShortTimePattern))
+
+    Debug.Print Strings.Format("{0,-22} {1,-20} {2,-30}", "Year/Month Pattern", _
+                                dtfi.YearMonthPattern, _
+                                date1.ToString2(dtfi.YearMonthPattern))
 End Sub
 
 ' The example displays the following output:
@@ -52,3 +54,9 @@ End Sub
 '    Short Date Pattern     M/d/yyyy             5/28/2016
 '    Short Time Pattern     h:mm tt              10:28 AM
 '    Year/Month Pattern     MMMM yyyy            May 2016
+
+
+
+
+
+

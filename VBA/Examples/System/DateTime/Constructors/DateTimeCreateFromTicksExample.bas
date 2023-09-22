@@ -35,7 +35,7 @@ Attribute DateTimeCreateFromTicks.VB_Description = "This example demonstrates th
     Debug.Print "1) The maximum date and time is " & dt1.ToString2(pvtFormat)
     Debug.Print "2) The minimum date and time is " & dt2.ToString2(pvtFormat)
     Debug.Print "3) The custom  date and time is " & dt3.ToString2(pvtFormat)
-    Debug.Print "The custom date and time is created from " & VBA.format$(pvtTicks, "#,##0") & " ticks."
+    Debug.Print "The custom date and time is created from " & VBA.Format$(pvtTicks, "#,##0") & " ticks."
 End Sub
 
 '/*

@@ -18,7 +18,7 @@ Public Sub DateTimeOffsetTryParseExact2()
     Dim pvtInput As String
     
     Dim formats() As String
-    formats = Strings.ToArray( _
+    formats = StringArray.ToArray( _
                 "@M/dd/yyyy HH:m zzz", "MM/dd/yyyy HH:m zzz", _
                 "M/d/yyyy HH:m zzz", "MM/d/yyyy HH:m zzz", _
                 "M/dd/yy HH:m zzz", "MM/dd/yy HH:m zzz", _
@@ -67,3 +67,4 @@ End Sub
 '    Then press Enter: 12/5/07 6:54 -6:00
 '
 '    12/5/07 6:54 -6:00 was converted to 12/5/2007 6:54:00 AM -06:00
+

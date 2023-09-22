@@ -24,7 +24,7 @@ Public Sub DateTimeFormatInfoAbbreviatedMonthNames()
     Dim dtfi As DotNetLib.DateTimeFormatInfo
     Set dtfi = ci.DateTimeFormat
     
-    dtfi.SetAbbreviatedMonthNames Strings.ToArray("of Jan", "of Feb", "of Mar", _
+    dtfi.SetAbbreviatedMonthNames StringArray.ToArray("of Jan", "of Feb", "of Mar", _
                                                 "of Apr", "of May", "of Jun", _
                                                 "of Jul", "of Aug", "of Sep", _
                                                 "of Oct", "of Nov", "of Dec", "")
@@ -52,3 +52,4 @@ End Sub
 '       28 of Feb 2013
 '       28 of Mar 2013
 '       28 of Apr 2013
+

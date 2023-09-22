@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DotNetLib.System
 {
-
     [ComVisible(true)]
     [Guid("C6E48F40-EAC0-49D8-BF41-3D2F28BA1B72")]
     [Description("Represents the standard input, output, and error streams for console applications.")]

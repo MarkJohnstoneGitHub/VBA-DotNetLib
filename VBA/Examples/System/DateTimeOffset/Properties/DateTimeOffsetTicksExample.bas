@@ -29,7 +29,7 @@ Attribute DateTimeOffsetTicks.VB_Description = "The following example initialize
     
     Dim dto As IDateTimeOffset
     Set dto = DateTimeOffset.CreateFromTicks(pvtTicks, DateTimeOffset.Now.Offset)
-    Debug.Print "There are " & VBA.format$(dto.Ticks, "#,###") & " ticks in " & dto.ToString() & "."
+    Debug.Print "There are " & VBA.Format$(dto.Ticks, "#,###") & " ticks in " & dto.ToString() & "."
 End Sub
 
 ' The example displays the following output:

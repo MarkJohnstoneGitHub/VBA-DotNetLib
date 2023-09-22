@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
+using System.Runtime.InteropServices;
 
 namespace DotNetLib.Extensions
 {
@@ -31,6 +32,9 @@ namespace DotNetLib.Extensions
         {
             return obj is IWrappedObject;
         }
+
+        
+
 
     }
 }

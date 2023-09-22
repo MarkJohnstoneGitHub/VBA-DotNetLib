@@ -20,7 +20,7 @@ Public Sub DateTimeFormatInfoAbbreviatedDayNames()
     Set ci = CultureInfo.CreateSpecificCulture("en-US")
     Dim dtfi As DotNetLib.DateTimeFormatInfo
     Set dtfi = ci.DateTimeFormat
-    dtfi.SetAbbreviatedDayNames Strings.ToArray("Su", "M", "Tu", "W", _
+    dtfi.SetAbbreviatedDayNames StringArray.ToArray("Su", "M", "Tu", "W", _
                                                 "Th", "F", "Sa")
                                                 
     Dim dat As DotNetLib.DateTime
@@ -42,3 +42,4 @@ End Sub
 '       Su Jun 01, 2014
 '       M Jun 02, 2014
 '       Tu Jun 03, 2014
+

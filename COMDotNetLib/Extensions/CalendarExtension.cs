@@ -1,12 +1,6 @@
 ﻿using DotNetLib.System.Globalization;
 using GGlobalization = global::System.Globalization;
 using System.Runtime.InteropServices;
-//using GregorianCalendar = DotNetLib.System.Globalization.GregorianCalendar;
-//using PersianCalendar = DotNetLib.System.Globalization.PersianCalendar;
-//using UmAlQuraCalendar = DotNetLib.System.Globalization.UmAlQuraCalendar;
-//using ThaiBuddhistCalendar = DotNetLib.System.Globalization.ThaiBuddhistCalendar;
-//using HijriCalendar = DotNetLib.System.Globalization.HijriCalendar;
-//using HebrewCalendar = DotNetLib.System.Globalization.HebrewCalendar;
 
 namespace DotNetLib.Extensions
 {

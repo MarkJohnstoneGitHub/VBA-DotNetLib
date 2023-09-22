@@ -16,7 +16,7 @@ namespace DotNetLib.System.Globalization
     [Description("Provides information about a specific culture(called a locale for unmanaged code development). The information includes the names for the culture, the writing system, the calendar used, the sort order of strings, and formatting for dates and numbers.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(ICultureInfo))]
-    public class CultureInfo : ICloneable, IFormatProvider, ICultureInfo
+    public class CultureInfo : ICloneable, IFormatProvider, ICultureInfo, IWrappedObject
     {
         private GGlobalization.CultureInfo _cultureInfo;
         private NumberFormatInfo _numberFormatInfo;
@@ -65,6 +65,8 @@ namespace DotNetLib.System.Globalization
         }
 
         // Properties
+
+        public object WrappedObject => _cultureInfo;
 
         public GGlobalization.CultureInfo WrappedCultureInfo
         {

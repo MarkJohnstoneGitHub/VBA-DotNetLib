@@ -18,96 +18,96 @@ Option Explicit
 ' style affects the return value only when it is used with custom format strings.
 Public Sub TimeSpanTryParseExact3()
     Dim intervalString As String
-    Dim format As String
+    Dim Format As String
     Dim interval As DotNetLib.TimeSpan
     Dim culture As DotNetLib.CultureInfo
     Set culture = Nothing
     
     ' Parse hour:minute value with custom format specifier.
     intervalString = "17:14"
-    format = "hh\:mm"
+    Format = "hh\:mm"
     Set culture = CultureInfo.CurrentCulture
-    If (TimeSpan.TryParseExact3(intervalString, format, culture, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
-        Debug.Print "'"; intervalString; "' ("; format; ") --> "; interval.ToString()
+    If (TimeSpan.TryParseExact3(intervalString, Format, culture, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
+        Debug.Print "'"; intervalString; "' ("; Format; ") --> "; interval.ToString()
     Else
-        Debug.Print "Unable to parse '"; intervalString; "' using format "; format
+        Debug.Print "Unable to parse '"; intervalString; "' using format "; Format
     End If
 
     ' Parse hour:minute:second value with "g" specifier.
     intervalString = "17:14:48"
-    format = "g"
+    Format = "g"
     Set culture = CultureInfo.InvariantCulture
-    If (TimeSpan.TryParseExact3(intervalString, format, culture, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
-        Debug.Print "'"; intervalString; "' ("; format; ") --> "; interval.ToString()
+    If (TimeSpan.TryParseExact3(intervalString, Format, culture, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
+        Debug.Print "'"; intervalString; "' ("; Format; ") --> "; interval.ToString()
     Else
-        Debug.Print "Unable to parse '"; intervalString; "' using format "; format
+        Debug.Print "Unable to parse '"; intervalString; "' using format "; Format
     End If
 
     ' Parse hours:minute.second value with custom format specifier.
     intervalString = "17:14:48.153"
-    format = "h\:mm\:ss\.fff"
+    Format = "h\:mm\:ss\.fff"
     Set culture = Nothing
-    If (TimeSpan.TryParseExact3(intervalString, format, culture, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
-        Debug.Print "'"; intervalString; "' ("; format; ") --> "; interval.ToString()
+    If (TimeSpan.TryParseExact3(intervalString, Format, culture, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
+        Debug.Print "'"; intervalString; "' ("; Format; ") --> "; interval.ToString()
     Else
-        Debug.Print "Unable to parse '"; intervalString; "' using format "; format
+        Debug.Print "Unable to parse '"; intervalString; "' using format "; Format
     End If
 
     ' Parse days:hours:minute.second value with "G" specifier
     ' and current (en-US) culture.
     intervalString = "3:17:14:48.153"
-    format = "G"
+    Format = "G"
     Set culture = CultureInfo.CurrentCulture
-    If (TimeSpan.TryParseExact3(intervalString, format, culture, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
-        Debug.Print "'"; intervalString; "' ("; format; ") --> "; interval.ToString()
+    If (TimeSpan.TryParseExact3(intervalString, Format, culture, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
+        Debug.Print "'"; intervalString; "' ("; Format; ") --> "; interval.ToString()
     Else
-        Debug.Print "Unable to parse '"; intervalString; "' using format "; format
+        Debug.Print "Unable to parse '"; intervalString; "' using format "; Format
     End If
 
     ' Parse days:hours:minute.second value with a custom format specifier.
     intervalString = "3:17:14:48.153"
-    format = "d\:hh\:mm\:ss\.fff"
+    Format = "d\:hh\:mm\:ss\.fff"
     Set culture = Nothing
-    If (TimeSpan.TryParseExact3(intervalString, format, culture, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
-        Debug.Print "'"; intervalString; "' ("; format; ") --> "; interval.ToString()
+    If (TimeSpan.TryParseExact3(intervalString, Format, culture, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
+        Debug.Print "'"; intervalString; "' ("; Format; ") --> "; interval.ToString()
     Else
-        Debug.Print "Unable to parse '"; intervalString; "' using format "; format
+        Debug.Print "Unable to parse '"; intervalString; "' using format "; Format
     End If
 
     ' Parse days:hours:minute.second value with "G" specifier
     ' and fr-FR culture.
     intervalString = "3:17:14:48,153"
-    format = "G"
+    Format = "G"
     Set culture = CultureInfo.CreateFromName("fr-FR")
-    If (TimeSpan.TryParseExact3(intervalString, format, culture, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
-        Debug.Print "'"; intervalString; "' ("; format; ") --> "; interval.ToString()
+    If (TimeSpan.TryParseExact3(intervalString, Format, culture, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
+        Debug.Print "'"; intervalString; "' ("; Format; ") --> "; interval.ToString()
     Else
-        Debug.Print "Unable to parse '"; intervalString; "' using format "; format
+        Debug.Print "Unable to parse '"; intervalString; "' using format "; Format
     End If
 
     ' Parse a single number using the "c" standard format string.
     intervalString = "12"
-    format = "c"
-    If (TimeSpan.TryParseExact3(intervalString, format, Nothing, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
-        Debug.Print "'"; intervalString; "' ("; format; ") --> "; interval.ToString()
+    Format = "c"
+    If (TimeSpan.TryParseExact3(intervalString, Format, Nothing, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
+        Debug.Print "'"; intervalString; "' ("; Format; ") --> "; interval.ToString()
     Else
-        Debug.Print "Unable to parse '"; intervalString; "' using format "; format
+        Debug.Print "Unable to parse '"; intervalString; "' using format "; Format
     End If
     
     ' Parse a single number using the "%h" custom format string.
-    format = "%h"
-    If (TimeSpan.TryParseExact3(intervalString, format, Nothing, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
-        Debug.Print "'"; intervalString; "' ("; format; ") --> "; interval.ToString()
+    Format = "%h"
+    If (TimeSpan.TryParseExact3(intervalString, Format, Nothing, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
+        Debug.Print "'"; intervalString; "' ("; Format; ") --> "; interval.ToString()
     Else
-        Debug.Print "Unable to parse '"; intervalString; "' using format "; format
+        Debug.Print "Unable to parse '"; intervalString; "' using format "; Format
     End If
     
     ' Parse a single number using the "%s" custom format string.
-    format = "%s"
-    If (TimeSpan.TryParseExact3(intervalString, format, Nothing, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
-        Debug.Print "'"; intervalString; "' ("; format; ") --> "; interval.ToString()
+    Format = "%s"
+    If (TimeSpan.TryParseExact3(intervalString, Format, Nothing, TimeSpanStyles.TimeSpanStyles_AssumeNegative, interval)) Then
+        Debug.Print "'"; intervalString; "' ("; Format; ") --> "; interval.ToString()
     Else
-        Debug.Print "Unable to parse '"; intervalString; "' using format "; format
+        Debug.Print "Unable to parse '"; intervalString; "' using format "; Format
     End If
 End Sub
 

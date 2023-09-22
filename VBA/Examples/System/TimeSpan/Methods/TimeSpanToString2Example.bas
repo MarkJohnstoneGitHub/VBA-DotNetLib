@@ -25,7 +25,7 @@ Attribute TimeSpanToString2.VB_Description = "The following example uses standar
       TimeSpan.Create3(0, 0, 0, 0, 25)
 
    Dim fmts() As String
-   fmts = Strings.ToArray("c", "g", "G", "hh\:mm\:ss", "%m' min.'")
+   fmts = StringArray.ToArray("c", "g", "G", "hh\:mm\:ss", "%m' min.'")
    
    ' Calculate a new time interval by adding each element to the base interval.
    Dim varSpan As Variant

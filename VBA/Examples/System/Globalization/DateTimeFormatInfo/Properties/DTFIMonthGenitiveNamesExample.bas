@@ -21,7 +21,7 @@ Option Explicit
 ' the GetShortestDayName() and SetAllDateTimePatterns() methods.
 Public Sub DateTimeFormatInfoMonthGenitiveNames()
     Dim myDateTimePatterns() As String
-    myDateTimePatterns = Strings.ToArray("MM/dd/yy", "MM/dd/yyyy")
+    myDateTimePatterns = StringArray.ToArray("MM/dd/yy", "MM/dd/yyyy")
     
     ' Get the en-US culture.
     Dim ci As DotNetLib.CultureInfo
@@ -146,4 +146,5 @@ End Sub
 '"MM/dd/yyyy"
 '
 '*/
+
 

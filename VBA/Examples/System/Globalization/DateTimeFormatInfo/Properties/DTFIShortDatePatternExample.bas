@@ -15,7 +15,7 @@ Option Explicit
 ' the value of a date formatted using the ShortDatePattern property for a few cultures.
 Public Sub DateTimeFormatInfoShortDatePattern()
     Dim cultures() As String
-    cultures = Strings.ToArray("en-US", "ja-JP", "fr-FR")
+    cultures = StringArray.ToArray("en-US", "ja-JP", "fr-FR")
     Dim date1 As DotNetLib.DateTime
     Set date1 = DateTime.CreateFromDate(2011, 5, 1)
     

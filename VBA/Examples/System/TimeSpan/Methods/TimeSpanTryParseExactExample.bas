@@ -14,15 +14,15 @@ Option Explicit
 ' to parse several string representations of time intervals using various format strings and cultures.
 Public Sub TimeSpanTryParseExact()
     Dim intervalString As String
-    Dim format As String
+    Dim Format As String
     Dim culture As DotNetLib.CultureInfo
     
     ' Parse hour:minute value with "g" specifier current culture.
     intervalString = "17:14"
-    format = "g"
+    Format = "g"
     Set culture = CultureInfo.CurrentCulture
     Dim interval As DotNetLib.TimeSpan
-    If (TimeSpan.TryParseExact(intervalString, format, culture, interval)) Then
+    If (TimeSpan.TryParseExact(intervalString, Format, culture, interval)) Then
         Debug.Print "'"; intervalString; "' --> "; interval.ToString()
     Else
         Debug.Print "Unable to parse "; intervalString
@@ -30,9 +30,9 @@ Public Sub TimeSpanTryParseExact()
 
     ' Parse hour:minute:second value with "G" specifier.
     intervalString = "17:14:48"
-    format = "G"
+    Format = "G"
     Set culture = CultureInfo.InvariantCulture
-    If (TimeSpan.TryParseExact(intervalString, format, culture, interval)) Then
+    If (TimeSpan.TryParseExact(intervalString, Format, culture, interval)) Then
         Debug.Print "'"; intervalString; "' --> "; interval.ToString()
     Else
         Debug.Print "Unable to parse "; intervalString
@@ -40,9 +40,9 @@ Public Sub TimeSpanTryParseExact()
     
     ' Parse hour:minute:second value with "G" specifier.
     intervalString = "17:14:48"
-    format = "G"
+    Format = "G"
     Set culture = CultureInfo.InvariantCulture
-    If (TimeSpan.TryParseExact(intervalString, format, culture, interval)) Then
+    If (TimeSpan.TryParseExact(intervalString, Format, culture, interval)) Then
         Debug.Print "'"; intervalString; "' --> "; interval.ToString()
     Else
         Debug.Print "Unable to parse "; intervalString
@@ -51,9 +51,9 @@ Public Sub TimeSpanTryParseExact()
     ' Parse days:hours:minute.second value with "G" specifier
     ' and current (en-US) culture.
     intervalString = "3:17:14:48.153"
-    format = "G"
+    Format = "G"
     Set culture = CultureInfo.CurrentCulture
-    If (TimeSpan.TryParseExact(intervalString, format, culture, interval)) Then
+    If (TimeSpan.TryParseExact(intervalString, Format, culture, interval)) Then
         Debug.Print "'"; intervalString; "' --> "; interval.ToString()
     Else
         Debug.Print "Unable to parse "; intervalString
@@ -62,9 +62,9 @@ Public Sub TimeSpanTryParseExact()
     ' Parse days:hours:minute.second value with "G" specifier
     ' and fr-FR culture.
     intervalString = "3:17:14:48.153"
-    format = "G"
+    Format = "G"
     Set culture = CultureInfo.CreateFromName("fr-FR")
-    If (TimeSpan.TryParseExact(intervalString, format, culture, interval)) Then
+    If (TimeSpan.TryParseExact(intervalString, Format, culture, interval)) Then
         Debug.Print "'"; intervalString; "' --> "; interval.ToString()
     Else
         Debug.Print "Unable to parse "; intervalString
@@ -72,24 +72,24 @@ Public Sub TimeSpanTryParseExact()
 
     ' Parse a single number using the "c" standard format string.
     intervalString = "12"
-    format = "c"
-    If (TimeSpan.TryParseExact(intervalString, format, Nothing, interval)) Then
+    Format = "c"
+    If (TimeSpan.TryParseExact(intervalString, Format, Nothing, interval)) Then
         Debug.Print "'"; intervalString; "' --> "; interval.ToString()
     Else
         Debug.Print "Unable to parse "; intervalString
     End If
 
     ' Parse a single number using the "%h" custom format string.
-    format = "%h"
-    If (TimeSpan.TryParseExact(intervalString, format, Nothing, interval)) Then
+    Format = "%h"
+    If (TimeSpan.TryParseExact(intervalString, Format, Nothing, interval)) Then
         Debug.Print "'"; intervalString; "' --> "; interval.ToString()
     Else
         Debug.Print "Unable to parse "; intervalString
     End If
 
     ' Parse a single number using the "%s" custom format string.
-    format = "%s"
-    If (TimeSpan.TryParseExact(intervalString, format, Nothing, interval)) Then
+    Format = "%s"
+    If (TimeSpan.TryParseExact(intervalString, Format, Nothing, interval)) Then
         Debug.Print "'"; intervalString; "' --> "; interval.ToString()
     Else
         Debug.Print "Unable to parse "; intervalString

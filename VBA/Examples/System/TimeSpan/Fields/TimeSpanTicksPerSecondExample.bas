@@ -14,7 +14,7 @@ Option Explicit
 Public Sub TimeSpanTicksPerSecond()
 Attribute TimeSpanTicksPerSecond.VB_Description = "The following example references and displays the value of the TicksPerSecond field."
    ' Display the TimeSpan.TicksPerSecond value.
-   Debug.Print "TimeSpan.TicksPerSecond : " & format$(TimeSpan.TicksPerSecond, "#,##0")
+   Debug.Print "TimeSpan.TicksPerSecond : " & Format$(TimeSpan.TicksPerSecond, "#,##0")
 End Sub
 
 ' Output:

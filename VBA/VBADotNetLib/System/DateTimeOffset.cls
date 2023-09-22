@@ -191,16 +191,16 @@ End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")
-Public Function ParseExact(ByVal strInput As String, ByVal format As String, ByVal formatProvider As IFormatProvider) As DotNetLib.DateTimeOffset
+Public Function ParseExact(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider) As DotNetLib.DateTimeOffset
 Attribute ParseExact.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly."
-    Set ParseExact = this.DateTimeOffsetSingleton.ParseExact(strInput, format, formatProvider)
+    Set ParseExact = this.DateTimeOffsetSingleton.ParseExact(strInput, Format, formatProvider)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly.")
-Public Function ParseExact2(ByVal strInput As String, ByVal format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles) As DotNetLib.DateTimeOffset
+Public Function ParseExact2(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles) As DotNetLib.DateTimeOffset
 Attribute ParseExact2.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly."
-    Set ParseExact2 = this.DateTimeOffsetSingleton.ParseExact2(strInput, format, formatProvider, styles)
+    Set ParseExact2 = this.DateTimeOffsetSingleton.ParseExact2(strInput, Format, formatProvider, styles)
 End Function
 
 '@Static
@@ -226,9 +226,9 @@ End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly.")
-Public Function TryParseExact(ByVal strInput As String, ByVal format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DotNetLib.DateTimeOffset) As Boolean
+Public Function TryParseExact(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DotNetLib.DateTimeOffset) As Boolean
 Attribute TryParseExact.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly."
-    TryParseExact = this.DateTimeOffsetSingleton.TryParseExact(strInput, format, formatProvider, styles, result)
+    TryParseExact = this.DateTimeOffsetSingleton.TryParseExact(strInput, Format, formatProvider, styles, result)
 End Function
 
 '@Static

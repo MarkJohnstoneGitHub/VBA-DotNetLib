@@ -62,6 +62,7 @@
     <Compile Include="CoordinateSharp\ICelestialInfo.cs" />
     <Compile Include="CoordinateSharp\ICoordinate.cs" />
     <Compile Include="Extensions\CalendarExtension.cs" />
+    <Compile Include="Extensions\IFormatProviderExtension.cs" />
     <Compile Include="Extensions\IWrappedObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\Collections\IList.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="System\Globalization\COM Management\ICompareInfoSingleton.cs" />
     <Compile Include="System\Globalization\JulianCalendar.cs" />
     <Compile Include="System\Globalization\COM Management\Calendar\Singleton\JulianCalendarSingleton.cs" />
+    <Compile Include="System\Globalization\StringSingleton.cs" />
     <Compile Include="System\Globalization\TaiwanCalendar.cs" />
     <Compile Include="System\Globalization\COM Management\Calendar\Singleton\TaiwanCalendarSingleton.cs" />
     <Compile Include="System\Globalization\GregorianCalendar.cs" />
@@ -156,6 +158,7 @@
     <Compile Include="System\Globalization\UmAlQuraCalendar.cs" />
     <Compile Include="System\Globalization\COM Management\Calendar\Singleton\UmAlQuraCalendarSingleton.cs" />
     <Compile Include="System\COM Management\IConsoleSingleton.cs" />
+    <Compile Include="System\COM Management\IStringSingleton.cs" />
     <Compile Include="System\TimeSpan.cs" />
     <Compile Include="System\TimeZoneInfo.cs" />
     <Compile Include="System\COM Management\TimeZoneInfoSingleton.cs" />

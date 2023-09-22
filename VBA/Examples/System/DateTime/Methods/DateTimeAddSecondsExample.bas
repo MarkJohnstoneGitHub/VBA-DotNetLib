@@ -19,22 +19,22 @@ Public Sub DateTimeAddSeconds()
     Dim date1 As IDateTime
     Set date1 = DateTime.CreateFromDateTime(2014, 9, 8, 16, 0, 0)
     Debug.Print "Original date: " & date1.ToString2(dateFormat) & _
-                " (" & VBA.format$(date1.Ticks, "#,##0") & " ticks)" & vbNewLine
+                " (" & VBA.Format$(date1.Ticks, "#,##0") & " ticks)" & vbNewLine
    
     Dim date2 As IDateTime
     Set date2 = date1.AddSeconds(30)
     Debug.Print "Second date:   " & date2.ToString2(dateFormat) & _
-                " (" & VBA.format$(date2.Ticks, "#,##0") & " ticks)"
+                " (" & VBA.Format$(date2.Ticks, "#,##0") & " ticks)"
     Debug.Print "Difference between dates: " & DateTime.Subtraction(date2, date1).ToString & _
-                 " (" & VBA.format$(date2.Ticks - date1.Ticks, "#,##0") & " ticks)"
+                 " (" & VBA.Format$(date2.Ticks - date1.Ticks, "#,##0") & " ticks)"
     
     ' Add 1 day's worth of seconds (60 secs. * 60 mins * 24 hrs.
     Dim date3 As IDateTime
     Set date3 = date1.AddSeconds(CDbl(60) * 60 * 24) 'convert to double to avoid VBA overflow error
     Debug.Print "Third date:    " & date3.ToString2(dateFormat) & _
-                " (" & VBA.format$(date3.Ticks, "#,##0") & " ticks)"
+                " (" & VBA.Format$(date3.Ticks, "#,##0") & " ticks)"
     Debug.Print "Difference between dates: " & DateTime.Subtraction(date3, date1).ToString & _
-                " (" & VBA.format$(date3.Ticks - date1.Ticks, "#,##0") & " ticks)"
+                " (" & VBA.Format$(date3.Ticks - date1.Ticks, "#,##0") & " ticks)"
 End Sub
 
 ' The example displays the following output:

@@ -15,7 +15,7 @@ Option Explicit
 Public Sub DateTimeToString2Example2()
     ' Create an array of all supported standard date and time format specifiers.
     Dim formats() As String
-    formats = Strings.ToArray("d", "D", "f", "F", "g", "G", "m", "o", "r", _
+    formats = StringArray.ToArray("d", "D", "f", "F", "g", "G", "m", "o", "r", _
                             "s", "t", "T", "u", "U", "Y")
     
     ' Create an array of four cultures.
@@ -120,4 +120,5 @@ End Sub
 '    Y Format Specifier      en-US Culture                             October 2008
 '    Y Format Specifier      es-ES Culture                          octubre de 2008
 '    Y Format Specifier      fr-FR Culture                             octobre 2008
+
 

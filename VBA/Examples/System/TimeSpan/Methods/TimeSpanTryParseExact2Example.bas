@@ -17,10 +17,10 @@ Option Explicit
 ' in either the general short format or the general long format.
 Public Sub TimeSpanTryParseExact2()
     Dim inputs() As String
-    inputs = Strings.ToArray("3", "16:42", "1:6:52:35.0625", _
+    inputs = StringArray.ToArray("3", "16:42", "1:6:52:35.0625", _
                             "1:6:52:35,0625")
     Dim formats() As String
-    formats = Strings.ToArray("g", "G", "%h")
+    formats = StringArray.ToArray("g", "G", "%h")
     Dim interval As DotNetLib.TimeSpan
     Dim culture As DotNetLib.CultureInfo
     Set culture = CultureInfo.CreateFromName("fr-FR")
@@ -41,4 +41,5 @@ End Sub
 '       16:42 --> 16:42:00
 '       Unable to parse 1:6:52:35.0625
 '       1:6:52:35,0625 --> 1.06:52:35.0625000
+
 

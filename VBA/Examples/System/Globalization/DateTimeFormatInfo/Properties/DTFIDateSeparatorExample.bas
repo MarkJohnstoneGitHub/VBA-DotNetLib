@@ -19,7 +19,7 @@ Public Sub DateTimeFormatInfoDateSeparator()
     Set value = DateTime.CreateFromDate(2013, 9, 8)
     
     Dim formats() As String
-    formats = Strings.ToArray("d", "G", "g")
+    formats = StringArray.ToArray("d", "G", "g")
     Dim culture As DotNetLib.CultureInfo
     Set culture = CultureInfo.CreateSpecificCulture("en-US")
     Dim dtfi As DotNetLib.DateTimeFormatInfo

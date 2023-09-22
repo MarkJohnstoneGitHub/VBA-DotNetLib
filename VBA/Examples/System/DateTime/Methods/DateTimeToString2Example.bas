@@ -20,7 +20,7 @@ Public Sub DateTimeToString2()
     
     ' Create an array of standard format strings.
     Dim standardFmts() As String
-    standardFmts = Strings.ToArray("d", "D", "f", "F", "g", "G", "m", "o", _
+    standardFmts = StringArray.ToArray("d", "D", "f", "F", "g", "G", "m", "o", _
                                     "R", "s", "t", "T", "u", "U", "y")
                                     
     ' Output date and time using each custom format string.
@@ -32,7 +32,7 @@ Public Sub DateTimeToString2()
     
     ' Create an array of some custom format strings.
     Dim customFmts() As String
-    customFmts = Strings.ToArray("h:mm:ss.ff t", "d MMM yyyy", "HH:mm:ss.f", _
+    customFmts = StringArray.ToArray("h:mm:ss.ff t", "d MMM yyyy", "HH:mm:ss.f", _
                                     "dd MMM HH:mm:ss", "\Mon\t\h\: M", "HH:mm:ss.ffffzzz")
     ' Output date and time using each custom format string.
     Dim customFmt As Variant
@@ -65,4 +65,5 @@ End Sub
 '       'dd MMM HH:mm:ss': 15 Jun 21:15:07
 '       '\Mon\t\h\: M': Month: 6
 '       'HH:mm:ss.ffffzzz': 21:15:07.0000-07:00
+
 
