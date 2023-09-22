@@ -16,7 +16,7 @@ Sep 23, 2923 Added [String](https://learn.microsoft.com/en-us/dotnet/api/system.
 
 The API for the .Net class may be required to be altered due to VBA reserved words. See [reserved-word-list](https://www.engram9.info/access-2007-vba/reserved-word-list.html).
  
- Affected API due to VBA reserved words:
+ **Affected API due to VBA reserved words:**
   - [TimeZoneInfo.Local](https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.local?view=netframework-4.8.1) renamed to TimeZoneInfo.Locale.
   - [String](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1) renamed to Strings
    
