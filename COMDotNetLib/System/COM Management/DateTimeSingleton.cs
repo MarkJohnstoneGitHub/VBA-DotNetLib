@@ -39,7 +39,7 @@ namespace DotNetLib.System.COM_Management
             return new DateTime(pYear, pMonth, pDay);
         }
 
-        public DateTime CreateFromDate2(int pYear, int pMonth, int pDay, ICalendar pCalendar)
+        public DateTime CreateFromDate2(int pYear, int pMonth, int pDay, Calendar pCalendar)
         {
             return new DateTime(pYear, pMonth, pDay, pCalendar);
         }
@@ -88,12 +88,12 @@ namespace DotNetLib.System.COM_Management
             return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond);
         }
 
-        public DateTime CreateFromDateTime2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, ICalendar pCalendar)
+        public DateTime CreateFromDateTime2(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, Calendar pCalendar)
         {
             return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pCalendar);
         }
 
-        public DateTime CreateFromDateTime3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar pCalendar)
+        public DateTime CreateFromDateTime3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, Calendar pCalendar)
         {
             return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pCalendar);
         }
@@ -108,7 +108,7 @@ namespace DotNetLib.System.COM_Management
             return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pKind);
         }
 
-        public DateTime CreateFromDateTimeKind3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar pCalendar, DateTimeKind pKind)
+        public DateTime CreateFromDateTimeKind3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, Calendar pCalendar, DateTimeKind pKind)
         {
             return new DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pCalendar, pKind);
         }

@@ -11,7 +11,7 @@ namespace DotNetLib.System.Globalization
     [Guid("6D492236-9CA2-4CE2-924C-D25B0A2C5C08")]
     [Description("Represents the Hijri calendar.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-    public interface IHijriCalendar : ICalendar
+    public interface IHijriCalendar : Calendar
     {
         //Properties
 

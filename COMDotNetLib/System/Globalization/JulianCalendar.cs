@@ -16,7 +16,7 @@ namespace DotNetLib.System.Globalization
     [Description("Represents the Julian calendar.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IJulianCalendar))]
-    public class JulianCalendar : IJulianCalendar, ICalendar, IWrappedObject
+    public class JulianCalendar : IJulianCalendar, Calendar, IWrappedObject
     {
         private GGlobalization.JulianCalendar _julianCalendar;
 

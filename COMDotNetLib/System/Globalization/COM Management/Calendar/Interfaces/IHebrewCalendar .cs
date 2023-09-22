@@ -11,7 +11,7 @@ namespace DotNetLib.System.Globalization
     [Guid("06F914F1-21F0-4B96-84BE-6858C3A7DFA8")]
     [Description("Represents the Hebrew calendar.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-    public interface IHebrewCalendar : ICalendar
+    public interface IHebrewCalendar : Calendar
     {
         //Properties
 

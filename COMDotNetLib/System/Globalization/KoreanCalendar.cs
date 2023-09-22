@@ -16,7 +16,7 @@ namespace DotNetLib.System.Globalization
     [Description("Represents the Korean calendar.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IKoreanCalendar))]
-    public class KoreanCalendar : IKoreanCalendar, ICalendar, IWrappedObject
+    public class KoreanCalendar : IKoreanCalendar, Calendar, IWrappedObject
     {
         private GGlobalization.KoreanCalendar _koreanCalendar;
 

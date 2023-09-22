@@ -15,7 +15,7 @@ namespace DotNetLib.System.Globalization
     [Description("Represents the Persian calendar.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IPersianCalendar))]
-    public class PersianCalendar : IPersianCalendar, ICalendar, IWrappedObject
+    public class PersianCalendar : IPersianCalendar, Calendar, IWrappedObject
     {
         private GGlobalization.PersianCalendar _persianCalendar;
 

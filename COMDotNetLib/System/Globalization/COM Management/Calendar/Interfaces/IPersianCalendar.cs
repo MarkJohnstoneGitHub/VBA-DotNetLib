@@ -18,7 +18,7 @@ namespace DotNetLib.System.Globalization
     [Description("Represents the Persian calendar.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
 
-    public interface IPersianCalendar : ICalendar
+    public interface IPersianCalendar : Calendar
     {
         //Properties
 

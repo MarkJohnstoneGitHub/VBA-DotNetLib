@@ -18,7 +18,7 @@ namespace DotNetLib.System.Globalization
     public class DateTimeFormatInfo : ICloneable, IFormatProvider, IDateTimeFormatInfo
     {
         private GGlobalization.DateTimeFormatInfo _dateTimeFormatInfo;
-        private ICalendar _calendar;
+        private Calendar _calendar;
 
         public DateTimeFormatInfo()
         {
@@ -91,7 +91,7 @@ namespace DotNetLib.System.Globalization
         //    set => _dateTimeFormatInfo.Calendar = value;
         //}
 
-        public ICalendar Calendar
+        public Calendar Calendar
         {
             get => _calendar;
             set 

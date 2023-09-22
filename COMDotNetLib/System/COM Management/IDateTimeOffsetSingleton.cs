@@ -31,7 +31,7 @@ namespace DotNetLib.System
 
         [Description("Initializes a new instance of the DateTimeOffset structure using the specified year, month, day, hour, minute, second, millisecond, and offset of a specified calendar.")]
 
-        DateTimeOffset CreateFromDateTimeParts3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar pCalendar, TimeSpan pOffset);
+        DateTimeOffset CreateFromDateTimeParts3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, Calendar pCalendar, TimeSpan pOffset);
         //DateTimeOffset CreateFromDateTimeParts3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, GSystem.Globalization.Calendar calendar, TimeSpan pOffset);
 
         [Description("Initializes a new instance of the DateTimeOffset structure using the specified number of ticks and offset.")]

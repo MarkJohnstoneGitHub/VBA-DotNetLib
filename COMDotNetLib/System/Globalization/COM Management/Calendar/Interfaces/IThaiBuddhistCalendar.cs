@@ -12,7 +12,7 @@ namespace DotNetLib.System.Globalization
     [Guid("D7E6B67C-B236-4A5C-9067-FA172D61532A")]
     [Description(".")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-    public interface IThaiBuddhistCalendar : ICalendar
+    public interface IThaiBuddhistCalendar : Calendar
     {
         //Properties
 

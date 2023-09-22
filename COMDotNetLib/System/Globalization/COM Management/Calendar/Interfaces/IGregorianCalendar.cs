@@ -13,7 +13,7 @@ namespace DotNetLib.System.Globalization
     [Guid("6B301F54-31F4-4263-BCB4-41F386441682")]
     [Description("Represents the Gregorian calendar.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-    public interface IGregorianCalendar : ICalendar
+    public interface IGregorianCalendar : Calendar
     {
         //Properties
 

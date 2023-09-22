@@ -1,5 +1,5 @@
 Attribute VB_Name = "WinAPIUser32"
-'@Folder("VBACorLib.WinAPI.WinUser")
+'@Folder "VBACorLib.WinAPI.WinUser"
 
 Option Explicit
 
@@ -18,3 +18,5 @@ Option Explicit
          ByVal lpCaption As Long, _
          ByVal wType As Long) As Long
 #End If
+
+

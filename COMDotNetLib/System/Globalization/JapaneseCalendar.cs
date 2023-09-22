@@ -17,7 +17,7 @@ namespace DotNetLib.System.Globalization
     [Description("Represents the Japanese calendar.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IJapaneseCalendar))]
-    public class JapaneseCalendar : IJapaneseCalendar, ICalendar, IWrappedObject
+    public class JapaneseCalendar : IJapaneseCalendar, Calendar, IWrappedObject
     {
         private GGlobalization.JapaneseCalendar _japaneseCalendar;
 

@@ -13,7 +13,7 @@ namespace DotNetLib.Extensions
     [ComVisible(false)]
     public static class CalendarExtension
     {
-        public static ICalendar Wrap(this GGlobalization.Calendar pCalendar)
+        public static Calendar Wrap(this GGlobalization.Calendar pCalendar)
         {
             if (pCalendar == null) 
             {
@@ -62,12 +62,12 @@ namespace DotNetLib.Extensions
             return null; //If pCalendar COM wrapper not implemented return null
         }
 
-        public static ICalendar[] Wrap(this GGlobalization.Calendar[] calendars) 
+        public static Calendar[] Wrap(this GGlobalization.Calendar[] calendars) 
         {
             if (calendars == null)
                 return null;
 
-            ICalendar[] wrappedCalendars = new ICalendar[calendars.Length];
+            Calendar[] wrappedCalendars = new Calendar[calendars.Length];
             for (int index = 0; index < wrappedCalendars.Length; index++)
             {
                 wrappedCalendars[index] = calendars[index].Wrap();

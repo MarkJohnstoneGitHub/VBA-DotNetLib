@@ -122,7 +122,7 @@ End Function
 '   -or-
 '       day is less than 1 or greater than the number of days in month.
 
-Public Function CreateFromDate2(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pCalendar As DotNetLib.ICalendar) As DotNetLib.DateTime
+Public Function CreateFromDate2(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pCalendar As DotNetLib.Calendar) As DotNetLib.DateTime
 Attribute CreateFromDate2.VB_Description = "Initializes a new instance of the DateTime structure to the specified year, month, and day for the specified calendar."
     Set CreateFromDate2 = this.DateTime.CreateFromDate2(pYear, pMonth, pDay, pCalendar)
 End Function
@@ -169,14 +169,14 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, and second for the specified calendar.")
-Public Function CreateFromDateTime2(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pHour As Long, ByVal pMinute As Long, ByVal pSecond As Long, ByVal pCalendar As ICalendar) As DotNetLib.DateTime
+Public Function CreateFromDateTime2(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pHour As Long, ByVal pMinute As Long, ByVal pSecond As Long, ByVal pCalendar As DotNetLib.Calendar) As DotNetLib.DateTime
 Attribute CreateFromDateTime2.VB_Description = "Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, and second for the specified calendar."
     Set CreateFromDateTime2 = this.DateTime.CreateFromDateTime2(pYear, pMonth, pDay, pHour, pMinute, pSecond, pCalendar)
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and millisecond for the specified calendar.")
-Public Function CreateFromDateTime3(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pHour As Long, ByVal pMinute As Long, ByVal pSecond As Long, ByVal pMillisecond As Long, ByVal pCalendar As ICalendar) As DotNetLib.DateTime
+Public Function CreateFromDateTime3(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pHour As Long, ByVal pMinute As Long, ByVal pSecond As Long, ByVal pMillisecond As Long, ByVal pCalendar As DotNetLib.Calendar) As DotNetLib.DateTime
 Attribute CreateFromDateTime3.VB_Description = "Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, and millisecond for the specified calendar."
     Set CreateFromDateTime3 = this.DateTime.CreateFromDateTime3(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pCalendar)
 End Function
@@ -277,7 +277,7 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time for the specified calendar.")
-Public Function CreateFromDateTimeKind3(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pHour As Long, ByVal pMinute As Long, ByVal pSecond As Long, ByVal pMillisecond As Long, ByVal pCalendar As DotNetLib.ICalendar, ByVal pKind As DotNetLib.DateTimeKind) As DotNetLib.DateTime
+Public Function CreateFromDateTimeKind3(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long, ByVal pHour As Long, ByVal pMinute As Long, ByVal pSecond As Long, ByVal pMillisecond As Long, ByVal pCalendar As DotNetLib.Calendar, ByVal pKind As DotNetLib.DateTimeKind) As DotNetLib.DateTime
 Attribute CreateFromDateTimeKind3.VB_Description = "Initializes a new instance of the DateTime structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time for the specified calendar."
     Set CreateFromDateTimeKind3 = this.DateTime.CreateFromDateTimeKind3(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pCalendar, pKind)
 End Function

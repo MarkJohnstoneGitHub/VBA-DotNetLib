@@ -16,7 +16,7 @@ namespace DotNetLib.System.Globalization
     [Description("Represents the Thai Buddhist calendar.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IThaiBuddhistCalendar))]
-    public class ThaiBuddhistCalendar : IThaiBuddhistCalendar, ICalendar, IWrappedObject
+    public class ThaiBuddhistCalendar : IThaiBuddhistCalendar, Calendar, IWrappedObject
     {
         private GGlobalization.ThaiBuddhistCalendar _thaiBuddhistCalendar;
 

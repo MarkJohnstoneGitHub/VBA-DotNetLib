@@ -15,7 +15,7 @@ namespace DotNetLib.System.Globalization
     [Description("Represents time in divisions, such as months, days, and years. Years are calculated using the Chinese calendar, while days and months are calculated using the lunisolar calendar.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IChineseLunisolarCalendar))]
-    public class ChineseLunisolarCalendar : IChineseLunisolarCalendar, ICalendar, IWrappedObject
+    public class ChineseLunisolarCalendar : IChineseLunisolarCalendar, Calendar, IWrappedObject
     {
         private GGlobalization.ChineseLunisolarCalendar _chineseLunisolarCalendar;
 

@@ -10,7 +10,7 @@ namespace DotNetLib.System.Globalization
     [Guid("7F1D6757-10A7-47F6-AAC5-BCA8E6989D60")]
     [Description("Represents the Julian calendar.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-    public interface IJulianCalendar  : ICalendar
+    public interface IJulianCalendar  : Calendar
     {
         //Properties
 

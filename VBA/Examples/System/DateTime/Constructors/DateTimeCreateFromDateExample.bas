@@ -25,7 +25,7 @@ End Sub
 
 
 '@TODO Implement Console to open the command window etc.
-Public Sub DateTimeCreateFromDate2()
+Public Sub DateTimeCreateFromDateConsole()
     Dim date1 As IDateTime
     Set date1 = DateTime.CreateFromDate(2010, 8, 18)
     Console.WriteLine date1.ToString

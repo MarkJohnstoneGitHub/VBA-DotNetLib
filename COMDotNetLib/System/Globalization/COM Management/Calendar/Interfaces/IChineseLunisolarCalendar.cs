@@ -12,7 +12,7 @@ namespace DotNetLib.System.Globalization
     [Guid("79FF116E-6948-4673-A486-99D5EDEE3D7A")]
     [Description("Represents time in divisions, such as months, days, and years. Years are calculated using the Chinese calendar, while days and months are calculated using the lunisolar calendar.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-    public interface IChineseLunisolarCalendar : ICalendar
+    public interface IChineseLunisolarCalendar : Calendar
     {
         //Properties
 

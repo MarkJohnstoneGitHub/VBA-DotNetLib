@@ -72,7 +72,7 @@
     <Compile Include="System\Collections\ReadOnlyCollection.cs" />
     <Compile Include="System\COM Management\DateTimeSingleton.cs" />
     <Compile Include="System\COM Management\TimeSpanSingleton.cs" />
-    <Compile Include="System\ConsoleSingleton.cs" />
+    <Compile Include="System\COM Management\ConsoleSingleton.cs" />
     <Compile Include="System\DateTime.cs" />
     <Compile Include="System\DateTimeKind.cs" />
     <Compile Include="System\DateTimeOffset.cs" />
@@ -83,12 +83,16 @@
     <Compile Include="System\Globalization\COM Management\Calendar\Singleton\CalendarSingleton.cs" />
     <Compile Include="System\Globalization\COM Management\Calendar\Interfaces\IHijriCalendar.cs" />
     <Compile Include="System\Globalization\COM Management\INumberFormatInfoSingleton.cs" />
+    <Compile Include="System\Globalization\CompareInfo.cs" />
+    <Compile Include="System\Globalization\COM Management\CompareInfoSingleton.cs" />
     <Compile Include="System\Globalization\DateTimeFormatInfo.cs" />
     <Compile Include="System\Globalization\COM Management\DateTimeFormatInfoSingleton.cs" />
     <Compile Include="System\Globalization\COM Management\Calendar\Interfaces\IChineseLunisolarCalendar.cs" />
     <Compile Include="System\Globalization\COM Management\Calendar\Singleton\IChineseLunisolarCalendarSingleton.cs" />
     <Compile Include="System\Globalization\COM Management\Calendar\Interfaces\IJulianCalendar.cs" />
     <Compile Include="System\Globalization\COM Management\Calendar\Singleton\IJulianCalendarSingleton.cs" />
+    <Compile Include="System\Globalization\COM Management\ICompareInfo.cs" />
+    <Compile Include="System\Globalization\COM Management\ICompareInfoSingleton.cs" />
     <Compile Include="System\Globalization\JulianCalendar.cs" />
     <Compile Include="System\Globalization\COM Management\Calendar\Singleton\JulianCalendarSingleton.cs" />
     <Compile Include="System\Globalization\TaiwanCalendar.cs" />
@@ -102,7 +106,7 @@
     <Compile Include="System\Globalization\COM Management\Calendar\Singleton\HebrewCalendarSingleton.cs" />
     <Compile Include="System\Globalization\HijriCalendar .cs" />
     <Compile Include="System\Globalization\COM Management\Calendar\Singleton\HijriCalendarSingleton.cs" />
-    <Compile Include="System\Globalization\ICalendar.cs" />
+    <Compile Include="System\Globalization\Calendar.cs" />
     <Compile Include="System\Globalization\COM Management\ICultureInfo.cs" />
     <Compile Include="System\Globalization\COM Management\ICultureInfoSingleton.cs" />
     <Compile Include="System\Globalization\COM Management\Calendar\Interfaces\IGregorianCalendar.cs" />

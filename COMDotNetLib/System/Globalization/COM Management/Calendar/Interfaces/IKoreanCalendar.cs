@@ -14,7 +14,7 @@ namespace DotNetLib.System.Globalization
     [Guid("56CB493D-DB9B-4C18-ABE2-D8794907AB07")]
     [Description("Represents the Korean calendar.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-    public interface IKoreanCalendar : ICalendar
+    public interface IKoreanCalendar : Calendar
     {
         //Properties
 

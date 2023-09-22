@@ -16,7 +16,7 @@ namespace DotNetLib.System.Globalization
     [Description("Represents the Hijri calendar.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IHijriCalendar))]
-    public class HijriCalendar : IHijriCalendar, ICalendar, IWrappedObject
+    public class HijriCalendar : IHijriCalendar, Calendar, IWrappedObject
     {
         private GGlobalization.HijriCalendar _hijriCalendar;
 

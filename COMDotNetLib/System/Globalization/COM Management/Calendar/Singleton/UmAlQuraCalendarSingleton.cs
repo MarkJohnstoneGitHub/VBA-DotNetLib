@@ -28,7 +28,7 @@ namespace DotNetLib.System.Globalization
         }
 
         // Fields
-        public int CurrentEra => Calendar.CurrentEra;
+        public int CurrentEra => GGlobalization.Calendar.CurrentEra;
 
         public int UmAlQuraEra => GGlobalization.UmAlQuraCalendar.UmAlQuraEra;
 
@@ -39,9 +39,9 @@ namespace DotNetLib.System.Globalization
             return GGlobalization.UmAlQuraCalendar.Equals(objA.Unwrap(), objB.Unwrap());
         }
 
-        public ICalendar ReadOnly(ICalendar pCalendar)
+        public Calendar ReadOnly(Calendar pCalendar)
         {
-            return Calendar.ReadOnly((Calendar)pCalendar.Unwrap()).Wrap();
+            return GGlobalization.Calendar.ReadOnly((GGlobalization.Calendar)pCalendar.Unwrap()).Wrap();
         }
 
 

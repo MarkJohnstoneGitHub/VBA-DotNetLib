@@ -22,8 +22,9 @@ namespace DotNetLib.System.Globalization
         private NumberFormatInfo _numberFormatInfo;
         private DateTimeFormatInfo _dateTimeFormatInfo;
         private TextInfo _textInfo;
-        private ICalendar _calendar;
-        private ICalendar[] _optionalCalendars;
+        private Calendar _calendar;
+        private Calendar[] _optionalCalendars;
+        private CompareInfo _compareInfo;
 
         //private static ICultureInfo _currentCulture = new CultureInfo(GGlobalization.CultureInfo.CurrentCulture);
         //private static ICultureInfo _currentUICulture = new CultureInfo(GGlobalization.CultureInfo.CurrentUICulture);
@@ -76,14 +77,13 @@ namespace DotNetLib.System.Globalization
                 _textInfo = new TextInfo(_cultureInfo.TextInfo);
                 _calendar = _cultureInfo.Calendar.Wrap();
                 _optionalCalendars = _cultureInfo.OptionalCalendars.Wrap();
+                _compareInfo = new CompareInfo(_cultureInfo.CompareInfo);
             }
         }
 
-        //public Calendar Calendar => _cultureInfo.Calendar;
+        public Calendar Calendar => _calendar;
 
-        public ICalendar Calendar => _calendar;
-
-        public CompareInfo CompareInfo => _cultureInfo.CompareInfo;
+        public CompareInfo CompareInfo => _compareInfo;
 
         public CultureTypes CultureTypes  => _cultureInfo.CultureTypes;
 
@@ -121,9 +121,7 @@ namespace DotNetLib.System.Globalization
             }
         }
 
-        //public Calendar[] OptionalCalendars => _cultureInfo.OptionalCalendars;
-
-        public ICalendar[] OptionalCalendars => _optionalCalendars;
+        public Calendar[] OptionalCalendars => _optionalCalendars;
 
 
         //TODO : Check implementation return new?
@@ -207,13 +205,11 @@ namespace DotNetLib.System.Globalization
         {
             if (formatType == typeof(NumberFormatInfo))
             {
-                return NumberFormat;
-                //return _cultureInfo.NumberFormat;   
+                return NumberFormat; 
             }
             if (formatType == typeof(DateTimeFormatInfo))
             {
-                return DateTimeFormat;
-                //return _cultureInfo.DateTimeFormat; 
+                return DateTimeFormat; 
             }
             return null;
         }

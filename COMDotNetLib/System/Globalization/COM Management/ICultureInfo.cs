@@ -24,12 +24,18 @@ namespace DotNetLib.System.Globalization
         //    get;
         //}
 
-        ICalendar Calendar
+        Calendar Calendar
         {
             [Description("Gets the default calendar used by the culture.")]
             get;
         }
 
+
+        //GGlobalization.CompareInfo CompareInfo
+        //{
+        //    [Description("Gets the CompareInfo that defines how to compare strings for the culture.")]
+        //    get;
+        //}
 
         CompareInfo CompareInfo
         {
@@ -107,7 +113,7 @@ namespace DotNetLib.System.Globalization
         //    get; 
         //}
 
-        ICalendar[] OptionalCalendars
+        Calendar[] OptionalCalendars
         {
             [Description("Gets the list of calendars that can be used by the culture.")]
             get;

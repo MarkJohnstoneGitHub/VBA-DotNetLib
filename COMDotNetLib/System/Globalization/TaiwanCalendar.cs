@@ -16,7 +16,7 @@ namespace DotNetLib.System.Globalization
     [Description("")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(ITaiwanCalendar))]
-    public class TaiwanCalendar : ITaiwanCalendar, ICalendar, IWrappedObject
+    public class TaiwanCalendar : ITaiwanCalendar, Calendar, IWrappedObject
     {
         private GGlobalization.TaiwanCalendar _taiwanCalendar;
 

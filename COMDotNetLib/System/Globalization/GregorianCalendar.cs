@@ -17,7 +17,7 @@ namespace DotNetLib.System.Globalization
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IGregorianCalendar))]
 
-    public class GregorianCalendar : IGregorianCalendar, ICalendar, IWrappedObject
+    public class GregorianCalendar : IGregorianCalendar, Calendar, IWrappedObject
     {
         private GGlobalization.GregorianCalendar _gregorianCalendar;
 

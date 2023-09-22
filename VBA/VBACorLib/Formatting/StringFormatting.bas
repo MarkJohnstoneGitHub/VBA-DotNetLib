@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringFormatting"
-'@Folder("VBACorLib.Formatting")
+'@Folder "VBACorLib.Formatting"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

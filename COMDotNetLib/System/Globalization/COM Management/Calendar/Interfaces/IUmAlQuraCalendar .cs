@@ -12,7 +12,7 @@ namespace DotNetLib.System.Globalization
     [Guid("69E3C0D5-4651-494E-9457-BEE34D7631CB")]
     [Description("Represents the Saudi Hijri (Um Al Qura) calendar.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-    public interface IUmAlQuraCalendar : ICalendar
+    public interface IUmAlQuraCalendar : Calendar
     {
         //Properties
 

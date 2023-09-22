@@ -13,7 +13,7 @@ namespace DotNetLib.System.Globalization
     [Description("Represents the Taiwan calendar.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
 
-    public interface ITaiwanCalendar : ICalendar
+    public interface ITaiwanCalendar : Calendar
     {
         //Properties
 

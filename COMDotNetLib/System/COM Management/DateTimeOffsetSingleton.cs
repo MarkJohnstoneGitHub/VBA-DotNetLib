@@ -44,7 +44,7 @@ namespace DotNetLib.System
         //    return new DateTimeOffset(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, pCalendar, pOffset);
         //}
 
-        public DateTimeOffset CreateFromDateTimeParts3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar pCalendar, TimeSpan pOffset)
+        public DateTimeOffset CreateFromDateTimeParts3(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, Calendar pCalendar, TimeSpan pOffset)
         {
             return new DateTimeOffset(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, (GSystem.Globalization.Calendar)pCalendar.Unwrap(), pOffset);
         }

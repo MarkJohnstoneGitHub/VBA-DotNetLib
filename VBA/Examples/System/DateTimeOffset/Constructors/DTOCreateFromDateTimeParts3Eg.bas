@@ -16,7 +16,7 @@ Option Explicit
 Public Sub DateTimeOffsetCreateFromDateTimeParts3()
     Dim fmt As DotNetLib.CultureInfo
     Dim pvtYear As Long
-    Dim cal As DotNetLib.ICalendar
+    Dim cal As DotNetLib.Calendar
     Dim dateInCal As DotNetLib.DateTimeOffset
     
     ' Instantiate DateTimeOffset with Hebrew calendar

@@ -12,7 +12,7 @@ namespace DotNetLib.System.Globalization
     [Guid("B6E597EE-DC8D-4533-A464-3E7BA710871C")]
     [Description("Represents the Japanese calendar.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-    public interface IJapaneseCalendar : ICalendar
+    public interface IJapaneseCalendar : Calendar
     {
         //Properties
 

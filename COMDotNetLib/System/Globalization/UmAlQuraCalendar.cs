@@ -15,7 +15,7 @@ namespace DotNetLib.System.Globalization
     [Description("Represents the Saudi Hijri (Um Al Qura) calendar.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IUmAlQuraCalendar))]
-    public class UmAlQuraCalendar : IUmAlQuraCalendar, ICalendar, IWrappedObject
+    public class UmAlQuraCalendar : IUmAlQuraCalendar, Calendar, IWrappedObject
     {
 
         private GGlobalization.UmAlQuraCalendar _umAlQuraCalendar;

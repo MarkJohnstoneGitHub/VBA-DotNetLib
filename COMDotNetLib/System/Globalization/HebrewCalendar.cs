@@ -16,7 +16,7 @@ namespace DotNetLib.System.Globalization
     [Description("Represents the Hebrew calendar.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IHebrewCalendar))]
-    public class HebrewCalendar : IHebrewCalendar, ICalendar, IWrappedObject
+    public class HebrewCalendar : IHebrewCalendar, Calendar, IWrappedObject
     {
         private GGlobalization.HebrewCalendar _hebrewCalendar;
 

@@ -54,7 +54,7 @@ namespace DotNetLib.System
             _dateTime = new GSystem.DateTime(year, month, day);
         }
 
-        public DateTime(int year, int month, int day, ICalendar pCalendar)
+        public DateTime(int year, int month, int day, Calendar pCalendar)
         {
             _dateTime = new GSystem.DateTime(year, month, day, (GGlobalization.Calendar)pCalendar.Unwrap());
         }
@@ -64,7 +64,7 @@ namespace DotNetLib.System
             _dateTime = new GSystem.DateTime(year, month, day, hour, minute, second);
         }
 
-        public DateTime(int year, int month, int day, int hour, int minute, int second, ICalendar pCalendar)
+        public DateTime(int year, int month, int day, int hour, int minute, int second, Calendar pCalendar)
         {
             _dateTime = new GSystem.DateTime(year, month, day, hour, minute, second, (GGlobalization.Calendar)pCalendar.Unwrap());
         }
@@ -74,7 +74,7 @@ namespace DotNetLib.System
             _dateTime = new GSystem.DateTime(year, month, day, hour, minute, second, millisecond);
         }
 
-        public DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond, ICalendar pCalendar)
+        public DateTime(int year, int month, int day, int hour, int minute, int second, int millisecond, Calendar pCalendar)
         {
             _dateTime = new GSystem.DateTime(year, month, day, hour, minute, second, millisecond, (GGlobalization.Calendar)pCalendar.Unwrap());
         }
@@ -88,7 +88,7 @@ namespace DotNetLib.System
             _dateTime = new GSystem.DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, (GSystem.DateTimeKind)pKind);
         }
 
-        public DateTime(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, ICalendar pCalendar, DateTimeKind pKind)
+        public DateTime(int pYear, int pMonth, int pDay, int pHour, int pMinute, int pSecond, int pMillisecond, Calendar pCalendar, DateTimeKind pKind)
         {
             _dateTime = new GSystem.DateTime(pYear, pMonth, pDay, pHour, pMinute, pSecond, pMillisecond, (GGlobalization.Calendar)pCalendar.Unwrap(), (GSystem.DateTimeKind)pKind);
 
@@ -115,7 +115,7 @@ namespace DotNetLib.System
         internal GSystem.DateTime WrappedDateTime
         {
             get { return _dateTime; }
-            //set { objDateTime = value; }  
+            //set { _dateTime = value; }  
         }
 
         public object WrappedObject => _dateTime;
