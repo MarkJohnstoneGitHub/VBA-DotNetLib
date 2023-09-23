@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeMaxValueExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 9, 2023
-'@LastModified August 3, 2023
+'@LastModified September 23, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.maxvalue?view=netframework-4.8.1#examples
 
@@ -23,11 +23,16 @@ Attribute DateTimeMaxValue.VB_Description = "The following example instantiates 
         Set validDate = DateTime.CreateFromTicks(numberOfTicks)
         Debug.Print validDate.ToString()
     ElseIf (numberOfTicks < DateTime.MinValue.Ticks) Then
-        Debug.Print numberOfTicks & " is less than " & DateTime.MinValue.Ticks & " ticks."
+        Debug.Print Strings.Format("{0:N0} is less than {1:N0} ticks.", _
+                        numberOfTicks, _
+                        DateTime.MinValue.Ticks)
     Else
-        Debug.Print VBA.Format$(numberOfTicks, "#,##0") & " is greater than " & VBA.Format$(DateTime.MaxValue.Ticks, "#,##0") & " ticks."
+        Debug.Print Strings.Format("{0:N0} is greater than {1:N0} ticks.", _
+                                    numberOfTicks, _
+                                    DateTime.MaxValue.Ticks)
     End If
 End Sub
 
 ' The example displays the following output:
 '   9,223,372,036,854,775,807 is greater than 3,155,378,975,999,999,999 ticks.
+
