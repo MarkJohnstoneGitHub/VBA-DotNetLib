@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeCreateFromDate2Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 20, 2023
-'@LastModified September 20, 2023
+'@LastModified September 23, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.-ctor?view=netframework-4.8.1#system-datetime-ctor(system-int32-system-int32-system-int32-system-globalization-calendar)
 
@@ -32,7 +32,10 @@ Public Sub DateTimeCreateFromDate2()
     Dim date1 As DotNetLib.DateTime
     Set date1 = DateTime.CreateFromDate2(1389, 5, 27, persian)
     Debug.Print date1.ToString()
-    Debug.Print persian.GetMonth(date1) & "/" & persian.GetDayOfMonth(date1) & "/" & persian.GetYear(date1); VBA.vbNewLine
+    Debug.Print Strings.Format("{0}/{1}/{2}{3}", persian.GetMonth(date1), _
+                              persian.GetDayOfMonth(date1), _
+                              persian.GetYear(date1), _
+                              VBA.vbNewLine)
     
     Debug.Print "Using the Hijri Calendar:"
     ' Get current culture so it can later be restored.
@@ -59,16 +62,16 @@ Public Sub DateTimeCreateFromDate2()
     
     Dim date2 As DotNetLib.DateTime
     Set date2 = DateTime.CreateFromDateTime2(1431, 9, 9, 16, 32, 18, hijri)
-    Debug.Print current.ToString; " culture using the "; hijri.ToString; " calendar: "; date2.ToString2("d")
+    Debug.Print Strings.Format("{0} culture using the {1} calendar: {2:d}", current, _
+                               hijri, date2)
     
     ' Restore previous culture.
     ' Thread.CurrentThread.CurrentCulture = dftCulture;
     Set CultureInfo.CurrentCulture = dftCulture
-    
-    Debug.Print CultureInfo.CurrentCulture.ToString; " culture using the "; _
-                CultureInfo.CurrentCulture.Calendar.ToString; " calendar: "; _
-                date2.ToString2("d")
-    
+    Debug.Print Strings.Format("{0} culture using the {1} calendar: {2:d}", _
+                                CultureInfo.CurrentCulture, _
+                                CultureInfo.CurrentCulture.Calendar, _
+                                date2)
 End Sub
 
 ' The example displays the following output:
@@ -79,4 +82,3 @@ End Sub
 '       Using the Hijri Calendar:
 '       ar-SY culture using the Hijri calendar: 09/09/1431
 '       en-US culture using the Gregorian calendar: 8/18/2010
-
