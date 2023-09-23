@@ -10,6 +10,13 @@ Attribute VB_Name = "StringsFormatExample"
 
 Option Explicit
 
+''
+' This example creates a string that contains data on the high and low
+' temperature on a particular date. The composite format string has five format
+' items in the C# example and six in the Visual Basic example. Two of the format
+' items define the width of their corresponding value's string representation,
+' and the first format item also includes a standard date and time format string.
+''
 Public Sub StringsFormat()
     Dim date1 As DotNetLib.DateTime
     Set date1 = DateTime.CreateFromDate(2009, 7, 1)
