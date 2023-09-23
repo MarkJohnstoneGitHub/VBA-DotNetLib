@@ -97,6 +97,8 @@ Added [String](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=n
  - So far only implemented static members [String.Format](https://learn.microsoft.com/en-us/dotnet/api/system.string.format?view=netframework-4.8.1)
  - Renamed String to Strings due to VBA reserved word.
 
+Added: IFormatProviderExtension.cs to UnWrap IFormatProvider types.
+
 **DotNetLib Update September 22nd, 2023** 
 - Renamed abstract class ICalendar to Calendar to keep consistent with Net Framework
 - Updated VBADotNetLib for affected calendar classes and examples.
