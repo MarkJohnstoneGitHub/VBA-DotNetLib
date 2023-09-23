@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 namespace DotNetLib.Extensions
 {
+    [ComVisible(false)]
     public static class IFormatProviderExtension
     {
         public static IFormatProvider Unwrap(this IFormatProvider provider)
