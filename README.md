@@ -14,14 +14,15 @@ Sep 23, 2923 Added [String](https://learn.microsoft.com/en-us/dotnet/api/system.
  - So far only implemented static members [String.Format](https://learn.microsoft.com/en-us/dotnet/api/system.string.format?view=netframework-4.8.1)
  - Renamed String to Strings due to VBA reserved word.
 
-
- 
  **Affected API due to VBA reserved words:**
 
  The API for the .Net class may be required to be altered due to VBA reserved words. See [reserved-word-list](https://www.engram9.info/access-2007-vba/reserved-word-list.html).
  
   - [TimeZoneInfo.Local](https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.local?view=netframework-4.8.1) renamed to TimeZoneInfo.Locale.
   - [String](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1) renamed to Strings
+
+As VBA doesnot have member overloading factory methods and member overloads will differ.  Overloads generally are named with a preceeding number. Unique naming maybe used for factory methods.
+
    
  **Dependencies:**
  - [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
