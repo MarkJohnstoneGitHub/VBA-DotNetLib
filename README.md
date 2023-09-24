@@ -58,7 +58,7 @@ Note: The MS-Access contains the latest version of VBADotNetLibrary and examples
  **Issues:**
 
 String.Format Not behaving as expected.
-- For example below expected output  Comparing 'ABC' and 'abc':
+- Expected output:  Comparing 'ABC' and 'abc':
 - Output obtained : Comparing '\x0041\x0042\x0043' and '\x0061\x0062\x0063':
 - Appears not recogising the string literlas eg the hexadecimal escape sequences
 - Same for /n  /r etc ??? 
