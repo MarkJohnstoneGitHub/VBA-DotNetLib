@@ -61,7 +61,9 @@ String.Format Not behaving as expected.
 - Expected output:  Comparing 'ABC' and 'abc':
 - Output obtained : Comparing '\x0041\x0042\x0043' and '\x0061\x0062\x0063':
 - Appears not recogising the string literlas eg the hexadecimal escape sequences
-- Same for /n  /r etc ??? 
+- Same for /n  /r etc ???
+- Appears escape sequences are converted when the string is created.
+- Require a method accept VBA strings and convert to .Net String to process the escape sequences?
 
 VBA Example using String.Format with hexadecimal escape sequences
 ```
