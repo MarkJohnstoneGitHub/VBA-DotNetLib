@@ -56,20 +56,32 @@ Note: The MS-Access contains the latest version of VBADotNetLibrary and examples
 
  
  **Issues:**
-  - [DateTimeFormatInfo.AbbreviatedDayNames](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.abbreviateddaynames?view=netframework-4.8.1)
-    - When attempting to assign an array to DateTimeFormatInfo.AbbreviatedDayNames Compile error: Function or interface marked as restricted, or the function uses an Automation typee not supported in Visual Basic
-    - https://stackoverflow.com/questions/13185159/how-to-pass-byte-arrays-as-udt-properties-from-vb6-vba-to-c-sharp-com-dll
-    - Fixed by implementing set methods and making set property not COM visible.
-  - TimeZoneInfo.Local renamed member to Locale. 
-  - [VBA Interface not showing property in watch window](https://stackoverflow.com/questions/61232755/vba-interface-not-showing-property-in-watch-window)
-   -  [how-to-get-property-values-of-classes-that-implement-an-interface-in-the-locals](https://stackoverflow.com/questions/29146243/how-to-get-property-values-of-classes-that-implement-an-interface-in-the-locals)
-   -  Work around implement interfaces required in the DotNetLib type library.  They appear to work fine for type library interfaces but not VBA interfaces.
- 
-Currently List COM object wont allow to be created getting invalid use of New Keyword.  This will removed and replaced with it's non-generic equivalent.
- 
-Require to consider how to handle generic types in COM Interlop as not supported, possible work around implement each type separately, which enforces type safety.  
- 
-Or replace with non-generic equivalent.  To enforce type safety in VBA create a custom wrapper for the collection on the non-generic collection.
+
+String.Format Not behaving as expected.
+- For example below expected output  Comparing 'ABC' and 'abc':
+- Output obtained : Comparing '\x0041\x0042\x0043' and '\x0061\x0062\x0063':
+- Appears not recogising the string literlas eg the hexadecimal escape sequences
+- Same for /n  /r etc ??? 
+
+VBA Example using String.Format with hexadecimal escape sequences
+```
+Public Sub StringCompare()
+    ' Create upper-case characters from their Unicode code units.
+    Dim stringUpper As String
+    stringUpper = "\x0041\x0042\x0043"
+
+    ' Create lower-case characters from their Unicode code units.
+    Dim stringLower As String
+    stringLower = "\x0061\x0062\x0063"
+    
+    ' Display the strings.
+    Dim output As String
+    
+    output = Strings.Format("Comparing '{0}' and '{1}':", _
+                                stringUpper, stringLower)
+End Sub
+```
+
  
  **Things To do**
  
@@ -233,4 +245,19 @@ Implement interfaces in DotNetLib type library as work around for [VBA Interface
 Require to investigate how to correctly marshal arrays 
   - See [PassingParameterArraysByReference](https://www.l3harrisgeospatial.com/docs/PassingParameterArraysByReference.html)
   - [pass-an-array-from-vba-to-c-sharp-using-com-interop](https://stackoverflow.com/questions/2027758/pass-an-array-from-vba-to-c-sharp-using-com-interop)
+
+      - [DateTimeFormatInfo.AbbreviatedDayNames](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.abbreviateddaynames?view=netframework-4.8.1)
+    - When attempting to assign an array to DateTimeFormatInfo.AbbreviatedDayNames Compile error: Function or interface marked as restricted, or the function uses an Automation typee not supported in Visual Basic
+    - https://stackoverflow.com/questions/13185159/how-to-pass-byte-arrays-as-udt-properties-from-vb6-vba-to-c-sharp-com-dll
+    - Fixed by implementing set methods and making set property not COM visible.
+  - TimeZoneInfo.Local renamed member to Locale. 
+  - [VBA Interface not showing property in watch window](https://stackoverflow.com/questions/61232755/vba-interface-not-showing-property-in-watch-window)
+   -  [how-to-get-property-values-of-classes-that-implement-an-interface-in-the-locals](https://stackoverflow.com/questions/29146243/how-to-get-property-values-of-classes-that-implement-an-interface-in-the-locals)
+   -  Work around implement interfaces required in the DotNetLib type library.  They appear to work fine for type library interfaces but not VBA interfaces.
+ 
+Currently List COM object wont allow to be created getting invalid use of New Keyword.  This will removed and replaced with it's non-generic equivalent.
+ 
+Require to consider how to handle generic types in COM Interlop as not supported, possible work around implement each type separately, which enforces type safety.  
+ 
+Or replace with non-generic equivalent.  To enforce type safety in VBA create a custom wrapper for the collection on the non-generic collection.
   
