@@ -10,9 +10,9 @@ Sep 19,2023 Added: [ChineseLunisolarCalendar](https://learn.microsoft.com/en-us/
 
 Sep 22, 2023 Added: [CompareInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.compareinfo?view=netframework-4.8.1) 
 
-Sep 23, 2923 Added [String](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1) 
- - So far only implemented static members [String.Format](https://learn.microsoft.com/en-us/dotnet/api/system.string.format?view=netframework-4.8.1)
- - Renamed String to Strings due to VBA reserved word.
+Sep 23, 2023 Added [String](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1) For the VBA singleton wrapper renamed String to Strings due to VBA reserved word.
+
+Sep 25, 2023 Added [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1) Implemented so far Regex.Unescape and Regex.Escape
 
  **Affected API due to VBA reserved words:**
 
@@ -23,7 +23,6 @@ Sep 23, 2923 Added [String](https://learn.microsoft.com/en-us/dotnet/api/system.
 
 As VBA doesnot have member overloading factory methods and member overloads will differ.  Overloads generally are named with a preceeding number. Unique naming maybe used for factory methods.
 
-   
  **Dependencies:**
  - [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
  - mscorlib.tlb type library eg Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.tlb
@@ -55,34 +54,20 @@ Ms Access database [VBADotNetLibrary.accdb](https://github.com/MarkJohnstoneGitH
 Note: The MS-Access contains the latest version of VBADotNetLibrary and examples as the development is preformed in MS-Access and periodically exported to the VBADotNetLibrary MS-Excel spreadsheet. 
 
  
- **Issues:**
-
-String.Format Not behaving as expected.
-- Expected output:  Comparing 'ABC' and 'abc':
-- Output obtained : Comparing '\x0041\x0042\x0043' and '\x0061\x0062\x0063':
-- Appears not recogising the string literlas eg the hexadecimal escape sequences
-- Same for /n  /r etc ???
-- Appears escape sequences are converted when the string is created.
-- Require a method accept VBA strings and convert to .Net String to process the escape sequences?
+ **Converting strings containing escape and special characterss:**
+ 
+ To use escape and special characters 
 
 VBA Example using String.Format with hexadecimal escape sequences
 ```
-Public Sub StringCompare()
-    ' Create upper-case characters from their Unicode code units.
     Dim stringUpper As String
-    stringUpper = "\x0041\x0042\x0043"
-
-    ' Create lower-case characters from their Unicode code units.
-    Dim stringLower As String
-    stringLower = "\x0061\x0062\x0063"
-    
-    ' Display the strings.
-    Dim output As String
-    
-    output = Strings.Format("Comparing '{0}' and '{1}':", _
-                                stringUpper, stringLower)
-End Sub
+    stringUpper = "\x41\x42\x43"     ' Create upper-case characters from their Unicode code units.
+    stringUpper = Regex.Unescape(stringUpper)
+    Debug.Print stringUpper
 ```
+Output: ABC
+
+ **Issues:**
 
  
  **Things To do**
@@ -105,6 +90,14 @@ VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
 **Update History**
 
 **Status: Latest Updates**
+
+**DotNetLib Update September 25th, 2023** 
+Added [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1) 
+- Implemented Regex.Unescape and Regex.Escape
+- Regex.Unescape can be used to convert VBA literal strings containing escape characters.
+
+Updated Strings, added the following members
+- Compare, CompareOrdinal, Copy, Equals, IsNullOrEmpty, IsNullOrWhiteSpace
 
 **DotNetLib Update September 23rd, 2023** 
 
