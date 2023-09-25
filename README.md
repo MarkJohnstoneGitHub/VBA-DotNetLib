@@ -10,9 +10,11 @@ Sep 19,2023 Added: [ChineseLunisolarCalendar](https://learn.microsoft.com/en-us/
 
 Sep 22, 2023 Added: [CompareInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.compareinfo?view=netframework-4.8.1) 
 
-Sep 23, 2923 Added [String](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1) 
+Sep 23, 2023 Added [String](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1) 
  - So far only implemented static members [String.Format](https://learn.microsoft.com/en-us/dotnet/api/system.string.format?view=netframework-4.8.1)
  - Renamed String to Strings due to VBA reserved word.
+
+Sep 23, 2023 Added [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1) Implemented Regex.Unescape and Regex.Escape
 
  **Affected API due to VBA reserved words:**
 
@@ -23,7 +25,6 @@ Sep 23, 2923 Added [String](https://learn.microsoft.com/en-us/dotnet/api/system.
 
 As VBA doesnot have member overloading factory methods and member overloads will differ.  Overloads generally are named with a preceeding number. Unique naming maybe used for factory methods.
 
-   
  **Dependencies:**
  - [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
  - mscorlib.tlb type library eg Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.tlb
