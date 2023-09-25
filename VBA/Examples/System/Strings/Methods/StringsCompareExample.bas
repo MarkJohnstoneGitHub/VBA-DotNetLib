@@ -1,12 +1,12 @@
-Attribute VB_Name = "StringCompareExample"
+Attribute VB_Name = "StringsCompareExample"
 '@Folder("Examples.System.Strings.Methods")
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 23, 2023
-'@LastModified September 25, 2023
+'@LastModified September 26, 2023
 
-'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.string.compare?view=net-7.0#system-string-compare(system-string-system-string)
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.string.compare?view=netframework-4.8.1#system-string-compare(system-string-system-string)
 
 Option Explicit
 
@@ -17,13 +17,11 @@ Option Explicit
 Public Sub StringCompare()
     ' Create upper-case characters from their Unicode code units.
     Dim stringUpper As String
-    stringUpper = "\x41\x42\x43"
-    stringUpper = Regex.Unescape(stringUpper)
+    stringUpper = Regex.Unescape("\x41\x42\x43")
 
     ' Create lower-case characters from their Unicode code units.
     Dim stringLower As String
-    stringLower = "\x61\x62\x63"
-    stringLower = Regex.Unescape(stringLower)
+    stringLower = Regex.Unescape("\x61\x62\x63")
     
     ' Display the strings.
     Dim output As String
@@ -43,3 +41,4 @@ End Sub
 '       Comparing 'ABC' and 'abc':
 '       The Strings are equal when capitalized? true
 '       The Strings are equal when case is ignored? true
+
