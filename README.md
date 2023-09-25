@@ -57,7 +57,8 @@ Note: The MS-Access contains the latest version of VBADotNetLibrary and examples
 
  
  **Converting strings containing escape and special characterss:**
- To use escape and special character 
+ 
+ To use escape and special characters 
 
 VBA Example using String.Format with hexadecimal escape sequences
 ```
@@ -91,6 +92,14 @@ VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
 **Update History**
 
 **Status: Latest Updates**
+
+**DotNetLib Update September 23rd, 2023** 
+Added [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1) 
+- Implemented Regex.Unescape and Regex.Escape
+- Regex.Unescape can be used to convert VBA literal strings containing escape characters.
+
+Updated Strings, added the following members
+- Compare, CompareOrdinal, Copy, Equals, IsNullOrEmpty, IsNullOrWhiteSpace
 
 **DotNetLib Update September 23rd, 2023** 
 
