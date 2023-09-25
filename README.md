@@ -56,34 +56,19 @@ Ms Access database [VBADotNetLibrary.accdb](https://github.com/MarkJohnstoneGitH
 Note: The MS-Access contains the latest version of VBADotNetLibrary and examples as the development is preformed in MS-Access and periodically exported to the VBADotNetLibrary MS-Excel spreadsheet. 
 
  
- **Issues:**
-
-String.Format Not behaving as expected.
-- Expected output:  Comparing 'ABC' and 'abc':
-- Output obtained : Comparing '\x0041\x0042\x0043' and '\x0061\x0062\x0063':
-- Appears not recogising the string literlas eg the hexadecimal escape sequences
-- Same for /n  /r etc ???
-- Appears escape sequences are converted when the string is created.
-- Require a method accept VBA strings and convert to .Net String to process the escape sequences?
+ **Converting strings containing escape and special characterss:**
+ To use escape and special character 
 
 VBA Example using String.Format with hexadecimal escape sequences
 ```
-Public Sub StringCompare()
-    ' Create upper-case characters from their Unicode code units.
     Dim stringUpper As String
-    stringUpper = "\x0041\x0042\x0043"
-
-    ' Create lower-case characters from their Unicode code units.
-    Dim stringLower As String
-    stringLower = "\x0061\x0062\x0063"
-    
-    ' Display the strings.
-    Dim output As String
-    
-    output = Strings.Format("Comparing '{0}' and '{1}':", _
-                                stringUpper, stringLower)
-End Sub
+    stringUpper = "\x41\x42\x43"     ' Create upper-case characters from their Unicode code units.
+    stringUpper = Regex.Unescape(stringUpper)
+    Debug.Print stringUpper
 ```
+Output: ABC
+
+ **Issues:**
 
  
  **Things To do**
