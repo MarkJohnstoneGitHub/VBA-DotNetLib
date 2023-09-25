@@ -4,7 +4,7 @@ Attribute VB_Name = "StringsFormatExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 23, 2023
-'@LastModified September 23, 2023
+'@LastModified September 25, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.string.format?view=netframework-4.8.1#system-string-format(system-string-system-object())
 
@@ -32,14 +32,14 @@ Public Sub StringsFormat()
     
     Dim result1 As String
     
-    result1 = Strings.Format("Temperature on {0:d}:{5}{1,11}: {2} degrees (hi){5}{3,11}: {4} degrees (lo)", _
-                           date1, hiTime, hiTemp, loTime, loTemp, VBA.vbNewLine)
+    result1 = Strings.Format(Regex.Unescape("Temperature on {0:d}:\n{1,11}: {2} degrees (hi)\n{3,11}: {4} degrees (lo)"), _
+                           date1, hiTime, hiTemp, loTime, loTemp)
     Debug.Print result1
     Debug.Print
     
     Dim result2 As String
-    result2 = Strings.Format("Temperature on {0:d}:{5}{1,11}: {2} degrees (hi){5}{3,11}: {4} degrees (lo)", _
-                            date1, hiTime, hiTemp, loTime, loTemp, VBA.vbNewLine)
+    result2 = Strings.Format(Regex.Unescape("Temperature on {0:d}:\n{1,11}: {2} degrees (hi)\n{3,11}: {4} degrees (lo)"), _
+                            date1, hiTime, hiTemp, loTime, loTemp)
     Debug.Print result2
 End Sub
 

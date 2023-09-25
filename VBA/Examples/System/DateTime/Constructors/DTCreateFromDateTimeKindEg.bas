@@ -23,3 +23,11 @@ End Sub
 
 ' The example displays the following output, in this case for en-us culture:
 '      8/18/2010 4:32:00 PM Local
+
+
+Public Sub DateTimeCreateFromDateTimeKindV2()
+    Dim date1 As IDateTime
+    Set date1 = DateTime.CreateFromDateTimeKind(2010, 8, 18, 16, 32, 0, DateTimeKind.DateTimeKind_Local)
+    Debug.Print Strings.Format("{0} {1}", date1, DateTimeKindHelper.ToString(date1.Kind))
+
+End Sub
