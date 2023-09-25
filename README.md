@@ -14,7 +14,7 @@ Sep 23, 2023 Added [String](https://learn.microsoft.com/en-us/dotnet/api/system.
  - So far only implemented static members [String.Format](https://learn.microsoft.com/en-us/dotnet/api/system.string.format?view=netframework-4.8.1)
  - Renamed String to Strings due to VBA reserved word.
 
-Sep 23, 2023 Added [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1) Implemented Regex.Unescape and Regex.Escape
+Sep 25, 2023 Added [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1) Implemented Regex.Unescape and Regex.Escape
 
  **Affected API due to VBA reserved words:**
 
@@ -93,7 +93,7 @@ VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
 
 **Status: Latest Updates**
 
-**DotNetLib Update September 23rd, 2023** 
+**DotNetLib Update September 25th, 2023** 
 Added [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1) 
 - Implemented Regex.Unescape and Regex.Escape
 - Regex.Unescape can be used to convert VBA literal strings containing escape characters.
