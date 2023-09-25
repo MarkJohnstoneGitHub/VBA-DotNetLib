@@ -10,11 +10,9 @@ Sep 19,2023 Added: [ChineseLunisolarCalendar](https://learn.microsoft.com/en-us/
 
 Sep 22, 2023 Added: [CompareInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.compareinfo?view=netframework-4.8.1) 
 
-Sep 23, 2023 Added [String](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1) 
- - So far only implemented static members [String.Format](https://learn.microsoft.com/en-us/dotnet/api/system.string.format?view=netframework-4.8.1)
- - Renamed String to Strings due to VBA reserved word.
+Sep 23, 2023 Added [String](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1) For the VBA singleton wrapper renamed String to Strings due to VBA reserved word.
 
-Sep 25, 2023 Added [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1) Implemented Regex.Unescape and Regex.Escape
+Sep 25, 2023 Added [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1) Implemented so far Regex.Unescape and Regex.Escape
 
  **Affected API due to VBA reserved words:**
 
