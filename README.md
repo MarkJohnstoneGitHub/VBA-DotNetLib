@@ -14,6 +14,8 @@ Sep 23, 2023 Added [String](https://learn.microsoft.com/en-us/dotnet/api/system.
 
 Sep 25, 2023 Added [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1) Implemented so far Regex.Unescape and Regex.Escape
 
+Sep 30, 2023 Added [System.Text.RegularExpressions](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions?view=netframework-4.8.1), [Capture](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.capture?view=netframework-4.8.1), [CaptureCollection](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.capturecollection?view=netframework-4.8.1), [Group](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.group?view=netframework-4.8.1), [GroupCollection](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.groupcollection?view=netframework-4.8.1), [Match](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.match?view=netframework-4.8.1), [MatchCollection](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.matchcollection?view=netframework-4.8.1), [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1)
+
  **Affected API due to VBA reserved words:**
 
  The API for the .Net class may be required to be altered due to VBA reserved words. See [reserved-word-list](https://www.engram9.info/access-2007-vba/reserved-word-list.html).
