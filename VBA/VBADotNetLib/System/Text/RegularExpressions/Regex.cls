@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents an immutable regular expression."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v2.0 September 25, 2023
-'@LastModified September 29, 2023
+'@LastModified September 30, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -43,6 +43,18 @@ End Sub
 Private Sub Class_Terminate()
    Set this.Regex = Nothing
 End Sub
+
+'@Description("Initializes a new instance of the Regex class for the specified regular expression, with options that modify the pattern.")
+Public Function Create(ByVal pattern As String, Optional ByVal options As DotNetLib.RegexOptions = RegexOptions_None) As DotNetLib.Regex
+Attribute Create.VB_Description = "Initializes a new instance of the Regex class for the specified regular expression, with options that modify the pattern."
+   Set Create = this.Regex.Create(pattern, options)
+End Function
+
+'@Description("Initializes a new instance of the Regex class for the specified regular expression, with options that modify the pattern and a value that specifies how long a pattern matching method should attempt a match before it times out.")
+Public Function Create2(ByVal pattern As String, ByVal options As DotNetLib.RegexOptions, ByRef MatchTimeout As DotNetLib.TimeSpan) As DotNetLib.Regex
+Attribute Create2.VB_Description = "Initializes a new instance of the Regex class for the specified regular expression, with options that modify the pattern and a value that specifies how long a pattern matching method should attempt a match before it times out."
+   Set Create2 = this.Regex.Create2(pattern, options, MatchTimeout)
+End Function
 
 '@Description("Gets or sets the maximum number of entries in the current static cache of compiled regular expressions.")
 Public Property Get CacheSize() As Long

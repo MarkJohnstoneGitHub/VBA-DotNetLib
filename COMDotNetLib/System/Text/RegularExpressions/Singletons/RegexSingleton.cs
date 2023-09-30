@@ -17,6 +17,18 @@ namespace DotNetLib.System.Text.RegularExpressions
     {
         public RegexSingleton() { }
 
+        // Factory Methods
+
+        public Regex Create(string pattern, RegexOptions options = RegexOptions.None)
+        {
+            return new Regex(pattern,options);
+        }
+
+        public Regex Create2(string pattern, RegexOptions options, TimeSpan matchTimeout)
+        {
+            return new Regex(pattern, options, matchTimeout);
+        }
+
         // Properties
         public int CacheSize 
         { 

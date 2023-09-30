@@ -12,6 +12,14 @@ namespace DotNetLib.System.Text.RegularExpressions
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface IRegexSingleton
     {
+        // Factory Methods
+
+        [Description("Initializes a new instance of the Regex class for the specified regular expression, with options that modify the pattern.")]
+        Regex Create(string pattern, RegexOptions options = RegexOptions.None);
+
+        [Description("Initializes a new instance of the Regex class for the specified regular expression, with options that modify the pattern and a value that specifies how long a pattern matching method should attempt a match before it times out.")]
+        Regex Create2(string pattern, RegexOptions options, TimeSpan matchTimeout);
+
         // Properties
         int CacheSize 
         {
