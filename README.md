@@ -45,6 +45,7 @@ As VBA doesnot have member overloading factory methods and member overloads will
     - For [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/DotNetLibrary.accdb) references may be required to be fixed by removing and adding back in.
     - Add reference DotNetlib.tlb (Com Interlop wrappers of the .Net Framework 4.8.1)  i.e. browse to location where stored 
     - Add reference mscorlib.tlb version 2.4
+    - Add reference Microsoft VBScript Regular Expressions 5.5 (Required only for the [Rubberduck export utility](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Rubberduck%20Utility) not part of VBADotNetLib)
     - The type libraries added can be viewed under View->Object Browser and select DotNetLib.tlb
 3) Add the [VBADotNetLib](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/VBADotNetLib/) Factory/Singleton classes into a project.
     - Either copy the classes or add a reference to project containing the classes.
@@ -53,12 +54,12 @@ For detailed explanation of the DotNetLib class properties see [netframework-4.8
 
 Ms Access database [VBADotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/MS-Access) VBA Factory classes and [examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples) for the DotNetLib.tlb. Also a MS-Excel version [VBADotNetLib.xlsm](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Ms-Excel) .  
 
-Note: The MS-Access contains the latest version of VBADotNetLibrary and examples as the development is preformed in MS-Access and periodically exported to the VBADotNetLibrary MS-Excel spreadsheet. 
+Note: The MS-Access contains the latest version of VBADotNetLibrary and examples as the development is performed in MS-Access and periodically exported to the VBADotNetLibrary MS-Excel spreadsheet. 
 
  
- **Converting strings containing escape sequences and special characterss:**
+ **Regular expressiions : Converting strings containing escape sequences and special characterss:**
  
- To use escape and special characters 
+ To use escape and special characters. Note if require quotes " require to escape in VBA with double quotes.
 
 VBA Example using Regex.Unescape with hexadecimal escape sequences
 ```
@@ -66,28 +67,18 @@ VBA Example using Regex.Unescape with hexadecimal escape sequences
     stringUpper = "\x41\x42\x43"     ' Create upper-case characters from their Unicode code units.
     stringUpper = Regex.Unescape(stringUpper)
     Debug.Print stringUpper
+    'Output: ABC
 ```
-Output: ABC
 
  **Issues:**
 Too many things to do. Argh!
+Atm no outstanding issues detetected. Require completing unit testing. 
  
  **Things To do**
  
 - Unit testing using Rubberduck unit testing.
 - [Create an installer from Microsoft Visual Studio](https://www.advancedinstaller.com/user-guide/tutorial-ai-ext-vs.html#section761)
 
- Will require implementing the following:
-  - [Cultureinfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8.1) and associated classes. Implemented
-   - [Calendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.calendar?view=netframework-4.8.1) . Implemented, currently updating class members referencing the Calendar class.
-   - [DateTimeFormat](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1) . Implemented.
-   - [CompareInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.compareinfo?view=netframework-4.8.1)
-   - [CultureTypes](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo.culturetypes?view=netframework-4.8.1)
-   - [NumberFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.numberformatinfo?view=netframework-4.8.1) . Implemented thou not tested or currently in use.
-   - [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1). Implemented not fully tested, may effect various DateTime parsing functions.
-   - [TextInfo Class](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.textinfo?view=netframework-4.8.1)
-
-VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
 
 **Update History**
 
@@ -252,6 +243,18 @@ Require to investigate how to correctly marshal arrays
    -  Work around implement interfaces required in the DotNetLib type library.  They appear to work fine for type library interfaces but not VBA interfaces.
  
 Currently List COM object wont allow to be created getting invalid use of New Keyword.  This will removed and replaced with it's non-generic equivalent.
+
+ Will require implementing the following:
+  - [Cultureinfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8.1) and associated classes. Implemented
+   - [Calendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.calendar?view=netframework-4.8.1) . Implemented, currently updating class members referencing the Calendar class.
+   - [DateTimeFormat](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1) . Implemented.
+   - [CompareInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.compareinfo?view=netframework-4.8.1)
+   - [CultureTypes](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo.culturetypes?view=netframework-4.8.1)
+   - [NumberFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.numberformatinfo?view=netframework-4.8.1) . Implemented thou not tested or currently in use.
+   - [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1). Implemented not fully tested, may effect various DateTime parsing functions.
+   - [TextInfo Class](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.textinfo?view=netframework-4.8.1)
+
+VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
  
 Require to consider how to handle generic types in COM Interlop as not supported, possible work around implement each type separately, which enforces type safety.  
  
