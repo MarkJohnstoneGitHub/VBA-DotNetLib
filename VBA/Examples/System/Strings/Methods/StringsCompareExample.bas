@@ -30,7 +30,7 @@ Public Sub StringCompare()
     
     ' Compare the uppercased strings; the result is true.
     Debug.Print Strings.Format("The Strings are equal when capitalized? {0}", _
-            IIf(Strings.Compare(UCase(stringUpper), UCase(stringLower)) = 0, "true", "false"))
+            IIf(Strings.Compare(UCase$(stringUpper), UCase$(stringLower)) = 0, "true", "false"))
     
     ' The previous method call is equivalent to this Compare method, which ignores case.
     Debug.Print Strings.Format("The Strings are equal when case is ignored? {0}", _

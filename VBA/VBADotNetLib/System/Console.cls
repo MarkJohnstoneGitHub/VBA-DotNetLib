@@ -55,7 +55,7 @@ End Sub
 
 '@Static
 '@Description("Writes the specified string value, followed by the current line terminator, to the standard output stream.")
-Public Sub WriteLine(Optional ByRef value As String = VBA.vbNullString)
+Public Sub WriteLine(Optional ByVal value As String = VBA.vbNullString)
 Attribute WriteLine.VB_Description = "Writes the specified string value, followed by the current line terminator, to the standard output stream."
     If value = VBA.vbNullString Then
         this.ConsoleSingleton.WriteLine
@@ -66,7 +66,7 @@ End Sub
 
 '@Static
 '@Description("Writes the specified string value, followed by the current line terminator, to the standard output stream.")
-Public Sub WriteLine2(ByRef Format As String, ParamArray values() As Variant)
+Public Sub WriteLine2(ByVal Format As String, ParamArray values() As Variant)
 Attribute WriteLine2.VB_Description = "Writes the specified string value, followed by the current line terminator, to the standard output stream."
     Dim argsCount As Long
     If ((LBound(values) = 0) And (UBound(values) = -1)) Then
