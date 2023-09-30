@@ -10,9 +10,11 @@ Attribute VB_Name = "MatchGroupsExample"
 
 Option Explicit
 
+''
 ' The following example attempts to match a regular expression pattern against
 ' a sample string. The example uses the Groups property to store information
 ' that is retrieved by the match for display to the console.
+''
 Public Sub MatchGroups()
     Dim text As String
     text = "One car red car blue car"
