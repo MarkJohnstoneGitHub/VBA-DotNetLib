@@ -12,7 +12,7 @@ namespace DotNetLib.System.Text.RegularExpressions
     public interface IMatchSingleton
     {
         //Properties
-        Match Empty
+        Match EmptyMatch
         {
             [Description("Gets the empty group. All failed matches return this empty match.")]
             get;
