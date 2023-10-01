@@ -269,4 +269,9 @@ VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
 Require to consider how to handle generic types in COM Interlop as not supported, possible work around implement each type separately, which enforces type safety.  
  
 Or replace with non-generic equivalent.  To enforce type safety in VBA create a custom wrapper for the collection on the non-generic collection.
+
+ **Collections List**
+
+How to create dynamic list? I.e. When creating a List  specify the type required.  
+- https://stackoverflow.com/questions/9860387/how-do-i-create-a-dynamic-type-listt
   
