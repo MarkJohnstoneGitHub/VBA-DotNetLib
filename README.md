@@ -71,8 +71,9 @@ VBA Example using Regex.Unescape with hexadecimal escape sequences
 ```
 
  **Issues:**
-Too many things to do. Argh!
-Atm no outstanding issues detetected. Require completing unit testing. 
+ - Currently List COM object wont allow to be created getting invalid use of New Keyword. This will removed and replaced with it's non-generic equivalent.
+ - ListString not working WIP
+- Too many things to do. Argh!
  
  **Things To do**
  
@@ -83,6 +84,15 @@ Atm no outstanding issues detetected. Require completing unit testing.
 **Update History**
 
 **Status: Latest Updates**
+
+**DotNetLib Update September 30th, 2023** 
+
+Added [System.Text.RegularExpressions](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions?view=netframework-4.8.1), [Capture](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.capture?view=netframework-4.8.1), [CaptureCollection](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.capturecollection?view=netframework-4.8.1), [Group](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.group?view=netframework-4.8.1), [GroupCollection](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.groupcollection?view=netframework-4.8.1), [Match](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.match?view=netframework-4.8.1), [MatchCollection](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.matchcollection?view=netframework-4.8.1), [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1)
+
+Todo:
+- Implement VBA singleton classes for Match and Group for static members.
+- Examples and unit testing.
+
 
 **DotNetLib Update September 25th, 2023** 
 Added [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1) 
@@ -259,4 +269,9 @@ VBA Wrapper for ReadOnlyCollection for SystemTimeZones i.e. of type TimeZoneInfo
 Require to consider how to handle generic types in COM Interlop as not supported, possible work around implement each type separately, which enforces type safety.  
  
 Or replace with non-generic equivalent.  To enforce type safety in VBA create a custom wrapper for the collection on the non-generic collection.
+
+ **Collections List**
+
+How to create dynamic list? I.e. When creating a List  specify the type required.  
+- https://stackoverflow.com/questions/9860387/how-do-i-create-a-dynamic-type-listt
   
