@@ -1,231 +1,260 @@
-﻿// https://stackoverflow.com/questions/1296362/how-to-expose-a-dictionary-to-com-interop?rq=3
+﻿// https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netframework-4.8.1
+
+// Notes:
+// https://stackoverflow.com/questions/9860387/how-do-i-create-a-dynamic-type-listt
+// https://stackoverflow.com/questions/906499/getting-type-t-from-ienumerablet
+//   https://stackoverflow.com/a/17713382/10759363
+//   https://stackoverflow.com/a/57679532/10759363
+
+// https://stackoverflow.com/questions/1296362/how-to-expose-a-dictionary-to-com-interop?rq=3
 // https://stackoverflow.com/questions/17519078/initializing-a-generic-variable-from-a-c-sharp-type-variable
 
-using GSystem = global::System;
+// https://stackoverflow.com/a/254496/10759363
+
+using GGeneric = global::System.Collections.Generic;
+using GCollections = global::System.Collections;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using System.Collections;
 
 namespace DotNetLib.System.Collections
 {
-
     [ComVisible(true)]
     [Description("Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.")]
     [Guid("C88C9749-4D9C-46D0-A463-5DA93F0E1A75")]
-    //[ProgId("DotNetLib.System.Collections.Generic.List")]
+    [ProgId("DotNetLib.System.Collections.List")]
     [ClassInterface(ClassInterfaceType.None)]
-
-
-    public class List : IList
+    [ComDefaultInterface(typeof(IList))]
+    public class List : GCollections.IList, ICollection, IEnumerable , IList 
     {
-        private GSystem.Collections.Generic.List<object> objList;
+        private GCollections.IList _list;
 
-        // Constructors
         public List()
         {
-            GSystem.Collections.Generic.List<object> objList = new GSystem.Collections.Generic.List<object>();
+            _list = new List<object>();
         }
 
-        public List(List<object> objList)
+        public List(object type) 
         {
-            this.objList = (List<object>)objList;
+            _list = CreateFromType((dynamic)type);
         }
 
-        public List(GSystem.Collections.Generic.List<object> objList, int capacity)
+        public List(object type, int capacity)
         {
-            this.objList = objList;
-            this.objList.Capacity = capacity;
+            _list = CreateFromType(capacity, (dynamic)type);
         }
 
-        public List(GSystem.Collections.Generic.IEnumerable<object> collection)
+        //public List(IEnumerable collection)
+        //{
+        //    _list = new List<object>((IEnumerable<object>)collection);
+        //}
+
+        //public List(object type, IEnumerable collection)
+        //{
+        //    GCollections.IList list = CreateFromType((dynamic)type);
+        //    // require to check types are the same?
+        //    // Do you require the type?
+        //    _list = new List<object>((IEnumerable<object>)collection);
+        //}
+
+        internal static List<T> CreateFromType<T>(T obj = default)
         {
-            this.objList = new List<object>(collection);
+            return new List<T>();
         }
 
-        // https://stackoverflow.com/questions/17519078/initializing-a-generic-variable-from-a-c-sharp-type-variable
-        // https://learn.microsoft.com/en-us/dotnet/api/system.type.makegenerictype?redirectedfrom=MSDN&view=net-7.0#System_Type_MakeGenericType_System_Type___
-        public List Create(object listType)
+        internal static List<T> CreateFromType<T>(int capacity, T obj = default)
         {
-            Type type = typeof(GSystem.Collections.Generic.List<>).MakeGenericType(listType.GetType());
-            object objType = Activator.CreateInstance(type);
-            return new List((List<object>)objType);
-        }
-
-        public List Create2(object listType, int capacity)
-        {
-            Type type = typeof(GSystem.Collections.Generic.List<>).MakeGenericType(listType.GetType());
-            object objType = Activator.CreateInstance(type);
-            return new List((List<object>)objType,capacity);
-        }
-
-        public List CreateFromIEnumerable(GSystem.Collections.IEnumerable collection)
-        {
-            return new List((IEnumerable<object>)collection);
+            return new List<T>(capacity);
         }
 
         // Properties
-        public int Capacity
-        { 
-            get { return this.objList.Capacity; }
-            set { this.objList.Capacity = value; }
-        }
-        public int Count
+
+        internal List<object> GenericList => (List<object>)_list;
+
+        public bool IsReadOnly => _list.IsReadOnly;
+
+        public bool IsFixedSize => _list.IsFixedSize;
+
+        public int Count => _list.Count;
+
+        public object SyncRoot => _list.SyncRoot;
+
+        public bool IsSynchronized => _list.IsSynchronized;
+
+        public int Capacity 
         {
-            get { return this.objList.Count; }
+            get => GenericList.Capacity;
+            set => GenericList.Capacity = value;
         }
 
         public object this[int index]
         {
-            get { return this.objList[index]; }
-            set { this.objList[index] = value; }
+            get => _list[index];
+            set => _list[index] = value;
         }
 
         // Methods
-        public void Add(object value)
-        { 
-            this.objList.Add(value); 
-        }
-
-        public void AddRange(GSystem.Collections.IEnumerable collection)
+        public void Add(object item)
         {
-            this.objList.AddRange((IEnumerable<object>)collection);
+            _list.Add(item);
         }
 
-        //public int BinarySearch(T item);
-        //public int BinarySearch (T item, System.Collections.Generic.IComparer<T> comparer);
-        //public int BinarySearch (int index, int count, T item, System.Collections.Generic.IComparer<T> comparer);
+        public void AddRange(IEnumerable collection)
+        {
+            GenericList.Add(collection);
+        }
+
+        public int BinarySearch(object item)
+        { 
+            return GenericList.BinarySearch(item);
+        }
+
+        public int BinarySearch(object item, IComparer comparer)
+        {
+            return GenericList.BinarySearch(item, (IComparer<object>)comparer);
+
+        }
 
         public void Clear()
         {
-            this.objList.Clear(); 
+            _list.Clear();
         }
 
         public bool Contains(object value)
         {
-            return this.objList.Contains(value);
+            return _list.Contains(value);
         }
 
         //public System.Collections.Generic.List<TOutput> ConvertAll<TOutput>(Converter<T, TOutput> converter);
 
-        public void CopyTo(object[] array)
+        public void CopyTo(Array array, int index)
         {
-            this.objList.CopyTo(array);
+            _list.CopyTo(array, index);
         }
 
-        public void CopyTo2(object[] array, int arrayIndex)
+        //https://stackoverflow.com/questions/68481139/how-to-convert-my-predicate-to-a-generic-predicate-in-c
+        //https://stackoverflow.com/questions/9842222/dynamic-cast-to-generic-type
+        //https://stackoverflow.com/questions/42902164/how-to-map-expressionfunctentity-bool-to-expressionfunctdbentity-bool/42904029#42904029
+        //public bool Exists(Predicate<T> match);
+
+        //public T Find(Predicate<T> match);
+
+        //public System.Collections.Generic.List<T> FindAll(Predicate<T> match);
+
+        public IEnumerator GetEnumerator()
         {
-            this.objList.CopyTo(array, arrayIndex);
+            return _list.GetEnumerator();
         }
 
-        public void CopyTo3(int index, object[] array, int arrayIndex, int count)
+        public int IndexOf(object value)
         {
-            this.objList.CopyTo(index, array, arrayIndex, count);
-        }
-
-        //public bool Exists (Predicate<T> match);
-
-        //public T Find (Predicate<T> match);
-
-        //public System.Collections.Generic.List<T> FindAll (Predicate<T> match);
-
-        //public int FindIndex (int startIndex, int count, Predicate<T> match);
-        //public int FindIndex (Predicate<T> match);
-        //public int FindIndex (int startIndex, Predicate<T> match);
-
-        //public T FindLast (Predicate<T> match);
-
-        //public int FindLastIndex (Predicate<T> match);
-        //public int FindLastIndex (int startIndex, Predicate<T> match);
-        //public int FindLastIndex (int startIndex, int count, Predicate<T> match);
-
-        //public void ForEach (Action<T> action);
-
-        //public System.Collections.Generic.List<T>.Enumerator GetEnumerator();
-
-        //public System.Collections.Generic.List<T> GetRange(int index, int count);
-
-        //public int IndexOf (T item);
-        //public int IndexOf(T item, int index);
-        //public int IndexOf(T item, int index, int count);
-        public int IndexOf(object item)
-        { 
-            return this.objList.IndexOf(item);
+            return _list.IndexOf(value);
         }
 
         public int IndexOf2(object item, int index)
         {
-            return this.objList.IndexOf(item,index);
+            return GenericList.IndexOf(item, index);
         }
 
         public int IndexOf3(object item, int index, int count)
         {
-            return this.objList.IndexOf(item, index,count);
+            return GenericList.IndexOf(item, index,count);
         }
 
-
-        public void Insert(int index, object item)
+        public void Insert(int index, object value)
         {
-            this.objList.Insert(index, item); 
+            _list.Insert(index, value);
         }
-
-        //public void InsertRange(int index, System.Collections.Generic.IEnumerable<T> collection);
 
         public int LastIndexOf(object item)
         {
-            return objList.LastIndexOf(item);
+            return GenericList.LastIndexOf(item);
+            
         }
 
         public int LastIndexOf2(object item, int index)
         {
-            return objList.LastIndexOf(item,index);
+            return GenericList.LastIndexOf(item, index);
         }
 
         public int LastIndexOf3(object item, int index, int count)
         {
-            return objList.LastIndexOf(item, index,count);
+            return  GenericList.LastIndexOf(item, index,count);
         }
 
-        public bool Remove(object item)
-        { 
-            return this.objList.Remove(item);
+        public bool Remove(object value)
+        {
+            return GenericList.Remove(value);
         }
 
         //public int RemoveAll (Predicate<T> match);
 
         public void RemoveAt(int index)
-        { 
-            this.objList.RemoveAt(index);
+        {
+            _list.RemoveAt(index);
+        }
+
+        int GCollections.IList.Add(object value)
+        {
+            return _list.Add(value);
+            
+        }
+
+        public void CopyTo(object[] array)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CopyTo2(object[] array, int arrayIndex)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CopyTo3(int index, object[] array, int arrayIndex, int count)
+        {
+            throw new NotImplementedException();
         }
 
         public void RemoveRange(int index, int count)
         {
-            this.objList.RemoveRange(index, count);
+            GenericList.RemoveRange(index, count);
         }
 
         public void Reverse()
-        { 
-            this.objList.Reverse(); 
+        {
+            GenericList.Reverse();
         }
 
-        //public void Sort (Comparison<T> comparison);
-        //public void Sort (int index, int count, System.Collections.Generic.IComparer<T> comparer);
         public void Sort()
-        { 
-            this.objList.Sort(); 
+        {
+            GenericList.Sort();
         }
-
 
         public object[] ToArray()
-        { 
-            return this.objList.ToArray(); 
+        {
+            throw new NotImplementedException();
         }
 
         public void TrimExcess()
-        { 
-            this.objList.TrimExcess();
+        {
+            GenericList.TrimExcess();
         }
 
-        //public bool TrueForAll(Predicate<T> match);
+        void GCollections.IList.Remove(object value)
+        {
+            GenericList.Remove(value);
+        }
+
+        //public bool TrueForAll (Predicate<T> match);   
+
+        public static GCollections.IList CreateFromTypeV2<T>(T obj = default)
+        {
+            Type type = obj.GetType();
+            Type listType = typeof(List<>).MakeGenericType(new[] { type });
+            GCollections.IList list = (GCollections.IList)Activator.CreateInstance(listType);
+            return list;
+        }
     }
 }

@@ -73,7 +73,7 @@ namespace DotNetLib.System.Collections
             this.objListString.Add(value);
         }
 
-        //public void AddRange(GSystem.Collections.Generic.IEnumerable<string> collection)
+        //public void AddRange(GSystem.Collections.IEnumerable collection)
         //{
         //    this.objListString.AddRange((IEnumerable<string>)collection);
         //}

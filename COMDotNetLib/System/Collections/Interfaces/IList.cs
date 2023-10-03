@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using GCollections = global::System.Collections;
+using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System;
 using GSystem = global::System;
@@ -12,24 +13,39 @@ namespace DotNetLib.System.Collections
 
     public interface IList
     {
-        // Constructors
-        [Description("Initializes a new instance of the List < T > class that is empty and has the default initial capacity.")]
-        List Create(object listType);
-
-        [Description("Initializes a new instance of the List<T> class that is empty and has the specified initial capacity.")]
-        List Create2(object listType, int capacity);
-
-        [Description("Initializes a new instance of the List<T> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.")]
-        List CreateFromIEnumerable(GSystem.Collections.IEnumerable collection);
-
-
         // Properties
+        int Capacity
+        {
+            [Description("Gets or sets the total number of elements the internal data structure can hold without resizing.")]
+            get;
+            [Description("Gets or sets the total number of elements the internal data structure can hold without resizing.")]
+            set;
+        }
 
-        [Description("Gets or sets the element at the specified index.")]
+        int Count
+        {
+            [Description("Gets the number of elements contained in the List<T>.")]
+            get;
+        }
+
         object this[int index]
         {
+            [Description("Gets or sets the element at the specified index.")]
             get;
+            [Description("Gets or sets the element at the specified index.")]
             set;
+        }
+
+        bool IsReadOnly
+        {
+            [Description("Gets a value indicating whether the ICollection<T> is read-only.")]
+            get;
+        }
+
+        bool IsFixedSize
+        {
+            [Description("Gets a value indicating whether the IList has a fixed size.")]
+            get;
         }
 
         // Methods
@@ -48,15 +64,17 @@ namespace DotNetLib.System.Collections
 
         //System.Collections.Generic.List<TOutput> ConvertAll<TOutput>(Converter<T, TOutput> converter);
 
-        [Description("Copies the entire List<T> to a compatible one-dimensional array, starting at the beginning of the target array.")]
-        void CopyTo(object[] array);
+        //[Description("Copies the entire List<T> to a compatible one-dimensional array, starting at the beginning of the target array.")]
+        //void CopyTo(object[] array);
 
+        //[Description("Copies the entire List<T> to a compatible one-dimensional array, starting at the specified index of the target array.")]
+        //void CopyTo2(object[] array, int arrayIndex);
 
-        [Description("Copies the entire List<T> to a compatible one-dimensional array, starting at the specified index of the target array.")]
-        void CopyTo2(object[] array, int arrayIndex);
+        //[Description("Copies a range of elements from the List<T> to a compatible one-dimensional array, starting at the specified index of the target array.")]
+        //void CopyTo3(int index, object[] array, int arrayIndex, int count);
 
-        [Description("Copies a range of elements from the List<T> to a compatible one-dimensional array, starting at the specified index of the target array.")]
-        void CopyTo3(int index, object[] array, int arrayIndex, int count);
+        [Description("Returns an enumerator that iterates through a collection.")]
+        GCollections.IEnumerator GetEnumerator();
 
         [Description("Searches for the specified object and returns the zero-based index of the first occurrence within the entire List<T>.")]
         int IndexOf(object item);
@@ -104,6 +122,9 @@ namespace DotNetLib.System.Collections
 
         //[Description("Determines whether every element in the List<T> matches the conditions defined by the specified predicate.")]
         //bool TrueForAll(Predicate<T> match);
+
+
+
     }
 
 }
