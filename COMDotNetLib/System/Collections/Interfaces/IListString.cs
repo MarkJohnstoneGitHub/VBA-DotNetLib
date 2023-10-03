@@ -1,7 +1,9 @@
-﻿using System.ComponentModel;
+﻿// https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netframework-4.8.1
+
+using GCollections = global::System.Collections;
+using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System;
-using GSystem = global::System;
 
 namespace DotNetLib.System.Collections
 {
@@ -12,24 +14,50 @@ namespace DotNetLib.System.Collections
 
     public interface IListString
     {
-        // Constructors
-        [Description("Initializes a new instance of the List<string> class that is empty and has the default initial capacity.")]
-        ListString Create();
-
-        [Description("Initializes a new instance of the List<string> class that is empty and has the specified initial capacity.")]
-        ListString Create2(int capacity);
-
-        [Description("Initializes a new instance of the List<string> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.")]
-        ListString CreateFromIEnumerable(GSystem.Collections.IEnumerable collection);
-
-
         // Properties
+        int Capacity
+        {
+            [Description("Gets or sets the total number of elements the internal data structure can hold without resizing.")]
+            get;
+            [Description("Gets or sets the total number of elements the internal data structure can hold without resizing.")]
+            set;
+        }
+
+        int Count
+        {
+            [Description("Gets the number of elements contained in the List<String>.")]
+            get;
+        }
 
         [Description("Gets or sets the element at the specified index.")]
         string this[int index]
         {
             get;
             set;
+        }
+
+        bool IsReadOnly
+        {
+            [Description("Gets a value indicating whether the ICollection<T> is read-only.")]
+            get;
+        }
+
+        bool IsFixedSize
+        {
+            [Description("Gets a value indicating whether the IList has a fixed size.")]
+            get;
+        }
+
+        object SyncRoot
+        {
+            [Description("Gets an object that can be used to synchronize access to the ICollection.")]
+            get;
+        }
+
+        bool IsSynchronized
+        {
+            [Description("Gets a value indicating whether access to the ICollection is synchronized (thread safe).")]
+            get;
         }
 
         // Methods
@@ -49,13 +77,16 @@ namespace DotNetLib.System.Collections
         //System.Collections.Generic.List<TOutput> ConvertAll<TOutput>(Converter<T, TOutput> converter);
 
         [Description("Copies the entire List<string> to a compatible one-dimensional array, starting at the beginning of the target array.")]
-        void CopyTo(string[] array);
+        void CopyTo([In][Out] ref string[] array);
 
         [Description("Copies the entire List<string> to a compatible one-dimensional array, starting at the specified index of the target array.")]
-        void CopyTo2(string[] array, int arrayIndex);
+        void CopyTo2([In][Out] ref string[] array, int arrayIndex);
 
         [Description("Copies a range of elements from the List<string> to a compatible one-dimensional array, starting at the specified index of the target array.")]
-        void CopyTo3(int index, string[] array, int arrayIndex, int count);
+        void CopyTo3(int index, [In][Out] ref string[] array, int arrayIndex, int count);
+
+        [Description("Returns an enumerator that iterates through a collection.")]
+        GCollections.IEnumerator GetEnumerator();
 
         [Description("Searches for the specified string and returns the zero-based index of the first occurrence within the entire List<string>.")]
         int IndexOf(string item);
