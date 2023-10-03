@@ -75,8 +75,7 @@ VBA Example using Regex.Unescape with hexadecimal escape sequences
 ```
 
  **Issues:**
- - Currently List COM object wont allow to be created getting invalid use of New Keyword. This will removed and replaced with it's non-generic equivalent.
- - ListString not working WIP
+ - Currently List COM object wont allow to be created getting invalid use of New Keyword. This will removed and replaced with it's non-generic equivalent.. 
 - Too many things to do. Argh!
  
  **Things To do**
