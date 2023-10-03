@@ -11,6 +11,10 @@
 
 // https://stackoverflow.com/a/254496/10759363
 
+// https://stackoverflow.com/questions/2078914/creating-a-generict-type-instance-with-a-variable-containing-the-type
+// https://stackoverflow.com/questions/266115/pass-an-instantiated-system-type-as-a-type-parameter-for-a-generic-class
+
+
 using GGeneric = global::System.Collections.Generic;
 using GCollections = global::System.Collections;
 using System;
@@ -256,5 +260,13 @@ namespace DotNetLib.System.Collections
             GCollections.IList list = (GCollections.IList)Activator.CreateInstance(listType);
             return list;
         }
+
+        // https://stackoverflow.com/a/2078926/10759363
+        public static void CreateList<T>(T obj)
+        {
+            var genericListType = typeof(List<>);
+            var specificListType = genericListType.MakeGenericType(typeof(T));
+            var list = Activator.CreateInstance(specificListType);
+    }
     }
 }

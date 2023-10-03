@@ -4,6 +4,7 @@ using GCollections = global::System.Collections;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System;
+using System.Collections;
 
 namespace DotNetLib.System.Collections
 {
@@ -65,8 +66,18 @@ namespace DotNetLib.System.Collections
         [Description("Adds an string to the end of the List<string>.")]
         void Add(string value);
 
-        //[Description("Adds the elements of the specified collection to the end of the List<string>.")]
-        //void AddRange(GSystem.Collections.IEnumerable collection);
+        [Description("Adds the elements of the specified collection to the end of the List<string>.")]
+        void AddRange(GCollections.IEnumerable collection);
+
+        [Description("Searches the entire sorted List<String> for an element using the default comparer and returns the zero-based index of the element.")]
+        int BinarySearch(string item);
+
+        [Description("Searches the entire sorted List<String> for an element using the specified comparer and returns the zero-based index of the element.")]
+        int BinarySearch2(string item, IComparer comparer);
+
+        [Description("Searches a range of elements in the sorted List<String> for an element using the specified comparer and returns the zero-based index of the element.")]
+        int BinarySearch3(int index, int count, string item, IComparer comparer);
+
 
         [Description("Removes all elements from the List<string>.")]
         void Clear();

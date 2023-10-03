@@ -1,4 +1,5 @@
-﻿using GSystem = global::System; 
+﻿using GGeneric = global::System.Collections.Generic;
+using GSystem = global::System; 
 using GCollections = global::System.Collections;
 using System.Runtime.InteropServices;
 using System.ComponentModel;
@@ -71,24 +72,25 @@ namespace DotNetLib.System.Collections
             _stringList.Add(value);
         }
 
-        //public void AddRange(GSystem.Collections.IEnumerable collection)
-        //{
-        //    this._stringList.AddRange((IEnumerable<string>)collection);
-        //}
-
-        //public int BinarySearch(T item);
-        //public int BinarySearch (T item, System.Collections.Generic.IComparer<T> comparer);
-        //public int BinarySearch (int index, int count, T item, System.Collections.Generic.IComparer<T> comparer);
+        public void AddRange(IEnumerable collection)
+        {
+            _stringList.AddRange((IEnumerable<string>)collection);
+        }
 
         public int BinarySearch(string item)
         {
             return _stringList.BinarySearch(item);
         }
 
-        //public int BinarySearch2(string item, GSystem.Collections.Generic.IComparer<string> comparer)
-        //{
-        //    return this._stringList.BinarySearch(item, comparer);
-        //}
+        public int BinarySearch2(string item, IComparer comparer)
+        {
+            return _stringList.BinarySearch(item, (IComparer<string>)comparer);
+        }
+
+        public int BinarySearch3(int index, int count, string item, IComparer comparer)
+        {
+            return _stringList.BinarySearch(index, count, item, (IComparer<string>)comparer);
+        }
 
         public void Clear()
         {
