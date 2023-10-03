@@ -4,7 +4,9 @@ Attribute VB_Name = "ListStringExamples"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 3, 2023
-'@LastModified October 3, 2023
+'@LastModified October 4, 2023
+
+'Reference https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1.contains?view=netframework-4.8.1
 
 Option Explicit
 
@@ -30,30 +32,34 @@ Private Sub ListStringExample1()
     Next
     Debug.Print
     
-    Debug.Print "names.Contains(item)"
-    If names.Contains("Bob") Then
-        Debug.Print "names.Contains : Contains 'Bob'"
-    Else
-        Debug.Print "names.Contains : Does not contain 'Bob'"
-    End If
-    
-    If names.Contains("Luke") Then
-        Debug.Print "names.Contains : Contains 'Luke'"
-    Else
-        Debug.Print "names.Contains : Does not contain 'Luke'"
-    End If
-    
-    If names.Contains("Susan") Then
-        Debug.Print "names.Contains : Contains 'Susan'"
-    Else
-        Debug.Print "names.Contains : Does not contain 'Susan'"
-    End If
+    names.Insert 4, "Elizabeth"
+    Debug.Print "List after : names.Insert 4, 'Elizabeth'"
+    pvtIndex = 0
+    For Each varName In names
+        Debug.Print Strings.Format("[{0}] {1}", pvtIndex, varName)
+        pvtIndex = pvtIndex + 1
+    Next
     Debug.Print
     
+    Dim pvtName As String
+    
+    Debug.Print "names.Contains(item)"
+    Debug.Print Strings.Format("Contains 'Bob' : {0}", names.Contains("Bob"))
+    Debug.Print Strings.Format("Contains 'Luke' : {0}", names.Contains("Luke"))
+    Debug.Print Strings.Format("Contains 'Susan' : {0}", names.Contains("Susan"))
+    Debug.Print Strings.Format("Contains 'Elizabeth' : {0}", names.Contains("Elizabeth"))
+    Debug.Print
+    
+    
     Debug.Print "names.IndexOf(item)"
-    Debug.Print names.IndexOf("James"); " : List.IndexOf('James')"
-    Debug.Print names.IndexOf("Mark"); " : List.IndexOf('Mark')"
-    Debug.Print names.IndexOf("Luke"); " : List.IndexOf('Luke')"
+    pvtName = "James"
+    Debug.Print Strings.Format("{0,3} : List.IndexOf('{1}')", names.IndexOf(pvtName), pvtName)
+    pvtName = "Mark"
+    Debug.Print Strings.Format("{0,3} : List.IndexOf('{1}')", names.IndexOf(pvtName), pvtName)
+    pvtName = "Brian"
+    Debug.Print Strings.Format("{0,3} : List.IndexOf('{1}')", names.IndexOf(pvtName), pvtName)
+    pvtName = "Luke"
+    Debug.Print Strings.Format("{0,3} : List.IndexOf('{1}')", names.IndexOf(pvtName), pvtName)
     Debug.Print
     
     Debug.Print "Sorted list:"
