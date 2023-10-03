@@ -68,7 +68,7 @@ Private Sub ListStringExample1()
     'Binary search on a sorted list
     'Searches the entire sorted List<T> for an element using the default comparer and returns the zero-based index of the element.
     'The List<T> must already be sorted according to the comparer implementation; otherwise, the result is incorrect.
-    Debug.Print "list.BinarySearch(item)"
+    Debug.Print "names.BinarySearch(item)"
     Debug.Print names.BinarySearch("James"); " : List.BinarchSearch('James')"
     Debug.Print names.BinarySearch("susan"); " : List.BinarchSearch('susan')"
     Debug.Print names.BinarySearch("Greg"); " : List.BinarchSearch('Greg')"
@@ -113,7 +113,7 @@ End Sub
 '    [5] Michael
 '    [6] susan
 '
-'    List.BinarySearch (Item)
+'    names.BinarySearch (Item)
 '     2  : List.BinarchSearch('James')
 '     6  : List.BinarchSearch('susan')
 '    -3  : List.BinarchSearch('Greg')
