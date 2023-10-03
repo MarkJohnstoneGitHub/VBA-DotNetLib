@@ -15,15 +15,14 @@ Attribute VB_Exposed = False
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 1, 2023
-'@LastModified October 1, 2023
+'@LastModified October 3, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
-'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.match?view=netframework-4.8.1
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netframework-4.8.1
 
 '@Remarks
-'Singleton class for Match containing static members.
-
+'Singleton class for List containing factory methods and static members.
 
 Option Explicit
 
