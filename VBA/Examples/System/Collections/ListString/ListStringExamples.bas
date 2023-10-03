@@ -41,8 +41,6 @@ Private Sub ListStringExample1()
     Next
     Debug.Print
     
-    Dim pvtName As String
-    
     Debug.Print "names.Contains(item)"
     Debug.Print Strings.Format("Contains 'Bob' : {0}", names.Contains("Bob"))
     Debug.Print Strings.Format("Contains 'Luke' : {0}", names.Contains("Luke"))
@@ -50,7 +48,7 @@ Private Sub ListStringExample1()
     Debug.Print Strings.Format("Contains 'Elizabeth' : {0}", names.Contains("Elizabeth"))
     Debug.Print
     
-    
+    Dim pvtName As String
     Debug.Print "names.IndexOf(item)"
     pvtName = "James"
     Debug.Print Strings.Format("{0,3} : names.IndexOf('{1}')", names.IndexOf(pvtName), pvtName)
