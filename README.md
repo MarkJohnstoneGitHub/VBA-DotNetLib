@@ -17,8 +17,8 @@ Sep 25, 2023 Added [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.t
 Sep 30, 2023 Added [System.Text.RegularExpressions](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions?view=netframework-4.8.1), [Capture](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.capture?view=netframework-4.8.1), [CaptureCollection](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.capturecollection?view=netframework-4.8.1), [Group](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.group?view=netframework-4.8.1), [GroupCollection](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.groupcollection?view=netframework-4.8.1), [Match](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.match?view=netframework-4.8.1), [MatchCollection](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.matchcollection?view=netframework-4.8.1), [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1)
 
 Oct 3, 2023 Added [ListString](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netframework-4.8.1) 
-- Attempted to a dynamic create a List providing the data type however having issues, therefore will wrap a List for various basic types individually.
-- Work in progress testing still to be done. Creating, Add, BinarySearch, Contains, IndexOf, Sort, Reverse, appears functioning correctly.
+- Attempted to dynamically create a List providing the data type instance however having issues casting, therefore will wrap a List for various basic types individually.
+- Testing still to be done. Create, Add, BinarySearch, Contains, IndexOf, Insert, Reverse, Sort, appears functioning correctly.
 
  **Affected API due to VBA reserved words:**
 
@@ -75,8 +75,7 @@ VBA Example using Regex.Unescape with hexadecimal escape sequences
 ```
 
  **Issues:**
- - Currently List COM object wont allow to be created getting invalid use of New Keyword. This will removed and replaced with it's non-generic equivalent.
- - ListString not working WIP
+ - Currently List COM object wont allow to be created getting invalid use of New Keyword. This will removed and replaced with it's non-generic equivalent.. 
 - Too many things to do. Argh!
  
  **Things To do**
