@@ -53,13 +53,13 @@ Private Sub ListStringExample1()
     
     Debug.Print "names.IndexOf(item)"
     pvtName = "James"
-    Debug.Print Strings.Format("{0,3} : List.IndexOf('{1}')", names.IndexOf(pvtName), pvtName)
+    Debug.Print Strings.Format("{0,3} : names.IndexOf('{1}')", names.IndexOf(pvtName), pvtName)
     pvtName = "Mark"
-    Debug.Print Strings.Format("{0,3} : List.IndexOf('{1}')", names.IndexOf(pvtName), pvtName)
+    Debug.Print Strings.Format("{0,3} : names.IndexOf('{1}')", names.IndexOf(pvtName), pvtName)
     pvtName = "Brian"
-    Debug.Print Strings.Format("{0,3} : List.IndexOf('{1}')", names.IndexOf(pvtName), pvtName)
+    Debug.Print Strings.Format("{0,3} : names.IndexOf('{1}')", names.IndexOf(pvtName), pvtName)
     pvtName = "Luke"
-    Debug.Print Strings.Format("{0,3} : List.IndexOf('{1}')", names.IndexOf(pvtName), pvtName)
+    Debug.Print Strings.Format("{0,3} : names.IndexOf('{1}')", names.IndexOf(pvtName), pvtName)
     Debug.Print
     
     Debug.Print "Sorted list:"
@@ -75,9 +75,9 @@ Private Sub ListStringExample1()
     'Searches the entire sorted List<T> for an element using the default comparer and returns the zero-based index of the element.
     'The List<T> must already be sorted according to the comparer implementation; otherwise, the result is incorrect.
     Debug.Print "names.BinarySearch(item)"
-    Debug.Print names.BinarySearch("James"); " : List.BinarchSearch('James')"
-    Debug.Print names.BinarySearch("susan"); " : List.BinarchSearch('susan')"
-    Debug.Print names.BinarySearch("Greg"); " : List.BinarchSearch('Greg')"
+    Debug.Print names.BinarySearch("James"); " : names.BinarchSearch('James')"
+    Debug.Print names.BinarySearch("susan"); " : names.BinarchSearch('susan')"
+    Debug.Print names.BinarySearch("Greg"); " : names.BinarchSearch('Greg')"
     Debug.Print
     
     Debug.Print "Reverse list:"
@@ -100,29 +100,42 @@ End Sub
 '    [5] susan
 '    [6] Michael
 '
-'    names.Contains (Item)
-'    names.Contains: Contains  'Bob'
-'    names.Contains: Does Not contain  'Luke'
-'    names.Contains: Does Not contain  'Susan'
+'    List after : names.Insert 4, 'Elizabeth'
+'    [0] Bob
+'    [1] Mary
+'    [2] James
+'    [3] Mark
+'    [4] Elizabeth
+'    [5] Brian
+'    [6] susan
+'    [7] Michael
 '
-'    names.IndexOf (Item)
-'     2  : List.IndexOf('James')
-'     3  : List.IndexOf('Mark')
-'    -1  : List.IndexOf('Luke')
+'    names.Contains(item)
+'    Contains 'Bob' : True
+'    Contains 'Luke' : False
+'    Contains 'Susan' : False
+'    Contains 'Elizabeth' : True
+'
+'    names.IndexOf(item)
+'      2 : names.IndexOf('James')
+'      3 : names.IndexOf('Mark')
+'      5 : names.IndexOf('Brian')
+'     -1 : names.IndexOf('Luke')
 '
 '    Sorted List:
 '    [0] Bob
 '    [1] Brian
-'    [2] James
-'    [3] Mark
-'    [4] Mary
-'    [5] Michael
-'    [6] susan
+'    [2] Elizabeth
+'    [3] James
+'    [4] Mark
+'    [5] Mary
+'    [6] Michael
+'    [7] susan
 '
-'    names.BinarySearch (Item)
-'     2  : List.BinarchSearch('James')
-'     6  : List.BinarchSearch('susan')
-'    -3  : List.BinarchSearch('Greg')
+'    names.BinarySearch(item)
+'     3  : names.BinarchSearch('James')
+'     7  : names.BinarchSearch('susan')
+'    -4  : names.BinarchSearch('Greg')
 '
 '    Reverse List:
 '    [0] susan
@@ -130,7 +143,8 @@ End Sub
 '    [2] Mary
 '    [3] Mark
 '    [4] James
-'    [5] Brian
-'    [6] Bob
+'    [5] Elizabeth
+'    [6] Brian
+'    [7] Bob
 
 
