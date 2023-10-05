@@ -20,6 +20,8 @@ Oct 3, 2023 Added [ListString](https://learn.microsoft.com/en-us/dotnet/api/syst
 - Attempted to dynamically create a List providing the data type instance however having issues casting, therefore will wrap a List for various basic types individually.
 - Testing still to be done. Create, Add, BinarySearch, Contains, IndexOf, Insert, Reverse, Sort, appears functioning correctly.
 
+Oct 5, 2023 Added [ArrayList](https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist?view=netframework-4.8.1)
+
  **Affected API due to VBA reserved words:**
 
  The API for the .Net class may be required to be altered due to VBA reserved words. See [reserved-word-list](https://www.engram9.info/access-2007-vba/reserved-word-list.html).
