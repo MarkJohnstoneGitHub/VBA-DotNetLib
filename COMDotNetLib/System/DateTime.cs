@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System;
 using DotNetLib.System.Globalization;
 using DotNetLib.Extensions;
+using System.Runtime.Serialization;
 
 namespace DotNetLib.System
 {
@@ -19,7 +20,7 @@ namespace DotNetLib.System
     [Description("Represents an instant in time, typically expressed as a date and time of day.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IDateTime))]
-    public class DateTime : IComparable, IFormattable, IDateTime, IWrappedObject
+    public class DateTime : IComparable, IFormattable, IDateTime, IWrappedObject, ISerializable
     {
         private GSystem.DateTime _dateTime;
 
@@ -725,7 +726,10 @@ namespace DotNetLib.System
             return new DateTime(d.WrappedDateTime - t.WrappedTimeSpan);
         }
 
-
+        public void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            ((ISerializable)_dateTime).GetObjectData(info, context);
+        }
     }
 }
 

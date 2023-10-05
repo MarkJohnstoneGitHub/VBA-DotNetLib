@@ -66,8 +66,16 @@
     <Compile Include="Extensions\IWrappedObject.cs" />
     <Compile Include="Extensions\ListExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="System\Collections\ArrayList.cs" />
+    <Compile Include="System\Collections\Singletons\ArrayListSingleton.cs" />
     <Compile Include="System\Collections\DynamicList.cs" />
     <Compile Include="System\Collections\GenericList.cs" />
+    <Compile Include="System\Collections\Interfaces\IArrayList.cs" />
+    <Compile Include="System\Collections\Singletons\IArrayListSingleton.cs" />
+    <Compile Include="System\Collections\Interfaces\IListObject.cs" />
+    <Compile Include="System\Collections\Singletons\IListObjectSingleton.cs" />
+    <Compile Include="System\Collections\ListObject.cs" />
+    <Compile Include="System\Collections\Singletons\ListObjectSingleton.cs" />
     <Compile Include="System\Collections\Singletons\IListStringSingleton.cs" />
     <Compile Include="System\Collections\Singletons\ListStringSingleton.cs" />
     <Compile Include="System\Collections\Singletons\IListSingleton.cs" />

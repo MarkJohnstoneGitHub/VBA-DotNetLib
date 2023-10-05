@@ -2,9 +2,14 @@
 
 using GCollections = global::System.Collections;
 using System.ComponentModel;
+using System.Runtime.InteropServices;
 
 namespace DotNetLib.System.Collections
 {
+    [ComVisible(true)]
+    [Guid("00188409-0771-4D86-ADAE-1CB722DB60B5")]
+    [Description("")]
+    [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface IListStringSingleton
     {
         // Constructors

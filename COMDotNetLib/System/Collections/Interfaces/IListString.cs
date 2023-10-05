@@ -78,7 +78,6 @@ namespace DotNetLib.System.Collections
         [Description("Searches a range of elements in the sorted List<String> for an element using the specified comparer and returns the zero-based index of the element.")]
         int BinarySearch3(int index, int count, string item, IComparer comparer);
 
-
         [Description("Removes all elements from the List<string>.")]
         void Clear();
 
