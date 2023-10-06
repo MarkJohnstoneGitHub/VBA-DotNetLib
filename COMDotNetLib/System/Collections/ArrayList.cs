@@ -68,6 +68,11 @@ namespace DotNetLib.System.Collections
 
         public bool IsSynchronized => _arrayList.IsSynchronized;
 
+        // Todo Issue assigning value types 
+        // https://stackoverflow.com/questions/9481140/exposing-property-as-variant-in-net-for-interop
+        // https://stackoverflow.com/a/9924325/10759363
+        // https://social.msdn.microsoft.com/Forums/en-US/b8e26285-1f2a-4a1a-9ca4-9d198d0bd9dd/com-interop-property-getletset-interface-attribute?forum=vblanguage
+
         public object this[int index]
         {
             get => _arrayList[index];
@@ -134,6 +139,11 @@ namespace DotNetLib.System.Collections
         public virtual void CopyTo3(int index, Array array, int arrayIndex, int count)
         {
             _arrayList.CopyTo(index, array, arrayIndex, count);
+        }
+
+        public void CopyTo(Array array, int index)
+        {
+            ((GCollections.ICollection)_arrayList).CopyTo(array, index);
         }
 
         public static ArrayList FixedSize(ArrayList list)
@@ -287,9 +297,11 @@ namespace DotNetLib.System.Collections
             _arrayList.TrimToSize();
         }
 
-        public void CopyTo(Array array, int index)
+        // Added to fix issue assigning value types.
+        public void SetItem(int index, object value)
         {
-            ((GCollections.ICollection)_arrayList).CopyTo(array, index);
+            _arrayList[index] = value;
         }
+
     }
 }

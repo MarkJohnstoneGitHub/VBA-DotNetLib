@@ -30,7 +30,7 @@ Public Sub ArrayListExample1()
     PrintValues myAL
 End Sub
 
-Private Sub PrintValues(ByVal myList As IEnumerable)
+Private Sub PrintValues(ByVal myList As mscorlib.IEnumerable)
     Dim obj As Variant
     For Each obj In myList
         Debug.Print Strings.Format("    {0}", obj);

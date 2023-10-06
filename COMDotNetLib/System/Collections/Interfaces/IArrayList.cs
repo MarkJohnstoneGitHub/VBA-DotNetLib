@@ -166,5 +166,8 @@ namespace DotNetLib.System.Collections
         [Description("Sets the capacity to the actual number of elements in the ArrayList.")]
         void TrimToSize();
 
+        // Added to fix issue assigning value types.
+        [Description("Sets the element at the specified index.")]
+        void SetItem(int index, object value);
     }
 }
