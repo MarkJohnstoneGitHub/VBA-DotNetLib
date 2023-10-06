@@ -77,6 +77,13 @@ VBA Example using Regex.Unescape with hexadecimal escape sequences
 ```
 
  **Issues:**
+
+ArrayList.Item(index) = item
+- Cannot assign value types using arraylist.Item(index) = valueType
+- Eg. ```pvtStringList.Item(2) = "abcd" ``` Will produce a Run-time error 424 Object required
+- To cater for value types added the Arraylist.SetItem(index,item) member.  Arraylist.SetItem(index,item) can be use for value or object types.
+- Eg. assigning a value type ```pvtStringList.SetItem 2, "abcd"```
+
  - Currently List COM object wont allow to be created getting invalid use of New Keyword. This will removed and replaced with it's non-generic equivalent.. 
 - Too many things to do. Argh!
  
