@@ -15,9 +15,10 @@ namespace DotNetLib.System.Collections
     [ComDefaultInterface(typeof(IArrayList))]
     public class ArrayList : IArrayList,  ICloneable, GCollections.IList
     {
+        private GCollections.ArrayList _arrayList;
+
         // Constructors
 
-        private GCollections.ArrayList _arrayList;
         public ArrayList()
         {
             _arrayList = new GCollections.ArrayList();
@@ -68,11 +69,10 @@ namespace DotNetLib.System.Collections
 
         public bool IsSynchronized => _arrayList.IsSynchronized;
 
-        // Todo Issue assigning value types 
+        // Todo Issue assigning value types added member SetItem(index,item) 
         // https://stackoverflow.com/questions/9481140/exposing-property-as-variant-in-net-for-interop
         // https://stackoverflow.com/a/9924325/10759363
         // https://social.msdn.microsoft.com/Forums/en-US/b8e26285-1f2a-4a1a-9ca4-9d198d0bd9dd/com-interop-property-getletset-interface-attribute?forum=vblanguage
-
         public object this[int index]
         {
             get => _arrayList[index];
@@ -80,6 +80,12 @@ namespace DotNetLib.System.Collections
         }
 
         // Methods
+
+        // Added to fix issue assigning value types.
+        public void SetItem(int index, object value)
+        {
+            _arrayList[index] = value;
+        }
 
         public static ArrayList Adapter(GCollections.IList list)
         { 
@@ -297,11 +303,7 @@ namespace DotNetLib.System.Collections
             _arrayList.TrimToSize();
         }
 
-        // Added to fix issue assigning value types.
-        public void SetItem(int index, object value)
-        {
-            _arrayList[index] = value;
-        }
+
 
     }
 }
