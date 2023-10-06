@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArrayListBinarySearch2"
-'@Folder("Examples.System.Collections.ArrayList.Properties")
+'@Folder("Examples.System.Collections.ArrayList.Methods")
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

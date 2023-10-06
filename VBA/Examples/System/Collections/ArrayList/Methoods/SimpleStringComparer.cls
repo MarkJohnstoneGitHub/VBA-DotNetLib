@@ -7,7 +7,14 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = False
-'@Folder("Examples.System.Collections.ArrayList.Properties")
+'@Folder("Examples.System.Collections.ArrayList.Methods")
+
+'@Author Mark Johnstone
+'@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 October 6, 2023
+'@LastModified October 6, 2023
+
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist.binarysearch?view=netframework-4.8.1#system-collections-arraylist-binarysearch(system-object-system-collections-icomparer)
 
 Option Explicit
 
@@ -17,20 +24,9 @@ Public Function Compare(ByVal x As String, y As String) As Long
     Compare = Strings.Compare(x, y)
 End Function
 
-'public class SimpleStringComparer : IComparer
-'{
-'    int IComparer.Compare(object x, object y)
-'    {
-'        string cmpstr = (string)x;
-'        return cmpstr.CompareTo((string)y);
-'    }
-'}
-
 ' ------------------------------------------------------------'
 'IScriptingDictionary Methods
 ' ------------------------------------------------------------'
 Private Function IComparer_Compare(ByVal x As Variant, ByVal y As Variant) As Long
-'    Dim cmpstr As String
-'    cmpstr = CStr(x)
     IComparer_Compare = Strings.Compare(x, y)
 End Function
