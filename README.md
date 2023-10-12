@@ -22,6 +22,8 @@ Oct 3, 2023 Added [ListString](https://learn.microsoft.com/en-us/dotnet/api/syst
 
 Oct 5, 2023 Added [ArrayList](https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist?view=netframework-4.8.1)
 
+Oct 12, 2023 Added [Array](https://learn.microsoft.com/en-us/dotnet/api/system.array?view=netframework-4.8.1), [Type](https://learn.microsoft.com/en-us/dotnet/api/system.type?view=netframework-4.8.1), [GenericParameterAttributes](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.genericparameterattributes?view=netframework-4.8.1)
+
  **Affected API due to VBA reserved words:**
 
  The API for the .Net class may be required to be altered due to VBA reserved words. See [reserved-word-list](https://www.engram9.info/access-2007-vba/reserved-word-list.html).
