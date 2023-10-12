@@ -1,4 +1,5 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.globalization.numberformatinfo?view=netframework-4.8.1
+using GSystem = global::System;
 using System;
 using System.ComponentModel;
 using System.Globalization;
@@ -216,9 +217,18 @@ namespace DotNetLib.System.Globalization
         }
 
         // TODO: Check implementation
-        public object GetFormat(Type formatType)
+        public object GetFormat(GSystem.Type formatType)
         {
             if (!(formatType == typeof(NumberFormatInfo)))
+            {
+                return null;
+            }
+            return this;
+        }
+
+        public object GetFormat(Type formatType)
+        {
+            if (!(formatType.WrappedType == typeof(NumberFormatInfo)))
             {
                 return null;
             }

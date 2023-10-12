@@ -21,7 +21,7 @@ namespace DotNetLib.Extensions
 
         //public static GCollections.IList CreateFromType<T>(T obj)
         //{
-        //    Type type = obj.GetType();
+        //    Type type = obj.GetTypeInfo();
         //    Type listType = typeof(List<>).MakeGenericType(new[] { type });
         //    GCollections.IList list = (GCollections.IList)Activator.CreateInstance(listType);
         //    return list;

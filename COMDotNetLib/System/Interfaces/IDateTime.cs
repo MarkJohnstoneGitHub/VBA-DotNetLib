@@ -1,5 +1,6 @@
 ﻿//https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8.1
 
+using GSystem = global::System;
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
@@ -13,6 +14,12 @@ namespace DotNetLib.System
     public interface IDateTime
     {
         //Properties
+
+        GSystem.DateTime Value
+        {
+            [Description("")]
+            get;
+        }
 
         DateTime Date
         {
@@ -196,5 +203,8 @@ namespace DotNetLib.System
 
         [Description("Converts the value of the current DateTime object to Coordinated Universal Time (UTC).")]
         DateTime ToUniversalTime();
+
+        [Description("Gets the Type of the current instance.")]
+        Type GetType();
     }
 }

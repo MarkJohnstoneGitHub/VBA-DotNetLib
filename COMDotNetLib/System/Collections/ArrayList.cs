@@ -134,22 +134,22 @@ namespace DotNetLib.System.Collections
 
         public virtual void CopyTo(Array array)
         {
-            _arrayList.CopyTo(array);
+            _arrayList.CopyTo(array.WrappedArray);
         }
 
         public virtual void CopyTo2(Array array, int arrayIndex)
         {
-            _arrayList.CopyTo(array,arrayIndex);
+            _arrayList.CopyTo(array.WrappedArray,arrayIndex);
         }
 
         public virtual void CopyTo3(int index, Array array, int arrayIndex, int count)
         {
-            _arrayList.CopyTo(index, array, arrayIndex, count);
+            _arrayList.CopyTo(index, array.WrappedArray, arrayIndex, count);
         }
 
         public void CopyTo(Array array, int index)
         {
-            ((GCollections.ICollection)_arrayList).CopyTo(array, index);
+            ((GCollections.ICollection)_arrayList).CopyTo(array.WrappedArray, index);
         }
 
         public static ArrayList FixedSize(ArrayList list)
@@ -295,7 +295,7 @@ namespace DotNetLib.System.Collections
 
         public virtual Array ToArray2(Type type)
         {
-            return _arrayList.ToArray(type);
+            return new Array(_arrayList.ToArray(type.WrappedType));
         }
 
         public virtual void TrimToSize()
@@ -303,7 +303,9 @@ namespace DotNetLib.System.Collections
             _arrayList.TrimToSize();
         }
 
-
-
+        public void CopyTo(global::System.Array array, int index)
+        {
+            ((GCollections.ICollection)_arrayList).CopyTo(array, index);
+        }
     }
 }

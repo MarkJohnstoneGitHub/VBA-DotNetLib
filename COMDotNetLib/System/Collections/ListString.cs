@@ -254,12 +254,17 @@ namespace DotNetLib.System.Collections
 
         public void CopyTo(Array array, int index)
         {
-            ((ICollection)_stringList).CopyTo(array, index);
+            ((ICollection)_stringList).CopyTo(array.WrappedArray, index);
         }
 
         public IEnumerator GetEnumerator()
         {
             return ((IEnumerable)_stringList).GetEnumerator();
+        }
+
+        public void CopyTo(GSystem.Array array, int index)
+        {
+            ((ICollection)_stringList).CopyTo(array, index);
         }
 
         //public bool TrueForAll(Predicate<T> match);

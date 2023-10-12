@@ -208,6 +208,11 @@ namespace DotNetLib.System.Collections
 
         public void CopyTo(Array array, int index)
         {
+            ((ICollection)_list).CopyTo(array.WrappedArray, index);
+        }
+
+        public void CopyTo(global::System.Array array, int index)
+        {
             ((ICollection)_list).CopyTo(array, index);
         }
     }

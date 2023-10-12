@@ -202,5 +202,8 @@ namespace DotNetLib.System
 
         [Description("Returns the number of seconds that have elapsed since 1970-01-01T00:00:00Z.")]
         long ToUnixTimeSeconds();
+
+        [Description("Gets the Type of the current instance.")]
+        Type GetType();
     }
 }

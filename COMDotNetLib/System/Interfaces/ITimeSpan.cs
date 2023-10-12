@@ -121,7 +121,8 @@ namespace DotNetLib.System
         //string ToString3(string format, IFormatProvider formatProvider);
 
 
-
+        [Description("Gets the Type of the current instance.")]
+        Type GetType();
 
     }
 }

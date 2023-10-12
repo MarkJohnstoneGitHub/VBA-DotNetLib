@@ -85,6 +85,9 @@ namespace DotNetLib.System.Text.RegularExpressions
             return _match.ToString(); 
         }
 
-
+        public new Type GetType()
+        {
+            return new Type(typeof(Match));
+        }
     }
 }

@@ -205,11 +205,11 @@ namespace DotNetLib.System.Globalization
         // Also check if type is typeof mscorlib.NumberFormatInfo, mscorlib.DateTimeFormatInfo ?
         public object GetFormat(Type formatType)
         {
-            if (formatType == typeof(NumberFormatInfo))
+            if (formatType.WrappedType == typeof(NumberFormatInfo))
             {
                 return NumberFormat; 
             }
-            if (formatType == typeof(DateTimeFormatInfo))
+            if (formatType.WrappedType == typeof(DateTimeFormatInfo))
             {
                 return DateTimeFormat; 
             }
@@ -262,5 +262,19 @@ namespace DotNetLib.System.Globalization
             return new CultureInfo(GGlobalization.CultureInfo.ReadOnly(ci.WrappedCultureInfo));
         }
 
+        public object GetFormat(global::System.Type formatType)
+        {
+            if (formatType == typeof(NumberFormatInfo))
+            {
+                return NumberFormat;
+            }
+            if (formatType == typeof(DateTimeFormatInfo))
+            {
+                return DateTimeFormat;
+            }
+            return null;
+
+            //return ((IFormatProvider)WrappedCultureInfo).GetFormat(formatType);
+        }
     }
 }

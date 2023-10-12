@@ -238,6 +238,11 @@ namespace DotNetLib.System
             return _dateTimeOffset.GetHashCode();
         }
 
+        public new Type GetType()
+        {
+            return new Type(((GSystem.Object)this).GetType());
+        }
+
         public static DateTimeOffset Parse(string input)
         {
             return new DateTimeOffset(GSystem.DateTimeOffset.Parse(input));

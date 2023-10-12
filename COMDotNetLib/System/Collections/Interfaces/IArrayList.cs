@@ -161,7 +161,7 @@ namespace DotNetLib.System.Collections
         object[] ToArray();
 
         [Description("Copies the elements of the ArrayList to a new array of the specified element type.")]
-        Array ToArray2(GSystem.Type type);
+        Array ToArray2(Type type);
 
         [Description("Sets the capacity to the actual number of elements in the ArrayList.")]
         void TrimToSize();

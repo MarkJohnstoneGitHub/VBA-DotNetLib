@@ -2,7 +2,6 @@
 using System.Runtime.InteropServices;
 using System.ComponentModel;
 using System;
-using System.Collections.ObjectModel;
 
 namespace DotNetLib.System.Collections
 {

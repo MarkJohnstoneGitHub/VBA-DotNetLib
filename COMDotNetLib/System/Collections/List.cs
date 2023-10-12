@@ -14,7 +14,7 @@
 // https://stackoverflow.com/questions/2078914/creating-a-generict-type-instance-with-a-variable-containing-the-type
 // https://stackoverflow.com/questions/266115/pass-an-instantiated-system-type-as-a-type-parameter-for-a-generic-class
 
-
+using GSystem = global::System;
 using GGeneric = global::System.Collections.Generic;
 using GCollections = global::System.Collections;
 using System;
@@ -135,7 +135,7 @@ namespace DotNetLib.System.Collections
 
         public void CopyTo(Array array, int index)
         {
-            _list.CopyTo(array, index);
+            _list.CopyTo(array.WrappedArray, index);
         }
 
         //https://stackoverflow.com/questions/68481139/how-to-convert-my-predicate-to-a-generic-predicate-in-c
@@ -255,8 +255,8 @@ namespace DotNetLib.System.Collections
 
         public static GCollections.IList CreateFromTypeV2<T>(T obj = default)
         {
-            Type type = obj.GetType();
-            Type listType = typeof(List<>).MakeGenericType(new[] { type });
+            GSystem.Type type = obj.GetType();
+            GSystem.Type listType = typeof(List<>).MakeGenericType(new[] { type });
             GCollections.IList list = (GCollections.IList)Activator.CreateInstance(listType);
             return list;
         }
@@ -268,5 +268,10 @@ namespace DotNetLib.System.Collections
             var specificListType = genericListType.MakeGenericType(typeof(T));
             var list = Activator.CreateInstance(specificListType);
     }
+
+        public void CopyTo(global::System.Array array, int index)
+        {
+            _list.CopyTo(array, index);
+        }
     }
 }

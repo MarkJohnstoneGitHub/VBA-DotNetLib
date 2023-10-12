@@ -189,6 +189,12 @@ namespace DotNetLib.System
             return _timeSpan.GetHashCode(); 
         }
 
+        public new Type GetType()
+        {
+            return new Type(((GSystem.Object)this).GetType());
+        }
+
+
         //public TimeSpan Multiply(double factor)
         //{
         //    return new TimeSpan(_timeSpan.Multiply(factor));

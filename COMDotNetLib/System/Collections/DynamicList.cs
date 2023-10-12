@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using GSystem = global::System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
 namespace DotNetLib.System.Collections
@@ -24,7 +25,7 @@ namespace DotNetLib.System.Collections
             _dynamicList = CreateFromType((dynamic)type.GetType());
         }
 
-        internal static List<Type> CreateFromType<Type>(Type type)
+        internal static List<Type> CreateFromType<Type>(GSystem.Type type)
         {
             return new List<Type>();
         }

@@ -295,11 +295,16 @@ namespace DotNetLib.System.Globalization
         // TODO: Check implementation
         public object GetFormat(Type formatType)
         {
-            if (!(formatType == typeof(DateTimeFormatInfo)))
+            if (!(formatType.WrappedType == typeof(DateTimeFormatInfo)))
             {
                 return null;
             }
             return this;
+        }
+
+        public object GetFormat(global::System.Type formatType)
+        {
+            return WrappedDateTimeFormatInfo.GetFormat(formatType);
         }
 
         //TODO: Could also cater for mscorlib.DateTimeFormatInfo
@@ -362,6 +367,7 @@ namespace DotNetLib.System.Globalization
             }
             _dateTimeFormatInfo.SetAllDateTimePatterns(patterns, format[0]);
         }
+
 
     }
 }

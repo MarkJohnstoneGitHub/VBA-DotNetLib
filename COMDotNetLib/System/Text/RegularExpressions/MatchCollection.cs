@@ -51,9 +51,14 @@ namespace DotNetLib.System.Text.RegularExpressions
 
         public void CopyTo(Array array, int index)
         {
-            _matches.CopyTo(array, index);
-        }    
-        
+            _matches.CopyTo(array.WrappedArray , index);
+        }
+
+        public void CopyTo(GSystem.Array array, int index)
+        {
+            ((ICollection)_matchCollection).CopyTo(array, index);
+        }
+
 
         public IEnumerator GetEnumerator()
         {
@@ -96,6 +101,9 @@ namespace DotNetLib.System.Text.RegularExpressions
             return matchCollection;
         }
 
-
+        public new Type GetType()
+        {
+            return new Type(typeof(MatchCollection));
+        }
     }
 }

@@ -96,5 +96,10 @@ namespace DotNetLib.System.Text.RegularExpressions
         {
             return new Group(GRegularExpressions.Group.Synchronized(inner.WrappedGroup));
         }
+
+        public new Type GetType()
+        {
+            return new Type(typeof(Group));
+        }
     }
 }

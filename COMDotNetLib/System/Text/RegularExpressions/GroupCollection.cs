@@ -1,7 +1,7 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.groupcollection?view=netframework-4.8.1
 
 //Match.Groups
-
+using GSystem = global::System;
 using GRegularExpressions = global::System.Text.RegularExpressions;
 using System.Collections;
 using System;
@@ -88,6 +88,15 @@ namespace DotNetLib.System.Text.RegularExpressions
             return groups;
         }
 
+        public new Type GetType()
+        {
+            return new Type(typeof(GroupCollection));
+        }
+
+        public void CopyTo(global::System.Array array, int index)
+        {
+            _groups.CopyTo(array, index);
+        }
     }
 
     /*
@@ -126,7 +135,7 @@ namespace DotNetLib.System.Text.RegularExpressions
         /*
          * As required by IEnumerator
          */
-        public Object Current
+        public object Current
         {
             get { return Capture; }
         }

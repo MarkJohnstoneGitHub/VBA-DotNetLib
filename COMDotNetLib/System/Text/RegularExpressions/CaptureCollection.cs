@@ -110,6 +110,16 @@ namespace DotNetLib.System.Text.RegularExpressions
             }
             return captures;
         }
+
+        public new Type GetType()
+        {
+            return new Type(typeof(CaptureCollection));
+        }
+
+        public void CopyTo(global::System.Array array, int index)
+        {
+            _captures.CopyTo(array, index);
+        }
     }
 
 
@@ -152,7 +162,7 @@ namespace DotNetLib.System.Text.RegularExpressions
         /*
          * As required by IEnumerator
          */
-        public Object Current
+        public object Current
         {
             get { return Capture; }
         }
