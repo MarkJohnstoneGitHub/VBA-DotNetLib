@@ -18,7 +18,7 @@ Option Explicit
 ' occurs in both the source and destination time zones at 2:00 A.M. on November 7, 2010.
 Public Sub TimeZoneInfoConvertTime()
     Dim times() As IDateTime
-    Objects.ToArray times, _
+    ObjectArray.ToArray times, _
                     DateTime.CreateFromDateTime(2010, 1, 1, 0, 1, 0), _
                     DateTime.CreateFromDateTimeKind(2010, 1, 1, 0, 1, 0, DateTimeKind.DateTimeKind_Utc), _
                     DateTime.CreateFromDateTimeKind(2010, 1, 1, 0, 1, 0, DateTimeKind.DateTimeKind_Local), _

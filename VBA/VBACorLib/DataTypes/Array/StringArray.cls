@@ -28,14 +28,14 @@ Option Explicit
 ''
 Public Function ToArray(ParamArray values() As Variant) As String()
 Attribute ToArray.VB_Description = "Creates a one dimensional string array from a list of parameters"
-   Dim result() As String
-   ReDim result(LBound(values) To UBound(values))
+   Dim Result() As String
+   ReDim Result(LBound(values) To UBound(values))
    Dim index As Long
    
    For index = LBound(values) To UBound(values)
-       result(index) = CStr(values(index))
+       Result(index) = CStr(values(index))
    Next index
-   ToArray = result
+   ToArray = Result
 End Function
 
 '@TODO

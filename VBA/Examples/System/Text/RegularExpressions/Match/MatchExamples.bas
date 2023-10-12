@@ -38,7 +38,7 @@ Public Sub MatchExample1()
         Dim pvtMatch As DotNetLib.Match
         Set pvtMatch = varMatch
         Debug.Print Strings.Format("'{0}' found in the source code at position {1}.", _
-                                    pvtMatch.Value, pvtMatch.Index)
+                                    pvtMatch.value, pvtMatch.index)
     Next
 End Sub
 
@@ -66,11 +66,11 @@ Public Sub MatchExample2()
     pattern = "Console\.Write(Line)?"
     Dim pvtMatch As DotNetLib.Match
     Set pvtMatch = Regex.Match(strInput, pattern)
-    While (pvtMatch.Success)
+    Do While (pvtMatch.Success)
         Debug.Print Strings.Format("'{0}' found in the source code at position {1}.", _
-                                    pvtMatch.Value, pvtMatch.Index)
+                                    pvtMatch.value, pvtMatch.index)
         Set pvtMatch = pvtMatch.NextMatch()
-    Wend
+    Loop
 End Sub
 
 ' The example displays the following output:
@@ -108,7 +108,7 @@ Public Sub MatchExample3()
     If (pvtMatch.Success) Then
         ' Report position as a one-based integer.
         Debug.Print Strings.Format("'{0}' was found at position {1} in '{2}'.", _
-                                pvtMatch.Value, pvtMatch.Index + 1, strInput)
+                                pvtMatch.value, pvtMatch.index + 1, strInput)
     Else
         Debug.Print Strings.Format("The pattern '{0}' was not found in '{1}'.", _
                                 pattern, strInput)

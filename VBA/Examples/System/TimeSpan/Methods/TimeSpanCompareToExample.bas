@@ -21,16 +21,16 @@ Attribute TimeSpanCompareTo.VB_Description = "Compares this instance to a specif
    Set tsFirst = tsX
    Set tsSecond = tsX
    
-   Dim result As Long
-   result = tsFirst.CompareTo(tsSecond)
+   Dim Result As Long
+   Result = tsFirst.CompareTo(tsSecond)
    
    Debug.Print tsFirst.ToString() _
          & " " _
-         & IIf(result = 1, ">", IIf(result = 0, "=", "<")) _
+         & IIf(Result = 1, ">", IIf(Result = 0, "=", "<")) _
          & " " _
          & tsSecond.ToString() _
          & " (Compare returns " _
-         & result _
+         & Result _
          & ")"
 End Sub
 

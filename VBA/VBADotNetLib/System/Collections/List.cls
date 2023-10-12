@@ -7,9 +7,11 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Attribute VB_Description = "Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists."
 '@Folder "VBADotNetLib.System.Collections"
 '@ModuleDescription("Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.")
 '@PredeclaredId
+
 '@Singleton
 
 '@Author Mark Johnstone
@@ -42,11 +44,12 @@ End Sub
 
 '@Description("Initializes a new instance of the List<object> class that is empty and has the default initial capacity.")
 Public Function Create() As DotNetLib.List
+Attribute Create.VB_Description = "Initializes a new instance of the List<object> class that is empty and has the default initial capacity."
    Set Create = this.ListSingleton.Create()
 End Function
 
 '@Description("Initializes a new instance of the List class of the type provided that is empty and has the default or specified initial capacity.")
-Public Function Create2(ByVal listType As Variant, Optional ByVal capacity As Long = 0) As DotNetLib.List
-   Set Create2 = this.ListSingleton.Create2(listType, capacity)
+Public Function Create2(ByVal listType As Variant, Optional ByVal pCapacity As Long = 0) As DotNetLib.List
+Attribute Create2.VB_Description = "Initializes a new instance of the List class of the type provided that is empty and has the default or specified initial capacity."
+   Set Create2 = this.ListSingleton.Create2(listType, pCapacity)
 End Function
-

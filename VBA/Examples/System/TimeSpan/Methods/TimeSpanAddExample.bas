@@ -18,7 +18,7 @@ Attribute TimeSpanAdd.VB_Description = "The following example calls the Add meth
    Set baseTimeSpan = TimeSpan.Create2(1, 12, 15, 16)
    
    ' Create an array of timespan intervals.
-   Objects.ToArray intervals, _
+   ObjectArray.ToArray intervals, _
                   TimeSpan.FromDays(1.5), _
                   TimeSpan.FromHours(1.5), _
                   TimeSpan.FromMinutes(45), _

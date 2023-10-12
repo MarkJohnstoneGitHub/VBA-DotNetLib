@@ -2,7 +2,7 @@ VERSION 1.0 CLASS
 BEGIN
   MultiUse = -1  'True
 END
-Attribute VB_Name = "Objects"
+Attribute VB_Name = "ObjectArray"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -34,5 +34,5 @@ Attribute ToArray.VB_Description = "Copies a ParamArray of objects to an array."
    End If
 Exit Sub
 Catch:
-      Err.Raise VBAException.INVALID_PROCEDURE_CALL, , "Invalid argument, array item is an invalid type for " & TypeName(destination)
+      Err.Raise VBAException.INVALID_PROCEDURE_CALL, , "Invalid argument, array item is an invalid type for " & typeName(destination)
 End Sub

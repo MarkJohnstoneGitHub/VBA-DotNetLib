@@ -15,7 +15,7 @@ Option Explicit
 Public Sub DateTimeAddHours()
 Attribute DateTimeAddHours.VB_Description = "The following example uses the AddHours method to add a number of whole and fractional values to a date and time. It also illustrates the loss of precision caused by passing the method a value that includes a fractional component."
    Dim pvtHours() As Double
-   pvtHours = Doubles.ToArray(0.08333, 0.16667, 0.25, 0.33333, 0.5, 0.66667, 1, 2, 29, 30, 31, 90, 365)
+   pvtHours = DoubleArray.ToArray(0.08333, 0.16667, 0.25, 0.33333, 0.5, 0.66667, 1, 2, 29, 30, 31, 90, 365)
    
    Dim dateValue As IDateTime
    Set dateValue = DateTime.CreateFromDateTime(2009, 3, 1, 12, 0, 0)

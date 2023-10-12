@@ -15,7 +15,7 @@ Public Sub TimeSpanToString2()
 Attribute TimeSpanToString2.VB_Description = "The following example uses standard and custom TimeSpan format strings to display the string representation of each element in an array of TimeSpan values."
    ' Create an array of timespan intervals.
    Dim spans() As ITimeSpan
-   Objects.ToArray spans, _
+   ObjectArray.ToArray spans, _
       TimeSpan.Zero, _
       TimeSpan.Create3(-14, 0, 0, 0, 0), _
       TimeSpan.Create(1, 2, 3), _

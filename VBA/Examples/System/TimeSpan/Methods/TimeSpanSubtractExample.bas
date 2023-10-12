@@ -20,7 +20,7 @@ Attribute TimeSpanSubtract.VB_Description = "The following example uses the Subt
    
    ' Create an array of timespan intervals.
    Dim intervals() As ITimeSpan
-   Objects.ToArray intervals, _
+   ObjectArray.ToArray intervals, _
       TimeSpan.FromDays(1.5), _
       TimeSpan.FromHours(1.5), _
       TimeSpan.FromMinutes(45), _

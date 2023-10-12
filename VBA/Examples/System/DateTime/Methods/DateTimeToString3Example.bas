@@ -15,7 +15,7 @@ Public Sub DateTimeToString3()
 Attribute DateTimeToString3.VB_Description = "The following example displays the string representation of a date and time using CultureInfo objects that represent five different cultures."
     ' Create an array of four cultures.
     Dim cultures() As DotNetLib.CultureInfo
-    Objects.ToArray cultures, _
+    ObjectArray.ToArray cultures, _
                 CultureInfo.InvariantCulture, _
                 CultureInfo.GetCultureInfo2("en-us"), _
                 CultureInfo.GetCultureInfo2("fr-fr"), _

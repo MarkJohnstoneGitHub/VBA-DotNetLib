@@ -20,7 +20,7 @@ Public Sub DateTimeToString2Example2()
     
     ' Create an array of four cultures.
     Dim cultures() As DotNetLib.CultureInfo
-    Objects.ToArray cultures, _
+    ObjectArray.ToArray cultures, _
                   CultureInfo.GetCultureInfo2("de-DE"), _
                   CultureInfo.GetCultureInfo2("en-US"), _
                   CultureInfo.GetCultureInfo2("es-ES"), _

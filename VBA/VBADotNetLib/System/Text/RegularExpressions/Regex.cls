@@ -16,7 +16,7 @@ Attribute VB_Description = "Represents an immutable regular expression."
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
-'@Version v2.0 September 25, 2023
+'@Version v1.0 September 25, 2023
 '@LastModified September 30, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb

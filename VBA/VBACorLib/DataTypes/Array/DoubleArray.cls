@@ -2,7 +2,7 @@ VERSION 1.0 CLASS
 BEGIN
   MultiUse = -1  'True
 END
-Attribute VB_Name = "Doubles"
+Attribute VB_Name = "DoubleArray"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -28,12 +28,12 @@ Option Explicit
 ''
 Public Function ToArray(ParamArray values() As Variant) As Double()
 Attribute ToArray.VB_Description = "Creates a one dimensional double array from a list of parameters"
-   Dim result() As Double
+   Dim Result() As Double
    '@TODO What if values is empty?
-   ReDim result(LBound(values) To UBound(values))
+   ReDim Result(LBound(values) To UBound(values))
    Dim index As Long
    For index = LBound(values) To UBound(values)
-       result(index) = values(index)
+       Result(index) = values(index)
    Next index
-   ToArray = result
+   ToArray = Result
 End Function

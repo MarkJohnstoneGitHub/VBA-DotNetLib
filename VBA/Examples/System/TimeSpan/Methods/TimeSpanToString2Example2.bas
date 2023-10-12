@@ -18,11 +18,11 @@ Public Sub TimeSpanToString2Example2()
 Attribute TimeSpanToString2Example2.VB_Description = "The following example calls the ToString(String, IFormatProvider) method to format two time intervals."
    ' Create an array of timespan intervals.
    Dim intervals() As DotNetLib.TimeSpan
-   Objects.ToArray intervals, _
+   ObjectArray.ToArray intervals, _
         TimeSpan.Create(38, 30, 15), _
         TimeSpan.Create(16, 14, 30)
     Dim cultures() As DotNetLib.CultureInfo
-    Objects.ToArray cultures, _
+    ObjectArray.ToArray cultures, _
         CultureInfo.CreateFromName("en-US"), _
         CultureInfo.CreateFromName("fr-FR")
     Dim fmts() As String

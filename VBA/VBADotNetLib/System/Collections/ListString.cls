@@ -9,7 +9,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists."
 '@Folder "VBADotNetLib.System.Collections"
-'@ModuleDescription("Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.")
+'@ModuleDescription("Represents a strongly typed list of strings that can be accessed by index. Provides methods to search, sort, and manipulate lists.")
 '@PredeclaredId
 '@Singleton
 

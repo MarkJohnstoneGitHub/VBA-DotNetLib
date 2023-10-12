@@ -17,7 +17,7 @@ Option Explicit
 Public Sub DateTimeParse2()
     ' Define cultures to be used to parse dates.
     Dim cultures() As DotNetLib.CultureInfo
-    Objects.ToArray cultures, _
+    ObjectArray.ToArray cultures, _
                     CultureInfo.CreateSpecificCulture("en-US"), _
                     CultureInfo.CreateSpecificCulture("fr-FR"), _
                     CultureInfo.CreateSpecificCulture("de-DE")
@@ -66,4 +66,5 @@ End Sub
 '          Converted '01/10/2009 7:34 PM' to Donnerstag, 1. Oktober 2009 19:34.
 '          Converted '10.01.2009 19:34' to Samstag, 10. Januar 2009 19:34.
 '          Converted '10-1-2009 19:34' to Samstag, 10. Januar 2009 19:34.
+
 

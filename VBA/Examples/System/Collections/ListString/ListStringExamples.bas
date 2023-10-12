@@ -21,6 +21,7 @@ Private Sub ListStringExample1()
     names.Add "Brian"
     names.Add "susan"
     names.Add "Michael"
+    names.Add DateTime.Now
 
     Debug.Print Strings.Format("Initial list: names.Count {0}", names.Count)
     DisplayList names

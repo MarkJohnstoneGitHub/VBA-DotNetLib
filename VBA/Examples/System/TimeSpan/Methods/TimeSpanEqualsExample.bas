@@ -24,13 +24,13 @@ Attribute TimeSpanEquals.VB_Description = "The following example demonstrates th
    Set three = one
    
    ' Compare the TimeSpan objects and display the results.
-   Dim result As Boolean
-   result = one.Equals(two)
+   Dim Result As Boolean
+   Result = one.Equals(two)
    
-   Debug.Print "The result of comparing TimeSpan object one and two is: " & result & "."
+   Debug.Print "The result of comparing TimeSpan object one and two is: " & Result & "."
    
-   result = one.Equals(three)
-   Debug.Print "The result of comparing TimeSpan object one and three is: " & result & "."
+   Result = one.Equals(three)
+   Debug.Print "The result of comparing TimeSpan object one and three is: " & Result & "."
 End Sub
 
 ' This code example displays the following:

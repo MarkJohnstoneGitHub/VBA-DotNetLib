@@ -24,7 +24,7 @@ Attribute TimeZoneInfoConvertTime2.VB_Description = "The following example conve
     Set time2 = DateTime.CreateFromDateTime(2010, 11, 6, 23, 30, 0)
     
     Dim times() As IDateTimeOffset
-    Objects.ToArray times, _
+    ObjectArray.ToArray times, _
                     DateTimeOffset.CreateFromDateTime2(time1, TimeZoneInfo.Locale.GetUtcOffset(time1)), _
                     DateTimeOffset.CreateFromDateTime2(time1, TimeSpan.Zero), _
                     DateTimeOffset.CreateFromDateTime2(time2, TimeZoneInfo.Locale.GetUtcOffset(time2)), _

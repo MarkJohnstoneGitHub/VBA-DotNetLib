@@ -17,7 +17,7 @@ Public Sub StringsFormatEg2()
     Set birthdate = DateTime.CreateFromDate(1993, 7, 28)
     Dim dates() As DotNetLib.DateTime
     
-    Objects.ToArray dates, _
+    ObjectArray.ToArray dates, _
                     DateTime.CreateFromDate(1993, 8, 16), _
                     DateTime.CreateFromDate(1994, 7, 28), _
                     DateTime.CreateFromDate(2000, 10, 16), _
@@ -54,3 +54,4 @@ End Sub
 '       You are now 7 years old.
 '       You are now 9 years old.
 '       You are now 13 years old.
+

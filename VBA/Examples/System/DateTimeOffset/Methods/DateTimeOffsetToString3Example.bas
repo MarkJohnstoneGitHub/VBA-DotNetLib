@@ -14,7 +14,7 @@ Option Explicit
 ' that represent the invariant culture, as well as four other cultures.
 Public Sub DateTimeOffsetToString3()
     Dim cultures() As DotNetLib.CultureInfo
-    Objects.ToArray cultures, _
+    ObjectArray.ToArray cultures, _
         CultureInfo.InvariantCulture, _
         CultureInfo.CreateFromName("en-us"), _
         CultureInfo.CreateFromName("fr-fr"), _
@@ -44,4 +44,5 @@ End Sub
 '    In fr-FR, 01/05/2007 09:00:00 +00:00
 '    In de-DE, 01.05.2007 09:00:00 +00:00
 '    In es-ES, 01/05/2007 9:00:00 +00:00
+
 

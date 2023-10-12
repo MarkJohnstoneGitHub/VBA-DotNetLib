@@ -31,7 +31,7 @@ Public Sub MatchGroups()
     Dim matchCount As Long
     matchCount = 0
     
-    While (m.Success)
+    Do While (m.Success)
         matchCount = matchCount + 1
         Debug.Print Strings.Format("Match" & (matchCount))
         Dim i As Long
@@ -45,11 +45,11 @@ Public Sub MatchGroups()
             For j = 0 To cc.Count - 1
                 Dim c As DotNetLib.Capture
                 Set c = cc(j)
-                Debug.Print Strings.Format("Capture" & j & "='" & c & "', Position=" & c.Index)
+                Debug.Print Strings.Format("Capture" & j & "='" & c & "', Position=" & c.index)
             Next j
         Next i
          Set m = m.NextMatch()
-    Wend
+    Loop
 End Sub
 
 ' This example displays the following output:

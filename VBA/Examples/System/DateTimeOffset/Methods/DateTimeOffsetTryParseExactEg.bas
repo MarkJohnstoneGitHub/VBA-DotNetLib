@@ -16,7 +16,7 @@ Option Explicit
 Public Sub DateTimeOffsetTryParseExact()
     Dim dateString As String
     Dim pvtFormat As String
-    Dim result As DotNetLib.DateTimeOffset
+    Dim Result As DotNetLib.DateTimeOffset
     Dim provider As mscorlib.IFormatProvider
     
     ' Parse date-only value with invariant culture and assume time is UTC.
@@ -24,8 +24,8 @@ Public Sub DateTimeOffsetTryParseExact()
     pvtFormat = "d"
     If (DateTimeOffset.TryParseExact(dateString, pvtFormat, provider, _
                                 DateTimeStyles.DateTimeStyles_AssumeUniversal, _
-                                result)) Then
-        Debug.Print "'"; dateString; "'"; " converts to "; result.ToString()
+                                Result)) Then
+        Debug.Print "'"; dateString; "'"; " converts to "; Result.ToString()
     Else
         Debug.Print "'"; dateString; "'"; " is not in the correct format."
     End If
@@ -37,8 +37,8 @@ Public Sub DateTimeOffsetTryParseExact()
     dateString = " 06/15/2008"
     If (DateTimeOffset.TryParseExact(dateString, pvtFormat, provider, _
                                     DateTimeStyles.DateTimeStyles_AllowTrailingWhite, _
-                                    result)) Then
-        Debug.Print "'"; dateString; "'"; " converts to "; result.ToString()
+                                    Result)) Then
+        Debug.Print "'"; dateString; "'"; " converts to "; Result.ToString()
     Else
         Debug.Print "'"; dateString; "'"; " is not in the correct format."
     End If
@@ -48,8 +48,8 @@ Public Sub DateTimeOffsetTryParseExact()
     pvtFormat = "MM/dd/yyyy H:mm zzz"
     If (DateTimeOffset.TryParseExact(dateString, pvtFormat, provider, _
                                     DateTimeStyles.DateTimeStyles_AllowWhiteSpaces, _
-                                    result)) Then
-        Debug.Print "'"; dateString; "'"; " converts to "; result.ToString()
+                                    Result)) Then
+        Debug.Print "'"; dateString; "'"; " converts to "; Result.ToString()
     Else
         Debug.Print "'"; dateString; "'"; " is not in the correct format."
     End If
@@ -60,8 +60,8 @@ Public Sub DateTimeOffsetTryParseExact()
     If (DateTimeOffset.TryParseExact(dateString, pvtFormat, provider, _
                                 DateTimeStyles.DateTimeStyles_AllowWhiteSpaces Or _
                                 DateTimeStyles.DateTimeStyles_AdjustToUniversal, _
-                                result)) Then
-        Debug.Print "'"; dateString; "'"; " converts to "; result.ToString()
+                                Result)) Then
+        Debug.Print "'"; dateString; "'"; " converts to "; Result.ToString()
     Else
         Debug.Print "'"; dateString; "'"; " is not in the correct format."
     End If

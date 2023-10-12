@@ -18,13 +18,13 @@ Attribute DateTimeCompare.VB_Description = "The following example demonstrates t
    Dim date2 As IDateTime
    Set date2 = DateTime.CreateFromDateTime(2009, 8, 1, 12, 0, 0)
    
-   Dim result As Long
-   result = DateTime.Compare(date1, date2)
+   Dim Result As Long
+   Result = DateTime.Compare(date1, date2)
    Dim relationship As String
 
-   If (result < 0) Then
+   If (Result < 0) Then
       relationship = "is earlier than"
-   ElseIf (result = 0) Then
+   ElseIf (Result = 0) Then
       relationship = "is the same time as"
    Else
       relationship = "is later than"

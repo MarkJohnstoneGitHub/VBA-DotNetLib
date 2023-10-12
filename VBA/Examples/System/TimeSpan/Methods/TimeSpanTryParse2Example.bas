@@ -23,7 +23,7 @@ Public Sub TimeSpanTryParse2()
     
     ' Create an array of four cultures.
     Dim cultures() As DotNetLib.CultureInfo
-    Objects.ToArray cultures, _
+    ObjectArray.ToArray cultures, _
                     CultureInfo.CreateFromName("en-US"), _
                     CultureInfo.CreateFromName("ru-RU"), _
                     CultureInfo.InvariantCulture
@@ -70,3 +70,4 @@ End Sub
 '    6:12:14:45.3448    6.12:14:45.3448000     Unable to Parse  6.12:14:45.3448000
 '    6:12:14:45,3448       Unable to Parse  6.12:14:45.3448000     Unable to Parse
 '    6:34:14:45            Unable to Parse     Unable to Parse     Unable to Parse
+

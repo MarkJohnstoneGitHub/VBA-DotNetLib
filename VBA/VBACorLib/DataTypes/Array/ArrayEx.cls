@@ -2,7 +2,7 @@ VERSION 1.0 CLASS
 BEGIN
   MultiUse = -1  'True
 END
-Attribute VB_Name = "Arrays"
+Attribute VB_Name = "ArrayEx"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -41,7 +41,7 @@ Attribute ToArray.VB_Description = "Copies a ParamArray of vaules or objects to 
    End If
 Exit Sub
 Catch:
-      Err.Raise VBAException.INVALID_PROCEDURE_CALL, , "Invalid argument, array item is an invalid type for " & TypeName(destination)
+      Err.Raise VBAException.INVALID_PROCEDURE_CALL, , "Invalid argument, array item is an invalid type for " & typeName(destination)
 End Sub
 
 '@Description("Copies a ParamArray of vaules or objects to an array of a type.")
@@ -50,8 +50,8 @@ Public Function TryToArray(ByRef destination As Variant, ParamArray values() As 
 Attribute TryToArray.VB_Description = "Copies a ParamArray of vaules or objects to an array of a type."
    On Error Resume Next
    If (TryToArray = VBA.IsArray(destination)) Then
-      Dim resize As Boolean
-      resize = False
+      Dim Resize As Boolean
+      Resize = False
       
       ReDim destination(LBound(values) To UBound(values))
       Dim index As Long
@@ -66,10 +66,10 @@ Attribute TryToArray.VB_Description = "Copies a ParamArray of vaules or objects 
             index = index + 1
          Else
             TryToArray = False
-            resize = True
+            Resize = True
          End If
       Next
-      If resize Then
+      If Resize Then
          ReDim Preserve destination(index - 1)
       End If
    Else

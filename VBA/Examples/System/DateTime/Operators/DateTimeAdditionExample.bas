@@ -21,7 +21,7 @@ Attribute DateTimeAddition.VB_Description = "The following example demonstrates 
     Set tSpan = TimeSpan.Create2(17, 4, 2, 1)
     
     ' Result gets 8/22/1980 4:02:01 AM.
-    Dim result As IDateTime
-    Set result = DateTime.Addition(dTime, tSpan)
-    Debug.Print result.ToString
+    Dim Result As IDateTime
+    Set Result = DateTime.Addition(dTime, tSpan)
+    Debug.Print Result.ToString
 End Sub

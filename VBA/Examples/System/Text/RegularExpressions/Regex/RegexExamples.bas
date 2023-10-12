@@ -41,12 +41,12 @@ Public Sub RegexExample1()
         Dim pvtMatch As DotNetLib.Match
         Set pvtMatch = varMatch
         
-        Dim groups As DotNetLib.GroupCollection
-        Set groups = pvtMatch.groups
+        Dim Groups As DotNetLib.GroupCollection
+        Set Groups = pvtMatch.Groups
         Debug.Print Strings.Format("'{0}' repeated at positions {1} and {2}", _
-                                    groups.Item_2("word").value, _
-                                    groups(0).index, _
-                                    groups(1).index)
+                                    Groups.Item_2("word").value, _
+                                    Groups(0).index, _
+                                    Groups(1).index)
     Next
 End Sub
 
@@ -56,3 +56,20 @@ End Sub
 '       'The' repeated at positions 0 and 4
 '       'fox' repeated at positions 20 and 25
 '       'dog' repeated at positions 49 and 53
+
+
+' https://stackoverflow.com/questions/77130177/greediness-in-vba-regex/77130622#77130622
+Public Sub TestRegex()
+    ' Define a regular expression for repeated words.
+    Dim rx As DotNetLib.Regex
+    Set rx = Regex.Create("\[\[\w{5,}[^[\]]*\]\]", RegexOptions.RegexOptions_Compiled Or RegexOptions.RegexOptions_IgnoreCase)
+
+    ' Define a test string.
+    Dim text As String
+    text = "[[FOOTNOTE 23]] + [[FOOTNOTE 1787] +  182 - x +[[XYZ123]] + [[CD78G]]"
+    
+    ' Find matches.
+    Dim pvtMatches As DotNetLib.MatchCollection
+    Set pvtMatches = rx.Matches(text)
+
+End Sub

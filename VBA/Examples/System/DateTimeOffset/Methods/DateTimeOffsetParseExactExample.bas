@@ -16,7 +16,7 @@ Option Explicit
 Public Sub DateTimeOffsetParseExact()
     Dim dateString As String
     Dim pvtFormat As String
-    Dim result As DotNetLib.DateTimeOffset
+    Dim Result As DotNetLib.DateTimeOffset
     Dim provider As DotNetLib.CultureInfo
     Set provider = CultureInfo.InvariantCulture
     
@@ -24,9 +24,9 @@ Public Sub DateTimeOffsetParseExact()
     dateString = "06/15/2008"
     pvtFormat = "d"
     On Error Resume Next
-    Set result = DateTimeOffset.ParseExact(dateString, pvtFormat, provider)
+    Set Result = DateTimeOffset.ParseExact(dateString, pvtFormat, provider)
     If Try Then
-        Debug.Print dateString; " converts to "; result.ToString()
+        Debug.Print dateString; " converts to "; Result.ToString()
     ElseIf Catch(FormatException) Then
        Debug.Print dateString; " is not in the correct format."
     End If
@@ -37,9 +37,9 @@ Public Sub DateTimeOffsetParseExact()
     ' invariant culture requires two-digit month.
     dateString = "6/15/2008"
     On Error Resume Next
-    Set result = DateTimeOffset.ParseExact(dateString, pvtFormat, provider)
+    Set Result = DateTimeOffset.ParseExact(dateString, pvtFormat, provider)
     If Try Then
-        Debug.Print dateString; " converts to "; result.ToString()
+        Debug.Print dateString; " converts to "; Result.ToString()
     ElseIf Catch(FormatException) Then
        Debug.Print dateString; " is not in the correct format."
     End If
@@ -49,9 +49,9 @@ Public Sub DateTimeOffsetParseExact()
     dateString = "Sun 15 Jun 2008 8:30 AM -06:00"
     pvtFormat = "ddd dd MMM yyyy h:mm tt zzz"
     On Error Resume Next
-    Set result = DateTimeOffset.ParseExact(dateString, pvtFormat, provider)
+    Set Result = DateTimeOffset.ParseExact(dateString, pvtFormat, provider)
     If Try Then
-        Debug.Print dateString; " converts to "; result.ToString()
+        Debug.Print dateString; " converts to "; Result.ToString()
     ElseIf Catch(FormatException) Then
        Debug.Print dateString; " is not in the correct format."
     End If
@@ -62,9 +62,9 @@ Public Sub DateTimeOffsetParseExact()
     ' zero in hours.
     dateString = "Sun 15 Jun 2008 8:30 AM -06"
     On Error Resume Next
-    Set result = DateTimeOffset.ParseExact(dateString, pvtFormat, provider)
+    Set Result = DateTimeOffset.ParseExact(dateString, pvtFormat, provider)
     If Try Then
-        Debug.Print dateString; " converts to "; result.ToString()
+        Debug.Print dateString; " converts to "; Result.ToString()
     ElseIf Catch(FormatException) Then
        Debug.Print dateString; " is not in the correct format."
     End If

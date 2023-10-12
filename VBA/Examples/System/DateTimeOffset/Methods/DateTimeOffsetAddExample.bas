@@ -21,7 +21,7 @@ Public Sub DateTimeOffsetAdd()
    Set currentTime = takeOff
    
    Dim flightTimes() As ITimeSpan
-   Objects.ToArray flightTimes, TimeSpan.Create(2, 25, 0), TimeSpan.Create(1, 48, 0)
+   ObjectArray.ToArray flightTimes, TimeSpan.Create(2, 25, 0), TimeSpan.Create(1, 48, 0)
    
    Debug.Print "Takeoff is scheduled for " & takeOff.ToString2("d") & " at " & takeOff.ToString2("T") & "."
    

@@ -20,7 +20,7 @@ Attribute TimeSpanCompare.VB_Description = "'The following example uses the Comp
    ' Define an array of time intervals to compare with
    ' the base interval.
    Dim spans() As ITimeSpan
-   Objects.ToArray spans, _
+   ObjectArray.ToArray spans, _
                   TimeSpan.FromSeconds(-2.5), _
                   TimeSpan.FromMinutes(20), _
                   TimeSpan.FromHours(1), _
@@ -34,16 +34,16 @@ Attribute TimeSpanCompare.VB_Description = "'The following example uses the Comp
    For Each varSpan In spans
       Dim span As ITimeSpan
       Set span = varSpan
-      Dim result As Long
-      result = TimeSpan.Compare(baseInterval, span)
+      Dim Result As Long
+      Result = TimeSpan.Compare(baseInterval, span)
       
       Debug.Print baseInterval.ToString() _
             & " " & _
-            IIf(result = 1, ">", IIf(result = 0, "=", "<")) _
+            IIf(Result = 1, ">", IIf(Result = 0, "=", "<")) _
             & " " _
             & span.ToString() _
             & " (Compare returns " _
-            & result _
+            & Result _
             & ")"
    Next
 End Sub
