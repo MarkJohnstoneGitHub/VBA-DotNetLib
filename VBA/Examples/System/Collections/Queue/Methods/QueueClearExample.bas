@@ -18,6 +18,7 @@ Public Sub QueueClear()
     Dim myQ As DotNetLib.Queue
     Set myQ = Queue.Create()
     myQ.Enqueue "The"
+    myQ.Enqueue "quick"
     myQ.Enqueue "brown"
     myQ.Enqueue "fox"
     myQ.Enqueue "jumps"
@@ -39,7 +40,7 @@ Public Sub QueueClear()
     
 End Sub
 
-Public Sub PrintValues(ByVal myQ As DotNetLib.Queue)
+Private Sub PrintValues(ByVal myQ As DotNetLib.Queue)
     Dim myObj As Variant
     For Each myObj In myQ
         Debug.Print Strings.Format("    {0}", myObj);
