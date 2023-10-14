@@ -31,7 +31,7 @@ namespace DotNetLib.System.Collections
     [ProgId("DotNetLib.System.Collections.List")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IList))]
-    public class List : GCollections.IList, ICollection, IEnumerable , IList 
+    public class List : GCollections.IList, GCollections.ICollection, IEnumerable , IList 
     {
         private GCollections.IList _list;
 

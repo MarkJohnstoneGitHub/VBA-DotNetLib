@@ -15,7 +15,7 @@ namespace DotNetLib.System.Collections
     [Guid("B8EFD58F-2A9F-47DE-9473-C322520A01CD")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IListObject))]
-    public class ListObject : GCollections.IList, ICollection, IEnumerable, IListObject
+    public class ListObject : GCollections.IList, GCollections.ICollection, IEnumerable, IListObject
     {
         private GGeneric.List<object> _list;
 
@@ -50,9 +50,9 @@ namespace DotNetLib.System.Collections
 
         public bool IsFixedSize => ((GCollections.IList)_list).IsFixedSize;
 
-        public object SyncRoot => ((ICollection)_list).SyncRoot;
+        public object SyncRoot => ((GCollections.ICollection)_list).SyncRoot;
 
-        public bool IsSynchronized => ((ICollection)_list).IsSynchronized;
+        public bool IsSynchronized => ((GCollections.ICollection)_list).IsSynchronized;
 
         //object GCollections.IList.this[int index] { get => ((GCollections.IList)_list)[index]; set => ((GCollections.IList)_list)[index] = value; }
 
@@ -208,12 +208,12 @@ namespace DotNetLib.System.Collections
 
         public void CopyTo(Array array, int index)
         {
-            ((ICollection)_list).CopyTo(array.WrappedArray, index);
+            ((GCollections.ICollection)_list).CopyTo(array.WrappedArray, index);
         }
 
         public void CopyTo(global::System.Array array, int index)
         {
-            ((ICollection)_list).CopyTo(array, index);
+            ((GCollections.ICollection)_list).CopyTo(array, index);
         }
     }
 }

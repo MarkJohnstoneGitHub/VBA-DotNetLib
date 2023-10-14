@@ -15,7 +15,7 @@ namespace DotNetLib.System.Collections
     [Guid("70EF1DD1-80FA-4276-8051-426C0FAFB2FA")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IListString))]
-    public class ListString  : IListString, GCollections.IList, ICollection, IEnumerable
+    public class ListString  : IListString, GCollections.IList, GCollections.ICollection, IEnumerable
     {
         private GSystem.Collections.Generic.List<string> _stringList;
         public ListString()
@@ -54,9 +54,9 @@ namespace DotNetLib.System.Collections
 
         public bool IsFixedSize => ((GCollections.IList)_stringList).IsFixedSize;
 
-        public object SyncRoot => ((ICollection)_stringList).SyncRoot;
+        public object SyncRoot => ((GCollections.ICollection)_stringList).SyncRoot;
 
-        public bool IsSynchronized => ((ICollection)_stringList).IsSynchronized;
+        public bool IsSynchronized => ((GCollections.ICollection)_stringList).IsSynchronized;
 
         object GCollections.IList.this[int index] { get => ((GCollections.IList)_stringList)[index]; set => ((GCollections.IList)_stringList)[index] = value; }
 
@@ -254,7 +254,7 @@ namespace DotNetLib.System.Collections
 
         public void CopyTo(Array array, int index)
         {
-            ((ICollection)_stringList).CopyTo(array.WrappedArray, index);
+            ((GCollections.ICollection)_stringList).CopyTo(array.WrappedArray, index);
         }
 
         public IEnumerator GetEnumerator()
@@ -264,7 +264,7 @@ namespace DotNetLib.System.Collections
 
         public void CopyTo(GSystem.Array array, int index)
         {
-            ((ICollection)_stringList).CopyTo(array, index);
+            ((GCollections.ICollection)_stringList).CopyTo(array, index);
         }
 
         //public bool TrueForAll(Predicate<T> match);
