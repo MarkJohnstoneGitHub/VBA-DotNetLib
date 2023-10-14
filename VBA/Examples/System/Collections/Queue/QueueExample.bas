@@ -23,14 +23,14 @@ Public Sub QueueExample()
     
     ' Displays the properties and values of the Queue.
     Debug.Print "myQ"
-    Debug.Print Strings.Format(Regex.Unescape("\tCount:    {0}"), myQ.Count)
+    Debug.Print Strings.Format(Regex.Unescape("\tCount:    {0}"), myQ.Count) 'Note Unescape .Net escape characters \t i.e. tab
     PrintValues myQ
 End Sub
 
-Public Sub PrintValues(ByVal myCollection As IEnumerable)
+Public Sub PrintValues(ByVal myCollection As mscorlib.IEnumerable)
     Dim obj As Variant
     For Each obj In myCollection
-        Debug.Print Strings.Format("    {0}", obj)
+        Debug.Print Strings.Format("    {0}", obj);
     Next
     Debug.Print
 End Sub
@@ -42,4 +42,3 @@ End Sub
 '     Count:    3
 '     Values:    Hello    World    !
 '*/
-
