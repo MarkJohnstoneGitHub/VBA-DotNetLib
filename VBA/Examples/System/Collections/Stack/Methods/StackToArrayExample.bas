@@ -1,4 +1,4 @@
-Attribute VB_Name = "StackCopyToExample"
+Attribute VB_Name = "StackToArrayExample"
 '@Folder("Examples.System.Collections.Stack.Methods")
 
 '@Author Mark Johnstone
@@ -6,14 +6,14 @@ Attribute VB_Name = "StackCopyToExample"
 '@Version v1.0 October 16, 2023
 '@LastModified October 16, 2023
 
-'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.copyto?view=netframework-4.8.1#examples
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack.toarray?view=netframework-4.8.1#examples
 
 Option Explicit
 
 ''
 ' The following example shows how to copy a Stack into a one-dimensional array.
 ''
-Public Sub StackCopyTo()
+Public Sub StackToArray()
     ' Creates and initializes the source Stack.
     Dim mySourceQ As DotNetLib.Stack
     Set mySourceQ = Stack.Create()
@@ -43,13 +43,16 @@ Public Sub StackCopyTo()
     
     ' Copies the entire source Stack to the target Array, starting at index 6.
     Call mySourceQ.CopyTo(myTargetArray, 6)
-
+    
     ' Displays the values of the target Array.
     Call PrintValues(myTargetArray, " ")
     
     ' Copies the entire source Stack to a new standard array.
     Dim myStandardArray As DotNetLib.Array
     Set myStandardArray = mySourceQ.ToArray()
+
+    ' Displays the values of the new standard array.
+    Debug.Print "The new standard array contains the following:"
     Call PrintValues(myStandardArray, " ")
 End Sub
 
