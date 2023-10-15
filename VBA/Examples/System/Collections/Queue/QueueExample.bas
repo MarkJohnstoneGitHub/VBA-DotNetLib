@@ -27,7 +27,7 @@ Public Sub QueueExample()
     PrintValues myQ
 End Sub
 
-Public Sub PrintValues(ByVal myCollection As mscorlib.IEnumerable)
+Private Sub PrintValues(ByVal myCollection As mscorlib.IEnumerable)
     Dim obj As Variant
     For Each obj In myCollection
         Debug.Print Strings.Format("    {0}", obj);
