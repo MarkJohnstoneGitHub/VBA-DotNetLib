@@ -137,10 +137,16 @@ namespace DotNetLib.System.Collections
             return new Queue(GCollections.Queue.Synchronized(queue.WrappedQueue));
         }
 
-        public object[] ToArray()
+        //public object[] ToArray()
+        //{
+        //    return _queue.ToArray();
+        //}
+
+        public Array ToArray()
         {
-            return _queue.ToArray();
+            return new Array(_queue.ToArray());
         }
+
 
         public void TrimToSize()
         {

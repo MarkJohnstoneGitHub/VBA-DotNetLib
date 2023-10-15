@@ -58,7 +58,8 @@ namespace DotNetLib.System.Collections
         object Peek();
 
         [Description("Copies the Queue elements to a new array.")]
-        object[] ToArray();
+        Array ToArray();
+        //object[] ToArray();
 
         [Description("Sets the capacity to the actual number of elements in the Queue.")]
         void TrimToSize();
