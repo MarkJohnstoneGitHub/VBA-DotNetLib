@@ -99,7 +99,7 @@ namespace DotNetLib.System.Collections
 
         public object Clone()
         {
-            return _queue.Clone();
+            return new Queue((GCollections.Queue)_queue.Clone());
         }
 
         public bool Contains(object obj)

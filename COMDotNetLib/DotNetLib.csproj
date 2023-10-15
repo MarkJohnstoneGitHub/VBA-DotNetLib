@@ -70,8 +70,12 @@
     <Compile Include="System\Collections\ICollection.cs" />
     <Compile Include="System\Collections\Interfaces\IQueue.cs" />
     <Compile Include="System\Collections\Interfaces\IQueueSingleton.cs" />
+    <Compile Include="System\Collections\IStack.cs" />
+    <Compile Include="System\Collections\IStackSingleton.cs" />
     <Compile Include="System\Collections\Queue.cs" />
     <Compile Include="System\Collections\Singletons\QueueSingleton.cs" />
+    <Compile Include="System\Collections\Stack.cs" />
+    <Compile Include="System\Collections\StackSingleton.cs" />
     <Compile Include="System\Interfaces\ITypeSingleton.cs" />
     <Compile Include="System\Reflection\GenericParameterAttributes.cs" />
     <Compile Include="System\Reflection\Interfaces\IMemberInfo.cs" />
