@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents a 32-bit signed integer."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 12, 2023
-'@LastModified October 12, 2023
+'@LastModified October 15, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 

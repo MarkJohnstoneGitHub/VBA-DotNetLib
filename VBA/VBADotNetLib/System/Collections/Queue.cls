@@ -44,16 +44,18 @@ End Sub
 
 '@Description("Initializes a new instance of the Queue class that is empty, has the default or specified initial capacity, and uses the default or specified growth factor.")
 Public Function Create(Optional ByVal capacity As Long = 32, Optional ByVal growFactor As Single = 2) As DotNetLib.Queue
+Attribute Create.VB_Description = "Initializes a new instance of the Queue class that is empty, has the default or specified initial capacity, and uses the default or specified growth factor."
    Set Create = this.QueueSingleton.Create(capacity, growFactor)
 End Function
 
 '@Description("Initializes a new instance of the Queue class that contains elements copied from the specified collection, has the same initial capacity as the number of elements copied, and uses the default growth factor.")
 Public Function Create2(ByRef col As DotNetLib.ICollection) As DotNetLib.Queue
+Attribute Create2.VB_Description = "Initializes a new instance of the Queue class that contains elements copied from the specified collection, has the same initial capacity as the number of elements copied, and uses the default growth factor."
    Set Create2 = this.QueueSingleton.Create2(col)
 End Function
 
 '@Description("Returns a new Queue that wraps the original queue, and is thread safe.")
 Public Function Synchronized(ByRef Queue As DotNetLib.Queue) As DotNetLib.Queue
+Attribute Synchronized.VB_Description = "Returns a new Queue that wraps the original queue, and is thread safe."
    Set Synchronized = this.QueueSingleton.Synchronized(Queue)
 End Function
-

@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents a 16-bit signed integer."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 12, 2023
-'@LastModified October 12, 2023
+'@LastModified October 15, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -52,5 +52,7 @@ End Sub
 '@DefaultMember
 '@Description("Gets the String Type.")
 Public Function GetType() As DotNetLib.Type
+Attribute GetType.VB_Description = "Gets the String Type."
+Attribute GetType.VB_UserMemId = 0
     Set GetType = this.Int16Type
 End Function
