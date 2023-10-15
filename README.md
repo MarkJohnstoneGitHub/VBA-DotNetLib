@@ -24,7 +24,7 @@ Oct 5, 2023 Added [ArrayList](https://learn.microsoft.com/en-us/dotnet/api/syste
 
 Oct 12, 2023 Added [Array](https://learn.microsoft.com/en-us/dotnet/api/system.array?view=netframework-4.8.1), [Type](https://learn.microsoft.com/en-us/dotnet/api/system.type?view=netframework-4.8.1), [GenericParameterAttributes](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.genericparameterattributes?view=netframework-4.8.1)
 
-Oct 15, 2023 Added [Queue](https://learn.microsoft.com/en-us/dotnet/api/system.collections.queue?view=netframework-4.8.1)
+Oct 15, 2023 Added [Queue](https://learn.microsoft.com/en-us/dotnet/api/system.collections.queue?view=netframework-4.8.1), [Stack](https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack?view=netframework-4.8.1)
 
  **Affected API due to VBA reserved words:**
 
