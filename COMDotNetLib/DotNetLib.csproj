@@ -68,14 +68,19 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\Array.cs" />
     <Compile Include="System\Collections\ICollection.cs" />
+    <Compile Include="System\Collections\IDictionary.cs" />
     <Compile Include="System\Collections\Interfaces\IQueue.cs" />
     <Compile Include="System\Collections\Interfaces\IQueueSingleton.cs" />
-    <Compile Include="System\Collections\IStack.cs" />
-    <Compile Include="System\Collections\IStackSingleton.cs" />
+    <Compile Include="System\Collections\Interfaces\ISortedList.cs" />
+    <Compile Include="System\Collections\Interfaces\ISortedListSingleton.cs" />
+    <Compile Include="System\Collections\Interfaces\IStack.cs" />
+    <Compile Include="System\Collections\Interfaces\IStackSingleton.cs" />
     <Compile Include="System\Collections\Queue.cs" />
     <Compile Include="System\Collections\Singletons\QueueSingleton.cs" />
+    <Compile Include="System\Collections\SortedList.cs" />
+    <Compile Include="System\Collections\Singletons\SortedListSingleton.cs" />
     <Compile Include="System\Collections\Stack.cs" />
-    <Compile Include="System\Collections\StackSingleton.cs" />
+    <Compile Include="System\Collections\Singletons\StackSingleton.cs" />
     <Compile Include="System\Interfaces\ITypeSingleton.cs" />
     <Compile Include="System\Reflection\GenericParameterAttributes.cs" />
     <Compile Include="System\Reflection\Interfaces\IMemberInfo.cs" />
@@ -85,23 +90,23 @@
     <Compile Include="System\Singletons\ArraySingleton.cs" />
     <Compile Include="System\Collections\ArrayList.cs" />
     <Compile Include="System\Collections\Singletons\ArrayListSingleton.cs" />
-    <Compile Include="System\Collections\DynamicList.cs" />
-    <Compile Include="System\Collections\GenericList.cs" />
+    <Compile Include="System\Collections\Generic\DynamicList.cs" />
+    <Compile Include="System\Collections\Generic\GenericList.cs" />
     <Compile Include="System\Collections\Interfaces\IArrayList.cs" />
     <Compile Include="System\Collections\Interfaces\IArrayListSingleton.cs" />
-    <Compile Include="System\Collections\Interfaces\IListObject.cs" />
-    <Compile Include="System\Collections\Interfaces\IListObjectSingleton.cs" />
-    <Compile Include="System\Collections\ListObject.cs" />
+    <Compile Include="System\Collections\Generic\Interfaces\IListObject.cs" />
+    <Compile Include="System\Collections\Generic\Interfaces\IListObjectSingleton.cs" />
+    <Compile Include="System\Collections\Generic\ListObject.cs" />
     <Compile Include="System\Collections\Singletons\ListObjectSingleton.cs" />
-    <Compile Include="System\Collections\Interfaces\IListStringSingleton.cs" />
+    <Compile Include="System\Collections\Generic\Interfaces\IListStringSingleton.cs" />
     <Compile Include="System\Collections\Singletons\ListStringSingleton.cs" />
-    <Compile Include="System\Collections\Interfaces\IListSingleton.cs" />
-    <Compile Include="System\Collections\Interfaces\IList.cs" />
-    <Compile Include="System\Collections\Interfaces\IListString.cs" />
+    <Compile Include="System\Collections\Generic\Interfaces\IListSingleton.cs" />
+    <Compile Include="System\Collections\Generic\Interfaces\IList.cs" />
+    <Compile Include="System\Collections\Generic\Interfaces\IListString.cs" />
     <Compile Include="System\Collections\Interfaces\IReadOnlyCollection.cs" />
-    <Compile Include="System\Collections\List.cs" />
+    <Compile Include="System\Collections\Generic\List.cs" />
     <Compile Include="System\Collections\Singletons\ListSingleton.cs" />
-    <Compile Include="System\Collections\ListString.cs" />
+    <Compile Include="System\Collections\Generic\ListString.cs" />
     <Compile Include="System\Collections\ReadOnlyCollection.cs" />
     <Compile Include="System\Interfaces\IArray.cs" />
     <Compile Include="System\Interfaces\IArraySingleton.cs" />
@@ -238,6 +243,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CoordinateSharp\Com Management\" />
+    <Folder Include="System\Collections\Generic\Singletons\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
