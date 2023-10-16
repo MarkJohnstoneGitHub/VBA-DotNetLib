@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents a simple last-in-first-out (LIFO) non-gen
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 15, 2023
-'@LastModified October 15, 2023
+'@LastModified October 17, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -49,13 +49,13 @@ Attribute Create.VB_Description = "Initializes a new instance of the Stack class
 End Function
 
 '@Description("Initializes a new instance of the Stack class that contains elements copied from the specified collection and has the same initial capacity as the number of elements copied.")
-Public Function Create2(ByRef col As DotNetLib.ICollection) As DotNetLib.Stack
+Public Function Create2(ByVal col As DotNetLib.ICollection) As DotNetLib.Stack
 Attribute Create2.VB_Description = "Initializes a new instance of the Stack class that contains elements copied from the specified collection and has the same initial capacity as the number of elements copied."
    Set Create2 = this.StackSingleton.Create2(col)
 End Function
 
 '@Description("Returns a synchronized (thread safe) wrapper for the Stack.")
-Public Function Synchronized(ByRef col As DotNetLib.Stack) As DotNetLib.Stack
+Public Function Synchronized(ByVal col As DotNetLib.Stack) As DotNetLib.Stack
 Attribute Synchronized.VB_Description = "Returns a synchronized (thread safe) wrapper for the Stack."
    Set Synchronized = this.StackSingleton.Synchronized(col)
 End Function

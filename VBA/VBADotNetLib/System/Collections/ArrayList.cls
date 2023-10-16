@@ -17,7 +17,7 @@ Attribute VB_Description = "Implements the IList interface using an array whose 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 5, 2023
-'@LastModified October 6, 2023
+'@LastModified October 17, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -72,7 +72,7 @@ End Function
 
 '@Static
 '@Description("Returns an IList wrapper with a fixed size.")
-Public Function FixedSize2(ByRef List As mscorlib.IList) As IList
+Public Function FixedSize2(ByVal List As mscorlib.IList) As IList
 Attribute FixedSize2.VB_Description = "Returns an IList wrapper with a fixed size."
    Set FixedSize2 = this.ArrayListSingleton.FixedSize2(List)
 End Function

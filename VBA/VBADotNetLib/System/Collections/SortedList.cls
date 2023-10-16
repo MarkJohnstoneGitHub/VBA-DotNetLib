@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents a collection of key/value pairs that are 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 16, 2023
-'@LastModified October 16, 2023
+'@LastModified October 17, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -44,16 +44,18 @@ End Sub
 
 '@Description("Initializes a new instance of the SortedList class that is empty, has the specified initial capacity, and is sorted according to the IComparable interface implemented by each key added to the SortedList object.")
 Public Function Create(Optional ByVal initialCapacity As Long = 0) As DotNetLib.SortedList
+Attribute Create.VB_Description = "Initializes a new instance of the SortedList class that is empty, has the specified initial capacity, and is sorted according to the IComparable interface implemented by each key added to the SortedList object."
    Set Create = this.SortedListSingleton.Create(initialCapacity)
 End Function
 
 '@Description("Initializes a new instance of the SortedList class that is empty, has the specified initial capacity, and is sorted according to the specified IComparer interface.")
 Public Function Create2(ByVal comparer As mscorlib.IComparer, Optional ByVal Capacity As Long = 0) As DotNetLib.SortedList
+Attribute Create2.VB_Description = "Initializes a new instance of the SortedList class that is empty, has the specified initial capacity, and is sorted according to the specified IComparer interface."
    Set Create2 = this.SortedListSingleton.Create2(comparer, Capacity)
 End Function
 
 '@Description("Initializes a new instance of the SortedList class that contains elements copied from the specified dictionary, has the same initial capacity as the number of elements copied, and is sorted according to the specified IComparer interface.")
-Public Function Create3(ByVal d As DotNetLib.IDictionary, Optional ByRef comparer As mscorlib.IComparer) As DotNetLib.SortedList
+Public Function Create3(ByVal d As DotNetLib.IDictionary, Optional ByVal comparer As mscorlib.IComparer) As DotNetLib.SortedList
+Attribute Create3.VB_Description = "Initializes a new instance of the SortedList class that contains elements copied from the specified dictionary, has the same initial capacity as the number of elements copied, and is sorted according to the specified IComparer interface."
    Set Create3 = this.SortedListSingleton.Create3(d, comparer)
 End Function
-
