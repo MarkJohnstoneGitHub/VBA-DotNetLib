@@ -14,7 +14,7 @@ namespace DotNetLib.System.Collections
     [ProgId("DotNetLib.System.Collections.CaseInsensitiveComparer")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(ICaseInsensitiveComparer))]
-    public class CaseInsensitiveComparer : ICaseInsensitiveComparer
+    public class CaseInsensitiveComparer : ICaseInsensitiveComparer, GCollections.IComparer
     {
         private GCollections.CaseInsensitiveComparer _caseInsensitiveComparer;
 
