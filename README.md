@@ -26,6 +26,8 @@ Oct 12, 2023 Added [Array](https://learn.microsoft.com/en-us/dotnet/api/system.a
 
 Oct 15, 2023 Added [Queue](https://learn.microsoft.com/en-us/dotnet/api/system.collections.queue?view=netframework-4.8.1), [Stack](https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack?view=netframework-4.8.1)
 
+Oct 16, 2023 Added [SortedList](https://learn.microsoft.com/en-us/dotnet/api/system.collections.sortedlist?view=netframework-4.8.1)
+
  **Affected API due to VBA reserved words:**
 
  The API for the .Net class or VBA singletons for associated .Net classes may be required to be altered due to VBA reserved words. See [reserved-word-list](https://www.engram9.info/access-2007-vba/reserved-word-list.html).
