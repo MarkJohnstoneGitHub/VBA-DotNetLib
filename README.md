@@ -28,7 +28,7 @@ Oct 15, 2023 Added [Queue](https://learn.microsoft.com/en-us/dotnet/api/system.c
 
 Oct 16, 2023 Added [SortedList](https://learn.microsoft.com/en-us/dotnet/api/system.collections.sortedlist?view=netframework-4.8.1)
 
-Oct 17, 2023 Added [CaseInsensitiveComparer](https://learn.microsoft.com/en-us/dotnet/api/system.collections.caseinsensitivecomparer?view=netframework-4.8.1)
+Oct 17, 2023 Added [CaseInsensitiveComparer](https://learn.microsoft.com/en-us/dotnet/api/system.collections.caseinsensitivecomparer?view=netframework-4.8.1), [StringComparer](https://learn.microsoft.com/en-us/dotnet/api/system.stringcomparer?view=netframework-4.8.1)
 
  **Affected API due to VBA reserved words:**
 
