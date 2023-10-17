@@ -38,16 +38,16 @@ Public Sub SortedListContains()
     ' Searches for a specific key.
     Dim myKey As Long
     myKey = 2
-    Debug.Print Strings.Format("The key """"{0}"""" is {1}.", myKey, IIf(mySL.ContainsKey(myKey), "in the SortedList", "NOT in the SortedList"))
+    Debug.Print Strings.Format("The key ""{0}"" is {1}.", myKey, IIf(mySL.ContainsKey(myKey), "in the SortedList", "NOT in the SortedList"))
     myKey = 6
-    Debug.Print Strings.Format("The key """"{0}"""" is {1}.", myKey, IIf(mySL.ContainsKey(myKey), "in the SortedList", "NOT in the SortedList"))
+    Debug.Print Strings.Format("The key ""{0}"" is {1}.", myKey, IIf(mySL.ContainsKey(myKey), "in the SortedList", "NOT in the SortedList"))
     
     ' Searches for a specific value.
     Dim myValue As String
     myValue = "three"
-    Debug.Print Strings.Format("The value """"{0}"""" is {1}.", myValue, IIf(mySL.ContainsValue(myValue), "in the SortedList", "NOT in the SortedList"))
+    Debug.Print Strings.Format("The value ""{0}"" is {1}.", myValue, IIf(mySL.ContainsValue(myValue), "in the SortedList", "NOT in the SortedList"))
     myValue = "nine"
-    Debug.Print Strings.Format("The value """"{0}"""" is {1}.", myValue, IIf(mySL.ContainsValue(myValue), "in the SortedList", "NOT in the SortedList"))
+    Debug.Print Strings.Format("The value ""{0}"" is {1}.", myValue, IIf(mySL.ContainsValue(myValue), "in the SortedList", "NOT in the SortedList"))
 End Sub
 
 Private Sub PrintIndexAndKeysAndValues(ByVal myList As DotNetLib.SortedList)
