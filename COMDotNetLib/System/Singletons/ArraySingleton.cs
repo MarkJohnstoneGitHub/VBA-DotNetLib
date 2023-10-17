@@ -21,6 +21,8 @@ namespace DotNetLib.System
         //    throw new NotImplementedException();
         //}
 
+        // Note added to wrap a mscorlib.Array for mscorlib.ICollection void CopyTo(Array array, int index);
+        // If array null throw error??
         public Array Create(GSystem.Array array)
         { 
             return new Array(array);

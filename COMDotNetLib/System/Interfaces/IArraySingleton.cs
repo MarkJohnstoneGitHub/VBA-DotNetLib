@@ -1,12 +1,20 @@
-﻿using GCollections = global::System.Collections;
+﻿using GSystem = global::System;
+using GCollections = global::System.Collections;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 
 namespace DotNetLib.System
 {
-    //[Description("")]
+    [ComVisible(true)]
+    [Guid("1CC4D6F2-35AC-44F7-A666-D1845A1E30D0")]
+    [Description("Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays in the common language runtime.")]
+    [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface IArraySingleton
     {
+        // Note added to wrap a mscorlib.Array for mscorlib.ICollection void CopyTo(Array array, int index);
+        [Description("Creates an Array by wrapping an mscorlib.Array")]
+        Array Create(GSystem.Array array);
+
         [Description("Searches an entire one-dimensional sorted array for a value using the specified IComparer interface.")]
         int BinarySearch(Array array, object value, GCollections.IComparer comparer = null);
 

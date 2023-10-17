@@ -179,7 +179,7 @@ namespace DotNetLib.System.Collections
 
         public void RemoveAt(int index)
         {
-            _sortedList.Remove(index);
+            _sortedList.RemoveAt(index);
         }
 
         public void SetByIndex(int index, object value)
