@@ -66,29 +66,29 @@ End Sub
 
 '@Static
 '@Description("Writes the specified string value, followed by the current line terminator, to the standard output stream.")
-Public Sub WriteLine2(ByVal Format As String, ParamArray values() As Variant)
+Public Sub WriteLine2(ByVal Format As String, ParamArray Values() As Variant)
 Attribute WriteLine2.VB_Description = "Writes the specified string value, followed by the current line terminator, to the standard output stream."
     Dim argsCount As Long
-    If ((LBound(values) = 0) And (UBound(values) = -1)) Then
+    If ((LBound(Values) = 0) And (UBound(Values) = -1)) Then
         argsCount = 0
     Else
-        argsCount = UBound(values) + 1
+        argsCount = UBound(Values) + 1
     End If
 
     Select Case argsCount
         Case 0
             this.ConsoleSingleton.WriteLine2 Format
         Case 1
-            this.ConsoleSingleton.WriteLine3 Format, values(0)
+            this.ConsoleSingleton.WriteLine3 Format, Values(0)
         Case 2
-            this.ConsoleSingleton.WriteLine4 Format, values(0), values(1)
+            this.ConsoleSingleton.WriteLine4 Format, Values(0), Values(1)
         Case 3
-            this.ConsoleSingleton.WriteLine5 Format, values(0), values(1), values(2)
+            this.ConsoleSingleton.WriteLine5 Format, Values(0), Values(1), Values(2)
         Case 4
-            this.ConsoleSingleton.WriteLine6 Format, values(0), values(1), values(2), values(3)
+            this.ConsoleSingleton.WriteLine6 Format, Values(0), Values(1), Values(2), Values(3)
         Case Is > 4
             Dim args() As Variant
-            args = values
+            args = Values
             this.ConsoleSingleton.WriteLine7 Format, args
     End Select
 End Sub

@@ -53,7 +53,7 @@ Public Sub QueueCopyTo()
     Call PrintValues(myStandardArray, " ")
 End Sub
 
-Public Sub PrintValues(ByVal myArr As DotNetLib.Array, ByVal mySeparator As String)
+Private Sub PrintValues(ByVal myArr As DotNetLib.Array, ByVal mySeparator As String)
     Dim myObj As Variant
     For Each myObj In myArr
         Debug.Print Strings.Format("{0}{1}", mySeparator, myObj);

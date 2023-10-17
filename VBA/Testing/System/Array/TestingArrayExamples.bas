@@ -66,6 +66,11 @@ Private Sub TestArrayDateTime()
     
 End Sub
 
+'Unsupported variant type
+Private Sub TestArrayChar()
+    Dim charArray As DotNetLib.Array
+    Set charArray = Arrays.CreateInstance(Char.GetType, 5)
+End Sub
 
 
 

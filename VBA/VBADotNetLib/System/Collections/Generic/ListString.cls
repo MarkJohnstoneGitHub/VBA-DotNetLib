@@ -7,7 +7,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Attribute VB_Description = "Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists."
+Attribute VB_Description = "Represents a strongly typed list of strings that can be accessed by index. Provides methods to search, sort, and manipulate lists."
 '@Folder "VBADotNetLib.System.Collections.Generic"
 '@ModuleDescription("Represents a strongly typed list of strings that can be accessed by index. Provides methods to search, sort, and manipulate lists.")
 '@PredeclaredId

@@ -129,16 +129,16 @@ End Property
 
 '@Static
 '@Description("Compares two DateTimeOffset objects and indicates whether the first is earlier than the second, equal to the second, or later than the second.")
-Public Function Compare(ByVal first As DotNetLib.DateTimeOffset, ByVal Second As DotNetLib.DateTimeOffset) As Long
+Public Function Compare(ByVal FIRST As DotNetLib.DateTimeOffset, ByVal SECOND As DotNetLib.DateTimeOffset) As Long
 Attribute Compare.VB_Description = "Compares two DateTimeOffset objects and indicates whether the first is earlier than the second, equal to the second, or later than the second."
-    Compare = this.DateTimeOffsetSingleton.Compare(first, Second)
+    Compare = this.DateTimeOffsetSingleton.Compare(FIRST, SECOND)
 End Function
 
 '@Static
 '@Description("Determines whether two specified DateTimeOffset objects represent the same point in time.")
-Public Function Equals(ByVal first As DotNetLib.DateTimeOffset, ByVal Second As DotNetLib.DateTimeOffset) As Boolean
+Public Function Equals(ByVal FIRST As DotNetLib.DateTimeOffset, ByVal SECOND As DotNetLib.DateTimeOffset) As Boolean
 Attribute Equals.VB_Description = "Determines whether two specified DateTimeOffset objects represent the same point in time."
-    Equals = this.DateTimeOffsetSingleton.Equals(first, Second)
+    Equals = this.DateTimeOffsetSingleton.Equals(FIRST, SECOND)
 End Function
 
 '@Description("Determines whether the current DateTimeOffset object represents the same time and has the same offset as a specified DateTimeOffset object.")

@@ -24,7 +24,7 @@ Attribute DateTimeOffsetCreateFromDateTimeParts2.VB_Description = "The following
                                    thisDate.Day, _
                                    thisDate.Hour, _
                                    thisDate.Minute, _
-                                   thisDate.Second, _
+                                   thisDate.SECOND, _
                                    thisDate.Millisecond, _
                                    TimeSpan.Create(-5, 0, 0))
    Debug.Print "Current time: " & offsetDate.ToString2(fmt) & ":" & offsetDate.Millisecond

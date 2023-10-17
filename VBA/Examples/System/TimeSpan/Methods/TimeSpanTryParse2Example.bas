@@ -16,8 +16,8 @@ Option Explicit
 ' of a specific culture influence the formatting operation.
 Public Sub TimeSpanTryParse2()
     ' Create an array of all supported standard date and time format specifiers.
-    Dim values() As String
-    values = StringArray.ToArray("6", "6:12", "6:12:14", "6:12:14:45", _
+    Dim Values() As String
+    Values = StringArray.ToArray("6", "6:12", "6:12:14", "6:12:14:45", _
                             "6.12:14:45", "6:12:14:45.3448", _
                             "6:12:14:45,3448", "6:34:14:45")
     
@@ -43,7 +43,7 @@ Public Sub TimeSpanTryParse2()
     Debug.Print
     
     Dim value As Variant
-    For Each value In values
+    For Each value In Values
         Debug.Print Strings.Format("{0,-17}", value);
         For Each varCulture In cultures
             Set culture = varCulture

@@ -43,7 +43,7 @@ Attribute DateTimePropertyDay.VB_Description = "The following example demonstrat
     
     ' Second gets 32.
     Dim pvtSecond As Long
-    pvtSecond = moment.Second
+    pvtSecond = moment.SECOND
     Debug.Print "Second "; pvtSecond
     
     ' Millisecond gets 11.

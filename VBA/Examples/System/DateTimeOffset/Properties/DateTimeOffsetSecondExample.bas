@@ -18,7 +18,7 @@ Public Sub DateTimeOffsetSecond()
 Attribute DateTimeOffsetSecond.VB_Description = "The following example displays the second component of a DateTimeOffset object in three different ways:"
     Dim theTime As IDateTimeOffset
     Set theTime = DateTimeOffset.CreateFromDateTimeParts(2008, 6, 12, 21, 16, 32, DateTimeOffset.Now.Offset)
-    Debug.Print "The second component of " & theTime.ToString() & " is " & theTime.Second & "."
+    Debug.Print "The second component of " & theTime.ToString() & " is " & theTime.SECOND & "."
     Debug.Print "The second component of " & theTime.ToString() & " is" & theTime.ToString2(" s") & "."
     Debug.Print "The second component of " & theTime.ToString() & " is " & theTime.ToString2("ss") & "."
 End Sub

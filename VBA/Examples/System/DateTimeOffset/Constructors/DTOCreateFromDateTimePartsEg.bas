@@ -22,7 +22,7 @@ Attribute DateTimeOffsetCreateFromDateTimeParts.VB_Description = "The following 
                                    specificDate.Day, _
                                    specificDate.Hour, _
                                    specificDate.Minute, _
-                                   specificDate.Second, _
+                                   specificDate.SECOND, _
                                    TimeSpan.Create(-5, 0, 0))
    Debug.Print "Current time: " & offsetDate.ToString()
    Debug.Print "Corresponding UTC time: " & offsetDate.UtcDateTime.ToString()

@@ -18,14 +18,14 @@ Attribute VB_Exposed = False
 Option Explicit
 
 '@Description("Copies a ParamArray of objects to an array.")
-Public Sub ToArray(ByRef destination As Variant, ParamArray values() As Variant)
+Public Sub ToArray(ByRef destination As Variant, ParamArray Values() As Variant)
 Attribute ToArray.VB_Description = "Copies a ParamArray of objects to an array."
    If VBA.IsArray(destination) Then
-      ReDim destination(LBound(values) To UBound(values))
+      ReDim destination(LBound(Values) To UBound(Values))
       Dim index As Long
       Dim varValue As Variant
       On Error GoTo Catch
-      For Each varValue In values
+      For Each varValue In Values
          Set destination(index) = varValue
          index = index + 1
       Next

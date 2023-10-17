@@ -245,7 +245,7 @@ Attribute TestingDateTimeSecond.VB_Description = "Testing the DateTime.Second pr
     'Act:
 
     'Assert:
-    Assert.areEqual moment.Second, expectedSecond
+    Assert.areEqual moment.SECOND, expectedSecond
 TestExit:
     Exit Sub
 TestFail:

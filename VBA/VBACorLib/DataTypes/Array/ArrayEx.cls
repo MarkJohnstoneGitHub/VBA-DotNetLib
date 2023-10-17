@@ -20,15 +20,15 @@ Attribute VB_Exposed = False
 Option Explicit
 
 '@Description("Copies a ParamArray of vaules or objects to an array of a type.")
-Public Sub ToArray(ByRef destination As Variant, ParamArray values() As Variant)
+Public Sub ToArray(ByRef destination As Variant, ParamArray Values() As Variant)
 Attribute ToArray.VB_Description = "Copies a ParamArray of vaules or objects to an array of a type."
    If VBA.IsArray(destination) Then
       '@TODO What if values is empty?
-      ReDim destination(LBound(values) To UBound(values))
+      ReDim destination(LBound(Values) To UBound(Values))
       Dim index As Long
       Dim varValue As Variant
       On Error GoTo Catch
-      For Each varValue In values
+      For Each varValue In Values
          If IsObject(varValue) Then
             Set destination(index) = varValue
          Else
@@ -46,17 +46,17 @@ End Sub
 
 '@Description("Copies a ParamArray of vaules or objects to an array of a type.")
 'Return value of False indictates that errors occurred and not all items where transfered to destination array
-Public Function TryToArray(ByRef destination As Variant, ParamArray values() As Variant) As Boolean
+Public Function TryToArray(ByRef destination As Variant, ParamArray Values() As Variant) As Boolean
 Attribute TryToArray.VB_Description = "Copies a ParamArray of vaules or objects to an array of a type."
    On Error Resume Next
    If (TryToArray = VBA.IsArray(destination)) Then
       Dim Resize As Boolean
       Resize = False
       
-      ReDim destination(LBound(values) To UBound(values))
+      ReDim destination(LBound(Values) To UBound(Values))
       Dim index As Long
       Dim varValue As Variant
-      For Each varValue In values
+      For Each varValue In Values
          If IsObject(varValue) Then
             Set destination(index) = varValue
          Else

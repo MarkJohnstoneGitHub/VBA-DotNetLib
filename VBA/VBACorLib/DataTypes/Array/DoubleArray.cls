@@ -26,14 +26,14 @@ Option Explicit
 '@Returns Double()
 '   Returns a double array.
 ''
-Public Function ToArray(ParamArray values() As Variant) As Double()
+Public Function ToArray(ParamArray Values() As Variant) As Double()
 Attribute ToArray.VB_Description = "Creates a one dimensional double array from a list of parameters"
    Dim Result() As Double
    '@TODO What if values is empty?
-   ReDim Result(LBound(values) To UBound(values))
+   ReDim Result(LBound(Values) To UBound(Values))
    Dim index As Long
-   For index = LBound(values) To UBound(values)
-       Result(index) = values(index)
+   For index = LBound(Values) To UBound(Values)
+       Result(index) = Values(index)
    Next index
    ToArray = Result
 End Function
