@@ -158,6 +158,9 @@ namespace DotNetLib.System.Collections
             return _queue.Equals(obj.Unwrap()); 
         }
 
-
+        public void CopyTo(global::System.Array array, int index)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

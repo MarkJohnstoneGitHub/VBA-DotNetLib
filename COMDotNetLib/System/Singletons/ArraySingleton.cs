@@ -1,9 +1,8 @@
-﻿using GLinq = global::System.Linq;
+﻿using GSystem = global::System;
 using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using System.Collections.Generic;
 
 namespace DotNetLib.System
 {
@@ -21,6 +20,11 @@ namespace DotNetLib.System
         //{
         //    throw new NotImplementedException();
         //}
+
+        public Array Create(GSystem.Array array)
+        { 
+            return new Array(array);
+        }
 
         public int BinarySearch(Array array, object value, IComparer comparer = null)
         {

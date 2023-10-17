@@ -16,7 +16,7 @@ namespace DotNetLib.System.Collections
     [ProgId("DotNetLib.System.Collections.SortedList")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(ISortedList))]
-    public class SortedList : GCollections.IDictionary, GCollections.ICollection, GCollections.IEnumerable, GSystem.ICloneable, IDictionary, ICollection, IWrappedObject, ISortedList
+    public class SortedList : GCollections.IDictionary, GCollections.ICollection, GCollections.IEnumerable, GSystem.ICloneable, ICollection, IDictionary, IWrappedObject, ISortedList 
     {
         private GCollections.SortedList _sortedList;
 
@@ -80,15 +80,19 @@ namespace DotNetLib.System.Collections
             set => _sortedList[key] = value;
         }
 
-        public ICollection Keys => (ICollection)_sortedList.Keys;
+        public GCollections.ICollection Keys => _sortedList.Keys;
 
         public object SyncRoot => _sortedList.SyncRoot;
 
-        public ICollection Values => (ICollection)_sortedList.Values;
+        public GCollections.ICollection Values => _sortedList.Values;
 
-        GCollections.ICollection GCollections.IDictionary.Keys => _sortedList.Keys;
+        //GCollections.ICollection GCollections.IDictionary.Keys => _sortedList.Keys;
 
-        GCollections.ICollection GCollections.IDictionary.Values => _sortedList.Values;
+        //GCollections.ICollection GCollections.IDictionary.Values => _sortedList.Values;
+
+        ICollection IDictionary.Keys => throw new GSystem.NotImplementedException();
+
+        ICollection IDictionary.Values => throw new GSystem.NotImplementedException();
 
 
         // Methods
@@ -165,7 +169,7 @@ namespace DotNetLib.System.Collections
 
         public int IndexOfValue(object value)
         {
-            return _sortedList.IndexOfKey(value);
+            return _sortedList.IndexOfValue(value);
         }
 
         public void Remove(object key)

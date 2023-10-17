@@ -10,7 +10,7 @@ namespace DotNetLib.System.Collections
     [Guid("20DAA84D-8FDC-4779-ACFC-B7FBFFFDF9A2")]
     [Description("Defines size, enumerators, and synchronization methods for all nongeneric collections.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-    public interface ICollection : GCollections.IEnumerable //, GCollections.ICollection
+    public interface ICollection : GCollections.IEnumerable ,  GCollections.ICollection
     {
         //
         // Summary:
@@ -19,7 +19,7 @@ namespace DotNetLib.System.Collections
         // Returns:
         //     The number of elements contained in the System.Collections.ICollection.
         //[__DynamicallyInvokable]
-        int Count
+        new int Count
         {
             //[__DynamicallyInvokable]
             get;
@@ -32,7 +32,7 @@ namespace DotNetLib.System.Collections
         // Returns:
         //     An object that can be used to synchronize access to the System.Collections.ICollection.
         //[__DynamicallyInvokable]
-        object SyncRoot
+        new object SyncRoot
         {
             //[__DynamicallyInvokable]
             get;
@@ -47,7 +47,7 @@ namespace DotNetLib.System.Collections
         //     true if access to the System.Collections.ICollection is synchronized (thread
         //     safe); otherwise, false.
         //[__DynamicallyInvokable]
-        bool IsSynchronized
+        new bool IsSynchronized
         {
             //[__DynamicallyInvokable]
             get;

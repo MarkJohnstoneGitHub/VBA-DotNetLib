@@ -133,5 +133,9 @@ namespace DotNetLib.System.Collections
             return new Array(_stack.ToArray());
         }
 
+        public void CopyTo(global::System.Array array, int index)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

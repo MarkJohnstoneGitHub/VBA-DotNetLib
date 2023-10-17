@@ -53,7 +53,7 @@ namespace DotNetLib.System.Collections
             set;
         }
 
-        ICollection Keys 
+        GCollections.ICollection Keys 
         {
             [Description("Gets the keys in a SortedList object.")]
             get;
@@ -65,7 +65,7 @@ namespace DotNetLib.System.Collections
             get;
         }
 
-        ICollection Values 
+        GCollections.ICollection Values 
         {
             [Description("Gets the values in a SortedList object.")]
             get;
