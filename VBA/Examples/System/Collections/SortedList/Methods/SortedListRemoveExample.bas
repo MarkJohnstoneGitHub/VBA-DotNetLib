@@ -46,7 +46,6 @@ Public Sub SortedListRemove()
     ' Displays the current state of the SortedList.
     Debug.Print "After removing the element at index 5:"
     Call PrintKeysAndValues(mySL)
-
 End Sub
 
 Private Sub PrintKeysAndValues(ByVal myList As DotNetLib.SortedList)
