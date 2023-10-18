@@ -75,7 +75,7 @@ Ms Access database [VBADotNetLibrary.accdb](https://github.com/MarkJohnstoneGitH
 Note: The MS-Access contains the latest version of VBADotNetLibrary and examples as the development is performed in MS-Access and periodically exported to the VBADotNetLibrary MS-Excel spreadsheet. 
 
  
- **Regular expressiions : Converting strings containing escape sequences and special characterss:**
+ **Regular expressions : Converting strings containing escape sequences and special characterss:**
  
  To use escape and special characters. Note if require quotes " require to escape in VBA with double quotes.
 
