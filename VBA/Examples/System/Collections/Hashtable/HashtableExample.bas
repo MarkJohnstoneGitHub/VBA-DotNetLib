@@ -15,7 +15,6 @@ Attribute VB_Name = "HashtableExample"
 ' Bug Hashtable.Item(key) = valuetype causes an Object required error use SetValue(key,value) until fixed.
 ' To fix requires creating an IDL and manually adding a propput for value types and compiling type library with MIDL.
 
-
 Option Explicit
 
 ''
@@ -71,7 +70,7 @@ Public Sub HashtableExample()
     For Each varDictionaryEntry In openWith
         Dim dicEntry As DotNetLib.DictionaryEntry
         Set dicEntry = DictionaryEntry.Create(varDictionaryEntry)
-        Debug.Print Strings.Format("Key = {0}, Value = {1}", dicEntry.key, dicEntry.value)
+        Debug.Print Strings.Format("Key = {0}, Value = {1}", dicEntry.Key, dicEntry.Value)
     Next
 
     ' To get the values alone, use the Values property.
@@ -92,9 +91,9 @@ Public Sub HashtableExample()
     ' The elements of the KeyCollection are strongly typed
     ' with the type that was specified for hash table keys.
     Debug.Print
-    Dim key As Variant
-    For Each key In keyColl
-        Debug.Print Strings.Format("Value = {0}", key)
+    Dim dicKey As Variant
+    For Each dicKey In keyColl
+        Debug.Print Strings.Format("Value = {0}", dicKey)
     Next
     
     ' Use the Remove method to remove a key/value pair.
