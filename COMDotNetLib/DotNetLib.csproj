@@ -69,9 +69,13 @@
     <Compile Include="System\Array.cs" />
     <Compile Include="System\Collections\CaseInsensitiveComparer.cs" />
     <Compile Include="System\Collections\DictionaryEntry.cs" />
-    <Compile Include="System\Collections\DictionaryEntrySingleton.cs" />
-    <Compile Include="System\Collections\IDictionaryEntry.cs" />
-    <Compile Include="System\Collections\IDictionaryEntrySingleton.cs" />
+    <Compile Include="System\Collections\Hashtable.cs" />
+    <Compile Include="System\Collections\Singletons\HashtableSingleton.cs" />
+    <Compile Include="System\Collections\Interfaces\IHashtable.cs" />
+    <Compile Include="System\Collections\Interfaces\IHashtableSingleton.cs" />
+    <Compile Include="System\Collections\Singletons\DictionaryEntrySingleton.cs" />
+    <Compile Include="System\Collections\Interfaces\IDictionaryEntry.cs" />
+    <Compile Include="System\Collections\Interfaces\IDictionaryEntrySingleton.cs" />
     <Compile Include="System\Collections\Singletons\CaseInsensitiveComparerSingleton.cs" />
     <Compile Include="System\Collections\Interfaces\ICaseInsensitiveComparer.cs" />
     <Compile Include="System\Collections\Interfaces\ICaseInsensitiveComparerSingleton.cs" />

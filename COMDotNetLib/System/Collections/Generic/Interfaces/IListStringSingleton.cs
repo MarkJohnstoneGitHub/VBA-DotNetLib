@@ -14,7 +14,7 @@ namespace DotNetLib.System.Collections
     {
         // Constructors
         //[Description("Initializes a new instance of the List<string> class that is empty and has the default initial capacity.")]
-        //ListString Create();
+        //ListString Create2();
 
         [Description("Initializes a new instance of the List<string> class that is empty and has the default initial capacity.")]
         ListString Create();

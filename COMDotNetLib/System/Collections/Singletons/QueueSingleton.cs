@@ -17,17 +17,17 @@ namespace DotNetLib.System.Collections
     {
         public QueueSingleton() { }
 
-        //public Queue Create()
+        //public Queue Create2()
         //{
         //    return new Queue();
         //}
 
-        //public Queue Create(int capacity)
+        //public Queue Create2(int capacity)
         //{ 
         //    return new Queue(capacity); 
         //}
 
-        //public Queue Create(int capacity, float growFactor)
+        //public Queue Create2(int capacity, float growFactor)
         //{
         //    return new Queue(capacity, growFactor);
         //}
