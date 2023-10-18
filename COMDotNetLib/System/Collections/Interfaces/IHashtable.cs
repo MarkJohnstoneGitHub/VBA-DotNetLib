@@ -88,7 +88,9 @@ namespace DotNetLib.System.Collections
         bool Equals(object obj);
 
         [Description("Returns an IDictionaryEnumerator that iterates through the Hashtable.")]
-        GCollections.IDictionaryEnumerator GetEnumerator();
+        GCollections.IEnumerator GetEnumerator();
+
+        //GCollections.IDictionaryEnumerator GetEnumerator();
 
         //[Description("")]
         //int GetHash(object key);
@@ -107,6 +109,9 @@ namespace DotNetLib.System.Collections
 
         [Description("Removes the element with the specified key from the Hashtable.")]
         void Remove(object key);
+
+        [Description("Sets the value associated with the specified key.")]
+        void SetValue(object key, object value);
 
         [Description("Returns a string that represents the current object.\r\n\r\n(Inherited from Object)")]
         string ToString();

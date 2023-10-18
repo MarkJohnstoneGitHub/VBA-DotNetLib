@@ -13,10 +13,17 @@ namespace DotNetLib.System.Collections
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface IDictionaryEntrySingleton
     {
-        [Description("Initializes an instance of the DictionaryEntry type with the specified key and value.")]
-        DictionaryEntry Create(object key, object value);
+        [Description("Initializes an instance of the DictionaryEntry type from an object containing a mscorlib.DictionaryEntry")]
+        DictionaryEntry Create(object dictionaryEntry);
 
         [Description("Initializes an instance of the DictionaryEntry type from a mscorlib.DictionaryEntry containing the specified key and value.")]
-        DictionaryEntry Create(GCollections.DictionaryEntry dictionaryEntry);
+        DictionaryEntry Create2([In] ref GCollections.DictionaryEntry dictionaryEntry);
+
+        [Description("Initializes an instance of the DictionaryEntry type with the specified key and value.")]
+        DictionaryEntry Create3(object key, object value);
+
+
+
+
     }
 }

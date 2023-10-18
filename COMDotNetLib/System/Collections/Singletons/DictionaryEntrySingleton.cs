@@ -15,14 +15,19 @@ namespace DotNetLib.System.Collections
     [ComDefaultInterface(typeof(IDictionaryEntrySingleton))]
     public class DictionaryEntrySingleton : IDictionaryEntrySingleton
     {
-        public DictionaryEntry Create(object key, object value)
+        //Todo: Test if object is an  System.Collections.DictionaryEntry and throw error?
+        public DictionaryEntry Create(object dictionaryEntry)
         {
-            return new DictionaryEntry(key, value);
+            return new DictionaryEntry((GCollections.DictionaryEntry)dictionaryEntry);
         }
-
-        public DictionaryEntry Create(GCollections.DictionaryEntry dictionaryEntry)
+        public DictionaryEntry Create2([In] ref GCollections.DictionaryEntry dictionaryEntry)
         {
             return new DictionaryEntry(dictionaryEntry);
+        }
+
+        public DictionaryEntry Create3(object key, object value)
+        {
+            return new DictionaryEntry(key, value);
         }
 
 

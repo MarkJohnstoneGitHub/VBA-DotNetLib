@@ -141,7 +141,12 @@ namespace DotNetLib.System.Collections
             return _hashtable.ContainsValue(value);
         }
 
-        public IDictionaryEnumerator GetEnumerator()
+        //public IDictionaryEnumerator GetEnumerator()
+        //{
+        //    return _hashtable.GetEnumerator();
+        //}
+
+        public IEnumerator GetEnumerator()
         {
             return _hashtable.GetEnumerator();
         }
@@ -166,9 +171,16 @@ namespace DotNetLib.System.Collections
             _hashtable.Remove(key);
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
+        //Note : Added due to VBA object error required for when atempting to update value types
+        // solution is to edit an IDL adding propput 
+        public void SetValue(object key, object value)
         {
-            return ((IEnumerable)_hashtable).GetEnumerator();
+            _hashtable[key]= value;
+        }
+
+        IDictionaryEnumerator GCollections.IDictionary.GetEnumerator()
+        {
+            return ((GCollections.IDictionary)_hashtable).GetEnumerator();
         }
     }
 }
