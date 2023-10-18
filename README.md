@@ -30,6 +30,8 @@ Oct 16, 2023 Added [SortedList](https://learn.microsoft.com/en-us/dotnet/api/sys
 
 Oct 17, 2023 Added [CaseInsensitiveComparer](https://learn.microsoft.com/en-us/dotnet/api/system.collections.caseinsensitivecomparer?view=netframework-4.8.1), [StringComparer](https://learn.microsoft.com/en-us/dotnet/api/system.stringcomparer?view=netframework-4.8.1)
 
+Oct 18, 2023 Added [DictionaryEntry](https://learn.microsoft.com/en-us/dotnet/api/system.collections.dictionaryentry?view=netframework-4.8.1)
+
  **Affected API due to VBA reserved words:**
 
  The API for the .Net class or VBA singletons for associated .Net classes may be required to be altered due to VBA reserved words. See [reserved-word-list](https://www.engram9.info/access-2007-vba/reserved-word-list.html).
