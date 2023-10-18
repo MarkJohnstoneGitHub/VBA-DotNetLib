@@ -45,20 +45,18 @@ End Sub
 
 '@Description("Initializes an instance of the DictionaryEntry type with the specified key and value.")
 Public Function Create(ByVal pDictionaryEntry As Variant) As DotNetLib.DictionaryEntry
+Attribute Create.VB_Description = "Initializes an instance of the DictionaryEntry type with the specified key and value."
    Set Create = this.DictionaryEntrySingleton.Create(pDictionaryEntry)
 End Function
 
 '@Description("Initializes an instance of the DictionaryEntry type from a mscorlib.DictionaryEntry containing the specified key and value.")
 Public Function Create2(ByRef pDictionaryEntry As mscorlib.DictionaryEntry) As DotNetLib.DictionaryEntry
+Attribute Create2.VB_Description = "Initializes an instance of the DictionaryEntry type from a mscorlib.DictionaryEntry containing the specified key and value."
    Set Create2 = this.DictionaryEntrySingleton.Create2(pDictionaryEntry)
 End Function
 
 '@Description("Initializes an instance of the DictionaryEntry type with the specified key and value.")
 Public Function Create3(ByVal key As Variant, ByVal value As Variant) As DotNetLib.DictionaryEntry
+Attribute Create3.VB_Description = "Initializes an instance of the DictionaryEntry type with the specified key and value."
    Set Create3 = this.DictionaryEntrySingleton.Create3(key, value)
 End Function
-
-
-
-
-
