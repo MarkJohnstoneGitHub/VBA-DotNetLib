@@ -89,6 +89,9 @@ VBA Example using Regex.Unescape with hexadecimal escape sequences
 ```
 
  **Issues:**
+ 
+Hashtable.Item(key) = valuetype causes an Object required error for value types.  Added member SetValue(key,value) to use as an alternative until fixed.
+- To fix requires creating an IDL and manually adding a propput for value types and compiling type library with MIDL.
 
 ArrayList.Item(index) = item
 - Cannot assign value types using arraylist.Item(index) = valueType
