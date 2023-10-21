@@ -1,5 +1,7 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.collections.dictionaryentry?view=netframework-4.8.1
 
+using GCollections = global::System.Collections;
+using System.Collections;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 

@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents a collection of key/value pairs that are 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 18, 2023
-'@LastModified October 18, 2023
+'@LastModified October 20, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -43,13 +43,13 @@ Private Sub Class_Terminate()
 End Sub
 
 '@Description("Initializes a new, empty instance of the Hashtable class using the specified initial capacity and load factor, and the default hash code provider and comparer.")
-Public Function Create(Optional ByVal capacity As Long = 0, Optional ByVal loadFactor As Single = 1, Optional ByRef equalityComparer As mscorlib.IEqualityComparer) As DotNetLib.Hashtable
+Public Function Create(Optional ByVal capacity As Long = 0, Optional ByVal loadFactor As Single = 1, Optional ByRef equalityComparer As mscorlib.IEqualityComparer = Nothing) As DotNetLib.Hashtable
 Attribute Create.VB_Description = "Initializes a new, empty instance of the Hashtable class using the specified initial capacity and load factor, and the default hash code provider and comparer."
    Set Create = this.HashtableSingleton.Create(capacity, loadFactor, equalityComparer)
 End Function
 
 '@Description("Initializes a new instance of the Hashtable class by copying the elements from the specified dictionary to the new Hashtable object. The new Hashtable object has an initial capacity equal to the number of elements copied, and uses the specified load factor and IEqualityComparer object.")
-Public Function Create2(ByVal d As mscorlib.IDictionary, Optional ByVal loadFactor As Single = 1, Optional ByVal equalityComparer As IEqualityComparer) As DotNetLib.Hashtable
+Public Function Create2(ByVal d As mscorlib.IDictionary, Optional ByVal loadFactor As Single = 1, Optional ByVal equalityComparer As IEqualityComparer = Nothing) As DotNetLib.Hashtable
 Attribute Create2.VB_Description = "Initializes a new instance of the Hashtable class by copying the elements from the specified dictionary to the new Hashtable object. The new Hashtable object has an initial capacity equal to the number of elements copied, and uses the specified load factor and IEqualityComparer object."
    Set Create2 = this.HashtableSingleton.Create2(d, loadFactor, equalityComparer)
 End Function

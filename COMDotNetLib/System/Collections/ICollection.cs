@@ -10,7 +10,7 @@ namespace DotNetLib.System.Collections
     [Guid("20DAA84D-8FDC-4779-ACFC-B7FBFFFDF9A2")]
     [Description("Defines size, enumerators, and synchronization methods for all nongeneric collections.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-    public interface ICollection : GCollections.IEnumerable ,  GCollections.ICollection
+    public interface ICollection : GCollections.IEnumerable , GCollections.ICollection
     {
         //
         // Summary:

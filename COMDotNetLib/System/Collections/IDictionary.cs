@@ -12,7 +12,7 @@ namespace DotNetLib.System.Collections
     [Guid("7C303967-4125-474D-B3E1-139A183A4156")]
     [Description("Represents a nongeneric collection of key/value pairs.")]
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
-    public interface IDictionary : ICollection, GCollections.IEnumerable
+    public interface IDictionary : ICollection, GCollections.IEnumerable//, GCollections.IDictionary
     {
         //
         // Summary:

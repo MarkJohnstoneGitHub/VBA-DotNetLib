@@ -15,7 +15,7 @@ namespace DotNetLib.System.Collections
     [ProgId("DotNetLib.System.Collections.Hashtable")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IHashtable))]
-    public class Hashtable : GCollections.IDictionary, GCollections.ICollection, IEnumerable, ISerializable, IDeserializationCallback, ICloneable, IHashtable
+    public class Hashtable : GCollections.IDictionary, GCollections.ICollection, IEnumerable, ISerializable, IDeserializationCallback, ICloneable, IHashtable//, ICollection,IDictionary
     {
         private GCollections.Hashtable _hashtable;
 
@@ -91,6 +91,10 @@ namespace DotNetLib.System.Collections
         public object SyncRoot => _hashtable.SyncRoot;
 
         public GCollections.ICollection Values => _hashtable.Values;
+
+        //ICollection IDictionary.Keys => throw new NotImplementedException();
+
+        //ICollection IDictionary.Values => throw new NotImplementedException();
 
 
         // Methods
@@ -182,5 +186,10 @@ namespace DotNetLib.System.Collections
         {
             return ((GCollections.IDictionary)_hashtable).GetEnumerator();
         }
+
+        //IDictionaryEnumerator IDictionary.GetEnumerator()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

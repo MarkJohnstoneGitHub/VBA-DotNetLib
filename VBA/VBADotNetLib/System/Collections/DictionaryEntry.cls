@@ -17,7 +17,7 @@ Attribute VB_Description = "Defines a dictionary key/value pair that can be set 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 19, 2023
-'@LastModified October 19, 2023
+'@LastModified October 20, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -26,17 +26,20 @@ Attribute VB_Description = "Defines a dictionary key/value pair that can be set 
 '@Remarks
 'Singleton class for DictionaryEntry containing factory methods and static members.
 
-
 Option Explicit
 
+Const DictionaryEntryType As String = "DotNetLib.System.Collections.DictionaryEntry"
+
 Private Type TDictionaryEntrySingleton
-   DictionaryEntrySingleton As DotNetLib.DictionaryEntrySingleton
+    DictionaryEntrySingleton As DotNetLib.DictionaryEntrySingleton
+    DictionaryEntryType As DotNetLib.Type
 End Type
 
 Private this As TDictionaryEntrySingleton
 
 Private Sub Class_Initialize()
    Set this.DictionaryEntrySingleton = New DotNetLib.DictionaryEntrySingleton
+    Set this.DictionaryEntryType = Types.GetType(DictionaryEntryType)
 End Sub
 
 Private Sub Class_Terminate()
@@ -56,7 +59,20 @@ Attribute Create2.VB_Description = "Initializes an instance of the DictionaryEnt
 End Function
 
 '@Description("Initializes an instance of the DictionaryEntry type with the specified key and value.")
-Public Function Create3(ByVal key As Variant, ByVal value As Variant) As DotNetLib.DictionaryEntry
+Public Function Create3(ByVal Key As Variant, ByVal Value As Variant) As DotNetLib.DictionaryEntry
 Attribute Create3.VB_Description = "Initializes an instance of the DictionaryEntry type with the specified key and value."
-   Set Create3 = this.DictionaryEntrySingleton.Create3(key, value)
+   Set Create3 = this.DictionaryEntrySingleton.Create3(Key, Value)
+End Function
+
+'--------------------------------------------------------------------
+'Extension
+'Added to get the type for arrays etc.
+'--------------------------------------------------------------------
+'@Static
+'@DefaultMember
+'@Description("Gets the String Type.")
+Public Function GetType() As DotNetLib.Type
+Attribute GetType.VB_Description = "Gets the String Type."
+Attribute GetType.VB_UserMemId = 0
+    Set GetType = this.DictionaryEntryType
 End Function

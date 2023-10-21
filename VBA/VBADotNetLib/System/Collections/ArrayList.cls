@@ -17,7 +17,7 @@ Attribute VB_Description = "Implements the IList interface using an array whose 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 5, 2023
-'@LastModified October 17, 2023
+'@LastModified October 20, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -44,9 +44,9 @@ End Sub
 
 '@Static
 '@Description("Initializes a new instance of the ArrayList class that is empty and has the default or specified initial capacity.")
-Public Function Create(Optional ByVal Capacity As Long = 0) As DotNetLib.ArrayList
+Public Function Create(Optional ByVal capacity As Long = 0) As DotNetLib.ArrayList
 Attribute Create.VB_Description = "Initializes a new instance of the ArrayList class that is empty and has the default or specified initial capacity."
-   Set Create = this.ArrayListSingleton.Create(Capacity)
+   Set Create = this.ArrayListSingleton.Create(capacity)
 End Function
 
 '@Static
@@ -72,9 +72,9 @@ End Function
 
 '@Static
 '@Description("Returns an IList wrapper with a fixed size.")
-Public Function FixedSize2(ByVal List As mscorlib.IList) As IList
+Public Function FixedSize2(ByVal pList As mscorlib.IList) As mscorlib.IList
 Attribute FixedSize2.VB_Description = "Returns an IList wrapper with a fixed size."
-   Set FixedSize2 = this.ArrayListSingleton.FixedSize2(List)
+   Set FixedSize2 = this.ArrayListSingleton.FixedSize2(pList)
 End Function
 
 '@Static
@@ -93,9 +93,9 @@ End Function
 
 '@Static
 '@Description("Returns an ArrayList whose elements are copies of the specified value.")
-Public Function Repeat(ByVal value As Variant, ByVal Count As Long) As DotNetLib.ArrayList
+Public Function Repeat(ByVal Value As Variant, ByVal Count As Long) As DotNetLib.ArrayList
 Attribute Repeat.VB_Description = "Returns an ArrayList whose elements are copies of the specified value."
-   Set Repeat = this.ArrayListSingleton.Repeat(value, Count)
+   Set Repeat = this.ArrayListSingleton.Repeat(Value, Count)
 End Function
 
 '@Static

@@ -1,5 +1,6 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.collections.dictionaryentry?view=netframework-4.8.1
 
+using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using GCollections = global::System.Collections;
@@ -26,18 +27,17 @@ namespace DotNetLib.System.Collections
             _dictionaryEntry = new GCollections.DictionaryEntry(key, value);
         }
 
-        public object Key 
+        public object Key
         {
-            get { return _dictionaryEntry.Key; }
-            set { _dictionaryEntry.Key = value; }
+            get => _dictionaryEntry.Key;
+            set => _dictionaryEntry.Key = value;
         }
 
         public object Value 
         {
-            get { return _dictionaryEntry.Value; }
-            set { _dictionaryEntry.Value = value; }
+            get => _dictionaryEntry.Value;
+            set => _dictionaryEntry.Value = value;
         }
-
 
     }
 }
