@@ -75,7 +75,7 @@ Ms Access database [VBADotNetLibrary.accdb](https://github.com/MarkJohnstoneGitH
 Note: The MS-Access contains the latest version of VBADotNetLibrary and examples as the development is performed in MS-Access and periodically exported to the VBADotNetLibrary MS-Excel spreadsheet. 
 
  
- **Regular expressiions : Converting strings containing escape sequences and special characterss:**
+ **Regular expressions : Converting strings containing escape sequences and special characterss:**
  
  To use escape and special characters. Note if require quotes " require to escape in VBA with double quotes.
 
@@ -89,6 +89,9 @@ VBA Example using Regex.Unescape with hexadecimal escape sequences
 ```
 
  **Issues:**
+ 
+Hashtable.Item(key) = valuetype causes an Object required error for value types.  Added member SetValue(key,value) to use as an alternative until fixed.
+- To fix requires creating an IDL and manually adding a propput for value types and compiling type library with MIDL.
 
 ArrayList.Item(index) = item
 - Cannot assign value types using arraylist.Item(index) = valueType
