@@ -43,5 +43,11 @@ namespace DotNetLib.System.Collections
         {
             dictEntry = _dictionaryEntry;
         }
+
+        public static void Assign([In][Out] ref GCollections.DictionaryEntry dictionaryEntry, object key, object value)
+        {
+            dictionaryEntry.Key = key;
+            dictionaryEntry.Value = value;
+        }
     }
 }

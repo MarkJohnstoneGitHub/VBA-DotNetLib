@@ -22,8 +22,14 @@ namespace DotNetLib.System.Collections
         [Description("Initializes an instance of the DictionaryEntry type with the specified key and value.")]
         DictionaryEntry Create3(object key, object value);
 
+        [Description("Initializes an instance of the mscorlib.DictionaryEntry type with the specified key and value.")]
+        void Assign([In][Out] ref GCollections.DictionaryEntry dictionaryEntry, object key, object value);
 
+        [Description("Gets the key in the key/value pair.")]
+        object Key([In] ref GCollections.DictionaryEntry dictionaryEntry);
 
+        [Description("Gets the value in the key/value pair.")]
+        object Value([In] ref GCollections.DictionaryEntry dictionaryEntry);
 
     }
 }

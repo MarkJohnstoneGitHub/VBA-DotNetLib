@@ -30,6 +30,20 @@ namespace DotNetLib.System.Collections
             return new DictionaryEntry(key, value);
         }
 
+        public void Assign([In][Out] ref GCollections.DictionaryEntry dictionaryEntry, object key, object value)
+        {
+            dictionaryEntry = new GCollections.DictionaryEntry(key, value);
+        }
+
+        public object Key([In] ref GCollections.DictionaryEntry dictionaryEntry) 
+        {
+            return dictionaryEntry.Key;
+        }
+
+        public object Value([In] ref GCollections.DictionaryEntry dictionaryEntry)
+        {
+            return dictionaryEntry.Value;
+        }
 
     }
 }
