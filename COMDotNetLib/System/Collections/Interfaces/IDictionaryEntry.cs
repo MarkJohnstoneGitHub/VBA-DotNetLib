@@ -29,5 +29,9 @@ namespace DotNetLib.System.Collections
             set;
         }
 
+        // Added to obtain the System.Collection.DictionaryEntry which is a struc, value type
+        [Description("Gets a mscorlib.DictionaryEntry value type for a key/value pair.")]
+        void GetDictionaryEntry([In][Out] ref GCollections.DictionaryEntry dictEntry);
+
     }
 }

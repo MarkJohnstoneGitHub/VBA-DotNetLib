@@ -26,7 +26,6 @@ namespace DotNetLib.System.Collections
         {
             _dictionaryEntry = new GCollections.DictionaryEntry(key, value);
         }
-
         public object Key
         {
             get => _dictionaryEntry.Key;
@@ -39,5 +38,10 @@ namespace DotNetLib.System.Collections
             set => _dictionaryEntry.Value = value;
         }
 
+        // Added to obtain the System.Collection.DictionaryEntry which is a struc, value type
+        public void GetDictionaryEntry([In][Out] ref GCollections.DictionaryEntry dictEntry)
+        {
+            dictEntry = _dictionaryEntry;
+        }
     }
 }
