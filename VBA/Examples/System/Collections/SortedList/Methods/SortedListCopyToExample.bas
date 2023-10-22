@@ -4,7 +4,7 @@ Attribute VB_Name = "SortedListCopyToExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 18, 2023
-'@LastModified October 22 2023
+'@LastModified October 23, 2023
 '
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 '
@@ -60,7 +60,7 @@ Private Sub PrintValues(ByVal myArr As DotNetLib.Array, ByVal mySeparator As Str
     For i = 0 To myArr.Length - 1
         Dim de As mscorlib.DictionaryEntry
         de = myArr(i)
-        Debug.Print Strings.Format("{0}{1}", mySeparator, DictionaryEntry.GetValue(de));
+        Debug.Print Strings.Format("{0}{1}", mySeparator, DictionaryEntry.Value(de));
     Next i
     Debug.Print
 End Sub
