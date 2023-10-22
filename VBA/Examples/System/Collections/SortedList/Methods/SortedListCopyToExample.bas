@@ -54,7 +54,7 @@ Public Sub SortedListCopyTo()
     Call PrintValues(myTargetArray, " ")
 
     ' Copies the entire source SortedList to the target SortedList, starting at index 6.
-    Call mySourceList.CopyTo(myTargetArray, 6) 'Todo: Error
+    Call mySourceList.CopyTo(myTargetArray, 6)
     ' Displays the values of the target Array.
     Call PrintValues(myTargetArray, " ")
 
