@@ -17,7 +17,7 @@ Attribute VB_Description = "Defines a dictionary key/value pair that can be set 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 19, 2023
-'@LastModified October 22, 2023
+'@LastModified October 23, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -49,6 +49,81 @@ Private Sub Class_Terminate()
    Set this.DictionaryEntrySingleton = Nothing
 End Sub
 
+'@Todo : Rename to Create
+'@Static
+'@Description("Initializes an instance of the mscorlib.DictionaryEntry type with the specified key and value.")
+Public Sub Assign(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pKey As Variant, ByVal pValue As Variant)
+Attribute Assign.VB_Description = "Initializes an instance of the mscorlib.DictionaryEntry type with the specified key and value."
+    Call this.DictionaryEntrySingleton.Assign(pDictionaryEntry, pKey, pValue)
+End Sub
+
+'@Static
+'@Description("Gets or sets the key in the key/value pair.")
+Public Property Get Key(ByRef pDictionaryEntry As mscorlib.DictionaryEntry) As Variant
+Attribute Key.VB_Description = "Gets or sets the key in the key/value pair."
+    Call AssignVariable(Key, this.DictionaryEntrySingleton.GetKey(pDictionaryEntry))
+End Property
+
+'@Static
+'@Description("Gets or sets the key in the key/value pair.")
+Public Property Let Key(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pKey As Variant)
+Attribute Key.VB_Description = "Gets or sets the key in the key/value pair."
+    Call this.DictionaryEntrySingleton.SetKey(pDictionaryEntry, pKey)
+End Property
+
+'@Static
+'@Description("Gets or sets the key in the key/value pair.")
+Public Property Set Key(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pKey As Variant)
+Attribute Key.VB_Description = "Gets or sets the key in the key/value pair."
+    Call this.DictionaryEntrySingleton.SetKey(pDictionaryEntry, pKey)
+End Property
+
+'@Static
+'@Description("Gets or sets the value in the key/value pair.")
+Public Property Get Value(ByRef pDictionaryEntry As mscorlib.DictionaryEntry) As Variant
+Attribute Value.VB_Description = "Gets or sets the value in the key/value pair."
+    Call AssignVariable(Value, this.DictionaryEntrySingleton.GetValue(pDictionaryEntry))
+End Property
+
+'@Description("Gets or sets the value in the key/value pair.")
+Public Property Let Value(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pValue As Variant)
+Attribute Value.VB_Description = "Gets or sets the value in the key/value pair."
+    Call this.DictionaryEntrySingleton.SetValue(pDictionaryEntry, pValue)
+End Property
+
+'@Description("Gets or sets the value in the key/value pair.")
+Public Property Set Value(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pValue As Variant)
+Attribute Value.VB_Description = "Gets or sets the value in the key/value pair."
+    Call this.DictionaryEntrySingleton.SetValue(pDictionaryEntry, pValue)
+End Property
+
+'--------------------------------------------------------------------
+'Extension
+'Added to get the type for arrays etc.
+'--------------------------------------------------------------------
+'@Static
+'@DefaultMember
+'@Description("Gets the mscorlib.DictionaryEntry Type.")
+Public Function GetType() As DotNetLib.Type
+Attribute GetType.VB_Description = "Gets the mscorlib.DictionaryEntry Type."
+Attribute GetType.VB_UserMemId = 0
+    Set GetType = this.DictionaryEntryType
+End Function
+
+' @Reference
+' https://stackoverflow.com/questions/51080637/write-result-of-function-to-a-variable-where-result-could-be-an-object/53925677#53925677
+' https://stackoverflow.com/a/53925677/10759363
+' Assign x to y regardless of object or primitive
+Private Sub AssignVariable(ByRef x As Variant, ByRef y As Variant)
+    If IsObject(y) Then
+        Set x = y
+    Else
+        x = y
+    End If
+End Sub
+
+'@Todo remove Create factory methods and  rename Assign to Create
+
 '@Static
 '@Description("Initializes an instance of the DictionaryEntry type with the specified key and value.")
 Public Function Create(ByVal pDictionaryEntry As Variant) As DotNetLib.DictionaryEntry
@@ -70,60 +145,24 @@ Attribute Create3.VB_Description = "Initializes an instance of the DictionaryEnt
    Set Create3 = this.DictionaryEntrySingleton.Create3(pKey, pValue)
 End Function
 
-'@Static
-'@Description("Initializes an instance of the mscorlib.DictionaryEntry type with the specified key and value.")
-Public Sub Assign(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pKey As Variant, ByVal pValue As Variant)
-Attribute Assign.VB_Description = "Initializes an instance of the mscorlib.DictionaryEntry type with the specified key and value."
-    Call this.DictionaryEntrySingleton.Assign(pDictionaryEntry, pKey, pValue)
-End Sub
+''Static
+''@Description("Gets the key in the key/value pair.")
+'Public Function GetKey(ByRef pDictionaryEntry As mscorlib.DictionaryEntry) As Variant
+'    Call AssignVariable(GetKey, this.DictionaryEntrySingleton.GetKey(pDictionaryEntry))
+'End Function
 
-'Static
-'@Description("Gets the key in the key/value pair.")
-Public Function GetKey(ByRef pDictionaryEntry As mscorlib.DictionaryEntry) As Variant
-Attribute GetKey.VB_Description = "Gets the key in the key/value pair."
-    Call AssignVariable(GetKey, this.DictionaryEntrySingleton.GetKey(pDictionaryEntry))
-End Function
+''Static
+''@Description("Gets the value in the key/value pair.")
+'Public Function GetValue(ByRef pDictionaryEntry As mscorlib.DictionaryEntry) As Variant
+'    Call AssignVariable(GetValue, this.DictionaryEntrySingleton.GetValue(pDictionaryEntry))
+'End Function
 
-'Static
-'@Description("Gets the value in the key/value pair.")
-Public Function GetValue(ByRef pDictionaryEntry As mscorlib.DictionaryEntry) As Variant
-Attribute GetValue.VB_Description = "Gets the value in the key/value pair."
-    Call AssignVariable(GetValue, this.DictionaryEntrySingleton.GetValue(pDictionaryEntry))
-End Function
+''@Description("Sets the key in the key/value pair.")
+'Public Sub SetKey(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pKey As Variant)
+'    Call this.DictionaryEntrySingleton.SetKey(pDictionaryEntry, pKey)
+'End Sub
 
-'@Description("Sets the key in the key/value pair.")
-Public Sub SetKey(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pKey As Variant)
-Attribute SetKey.VB_Description = "Sets the key in the key/value pair."
-    Call this.DictionaryEntrySingleton.SetKey(pDictionaryEntry, pKey)
-End Sub
-
-'@Description("Sets the value in the key/value pair.")
-Public Sub SetValue(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pValue As Variant)
-Attribute SetValue.VB_Description = "Sets the value in the key/value pair."
-    Call this.DictionaryEntrySingleton.SetValue(pDictionaryEntry, pValue)
-End Sub
-
-
-'--------------------------------------------------------------------
-'Extension
-'Added to get the type for arrays etc.
-'--------------------------------------------------------------------
-'@Static
-'@DefaultMember
-'@Description("Gets the mscorlib.DictionaryEntry Type.")
-Public Function GetType() As DotNetLib.Type
-Attribute GetType.VB_Description = "Gets the mscorlib.DictionaryEntry Type."
-Attribute GetType.VB_UserMemId = 0
-    Set GetType = this.DictionaryEntryType
-End Function
-
-'https://stackoverflow.com/questions/51080637/write-result-of-function-to-a-variable-where-result-could-be-an-object/53925677#53925677
-'https://stackoverflow.com/a/53925677/10759363
-' Assign x to y regardless of object or primitive
-Private Sub AssignVariable(ByRef x As Variant, ByRef y As Variant)
-    If IsObject(y) Then
-        Set x = y
-    Else
-        x = y
-    End If
-End Sub
+''@Description("Sets the value in the key/value pair.")
+'Public Sub SetValue(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pValue As Variant)
+'    Call this.DictionaryEntrySingleton.SetValue(pDictionaryEntry, pValue)
+'End Sub

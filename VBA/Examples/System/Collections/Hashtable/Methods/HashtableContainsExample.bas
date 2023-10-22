@@ -52,14 +52,13 @@ Private Sub PrintIndexAndKeysAndValues(ByVal myHT As DotNetLib.Hashtable)
     Dim formatString As String
     formatString = Regex.Unescape("\t[{0}]:\t{1}\t{2}")
     Debug.Print Regex.Unescape("\t-INDEX-\t-KEY-\t-VALUE-")
-    
     Dim i As Long
     i = 0
     Dim varDictEntry As Variant
     For Each varDictEntry In myHT
-        Dim de As DotNetLib.DictionaryEntry
-        Set de = DictionaryEntry.Create(varDictEntry)
-        Debug.Print Strings.Format(formatString, i, de.Key, de.Value)
+        Dim dictEntry As mscorlib.DictionaryEntry
+        dictEntry = varDictEntry
+        Debug.Print Strings.Format(formatString, i, DictionaryEntry.Key(dictEntry), DictionaryEntry.Value(dictEntry))
         i = i + 1
     Next
 End Sub

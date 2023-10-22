@@ -4,7 +4,7 @@ Attribute VB_Name = "HashtableRemoveExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 22, 2023
-'@LastModified October 22, 2023
+'@LastModified October 23, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.collections.hashtable.remove?view=netframework-4.8.1#examples
 
@@ -42,9 +42,9 @@ End Sub
 Private Sub PrintKeysAndValues(ByVal myHT As DotNetLib.Hashtable)
     Dim varDictEntry As Variant
     For Each varDictEntry In myHT
-        Dim dictEntry As DotNetLib.DictionaryEntry
-        Set dictEntry = DictionaryEntry.Create(varDictEntry)
-        Debug.Print Strings.Format("    {0}:    {1}", dictEntry.Key, dictEntry.Value)
+        Dim dictEntry As mscorlib.DictionaryEntry
+        dictEntry = varDictEntry
+        Debug.Print Strings.Format("    {0}:    {1}", DictionaryEntry.Key(dictEntry), DictionaryEntry.Value(dictEntry))
     Next
     Debug.Print
 End Sub

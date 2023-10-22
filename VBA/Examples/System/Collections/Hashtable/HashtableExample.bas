@@ -66,11 +66,11 @@ Public Sub HashtableExample()
     ' When you use foreach to enumerate hash table elements,
     ' the elements are retrieved as KeyValuePair objects.
     Debug.Print
-    Dim varDictionaryEntry As Variant
-    For Each varDictionaryEntry In openWith
-        Dim dicEntry As DotNetLib.DictionaryEntry
-        Set dicEntry = DictionaryEntry.Create(varDictionaryEntry)
-        Debug.Print Strings.Format("Key = {0}, Value = {1}", dicEntry.Key, dicEntry.Value)
+    Dim varDictEntry As Variant
+    For Each varDictEntry In openWith
+        Dim dictEntry As mscorlib.DictionaryEntry
+        dictEntry = varDictEntry
+        Debug.Print Strings.Format("Key = {0}, Value = {1}", DictionaryEntry.Key(dictEntry), DictionaryEntry.Value(dictEntry))
     Next
 
     ' To get the values alone, use the Values property.

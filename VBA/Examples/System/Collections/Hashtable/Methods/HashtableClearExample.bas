@@ -4,7 +4,7 @@ Attribute VB_Name = "HashtableClearExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 22, 2023
-'@LastModified October 22, 2023
+'@LastModified October 23, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.collections.hashtable.clear?view=netframework-4.8.1#examples
 
@@ -45,9 +45,9 @@ Private Sub PrintKeysAndValues(ByVal myHT As DotNetLib.Hashtable)
     Debug.Print Regex.Unescape("\t-KEY-\t-VALUE-")
     Dim varDictEntry As Variant
     For Each varDictEntry In myHT
-        Dim de As DotNetLib.DictionaryEntry
-        Set de = DictionaryEntry.Create(varDictEntry)
-        Debug.Print Strings.Format(formatString, de.Key, de.Value)
+        Dim dictEntry As mscorlib.DictionaryEntry
+        dictEntry = varDictEntry
+        Debug.Print Strings.Format(formatString, DictionaryEntry.Key(dictEntry), DictionaryEntry.Value(dictEntry))
     Next
 End Sub
 
