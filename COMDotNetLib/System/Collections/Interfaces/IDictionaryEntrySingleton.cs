@@ -26,10 +26,15 @@ namespace DotNetLib.System.Collections
         void Assign([In][Out] ref GCollections.DictionaryEntry dictionaryEntry, object key, object value);
 
         [Description("Gets the key in the key/value pair.")]
-        object Key([In] ref GCollections.DictionaryEntry dictionaryEntry);
+        object GetKey([In] ref GCollections.DictionaryEntry dictionaryEntry);
 
         [Description("Gets the value in the key/value pair.")]
-        object Value([In] ref GCollections.DictionaryEntry dictionaryEntry);
+        object GetValue([In] ref GCollections.DictionaryEntry dictionaryEntry);
+
+        [Description("Sets the key in the key/value pair.")]
+        void SetKey([In] ref GCollections.DictionaryEntry dictionaryEntry, object key);
+
+        void SetValue([In] ref GCollections.DictionaryEntry dictionaryEntry, object value);
 
     }
 }

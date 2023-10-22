@@ -79,17 +79,30 @@ End Sub
 
 'Static
 '@Description("Gets the key in the key/value pair.")
-Public Function Key(ByRef pDictionaryEntry As mscorlib.DictionaryEntry) As Variant
-Attribute Key.VB_Description = "Gets the key in the key/value pair."
-    Call AssignVariable(Key, this.DictionaryEntrySingleton.Key(pDictionaryEntry))
+Public Function GetKey(ByRef pDictionaryEntry As mscorlib.DictionaryEntry) As Variant
+Attribute GetKey.VB_Description = "Gets the key in the key/value pair."
+    Call AssignVariable(GetKey, this.DictionaryEntrySingleton.GetKey(pDictionaryEntry))
 End Function
 
 'Static
 '@Description("Gets the value in the key/value pair.")
-Public Function Value(ByRef pDictionaryEntry As mscorlib.DictionaryEntry) As Variant
-Attribute Value.VB_Description = "Gets the value in the key/value pair."
-    Call AssignVariable(Value, this.DictionaryEntrySingleton.Value(pDictionaryEntry))
+Public Function GetValue(ByRef pDictionaryEntry As mscorlib.DictionaryEntry) As Variant
+Attribute GetValue.VB_Description = "Gets the value in the key/value pair."
+    Call AssignVariable(GetValue, this.DictionaryEntrySingleton.GetValue(pDictionaryEntry))
 End Function
+
+'@Description("Sets the key in the key/value pair.")
+Public Sub SetKey(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pKey As Variant)
+Attribute SetKey.VB_Description = "Sets the key in the key/value pair."
+    Call this.DictionaryEntrySingleton.SetKey(pDictionaryEntry, pKey)
+End Sub
+
+'@Description("Sets the value in the key/value pair.")
+Public Sub SetValue(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pValue As Variant)
+Attribute SetValue.VB_Description = "Sets the value in the key/value pair."
+    Call this.DictionaryEntrySingleton.SetValue(pDictionaryEntry, pValue)
+End Sub
+
 
 '--------------------------------------------------------------------
 'Extension

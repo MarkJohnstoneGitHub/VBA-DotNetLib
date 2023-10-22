@@ -60,7 +60,7 @@ Private Sub PrintValues(ByVal myArr As DotNetLib.Array, ByVal mySeparator As Str
     For i = 0 To myArr.Length - 1
         Dim de As mscorlib.DictionaryEntry
         de = myArr(i)
-        Debug.Print Strings.Format("{0}{1}", mySeparator, DictionaryEntry.Value(de));
+        Debug.Print Strings.Format("{0}{1}", mySeparator, DictionaryEntry.GetValue(de));
     Next i
     Debug.Print
 End Sub

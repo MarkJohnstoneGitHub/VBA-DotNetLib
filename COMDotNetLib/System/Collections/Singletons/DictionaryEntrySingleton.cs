@@ -35,14 +35,24 @@ namespace DotNetLib.System.Collections
             dictionaryEntry = new GCollections.DictionaryEntry(key, value);
         }
 
-        public object Key([In] ref GCollections.DictionaryEntry dictionaryEntry) 
+        public object GetKey([In] ref GCollections.DictionaryEntry dictionaryEntry) 
         {
             return dictionaryEntry.Key;
         }
 
-        public object Value([In] ref GCollections.DictionaryEntry dictionaryEntry)
+        public void SetKey([In] ref GCollections.DictionaryEntry dictionaryEntry, object key)
+        {
+            dictionaryEntry.Key = key;
+        }
+
+        public object GetValue([In] ref GCollections.DictionaryEntry dictionaryEntry)
         {
             return dictionaryEntry.Value;
+        }
+
+        public void SetValue([In] ref GCollections.DictionaryEntry dictionaryEntry, object value)
+        {
+            dictionaryEntry.Value = value;
         }
 
     }
