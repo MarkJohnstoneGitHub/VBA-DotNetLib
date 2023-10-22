@@ -1,4 +1,5 @@
-﻿using GCollections = global::System.Collections;
+﻿using GSystem = global::System;
+using GCollections = global::System.Collections;
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
@@ -13,6 +14,12 @@ namespace DotNetLib.System
     public interface IArray
     {
         // Properties
+
+        GSystem.Array WrappedArray
+        {
+            [Description("Gets the wrapped mscorlib.Array.")]
+            get;
+        }
 
         bool IsFixedSize
         {
