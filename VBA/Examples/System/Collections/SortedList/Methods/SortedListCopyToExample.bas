@@ -39,11 +39,12 @@ Public Sub SortedListCopyTo()
     i = 0
     Dim s As Variant
     For Each s In tempArray
-        Dim myDictEntry As DotNetLib.DictionaryEntry
-        Set myDictEntry = DictionaryEntry.Create3(i, s)
+        'Create an mscorlib.DictionaryEntry
+        Dim wrappedDictEntry As DotNetLib.DictionaryEntry
+        Set wrappedDictEntry = DictionaryEntry.Create3(i, s)
         Dim de As mscorlib.DictionaryEntry
-        Call myDictEntry.GetDictionaryEntry(de)
-        'Call DictionaryEntry.Create3(i, s).GetDictionaryEntry(de) 'Note Could replace above with this
+        Call wrappedDictEntry.GetDictionaryEntry(de)
+        'Call DictionaryEntry.Create3(i, s).GetDictionaryEntry(de) 'Note Could replace above to create an mscorlib.DictionaryEntry
         Call myTargetArray.SetValue(de, i)
         i = i + 1
     Next
@@ -64,9 +65,9 @@ Private Sub PrintValues(ByVal myArr As DotNetLib.Array, ByVal mySeparator As Str
     For i = 0 To myArr.Length - 1
         Dim de As mscorlib.DictionaryEntry
         de = myArr(i)
-        Dim myDictEntry As DotNetLib.DictionaryEntry
-        Set myDictEntry = DictionaryEntry.Create2(de)
-        Debug.Print Strings.Format("{0}{1}", mySeparator, myDictEntry.Value);
+        Dim wrappedDictEntry As DotNetLib.DictionaryEntry
+        Set wrappedDictEntry = DictionaryEntry.Create2(de)
+        Debug.Print Strings.Format("{0}{1}", mySeparator, wrappedDictEntry.Value);
     Next i
     Debug.Print
 End Sub
