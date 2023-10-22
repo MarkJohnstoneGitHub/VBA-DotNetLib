@@ -110,9 +110,9 @@ End Sub
 '--------------------------------------------------------------------
 '@Static
 '@DefaultMember
-'@Description("Gets the String Type.")
+'@Description("Gets the mscorlib.DictionaryEntry Type.")
 Public Function GetType() As DotNetLib.Type
-Attribute GetType.VB_Description = "Gets the String Type."
+Attribute GetType.VB_Description = "Gets the mscorlib.DictionaryEntry Type."
 Attribute GetType.VB_UserMemId = 0
     Set GetType = this.DictionaryEntryType
 End Function
