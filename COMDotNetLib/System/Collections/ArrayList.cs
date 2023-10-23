@@ -288,9 +288,9 @@ namespace DotNetLib.System.Collections
             return GCollections.ArrayList.Synchronized(list);
         }
 
-        public virtual object[] ToArray()
-        { 
-            return _arrayList.ToArray(); 
+        public virtual Array ToArray()
+        {
+            return new Array(_arrayList.ToArray());
         }
 
         public virtual Array ToArray2(Type type)

@@ -4,12 +4,16 @@ Attribute VB_Name = "ArrayListToArrayExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 6, 2023
-'@LastModified October 6, 2023
+'@LastModified October 23, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist.toarray?view=netframework-4.8.1#system-collections-arraylist-toarray
 
 Option Explicit
 
+''
+' The following copy example shows how to copy the elements of an ArrayList
+' to a string array.
+''
 Public Sub ArrayListToArray()
     ' Creates and initializes a new ArrayList.
     Dim myAL As DotNetLib.ArrayList
@@ -29,21 +33,11 @@ Public Sub ArrayListToArray()
     PrintIndexAndValues myAL
     
     ' Copies the elements of the ArrayList to a string array.
-    Dim myArr() As Variant
-    myArr = myAL.ToArray()
-    '      String[] myArr = (String[]) myAL.ToArray( typeof( string ) );
-'
-'      // Displays the contents of the string array.
-'      Console.WriteLine( "The string array contains the following values:" );
-'      PrintIndexAndValues( myArr );
+    Dim myArr As DotNetLib.Array
+    Set myArr = myAL.ToArray2(Strings.GetType())
+    Debug.Print "The string array contains the following values:"
+    Call PrintIndexAndValues2(myArr)
 End Sub
-
-'   public static void PrintIndexAndValues( ArrayList myList )  {
-'      int i = 0;
-'      foreach ( Object o in myList )
-'         Console.WriteLine( "\t[{0}]:\t{1}", i++, o );
-'      Console.WriteLine();
-'   }
 
 Private Sub PrintIndexAndValues(ByVal myList As DotNetLib.ArrayList)
     Dim pvtFormat As String
@@ -57,65 +51,16 @@ Private Sub PrintIndexAndValues(ByVal myList As DotNetLib.ArrayList)
     Debug.Print
 End Sub
 
-Private Sub PrintIndexAndValues2(ByRef myArr() As String)
+Private Sub PrintIndexAndValues2(ByVal myArr As DotNetLib.Array)
     Dim i As Long
     Dim pvtFormat As String
     pvtFormat = Regex.Unescape("\t[{0}]:\t{1}")
-    For i = 0 To UBound(myArr)
+    For i = 0 To myArr.Length - 1
         Debug.Print Strings.Format(pvtFormat, i, myArr(i))
     Next i
     Debug.Print
 End Sub
 
-
-
-
-'using System;
-'using System.Collections;
-'
-'public class SamplesArrayList  {
-'
-'   public static void Main()  {
-'
-'      // Creates and initializes a new ArrayList.
-'      ArrayList myAL = new ArrayList();
-'      myAL.Add( "The" );
-'      myAL.Add( "quick" );
-'      myAL.Add( "brown" );
-'      myAL.Add( "fox" );
-'      myAL.Add( "jumps" );
-'      myAL.Add( "over" );
-'      myAL.Add( "the" );
-'      myAL.Add( "lazy" );
-'      myAL.Add( "dog" );
-'
-'      // Displays the values of the ArrayList.
-'      Console.WriteLine( "The ArrayList contains the following values:" );
-'      PrintIndexAndValues( myAL );
-'
-'      // Copies the elements of the ArrayList to a string array.
-'      String[] myArr = (String[]) myAL.ToArray( typeof( string ) );
-'
-'      // Displays the contents of the string array.
-'      Console.WriteLine( "The string array contains the following values:" );
-'      PrintIndexAndValues( myArr );
-'   }
-'
-'   public static void PrintIndexAndValues( ArrayList myList )  {
-'      int i = 0;
-'      foreach ( Object o in myList )
-'         Console.WriteLine( "\t[{0}]:\t{1}", i++, o );
-'      Console.WriteLine();
-'   }
-'
-'   public static void PrintIndexAndValues( String[] myArr )  {
-'      for ( int i = 0; i < myArr.Length; i++ )
-'         Console.WriteLine( "\t[{0}]:\t{1}", i, myArr[i] );
-'      Console.WriteLine();
-'   }
-'}
-'
-'
 '/*
 'This code produces the following output.
 '

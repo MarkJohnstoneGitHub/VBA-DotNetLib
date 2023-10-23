@@ -158,7 +158,7 @@ namespace DotNetLib.System.Collections
         void Sort3(int index, int count, GCollections.IComparer comparer);
 
         [Description("Copies the elements of the ArrayList to a new Object array.")]
-        object[] ToArray();
+        Array ToArray();
 
         [Description("Copies the elements of the ArrayList to a new array of the specified element type.")]
         Array ToArray2(Type type);
