@@ -1,10 +1,10 @@
-Attribute VB_Name = "ArrrayExample"
+Attribute VB_Name = "ArrayExample"
 '@Folder("Examples.System.Array")
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 8, 2023
-'@LastModified October 12, 2023
+'@LastModified October 23, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.array?view=netframework-4.8.1
 
@@ -18,7 +18,7 @@ Public Sub ArrayExample()
     'Set longType = Types.GetType("System.Int32")
     
     Dim my1DArray As DotNetLib.Array
-    Set my1DArray = Arrays.CreateInstance(Int32(), 5)  'Int32.GetType()
+    Set my1DArray = Arrays.CreateInstance(Int32.GetType(), 5)   'Int32.GetType()
     
     Dim i As Long
     For i = my1DArray.GetLowerBound(0) To my1DArray.GetUpperBound(0)

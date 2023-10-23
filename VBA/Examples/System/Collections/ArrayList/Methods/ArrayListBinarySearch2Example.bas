@@ -1,10 +1,10 @@
-Attribute VB_Name = "ArrayListBinarySearch2"
+Attribute VB_Name = "ArrayListBinarySearch2Example"
 '@Folder("Examples.System.Collections.ArrayList.Methods")
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 6, 2023
-'@LastModified October 6, 2023
+'@LastModified October 23, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist.binarysearch?view=netframework-4.8.1#system-collections-arraylist-binarysearch(system-object-system-collections-icomparer)
 
