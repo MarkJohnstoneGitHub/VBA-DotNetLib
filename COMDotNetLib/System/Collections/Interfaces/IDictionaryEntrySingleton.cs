@@ -13,17 +13,20 @@ namespace DotNetLib.System.Collections
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface IDictionaryEntrySingleton
     {
-        [Description("Initializes an instance of the DictionaryEntry type from an object containing a mscorlib.DictionaryEntry")]
-        DictionaryEntry Create(object dictionaryEntry);
+        //[Description("Initializes an instance of the DictionaryEntry type from an object containing a mscorlib.DictionaryEntry")]
+        //DictionaryEntry Create(object dictionaryEntry);
 
-        [Description("Initializes an instance of the DictionaryEntry type from a mscorlib.DictionaryEntry containing the specified key and value.")]
-        DictionaryEntry Create2([In] ref GCollections.DictionaryEntry dictionaryEntry);
+        //[Description("Initializes an instance of the DictionaryEntry type from a mscorlib.DictionaryEntry containing the specified key and value.")]
+        //DictionaryEntry Create2([In] ref GCollections.DictionaryEntry dictionaryEntry);
 
-        [Description("Initializes an instance of the DictionaryEntry type with the specified key and value.")]
-        DictionaryEntry Create3(object key, object value);
+        //[Description("Initializes an instance of the DictionaryEntry type with the specified key and value.")]
+        //DictionaryEntry Create3(object key, object value);
+
+        //[Description("Initializes an instance of the DictionaryEntry type with the specified key and value.")]
+        //GCollections.DictionaryEntry Create(object key, object value);
 
         [Description("Initializes an instance of the mscorlib.DictionaryEntry type with the specified key and value.")]
-        void Assign([In][Out] ref GCollections.DictionaryEntry dictionaryEntry, object key, object value);
+        void Create([In][Out] ref GCollections.DictionaryEntry dictionaryEntry, object key, object value);
 
         [Description("Gets the key in the key/value pair.")]
         object GetKey([In] ref GCollections.DictionaryEntry dictionaryEntry);

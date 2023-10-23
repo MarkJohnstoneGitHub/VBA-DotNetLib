@@ -1,5 +1,7 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.collections.dictionaryentry?view=netframework-4.8.1
 
+// Note: No longer in use as using DictionaryEntrySingleton passing by reference
+
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
@@ -7,7 +9,7 @@ using GCollections = global::System.Collections;
 
 namespace DotNetLib.System.Collections
 {
-    [ComVisible(true)]
+    [ComVisible(false)]
     [Description("Defines a dictionary key/value pair that can be set or retrieved.")]
     [Guid("B0E606C8-0FCA-4395-B90A-142D7C622ED9")]
     [ProgId("DotNetLib.System.Collections.DictionaryEntry")]

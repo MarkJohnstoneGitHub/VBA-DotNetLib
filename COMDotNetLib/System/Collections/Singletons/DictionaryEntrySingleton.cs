@@ -15,22 +15,7 @@ namespace DotNetLib.System.Collections
     [ComDefaultInterface(typeof(IDictionaryEntrySingleton))]
     public class DictionaryEntrySingleton : IDictionaryEntrySingleton
     {
-        //Todo: Test if object is an  System.Collections.DictionaryEntry and throw error?
-        public DictionaryEntry Create(object dictionaryEntry)
-        {
-            return new DictionaryEntry((GCollections.DictionaryEntry)dictionaryEntry);
-        }
-        public DictionaryEntry Create2([In] ref GCollections.DictionaryEntry dictionaryEntry)
-        {
-            return new DictionaryEntry(dictionaryEntry);
-        }
-
-        public DictionaryEntry Create3(object key, object value)
-        {
-            return new DictionaryEntry(key, value);
-        }
-
-        public void Assign([In][Out] ref GCollections.DictionaryEntry dictionaryEntry, object key, object value)
+        public void Create([In][Out] ref GCollections.DictionaryEntry dictionaryEntry, object key, object value)
         {
             dictionaryEntry = new GCollections.DictionaryEntry(key, value);
         }

@@ -24,9 +24,8 @@ Attribute VB_Description = "Defines a dictionary key/value pair that can be set 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.collections.dictionaryentry?view=netframework-4.8.1
 
 '@Remarks
-'Singleton class for DictionaryEntry containing factory methods and static members.
-
-'@Todo Remove Create factory methods as no longer required, rename Assign to Create?
+' Singleton class for mscorlib.DictionaryEntry containing factory methods and static members.
+' mscorlib.DictionaryEntry is a type so must be passed by reference
 
 Option Explicit
 
@@ -49,12 +48,11 @@ Private Sub Class_Terminate()
    Set this.DictionaryEntrySingleton = Nothing
 End Sub
 
-'@Todo : Rename to Create
 '@Static
 '@Description("Initializes an instance of the mscorlib.DictionaryEntry type with the specified key and value.")
-Public Sub Assign(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pKey As Variant, ByVal pValue As Variant)
-Attribute Assign.VB_Description = "Initializes an instance of the mscorlib.DictionaryEntry type with the specified key and value."
-    Call this.DictionaryEntrySingleton.Assign(pDictionaryEntry, pKey, pValue)
+Public Sub Create(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pKey As Variant, ByVal pValue As Variant)
+Attribute Create.VB_Description = "Initializes an instance of the mscorlib.DictionaryEntry type with the specified key and value."
+    Call this.DictionaryEntrySingleton.Create(pDictionaryEntry, pKey, pValue)
 End Sub
 
 '@Static
@@ -121,48 +119,3 @@ Private Sub AssignVariable(ByRef x As Variant, ByRef y As Variant)
         x = y
     End If
 End Sub
-
-'@Todo remove Create factory methods and  rename Assign to Create
-
-'@Static
-'@Description("Initializes an instance of the DictionaryEntry type with the specified key and value.")
-Public Function Create(ByVal pDictionaryEntry As Variant) As DotNetLib.DictionaryEntry
-Attribute Create.VB_Description = "Initializes an instance of the DictionaryEntry type with the specified key and value."
-   Set Create = this.DictionaryEntrySingleton.Create(pDictionaryEntry)
-End Function
-
-'Static
-'@Description("Initializes an instance of the DictionaryEntry type from a mscorlib.DictionaryEntry containing the specified key and value.")
-Public Function Create2(ByRef pDictionaryEntry As mscorlib.DictionaryEntry) As DotNetLib.DictionaryEntry
-Attribute Create2.VB_Description = "Initializes an instance of the DictionaryEntry type from a mscorlib.DictionaryEntry containing the specified key and value."
-   Set Create2 = this.DictionaryEntrySingleton.Create2(pDictionaryEntry)
-End Function
-
-'@Static
-'@Description("Initializes an instance of the DictionaryEntry type with the specified key and value.")
-Public Function Create3(ByVal pKey As Variant, ByVal pValue As Variant) As DotNetLib.DictionaryEntry
-Attribute Create3.VB_Description = "Initializes an instance of the DictionaryEntry type with the specified key and value."
-   Set Create3 = this.DictionaryEntrySingleton.Create3(pKey, pValue)
-End Function
-
-''Static
-''@Description("Gets the key in the key/value pair.")
-'Public Function GetKey(ByRef pDictionaryEntry As mscorlib.DictionaryEntry) As Variant
-'    Call AssignVariable(GetKey, this.DictionaryEntrySingleton.GetKey(pDictionaryEntry))
-'End Function
-
-''Static
-''@Description("Gets the value in the key/value pair.")
-'Public Function GetValue(ByRef pDictionaryEntry As mscorlib.DictionaryEntry) As Variant
-'    Call AssignVariable(GetValue, this.DictionaryEntrySingleton.GetValue(pDictionaryEntry))
-'End Function
-
-''@Description("Sets the key in the key/value pair.")
-'Public Sub SetKey(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pKey As Variant)
-'    Call this.DictionaryEntrySingleton.SetKey(pDictionaryEntry, pKey)
-'End Sub
-
-''@Description("Sets the value in the key/value pair.")
-'Public Sub SetValue(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pValue As Variant)
-'    Call this.DictionaryEntrySingleton.SetValue(pDictionaryEntry, pValue)
-'End Sub
