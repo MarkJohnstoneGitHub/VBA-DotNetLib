@@ -1,5 +1,6 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.collections.queue?view=netframework-4.8.1
 
+using GSystem = global::System;
 using GCollections = global::System.Collections;
 using System;
 using System.Collections;
@@ -15,7 +16,7 @@ namespace DotNetLib.System.Collections
     [ProgId("DotNetLib.System.Collections.Queue")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IQueue))]
-    public class Queue : ICollection, GCollections.IEnumerable, ICloneable, IQueue, IWrappedObject
+    public class Queue : GCollections.ICollection, GCollections.IEnumerable, ICloneable, IQueue, IWrappedObject
     {
         private GCollections.Queue _queue;
 
@@ -147,7 +148,6 @@ namespace DotNetLib.System.Collections
             return new Array(_queue.ToArray());
         }
 
-
         public void TrimToSize()
         {
             _queue.TrimToSize();
@@ -158,9 +158,9 @@ namespace DotNetLib.System.Collections
             return _queue.Equals(obj.Unwrap()); 
         }
 
-        public void CopyTo(global::System.Array array, int index)
+        public void CopyTo(GSystem.Array array, int index)
         {
-            throw new NotImplementedException();
+            _queue.CopyTo(array,index);
         }
     }
 }

@@ -19,14 +19,14 @@ namespace DotNetLib.System
 
         // Fields
 
-        public void MaxValue([In][Out] ref char maxValue)
-        {
-            maxValue = char.MaxValue; 
-        }
-        public void MinValue([In][Out] ref char minValue)
-        {
-            minValue = char.MaxValue;
-        }
+        //public void MaxValue([In][Out] ref char maxValue)
+        //{
+        //    maxValue = char.MaxValue; 
+        //}
+        //public void MinValue([In][Out] ref char minValue)
+        //{
+        //    minValue = char.MaxValue;
+        //}
 
         public string ConvertFromUtf32(int utf32)
         {  
