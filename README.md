@@ -58,6 +58,7 @@ As VBA doesnot have member overloading factory methods and member overloads will
     - Eg. To register C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe C:\ProgramData\DotNetLib\DotNetLib.dll /tlb 
     - Eg. To unregister C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe C:\ProgramData\DotNetLib\DotNetLib.dll /tlb /unregister
     - If the files are moved will require to unregister and register manually.
+    - If the DotNetLib type library is updated will require to unregister and register manually.
  2) Add References required.
     - Eg In MS-Access, MS-Excel see Tools->References
     - For [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/DotNetLibrary.accdb) references may be required to be fixed by removing and adding back in.
