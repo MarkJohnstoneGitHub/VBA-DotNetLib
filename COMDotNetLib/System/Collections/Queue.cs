@@ -138,14 +138,15 @@ namespace DotNetLib.System.Collections
             return new Queue(GCollections.Queue.Synchronized(queue.WrappedQueue));
         }
 
-        //public object[] ToArray()
-        //{
-        //    return _queue.ToArray();
-        //}
-
         public Array ToArray()
         {
             return new Array(_queue.ToArray());
+        }
+
+        // Added to return a VBA safearray
+        public object[] ToSafeArray()
+        {  
+            return _queue.ToArray(); 
         }
 
         public void TrimToSize()

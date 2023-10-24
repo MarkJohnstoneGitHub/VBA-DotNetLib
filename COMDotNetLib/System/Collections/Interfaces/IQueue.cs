@@ -59,7 +59,10 @@ namespace DotNetLib.System.Collections
 
         [Description("Copies the Queue elements to a new array.")]
         Array ToArray();
-        //object[] ToArray();
+
+        [Description("Copies the Queue elements to a new Safearray.")]
+        object[] ToSafeArray();
+        
 
         [Description("Sets the capacity to the actual number of elements in the Queue.")]
         void TrimToSize();

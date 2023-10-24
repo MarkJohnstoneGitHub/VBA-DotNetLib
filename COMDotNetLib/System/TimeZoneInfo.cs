@@ -71,14 +71,14 @@ namespace DotNetLib.System
         public string Id => _timeZoneInfo.Id;
 
 
-        // TODO: SetItem to check if cachedLocal is null, if null create TimeZoneInfo, return cachedLocal ??
+        // TODO: SetValue to check if cachedLocal is null, if null create TimeZoneInfo, return cachedLocal ??
         public static TimeZoneInfo Local => cachedLocal; 
 
         public string StandardName => _timeZoneInfo.StandardName;
 
         public bool SupportsDaylightSavingTime => _timeZoneInfo.SupportsDaylightSavingTime;
 
-        // TODO: SetItem to check if cachedUtc is null, if null create TimeZoneInfo, return cachedUtc
+        // TODO: SetValue to check if cachedUtc is null, if null create TimeZoneInfo, return cachedUtc
         public static TimeZoneInfo Utc => cachedUtc;
 
 
@@ -214,7 +214,7 @@ namespace DotNetLib.System
         // Ideally only require to update the system time zone collection when the ReadOnlyCollection is updated
         // https://source.dot.net/#System.Private.CoreLib/src/libraries/System.Private.CoreLib/src/System/TimeZoneInfo.cs,443c9b06db11142b
 
-        // TODO: SetItem to check if cachedSystemTimeZones is null, if null cachedSystemTimeZones = PopulateAllSystemTimeZones, return cachedLocal
+        // TODO: SetValue to check if cachedSystemTimeZones is null, if null cachedSystemTimeZones = PopulateAllSystemTimeZones, return cachedLocal
         public static ReadOnlyCollection GetSystemTimeZones()
         {
             return cachedSystemTimeZones;

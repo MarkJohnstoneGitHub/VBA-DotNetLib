@@ -163,11 +163,15 @@ namespace DotNetLib.System.Collections
         [Description("Copies the elements of the ArrayList to a new array of the specified element type.")]
         Array ToArray2(Type type);
 
+        // Added to return a VBA safearray
+        [Description("Copies the elements of the ArrayList to a new Object safearray.")]
+        object[] ToSafeArray();
+
         [Description("Sets the capacity to the actual number of elements in the ArrayList.")]
         void TrimToSize();
 
         // Added to fix issue assigning value types.
         [Description("Sets the element at the specified index.")]
-        void SetItem(int index, object value);
+        void SetValue(int index, object value);
     }
 }

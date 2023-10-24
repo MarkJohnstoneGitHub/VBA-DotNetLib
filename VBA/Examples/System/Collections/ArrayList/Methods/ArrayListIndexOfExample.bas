@@ -80,8 +80,8 @@ End Sub
 '   [7]:    lazy
 '   [8]:    dog
 '   [9]:    in
-'   [10]:    the
-'   [11]:    barn
+'   [10]:   the
+'   [11]:   barn
 '
 'The first occurrence of "the" is at index 0.
 'The first occurrence of "the" between index 4 and the end is at index 6.
