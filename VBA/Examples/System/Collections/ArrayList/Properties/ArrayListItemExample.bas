@@ -4,15 +4,15 @@ Attribute VB_Name = "ArrayListItemExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 6, 2023
-'@LastModified October 6, 2023
+'@LastModified October 25 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist.item?view=netframework-4.8.1#examples
 
 '@Remarks
 ' Cannot assign value types using arraylist.Item(index) = valueType
 ' Eg. pvtStringList.Item(2) = "abcd" produces a Run-time error 424 Object required
-' For value types added the Arraylist.SetItem(index,item) member
-' Arraylist.SetItem(index,item) can be use for value or object types.
+' For value types added the Arraylist.SetValue(index,item) member
+' Arraylist.SetValue(index,item) can be use for value or object types.
 ' Eg. Assigning a value type pvtStringList.SetItem 2, "abcd"
 
 Option Explicit
@@ -42,7 +42,7 @@ Public Sub ArrayListItem()
     
     ' Assigning a value to the property changes the value of
     ' the indexed element
-    pvtStringList.SetItem 2, "abcd" 'Note for assigning value types use SetItem(index,item) not Item(index) = item
+    pvtStringList.SetValue 2, "abcd" 'Note for assigning value types use SetValue(index,item) not Item(index) = item
     Debug.Print Strings.Format("Element {0} is {2}{1}{2}", 2, pvtStringList(2), Quote)
     
     ' Accessing an element outside the current element count
@@ -61,7 +61,7 @@ Public Sub ArrayListItem()
     
     ' You cannot use the Item property to add new elements.
     On Error Resume Next
-    pvtStringList.SetItem pvtStringList.Count, "42"
+    pvtStringList.SetValue pvtStringList.Count, "42"
     If Catch(ArgumentOutOfRangeException) Then
         Debug.Print Strings.Format("pvtStringList({0}) is out of range.", _
                                     pvtStringList.Count)
@@ -101,3 +101,4 @@ End Sub
 'abcd
 'abcdefg
 ' */
+
