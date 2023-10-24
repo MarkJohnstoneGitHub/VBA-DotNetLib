@@ -4,6 +4,7 @@ using GGlobalization = global::System.Globalization;
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using System.Management.Instrumentation;
 
 namespace DotNetLib.System
 {
@@ -18,6 +19,9 @@ namespace DotNetLib.System
 
         [Description("Converts the value of a UTF-16 encoded character or surrogate pair at a specified position in a string into a Unicode code point.")]
         int ConvertToUtf32(string s, int index);
+
+        //[Description("Converts the value of a UTF-16 encoded surrogate pair into a Unicode code point.")]
+        //int ConvertToUtf32([In] ref char highSurrogate, [In] ref char lowSurrogate);
 
         [Description("Converts the numeric Unicode character at the specified position in a specified string to a double-precision floating point number.")]
         double GetNumericValue(string s, int index);
@@ -70,7 +74,23 @@ namespace DotNetLib.System
         [Description("Indicates whether the character at the specified position in a specified string is categorized as white space.")]
         bool IsWhiteSpace(string s, int index);
 
+        //[Description("Converts the specified Unicode character to its equivalent string representation.")]
+        //string ToString([MarshalAs(UnmanagedType.IUnknown)] [In] ref char c);
 
+        // Operators
+
+        //[Description("Compares two values to determine equality.")]
+        //bool Equality([In] ref char left, [In] ref char right);
+
+        //[Description("Compares two values to determine inequality.")]
+        //bool Inequality([In] ref char left, [In] ref char right);
+
+        //[Description("Compares two values to determine which is less.")]
+        //bool LessThan([In] ref char left, [In] ref char right);
+
+        //[Description("Compares two values to determine which is greater.")] 
+        //bool GreaterThan([In] ref char left, [In] ref char right);
+        
 
         //[Description("")]
     }

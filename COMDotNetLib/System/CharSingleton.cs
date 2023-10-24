@@ -17,6 +17,17 @@ namespace DotNetLib.System
     {
         public CharSingleton() { }
 
+        // Fields
+
+        public void MaxValue([In][Out] ref char maxValue)
+        {
+            maxValue = char.MaxValue; 
+        }
+        public void MinValue([In][Out] ref char minValue)
+        {
+            minValue = char.MaxValue;
+        }
+
         public string ConvertFromUtf32(int utf32)
         {  
             return GSystem.Char.ConvertFromUtf32(utf32); 
@@ -26,6 +37,12 @@ namespace DotNetLib.System
         {
             return GSystem.Char.ConvertToUtf32(s, index);
         }
+
+        //public int ConvertToUtf32([In] ref char highSurrogate,[In] ref char lowSurrogate)
+        //{
+        //    return char.ConvertToUtf32(highSurrogate, lowSurrogate);
+        //}
+
 
         public double GetNumericValue(string s, int index)
         {
@@ -110,6 +127,32 @@ namespace DotNetLib.System
         {
             return GSystem.Char.IsWhiteSpace(s, index);
         }
+
+        //public string ToString([In] ref char c)
+        //{
+        //    return char.ToString(c);
+        //}
+
+        //Operators
+        //public bool Equality([In] ref char left, [In] ref char right)
+        //{
+        //    return (left == right);
+        //}
+
+        //public bool Inequality([In] ref char left, [In] ref char right)
+        //{ 
+        //    return (left != right);
+        //}
+
+        //public bool LessThan([In] ref char left, [In] ref char right)
+        //{
+        //    return (left < right);
+        //}
+
+        //public bool GreaterThan([In] ref char left, [In] ref char right)
+        //{
+        //    return (left > right);
+        //}
 
     }
 }
