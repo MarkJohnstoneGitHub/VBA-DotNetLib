@@ -8,6 +8,9 @@ Attribute VB_Name = "ArrayListCopyToExample"
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist.copyto?view=netframework-4.8.1#system-collections-arraylist-copyto(system-array)
 
+'@Remarks
+' For assinging value types to an Array eg. myTargetArray[0] = "The" use SetValue(value,index) member.
+' eg. myTargetArray.SetValue("The", 0)
 Option Explicit
 
 ''
@@ -59,7 +62,6 @@ Public Sub ArrayListCopyTo()
 
     ' Displays the values of the target Array.
     Call PrintValues(myTargetArray, " ")
-    
 End Sub
 
 Private Sub PrintValues(ByVal myArr As DotNetLib.Array, ByVal mySeparator As String)
