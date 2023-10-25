@@ -50,11 +50,11 @@ End Sub
 '
 'ArrayList with five elements with a null value
 '   Count    : 5
-'   Capacity : 16
+'   Capacity : 5
 'Values:
 'ArrayList with seven elements with a string value
 '   Count    : 7
-'   Capacity : 16
+'   Capacity : 7
 '   Values:   abc   abc   abc   abc   abc   abc   abc
 '
 '*/
