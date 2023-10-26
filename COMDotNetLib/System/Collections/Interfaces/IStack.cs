@@ -67,6 +67,9 @@ namespace DotNetLib.System.Collections
         [Description("Copies the Stack to a new array.")]
         Array ToArray();
 
+        [Description("Copies the Stack to a new safearray.")]
+        object[] ToSafeArray();
+
         [Description("Returns a string that represents the current object.\r\n\r\n(Inherited from Object)")]
         string ToString();
 

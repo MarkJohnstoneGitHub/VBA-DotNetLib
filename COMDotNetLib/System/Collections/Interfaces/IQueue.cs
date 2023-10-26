@@ -60,7 +60,7 @@ namespace DotNetLib.System.Collections
         [Description("Copies the Queue elements to a new array.")]
         Array ToArray();
 
-        [Description("Copies the Queue elements to a new Safearray.")]
+        [Description("Copies the Queue elements to a new safearray.")]
         object[] ToSafeArray();
         
 

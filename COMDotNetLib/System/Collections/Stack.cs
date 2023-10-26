@@ -1,11 +1,13 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack?view=netframework-4.8.1
 
+using GSystem = global::System;
 using GCollections = global::System.Collections;
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Collections;
 using DotNetLib.Extensions;
+using System.Security.Policy;
 
 namespace DotNetLib.System.Collections
 {
@@ -15,7 +17,7 @@ namespace DotNetLib.System.Collections
     [ProgId("DotNetLib.System.Collections.Stack")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IStack))]
-    public class Stack : ICollection, IEnumerable, ICloneable, IWrappedObject, IStack
+    public class Stack : GCollections.ICollection, GCollections.IEnumerable, ICloneable, IWrappedObject, IStack
     {
         private GCollections.Stack _stack;
 
@@ -133,9 +135,14 @@ namespace DotNetLib.System.Collections
             return new Array(_stack.ToArray());
         }
 
-        public void CopyTo(global::System.Array array, int index)
+        public virtual object[] ToSafeArray()
         {
-            throw new NotImplementedException();
+            return _stack.ToArray();
+        }
+
+        public void CopyTo(GSystem.Array array, int index)
+        {
+            _stack.CopyTo(array, index);
         }
     }
 }
