@@ -4,7 +4,7 @@ Attribute VB_Name = "ArrayListSort2Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 26, 2023
-'@LastModified October 2, 2023
+'@LastModified October 26, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist.sort?view=netframework-4.8.1#system-collections-arraylist-sort(system-collections-icomparer)
 
