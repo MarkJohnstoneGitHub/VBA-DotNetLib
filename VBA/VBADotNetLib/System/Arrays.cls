@@ -17,7 +17,7 @@ Attribute VB_Description = "Provides methods for creating, manipulating, searchi
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 8, 2023
-'@LastModified October 20, 2023
+'@LastModified October 27, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -224,33 +224,78 @@ Attribute Sort4.VB_Description = "Sorts a range of elements in a pair of one-dim
     this.ArraySingleton.Sort_4 keys, items, index, pLength, comparer
 End Sub
 
-
-'' https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/addressof-operator
+'@TODO FindAll
 'Public Function FindAll(ByVal values As DotNetLib.Array, pMatch) As DotNetLib.Array
 'End Function
 
 '--------------------------------------------------------------------
 'Extensions
-'Added to create and initialize arrays
+'Added to create and initialize array values
 '--------------------------------------------------------------------
 
 'Static
 '@Description("Creates a one-dimensional Array of the specified Type with initial values")
-Public Function CreateInstanceInitialize(ByVal elementType As DotNetLib.Type, ParamArray values() As Variant) As DotNetLib.Array
-Attribute CreateInstanceInitialize.VB_Description = "Creates a one-dimensional Array of the specified Type and initial values"
+Public Function CreateInstanceInitialize(ByVal elementType As DotNetLib.Type, ParamArray Values() As Variant) As DotNetLib.Array
+Attribute CreateInstanceInitialize.VB_Description = "Creates a one-dimensional Array of the specified Type with initial values"
     Dim outArray As DotNetLib.Array
-    On Error GoTo Catch
+'    On Error GoTo CatchError
     'Create Array of size off parameter array
-    Set outArray = Arrays.CreateInstance(elementType, UBound(values) + 1)
+    Set outArray = Me.CreateInstance(elementType, UBound(Values) + 1)
     Dim varValue As Variant
     Dim pvtIndex As Long
     pvtIndex = 0
-    For Each varValue In values
+    For Each varValue In Values
         Call outArray.SetValue(varValue, pvtIndex)
         pvtIndex = pvtIndex + 1
     Next
     Set CreateInstanceInitialize = outArray
-Exit Function
-Catch:
-    Err.Raise VBAException.INVALID_PROCEDURE_CALL, , "Invalid argument, value is an invalid type for " & elementType.FullName
+'Exit Function
+'CatchError:
+'    Err.Raise Number:=Err.Number, Source:="Arrays.CreateInstanceInitialize", Description:=Strings.Format("Object {0} cannot be stored in an array of type {1}.", varValue, elementType.FullName)
+End Function
+
+'Static
+'@Description("Creates a two-dimensional Array of the specified Type with initial values")
+'@Remarks
+' Rows must be array obtained from
+' InitializeRow(ParamArray rowValues() As Variant) As Variant
+Public Function CreateInstanceInitialize2D(ByVal elementType As DotNetLib.Type, ParamArray rows() As Variant) As DotNetLib.Array
+Attribute CreateInstanceInitialize2D.VB_Description = "Creates a two-dimensional Array of the specified Type with initial values"
+    Dim numOfRows As Long
+    Dim numOfCols As Long
+    numOfRows = UBound(rows) + 1
+    'Two approaches either find the max columns, or first parameter defines max columns?
+    Dim row As Variant
+    For Each row In rows
+        If UBound(row) + 1 > numOfCols Then
+            numOfCols = UBound(row) + 1
+        End If
+    Next
+    'Create Array
+    Dim outArray As DotNetLib.Array
+    Set outArray = Me.CreateInstance4(elementType, numOfRows, numOfCols)
+    
+    'Assign initial values
+    Dim rowIndex As Long
+    rowIndex = 0
+    For Each row In rows
+        Dim columnIndex As Long
+        columnIndex = 0
+        Dim varValue As Variant
+        For Each varValue In row
+            Call outArray.SetValue_2(varValue, rowIndex, columnIndex)
+            columnIndex = columnIndex + 1
+        Next
+        rowIndex = rowIndex + 1
+    Next
+    Set CreateInstanceInitialize2D = outArray
+End Function
+
+'Static
+'@Description("Gets the initial row values for an two-dimensional array.")
+Public Function InitializeRow(ParamArray rowValues() As Variant) As Variant
+Attribute InitializeRow.VB_Description = "Gets the initial row values for an two-dimensional array."
+    Dim outArray() As Variant
+    outArray = rowValues
+    InitializeRow = outArray
 End Function

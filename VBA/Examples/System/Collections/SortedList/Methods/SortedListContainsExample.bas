@@ -4,7 +4,7 @@ Attribute VB_Name = "SortedListContainsExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 17, 2023
-'@LastModified October 17, 2023
+'@LastModified October 27, 2023
 '
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 '
@@ -20,8 +20,6 @@ Option Explicit
 ' contains a specific element.
 ''
 Public Sub SortedListContains()
-    Const Quote = """"
-
     ' Creates and initializes a new SortedList.
     Dim mySL As DotNetLib.SortedList
     Set mySL = SortedList.Create()
