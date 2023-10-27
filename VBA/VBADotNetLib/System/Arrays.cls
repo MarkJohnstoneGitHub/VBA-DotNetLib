@@ -235,8 +235,8 @@ End Sub
 
 'Static
 '@Description("Creates a one-dimensional Array of the specified Type with initial values")
-Public Function CreateInstanceInitialize(ByVal elementType As DotNetLib.Type, ParamArray Values() As Variant) As DotNetLib.Array
-Attribute CreateInstanceInitialize.VB_Description = "Creates a one-dimensional Array of the specified Type with initial values"
+Public Function CreateInitialize1D(ByVal elementType As DotNetLib.Type, ParamArray Values() As Variant) As DotNetLib.Array
+Attribute CreateInitialize1D.VB_Description = "Creates a one-dimensional Array of the specified Type with initial values"
     Dim outArray As DotNetLib.Array
 '    On Error GoTo CatchError
     'Create Array of size off parameter array
@@ -248,7 +248,7 @@ Attribute CreateInstanceInitialize.VB_Description = "Creates a one-dimensional A
         Call outArray.SetValue(varValue, pvtIndex)
         pvtIndex = pvtIndex + 1
     Next
-    Set CreateInstanceInitialize = outArray
+    Set CreateInitialize1D = outArray
 'Exit Function
 'CatchError:
 '    Err.Raise Number:=Err.Number, Source:="Arrays.CreateInstanceInitialize", Description:=Strings.Format("Object {0} cannot be stored in an array of type {1}.", varValue, elementType.FullName)
@@ -259,8 +259,8 @@ End Function
 '@Remarks
 ' Rows must be array obtained from
 ' InitializeRow(ParamArray rowValues() As Variant) As Variant
-Public Function CreateInstanceInitialize2D(ByVal elementType As DotNetLib.Type, ParamArray rows() As Variant) As DotNetLib.Array
-Attribute CreateInstanceInitialize2D.VB_Description = "Creates a two-dimensional Array of the specified Type with initial values"
+Public Function CreateInitialize2D(ByVal elementType As DotNetLib.Type, ParamArray rows() As Variant) As DotNetLib.Array
+Attribute CreateInitialize2D.VB_Description = "Creates a two-dimensional Array of the specified Type with initial values"
     Dim numOfRows As Long
     Dim numOfCols As Long
     numOfRows = UBound(rows) + 1
@@ -288,7 +288,7 @@ Attribute CreateInstanceInitialize2D.VB_Description = "Creates a two-dimensional
         Next
         rowIndex = rowIndex + 1
     Next
-    Set CreateInstanceInitialize2D = outArray
+    Set CreateInitialize2D = outArray
 End Function
 
 'Static

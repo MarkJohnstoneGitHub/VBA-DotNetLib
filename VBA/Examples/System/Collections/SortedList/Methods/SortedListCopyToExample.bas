@@ -4,7 +4,7 @@ Attribute VB_Name = "SortedListCopyToExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 18, 2023
-'@LastModified October 23, 2023
+'@LastModified October 27, 2023
 '
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 '
@@ -29,7 +29,7 @@ Public Sub SortedListCopyTo()
     
     ' Creates and initializes the one-dimensional target Array.
     Dim tempArray As DotNetLib.Array
-    Set tempArray = Arrays.CreateInstanceInitialize(Strings.GetType(), "The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog")
+    Set tempArray = Arrays.CreateInitialize1D(Strings.GetType(), "The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog")
     
     'Create an array of mscorlib.DictionaryEntry of size 15
     Dim myTargetArray As DotNetLib.Array

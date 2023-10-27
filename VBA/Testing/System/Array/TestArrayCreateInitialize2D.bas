@@ -1,4 +1,4 @@
-Attribute VB_Name = "TestCreateInstanceInitialize2D"
+Attribute VB_Name = "TestArrayCreateInitialize2D"
 '@Folder("Testing.System.Array")
 
 '@Author Mark Johnstone
@@ -15,10 +15,10 @@ Option Explicit
 ''
 ' Testing creating a two-dimensional array with initial values.
 ''
-Public Sub TestCreateInstanceInitialize2D()
+Public Sub TestCreateInitialize2D()
     Dim myArray As DotNetLib.Array
     With Arrays
-        Set myArray = .CreateInstanceInitialize2D(Strings.GetType(), _
+        Set myArray = .CreateInitialize2D(Strings.GetType(), _
                     .InitializeRow("zero", "0"), _
                     .InitializeRow("one", "1"), _
                     .InitializeRow("two", "2"), _
@@ -51,3 +51,4 @@ End Sub
 '    Dimension 1:   6
 '    Dimension 2:   2
 '*/
+
