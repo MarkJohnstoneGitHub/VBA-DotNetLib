@@ -43,4 +43,11 @@ Private Sub ShowArrayInfo(ByVal arr As DotNetLib.Array)
     End If
 End Sub
 
-
+'/*
+' This code produces the following output.
+'
+' Length of Array:       12
+' Number of Dimensions:   2
+'    Dimension 1:   6
+'    Dimension 2:   2
+'*/
