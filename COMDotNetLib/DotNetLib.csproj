@@ -94,7 +94,7 @@
     <Compile Include="System\Collections\Singletons\SortedListSingleton.cs" />
     <Compile Include="System\Collections\Stack.cs" />
     <Compile Include="System\Collections\Singletons\StackSingleton.cs" />
-    <Compile Include="System\ICharSingleton.cs" />
+    <Compile Include="System\Interfaces\ICharSingleton.cs" />
     <Compile Include="System\Interfaces\ITypeSingleton.cs" />
     <Compile Include="System\Interfaces\IStringComparer.cs" />
     <Compile Include="System\Interfaces\IStringComparerSingleton.cs" />

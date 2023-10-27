@@ -3,7 +3,6 @@ using GCollections = global::System.Collections;
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using System.Collections;
 
 namespace DotNetLib.System
 {
@@ -196,6 +195,9 @@ namespace DotNetLib.System
 
         [Description("Returns a hash code for the current instance.")]
         int GetHashCode(GCollections.IEqualityComparer comparer);
+
+        [Description("Returns a string that represents the current object.\r\n\r\n(Inherited from Object)")]
+        string ToString();
 
     }
 }

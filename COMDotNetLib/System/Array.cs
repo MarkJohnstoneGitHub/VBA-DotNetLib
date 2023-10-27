@@ -473,5 +473,11 @@ namespace DotNetLib.System
             return ((IStructuralEquatable)_array).GetHashCode(comparer);
         }
 
+        new public virtual string ToString()
+        {
+            return _array.ToString();
+
+        }
+
     }
 }
