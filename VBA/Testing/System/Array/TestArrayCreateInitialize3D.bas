@@ -21,8 +21,8 @@ Public Sub TestArrayCreateInitialize3D()
     Dim myArray As DotNetLib.Array
     With Arrays
         Set myArray = .CreateInitialize3D(Int32.GetType(), _
-                  .AssignValues(.AssignValues(3, 4, 2, 3), .AssignValues(0, -3, 9, 11), .AssignValues(23, 12, 23, 2)), _
-                  .AssignValues(.AssignValues(13, 4, 56, 3), .AssignValues(5, 9, 3, 5), .AssignValues(5, 1, 4, 9)) _
+                  Array(Array(3, 4, 2, 3), Array(0, -3, 9, 11), Array(23, 12, 23, 2)), _
+                  Array(Array(13, 4, 56, 3), Array(5, 9, 3, 5), Array(5, 1, 4, 9)) _
                   )
     End With
     Call ShowArrayInfo(myArray)

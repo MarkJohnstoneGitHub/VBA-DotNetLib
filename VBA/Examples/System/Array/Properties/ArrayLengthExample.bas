@@ -25,26 +25,22 @@ Public Sub ArrayLength()
     
     ' Declare a two-dimensional string array
     Dim array2d As DotNetLib.Array
-    With Arrays
-        Set array2d = .CreateInitialize2D(Strings.GetType(), _
-                    .AssignValues("zero", "0"), _
-                    .AssignValues("one", "1"), _
-                    .AssignValues("two", "2"), _
-                    .AssignValues("three", "3"), _
-                    .AssignValues("four", "4"), _
-                    .AssignValues("five", "5") _
+    Set array2d = Arrays.CreateInitialize2D(Strings.GetType(), _
+                    Array("zero", "0"), _
+                    Array("one", "1"), _
+                    Array("two", "2"), _
+                    Array("three", "3"), _
+                    Array("four", "4"), _
+                    Array("five", "5") _
                     )
-    End With
     Call ShowArrayInfo(array2d)
 
     ' Declare a three-dimensional integer array
     Dim array3d As DotNetLib.Array
-    With Arrays
-        Set array3d = .CreateInitialize3D(Int32.GetType(), _
-                  .AssignValues(.AssignValues(1, 2, 3), .AssignValues(4, 5, 6)), _
-                  .AssignValues(.AssignValues(7, 8, 9), .AssignValues(10, 11, 12)) _
-                  )
-    End With
+    Set array3d = Arrays.CreateInitialize3D(Int32.GetType(), _
+                    Array(Array(1, 2, 3), Array(4, 5, 6)), _
+                    Array(Array(7, 8, 9), Array(10, 11, 12)) _
+                    )
     Call ShowArrayInfo(array3d)
 End Sub
 

@@ -256,9 +256,6 @@ End Function
 
 'Static
 '@Description("Creates a two-dimensional Array of the specified Type with initial values")
-'@Remarks
-' Values for the two-dimensional array are obtained using
-' AssignValues(ParamArray pValues() As Variant) As Variant
 Public Function CreateInitialize2D(ByVal elementType As DotNetLib.Type, ParamArray rows() As Variant) As DotNetLib.Array
 Attribute CreateInitialize2D.VB_Description = "Creates a two-dimensional Array of the specified Type with initial values"
     Dim numOfRows As Long
@@ -293,9 +290,6 @@ End Function
 
 'Static
 '@Description("Creates a three-dimensional Array of the specified Type with initial values")
-'@Remarks
-' Values for the two-dimensional array are obtained using
-' AssignValues(ParamArray pValues() As Variant) As Variant
 Public Function CreateInitialize3D(ByVal elementType As DotNetLib.Type, ParamArray pValues() As Variant) As DotNetLib.Array
 Attribute CreateInitialize3D.VB_Description = "Creates a three-dimensional Array of the specified Type with initial values"
     Dim widthSize As Long
@@ -340,13 +334,4 @@ Attribute CreateInitialize3D.VB_Description = "Creates a three-dimensional Array
         widthIndex = widthIndex + 1
     Next
     Set CreateInitialize3D = outArray
-End Function
-
-'Static
-'@Description("Gets the initial values to assign to a multi-dimensional array.")
-Public Function AssignValues(ParamArray pValues() As Variant) As Variant
-Attribute AssignValues.VB_Description = "Gets the initial values to assign to a multi-dimensional array."
-    Dim outArray() As Variant
-    outArray = pValues
-    AssignValues = outArray
 End Function

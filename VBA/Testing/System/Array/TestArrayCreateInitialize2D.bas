@@ -19,12 +19,12 @@ Public Sub TestCreateInitialize2D()
     Dim myArray As DotNetLib.Array
     With Arrays
         Set myArray = .CreateInitialize2D(Strings.GetType(), _
-                    .AssignValues("zero", "0"), _
-                    .AssignValues("one", "1"), _
-                    .AssignValues("two", "2"), _
-                    .AssignValues("three", "3"), _
-                    .AssignValues("four", "4"), _
-                    .AssignValues("five", "5") _
+                    Array("zero", "0"), _
+                    Array("one", "1"), _
+                    Array("two", "2"), _
+                    Array("three", "3"), _
+                    Array("four", "4"), _
+                    Array("five", "5") _
                     )
     End With
     Call ShowArrayInfo(myArray)
