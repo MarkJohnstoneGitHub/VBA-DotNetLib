@@ -1,4 +1,6 @@
-﻿using GSystem = global::System;
+﻿// https://learn.microsoft.com/en-us/dotnet/api/system.array?view=netframework-4.8.1
+
+using GSystem = global::System;
 using System;
 using System.Collections;
 using System.ComponentModel;
@@ -26,6 +28,11 @@ namespace DotNetLib.System
         public Array Create(GSystem.Array array)
         { 
             return new Array(array);
+        }
+
+        public int BinarySearch(Array array, object value)
+        {
+            return Array.BinarySearch(array, value);
         }
 
         public int BinarySearch(Array array, object value, IComparer comparer = null)

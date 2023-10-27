@@ -17,7 +17,7 @@ Attribute VB_Description = "Provides methods for creating, manipulating, searchi
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 8, 2023
-'@LastModified October 27, 2023
+'@LastModified October 28, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -44,16 +44,16 @@ End Sub
 
 '@Static
 '@Description("Searches an entire one-dimensional sorted array for a value using the specified IComparer interface.")
-Public Function BinarySearch(ByVal pArray As DotNetLib.Array, ByVal Value As Variant, Optional ByVal comparer As mscorlib.IComparer) As Long
+Public Function BinarySearch(ByVal pArray As DotNetLib.Array, ByVal pValue As Variant, Optional ByVal comparer As mscorlib.IComparer = Nothing) As Long
 Attribute BinarySearch.VB_Description = "Searches an entire one-dimensional sorted array for a value using the specified IComparer interface."
-   BinarySearch = this.ArraySingleton.BinarySearch(pArray, Value, comparer)
+    BinarySearch = this.ArraySingleton.BinarySearch_2(pArray, pValue, comparer)
 End Function
 
 '@Static
 '@Description("Searches a range of elements in a one-dimensional sorted array for a value, using the specified IComparer interface.")
-Public Function BinarySearch2(ByVal pArray As DotNetLib.Array, ByVal index As Long, ByVal pLength As Long, ByVal Value As Variant, Optional ByVal comparer As mscorlib.IComparer) As Long
+Public Function BinarySearch2(ByVal pArray As DotNetLib.Array, ByVal index As Long, ByVal pLength As Long, ByVal Value As Variant, Optional ByVal comparer As mscorlib.IComparer = Nothing) As Long
 Attribute BinarySearch2.VB_Description = "Searches a range of elements in a one-dimensional sorted array for a value, using the specified IComparer interface."
-   BinarySearch2 = this.ArraySingleton.BinarySearch_2(pArray, index, pLength, Value, comparer)
+   BinarySearch2 = this.ArraySingleton.BinarySearch_3(pArray, index, pLength, Value, comparer)
 End Function
 
 '@Static

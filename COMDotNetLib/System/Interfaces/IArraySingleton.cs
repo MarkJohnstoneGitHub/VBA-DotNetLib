@@ -1,4 +1,6 @@
-﻿using GSystem = global::System;
+﻿// https://learn.microsoft.com/en-us/dotnet/api/system.array?view=netframework-4.8.1
+
+using GSystem = global::System;
 using GCollections = global::System.Collections;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
@@ -14,6 +16,9 @@ namespace DotNetLib.System
         // Note added to wrap a mscorlib.Array for mscorlib.ICollection void CopyTo(Array array, int index);
         [Description("Creates an Array by wrapping an mscorlib.Array")]
         Array Create(GSystem.Array array);
+
+        [Description("Searches an entire one-dimensional sorted array for a specific element, using the IComparable interface implemented by each element of the array and by the specified object.")]
+        int BinarySearch(Array array, object value);
 
         [Description("Searches an entire one-dimensional sorted array for a value using the specified IComparer interface.")]
         int BinarySearch(Array array, object value, GCollections.IComparer comparer = null);

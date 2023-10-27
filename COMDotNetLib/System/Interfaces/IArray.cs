@@ -1,4 +1,6 @@
-﻿using GSystem = global::System;
+﻿// https://learn.microsoft.com/en-us/dotnet/api/system.array?view=netframework-4.8.1
+
+using GSystem = global::System;
 using GCollections = global::System.Collections;
 using System;
 using System.ComponentModel;
