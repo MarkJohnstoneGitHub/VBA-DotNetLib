@@ -19,12 +19,12 @@ Public Sub TestCreateInitialize2D()
     Dim myArray As DotNetLib.Array
     With Arrays
         Set myArray = .CreateInitialize2D(Strings.GetType(), _
-                    .InitializeRow("zero", "0"), _
-                    .InitializeRow("one", "1"), _
-                    .InitializeRow("two", "2"), _
-                    .InitializeRow("three", "3"), _
-                    .InitializeRow("four", "4"), _
-                    .InitializeRow("five", "5") _
+                    .AssignValues("zero", "0"), _
+                    .AssignValues("one", "1"), _
+                    .AssignValues("two", "2"), _
+                    .AssignValues("three", "3"), _
+                    .AssignValues("four", "4"), _
+                    .AssignValues("five", "5") _
                     )
     End With
     Call ShowArrayInfo(myArray)
@@ -51,4 +51,5 @@ End Sub
 '    Dimension 1:   6
 '    Dimension 2:   2
 '*/
+
 

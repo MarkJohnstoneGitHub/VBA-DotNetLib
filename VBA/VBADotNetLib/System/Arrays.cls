@@ -257,8 +257,8 @@ End Function
 'Static
 '@Description("Creates a two-dimensional Array of the specified Type with initial values")
 '@Remarks
-' Rows must be array obtained from
-' InitializeRow(ParamArray rowValues() As Variant) As Variant
+' Values for the two-dimensional array are obtained using
+' AssignValues(ParamArray pValues() As Variant) As Variant
 Public Function CreateInitialize2D(ByVal elementType As DotNetLib.Type, ParamArray rows() As Variant) As DotNetLib.Array
 Attribute CreateInitialize2D.VB_Description = "Creates a two-dimensional Array of the specified Type with initial values"
     Dim numOfRows As Long
@@ -292,10 +292,61 @@ Attribute CreateInitialize2D.VB_Description = "Creates a two-dimensional Array o
 End Function
 
 'Static
-'@Description("Gets the initial row values for an two-dimensional array.")
-Public Function InitializeRow(ParamArray rowValues() As Variant) As Variant
-Attribute InitializeRow.VB_Description = "Gets the initial row values for an two-dimensional array."
+'@Description("Creates a three-dimensional Array of the specified Type with initial values")
+'@Remarks
+' Values for the two-dimensional array are obtained using
+' AssignValues(ParamArray pValues() As Variant) As Variant
+Public Function CreateInitialize3D(ByVal elementType As DotNetLib.Type, ParamArray pValues() As Variant) As DotNetLib.Array
+Attribute CreateInitialize3D.VB_Description = "Creates a three-dimensional Array of the specified Type with initial values"
+    Dim widthSize As Long
+    Dim heightSize As Long
+    Dim depthSize As Long
+    widthSize = UBound(pValues) + 1
+    Dim height As Variant
+    For Each height In pValues
+        'Get max heightSize
+        If UBound(height) + 1 > heightSize Then
+            heightSize = UBound(height) + 1
+        End If
+        Dim depth As Variant
+        For Each depth In height
+            If UBound(depth) + 1 > depthSize Then
+                depthSize = UBound(depth) + 1
+            End If
+        Next
+    Next
+    
+    'Create 3D Array
+    Dim outArray As DotNetLib.Array
+    Set outArray = Me.CreateInstance6(elementType, widthSize, heightSize, depthSize)
+
+    'Assign initial values
+    Dim widthIndex As Long
+    widthIndex = 0
+    Dim width As Variant
+    For Each width In pValues
+        Dim heightIndex As Long
+        heightIndex = 0
+        For Each height In width
+            Dim depthIndex As Long
+            depthIndex = 0
+            Dim varValue As Variant
+            For Each varValue In height
+                Call outArray.SetValue_3(varValue, widthIndex, heightIndex, depthIndex)
+                depthIndex = depthIndex + 1
+            Next
+            heightIndex = heightIndex + 1
+        Next
+        widthIndex = widthIndex + 1
+    Next
+    Set CreateInitialize3D = outArray
+End Function
+
+'Static
+'@Description("Gets the initial values to assign to a multi-dimensional array.")
+Public Function AssignValues(ParamArray pValues() As Variant) As Variant
+Attribute AssignValues.VB_Description = "Gets the initial values to assign to a multi-dimensional array."
     Dim outArray() As Variant
-    outArray = rowValues
-    InitializeRow = outArray
+    outArray = pValues
+    AssignValues = outArray
 End Function
