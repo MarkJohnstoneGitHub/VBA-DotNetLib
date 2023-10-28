@@ -19,8 +19,6 @@ Option Explicit
 Public Sub ArrayLastIndexOf()
     Dim myArray As DotNetLib.Array
     Set myArray = Arrays.CreateInstance(Strings.GetType(), 12)
-    
-    'Array myArray=Array.CreateInstance( typeof(string), 12 );
     Call myArray.SetValue("the", 0)
     Call myArray.SetValue("quick", 1)
     Call myArray.SetValue("brown", 2)
