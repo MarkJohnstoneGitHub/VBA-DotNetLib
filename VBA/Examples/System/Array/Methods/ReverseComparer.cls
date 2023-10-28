@@ -20,8 +20,19 @@ Option Explicit
 
 Implements mscorlib.IComparer
 
+Private Type TReverseComparer
+   CaseInsensitiveComparer As DotNetLib.CaseInsensitiveComparer
+End Type
+
+Private this As TReverseComparer
+
+Private Sub Class_Initialize()
+   Set this.CaseInsensitiveComparer = CaseInsensitiveComparer.Create()
+End Sub
+
+
 Public Function Compare(ByVal x As Variant, ByVal y As Variant) As Long
-    Compare = CaseInsensitiveComparer.Create().Compare(y, x)
+    Compare = this.CaseInsensitiveComparer.Compare(y, x)
 End Function
 
 ' ------------------------------------------------------------'
@@ -29,5 +40,5 @@ End Function
 ' ------------------------------------------------------------'
 Private Function IComparer_Compare(ByVal x As Variant, ByVal y As Variant) As Long
     ' Call CaseInsensitiveComparer.Compare with the parameters reversed.
-    IComparer_Compare = CaseInsensitiveComparer.Create().Compare(y, x)
+    IComparer_Compare = this.CaseInsensitiveComparer.Compare(y, x)
 End Function
