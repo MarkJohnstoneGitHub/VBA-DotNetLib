@@ -4,7 +4,7 @@ Attribute VB_Name = "ArrayRankExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 27, 2023
-'@LastModified October 27, 2023
+'@LastModified October 29, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -21,7 +21,7 @@ Public Sub ArrayRank()
     Set array1 = Arrays.CreateInstance(Int32.GetType(), 10)
     
     Dim array2 As DotNetLib.Array
-    Set array2 = Arrays.CreateInstance4(Int32.GetType(), 10, 3)
+    Set array2 = Arrays.CreateInstance2(Int32.GetType(), 10, 3)
     
     Debug.Print Strings.Format("{0}: {1} dimension(s)", _
                         array1.ToString(), array1.Rank)
@@ -32,4 +32,5 @@ End Sub
 ' The example displays the following output:
 '       System.Int32[]: 1 dimension(s)
 '       System.Int32[,]: 2 dimension(s)
+
 
