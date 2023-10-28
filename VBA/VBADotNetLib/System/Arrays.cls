@@ -193,7 +193,7 @@ End Sub
 '@Description("Reverses the sequence of a subset of the elements in the one-dimensional Array.")
 Public Sub Reverse2(ByVal pArray As DotNetLib.Array, ByVal index As Long, ByVal pLength As Long)
 Attribute Reverse2.VB_Description = "Reverses the sequence of a subset of the elements in the one-dimensional Array."
-    this.ArraySingleton.Reverse2 pArray, index, pLength
+    this.ArraySingleton.Reverse_2 pArray, index, pLength
 End Sub
 
 'Static
