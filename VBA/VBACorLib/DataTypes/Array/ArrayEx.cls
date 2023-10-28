@@ -13,15 +13,15 @@ Attribute VB_Exposed = False
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 16, 2023
-'@LastModified July 17, 2023
+'@LastModified October 29, 2023
 
 '@TODO Work in progress
 
 Option Explicit
 
-'@Description("Copies a ParamArray of vaules or objects to an array of a type.")
-Public Sub ToArray(ByRef destination As Variant, ParamArray Values() As Variant)
-Attribute ToArray.VB_Description = "Copies a ParamArray of vaules or objects to an array of a type."
+'@Description("Creates a one-dimensional array of the specified Type with initial values")
+Public Sub CreateInitialize1D(ByRef destination As Variant, ParamArray Values() As Variant)
+Attribute CreateInitialize1D.VB_Description = "Creates a one-dimensional array of the specified Type with initial values"
    If VBA.IsArray(destination) Then
       '@TODO What if values is empty?
       ReDim destination(LBound(Values) To UBound(Values))

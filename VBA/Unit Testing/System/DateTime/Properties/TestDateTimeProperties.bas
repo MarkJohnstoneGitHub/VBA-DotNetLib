@@ -5,7 +5,7 @@ Attribute VB_Name = "TestDateTimeProperties"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 30, 2023
-'@LastModified September 10, 2023
+'@LastModified October 29, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -27,8 +27,8 @@ Private Sub ModuleInitialize()
     Set Assert = CreateObject("Rubberduck.AssertClass")
     Set Fakes = CreateObject("Rubberduck.FakesProvider")
     
-    ArrayEx.ToArray DaysToMonth365, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365
-    ArrayEx.ToArray DaysToMonth366, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366
+    ArrayEx.CreateInitialize1D DaysToMonth365, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365
+    ArrayEx.CreateInitialize1D DaysToMonth366, 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366
 End Sub
 
 '@ModuleCleanup
