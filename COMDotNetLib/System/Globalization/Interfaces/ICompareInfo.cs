@@ -51,7 +51,7 @@ namespace DotNetLib.System.Globalization
         GGlobalization.SortKey GetSortKey(string source, CompareOptions options = CompareOptions.None);
 
         //[Description("Searches for the specified substring and returns the zero-based index of the first occurrence within the entire source string using the specified CompareOptions value.")]
-        //int IndexOf(string source, string value, CompareOptions options = CompareOptions.None);
+        //int IndexOf_2(string source, string value, CompareOptions options = CompareOptions.None);
 
         [Description("Searches for the specified substring and returns the zero-based index of the first occurrence within the section of the source string that extends from the specified index to the end of the string using the specified CompareOptions value.")]
         int IndexOf(string source, string value, int startIndex = 0, CompareOptions options = CompareOptions.None);

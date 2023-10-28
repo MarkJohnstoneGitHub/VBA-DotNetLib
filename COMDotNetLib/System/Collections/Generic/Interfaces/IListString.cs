@@ -131,8 +131,8 @@ namespace DotNetLib.System.Collections
         [Description("Reverses the order of the elements in the entire List<string>.")]
         void Reverse();
 
-        //public void Sort (Comparison<T> comparison);
-        //public void Sort (int index, int count, System.Collections.Generic.IComparer<T> comparer);
+        //public void Sort_2 (Comparison<T> comparison);
+        //public void Sort_2 (int index, int count, System.Collections.Generic.IComparer<T> comparer);
         [Description("Sorts the elements in the entire List<string> using the default comparer.")]
         void Sort();
 

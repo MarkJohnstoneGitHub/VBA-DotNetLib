@@ -81,9 +81,9 @@ namespace DotNetLib.System.Globalization
             return _compareInfo.GetSortKey(source,options);
         }
 
-        //public int IndexOf(string source, string value, CompareOptions options = CompareOptions.None)
+        //public int IndexOf_2(string source, string value, CompareOptions options = CompareOptions.None)
         //{
-        //    return _compareInfo.IndexOf(source,value, options);
+        //    return _compareInfo.IndexOf_2(source,value, options);
         //}
 
         public int IndexOf(string source, string value, int startIndex = 0, CompareOptions options = CompareOptions.None)

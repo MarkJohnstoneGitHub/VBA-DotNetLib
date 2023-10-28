@@ -312,7 +312,7 @@ namespace DotNetLib.System
         //    if (larray.Length != newSize)
         //    {
         //        T[] newArray = new T[newSize];
-        //        Array.Copy(larray, 0, newArray, 0, larray.Length > newSize ? newSize : larray.Length);
+        //        Array.Copy_2(larray, 0, newArray, 0, larray.Length > newSize ? newSize : larray.Length);
         //        array = newArray;
         //    }
         //}

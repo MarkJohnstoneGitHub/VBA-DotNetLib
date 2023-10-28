@@ -102,35 +102,35 @@ End Function
 '@Description("Creates a two-dimensional Array of the specified Type and dimension lengths, with zero-based indexing.")
 Public Function CreateInstance2(ByVal elementType As DotNetLib.Type, ByVal length1 As Long, ByVal length2 As Long) As DotNetLib.Array
 Attribute CreateInstance2.VB_Description = "Creates a two-dimensional Array of the specified Type and dimension lengths, with zero-based indexing."
-   Set CreateInstance2 = this.ArraySingleton.CreateInstance_4(elementType, length1, length2)
+   Set CreateInstance2 = this.ArraySingleton.CreateInstance_2(elementType, length1, length2)
 End Function
 
 '@Static
 '@Description("Creates a three-dimensional Array of the specified Type and dimension lengths, with zero-based indexing.")
 Public Function CreateInstance3(ByVal elementType As DotNetLib.Type, ByVal length1 As Long, ByVal length2 As Long, ByVal length3 As Long) As DotNetLib.Array
 Attribute CreateInstance3.VB_Description = "Creates a three-dimensional Array of the specified Type and dimension lengths, with zero-based indexing."
-   Set CreateInstance3 = this.ArraySingleton.CreateInstance_6(elementType, length1, length2, length3)
+   Set CreateInstance3 = this.ArraySingleton.CreateInstance_3(elementType, length1, length2, length3)
 End Function
 
 '@Static
 '@Description("Creates a multidimensional Array of the specified Type and dimension lengths, with zero-based indexing. The dimension lengths are specified in an array of 32-bit integers.")
 Public Function CreateInstance4(ByVal elementType As DotNetLib.Type, ByRef lengths() As Long) As DotNetLib.Array
 Attribute CreateInstance4.VB_Description = "Creates a multidimensional Array of the specified Type and dimension lengths, with zero-based indexing. The dimension lengths are specified in an array of 32-bit integers."
-   Set CreateInstance4 = this.ArraySingleton.CreateInstance_2(elementType, lengths)
+   Set CreateInstance4 = this.ArraySingleton.CreateInstance_4(elementType, lengths)
 End Function
 
 '@Static
 '@Description("Creates a multidimensional Array of the specified Type and dimension lengths, with zero-based indexing. The dimension lengths are specified in an array of 64-bit integers.")
 Public Function CreateInstance5(ByVal elementType As DotNetLib.Type, ByRef lengths() As LongLong) As DotNetLib.Array
 Attribute CreateInstance5.VB_Description = "Creates a multidimensional Array of the specified Type and dimension lengths, with zero-based indexing. The dimension lengths are specified in an array of 64-bit integers."
-   Set CreateInstance5 = this.ArraySingleton.CreateInstance_3(elementType, lengths)
+   Set CreateInstance5 = this.ArraySingleton.CreateInstance_5(elementType, lengths)
 End Function
 
 '@Static
 '@Description("Creates a multidimensional Array of the specified Type and dimension lengths, with the specified lower bounds.")
 Public Function CreateInstance6(ByVal elementType As DotNetLib.Type, ByRef lengths() As Long, ByRef lowerBounds() As Long) As DotNetLib.Array
 Attribute CreateInstance6.VB_Description = "Creates a multidimensional Array of the specified Type and dimension lengths, with the specified lower bounds."
-   Set CreateInstance6 = this.ArraySingleton.CreateInstance_5(elementType, lengths, lowerBounds)
+   Set CreateInstance6 = this.ArraySingleton.CreateInstance_6(elementType, lengths, lowerBounds)
 End Function
 
 '@Static
