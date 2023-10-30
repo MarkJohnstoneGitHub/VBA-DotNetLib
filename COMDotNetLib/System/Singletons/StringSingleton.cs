@@ -106,6 +106,7 @@ namespace DotNetLib.System
         }
 
         // Format Overloads
+
         public string Format(string pFormat, [In] ref object[] args)
         {
             return string.Format(pFormat, args.Unwrap());

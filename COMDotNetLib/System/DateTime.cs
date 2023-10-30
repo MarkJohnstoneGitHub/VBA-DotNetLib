@@ -121,7 +121,6 @@ namespace DotNetLib.System
             set 
             { 
                 _dateTime = value;
-                //_type  = new Type(((object)this).GetType());
             }  
         }
 

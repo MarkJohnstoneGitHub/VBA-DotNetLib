@@ -221,6 +221,8 @@
     <Compile Include="System\Interfaces\IStringSingleton.cs" />
     <Compile Include="System\StringComparer.cs" />
     <Compile Include="System\Singletons\StringComparerSingleton.cs" />
+    <Compile Include="System\Text\IStringBuilder.cs" />
+    <Compile Include="System\Text\IStringBuilderSingleton.cs" />
     <Compile Include="System\Text\RegularExpressions\Capture.cs" />
     <Compile Include="System\Text\RegularExpressions\CaptureCollection.cs" />
     <Compile Include="System\Text\RegularExpressions\Group.cs" />
@@ -242,6 +244,8 @@
     <Compile Include="System\Text\RegularExpressions\Singletons\MatchSingleton.cs" />
     <Compile Include="System\Text\RegularExpressions\RegexOptions.cs" />
     <Compile Include="System\Text\RegularExpressions\Singletons\RegexSingleton.cs" />
+    <Compile Include="System\Text\StringBuilder.cs" />
+    <Compile Include="System\Text\StringBuilderSingleton.cs" />
     <Compile Include="System\TimeSpan.cs" />
     <Compile Include="System\TimeZoneInfo.cs" />
     <Compile Include="System\Singletons\TimeZoneInfoSingleton.cs" />
@@ -262,6 +266,8 @@
   <ItemGroup>
     <Folder Include="CoordinateSharp\Com Management\" />
     <Folder Include="System\Collections\Generic\Singletons\" />
+    <Folder Include="System\Text\Interfaces\" />
+    <Folder Include="System\Text\Singletons\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
