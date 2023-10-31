@@ -32,6 +32,9 @@ Oct 17, 2023 Added [CaseInsensitiveComparer](https://learn.microsoft.com/en-us/d
 
 Oct 18, 2023 Added [DictionaryEntry](https://learn.microsoft.com/en-us/dotnet/api/system.collections.dictionaryentry?view=netframework-4.8.1), [Hashtable](https://learn.microsoft.com/en-us/dotnet/api/system.collections.hashtable?view=netframework-4.8.1)
 
+Oct 31, 2023 Added [StringBuilder](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=netframework-4.8.1)
+
+
  **Affected API due to VBA reserved words:**
 
  The API for the .Net class or VBA singletons for associated .Net classes may be required to be altered due to VBA reserved words. See [reserved-word-list](https://www.engram9.info/access-2007-vba/reserved-word-list.html).
