@@ -34,6 +34,8 @@ Oct 18, 2023 Added [DictionaryEntry](https://learn.microsoft.com/en-us/dotnet/ap
 
 Oct 31, 2023 Added [StringBuilder](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=netframework-4.8.1)
 
+Nov 2, 2023 Added [BitArray](https://learn.microsoft.com/en-us/dotnet/api/system.collections.bitarray?view=netframework-4.8.1)
+
 
  **Affected API due to VBA reserved words:**
 
