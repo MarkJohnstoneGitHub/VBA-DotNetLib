@@ -12,7 +12,6 @@ namespace DotNetLib.System.Collections
     [ProgId("DotNetLib.System.Collections.ArrayListSingleton")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IArrayListSingleton))]
-
     public class ArrayListSingleton : IArrayListSingleton
     {
         public ArrayListSingleton() {}
