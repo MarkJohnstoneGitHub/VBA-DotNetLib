@@ -16,7 +16,7 @@ Option Explicit
 ' The following code example shows how to copy a BitArray into a
 ' one-dimensional Array.
 ''
-Public Sub BitArrayCopyToExamplex()
+Public Sub BitArrayCopyToExample()
     ' Creates and initializes the source BitArray.
     Dim myBA As DotNetLib.BitArray
     Set myBA = BitArray.Create(4)
