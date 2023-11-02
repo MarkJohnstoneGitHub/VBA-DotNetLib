@@ -18,7 +18,7 @@ Attribute VB_Description = "DateTime factory methods and static members."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v2.0 August 4, 2023
-'@LastModified October 11, 2023
+'@LastModified November 3, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -439,30 +439,30 @@ End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent and returns a value that indicates whether the conversion succeeded.")
-Public Function TryParse(ByVal s As String, ByRef Result As DotNetLib.DateTime) As Boolean
+Public Function TryParse(ByVal s As String, ByRef result As DotNetLib.DateTime) As Boolean
 Attribute TryParse.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent and returns a value that indicates whether the conversion succeeded."
-    TryParse = this.DateTimeStatic.TryParse(s, Result)
+    TryParse = this.DateTimeStatic.TryParse(s, result)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified culture-specific format information and formatting style, and returns a value that indicates whether the conversion succeeded.")
-Public Function TryParse2(ByVal s As String, ByVal provider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef Result As DotNetLib.DateTime) As Boolean
+Public Function TryParse2(ByVal s As String, ByVal provider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DotNetLib.DateTime) As Boolean
 Attribute TryParse2.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified culture-specific format information and formatting style, and returns a value that indicates whether the conversion succeeded."
-    TryParse2 = this.DateTimeStatic.TryParse2(s, provider, styles, Result)
+    TryParse2 = this.DateTimeStatic.TryParse2(s, provider, styles, result)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style.")
-Public Function TryParseExact(ByVal s As String, ByVal pFormat As String, ByVal provider As IFormatProvider, ByVal style As DateTimeStyles, ByRef Result As DotNetLib.DateTime) As Boolean
+Public Function TryParseExact(ByVal s As String, ByVal pFormat As String, ByVal provider As IFormatProvider, ByVal style As DateTimeStyles, ByRef result As DotNetLib.DateTime) As Boolean
 Attribute TryParseExact.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style."
-    TryParseExact = this.DateTimeStatic.TryParseExact(s, pFormat, provider, style, Result)
+    TryParseExact = this.DateTimeStatic.TryParseExact(s, pFormat, provider, style, result)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified array of formats, culture-specific format information, and style.")
-Public Function TryParseExact2(ByVal s As String, ByRef formats() As String, ByVal provider As IFormatProvider, ByVal style As DateTimeStyles, ByRef Result As DotNetLib.DateTime) As Boolean
+Public Function TryParseExact2(ByVal s As String, ByRef formats() As String, ByVal provider As IFormatProvider, ByVal style As DateTimeStyles, ByRef result As DotNetLib.DateTime) As Boolean
 Attribute TryParseExact2.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified array of formats, culture-specific format information, and style."
-    TryParseExact2 = this.DateTimeStatic.TryParseExact2(s, formats, provider, style, Result)
+    TryParseExact2 = this.DateTimeStatic.TryParseExact2(s, formats, provider, style, result)
 End Function
 
 '--------------------------------------------------------------------
@@ -543,4 +543,27 @@ Public Function GetType() As DotNetLib.Type
 Attribute GetType.VB_Description = "Gets the DateTime Type."
 Attribute GetType.VB_UserMemId = 0
     Set GetType = this.DateTimeType
+End Function
+
+'@Static
+'@Description("Gets the total years difference between two DateTime objects.")
+'@Reference
+' https://stackoverflow.com/a/1595311/10759363
+' https://stackoverflow.com/questions/9/how-do-i-calculate-someones-age-based-on-a-datetime-type-birthday
+Public Function TotalYears(ByVal d1 As DotNetLib.DateTime, ByVal d2 As DotNetLib.DateTime) As Long
+Attribute TotalYears.VB_Description = "Gets the total years difference between two DateTime objects."
+    Dim result As Long
+    If d1.Ticks > d2.Ticks Then
+        result = d1.Year - d2.Year
+        If (d2.Ticks > d1.AddYears(-result).Ticks) Then
+            result = result - 1
+        End If
+        result = result * -1
+    Else
+        result = d2.Year - d1.Year
+        If (d1.Ticks > d2.AddYears(-result).Ticks) Then
+            result = result - 1
+        End If
+    End If
+    TotalYears = result
 End Function
