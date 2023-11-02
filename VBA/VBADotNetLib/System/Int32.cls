@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents a 32-bit signed integer."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 12, 2023
-'@LastModified October 15, 2023
+'@LastModified November 2, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -51,9 +51,9 @@ End Sub
 '--------------------------------------------------------------------
 '@Static
 '@DefaultMember
-'@Description("Gets the String Type.")
+'@Description("Gets the Int32 Type.")
 Public Function GetType() As DotNetLib.Type
-Attribute GetType.VB_Description = "Gets the String Type."
+Attribute GetType.VB_Description = "Gets the Int32 Type."
 Attribute GetType.VB_UserMemId = 0
     Set GetType = this.Int32Type
 End Function

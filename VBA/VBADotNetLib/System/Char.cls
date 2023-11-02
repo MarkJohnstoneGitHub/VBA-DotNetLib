@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents a character as a UTF-16 code unit."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 15, 2023
-'@LastModified October 20, 2023
+'@LastModified November 2, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -60,6 +60,11 @@ Public Function ConvertToUtf32(ByRef s As String, ByVal index As Long) As Long
 Attribute ConvertToUtf32.VB_Description = "Converts the value of a UTF-16 encoded character or surrogate pair at a specified position in a string into a Unicode code point."
    ConvertToUtf32 = this.CharSingleton.ConvertToUtf32(s, index)
 End Function
+
+''@Description("Converts the value of a UTF-16 encoded surrogate pair into a Unicode code point.")
+'Public Function ConvertToUtf32_2(ByRef highSurrogate As mscorlib.Char, ByRef lowSurrogate As mscorlib.Char) As Long
+'   ConvertToUtf32_2 = this.CharSingleton.ConvertToUtf32_2(highSurrogate, lowSurrogate)
+'End Function
 
 '@Static
 '@Description("Converts the numeric Unicode character at the specified position in a specified string to a double-precision floating point number.")
@@ -186,9 +191,9 @@ End Function
 '--------------------------------------------------------------------
 '@Static
 '@DefaultMember
-'@Description("Gets the String Type.")
+'@Description("Gets the Char Type.")
 Public Function GetType() As DotNetLib.Type
-Attribute GetType.VB_Description = "Gets the String Type."
+Attribute GetType.VB_Description = "Gets the Char Type."
 Attribute GetType.VB_UserMemId = 0
     Set GetType = this.CharType
 End Function
