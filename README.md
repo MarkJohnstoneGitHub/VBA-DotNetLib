@@ -36,6 +36,7 @@ Oct 31, 2023 Added [StringBuilder](https://learn.microsoft.com/en-us/dotnet/api/
 
 Nov 2, 2023 Added [BitArray](https://learn.microsoft.com/en-us/dotnet/api/system.collections.bitarray?view=netframework-4.8.1)
 
+Nov 16, 2023 Added [Directory](https://learn.microsoft.com/en-us/dotnet/api/system.io.directory?view=netframework-4.8.1), [DirectoryInfo](https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=netframework-4.8.1), [File](https://learn.microsoft.com/en-us/dotnet/api/system.io.file?view=netframework-4.8.1),  [FileInfo](https://learn.microsoft.com/en-us/dotnet/api/system.io.fileinfo?view=netframework-4.8.1), [Path](https://learn.microsoft.com/en-us/dotnet/api/system.io.path?view=netframework-4.8.1) , [FileSystemInfo](https://learn.microsoft.com/en-us/dotnet/api/system.io.filesysteminfo?view=netframework-4.8.1), [StreamWriter](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=netframework-4.8.1) [AccessControlSections](https://learn.microsoft.com/en-us/dotnet/api/system.security.accesscontrol.accesscontrolsections?view=netframework-4.8.1), [SpecialFolderOption](https://learn.microsoft.com/en-us/dotnet/api/system.environment.specialfolderoption?view=netframework-4.8.1), [SpecialFolders](https://learn.microsoft.com/en-us/dotnet/api/system.environment.specialfolder?view=netframework-4.8.1), [StringSplitOptions](https://learn.microsoft.com/en-us/dotnet/api/system.stringsplitoptions?view=netframework-4.8.1)
 
  **Affected API due to VBA reserved words:**
 
