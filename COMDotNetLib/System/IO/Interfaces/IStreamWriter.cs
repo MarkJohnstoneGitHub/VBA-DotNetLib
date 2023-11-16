@@ -87,52 +87,52 @@ namespace DotNetLib.System.IO
         string ToString();
 
         [Description("Writes a formatted string to the text stream, using the same semantics as the Format(String, Object[]) method.\r\n\r\n(Inherited from TextWriter)")]
-        void Write(string format, [In] ref object[] arg);
+        void Write11(string format, [In] ref object[] arg);
 
         [Description("Writes a string to the stream.")]
         void Write(string value);
 
         [Description("Writes the text representation of a Boolean value to the text stream.\r\n\r\n(Inherited from TextWriter)")]
-        void Write(bool value);
+        void Write2(bool value);
 
         [Description("Writes the text representation of a 4-byte signed integer to the text stream.\r\n\r\n(Inherited from TextWriter)")]
-        void Write(int value);
+        void Write3(int value);
 
         [Description("Writes the text representation of an 8-byte signed integer to the text stream.\r\n\r\n(Inherited from TextWriter)")]
-        void Write(long value);
+        void Write4(long value);
 
         [Description("Writes the text representation of a 4-byte floating-point value to the text stream.\r\n\r\n(Inherited from TextWriter)")]
-        void Write(float value);
+        void Write5(float value);
 
         [Description("Writes the text representation of an 8-byte floating-point value to the text stream.\r\n\r\n(Inherited from TextWriter)")]
-        void Write(double value);
+        void Write6(double value);
 
         [Description("Writes the text representation of an object to the text stream by calling the ToString method on that object.\r\n\r\n(Inherited from TextWriter)")]
-        void Write(object value);
+        void Write7(object value);
 
         [Description("Writes a line terminator to the text stream.\r\n\r\n(Inherited from TextWriter)")]
         void WriteLine();
 
         [Description("Writes a line terminator to the text stream.\r\n\r\n(Inherited from TextWriter)")]
-        void WriteLine(string value);
+        void WriteLine2(string value);
 
         [Description("Writes the text representation of a Boolean value to the text stream, followed by a line terminator.\r\n\r\n(Inherited from TextWriter)")]
-        void WriteLine(bool value);
+        void WriteLine3(bool value);
 
         [Description("Writes the text representation of a 4-byte signed integer to the text stream, followed by a line terminator.\r\n\r\n(Inherited from TextWriter)")]
-        void WriteLine(int value);
+        void WriteLine4(int value);
 
         [Description("Writes the text representation of an 8-byte signed integer to the text stream, followed by a line terminator.\r\n\r\n(Inherited from TextWriter)")]
-        void WriteLine(long value);
+        void WriteLine5(long value);
 
         [Description("Writes the text representation of a 4-byte floating-point value to the text stream, followed by a line terminator.\r\n\r\n(Inherited from TextWriter)")]
-        void WriteLine(float value);
+        void WriteLine6(float value);
 
         [Description("Writes the text representation of a 8-byte floating-point value to the text stream, followed by a line terminator.\r\n\r\n(Inherited from TextWriter)")]
-        void WriteLine(double value);
+        void WriteLine7(double value);
 
         [Description("Writes the text representation of an object to the text stream, by calling the ToString method on that object, followed by a line terminator.\r\n\r\n(Inherited from TextWriter)")]
-        void WriteLine(object value);
+        void WriteLine8(object value);
 
         [Description("Asynchronously writes a line terminator to the stream.")]
         GTasks.Task WriteLineAsync();

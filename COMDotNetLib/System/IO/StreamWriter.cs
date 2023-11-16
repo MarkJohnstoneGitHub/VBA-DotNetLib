@@ -19,7 +19,7 @@ namespace DotNetLib.System.IO
     [ProgId("DotNetLib.System.IO.StreamWriter")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IStreamWriter))]
-    public class StreamWriter : IStreamWriter, IWrappedObject
+    public class StreamWriter : IStreamWriter, IWrappedObject, IDisposable
     {
         private GIO.StreamWriter _streamWriter;
 
@@ -153,51 +153,51 @@ namespace DotNetLib.System.IO
             _streamWriter.Write(value); 
         }
 
-        public virtual void Write(bool value)
+        public virtual void Write2(bool value)
         {
             _streamWriter.Write(value);
         }
 
-        public virtual void Write(int value)
+        public virtual void Write3(int value)
         { 
             _streamWriter.Write(value);
         }
 
-        public virtual void Write(long value)
+        public virtual void Write4(long value)
         { 
             _streamWriter.Write(value);
         }
 
-        public void Write(float value)
+        public void Write5(float value)
         {
             _streamWriter.Write(value);
         }
-        public virtual void Write(double value)
+        public virtual void Write6(double value)
         {
             _streamWriter.Write(value);
         }
 
-        public virtual void Write(object value)
+        public virtual void Write7(object value)
         {
             _streamWriter.Write(value.Unwrap());
         }
 
-        public virtual void Write(string format, object arg0)
+        public virtual void Write8(string format, object arg0)
         {
             _streamWriter.Write(format, arg0.Unwrap());
         }
 
-        public virtual void Write(string format, object arg0, object arg1)
+        public virtual void Write9(string format, object arg0, object arg1)
         {
             _streamWriter.Write(format, arg0.Unwrap(), arg1.Unwrap());
         }
 
-        public virtual void Write(string format, object arg0, object arg1, object arg2)
+        public virtual void Write10(string format, object arg0, object arg1, object arg2)
         {
             _streamWriter.Write(format, arg0.Unwrap(), arg1.Unwrap(), arg2.Unwrap());
         }
 
-        public virtual void Write(string format, [In] ref object[] arg)
+        public virtual void Write11(string format, [In] ref object[] arg)
         {
             _streamWriter.Write(format, arg.Unwrap());
         }
@@ -208,36 +208,36 @@ namespace DotNetLib.System.IO
             _streamWriter.WriteLine(); 
         }
 
-        public virtual void WriteLine(string value)
+        public virtual void WriteLine2(string value)
         { 
             _streamWriter.WriteLine(value); 
         }
 
-        public virtual void WriteLine(bool value)
+        public virtual void WriteLine3(bool value)
         { 
             _streamWriter.WriteLine(value); 
         }
 
-        public virtual void WriteLine(int value)
+        public virtual void WriteLine4(int value)
         { 
             _streamWriter.WriteLine(value);
         }
 
-        public virtual void WriteLine(long value)
+        public virtual void WriteLine5(long value)
         { 
             _streamWriter.WriteLine(value);
         }
 
-        public virtual void WriteLine(float value)
+        public virtual void WriteLine6(float value)
         {
             _streamWriter.WriteLine(value);
         }
-        public virtual void WriteLine(double value)
+        public virtual void WriteLine7(double value)
         {
             _streamWriter.WriteLine(value);
         }
 
-        public virtual void WriteLine(object value)
+        public virtual void WriteLine8(object value)
         { 
             _streamWriter.WriteLine(value.Unwrap());
         }
@@ -253,14 +253,14 @@ namespace DotNetLib.System.IO
         }
 
 
-        //public virtual void WriteLine(char[] buffer)
+        //public virtual void WriteLine2(char[] buffer)
         //{ 
-        //    _streamWriter.WriteLine(buffer);
+        //    _streamWriter.WriteLine2(buffer);
         //}
 
-        //public virtual void WriteLine(StringBuilder sb)
+        //public virtual void WriteLine2(StringBuilder sb)
         //{ 
-        //    _streamWriter.WriteLine(sb.WrappedStringBuilder); 
+        //    _streamWriter.WriteLine2(sb.WrappedStringBuilder); 
         //}
 
 

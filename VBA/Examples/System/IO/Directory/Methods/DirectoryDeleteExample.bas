@@ -4,7 +4,7 @@ Attribute VB_Name = "DirectoryDeleteExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 November 7, 2023
-'@LastModified November 7, 2023
+'@LastModified November 16, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -33,57 +33,4 @@ ErrorHandler:
     Debug.Print VBAString.Format("The process failed: {0}", Err.Description)
 End Sub
 
-'@TODO https://learn.microsoft.com/en-us/dotnet/api/system.io.directory.delete?view=netframework-4.8.1#system-io-directory-delete(system-string)
-Public Sub DirectoryDeleteExample2()
-    Dim topPath As String
-    topPath = "C:\NewDirectory"
-    Dim subPath As String
-    subPath = "C:\NewDirectory\NewSubDirectory"
-    On Error GoTo ErrorHandler
-    Call Directory.CreateDirectory(subPath)
-    
-    
-        '                using (StreamWriter writer = File.CreateText(subPath + @"\example.txt"))
-'                {
-'                    writer.WriteLine("content added");
-'                }
-        
-Exit Sub
-ErrorHandler:
 
-End Sub
-
-'using System;
-'using System.IO;
-'
-'Namespace ConsoleApplication
-'{
-'    Class Program
-'    {
-'        static void Main(string[] args)
-'        {
-'            string topPath = @"C:\NewDirectory";
-'            string subPath = @"C:\NewDirectory\NewSubDirectory";
-'
-'            Try
-'            {
-'                Directory.CreateDirectory(subPath);
-'
-'                using (StreamWriter writer = File.CreateText(subPath + @"\example.txt"))
-'                {
-'                    writer.WriteLine("content added");
-'                }
-'
-'                Directory.Delete(topPath, true);
-'
-'                bool directoryExists = Directory.Exists(topPath);
-'
-'                Console.WriteLine("top-level directory exists: " + directoryExists);
-'            }
-'            catch (Exception e)
-'            {
-'                Console.WriteLine("The process failed: {0}", e.Message);
-'            }
-'        }
-'    }
-'}

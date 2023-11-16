@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents text as a sequence of UTF-16 code units."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 23, 2023
-'@LastModified November 14, 2023
+'@LastModified November 16, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -32,7 +32,6 @@ Const StringType As String = "System.String"
 
 Private Type TString
     BStringSingleton As DotNetLib.BStringSingleton
-'    StringSingleton As DotNetLib.StringSingleton
     StringType   As DotNetLib.Type
 End Type
 
@@ -40,7 +39,6 @@ Private this As TString
 
 Private Sub Class_Initialize()
     Set this.BStringSingleton = New DotNetLib.BStringSingleton
-'    Set this.StringSingleton = New DotNetLib.StringSingleton
     Set this.StringType = Types.GetType(StringType)
 End Sub
 
