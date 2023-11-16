@@ -77,7 +77,7 @@ Exit Sub
 
 ErrorHandler:
    Debug.Print "Value is not a DateTime"
-   Debug.Print Err.Number, Err.Description
+   Debug.Print Err.number, Err.Description
    Resume CleanExit
 End Sub
 

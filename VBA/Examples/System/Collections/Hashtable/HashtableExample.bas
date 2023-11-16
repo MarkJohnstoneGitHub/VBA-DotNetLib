@@ -43,24 +43,24 @@ Public Sub HashtableExample()
     
     ' The Item property is the default property, so you
     ' can omit its name when accessing elements.
-    Debug.Print Strings.Format("For key = ""rtf"", value = {0}.", openWith("rtf"))
+    Debug.Print VBAString.Format("For key = ""rtf"", value = {0}.", openWith("rtf"))
 
     ' The default Item property can be used to change the value
     ' associated with a key.
     'Bug openWith.Item("rtf") = "winword.exe" causes an Object required error use SetValue instead until fixed.
     Call openWith.SetValue("rtf", "winword.exe")
-    Debug.Print Strings.Format("For key = ""rtf"", value = {0}.", openWith("rtf"))
+    Debug.Print VBAString.Format("For key = ""rtf"", value = {0}.", openWith("rtf"))
     
     ' If a key does not exist, setting the default Item property
     ' for that key adds a new key/value pair.
     Call openWith.SetValue("doc", "winword.exe")
-    Debug.Print Strings.Format("For key = ""rtf"", value = {0}.", openWith("rtf"))
+    Debug.Print VBAString.Format("For key = ""rtf"", value = {0}.", openWith("rtf"))
     
     ' ContainsKey can be used to test keys before inserting
     ' them.
      If (Not openWith.ContainsKey("ht")) Then
         Call openWith.Add("ht", "hypertrm.exe")
-        Debug.Print Strings.Format("Value added for key = ""ht"": {0}", openWith("ht"))
+        Debug.Print VBAString.Format("Value added for key = ""ht"": {0}", openWith("ht"))
      End If
 
     ' When you use foreach to enumerate hash table elements,
@@ -70,19 +70,19 @@ Public Sub HashtableExample()
     For Each varDictEntry In openWith
         Dim dictEntry As mscorlib.DictionaryEntry
         dictEntry = varDictEntry
-        Debug.Print Strings.Format("Key = {0}, Value = {1}", DictionaryEntry.Key(dictEntry), DictionaryEntry.Value(dictEntry))
+        Debug.Print VBAString.Format("Key = {0}, Value = {1}", DictionaryEntry.Key(dictEntry), DictionaryEntry.value(dictEntry))
     Next
 
     ' To get the values alone, use the Values property.
     Dim valueColl As mscorlib.IEnumerable
-    Set valueColl = openWith.Values
+    Set valueColl = openWith.values
 
     ' The elements of the ValueCollection are strongly typed
     ' with the type that was specified for hash table values.
     Debug.Print
     Dim s As Variant
     For Each s In valueColl
-        Debug.Print Strings.Format("Value = {0}", s)
+        Debug.Print VBAString.Format("Value = {0}", s)
     Next
 
     ' To get the keys alone, use the Keys property.
@@ -93,7 +93,7 @@ Public Sub HashtableExample()
     Debug.Print
     Dim dicKey As Variant
     For Each dicKey In keyColl
-        Debug.Print Strings.Format("Value = {0}", dicKey)
+        Debug.Print VBAString.Format("Value = {0}", dicKey)
     Next
     
     ' Use the Remove method to remove a key/value pair.

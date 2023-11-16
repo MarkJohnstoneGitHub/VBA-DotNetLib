@@ -23,11 +23,11 @@ Attribute DateTimeMaxValue.VB_Description = "The following example instantiates 
         Set validDate = DateTime.CreateFromTicks(numberOfTicks)
         Debug.Print validDate.ToString()
     ElseIf (numberOfTicks < DateTime.MinValue.Ticks) Then
-        Debug.Print Strings.Format("{0:N0} is less than {1:N0} ticks.", _
+        Debug.Print VBAString.Format("{0:N0} is less than {1:N0} ticks.", _
                         numberOfTicks, _
                         DateTime.MinValue.Ticks)
     Else
-        Debug.Print Strings.Format("{0:N0} is greater than {1:N0} ticks.", _
+        Debug.Print VBAString.Format("{0:N0} is greater than {1:N0} ticks.", _
                                     numberOfTicks, _
                                     DateTime.MaxValue.Ticks)
     End If
@@ -35,4 +35,3 @@ End Sub
 
 ' The example displays the following output:
 '   9,223,372,036,854,775,807 is greater than 3,155,378,975,999,999,999 ticks.
-

@@ -41,7 +41,7 @@ namespace DotNetLib.System
            //_underlyingSystemType = new Type(type.UnderlyingSystemType);
         }
 
-        internal GSystem.Type WrappedType => _type;
+        public GSystem.Type WrappedType => _type;
 
         public object WrappedObject => _type;
 

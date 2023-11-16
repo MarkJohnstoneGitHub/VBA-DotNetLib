@@ -28,6 +28,6 @@ End Sub
 Public Sub DateTimeCreateFromDateTimeKindV2()
     Dim date1 As IDateTime
     Set date1 = DateTime.CreateFromDateTimeKind(2010, 8, 18, 16, 32, 0, DateTimeKind.DateTimeKind_Local)
-    Debug.Print Strings.Format("{0} {1}", date1, DateTimeKindHelper.ToString(date1.Kind))
+    Debug.Print VBAString.Format("{0} {1}", date1, DateTimeKindHelper.ToString(date1.Kind))
 
 End Sub

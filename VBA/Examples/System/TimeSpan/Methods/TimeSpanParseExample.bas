@@ -13,13 +13,13 @@ Option Explicit
 '@Description("The following example uses the Parse method to convert each element in a string array to a TimeSpan value.")
 Public Sub TimeSpanParse()
 Attribute TimeSpanParse.VB_Description = "The following example uses the Parse method to convert each element in a string array to a TimeSpan value."
-    Dim Values() As String
-    Values = StringArray.ToArray("6", "6:12", "6:12:14", "6:12:14:45", _
+    Dim values() As String
+    values = StringArray.ToArray("6", "6:12", "6:12:14", "6:12:14:45", _
                             "6.12:14:45", "6:12:14:45.3448", _
                             "6:12:14:45,3448", "6:34:14:45")
 
     Dim value As Variant
-    For Each value In Values
+    For Each value In values
         On Error Resume Next
         Dim ts As ITimeSpan
         Set ts = TimeSpan.Parse(value)

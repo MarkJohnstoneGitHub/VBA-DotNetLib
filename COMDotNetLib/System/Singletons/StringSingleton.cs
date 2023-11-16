@@ -1,5 +1,9 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1
 
+using GGeneric = global::System.Collections.Generic;
+using GSystem = global::System;
+using GRegularExpressions = global::System.Text.RegularExpressions;
+using GCollections = global::System.Collections;
 using GGlobalization = System.Globalization;
 using DotNetLib.Extensions;
 using System;
@@ -8,6 +12,7 @@ using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using CultureInfo = DotNetLib.System.Globalization.CultureInfo;
+using System.Collections.Generic;
 
 namespace DotNetLib.System
 {
@@ -17,149 +22,239 @@ namespace DotNetLib.System
     [ProgId("DotNetLib.System.StringSingleton")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IStringSingleton))]
-
     public class StringSingleton : IStringSingleton
     {
         public StringSingleton() { }
 
+        // Factory Methods
+
+        // Notes https://stackoverflow.com/questions/25759878/convert-byte-to-sbyte 
+        // Possible add String(SByte*, Int32, Int32) by passing an array of bytes? 
+        public String Create(string value)
+        { 
+            return new String(value); 
+        }
+
+        public String Create(string character, int count)
+        {
+            return new String(character, count);
+        }
+
+        public String Create(string value, int startIndex, int length)
+        {
+            return new String(value, startIndex, length);
+        }
+
+        public String Create(String value)
+        {
+            return new String(value);
+        }
+
+        public String Create(String character, int count)
+        {
+            return new String(character, count);
+        }
+
+        public String Create(String value, int startIndex, int length)
+        {
+            return new String(value, startIndex, length);
+        }
+
+        public String CreateUnescape(string value)
+        { 
+            return new String(GRegularExpressions.Regex.Unescape(value)); 
+        }
 
         // Fields
-        public string EmptyString => string.Empty;
 
+        public String EmptyString => String.Empty;
 
-        //  Compare Overloads
+        //  Methods
 
-        //public int Compare(string strA, string strB)
-        //{
-        //    return string.Compare(strA, strB);
-        //}
-
-        public int Compare(string strA, string strB, bool ignoreCase = false)
+        public int Compare(String strA, String strB, bool ignoreCase = false)
         {
-            return string.Compare(strA, strB, ignoreCase);
+            return string.Compare(strA.WrappedString, strB.WrappedString, ignoreCase);
         }
 
-        public int Compare2(string strA, string strB, StringComparison comparisonType)
+        public int Compare2(String strA, String strB, StringComparison comparisonType)
         {
-            return string.Compare(strA, strB, comparisonType);
+            return string.Compare(strA.WrappedString, strB.WrappedString, comparisonType);
         }
 
-        public int Compare3(string strA, string strB, bool ignoreCase, CultureInfo culture)
+        public int Compare3(String strA, String strB, bool ignoreCase, CultureInfo culture)
         {
-            return string.Compare(strA, strB, ignoreCase, (GGlobalization.CultureInfo)culture.Unwrap());
+            return string.Compare(strA.WrappedString, strB.WrappedString, ignoreCase, (GGlobalization.CultureInfo)culture.Unwrap());
         }
 
-        public int Compare4(string strA, string strB, CultureInfo culture, CompareOptions options)
+        public int Compare4(String strA, String strB, CultureInfo culture, CompareOptions options)
         {
-            return string.Compare(strA, strB, (GGlobalization.CultureInfo)culture.Unwrap(), options);
+            return string.Compare(strA.WrappedString, strB.WrappedString, (GGlobalization.CultureInfo)culture.Unwrap(), options);
         }
 
-        //public int Compare(string strA, int indexA, string strB, int indexB, int length)
-        //{
-        //    return string.Compare(strA, indexA, strB, indexB, length);
-        //}
-
-        public int Compare5(string strA, int indexA, string strB, int indexB, int length, bool ignoreCase = false)
+        public int Compare5(String strA, int indexA, String strB, int indexB, int length, bool ignoreCase = false)
         {
-            return string.Compare(strA, indexA, strB, indexB, length, ignoreCase);
+            return string.Compare(strA.WrappedString, indexA, strB.WrappedString, indexB, length, ignoreCase);
         }
 
-        public int Compare6(string strA, int indexA, string strB, int indexB, int length, StringComparison comparisonType)
+        public int Compare6(String strA, int indexA, String strB, int indexB, int length, StringComparison comparisonType)
         {
-            return string.Compare(strA, indexA, strB, indexB, length, comparisonType);
+            return string.Compare(strA.WrappedString, indexA, strB.WrappedString, indexB, length, comparisonType);
         }
 
-        public int Compare7(string strA, int indexA, string strB, int indexB, int length, bool ignoreCase, CultureInfo culture)
+        public int Compare7(String strA, int indexA, String strB, int indexB, int length, bool ignoreCase, CultureInfo culture)
         {
-            return string.Compare(strA, indexA, strB, indexB, length, ignoreCase, (GGlobalization.CultureInfo)culture.Unwrap());
+            return string.Compare(strA.WrappedString, indexA, strB.WrappedString, indexB, length, ignoreCase, (GGlobalization.CultureInfo)culture.Unwrap());
         }
 
-        public int Compare8(string strA, int indexA, string strB, int indexB, int length, CultureInfo culture, CompareOptions options)
+        public int Compare8(String strA, int indexA, String strB, int indexB, int length, CultureInfo culture, CompareOptions options)
         {
-            return string.Compare(strA, indexA, strB, indexB, length, (GGlobalization.CultureInfo)culture.Unwrap(), options);
+            return string.Compare(strA.WrappedString, indexA, strB.WrappedString, indexB, length, (GGlobalization.CultureInfo)culture.Unwrap(), options);
         }
 
-        // CompareOrdinal Overloads
-
-        public int CompareOrdinal(string strA, string strB)
+        public int CompareOrdinal(String strA, String strB)
         {
-            return string.CompareOrdinal(strA, strB);
+            return string.CompareOrdinal(strA.WrappedString, strB.WrappedString);
         }
 
-        public int CompareOrdinal2(string strA, int indexA, string strB, int indexB, int length)
+        public int CompareOrdinal2(String strA, int indexA, String strB, int indexB, int length)
         {
-            return string.CompareOrdinal(strA, indexA, strB, indexB, length);
+            return string.CompareOrdinal(strA.WrappedString, indexA, strB.WrappedString, indexB, length);
         }
 
-        public string Copy(string str)
-        {
-            return string.Copy(str);
+        public String Concat(object arg0)
+        {  
+            return new String(string.Concat(arg0));
         }
 
-        public bool Equals(string a, string b)
+        public String Concat2(object arg0, object arg1)
         {
-            return a == b;
-        }
-        public bool Equals2(string a, string b, StringComparison comparisonType)
-        {
-            return string.Equals(a, b, comparisonType);
+            return new String(string.Concat(arg0, arg1));
         }
 
-        // Format Overloads
-
-        public string Format(string pFormat, [In] ref object[] args)
+        public String Concat3(object arg0, object arg1, object arg2)
         {
-            return string.Format(pFormat, args.Unwrap());
-        }
-        public string Format2(IFormatProvider provider, string pFormat, [In] ref object[] args)
-        {
-            return string.Format(provider.Unwrap(), pFormat, args.Unwrap());
+            return new String(string.Concat(arg0, arg1, arg2));
         }
 
-        public bool IsNullOrEmpty(string value)
+        public  String Concat4([In] ref object[] values)
         {
-            return string.IsNullOrEmpty(value);
+            return new String(string.Concat(values));
         }
 
-        public bool IsNullOrWhiteSpace(string value)
+        public String Concat5(GCollections.IEnumerable stringValues)
         {
-            return string.IsNullOrWhiteSpace(value);
+            return new String(string.Concat((GGeneric.IEnumerable<string>)stringValues));
         }
+
+        //public static string Concat8<T>(System.Collections.Generic.IEnumerable<T> values);
+        public String Concat6(GCollections.IEnumerable values)
+        {
+            return new String(string.Concat((GGeneric.IEnumerable<object>)values));
+        }
+
+        public String Concat7(string str0, string str1)
+        {
+            return new String(string.Concat(str0, str1));
+        }
+
+        public String Concat8(string str0, string str1, string str2)
+        {
+            return new String(string.Concat(str0, str1, str2));
+        }
+
+        public String Concat9(string str0, string str1, string str2, string str3)
+        {
+            return new String(string.Concat(str0, str1, str2, str3));
+        }
+
+        public String Concat10([In] ref string[] values)
+        {
+            return new String(string.Concat(values));
+        }
+
+        public String Concat12(String str0, String str1)
+        {
+            return new String(string.Concat(str0.WrappedString, str1.WrappedString));
+        }
+
+        public String Concat13(String str0, String str1, String str2)
+        {
+            return new String(string.Concat(str0.WrappedString, str1.WrappedString, str2.WrappedString));
+        }
+
+        public String Concat14(String str0, String str1, String str2, String str3)
+        {
+            return new String(string.Concat(str0.WrappedString, str1.WrappedString, str2.WrappedString, str3.WrappedString));
+        }
+
+
+        public String Copy(string str)
+        {
+            return new String(string.Copy(str));
+        }
+
+        public String Copy(String str)
+        {
+            return new String(string.Copy(str.WrappedString));
+        }
+
+        public bool Equals(String a, String b)
+        {
+            return a.WrappedString == b.WrappedString;
+        }
+
+        public bool Equals2(String a, String b, StringComparison comparisonType)
+        {
+            return string.Equals(a.WrappedString, b.WrappedString, comparisonType);
+        }
+
+        public String Format(string pFormat, [In] ref object[] args)
+        {
+            return new String(string.Format(pFormat, args.Unwrap()));
+        }
+        public String Format2(IFormatProvider provider, string pFormat, [In] ref object[] args)
+        {
+            return new String(string.Format(provider.Unwrap(), pFormat, args.Unwrap()));
+        }
+
+        public String Format3(String pFormat, [In] ref object[] args)
+        {
+            return new String(string.Format(pFormat.WrappedString, args.Unwrap()));
+        }
+        public String Format4(IFormatProvider provider, String pFormat, [In] ref object[] args)
+        {
+            return new String(string.Format(provider.Unwrap(), pFormat.WrappedString, args.Unwrap()));
+        }
+
+        public bool IsNullOrEmpty(String value)
+        {
+            return string.IsNullOrEmpty(value.WrappedString);
+        }
+
+        public bool IsNullOrWhiteSpace(String value)
+        {
+            return string.IsNullOrWhiteSpace(value.WrappedString);
+        }
+
+        public String Join(string separator, [In] ref string[] value)
+        { 
+            return new String(string.Join(separator, value));
+        }
+
+        public String Join2(string separator, [In] ref object[] values)
+        {
+            return new String(string.Join(separator, values.Unwrap()));
+        }
+
+        public String Join3(string separator, GCollections.IEnumerable stringValues)
+        {
+            return new String(string.Join(separator, (IEnumerable<string>)stringValues));
+        }
+
+        public String Join4(string separator, [In] ref string[] value, int startIndex, int count)
+        {
+            return new String(string.Join(separator, value, startIndex, count));
+        }
+
     }
 }
-
-
-//public string Format(string format, object arg0)
-//{  
-//    return string.Format(format, arg0.Unwrap()); 
-//}
-
-//public string Format(string format, object arg0, object arg1)
-//{
-//    return string.Format(format, arg0.Unwrap(), arg1.Unwrap());
-//}
-
-//public string Format(string format, object arg0, object arg1, object arg2)
-//{
-//    return string.Format(format, arg0.Unwrap(), arg1.Unwrap(), arg2.Unwrap());
-//}
-
-//public string Format(string format, object arg0, object arg1, object arg2, object arg3)
-//{
-//    return string.Format(format, arg0.Unwrap(), arg1.Unwrap(), arg2.Unwrap(), arg3.Unwrap());
-//}
-
-//public string Format(IFormatProvider provider, string format, object arg0)
-//{
-//    return string.Format(provider, format, arg0.Unwrap());
-//}
-
-//public static string Format(IFormatProvider provider, string format, object arg0, object arg1)
-//{
-//    return string.Format(provider, format, arg0.Unwrap(), arg1.Unwrap());
-//}
-
-//public string Format(IFormatProvider provider, string format, object arg0, object arg1, object arg2)
-//{
-//    return string.Format(provider, format, arg0.Unwrap(), arg1.Unwrap(), arg2.Unwrap());
-//}

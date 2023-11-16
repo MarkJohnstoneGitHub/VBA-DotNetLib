@@ -24,13 +24,13 @@ Attribute DateTimeEquals.VB_Description = "The following example demonstrates th
    Set three = one
    
    ' Compare the DateTime objects and display the results.
-   Dim Result As Boolean
-   Result = one.Equals(two)
+   Dim result As Boolean
+   result = one.Equals(two)
    
-   Debug.Print "The result of comparing DateTime object one and two is: " & Result & "."
+   Debug.Print "The result of comparing DateTime object one and two is: " & result & "."
    
-   Result = one.Equals(three)
-   Debug.Print "The result of comparing DateTime object one and three is: " & Result & "."
+   result = one.Equals(three)
+   Debug.Print "The result of comparing DateTime object one and three is: " & result & "."
 End Sub
 
 ' This code example displays the following:

@@ -8,7 +8,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Represents a character as a UTF-16 code unit."
-'@Folder("VBADotNetLib.System")
+'@Folder "VBADotNetLib.System"
 '@ModuleDescription("Represents a character as a UTF-16 code unit.")
 '@PredeclaredId
 

@@ -34,10 +34,10 @@ Public Sub RegexGroupNameFromNumber()
     exitFlag = False
     ' Get group names.
     Do
-        Dim Name As String
-        Name = rgx.GroupNameFromNumber(ctr)
-        If (Not Strings.IsNullOrEmpty(Name)) Then
-            names.Add Name
+        Dim name As String
+        name = rgx.GroupNameFromNumber(ctr)
+        If (Not VBAString.IsNullOrEmpty(name)) Then
+            names.Add name
             ctr = ctr + 1
         Else
             exitFlag = True
@@ -48,7 +48,7 @@ Public Sub RegexGroupNameFromNumber()
         Dim pvtMatch As DotNetLib.Match
         Set pvtMatch = rgx.Match(cityLine)
         If (pvtMatch.Success) Then
-            Debug.Print Strings.Format("Zip code {0} is in {1}, {2}.", _
+            Debug.Print VBAString.Format("Zip code {0} is in {1}, {2}.", _
                                         pvtMatch.Groups.Item_2(names(3)), _
                                         pvtMatch.Groups.Item_2(names(1)), _
                                         pvtMatch.Groups.Item_2(names(2)))
@@ -62,3 +62,5 @@ End Sub
 '       Zip code 48204 is in Detroit, MI.
 '       Zip code 94109 is in San Francisco, CA.
 '       Zip code 98109 is in Seattle, WA.
+
+

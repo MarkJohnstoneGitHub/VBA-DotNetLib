@@ -31,7 +31,7 @@ Public Sub StringBuilderRemove()
     Debug.Print "Original value:"
     Debug.Print rule1
     Debug.Print rule2
-    Debug.Print Strings.Format("{0}", sb.ToString())
+    Debug.Print VBAString.Format("{0}", sb.ToString())
     Debug.Print
     
     Call sb.Remove(10, 6) ' Remove "brown "
@@ -39,7 +39,7 @@ Public Sub StringBuilderRemove()
     Debug.Print "New value:"
     Debug.Print rule1
     Debug.Print rule2
-    Debug.Print Strings.Format("{0}", sb.ToString())
+    Debug.Print VBAString.Format("{0}", sb.ToString())
 End Sub
 
 '/*

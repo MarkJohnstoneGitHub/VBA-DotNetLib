@@ -13,8 +13,8 @@ Option Explicit
 ' The following example uses the Format(String, Object) method to embed an
 ' individual's age in the middle of a string.
 Public Sub StringsFormatEg2()
-    Dim birthdate As DotNetLib.DateTime
-    Set birthdate = DateTime.CreateFromDate(1993, 7, 28)
+    Dim birthDate As DotNetLib.DateTime
+    Set birthDate = DateTime.CreateFromDate(1993, 7, 28)
     Dim dates() As DotNetLib.DateTime
     
     ObjectArray.ToArray dates, _
@@ -30,7 +30,7 @@ Public Sub StringsFormatEg2()
         Set dateValue = varDateValue
 
         Dim interval As DotNetLib.TimeSpan
-        Set interval = DateTime.Subtraction(dateValue, birthdate)
+        Set interval = DateTime.Subtraction(dateValue, birthDate)
         
         ' Get the approximate number of years, without accounting for leap years.
         Dim pvtYears As Long
@@ -38,11 +38,11 @@ Public Sub StringsFormatEg2()
         
         ' See if adding the number of years exceeds dateValue.
         Dim output As String
-        If (DateTime.LessThanOrEqual(birthdate.AddYears(pvtYears), dateValue)) Then
-            output = Strings.Format("You are now {0} years old.", pvtYears)
+        If (DateTime.LessThanOrEqual(birthDate.AddYears(pvtYears), dateValue)) Then
+            output = VBAString.Format("You are now {0} years old.", pvtYears)
             Debug.Print output
         Else
-            output = Strings.Format("You are now {0} years old.", pvtYears - 1)
+            output = VBAString.Format("You are now {0} years old.", pvtYears - 1)
             Debug.Print output
         End If
     Next
@@ -54,4 +54,5 @@ End Sub
 '       You are now 7 years old.
 '       You are now 9 years old.
 '       You are now 13 years old.
+
 

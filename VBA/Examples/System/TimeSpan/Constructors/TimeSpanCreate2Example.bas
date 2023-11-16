@@ -13,8 +13,8 @@ Option Explicit
 '@Description("The following example creates several TimeSpan objects using the constructor overload that initializes a TimeSpan to a specified number of days, hours, minutes, and seconds.")
 Public Sub TimeSpanCreate2()
 Attribute TimeSpanCreate2.VB_Description = "The following example creates several TimeSpan objects using the constructor overload that initializes a TimeSpan to a specified number of days, hours, minutes, and seconds."
-    Debug.Print Strings.Format("{0,-44}{1,16}", "Constructor", "Value")
-    Debug.Print Strings.Format("{0,-44}{1,16}", "-----------", "-----")
+    Debug.Print VBAString.Format("{0,-44}{1,16}", "Constructor", "Value")
+    Debug.Print VBAString.Format("{0,-44}{1,16}", "-----------", "-----")
     CreateTimeSpan 10, 20, 30, 40
     CreateTimeSpan -10, 20, 30, 40
     CreateTimeSpan 0, 0, 0, 937840
@@ -30,10 +30,10 @@ Private Sub CreateTimeSpan(ByVal pDays As Long, ByVal pHours As Long, ByVal pMin
 
     ' Format the constructor for display.
     Dim ctor As String
-    ctor = Strings.Format("TimeSpan( {0}, {1}, {2}, {3} )", pDays, pHours, pMinutes, pSeconds)
+    ctor = VBAString.Format("TimeSpan( {0}, {1}, {2}, {3} )", pDays, pHours, pMinutes, pSeconds)
 
     ' Display the constructor and its value.
-    Debug.Print Strings.Format("{0,-44}{1,16}", ctor, elapsedTime.ToString())
+    Debug.Print VBAString.Format("{0,-44}{1,16}", ctor, elapsedTime.ToString())
 End Sub
 
 ' The example displays the following output:

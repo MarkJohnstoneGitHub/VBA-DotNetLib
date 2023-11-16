@@ -43,8 +43,8 @@ Private Sub PrintIndexAndKeysAndValues(ByVal myList As DotNetLib.SortedList)
     Dim formatString As String
     formatString = Regex.Unescape("\t[{0}]:\t{1}\t{2}")
     Dim i As Long
-    For i = 0 To myList.Count - 1
-        Debug.Print Strings.Format(formatString, i, myList.GetKey(i), myList.GetByIndex(i))
+    For i = 0 To myList.count - 1
+        Debug.Print VBAString.Format(formatString, i, myList.GetKey(i), myList.GetByIndex(i))
     Next i
     Debug.Print
 End Sub

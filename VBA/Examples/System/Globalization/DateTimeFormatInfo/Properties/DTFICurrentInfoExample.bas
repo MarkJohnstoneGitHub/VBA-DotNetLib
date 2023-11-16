@@ -20,27 +20,27 @@ Public Sub DateTimeFormatInfoCurrentInfo()
     Dim dtfi As DotNetLib.DateTimeFormatInfo
     Set dtfi = DateTimeFormatInfo.CurrentInfo
     
-    Debug.Print Strings.Format("Date and Time Formats for {0:u} in the {1} Culture:", _
-                                date1, CultureInfo.CurrentCulture.Name); VBA.vbNewLine
-    Debug.Print Strings.Format("{0,-22} {1,-20} {2,-30}", "Long Date Pattern", _
+    Debug.Print VBAString.Format("Date and Time Formats for {0:u} in the {1} Culture:", _
+                                date1, CultureInfo.CurrentCulture.name); VBA.vbNewLine
+    Debug.Print VBAString.Format("{0,-22} {1,-20} {2,-30}", "Long Date Pattern", _
                                 dtfi.LongDatePattern, _
                                 date1.ToString2(dtfi.LongDatePattern))
-    Debug.Print Strings.Format("{0,-22} {1,-20} {2,-30}", "Long Time Pattern", _
+    Debug.Print VBAString.Format("{0,-22} {1,-20} {2,-30}", "Long Time Pattern", _
                                 dtfi.LongTimePattern, _
                                 date1.ToString2(dtfi.LongTimePattern))
-    Debug.Print Strings.Format("{0,-22} {1,-20} {2,-30}", "Month/Day Pattern", _
+    Debug.Print VBAString.Format("{0,-22} {1,-20} {2,-30}", "Month/Day Pattern", _
                                 dtfi.MonthDayPattern, _
                                 date1.ToString2(dtfi.MonthDayPattern))
     
-    Debug.Print Strings.Format("{0,-22} {1,-20} {2,-30}", "Short Date Pattern", _
+    Debug.Print VBAString.Format("{0,-22} {1,-20} {2,-30}", "Short Date Pattern", _
                                 dtfi.ShortDatePattern, _
                                 date1.ToString2(dtfi.ShortDatePattern))
 
-    Debug.Print Strings.Format("{0,-22} {1,-20} {2,-30}", "Short Time Pattern", _
+    Debug.Print VBAString.Format("{0,-22} {1,-20} {2,-30}", "Short Time Pattern", _
                                 dtfi.ShortTimePattern, _
                                 date1.ToString2(dtfi.ShortTimePattern))
 
-    Debug.Print Strings.Format("{0,-22} {1,-20} {2,-30}", "Year/Month Pattern", _
+    Debug.Print VBAString.Format("{0,-22} {1,-20} {2,-30}", "Year/Month Pattern", _
                                 dtfi.YearMonthPattern, _
                                 date1.ToString2(dtfi.YearMonthPattern))
 End Sub
@@ -54,9 +54,5 @@ End Sub
 '    Short Date Pattern     M/d/yyyy             5/28/2016
 '    Short Time Pattern     h:mm tt              10:28 AM
 '    Year/Month Pattern     MMMM yyyy            May 2016
-
-
-
-
 
 

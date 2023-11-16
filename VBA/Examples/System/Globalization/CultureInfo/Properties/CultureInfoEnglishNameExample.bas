@@ -19,7 +19,7 @@ Public Sub CultureInfoEnglishName()
     For Each varCultureInfo In CultureInfo.GetCultures(CultureTypes.CultureTypes_NeutralCultures)
         Dim ci As DotNetLib.CultureInfo
         Set ci = varCultureInfo
-        Debug.Print ci.Name; " ";
+        Debug.Print ci.name; " ";
         Debug.Print ci.TwoLetterISOLanguageName; " ";
         Debug.Print ci.ThreeLetterISOLanguageName; " ";
         Debug.Print ci.ThreeLetterWindowsLanguageName; " ";

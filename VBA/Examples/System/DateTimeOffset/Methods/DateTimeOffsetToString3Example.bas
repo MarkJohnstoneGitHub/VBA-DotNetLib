@@ -29,10 +29,10 @@ Public Sub DateTimeOffsetToString3()
         Dim culture As DotNetLib.CultureInfo
         Set culture = varCulture
         Dim cultureName As String
-        If culture.Name = vbNullString Then
+        If culture.name = vbNullString Then
             cultureName = culture.NativeName
         Else
-            cultureName = culture.Name
+            cultureName = culture.name
         End If
         Debug.Print "In "; cultureName; ", "; thisDate.ToString3(culture)
     Next

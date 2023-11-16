@@ -43,7 +43,7 @@ End Sub
 Private Sub PrintValues(ByVal myList As mscorlib.IEnumerable)
     Dim obj As Variant
     For Each obj In myList
-        Debug.Print Strings.Format("   {0}", obj)
+        Debug.Print VBAString.Format("   {0}", obj)
     Next
     Debug.Print
 End Sub

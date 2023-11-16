@@ -29,12 +29,12 @@ Public Sub ArrayListToArray()
     myAL.Add "dog"
     
     ' Displays the values of the ArrayList.
-    Debug.Print Strings.Format("The ArrayList contains the following values:")
+    Debug.Print VBAString.Format("The ArrayList contains the following values:")
     PrintIndexAndValues myAL
     
     ' Copies the elements of the ArrayList to a string array.
     Dim myArr As DotNetLib.Array
-    Set myArr = myAL.ToArray2(Strings.GetType())
+    Set myArr = myAL.ToArray2(VBAString.GetType())
     Debug.Print "The string array contains the following values:"
     Call PrintIndexAndValues2(myArr)
 End Sub
@@ -45,7 +45,7 @@ Private Sub PrintIndexAndValues(ByVal myList As DotNetLib.ArrayList)
     Dim obj As Variant
     Dim i As Long
     For Each obj In myList
-        Debug.Print Strings.Format(pvtFormat, i, obj)
+        Debug.Print VBAString.Format(pvtFormat, i, obj)
         i = i + 1
     Next
     Debug.Print
@@ -55,8 +55,8 @@ Private Sub PrintIndexAndValues2(ByVal myArr As DotNetLib.Array)
     Dim i As Long
     Dim pvtFormat As String
     pvtFormat = Regex.Unescape("\t[{0}]:\t{1}")
-    For i = 0 To myArr.Length - 1
-        Debug.Print Strings.Format(pvtFormat, i, myArr(i))
+    For i = 0 To myArr.length - 1
+        Debug.Print VBAString.Format(pvtFormat, i, myArr(i))
     Next i
     Debug.Print
 End Sub

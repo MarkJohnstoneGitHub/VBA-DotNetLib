@@ -47,9 +47,9 @@ Private Sub FindMyObject(ByVal myArr As DotNetLib.Array, ByVal myObject As Varia
     myIndex = Arrays.BinarySearch(myArr, myObject)
     
     If (myIndex < 0) Then
-        Debug.Print Strings.Format("The object to search for ({0}) is not found. The next larger object is at index {1}.", myObject, Not myIndex)
+        Debug.Print VBAString.Format("The object to search for ({0}) is not found. The next larger object is at index {1}.", myObject, Not myIndex)
     Else
-        Debug.Print Strings.Format("The object to search for ({0}) is at index {1}.", myObject, myIndex)
+        Debug.Print VBAString.Format("The object to search for ({0}) is at index {1}.", myObject, myIndex)
     End If
 End Sub
 
@@ -67,7 +67,7 @@ Private Sub PrintValues(ByVal myArr As DotNetLib.Array)
             Debug.Print
             i = 1
         End If
-        Debug.Print Strings.Format(formatString, obj);
+        Debug.Print VBAString.Format(formatString, obj);
     Next
     Debug.Print
 End Sub

@@ -32,13 +32,13 @@ Public Sub StringsFormat()
     
     Dim result1 As String
     
-    result1 = Strings.Format(Regex.Unescape("Temperature on {0:d}:\n{1,11}: {2} degrees (hi)\n{3,11}: {4} degrees (lo)"), _
+    result1 = VBAString.Format(Regex.Unescape("Temperature on {0:d}:\n{1,11}: {2} degrees (hi)\n{3,11}: {4} degrees (lo)"), _
                            date1, hiTime, hiTemp, loTime, loTemp)
     Debug.Print result1
     Debug.Print
     
     Dim result2 As String
-    result2 = Strings.Format(Regex.Unescape("Temperature on {0:d}:\n{1,11}: {2} degrees (hi)\n{3,11}: {4} degrees (lo)"), _
+    result2 = VBAString.Format(Regex.Unescape("Temperature on {0:d}:\n{1,11}: {2} degrees (hi)\n{3,11}: {4} degrees (lo)"), _
                             date1, hiTime, hiTemp, loTime, loTemp)
     Debug.Print result2
 End Sub
@@ -50,3 +50,5 @@ End Sub
 '       Temperature on 7/1/2009:
 '          14:17:32: 62.1 degrees (hi)
 '          03:16:10: 54.8 degrees (lo)
+
+

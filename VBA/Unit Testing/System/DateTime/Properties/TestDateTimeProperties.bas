@@ -68,7 +68,7 @@ Private Sub TestingDateTimeDate()
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -92,7 +92,7 @@ Attribute TestingDateTimeDay.VB_Description = "Testing the DateTime.Day property
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -113,7 +113,7 @@ Attribute TestingDateTimeDayOfWeek.VB_Description = "Testing the DateTime.DayOfW
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -139,7 +139,7 @@ Attribute TestingDateTimeDayOfYear.VB_Description = "Testing the DateTime.DayOfY
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -161,7 +161,7 @@ Attribute TestingDateTimeHour.VB_Description = "Testing the DateTime.Hour proper
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -183,7 +183,7 @@ Attribute TestingDateTimeKind.VB_Description = "Testing the DateTime.Kind proper
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -205,7 +205,7 @@ Attribute TestingDateTimeMillisecond.VB_Description = "Testing the DateTime.Mill
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -227,7 +227,7 @@ Attribute TestingDateTimeMinute.VB_Description = "Testing the DateTime.Minute pr
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -249,7 +249,7 @@ Attribute TestingDateTimeSecond.VB_Description = "Testing the DateTime.Second pr
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -291,7 +291,7 @@ Attribute TestingDateTimeTicks.VB_Description = "Testing the DateTime.Ticks prop
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -341,6 +341,6 @@ Attribute TestingDateTimeTimeOfDay.VB_Description = "Testing the DateTime.TimeOf
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
     Resume TestExit
 End Sub

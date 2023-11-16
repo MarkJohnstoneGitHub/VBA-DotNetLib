@@ -23,9 +23,9 @@ Public Sub ArrayRank()
     Dim array2 As DotNetLib.Array
     Set array2 = Arrays.CreateInstance2(Int32.GetType(), 10, 3)
     
-    Debug.Print Strings.Format("{0}: {1} dimension(s)", _
+    Debug.Print VBAString.Format("{0}: {1} dimension(s)", _
                         array1.ToString(), array1.Rank)
-    Debug.Print Strings.Format("{0}: {1} dimension(s)", _
+    Debug.Print VBAString.Format("{0}: {1} dimension(s)", _
                         array2.ToString(), array2.Rank)
 End Sub
 

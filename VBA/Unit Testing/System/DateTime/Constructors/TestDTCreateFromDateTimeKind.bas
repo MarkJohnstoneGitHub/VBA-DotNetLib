@@ -103,7 +103,7 @@ Private Sub TestMethodDateTimeCreateFromDateTimeKind()
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -128,7 +128,7 @@ Assert:
 TestExit:
     Exit Sub
 TestFail:
-    If Err.Number = ExpectedError Then
+    If Err.number = ExpectedError Then
         Resume TestExit
     Else
         Resume Assert
@@ -157,7 +157,7 @@ Assert:
 TestExit:
     Exit Sub
 TestFail:
-    If Err.Number = ExpectedError Then
+    If Err.number = ExpectedError Then
         Resume TestExit
     Else
         Resume Assert
@@ -185,7 +185,7 @@ Assert:
 TestExit:
     Exit Sub
 TestFail:
-    If Err.Number = ExpectedError Then
+    If Err.number = ExpectedError Then
         Resume TestExit
     Else
         Resume Assert
@@ -213,7 +213,7 @@ Assert:
 TestExit:
     Exit Sub
 TestFail:
-    If Err.Number = ExpectedError Then
+    If Err.number = ExpectedError Then
         Resume TestExit
     Else
         Resume Assert
@@ -242,7 +242,7 @@ Assert:
 TestExit:
     Exit Sub
 TestFail:
-    If Err.Number = ExpectedError Then
+    If Err.number = ExpectedError Then
         Resume TestExit
     Else
         Resume Assert
@@ -271,7 +271,7 @@ Assert:
 TestExit:
     Exit Sub
 TestFail:
-    If Err.Number = ExpectedError Then
+    If Err.number = ExpectedError Then
         Resume TestExit
     Else
         Resume Assert
@@ -300,7 +300,7 @@ Assert:
 TestExit:
     Exit Sub
 TestFail:
-    If Err.Number = ExpectedError Then
+    If Err.number = ExpectedError Then
         Resume TestExit
     Else
         Resume Assert
@@ -329,7 +329,7 @@ Assert:
 TestExit:
     Exit Sub
 TestFail:
-    If Err.Number = ExpectedError Then
+    If Err.number = ExpectedError Then
         Resume TestExit
     Else
         Resume Assert
@@ -357,7 +357,7 @@ Assert:
 TestExit:
     Exit Sub
 TestFail:
-    If Err.Number = ExpectedError Then
+    If Err.number = ExpectedError Then
         Resume TestExit
     Else
         Resume Assert
@@ -386,7 +386,7 @@ Assert:
 TestExit:
     Exit Sub
 TestFail:
-    If Err.Number = ExpectedError Then
+    If Err.number = ExpectedError Then
         Resume TestExit
     Else
         Resume Assert
@@ -415,7 +415,7 @@ Assert:
 TestExit:
     Exit Sub
 TestFail:
-    If Err.Number = ExpectedError Then
+    If Err.number = ExpectedError Then
         Resume TestExit
     Else
         Resume Assert
@@ -444,7 +444,7 @@ Assert:
 TestExit:
     Exit Sub
 TestFail:
-    If Err.Number = ExpectedError Then
+    If Err.number = ExpectedError Then
         Resume TestExit
     Else
         Resume Assert
@@ -472,7 +472,7 @@ Assert:
 TestExit:
     Exit Sub
 TestFail:
-    If Err.Number = ExpectedError Then
+    If Err.number = ExpectedError Then
         Resume TestExit
     Else
         Resume Assert

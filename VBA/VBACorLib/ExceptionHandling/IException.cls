@@ -30,8 +30,8 @@ Attribute ExceptionSeverity.VB_Description = "Gets the error severity. I.e. warn
 End Property
 
 '@Description("Gets the error number.")
-Public Property Get Number() As Long
-Attribute Number.VB_Description = "Gets the error number."
+Public Property Get number() As Long
+Attribute number.VB_Description = "Gets the error number."
 End Property
 
 '@Description("Gets the error source.")

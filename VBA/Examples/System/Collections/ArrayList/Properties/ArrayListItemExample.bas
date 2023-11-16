@@ -38,40 +38,40 @@ Public Sub ArrayListItem()
 
     ' The Item property is an indexer, so the property name is
     ' not required.
-    Debug.Print Strings.Format("Element {0} is {2}{1}{2}", 2, pvtStringList(2), Quote)
+    Debug.Print VBAString.Format("Element {0} is {2}{1}{2}", 2, pvtStringList(2), Quote)
     
     ' Assigning a value to the property changes the value of
     ' the indexed element
     pvtStringList.SetValue 2, "abcd" 'Note for assigning value types use SetValue(index,item) not Item(index) = item
-    Debug.Print Strings.Format("Element {0} is {2}{1}{2}", 2, pvtStringList(2), Quote)
+    Debug.Print VBAString.Format("Element {0} is {2}{1}{2}", 2, pvtStringList(2), Quote)
     
     ' Accessing an element outside the current element count
     ' causes an exception.
-    Debug.Print Strings.Format("Number of elements in the list: {0}", _
-                                pvtStringList.Count)
+    Debug.Print VBAString.Format("Number of elements in the list: {0}", _
+                                pvtStringList.count)
                                 
     On Error Resume Next
-    Debug.Print Strings.Format("Element {0} is {2}{1}{2}", _
-                pvtStringList.Count, pvtStringList(pvtStringList.Count), Quote)
+    Debug.Print VBAString.Format("Element {0} is {2}{1}{2}", _
+                pvtStringList.count, pvtStringList(pvtStringList.count), Quote)
     If Catch(ArgumentOutOfRangeException) Then
-        Debug.Print Strings.Format("pvtStringList({0}) is out of range.", _
-                                    pvtStringList.Count)
+        Debug.Print VBAString.Format("pvtStringList({0}) is out of range.", _
+                                    pvtStringList.count)
     End If
     On Error GoTo 0 'Stop code and display error
     
     ' You cannot use the Item property to add new elements.
     On Error Resume Next
-    pvtStringList.SetValue pvtStringList.Count, "42"
+    pvtStringList.SetValue pvtStringList.count, "42"
     If Catch(ArgumentOutOfRangeException) Then
-        Debug.Print Strings.Format("pvtStringList({0}) is out of range.", _
-                                    pvtStringList.Count)
+        Debug.Print VBAString.Format("pvtStringList({0}) is out of range.", _
+                                    pvtStringList.count)
     End If
     On Error GoTo 0 'Stop code and display error
     
     Debug.Print
     Dim i As Long
-    For i = 0 To pvtStringList.Count - 1
-        Debug.Print Strings.Format("Element {0} is {2}{1}{2}", i, _
+    For i = 0 To pvtStringList.count - 1
+        Debug.Print VBAString.Format("Element {0} is {2}{1}{2}", i, _
                                     pvtStringList(i), Quote)
     Next i
     
@@ -101,4 +101,5 @@ End Sub
 'abcd
 'abcdefg
 ' */
+
 

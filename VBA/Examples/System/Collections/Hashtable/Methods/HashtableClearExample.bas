@@ -25,7 +25,7 @@ Public Sub HashtableClear()
     
     ' Displays the count and values of the Hashtable.
     Debug.Print "Initially,"
-    Debug.Print Strings.Format("   Count    : {0}", myHT.Count)
+    Debug.Print VBAString.Format("   Count    : {0}", myHT.count)
     Debug.Print "   Values:"
     Call PrintKeysAndValues(myHT)
     
@@ -34,7 +34,7 @@ Public Sub HashtableClear()
 
     ' Displays the count and values of the Hashtable.
     Debug.Print "After Clear,"
-    Debug.Print Strings.Format("   Count    : {0}", myHT.Count)
+    Debug.Print VBAString.Format("   Count    : {0}", myHT.count)
     Debug.Print "   Values:"
     Call PrintKeysAndValues(myHT)
 End Sub
@@ -47,7 +47,7 @@ Private Sub PrintKeysAndValues(ByVal myHT As DotNetLib.Hashtable)
     For Each varDictEntry In myHT
         Dim dictEntry As mscorlib.DictionaryEntry
         dictEntry = varDictEntry
-        Debug.Print Strings.Format(formatString, DictionaryEntry.Key(dictEntry), DictionaryEntry.Value(dictEntry))
+        Debug.Print VBAString.Format(formatString, DictionaryEntry.Key(dictEntry), DictionaryEntry.value(dictEntry))
     Next
 End Sub
 

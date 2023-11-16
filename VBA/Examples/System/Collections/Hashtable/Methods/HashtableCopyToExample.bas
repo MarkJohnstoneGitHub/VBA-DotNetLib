@@ -26,7 +26,7 @@ Public Sub HashtableCopyTo()
     
     ' Creates and initializes the one-dimensional target Array.
     Dim myTargetArray As DotNetLib.Array
-    Set myTargetArray = Arrays.CreateInstance(Strings.GetType(), 15)
+    Set myTargetArray = Arrays.CreateInstance(VBAString.GetType(), 15)
     Call myTargetArray.SetValue("The", 0)
     Call myTargetArray.SetValue("quick", 1)
     Call myTargetArray.SetValue("brown", 2)
@@ -47,15 +47,15 @@ Public Sub HashtableCopyTo()
     Call PrintValues(myTargetArray, " ")
     
     ' Copies the values in the source Hashtable to the target Hashtable, starting at index 6.
-    Call mySourceHT.Values.CopyTo(myTargetArray.WrappedArray, 6)
+    Call mySourceHT.values.CopyTo(myTargetArray.WrappedArray, 6)
     ' Displays the values of the target Array.
     Call PrintValues(myTargetArray, " ")
 End Sub
 
 Public Sub PrintValues(ByVal myArr As DotNetLib.Array, ByVal mySeparator As String)
     Dim i As Long
-    For i = 0 To myArr.Length - 1
-        Debug.Print Strings.Format("{0}{1}", mySeparator, myArr(i));
+    For i = 0 To myArr.length - 1
+        Debug.Print VBAString.Format("{0}{1}", mySeparator, myArr(i));
     Next i
     Debug.Print
 End Sub
@@ -71,7 +71,4 @@ End Sub
 ' The quick brown fox jumps over valueA valueB dog
 '
 '*/
-
-
-
 

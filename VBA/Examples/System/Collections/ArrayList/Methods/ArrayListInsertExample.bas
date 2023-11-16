@@ -51,7 +51,7 @@ Public Sub ArrayListInsert()
     Call PrintValues(myAL)
     
     ' Add "!!!" at the end.
-    Call myAL.Insert(myAL.Count, "!!!")
+    Call myAL.Insert(myAL.count, "!!!")
 
     ' Displays the ArrayList.
     Debug.Print "After adding ""!!!"", the ArrayList now contains:"
@@ -59,8 +59,8 @@ Public Sub ArrayListInsert()
     
     ' Inserting an element beyond Count throws an exception.
     On Error Resume Next
-    Call myAL.Insert(myAL.Count + 1, "anystring")
-    If Err.Number Then
+    Call myAL.Insert(myAL.count + 1, "anystring")
+    If Err.number Then
         Debug.Print "Exception: " + Err.Description
     End If
     On Error GoTo 0 'Stop code and display error
@@ -69,7 +69,7 @@ End Sub
 Public Sub PrintValues(ByVal myList As mscorlib.IEnumerable)
     Dim obj As Variant
     For Each obj In myList
-        Debug.Print Strings.Format("   {0}", obj);
+        Debug.Print VBAString.Format("   {0}", obj);
     Next
     Debug.Print
 End Sub

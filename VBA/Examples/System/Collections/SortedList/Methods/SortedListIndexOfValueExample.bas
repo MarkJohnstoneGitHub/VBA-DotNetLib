@@ -36,12 +36,12 @@ Public Sub SortedListIndexOfValue()
     ' Searches for a specific key.
     Dim myKey As Long
     myKey = 2
-    Debug.Print Strings.Format("The key ""{0}"" is at index {1}.", myKey, mySL.IndexOfKey(myKey))
+    Debug.Print VBAString.Format("The key ""{0}"" is at index {1}.", myKey, mySL.IndexOfKey(myKey))
 
     ' Searches for a specific value.
     Dim myValue As String
     myValue = "three"
-    Debug.Print Strings.Format("The value ""{0}"" is at index {1}.", myValue, mySL.IndexOfValue(myValue))
+    Debug.Print VBAString.Format("The value ""{0}"" is at index {1}.", myValue, mySL.IndexOfValue(myValue))
 End Sub
 
 Private Sub PrintIndexAndKeysAndValues(ByVal myList As DotNetLib.SortedList)
@@ -49,8 +49,8 @@ Private Sub PrintIndexAndKeysAndValues(ByVal myList As DotNetLib.SortedList)
     Dim formatString As String
     formatString = Regex.Unescape("\t[{0}]:\t{1}\t{2}")
     Dim i As Long
-    For i = 0 To myList.Count - 1
-        Debug.Print Strings.Format(formatString, i, myList.GetKey(i), myList.GetByIndex(i))
+    For i = 0 To myList.count - 1
+        Debug.Print VBAString.Format(formatString, i, myList.GetKey(i), myList.GetByIndex(i))
     Next i
     Debug.Print
 End Sub

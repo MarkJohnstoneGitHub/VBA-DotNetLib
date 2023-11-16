@@ -23,7 +23,7 @@ namespace DotNetLib.System.Collections
             _stringList = new List<string>();
         }
 
-        public ListString(List<String> objListString)
+        public ListString(List<string> objListString)
         {
             _stringList = objListString;
         }

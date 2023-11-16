@@ -87,8 +87,8 @@ End Sub
 Private Sub PrintKeysAndValues(ByVal myList As DotNetLib.SortedList)
     Debug.Print "        -KEY-   -VALUE-"
     Dim i As Long
-    For i = 0 To myList.Count - 1
-        Debug.Print Strings.Format("        {0,-6}: {1}", myList.GetKey(i), myList.GetByIndex(i))
+    For i = 0 To myList.count - 1
+        Debug.Print VBAString.Format("        {0,-6}: {1}", myList.GetKey(i), myList.GetByIndex(i))
     Next i
     Debug.Print
 End Sub

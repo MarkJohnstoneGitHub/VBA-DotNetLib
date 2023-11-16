@@ -10,10 +10,10 @@ Private Sub TestingArrayCreateInstance()
     Dim doubleType As DotNetLib.Type
     
     Dim my1DArray As DotNetLib.Array
-    Set my1DArray = Arrays.CreateInstance(Strings(), 5)
+    Set my1DArray = Arrays.CreateInstance(VBAString(), 5)
         
     Dim my1DArray2 As DotNetLib.Array
-    Set my1DArray2 = Arrays.CreateInstance(Strings.GetType, 5)
+    Set my1DArray2 = Arrays.CreateInstance(VBAString.GetType, 5)
     
 '    Dim pType As DotNetLib.Type
 '    Set pType = Types.GetType("System.DateTime")
@@ -93,5 +93,4 @@ End Sub
 '    Debug.Print my1DArrayV2.Item(1)
 '    'InvalidCastException
 '    my1DArrayV2.SetValue DateTime.CreateFromDate(2010, 5, 5), 2
-
 

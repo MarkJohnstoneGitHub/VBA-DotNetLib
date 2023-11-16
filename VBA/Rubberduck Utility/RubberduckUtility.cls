@@ -128,8 +128,8 @@ Attribute ExportAll.VB_Description = "Export the active project components to fi
     
     Dim component As VBComponent
     For Each component In this.Project.VBComponents
-        Dim filename As String
-        filename = component.Name
+        Dim fileName As String
+        fileName = component.name
         Dim extension As String
         extension = ComponentExtension(component)
         Dim folderAnnotation As String
@@ -140,34 +140,34 @@ Attribute ExportAll.VB_Description = "Export the active project components to fi
         On Error Resume Next
         Dim filePath As String
         CreateRelativeDirectory relativePath
-        If Err.Number = 0 Then  ' Error if invalid Rubberduck folder characters or invalid working folder permission
+        If Err.number = 0 Then  ' Error if invalid Rubberduck folder characters or invalid working folder permission
             filePath = this.WorkingDirectory & DirectorySeparatorChar & relativePath & _
-                        IIf(relativePath <> VBA.vbNullString, DirectorySeparatorChar, VBA.vbNullString) & filename & extension
+                        IIf(relativePath <> VBA.vbNullString, DirectorySeparatorChar, VBA.vbNullString) & fileName & extension
         Else
-            this.ErrorLog.Add Exception.Create(Err.Number, _
+            this.ErrorLog.Add Exception.Create(Err.number, _
                     "RubberduckUtility.ExportAllComponents", _
                     "Warning invalid Rubberduck folder characters, " & folderAnnotation & _
-                    " " & filename & extension & " exported to " & _
+                    " " & fileName & extension & " exported to " & _
                     this.WorkingDirectory, ExceptionSeverity.Warning)
-            filePath = this.WorkingDirectory & DirectorySeparatorChar & filename & extension
+            filePath = this.WorkingDirectory & DirectorySeparatorChar & fileName & extension
         End If
         On Error GoTo 0 'reset error handling
         
         On Error Resume Next
         component.Export filePath
-        If Err.Number = 0 Then
+        If Err.number = 0 Then
             this.TotalExported = this.TotalExported + 1
-            If Len(filename) > 31 Then
+            If Len(fileName) > 31 Then
                 this.ErrorLog.Add Exception.Create( _
-                                Err.Number, _
+                                Err.number, _
                                 "RubberduckUtility.ExportAllComponents", _
-                                "Warning file name length greater than 31 characters for: " & filename, _
+                                "Warning file name length greater than 31 characters for: " & fileName, _
                                 ExceptionSeverity.Warning)
                                 
             End If
         ' Error may occur for attempting to overwrite read only file etc
-        ElseIf (this.WorkingDirectory & DirectorySeparatorChar & filename & extension) = filePath Then
-            this.ErrorLog.Add Exception.Create(Err.Number, _
+        ElseIf (this.WorkingDirectory & DirectorySeparatorChar & fileName & extension) = filePath Then
+            this.ErrorLog.Add Exception.Create(Err.number, _
                                 "RubberduckUtility.ExportAllComponents", _
                                 "Export failed for " & filePath & _
                                 " Attempted to overwrite read only file or invalid folder permissions.", _
@@ -175,27 +175,27 @@ Attribute ExportAll.VB_Description = "Export the active project components to fi
         Else
             ' Attempt to export to working directory
             this.ErrorLog.Add Exception.Create( _
-                Err.Number, _
+                Err.number, _
                 "RubberduckUtility.ExportAllComponents", _
                 "Warning export failed for: " & filePath & " exported to " & this.WorkingDirectory, _
                 ExceptionSeverity.Warning)
-            filePath = this.WorkingDirectory & DirectorySeparatorChar & filename & extension
+            filePath = this.WorkingDirectory & DirectorySeparatorChar & fileName & extension
             Err.Clear
             component.Export filePath
-            If Err.Number = 0 Then
+            If Err.number = 0 Then
                 this.TotalExported = this.TotalExported + 1
-                If Len(filename) > 31 Then
+                If Len(fileName) > 31 Then
                     this.ErrorLog.Add Exception.Create( _
-                        Err.Number, _
+                        Err.number, _
                         "RubberduckUtility.ExportAllComponents", _
-                        "Warning file name length greater than 31 characters for: " & filename, _
+                        "Warning file name length greater than 31 characters for: " & fileName, _
                         ExceptionSeverity.Warning)
                                 
                 End If
             Else
                 'Export will fail if attempting to overwrite read only file in working directory or invalid folder permission
                 this.ErrorLog.Add Exception.Create( _
-                                    Err.Number, _
+                                    Err.number, _
                                     "RubberduckUtility.ExportAllComponents", _
                                     "Export failed for " & filePath & _
                                     " Attempted to overwrite read only file or invalid folder permissions.", _
@@ -289,20 +289,20 @@ Attribute CreateRelativeDirectory.VB_Description = "Creates all directories and 
 
     Dim folderIndex As Long
     For folderIndex = LBound(folders) To UBound(folders)
-        Dim path As String
-        path = path & DirectorySeparatorChar & folders(folderIndex)
+        Dim Path As String
+        Path = Path & DirectorySeparatorChar & folders(folderIndex)
         Dim fullpath As String
-        fullpath = this.WorkingDirectory & path
-        If Dir$(fullpath, vbDirectory) = vbNullString Then
+        fullpath = this.WorkingDirectory & Path
+        If dir$(fullpath, vbDirectory) = vbNullString Then
             MkDir fullpath
         End If
     Next folderIndex
 End Sub
 
 '@Description("Determines whether the given path refers to an existing directory on disk.")
-Private Function DirectoryExist(ByVal path As String) As Boolean
+Private Function DirectoryExist(ByVal Path As String) As Boolean
 Attribute DirectoryExist.VB_Description = "Determines whether the given path refers to an existing directory on disk."
-    If Dir$(path, VBA.vbDirectory) <> vbNullString Then
+    If dir$(Path, VBA.vbDirectory) <> vbNullString Then
         DirectoryExist = True
     End If
 End Function

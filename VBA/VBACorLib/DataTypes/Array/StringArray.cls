@@ -26,16 +26,16 @@ Option Explicit
 '@Returns String()
 '   Returns a string array.
 ''
-Public Function ToArray(ParamArray Values() As Variant) As String()
+Public Function ToArray(ParamArray values() As Variant) As String()
 Attribute ToArray.VB_Description = "Creates a one dimensional string array from a list of parameters"
-   Dim Result() As String
-   ReDim Result(LBound(Values) To UBound(Values))
+   Dim result() As String
+   ReDim result(LBound(values) To UBound(values))
    Dim index As Long
    
-   For index = LBound(Values) To UBound(Values)
-       Result(index) = CStr(Values(index))
+   For index = LBound(values) To UBound(values)
+       result(index) = CStr(values(index))
    Next index
-   ToArray = Result
+   ToArray = result
 End Function
 
 '@TODO

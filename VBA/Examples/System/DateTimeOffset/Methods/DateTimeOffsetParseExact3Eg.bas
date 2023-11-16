@@ -41,13 +41,13 @@ Public Sub DateTimeOffsetParseExact3()
                 
     Dim provider As DotNetLib.DateTimeFormatInfo
     Set provider = CultureInfo.InvariantCulture.DateTimeFormat
-    Dim Result As DotNetLib.DateTimeOffset
+    Dim result As DotNetLib.DateTimeOffset
     Do
         pvtInput = InputBox("Enter a date, time, and offset (MM/DD/YYYY HH:MM +/-HH:MM),")
         On Error Resume Next
-        Set Result = DateTimeOffset.ParseExact3(pvtInput, formats, provider, DateTimeStyles.DateTimeStyles_AllowWhiteSpaces)
+        Set result = DateTimeOffset.ParseExact3(pvtInput, formats, provider, DateTimeStyles.DateTimeStyles_AllowWhiteSpaces)
         If Try Then
-            Debug.Print "'" & pvtInput & "' was converted to " & Result.ToString()
+            Debug.Print "'" & pvtInput & "' was converted to " & result.ToString()
         ElseIf Catch(FormatException) Then
             Debug.Print "Unable to parse "; "'"; pvtInput; "'"; "."
         End If

@@ -10,7 +10,7 @@ Attribute VB_Exposed = False
 Attribute VB_Description = "Represents an 8-bit unsigned integer."
 Attribute VB_Ext_KEY = "Rubberduck" ,"Predeclared Class Module"
 '@ModuleAttribute VB_Ext_KEY, "Rubberduck", "Predeclared Class Module"
-'@Folder("VBADotNetLib.System")
+'@Folder "VBADotNetLib.System"
 '@ModuleDescription("Represents an 8-bit unsigned integer.")
 '@PredeclaredId
 
@@ -19,7 +19,7 @@ Attribute VB_Ext_KEY = "Rubberduck" ,"Predeclared Class Module"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 November 2, 2023
-'@LastModified November 2, 2023
+'@LastModified November 9, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 

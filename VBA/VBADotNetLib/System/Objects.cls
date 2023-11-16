@@ -8,7 +8,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy."
-'@Folder("VBADotNetLib.System")
+'@Folder "VBADotNetLib.System"
 '@ModuleDescription("Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.")
 '@PredeclaredId
 
@@ -44,4 +44,8 @@ End Sub
 
 Public Function Create(Optional ByVal obj As Variant = Nothing) As DotNetLib.Object
     Set Create = this.ObjectSingleton.Create(obj)
+End Function
+
+Public Function Equals(ByVal objA As Variant, ByVal objB As Variant) As Boolean
+    Equals = this.ObjectSingleton.Equals(objA, objB)
 End Function

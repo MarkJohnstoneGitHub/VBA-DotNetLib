@@ -70,7 +70,7 @@ End Property
 '@DefaultMember
 Public Property Get ToString() As String
 Attribute ToString.VB_UserMemId = 0
-    ToString = Strings.Format(PersonFormat, this.FirstName, this.LastName, this.DateOfBirth, Quote, BraceOpen, BraceClose)
+    ToString = VBAString.Format(PersonFormat, this.FirstName, this.LastName, this.DateOfBirth, Quote, BraceOpen, BraceClose)
 End Property
 
 Public Function GetType() As DotNetLib.Type

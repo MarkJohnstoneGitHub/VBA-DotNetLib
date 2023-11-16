@@ -11,7 +11,6 @@ Attribute VB_Description = "Represents a mutable string of characters. This clas
 '@Folder "VBADotNetLib.System.Text"
 '@PredeclaredId
 '@ModuleDescription("Represents a mutable string of characters. This class cannot be inherited.")
-
 '@Singleton
 
 '@Author Mark Johnstone
@@ -39,20 +38,23 @@ Private Sub Class_Terminate()
    Set this.StringBuilderSingleton = Nothing
 End Sub
 
+'@Static
 '@Description("Initializes a new instance of the StringBuilder class using the specified string and capacity.")
 Public Function Create(Optional ByVal value As String = VBA.vbNullString, Optional ByVal Capacity As Long = 16) As DotNetLib.StringBuilder
 Attribute Create.VB_Description = "Initializes a new instance of the StringBuilder class using the specified string and capacity."
    Set Create = this.StringBuilderSingleton.Create(value, Capacity)
 End Function
 
+'@Static
 '@Description("Initializes a new instance of the StringBuilder class that starts with a specified capacity and can grow to a specified maximum.")
 Public Function Create2(ByVal Capacity As Long, ByVal MaxCapacity As Long) As DotNetLib.StringBuilder
 Attribute Create2.VB_Description = "Initializes a new instance of the StringBuilder class that starts with a specified capacity and can grow to a specified maximum."
    Set Create2 = this.StringBuilderSingleton.Create2(Capacity, MaxCapacity)
 End Function
 
+'@Static
 '@Description("Initializes a new instance of the StringBuilder class from the specified substring and capacity.")
-Public Function Create3(ByVal value As String, ByVal startIndex As Long, ByVal Length As Long, ByVal Capacity As Long) As DotNetLib.StringBuilder
+Public Function Create3(ByVal value As String, ByVal startIndex As Long, ByVal length As Long, ByVal Capacity As Long) As DotNetLib.StringBuilder
 Attribute Create3.VB_Description = "Initializes a new instance of the StringBuilder class from the specified substring and capacity."
-   Set Create3 = this.StringBuilderSingleton.Create3(value, startIndex, Length, Capacity)
+   Set Create3 = this.StringBuilderSingleton.Create3(value, startIndex, length, Capacity)
 End Function

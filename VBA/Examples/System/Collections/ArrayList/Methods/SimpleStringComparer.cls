@@ -20,13 +20,13 @@ Option Explicit
 
 Implements mscorlib.IComparer
 
-Public Function Compare(ByVal x As String, y As String) As Long
-    Compare = Strings.Compare(x, y)
+Public Function Compare(ByVal x As String, ByVal y As String) As Long
+    Compare = VBAString.Compare(x, y)
 End Function
 
 ' ------------------------------------------------------------'
 'IScriptingDictionary Methods
 ' ------------------------------------------------------------'
 Private Function IComparer_Compare(ByVal x As Variant, ByVal y As Variant) As Long
-    IComparer_Compare = Strings.Compare(x, y)
+    IComparer_Compare = VBAString.Compare(x, y)
 End Function

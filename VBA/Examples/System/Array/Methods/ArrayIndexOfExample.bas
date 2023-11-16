@@ -18,7 +18,7 @@ Option Explicit
 ''
 Public Sub ArrayIndexOf()
     Dim stringArr As DotNetLib.Array
-    Set stringArr = Arrays.CreateInitialize1D(Strings.GetType(), _
+    Set stringArr = Arrays.CreateInitialize1D(VBAString.GetType(), _
                         "the", "quick", "brown", "fox", "jumps", _
                         "over", "the", "lazy", "dog", "in", "the", _
                         "barn")
@@ -27,7 +27,7 @@ Public Sub ArrayIndexOf()
     Debug.Print "The array contains the following values:"
     Dim i As Long
     For i = stringArr.GetLowerBound(0) To stringArr.GetUpperBound(0)
-        Debug.Print Strings.Format("   [{0,2}]: {1}", i, stringArr(i))
+        Debug.Print VBAString.Format("   [{0,2}]: {1}", i, stringArr(i))
     Next i
     
     ' Search for the first occurrence of the duplicated value.
@@ -35,19 +35,19 @@ Public Sub ArrayIndexOf()
     searchString = "the"
     Dim index As Long
     index = Arrays.IndexOf(stringArr, searchString)
-    Debug.Print Strings.Format("The first occurrence of ""{0}"" is at index {1}.", _
+    Debug.Print VBAString.Format("The first occurrence of ""{0}"" is at index {1}.", _
                              searchString, index)
 
     ' Search for the first occurrence of the duplicated value in the last section of the array.
     index = Arrays.IndexOf2(stringArr, searchString, 4)
-    Debug.Print Strings.Format("The first occurrence of ""{0}"" between index 4 and the end is at index {1}.", _
+    Debug.Print VBAString.Format("The first occurrence of ""{0}"" between index 4 and the end is at index {1}.", _
                                 searchString, index)
 
     ' Search for the first occurrence of the duplicated value in a section of the array.
     Dim position As Long
     position = index + 1
     index = Arrays.IndexOf3(stringArr, searchString, position, stringArr.GetUpperBound(0) - position + 1)
-    Debug.Print Strings.Format("The first occurrence of ""{0}"" between index {1} and index {2} is at index {3}.", _
+    Debug.Print VBAString.Format("The first occurrence of ""{0}"" between index {1} and index {2} is at index {3}.", _
                   searchString, position, stringArr.GetUpperBound(0), index)
 End Sub
 
@@ -68,3 +68,5 @@ End Sub
 '    The first occurrence of "the" is at index 0.
 '    The first occurrence of "the" between index 4 and the end is at index 6.
 '    The first occurrence of "the" between index 7 and index 11 is at index 10.
+
+

@@ -16,6 +16,12 @@ namespace DotNetLib.System
     [InterfaceType(ComInterfaceType.InterfaceIsDual)]
     public interface IType
     {
+
+        GSystem.Type WrappedType 
+        {
+            [Description("Gets the wrapped mscorlib.Type.")]
+            get;
+        }
         GReflection.Assembly Assembly 
         {
             [Description("Gets the Assembly in which the type is declared. For generic types, gets the Assembly in which the generic type is defined.")]

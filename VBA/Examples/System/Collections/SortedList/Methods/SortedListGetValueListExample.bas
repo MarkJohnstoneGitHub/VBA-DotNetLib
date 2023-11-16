@@ -33,8 +33,8 @@ Public Sub SortedListGetValueList()
     ' Gets the key and the value based on the index.
     Dim myIndex As Long
     myIndex = 3
-    Debug.Print Strings.Format("The key   at index {0} is {1}.", myIndex, mySL.GetKey(myIndex))
-    Debug.Print Strings.Format("The value at index {0} is {1}.", myIndex, mySL.GetByIndex(myIndex))
+    Debug.Print VBAString.Format("The key   at index {0} is {1}.", myIndex, mySL.GetKey(myIndex))
+    Debug.Print VBAString.Format("The value at index {0} is {1}.", myIndex, mySL.GetByIndex(myIndex))
     
     ' Gets the list of keys and the list of values.
     Dim myKeyList As mscorlib.IList
@@ -47,8 +47,8 @@ Public Sub SortedListGetValueList()
     Dim formatString As String
     formatString = Regex.Unescape("\t{0}\t{1}")
     Dim i As Long
-    For i = 0 To mySL.Count - 1
-        Debug.Print Strings.Format(formatString, myKeyList(i), myValueList(i))
+    For i = 0 To mySL.count - 1
+        Debug.Print VBAString.Format(formatString, myKeyList(i), myValueList(i))
     Next i
 End Sub
 

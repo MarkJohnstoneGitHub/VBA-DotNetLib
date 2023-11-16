@@ -25,7 +25,7 @@ Public Sub QueueClear()
     
     ' Displays the count and values of the Queue.
     Debug.Print "Initially,"
-    Debug.Print Strings.Format("   Count    : {0}", myQ.Count)
+    Debug.Print VBAString.Format("   Count    : {0}", myQ.count)
     Debug.Print "   Values:";
     PrintValues myQ
     
@@ -34,7 +34,7 @@ Public Sub QueueClear()
 
     ' Displays the count and values of the Queue.
     Debug.Print "After Clear,"
-    Debug.Print Strings.Format("   Count    : {0}", myQ.Count)
+    Debug.Print VBAString.Format("   Count    : {0}", myQ.count)
     Debug.Print "   Values:";
     PrintValues myQ
     
@@ -43,7 +43,7 @@ End Sub
 Private Sub PrintValues(ByVal myQ As DotNetLib.Queue)
     Dim myObj As Variant
     For Each myObj In myQ
-        Debug.Print Strings.Format("    {0}", myObj);
+        Debug.Print VBAString.Format("    {0}", myObj);
     Next
     Debug.Print
 End Sub

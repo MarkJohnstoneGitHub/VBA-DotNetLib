@@ -8,7 +8,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "TextInfo factory methods and static members."
-'@Folder("VBADotNetLib.System.Globalization")
+'@Folder "VBADotNetLib.System.Globalization"
 '@PredeclaredId
 '@ModuleDescription("TextInfo factory methods and static members.")
 

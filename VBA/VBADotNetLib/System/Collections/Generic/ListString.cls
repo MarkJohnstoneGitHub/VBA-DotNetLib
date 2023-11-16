@@ -16,7 +16,7 @@ Attribute VB_Description = "Represents a strongly typed list of strings that can
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 3, 2023
-'@LastModified October 16, 2023
+'@LastModified November 8, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -45,6 +45,12 @@ End Sub
 Public Function Create(Optional ByVal pCapacity As Long = 0) As DotNetLib.ListString
 Attribute Create.VB_Description = "Initializes a new instance of the List<String> class that is empty and has the default or specified initial capacity."
    Set Create = this.ListStringSingleton.Create2(pCapacity)
+End Function
+
+'@Description("Initializes a new instance of the List<string> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.")
+Public Function CreateFromIEnumerable(ByVal pCollection As IEnumerable) As DotNetLib.ListString
+Attribute CreateFromIEnumerable.VB_Description = "Initializes a new instance of the List<string> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied."
+    Set CreateFromIEnumerable = this.ListStringSingleton.CreateFromIEnumerable(pCollection)
 End Function
 
 

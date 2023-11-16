@@ -41,9 +41,9 @@ Public Sub ArrayListSort3()
     Call PrintIndexAndValues(myAL)
     
     ' Sorts the values of the ArrayList using the reverse case-insensitive comparer.
-    Dim myComparer As mscorlib.IComparer
-    Set myComparer = New MyReverserClass
-    Call myAL.Sort3(1, 3, myComparer)
+    Dim MyComparer As mscorlib.IComparer
+    Set MyComparer = New MyReverserClass
+    Call myAL.Sort3(1, 3, MyComparer)
     Debug.Print "After sorting from index 1 to index 3 with the reverse case-insensitive comparer:"
     Call PrintIndexAndValues(myAL)
 End Sub
@@ -54,7 +54,7 @@ Public Sub PrintIndexAndValues(ByVal myList As mscorlib.IEnumerable)
     Dim i As Long
     Dim obj As Variant
     For Each obj In myList
-        Debug.Print Strings.Format(formatString, i, obj)
+        Debug.Print VBAString.Format(formatString, i, obj)
         i = i + 1
     Next
     Debug.Print

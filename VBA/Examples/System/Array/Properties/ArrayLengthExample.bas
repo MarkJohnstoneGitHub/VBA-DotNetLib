@@ -20,12 +20,12 @@ Option Explicit
 Public Sub ArrayLength()
     ' Declare a single-dimensional string array
     Dim array1d As DotNetLib.Array
-    Set array1d = Arrays.CreateInitialize1D(Strings.GetType(), "zero", "one", "two", "three")
+    Set array1d = Arrays.CreateInitialize1D(VBAString.GetType(), "zero", "one", "two", "three")
     Call ShowArrayInfo(array1d)
     
     ' Declare a two-dimensional string array
     Dim array2d As DotNetLib.Array
-    Set array2d = Arrays.CreateInitialize2D(Strings.GetType(), _
+    Set array2d = Arrays.CreateInitialize2D(VBAString.GetType(), _
                     Array("zero", "0"), _
                     Array("one", "1"), _
                     Array("two", "2"), _
@@ -45,13 +45,13 @@ Public Sub ArrayLength()
 End Sub
 
 Private Sub ShowArrayInfo(ByVal arr As DotNetLib.Array)
-    Debug.Print Strings.Format("Length of Array:      {0,3}", arr.Length)
-    Debug.Print Strings.Format("Number of Dimensions: {0,3}", arr.Rank)
+    Debug.Print VBAString.Format("Length of Array:      {0,3}", arr.length)
+    Debug.Print VBAString.Format("Number of Dimensions: {0,3}", arr.Rank)
     ' For multidimensional arrays, show number of elements in each dimension.
     If (arr.Rank > 1) Then
         Dim dimension As Long
         For dimension = 1 To arr.Rank
-            Debug.Print Strings.Format("   Dimension {0}: {1,3}", dimension, _
+            Debug.Print VBAString.Format("   Dimension {0}: {1,3}", dimension, _
                                         arr.GetUpperBound(dimension - 1) + 1)
         Next dimension
     End If
@@ -72,3 +72,5 @@ End Sub
 '          Dimension 1:   2
 '          Dimension 2:   2
 '          Dimension 3:   3
+
+

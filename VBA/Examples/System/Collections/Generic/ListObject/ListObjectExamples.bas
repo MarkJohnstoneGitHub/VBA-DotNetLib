@@ -23,7 +23,7 @@ Public Sub ListObjectExample1()
     names.Add "Michael"
     names.Add DateTime.Now
     names.Add Person.Create("Martha", "Jones", DateTime.CreateFromDate(2000, 1, 1))
-    Debug.Print Strings.Format("Initial list: names.Count {0}", names.Count)
+    Debug.Print VBAString.Format("Initial list: names.Count {0}", names.count)
     DisplayList names
     Debug.Print
     names.Reverse
@@ -40,7 +40,7 @@ Private Sub DisplayList(ByVal pList As DotNetLib.ListObject)
             Set stringableObj = varObject
             varObject = stringableObj.ToString
         End If
-        Debug.Print Strings.Format("[{0}] {1}", pvtIndex, varObject)
+        Debug.Print VBAString.Format("[{0}] {1}", pvtIndex, varObject)
         pvtIndex = pvtIndex + 1
     Next
 End Sub

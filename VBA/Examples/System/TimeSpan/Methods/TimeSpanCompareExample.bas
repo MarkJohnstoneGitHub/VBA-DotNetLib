@@ -34,16 +34,16 @@ Attribute TimeSpanCompare.VB_Description = "'The following example uses the Comp
    For Each varSpan In spans
       Dim span As ITimeSpan
       Set span = varSpan
-      Dim Result As Long
-      Result = TimeSpan.Compare(baseInterval, span)
+      Dim result As Long
+      result = TimeSpan.Compare(baseInterval, span)
       
       Debug.Print baseInterval.ToString() _
             & " " & _
-            IIf(Result = 1, ">", IIf(Result = 0, "=", "<")) _
+            IIf(result = 1, ">", IIf(result = 0, "=", "<")) _
             & " " _
             & span.ToString() _
             & " (Compare returns " _
-            & Result _
+            & result _
             & ")"
    Next
 End Sub

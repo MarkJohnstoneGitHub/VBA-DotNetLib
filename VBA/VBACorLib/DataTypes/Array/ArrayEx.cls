@@ -20,15 +20,15 @@ Attribute VB_Exposed = False
 Option Explicit
 
 '@Description("Creates a one-dimensional array of the specified Type with initial values")
-Public Sub CreateInitialize1D(ByRef destination As Variant, ParamArray Values() As Variant)
+Public Sub CreateInitialize1D(ByRef destination As Variant, ParamArray values() As Variant)
 Attribute CreateInitialize1D.VB_Description = "Creates a one-dimensional array of the specified Type with initial values"
    If VBA.IsArray(destination) Then
       '@TODO What if values is empty?
-      ReDim destination(LBound(Values) To UBound(Values))
+      ReDim destination(LBound(values) To UBound(values))
       Dim index As Long
       Dim varValue As Variant
       On Error GoTo Catch
-      For Each varValue In Values
+      For Each varValue In values
          If IsObject(varValue) Then
             Set destination(index) = varValue
          Else
@@ -46,23 +46,23 @@ End Sub
 
 '@Description("Copies a ParamArray of vaules or objects to an array of a type.")
 'Return value of False indictates that errors occurred and not all items where transfered to destination array
-Public Function TryToArray(ByRef destination As Variant, ParamArray Values() As Variant) As Boolean
+Public Function TryToArray(ByRef destination As Variant, ParamArray values() As Variant) As Boolean
 Attribute TryToArray.VB_Description = "Copies a ParamArray of vaules or objects to an array of a type."
    On Error Resume Next
    If (TryToArray = VBA.IsArray(destination)) Then
       Dim Resize As Boolean
       Resize = False
       
-      ReDim destination(LBound(Values) To UBound(Values))
+      ReDim destination(LBound(values) To UBound(values))
       Dim index As Long
       Dim varValue As Variant
-      For Each varValue In Values
+      For Each varValue In values
          If IsObject(varValue) Then
             Set destination(index) = varValue
          Else
             destination(index) = varValue
          End If
-         If Err.Number = 0 Then
+         If Err.number = 0 Then
             index = index + 1
          Else
             TryToArray = False
@@ -105,7 +105,7 @@ Attribute IsAllocated.VB_Description = "Returns if an array variable is initiali
    ' Attempt to get the UBound of the array. If the array has not been allocated,
    ' an error will occur. Test Err.Number to see if an error occurred.
    sourceUBound = UBound(Source, 1)
-   If (Err.Number = 0) Then
+   If (Err.number = 0) Then
        ''''''''''''''''''''''''''''''''''''''
        ' Under some circumstances, if an array
        ' is not allocated, Err.Number will be

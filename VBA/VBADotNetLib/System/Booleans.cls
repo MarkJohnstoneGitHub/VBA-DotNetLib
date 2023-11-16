@@ -10,7 +10,7 @@ Attribute VB_Exposed = False
 Attribute VB_Description = "Represents a Boolean (true or false) value."
 Attribute VB_Ext_KEY = "Rubberduck" ,"Predeclared Class Module"
 '@ModuleAttribute VB_Ext_KEY, "Rubberduck", "Predeclared Class Module"
-'@Folder("VBADotNetLib.System")
+'@Folder "VBADotNetLib.System"
 '@ModuleDescription("Represents a Boolean (true or false) value.")
 '@PredeclaredId
 

@@ -74,7 +74,7 @@ Public Sub StringBuilderInsert()
 End Sub
 
 Private Sub Show(ByVal overloadNumber As Long, ByVal sbs As DotNetLib.StringBuilder)
-    Debug.Print Strings.Format("{0,2:G} = {1}", overloadNumber, sbs.ToString())
+    Debug.Print VBAString.Format("{0,2:G} = {1}", overloadNumber, sbs.ToString())
     Set sb = StringBuilder.Create(initialValue)
 End Sub
 

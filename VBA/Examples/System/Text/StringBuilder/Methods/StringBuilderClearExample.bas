@@ -20,13 +20,13 @@ Public Sub StringBuilderClear()
     Dim sb As DotNetLib.StringBuilder
     Set sb = StringBuilder.Create("This is a string.")
     
-    Debug.Print Strings.Format("{0} ({1} characters)", sb.ToString(), sb.length)
+    Debug.Print VBAString.Format("{0} ({1} characters)", sb.ToString(), sb.length)
 
     Call sb.Clear
-    Debug.Print Strings.Format("{0} ({1} characters)", sb.ToString(), sb.length)
+    Debug.Print VBAString.Format("{0} ({1} characters)", sb.ToString(), sb.length)
 
     Call sb.Append("This is a second string.")
-    Debug.Print Strings.Format("{0} ({1} characters)", sb.ToString(), sb.length)
+    Debug.Print VBAString.Format("{0} ({1} characters)", sb.ToString(), sb.length)
 End Sub
 
 ' The example displays the following output:

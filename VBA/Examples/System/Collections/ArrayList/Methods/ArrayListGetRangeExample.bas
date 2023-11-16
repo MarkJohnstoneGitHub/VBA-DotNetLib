@@ -28,7 +28,7 @@ Public Sub ArrayListGetRange()
     Call myAL.Add("lazy")
     Call myAL.Add("dog")
     
-    '/ Creates and initializes the source ICollection.
+    ' Creates and initializes the source ICollection.
     Dim mySourceList As DotNetLib.Queue
     Set mySourceList = Queue.Create()
     Call mySourceList.Enqueue("big")
@@ -55,7 +55,7 @@ End Sub
 Public Sub PrintValues(ByVal myList As mscorlib.IEnumerable, ByVal mySeparator As String)
     Dim obj As Variant
     For Each obj In myList
-        Debug.Print Strings.Format("{0}{1}", mySeparator, obj);
+        Debug.Print VBAString.Format("{0}{1}", mySeparator, obj);
     Next
     Debug.Print
 End Sub

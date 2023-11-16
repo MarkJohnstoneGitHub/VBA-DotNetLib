@@ -21,8 +21,8 @@ Public Sub ArrayListRepeat()
 
     ' Displays the count, capacity and values of the ArrayList.
     Debug.Print "ArrayList with five elements with a null value"
-    Debug.Print Strings.Format("   Count    : {0}", myAL.Count)
-    Debug.Print Strings.Format("   Capacity : {0}", myAL.Capacity)
+    Debug.Print VBAString.Format("   Count    : {0}", myAL.count)
+    Debug.Print VBAString.Format("   Capacity : {0}", myAL.Capacity)
     Debug.Print "   Values:";
     Call PrintValues(myAL)
     
@@ -31,8 +31,8 @@ Public Sub ArrayListRepeat()
 
     ' Displays the count, capacity and values of the ArrayList.
     Debug.Print "ArrayList with seven elements with a string value"
-    Debug.Print Strings.Format("   Count    : {0}", myAL.Count)
-    Debug.Print Strings.Format("   Capacity : {0}", myAL.Capacity)
+    Debug.Print VBAString.Format("   Count    : {0}", myAL.count)
+    Debug.Print VBAString.Format("   Capacity : {0}", myAL.Capacity)
     Debug.Print "   Values:";
     Call PrintValues(myAL)
 End Sub
@@ -40,7 +40,7 @@ End Sub
 Private Sub PrintValues(ByVal myList As mscorlib.IEnumerable)
     Dim obj As Variant
     For Each obj In myList
-        Debug.Print Strings.Format("   {0}", obj);
+        Debug.Print VBAString.Format("   {0}", obj);
     Next
     Debug.Print
 End Sub

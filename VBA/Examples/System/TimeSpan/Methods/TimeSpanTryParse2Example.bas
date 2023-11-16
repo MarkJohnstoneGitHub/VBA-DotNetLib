@@ -16,8 +16,8 @@ Option Explicit
 ' of a specific culture influence the formatting operation.
 Public Sub TimeSpanTryParse2()
     ' Create an array of all supported standard date and time format specifiers.
-    Dim Values() As String
-    Values = StringArray.ToArray("6", "6:12", "6:12:14", "6:12:14:45", _
+    Dim values() As String
+    values = StringArray.ToArray("6", "6:12", "6:12:14", "6:12:14:45", _
                             "6.12:14:45", "6:12:14:45.3448", _
                             "6:12:14:45,3448", "6:34:14:45")
     
@@ -29,29 +29,29 @@ Public Sub TimeSpanTryParse2()
                     CultureInfo.InvariantCulture
     
     Dim header As String
-    header = Strings.Format("{0,-17}", "String")
+    header = VBAString.Format("{0,-17}", "String")
     
     Dim varCulture As Variant
     Dim culture As DotNetLib.CultureInfo
     For Each varCulture In cultures
         Set culture = varCulture
         header = header + IIf(culture.Equals(CultureInfo.InvariantCulture), _
-                            Strings.Format("{0,20}", "Invariant"), _
-                            Strings.Format("{0,20}", culture.Name))
+                            VBAString.Format("{0,20}", "Invariant"), _
+                            VBAString.Format("{0,20}", culture.name))
     Next
     Debug.Print header
     Debug.Print
     
     Dim value As Variant
-    For Each value In Values
-        Debug.Print Strings.Format("{0,-17}", value);
+    For Each value In values
+        Debug.Print VBAString.Format("{0,-17}", value);
         For Each varCulture In cultures
             Set culture = varCulture
             Dim interval As DotNetLib.TimeSpan
             If (TimeSpan.TryParse2(value, culture, interval)) Then
-                Debug.Print Strings.Format("{0,20}", interval.ToString2("c"));
+                Debug.Print VBAString.Format("{0,20}", interval.ToString2("c"));
             Else
-                Debug.Print Strings.Format("{0,20}", "Unable to Parse");
+                Debug.Print VBAString.Format("{0,20}", "Unable to Parse");
             End If
         Next
         Debug.Print
@@ -70,4 +70,5 @@ End Sub
 '    6:12:14:45.3448    6.12:14:45.3448000     Unable to Parse  6.12:14:45.3448000
 '    6:12:14:45,3448       Unable to Parse  6.12:14:45.3448000     Unable to Parse
 '    6:34:14:45            Unable to Parse     Unable to Parse     Unable to Parse
+
 

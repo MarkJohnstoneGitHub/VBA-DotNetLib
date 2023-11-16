@@ -14,7 +14,7 @@ Attribute VB_Name = "ErrorHandling"
 Option Explicit
 
 Public Function Try() As Boolean
-   If Err.Number = 0 Then
+   If Err.number = 0 Then
       Try = True
    End If
 End Function
@@ -24,10 +24,10 @@ End Function
 'Public Function Catch(Optional ByVal errorInfo As IException) As Boolean
 Public Function Catch(Optional ByVal errNumber As Variant) As Boolean
     If IsMissing(errNumber) Then
-        If Err.Number <> 0 Then
+        If Err.number <> 0 Then
             Catch = True
         End If
-    ElseIf Err.Number = errNumber Then
+    ElseIf Err.number = errNumber Then
         Catch = True
     End If
 End Function

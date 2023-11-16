@@ -51,9 +51,9 @@ End Function
 
 '@Static
 '@Description("Searches a range of elements in a one-dimensional sorted array for a value, using the specified IComparer interface.")
-Public Function BinarySearch2(ByVal pArray As DotNetLib.Array, ByVal index As Long, ByVal pLength As Long, ByVal Value As Variant, Optional ByVal comparer As mscorlib.IComparer = Nothing) As Long
+Public Function BinarySearch2(ByVal pArray As DotNetLib.Array, ByVal index As Long, ByVal pLength As Long, ByVal value As Variant, Optional ByVal comparer As mscorlib.IComparer = Nothing) As Long
 Attribute BinarySearch2.VB_Description = "Searches a range of elements in a one-dimensional sorted array for a value, using the specified IComparer interface."
-   BinarySearch2 = this.ArraySingleton.BinarySearch_3(pArray, index, pLength, Value, comparer)
+   BinarySearch2 = this.ArraySingleton.BinarySearch_3(pArray, index, pLength, value, comparer)
 End Function
 
 '@Static
@@ -135,44 +135,44 @@ End Function
 
 '@Static
 '@Description("Searches for the specified object and returns the index of its first occurrence in a one-dimensional array.")
-Public Function IndexOf(ByVal pArray As DotNetLib.Array, ByVal Value As Variant) As Long
+Public Function IndexOf(ByVal pArray As DotNetLib.Array, ByVal value As Variant) As Long
 Attribute IndexOf.VB_Description = "Searches for the specified object and returns the index of its first occurrence in a one-dimensional array."
-   IndexOf = this.ArraySingleton.IndexOf(pArray, Value)
+   IndexOf = this.ArraySingleton.IndexOf(pArray, value)
 End Function
 
 '@Static
 '@Description("Searches for the specified object in a range of elements of a one-dimensional array, and returns the index of its first occurrence. The range extends from a specified index to the end of the array.")
-Public Function IndexOf2(ByVal pArray As DotNetLib.Array, ByVal Value As Variant, ByVal startIndex As Long) As Long
+Public Function IndexOf2(ByVal pArray As DotNetLib.Array, ByVal value As Variant, ByVal startIndex As Long) As Long
 Attribute IndexOf2.VB_Description = "Searches for the specified object in a range of elements of a one-dimensional array, and returns the index of its first occurrence. The range extends from a specified index to the end of the array."
-   IndexOf2 = this.ArraySingleton.IndexOf_2(pArray, Value, startIndex)
+   IndexOf2 = this.ArraySingleton.IndexOf_2(pArray, value, startIndex)
 End Function
 
 '@Static
 '@Description("Searches for the specified object in a range of elements of a one-dimensional array, and returns the index of ifs first occurrence. The range extends from a specified index for a specified number of elements.")
-Public Function IndexOf3(ByVal pArray As DotNetLib.Array, ByVal Value As Variant, ByVal startIndex As Long, ByVal pCount As Long) As Long
+Public Function IndexOf3(ByVal pArray As DotNetLib.Array, ByVal value As Variant, ByVal startIndex As Long, ByVal pCount As Long) As Long
 Attribute IndexOf3.VB_Description = "Searches for the specified object in a range of elements of a one-dimensional array, and returns the index of ifs first occurrence. The range extends from a specified index for a specified number of elements."
-   IndexOf3 = this.ArraySingleton.IndexOf_3(pArray, Value, startIndex, pCount)
+   IndexOf3 = this.ArraySingleton.IndexOf_3(pArray, value, startIndex, pCount)
 End Function
 
 '@Static
 '@Description("Searches for the specified object and returns the index of the last occurrence within the entire one-dimensional Array.")
-Public Function LastIndexOf(ByVal pArray As DotNetLib.Array, ByVal Value As Variant) As Long
+Public Function LastIndexOf(ByVal pArray As DotNetLib.Array, ByVal value As Variant) As Long
 Attribute LastIndexOf.VB_Description = "Searches for the specified object and returns the index of the last occurrence within the entire one-dimensional Array."
-   LastIndexOf = this.ArraySingleton.LastIndexOf(pArray, Value)
+   LastIndexOf = this.ArraySingleton.LastIndexOf(pArray, value)
 End Function
 
 '@Static
 '@Description("Searches for the specified object and returns the index of the last occurrence within the range of elements in the one-dimensional Array that extends from the first element to the specified index.")
-Public Function LastIndexOf2(ByVal pArray As DotNetLib.Array, ByVal Value As Variant, ByVal startIndex As Long) As Long
+Public Function LastIndexOf2(ByVal pArray As DotNetLib.Array, ByVal value As Variant, ByVal startIndex As Long) As Long
 Attribute LastIndexOf2.VB_Description = "Searches for the specified object and returns the index of the last occurrence within the range of elements in the one-dimensional Array that extends from the first element to the specified index."
-   LastIndexOf2 = this.ArraySingleton.LastIndexOf_2(pArray, Value, startIndex)
+   LastIndexOf2 = this.ArraySingleton.LastIndexOf_2(pArray, value, startIndex)
 End Function
 
 '@Static
 '@Description("Searches for the specified object and returns the index of the last occurrence within the range of elements in the one-dimensional Array that contains the specified number of elements and ends at the specified index.")
-Public Function LastIndexOf3(ByVal pArray As DotNetLib.Array, ByVal Value As Variant, ByVal startIndex As Long, ByVal pCount As Long) As Long
+Public Function LastIndexOf3(ByVal pArray As DotNetLib.Array, ByVal value As Variant, ByVal startIndex As Long, ByVal pCount As Long) As Long
 Attribute LastIndexOf3.VB_Description = "Searches for the specified object and returns the index of the last occurrence within the range of elements in the one-dimensional Array that contains the specified number of elements and ends at the specified index."
-   LastIndexOf3 = this.ArraySingleton.LastIndexOf_3(pArray, Value, startIndex, pCount)
+   LastIndexOf3 = this.ArraySingleton.LastIndexOf_3(pArray, value, startIndex, pCount)
 End Function
 
 '@Static
@@ -235,16 +235,16 @@ End Sub
 
 'Static
 '@Description("Creates a one-dimensional Array of the specified Type with initial values")
-Public Function CreateInitialize1D(ByVal elementType As DotNetLib.Type, ParamArray Values() As Variant) As DotNetLib.Array
+Public Function CreateInitialize1D(ByVal elementType As DotNetLib.Type, ParamArray values() As Variant) As DotNetLib.Array
 Attribute CreateInitialize1D.VB_Description = "Creates a one-dimensional Array of the specified Type with initial values"
     Dim outArray As DotNetLib.Array
 '    On Error GoTo CatchError
     'Create Array of size off parameter array
-    Set outArray = Me.CreateInstance(elementType, UBound(Values) + 1)
+    Set outArray = Me.CreateInstance(elementType, UBound(values) + 1)
     Dim varValue As Variant
     Dim pvtIndex As Long
     pvtIndex = 0
-    For Each varValue In Values
+    For Each varValue In values
         Call outArray.SetValue(varValue, pvtIndex)
         pvtIndex = pvtIndex + 1
     Next

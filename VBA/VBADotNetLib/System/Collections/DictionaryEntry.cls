@@ -78,20 +78,20 @@ End Property
 
 '@Static
 '@Description("Gets or sets the value in the key/value pair.")
-Public Property Get Value(ByRef pDictionaryEntry As mscorlib.DictionaryEntry) As Variant
-Attribute Value.VB_Description = "Gets or sets the value in the key/value pair."
-    Call AssignVariable(Value, this.DictionaryEntrySingleton.GetValue(pDictionaryEntry))
+Public Property Get value(ByRef pDictionaryEntry As mscorlib.DictionaryEntry) As Variant
+Attribute value.VB_Description = "Gets or sets the value in the key/value pair."
+    Call AssignVariable(value, this.DictionaryEntrySingleton.GetValue(pDictionaryEntry))
 End Property
 
 '@Description("Gets or sets the value in the key/value pair.")
-Public Property Let Value(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pValue As Variant)
-Attribute Value.VB_Description = "Gets or sets the value in the key/value pair."
+Public Property Let value(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pValue As Variant)
+Attribute value.VB_Description = "Gets or sets the value in the key/value pair."
     Call this.DictionaryEntrySingleton.SetValue(pDictionaryEntry, pValue)
 End Property
 
 '@Description("Gets or sets the value in the key/value pair.")
-Public Property Set Value(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pValue As Variant)
-Attribute Value.VB_Description = "Gets or sets the value in the key/value pair."
+Public Property Set value(ByRef pDictionaryEntry As mscorlib.DictionaryEntry, ByVal pValue As Variant)
+Attribute value.VB_Description = "Gets or sets the value in the key/value pair."
     Call this.DictionaryEntrySingleton.SetValue(pDictionaryEntry, pValue)
 End Property
 

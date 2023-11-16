@@ -18,8 +18,8 @@ Attribute DateTimeAddDays.VB_Description = "The following example uses the AddDa
     Set pvtToday = DateTime.Now
     Dim answer As IDateTime
     Set answer = pvtToday.AddDays(36)
-    Debug.Print Strings.Format("Today: {0:dddd}", pvtToday)
-    Debug.Print Strings.Format("36 days from today: {0:dddd}", answer)
+    Debug.Print VBAString.Format("Today: {0:dddd}", pvtToday)
+    Debug.Print VBAString.Format("36 days from today: {0:dddd}", answer)
 End Sub
 
 ' The example displays output like the following:

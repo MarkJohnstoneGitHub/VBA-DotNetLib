@@ -44,7 +44,7 @@ Private Sub PrintKeysAndValues(ByVal myHT As DotNetLib.Hashtable)
     For Each varDictEntry In myHT
         Dim dictEntry As mscorlib.DictionaryEntry
         dictEntry = varDictEntry
-        Debug.Print Strings.Format("    {0}:    {1}", DictionaryEntry.Key(dictEntry), DictionaryEntry.Value(dictEntry))
+        Debug.Print VBAString.Format("    {0}:    {1}", DictionaryEntry.Key(dictEntry), DictionaryEntry.value(dictEntry))
     Next
     Debug.Print
 End Sub

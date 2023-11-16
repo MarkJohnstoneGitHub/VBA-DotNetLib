@@ -90,7 +90,7 @@ Private Sub TestMethodDateTimeParse2()
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
     Resume TestExit
 End Sub
 

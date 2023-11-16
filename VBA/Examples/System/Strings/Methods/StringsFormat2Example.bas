@@ -27,8 +27,8 @@ Public Sub StringsFormat2()
         Dim culture As DotNetLib.CultureInfo
         Set culture = CultureInfo.CreateFromName(cultureName)
         Dim output As String
-        output = Strings.Format2(culture, "{0,-11} {1,-35:D} {2:N}", _
-                                culture.Name, dateToDisplay, value)
+        output = VBAString.Format2(culture, "{0,-11} {1,-35:D} {2:N}", _
+                                culture.name, dateToDisplay, value)
         Debug.Print output
     Next
 End Sub
@@ -40,3 +40,5 @@ End Sub
 '    fr-FR       mardi 1 septembre 2009              9 164,32
 '    de-DE       Dienstag, 1. September 2009         9.164,32
 '    es-ES       martes, 01 de septiembre de 2009    9.164,32
+
+

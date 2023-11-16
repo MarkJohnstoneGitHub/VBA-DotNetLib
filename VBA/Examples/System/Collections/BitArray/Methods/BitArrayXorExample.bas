@@ -83,7 +83,7 @@ Private Sub PrintValues(ByVal myList As mscorlib.IEnumerable, ByVal myWidth As L
             Debug.Print
         End If
         i = i - 1
-        Debug.Print Strings.Format("{0,8}", obj);
+        Debug.Print VBAString.Format("{0,8}", obj);
     Next
     Debug.Print
 End Sub

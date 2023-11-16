@@ -27,8 +27,8 @@ Public Sub SortedListClear()
     
     ' Displays the count, capacity and values of the SortedList.
     Debug.Print "Initially,"
-    Debug.Print Strings.Format("   Count    : {0}", mySL.Count)
-    Debug.Print Strings.Format("   Capacity : {0}", mySL.Capacity)
+    Debug.Print VBAString.Format("   Count    : {0}", mySL.count)
+    Debug.Print VBAString.Format("   Capacity : {0}", mySL.Capacity)
     Debug.Print "   Values:"
     Call PrintKeysAndValues(mySL)
     
@@ -37,8 +37,8 @@ Public Sub SortedListClear()
     
     ' Displays the count, capacity and values of the SortedList.
     Debug.Print "After the second TrimToSize,"
-    Debug.Print Strings.Format("   Count    : {0}", mySL.Count)
-    Debug.Print Strings.Format("   Capacity : {0}", mySL.Capacity)
+    Debug.Print VBAString.Format("   Count    : {0}", mySL.count)
+    Debug.Print VBAString.Format("   Capacity : {0}", mySL.Capacity)
     Debug.Print "   Values:"
     Call PrintKeysAndValues(mySL)
     
@@ -47,8 +47,8 @@ Public Sub SortedListClear()
     
     ' Displays the count, capacity and values of the SortedList.
     Debug.Print "After Clear,"
-    Debug.Print Strings.Format("   Count    : {0}", mySL.Count)
-    Debug.Print Strings.Format("   Capacity : {0}", mySL.Capacity)
+    Debug.Print VBAString.Format("   Count    : {0}", mySL.count)
+    Debug.Print VBAString.Format("   Capacity : {0}", mySL.Capacity)
     Debug.Print "   Values:"
     Call PrintKeysAndValues(mySL)
         
@@ -57,8 +57,8 @@ Public Sub SortedListClear()
     
     ' Displays the count, capacity and values of the SortedList.
     Debug.Print "After the second TrimToSize,"
-    Debug.Print Strings.Format("   Count    : {0}", mySL.Count)
-    Debug.Print Strings.Format("   Capacity : {0}", mySL.Capacity)
+    Debug.Print VBAString.Format("   Count    : {0}", mySL.count)
+    Debug.Print VBAString.Format("   Capacity : {0}", mySL.Capacity)
     Debug.Print "   Values:"
     Call PrintKeysAndValues(mySL)
 End Sub
@@ -68,8 +68,8 @@ Private Sub PrintKeysAndValues(ByVal myList As DotNetLib.SortedList)
     Dim formatString As String
     formatString = Regex.Unescape("\t{0}:\t{1}")
     Dim i As Long
-    For i = 0 To myList.Count - 1
-        Debug.Print Strings.Format(formatString, myList.GetKey(i), myList.GetByIndex(i))
+    For i = 0 To myList.count - 1
+        Debug.Print VBAString.Format(formatString, myList.GetKey(i), myList.GetByIndex(i))
     Next i
     Debug.Print
 End Sub

@@ -43,9 +43,9 @@ Private Sub Class_Terminate()
 End Sub
 
 '@Description("Initializes a new, empty instance of the Hashtable class using the specified initial capacity and load factor, and the default hash code provider and comparer.")
-Public Function Create(Optional ByVal capacity As Long = 0, Optional ByVal loadFactor As Single = 1, Optional ByRef equalityComparer As mscorlib.IEqualityComparer = Nothing) As DotNetLib.Hashtable
+Public Function Create(Optional ByVal Capacity As Long = 0, Optional ByVal loadFactor As Single = 1, Optional ByRef equalityComparer As mscorlib.IEqualityComparer = Nothing) As DotNetLib.Hashtable
 Attribute Create.VB_Description = "Initializes a new, empty instance of the Hashtable class using the specified initial capacity and load factor, and the default hash code provider and comparer."
-   Set Create = this.HashtableSingleton.Create(capacity, loadFactor, equalityComparer)
+   Set Create = this.HashtableSingleton.Create(Capacity, loadFactor, equalityComparer)
 End Function
 
 '@Description("Initializes a new instance of the Hashtable class by copying the elements from the specified dictionary to the new Hashtable object. The new Hashtable object has an initial capacity equal to the number of elements copied, and uses the specified load factor and IEqualityComparer object.")

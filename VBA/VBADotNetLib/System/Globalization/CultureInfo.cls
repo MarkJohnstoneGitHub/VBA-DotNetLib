@@ -56,9 +56,9 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the CultureInfo class based on the culture specified by name and on a value that specifies whether to use the user-selected culture settings from Windows.")
-Public Function CreateFromName(ByVal Name As String, Optional ByVal UseUserOverride As Boolean = False) As DotNetLib.CultureInfo
+Public Function CreateFromName(ByVal name As String, Optional ByVal UseUserOverride As Boolean = False) As DotNetLib.CultureInfo
 Attribute CreateFromName.VB_Description = "Initializes a new instance of the CultureInfo class based on the culture specified by name and on a value that specifies whether to use the user-selected culture settings from Windows."
-    Set CreateFromName = this.CultureInfoSingleton.Create4(Name, UseUserOverride)
+    Set CreateFromName = this.CultureInfoSingleton.Create4(name, UseUserOverride)
 End Function
 
 '--------------------------------------------------------------------
@@ -133,9 +133,9 @@ End Property
 
 '@Static
 '@Description("Creates a CultureInfo that represents the specific culture that is associated with the specified name.")
-Public Function CreateSpecificCulture(ByVal Name As String) As DotNetLib.CultureInfo
+Public Function CreateSpecificCulture(ByVal name As String) As DotNetLib.CultureInfo
 Attribute CreateSpecificCulture.VB_Description = "Creates a CultureInfo that represents the specific culture that is associated with the specified name."
-    Set CreateSpecificCulture = this.CultureInfoSingleton.CreateSpecificCulture(Name)
+    Set CreateSpecificCulture = this.CultureInfoSingleton.CreateSpecificCulture(name)
 End Function
 
 '@Static
@@ -147,24 +147,24 @@ End Function
 
 '@Static
 '@Description("Retrieves a cached, read-only instance of a culture using the specified culture name.")
-Public Function GetCultureInfo2(ByVal Name As String) As DotNetLib.CultureInfo
+Public Function GetCultureInfo2(ByVal name As String) As DotNetLib.CultureInfo
 Attribute GetCultureInfo2.VB_Description = "Retrieves a cached, read-only instance of a culture using the specified culture name."
-    Set GetCultureInfo2 = this.CultureInfoSingleton.GetCultureInfo2(Name)
+    Set GetCultureInfo2 = this.CultureInfoSingleton.GetCultureInfo2(name)
 End Function
 
 '@Static
 '@Description("Retrieves a cached, read-only instance of a culture. Parameters specify a culture that is initialized with the TextInfo and CompareInfo objects specified by another culture.")
-Public Function GetCultureInfo3(ByVal Name As String, ByVal altName As String) As DotNetLib.CultureInfo
+Public Function GetCultureInfo3(ByVal name As String, ByVal altName As String) As DotNetLib.CultureInfo
 Attribute GetCultureInfo3.VB_Description = "Retrieves a cached, read-only instance of a culture. Parameters specify a culture that is initialized with the TextInfo and CompareInfo objects specified by another culture."
-    Set GetCultureInfo3 = this.CultureInfoSingleton.GetCultureInfo3(Name, altName)
+    Set GetCultureInfo3 = this.CultureInfoSingleton.GetCultureInfo3(name, altName)
 End Function
 
 '@Deprecated
 '@Static
 '@Description("Deprecated. Retrieves a read-only CultureInfo object having linguistic characteristics that are identified by the specified RFC 4646 language tag.")
-Public Function GetCultureInfoByIetfLanguageTag(ByVal Name As String) As DotNetLib.CultureInfo
+Public Function GetCultureInfoByIetfLanguageTag(ByVal name As String) As DotNetLib.CultureInfo
 Attribute GetCultureInfoByIetfLanguageTag.VB_Description = "Deprecated. Retrieves a read-only CultureInfo object having linguistic characteristics that are identified by the specified RFC 4646 language tag."
-    Set GetCultureInfoByIetfLanguageTag = this.CultureInfoSingleton.GetCultureInfoByIetfLanguageTag(Name)
+    Set GetCultureInfoByIetfLanguageTag = this.CultureInfoSingleton.GetCultureInfoByIetfLanguageTag(name)
 End Function
 
 '@Description("Gets the list of supported cultures filtered by the specified CultureTypes parameter.")

@@ -25,20 +25,21 @@ Public Sub StringCompare()
     
     ' Display the strings.
     Dim output As String
-    output = Strings.Format("Comparing '{0}' and '{1}':", stringUpper, stringLower)
+    output = VBAString.Format("Comparing '{0}' and '{1}':", stringUpper, stringLower)
     Debug.Print output
     
     ' Compare the uppercased strings; the result is true.
-    Debug.Print Strings.Format("The Strings are equal when capitalized? {0}", _
-            IIf(Strings.Compare(UCase$(stringUpper), UCase$(stringLower)) = 0, "true", "false"))
+    Debug.Print VBAString.Format("The Strings are equal when capitalized? {0}", _
+            IIf(VBAString.Compare(UCase$(stringUpper), UCase$(stringLower)) = 0, "true", "false"))
     
     ' The previous method call is equivalent to this Compare method, which ignores case.
-    Debug.Print Strings.Format("The Strings are equal when case is ignored? {0}", _
-            IIf(Strings.Compare(stringUpper, stringLower, True) = 0, "true", "false"))
+    Debug.Print VBAString.Format("The Strings are equal when case is ignored? {0}", _
+            IIf(VBAString.Compare(stringUpper, stringLower, True) = 0, "true", "false"))
 End Sub
 
 ' The example displays the following output:
 '       Comparing 'ABC' and 'abc':
 '       The Strings are equal when capitalized? true
 '       The Strings are equal when case is ignored? true
+
 

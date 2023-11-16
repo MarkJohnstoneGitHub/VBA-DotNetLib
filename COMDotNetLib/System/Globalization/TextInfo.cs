@@ -12,7 +12,7 @@ namespace DotNetLib.System.Globalization
 
     [ComVisible(true)]
     [Guid("8338BC0F-C6EA-49A1-9644-6A0D57FDD1CA")]
-    [ProgId("DotNetLib.System.TextInfo")]
+    [ProgId("DotNetLib.System.Globalization.TextInfo")]
     [Description("Defines text properties and behaviors, such as casing, that are specific to a writing system.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(ITextInfo))]

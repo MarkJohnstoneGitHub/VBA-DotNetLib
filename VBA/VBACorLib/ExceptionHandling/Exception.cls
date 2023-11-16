@@ -26,7 +26,7 @@ Option Explicit
 Implements IException
 
 Private Type TException
-    Number As Long
+    number As Long
     Source As String
     Description As String
     ExceptionSeverity As ExceptionSeverity
@@ -43,7 +43,7 @@ End Property
 Public Function Create(ByVal errNumber As Long, ByVal errSource As String, ByVal errDescription As String, Optional ByVal errType As ExceptionSeverity = Unspecified) As IException
 Attribute Create.VB_Description = "Initializes a new instance of an exception."
    With New Exception
-      .Number = errNumber
+      .number = errNumber
       .Source = errSource
       .Description = errDescription
       .TimeStamp = VBA.Now()
@@ -77,13 +77,13 @@ End Property
 
 
 '@Description("Gets the error number.")
-Public Property Get Number() As Long
-Attribute Number.VB_Description = "Gets the error number."
-    Number = this.Number
+Public Property Get number() As Long
+Attribute number.VB_Description = "Gets the error number."
+    number = this.number
 End Property
 
-Friend Property Let Number(ByVal value As Long)
-    this.Number = value
+Friend Property Let number(ByVal value As Long)
+    this.number = value
 End Property
 
 '@Description("Gets the error source.")
@@ -116,9 +116,9 @@ End Property
 Public Sub Throw(Optional ByVal ex As Exception = Nothing)
 Attribute Throw.VB_Description = "Static. Throws the excpetion or raises the current VBA Err object."
     If ex Is Nothing Then
-        Err.Raise Err.Number, Err.Source, Err.Description
+        Err.Raise Err.number, Err.Source, Err.Description
     Else
-        Err.Raise ex.Number, ex.Source, ex.Description
+        Err.Raise ex.number, ex.Source, ex.Description
     End If
 End Sub
 
@@ -128,10 +128,10 @@ End Sub
 Public Function Catch(Optional ByVal errNumber As Variant) As Boolean
 Attribute Catch.VB_Description = "Static. Returns true for the error number attempting to catch or if not provided error number is not zero."
     If IsMissing(errNumber) Then
-        If Err.Number <> 0 Then
+        If Err.number <> 0 Then
             Catch = True
         End If
-    ElseIf Err.Number = errNumber Then
+    ElseIf Err.number = errNumber Then
         Catch = True
     End If
 End Function
@@ -140,7 +140,7 @@ End Function
 '@Description("Static. Returns true if error number is 0.")
 Public Function Try() As Boolean
 Attribute Try.VB_Description = "Static. Returns true if error number is 0."
-   If Err.Number = 0 Then
+   If Err.number = 0 Then
       Try = True
    End If
 End Function
@@ -150,7 +150,7 @@ End Function
 '----------------------------------------------------------------------
 
 Private Property Get IException_Number() As Long
-    IException_Number = Number
+    IException_Number = number
 End Property
 
 Private Property Get IException_Source() As String

@@ -45,9 +45,9 @@ End Sub
 
 ''
 '@Description("Returns the number of exceptions in the exception list.")
-Public Property Get Count() As Long
-Attribute Count.VB_Description = "Returns the number of exceptions in the exception list."
-    Count = this.ExceptionList.Count
+Public Property Get count() As Long
+Attribute count.VB_Description = "Returns the number of exceptions in the exception list."
+    count = this.ExceptionList.count
 End Property
 
 '@Enumerator
@@ -67,7 +67,7 @@ End Property
 '@param Item The new Error item being added.
 Public Sub Add(ByVal Item As Exception)
 Attribute Add.VB_Description = "Adds a new exception to the exception list."
-    this.ExceptionList.Add Item:=Item, Key:=str$(this.ExceptionList.Count + 1)
+    this.ExceptionList.Add Item:=Item, Key:=str$(this.ExceptionList.count + 1)
 End Sub
 
 '@Description("List of all warnings and critical errrors when exported.")
@@ -125,6 +125,6 @@ Attribute ErrorReport.VB_Description = "Output exception list to immediate windo
     Dim pvtError As IException
     For Each varError In this.ExceptionList
         Set pvtError = varError
-        Debug.Print pvtError.TimeStamp; " "; pvtError.Number; " "; pvtError.Source; ", "; pvtError.Description
+        Debug.Print pvtError.TimeStamp; " "; pvtError.number; " "; pvtError.Source; ", "; pvtError.Description
     Next
 End Sub

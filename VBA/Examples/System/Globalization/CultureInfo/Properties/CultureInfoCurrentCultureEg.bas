@@ -14,18 +14,18 @@ Option Explicit
 Public Sub CultureInfoCurrentCulture()
 Attribute CultureInfoCurrentCulture.VB_Description = "The following example demonstrates how to change the CurrentCulture and CurrentUICulture of the current thread."
     ' Display the name of the current culture.
-    Debug.Print "CurrentCulture is "; CultureInfo.CurrentCulture.Name; "."
+    Debug.Print "CurrentCulture is "; CultureInfo.CurrentCulture.name; "."
 
     ' Change the current culture to th-TH.
     Set CultureInfo.CurrentCulture = CultureInfo.CreateFromName("th-TH", False)
-    Debug.Print "CurrentCulture is now "; CultureInfo.CurrentCulture.Name; "."
+    Debug.Print "CurrentCulture is now "; CultureInfo.CurrentCulture.name; "."
     
     ' Display the name of the current UI culture.
-    Debug.Print "CurrentUICulture is "; CultureInfo.CurrentUICulture.Name; "."
+    Debug.Print "CurrentUICulture is "; CultureInfo.CurrentUICulture.name; "."
     
     ' Change the current UI culture to ja-JP.
     Set CultureInfo.CurrentUICulture = CultureInfo.CreateFromName("ja-JP", False)
-    Debug.Print "CurrentUICulture is now "; CultureInfo.CurrentUICulture.Name; "."
+    Debug.Print "CurrentUICulture is now "; CultureInfo.CurrentUICulture.name; "."
 End Sub
 
 ' The example displays the following output:
@@ -38,6 +38,6 @@ End Sub
 Public Sub CultureInfoCurrentCultureV2()
 Attribute CultureInfoCurrentCultureV2.VB_Description = "The following example demonstrates how to change the CurrentCulture and CurrentUICulture of the current thread."
     ' Display the name of the current culture.
-    Debug.Print "CurrentCulture is "; CultureInfo.CurrentCulture.Name; "."
+    Debug.Print "CurrentCulture is "; CultureInfo.CurrentCulture.name; "."
     Debug.Print CultureInfo.CurrentCulture.Calendar.ToString
 End Sub

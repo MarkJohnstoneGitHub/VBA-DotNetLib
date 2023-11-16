@@ -47,23 +47,23 @@ Public Sub CaptureCollection()
     Set pvtMatch = Regex.Match(strInput, pattern)
     Debug.Print "Pattern: " + pattern
     Debug.Print "Match: " + pvtMatch.value
-    Debug.Print Strings.Format("  Match.Captures: {0}", pvtMatch.Captures.Count)
+    Debug.Print VBAString.Format("  Match.Captures: {0}", pvtMatch.Captures.count)
     Dim ctr As Long
-    For ctr = 0 To pvtMatch.Captures.Count - 1
-        Debug.Print Strings.Format("    {0}: '{1}'", ctr, pvtMatch.Captures(ctr).value)
+    For ctr = 0 To pvtMatch.Captures.count - 1
+        Debug.Print VBAString.Format("    {0}: '{1}'", ctr, pvtMatch.Captures(ctr).value)
     Next
-    Debug.Print Strings.Format("  Match.Groups: {0}", pvtMatch.Groups.Count)
+    Debug.Print VBAString.Format("  Match.Groups: {0}", pvtMatch.Groups.count)
     Dim groupCtr As Long
-    For groupCtr = 0 To pvtMatch.Groups.Count - 1
-        Debug.Print Strings.Format("    Group {0}: '{1}'", groupCtr, pvtMatch.Groups(groupCtr).value)
-        Debug.Print Strings.Format("    Group({0}).Captures: {1}", groupCtr, pvtMatch.Groups(groupCtr).Captures.Count)
+    For groupCtr = 0 To pvtMatch.Groups.count - 1
+        Debug.Print VBAString.Format("    Group {0}: '{1}'", groupCtr, pvtMatch.Groups(groupCtr).value)
+        Debug.Print VBAString.Format("    Group({0}).Captures: {1}", groupCtr, pvtMatch.Groups(groupCtr).Captures.count)
         
         Dim captureCtr As Long
-        For captureCtr = 0 To pvtMatch.Groups(groupCtr).Captures.Count - 1
-        Debug.Print Strings.Format("      Capture {0}: '{1}'", captureCtr, pvtMatch.Groups(groupCtr).Captures(captureCtr).value)
+        For captureCtr = 0 To pvtMatch.Groups(groupCtr).Captures.count - 1
+        Debug.Print VBAString.Format("      Capture {0}: '{1}'", captureCtr, pvtMatch.Groups(groupCtr).Captures(captureCtr).value)
         Next
     Next
-    Debug.Print Strings.Format(Regex.Unescape("-----\n"))
+    Debug.Print VBAString.Format(Regex.Unescape("-----\n"))
     
     ' Match a sentence with a pattern that has a quantifier that
     ' applies to the entire group.
@@ -71,18 +71,18 @@ Public Sub CaptureCollection()
     Set pvtMatch = Regex.Match(strInput, pattern)
     Debug.Print "Pattern: " + pattern
     Debug.Print "Match: " + pvtMatch.value
-    Debug.Print Strings.Format("  Match.Captures: {0}", pvtMatch.Captures.Count)
+    Debug.Print VBAString.Format("  Match.Captures: {0}", pvtMatch.Captures.count)
     
-    For ctr = 0 To pvtMatch.Captures.Count - 1
-        Debug.Print Strings.Format("    {0}: '{1}'", ctr, pvtMatch.Captures(ctr).value)
+    For ctr = 0 To pvtMatch.Captures.count - 1
+        Debug.Print VBAString.Format("    {0}: '{1}'", ctr, pvtMatch.Captures(ctr).value)
     Next
-    Debug.Print Strings.Format("  Match.Groups: {0}", pvtMatch.Groups.Count)
-    For groupCtr = 0 To pvtMatch.Groups.Count - 1
-        Debug.Print Strings.Format("    Group {0}: '{1}'", groupCtr, pvtMatch.Groups(groupCtr).value)
-        Debug.Print Strings.Format("    Group({0}).Captures: {1}", groupCtr, pvtMatch.Groups(groupCtr).Captures.Count)
+    Debug.Print VBAString.Format("  Match.Groups: {0}", pvtMatch.Groups.count)
+    For groupCtr = 0 To pvtMatch.Groups.count - 1
+        Debug.Print VBAString.Format("    Group {0}: '{1}'", groupCtr, pvtMatch.Groups(groupCtr).value)
+        Debug.Print VBAString.Format("    Group({0}).Captures: {1}", groupCtr, pvtMatch.Groups(groupCtr).Captures.count)
         
-        For captureCtr = 0 To pvtMatch.Groups(groupCtr).Captures.Count - 1
-        Debug.Print Strings.Format("      Capture {0}: '{1}'", captureCtr, pvtMatch.Groups(groupCtr).Captures(captureCtr).value)
+        For captureCtr = 0 To pvtMatch.Groups(groupCtr).Captures.count - 1
+        Debug.Print VBAString.Format("      Capture {0}: '{1}'", captureCtr, pvtMatch.Groups(groupCtr).Captures(captureCtr).value)
         Next
     Next
 End Sub

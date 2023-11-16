@@ -36,16 +36,16 @@ Public Sub HashtableContains()
     ' Searches for a specific key.
     Dim myKey As Long
     myKey = 2
-    Debug.Print Strings.Format("The key ""{0}"" is {1}.", myKey, IIf(myHT.ContainsKey(myKey), "in the Hashtable", "NOT in the Hashtable"))
+    Debug.Print VBAString.Format("The key ""{0}"" is {1}.", myKey, IIf(myHT.ContainsKey(myKey), "in the Hashtable", "NOT in the Hashtable"))
     myKey = 6
-    Debug.Print Strings.Format("The key ""{0}"" is {1}.", myKey, IIf(myHT.ContainsKey(myKey), "in the Hashtable", "NOT in the Hashtable"))
+    Debug.Print VBAString.Format("The key ""{0}"" is {1}.", myKey, IIf(myHT.ContainsKey(myKey), "in the Hashtable", "NOT in the Hashtable"))
 
     ' Searches for a specific value.
     Dim myValue As Variant
     myValue = "three"
-    Debug.Print Strings.Format("The value ""{0}"" is {1}.", myValue, IIf(myHT.ContainsValue(myValue), "in the Hashtable", "NOT in the Hashtable"))
+    Debug.Print VBAString.Format("The value ""{0}"" is {1}.", myValue, IIf(myHT.ContainsValue(myValue), "in the Hashtable", "NOT in the Hashtable"))
     myValue = "nine"
-    Debug.Print Strings.Format("The value ""{0}"" is {1}.", myValue, IIf(myHT.ContainsValue(myValue), "in the Hashtable", "NOT in the Hashtable"))
+    Debug.Print VBAString.Format("The value ""{0}"" is {1}.", myValue, IIf(myHT.ContainsValue(myValue), "in the Hashtable", "NOT in the Hashtable"))
 End Sub
 
 Private Sub PrintIndexAndKeysAndValues(ByVal myHT As DotNetLib.Hashtable)
@@ -58,7 +58,7 @@ Private Sub PrintIndexAndKeysAndValues(ByVal myHT As DotNetLib.Hashtable)
     For Each varDictEntry In myHT
         Dim dictEntry As mscorlib.DictionaryEntry
         dictEntry = varDictEntry
-        Debug.Print Strings.Format(formatString, i, DictionaryEntry.Key(dictEntry), DictionaryEntry.Value(dictEntry))
+        Debug.Print VBAString.Format(formatString, i, DictionaryEntry.Key(dictEntry), DictionaryEntry.value(dictEntry))
         i = i + 1
     Next
 End Sub

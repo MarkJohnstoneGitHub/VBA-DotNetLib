@@ -32,7 +32,7 @@ Public Sub DateTimeCreateFromDate2()
     Dim date1 As DotNetLib.DateTime
     Set date1 = DateTime.CreateFromDate2(1389, 5, 27, persian)
     Debug.Print date1.ToString()
-    Debug.Print Strings.Format("{0}/{1}/{2}{3}", persian.GetMonth(date1), _
+    Debug.Print VBAString.Format("{0}/{1}/{2}{3}", persian.GetMonth(date1), _
                               persian.GetDayOfMonth(date1), _
                               persian.GetYear(date1), _
                               VBA.vbNewLine)
@@ -62,13 +62,13 @@ Public Sub DateTimeCreateFromDate2()
     
     Dim date2 As DotNetLib.DateTime
     Set date2 = DateTime.CreateFromDateTime2(1431, 9, 9, 16, 32, 18, hijri)
-    Debug.Print Strings.Format("{0} culture using the {1} calendar: {2:d}", current, _
+    Debug.Print VBAString.Format("{0} culture using the {1} calendar: {2:d}", current, _
                                hijri, date2)
     
     ' Restore previous culture.
     ' Thread.CurrentThread.CurrentCulture = dftCulture;
     Set CultureInfo.CurrentCulture = dftCulture
-    Debug.Print Strings.Format("{0} culture using the {1} calendar: {2:d}", _
+    Debug.Print VBAString.Format("{0} culture using the {1} calendar: {2:d}", _
                                 CultureInfo.CurrentCulture, _
                                 CultureInfo.CurrentCulture.Calendar, _
                                 date2)
@@ -82,3 +82,5 @@ End Sub
 '       Using the Hijri Calendar:
 '       ar-SY culture using the Hijri calendar: 09/09/1431
 '       en-US culture using the Gregorian calendar: 8/18/2010
+
+

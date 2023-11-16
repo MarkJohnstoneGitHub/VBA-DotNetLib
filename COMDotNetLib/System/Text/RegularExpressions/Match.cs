@@ -70,7 +70,7 @@ namespace DotNetLib.System.Text.RegularExpressions
             return new Match(GRegularExpressions.Match.Synchronized(inner.WrappedMatch));
         }
 
-        //public bool Equals(object obj)
+        //public bool Equals2(object obj)
         //{
 
         //}

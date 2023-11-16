@@ -16,7 +16,7 @@ Option Explicit
 Public Sub DateTimeOffsetParseExact2()
     Dim dateString As String
     Dim pvtFormat As String
-    Dim Result As DotNetLib.DateTimeOffset
+    Dim result As DotNetLib.DateTimeOffset
     Dim provider As DotNetLib.CultureInfo
     Set provider = CultureInfo.InvariantCulture
 
@@ -24,10 +24,10 @@ Public Sub DateTimeOffsetParseExact2()
     dateString = "06/15/2008"
     pvtFormat = "d"
     On Error Resume Next
-    Set Result = DateTimeOffset.ParseExact2(dateString, pvtFormat, provider, _
+    Set result = DateTimeOffset.ParseExact2(dateString, pvtFormat, provider, _
                                     DateTimeStyles.DateTimeStyles_AssumeUniversal)
     If Try Then
-        Debug.Print "'"; dateString; "'"; " converts to "; Result.ToString()
+        Debug.Print "'"; dateString; "'"; " converts to "; result.ToString()
     ElseIf Catch(FormatException) Then
        Debug.Print "'"; dateString; "'"; " is not in the correct format."
     End If
@@ -38,10 +38,10 @@ Public Sub DateTimeOffsetParseExact2()
     ' specified in method call.
     dateString = " 06/15/2008"
     On Error Resume Next
-    Set Result = DateTimeOffset.ParseExact2(dateString, pvtFormat, provider, _
+    Set result = DateTimeOffset.ParseExact2(dateString, pvtFormat, provider, _
                                     DateTimeStyles.DateTimeStyles_AllowTrailingWhite)
     If Try Then
-        Debug.Print "'"; dateString; "'"; " converts to "; Result.ToString()
+        Debug.Print "'"; dateString; "'"; " converts to "; result.ToString()
     ElseIf Catch(FormatException) Then
        Debug.Print "'"; dateString; "'"; " is not in the correct format."
     End If
@@ -51,10 +51,10 @@ Public Sub DateTimeOffsetParseExact2()
     dateString = " 06/15/   2008  15:15    -05:00"
     pvtFormat = "MM/dd/yyyy H:mm zzz"
     On Error Resume Next
-    Set Result = DateTimeOffset.ParseExact2(dateString, pvtFormat, provider, _
+    Set result = DateTimeOffset.ParseExact2(dateString, pvtFormat, provider, _
                                     DateTimeStyles.DateTimeStyles_AllowWhiteSpaces)
     If Try Then
-        Debug.Print "'"; dateString; "'"; " converts to "; Result.ToString()
+        Debug.Print "'"; dateString; "'"; " converts to "; result.ToString()
     ElseIf Catch(FormatException) Then
        Debug.Print "'"; dateString; "'"; " is not in the correct format."
     End If
@@ -64,10 +64,10 @@ Public Sub DateTimeOffsetParseExact2()
     dateString = "  06/15/2008 15:15:30 -05:00"
     pvtFormat = "MM/dd/yyyy H:mm:ss zzz"
     On Error Resume Next
-    Set Result = DateTimeOffset.ParseExact2(dateString, pvtFormat, provider, _
+    Set result = DateTimeOffset.ParseExact2(dateString, pvtFormat, provider, _
                                     DateTimeStyles.DateTimeStyles_AllowWhiteSpaces Or DateTimeStyles.DateTimeStyles_AdjustToUniversal)
     If Try Then
-        Debug.Print "'"; dateString; "'"; " converts to "; Result.ToString()
+        Debug.Print "'"; dateString; "'"; " converts to "; result.ToString()
     ElseIf Catch(FormatException) Then
        Debug.Print "'"; dateString; "'"; " is not in the correct format."
     End If

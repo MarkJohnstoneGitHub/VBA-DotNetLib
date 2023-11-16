@@ -16,7 +16,7 @@ Public Sub DateTimeParse3()
     Dim dateString As String
     Dim culture As DotNetLib.CultureInfo
     Dim styles As mscorlib.DateTimeStyles
-    Dim Result As DotNetLib.DateTime
+    Dim result As DotNetLib.DateTime
     
     ' Parse a date and time with no styles.
     dateString = "03/01/2009 10:00 AM"
@@ -24,9 +24,9 @@ Public Sub DateTimeParse3()
     styles = DateTimeStyles.DateTimeStyles_None
     
     On Error Resume Next
-    Set Result = DateTime.Parse3(dateString, culture, styles)
+    Set result = DateTime.Parse3(dateString, culture, styles)
     If Try Then
-        Debug.Print dateString; " converted to "; Result.ToString(); " "; DateTimeKindHelper.ToString(Result.Kind)
+        Debug.Print dateString; " converted to "; result.ToString(); " "; DateTimeKindHelper.ToString(result.Kind)
     ElseIf Catch(FormatException) Then
         Debug.Print "Unable to convert "; dateString; " to a date and time."
     End If
@@ -34,9 +34,9 @@ Public Sub DateTimeParse3()
     
     ' Parse the same date and time with the AssumeLocal style.
     styles = DateTimeStyles.DateTimeStyles_AssumeLocal
-    Set Result = DateTime.Parse3(dateString, culture, styles)
+    Set result = DateTime.Parse3(dateString, culture, styles)
     If Try Then
-        Debug.Print dateString; " converted to "; Result.ToString(); " "; DateTimeKindHelper.ToString(Result.Kind)
+        Debug.Print dateString; " converted to "; result.ToString(); " "; DateTimeKindHelper.ToString(result.Kind)
     ElseIf Catch(FormatException) Then
         Debug.Print "Unable to convert "; dateString; " to a date and time."
     End If
@@ -48,9 +48,9 @@ Public Sub DateTimeParse3()
     dateString = "2009/03/01T10:00:00-5:00"
     styles = DateTimeStyles.DateTimeStyles_AssumeLocal
     On Error Resume Next
-    Set Result = DateTime.Parse3(dateString, culture, styles)
+    Set result = DateTime.Parse3(dateString, culture, styles)
     If Try Then
-        Debug.Print dateString; " converted to "; Result.ToString(); " "; DateTimeKindHelper.ToString(Result.Kind)
+        Debug.Print dateString; " converted to "; result.ToString(); " "; DateTimeKindHelper.ToString(result.Kind)
     ElseIf Catch(FormatException) Then
         Debug.Print "Unable to convert "; dateString; " to a date and time."
     End If
@@ -59,9 +59,9 @@ Public Sub DateTimeParse3()
     ' Attempt to convert a string in improper ISO 8601 format.
     dateString = "03/01/2009T10:00:00-5:00"
     On Error Resume Next
-    Set Result = DateTime.Parse3(dateString, culture, styles)
+    Set result = DateTime.Parse3(dateString, culture, styles)
     If Try Then
-        Debug.Print dateString; " converted to "; Result.ToString(); " "; DateTimeKindHelper.ToString(Result.Kind)
+        Debug.Print dateString; " converted to "; result.ToString(); " "; DateTimeKindHelper.ToString(result.Kind)
     ElseIf Catch(FormatException) Then
         Debug.Print "Unable to convert "; dateString; " to a date and time."
     End If
@@ -73,9 +73,9 @@ Public Sub DateTimeParse3()
     Set culture = CultureInfo.CreateSpecificCulture("fr-FR")
     styles = DateTimeStyles.DateTimeStyles_AdjustToUniversal Or DateTimeStyles.DateTimeStyles_AssumeLocal
     On Error Resume Next
-    Set Result = DateTime.Parse3(dateString, culture, styles)
+    Set result = DateTime.Parse3(dateString, culture, styles)
     If Try Then
-        Debug.Print dateString; " converted to "; Result.ToString(); " "; DateTimeKindHelper.ToString(Result.Kind)
+        Debug.Print dateString; " converted to "; result.ToString(); " "; DateTimeKindHelper.ToString(result.Kind)
     ElseIf Catch(FormatException) Then
         Debug.Print "Unable to convert "; dateString; " to a date and time."
     End If

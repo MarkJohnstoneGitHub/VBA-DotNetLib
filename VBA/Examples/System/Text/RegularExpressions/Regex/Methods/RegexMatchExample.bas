@@ -26,7 +26,7 @@ Public Sub RegexMatch()
     Dim m As DotNetLib.Match
     Set m = Regex.Match(strInput, pattern, RegexOptions.RegexOptions_IgnoreCase)
     If (m.Success) Then
-        Debug.Print Strings.Format("Found '{0}' at position {1}.", m.value, m.index)
+        Debug.Print VBAString.Format("Found '{0}' at position {1}.", m.value, m.index)
     End If
 End Sub
 

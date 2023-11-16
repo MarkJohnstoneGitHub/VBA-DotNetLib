@@ -212,30 +212,30 @@ End Function
 
 '@Static
 '@Description("Tries to converts a specified string representation of a date and time to its DateTimeOffset equivalent, and returns a value that indicates whether the conversion succeeded.")
-Public Function TryParse(ByVal strInput As String, ByRef Result As DotNetLib.DateTimeOffset) As Boolean
+Public Function TryParse(ByVal strInput As String, ByRef result As DotNetLib.DateTimeOffset) As Boolean
 Attribute TryParse.VB_Description = "Tries to converts a specified string representation of a date and time to its DateTimeOffset equivalent, and returns a value that indicates whether the conversion succeeded."
-    TryParse = this.DateTimeOffsetSingleton.TryParse(strInput, Result)
+    TryParse = this.DateTimeOffsetSingleton.TryParse(strInput, result)
 End Function
 
 '@Static
 '@Description("Tries to convert a specified string representation of a date and time to its DateTimeOffset equivalent, and returns a value that indicates whether the conversion succeeded.")
-Public Function TryParse2(ByVal strInput As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef Result As DotNetLib.DateTimeOffset) As Boolean
+Public Function TryParse2(ByVal strInput As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DotNetLib.DateTimeOffset) As Boolean
 Attribute TryParse2.VB_Description = "Tries to convert a specified string representation of a date and time to its DateTimeOffset equivalent, and returns a value that indicates whether the conversion succeeded."
-    TryParse2 = this.DateTimeOffsetSingleton.TryParse2(strInput, formatProvider, styles, Result)
+    TryParse2 = this.DateTimeOffsetSingleton.TryParse2(strInput, formatProvider, styles, result)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly.")
-Public Function TryParseExact(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef Result As DotNetLib.DateTimeOffset) As Boolean
+Public Function TryParseExact(ByVal strInput As String, ByVal Format As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DotNetLib.DateTimeOffset) As Boolean
 Attribute TryParseExact.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly."
-    TryParseExact = this.DateTimeOffsetSingleton.TryParseExact(strInput, Format, formatProvider, styles, Result)
+    TryParseExact = this.DateTimeOffsetSingleton.TryParseExact(strInput, Format, formatProvider, styles, result)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified array of formats, culture-specific format information, and style. The format of the string representation must match one of the specified formats exactly.")
-Public Function TryParseExact2(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef Result As DotNetLib.DateTimeOffset) As Boolean
+Public Function TryParseExact2(ByVal strInput As String, ByRef formats() As String, ByVal formatProvider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DotNetLib.DateTimeOffset) As Boolean
 Attribute TryParseExact2.VB_Description = "Converts the specified string representation of a date and time to its DateTimeOffset equivalent using the specified array of formats, culture-specific format information, and style. The format of the string representation must match one of the specified formats exactly."
-    TryParseExact2 = this.DateTimeOffsetSingleton.TryParseExact2(strInput, formats, formatProvider, styles, Result)
+    TryParseExact2 = this.DateTimeOffsetSingleton.TryParseExact2(strInput, formats, formatProvider, styles, result)
 End Function
 
 '--------------------------------------------------------------------

@@ -27,20 +27,20 @@ Public Sub ArrayListIsReadOnly()
     Set myReadOnlyAL = ArrayList.ReadOnly(myAL)
     
     '  Displays whether the ArrayList is read-only or writable.
-    Debug.Print Strings.Format("myAL is {0}.", IIf(myAL.IsReadOnly, "read-only", "writable"))
-    Debug.Print Strings.Format("myReadOnlyAL is {0}.", IIf(myReadOnlyAL.IsReadOnly, "read-only", "writable"))
+    Debug.Print VBAString.Format("myAL is {0}.", IIf(myAL.IsReadOnly, "read-only", "writable"))
+    Debug.Print VBAString.Format("myReadOnlyAL is {0}.", IIf(myReadOnlyAL.IsReadOnly, "read-only", "writable"))
     
     ' Displays the contents of both collections.
     Debug.Print Regex.Unescape("\nInitially,")
     Debug.Print "The original ArrayList myAL contains:"
     Dim myStr As Variant
     For Each myStr In myAL
-        Debug.Print Strings.Format("   {0}", myStr)
+        Debug.Print VBAString.Format("   {0}", myStr)
     Next
 
     Debug.Print "The read-only ArrayList myReadOnlyAL contains:"
     For Each myStr In myReadOnlyAL
-        Debug.Print Strings.Format("   {0}", myStr)
+        Debug.Print VBAString.Format("   {0}", myStr)
     Next
     
     ' Adding an element to a read-only ArrayList throws an exception.
@@ -59,11 +59,11 @@ Public Sub ArrayListIsReadOnly()
     Debug.Print Regex.Unescape("\nAfter adding a new element to the original ArrayList,")
     Debug.Print "The original ArrayList myAL contains:"
     For Each myStr In myAL
-        Debug.Print Strings.Format("   {0}", myStr)
+        Debug.Print VBAString.Format("   {0}", myStr)
     Next
     Debug.Print "The read-only ArrayList myReadOnlyAL contains:"
     For Each myStr In myReadOnlyAL
-        Debug.Print Strings.Format("   {0}", myStr)
+        Debug.Print VBAString.Format("   {0}", myStr)
     Next
 End Sub
 

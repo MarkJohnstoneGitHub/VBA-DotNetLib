@@ -31,7 +31,7 @@ Public Sub DateTimeFormatInfoMonthGenitiveNames()
     Set dtfi = ci.DateTimeFormat
     
     ' Display the effective culture.
-    Debug.Print "This code example uses the "; ci.Name; " culture."
+    Debug.Print "This code example uses the "; ci.name; " culture."
     
     ' Display the native calendar name.
     Debug.Print VBA.vbNewLine; "MonthGenitiveNames..."

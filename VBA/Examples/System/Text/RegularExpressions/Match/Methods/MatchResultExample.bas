@@ -27,7 +27,7 @@ Public Sub MatchResult()
         Dim pvtMatch As DotNetLib.Match
         Set pvtMatch = varMatch
         Dim pvtResult As String
-        pvtResult = pvtMatch.Result(replacement)
+        pvtResult = pvtMatch.result(replacement)
         Debug.Print pvtResult
     Next
 End Sub

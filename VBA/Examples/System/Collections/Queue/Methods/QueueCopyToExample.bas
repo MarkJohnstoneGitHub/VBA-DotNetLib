@@ -26,7 +26,7 @@ Public Sub QueueCopyTo()
 
     ' Creates and initializes the one-dimensional target Array.
     Dim myTargetArray As DotNetLib.Array
-    Set myTargetArray = Arrays.CreateInstance(Strings.GetType(), 15)
+    Set myTargetArray = Arrays.CreateInstance(VBAString.GetType(), 15)
     Call myTargetArray.SetValue("The", 0)
     Call myTargetArray.SetValue("quick", 1)
     Call myTargetArray.SetValue("brown", 2)
@@ -56,7 +56,7 @@ End Sub
 Private Sub PrintValues(ByVal myArr As DotNetLib.Array, ByVal mySeparator As String)
     Dim myObj As Variant
     For Each myObj In myArr
-        Debug.Print Strings.Format("{0}{1}", mySeparator, myObj);
+        Debug.Print VBAString.Format("{0}{1}", mySeparator, myObj);
     Next
     Debug.Print
 End Sub

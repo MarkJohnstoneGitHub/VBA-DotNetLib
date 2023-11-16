@@ -1,5 +1,5 @@
 Attribute VB_Name = "MatchExamples"
-'@Folder("Examples.System.Text.RegularExpressions.Match")
+'@Folder "Examples.System.Text.RegularExpressions.Match"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -37,7 +37,7 @@ Public Sub MatchExample1()
     For Each varMatch In pvtMatches
         Dim pvtMatch As DotNetLib.Match
         Set pvtMatch = varMatch
-        Debug.Print Strings.Format("'{0}' found in the source code at position {1}.", _
+        Debug.Print VBAString.Format("'{0}' found in the source code at position {1}.", _
                                     pvtMatch.value, pvtMatch.index)
     Next
 End Sub
@@ -67,7 +67,7 @@ Public Sub MatchExample2()
     Dim pvtMatch As DotNetLib.Match
     Set pvtMatch = Regex.Match(strInput, pattern)
     Do While (pvtMatch.Success)
-        Debug.Print Strings.Format("'{0}' found in the source code at position {1}.", _
+        Debug.Print VBAString.Format("'{0}' found in the source code at position {1}.", _
                                     pvtMatch.value, pvtMatch.index)
         Set pvtMatch = pvtMatch.NextMatch()
     Loop
@@ -107,10 +107,10 @@ Public Sub MatchExample3()
     Set pvtMatch = Regex.Match(strInput, pattern)
     If (pvtMatch.Success) Then
         ' Report position as a one-based integer.
-        Debug.Print Strings.Format("'{0}' was found at position {1} in '{2}'.", _
+        Debug.Print VBAString.Format("'{0}' was found at position {1} in '{2}'.", _
                                 pvtMatch.value, pvtMatch.index + 1, strInput)
     Else
-        Debug.Print Strings.Format("The pattern '{0}' was not found in '{1}'.", _
+        Debug.Print VBAString.Format("The pattern '{0}' was not found in '{1}'.", _
                                 pattern, strInput)
     End If
     

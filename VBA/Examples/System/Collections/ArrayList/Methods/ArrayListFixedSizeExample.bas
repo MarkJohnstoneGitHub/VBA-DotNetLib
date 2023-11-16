@@ -33,8 +33,8 @@ Public Sub ArrayListFixedSize()
     Set myFixedSizeAL = ArrayList.FixedSize(myAL)
     
     ' Display whether the ArrayLists have a fixed size or not.
-    Debug.Print Strings.Format("myAL {0}.", IIf(myAL.IsFixedSize, "has a fixed size", "does not have a fixed size"))
-    Debug.Print Strings.Format("myFixedSizeAL {0}.", IIf(myFixedSizeAL.IsFixedSize, "has a fixed size", "does not have a fixed size"))
+    Debug.Print VBAString.Format("myAL {0}.", IIf(myAL.IsFixedSize, "has a fixed size", "does not have a fixed size"))
+    Debug.Print VBAString.Format("myFixedSizeAL {0}.", IIf(myFixedSizeAL.IsFixedSize, "has a fixed size", "does not have a fixed size"))
     Debug.Print
     
     ' Display both ArrayLists.
@@ -78,13 +78,13 @@ Public Sub ArrayListFixedSize()
     ' Adding or inserting elements to the fixed-size ArrayList throws an exception.
     On Error Resume Next
     Call myFixedSizeAL.Add("AddMe2")
-    If Err.Number Then
+    If Err.number Then
         Debug.Print "Exception: " + Err.Description
     End If
     On Error GoTo 0 'Stop code and display error
     On Error Resume Next
     Call myFixedSizeAL.Insert(3, "InsertMe")
-    If Err.Number Then
+    If Err.number Then
         Debug.Print "Exception: " + Err.Description
     End If
     On Error GoTo 0 'Stop code and display error
@@ -93,7 +93,7 @@ End Sub
 Private Sub PrintValues(ByVal myList As mscorlib.IEnumerable, ByVal mySeparator As String)
     Dim obj As Variant
     For Each obj In myList
-        Debug.Print Strings.Format("{0}{1}", mySeparator, obj);
+        Debug.Print VBAString.Format("{0}{1}", mySeparator, obj);
     Next
     Debug.Print
 End Sub

@@ -40,19 +40,19 @@ Public Sub ArrayListIndexOf()
     myString = "the"
     Dim myIndex As Long
     myIndex = myAL.IndexOf(myString)
-    Debug.Print Strings.Format("The first occurrence of ""{0}"" is at index {1}.", myString, myIndex)
+    Debug.Print VBAString.Format("The first occurrence of ""{0}"" is at index {1}.", myString, myIndex)
     
     ' Search for the first occurrence of the duplicated value in the last section of the ArrayList.
      myIndex = myAL.IndexOf2(myString, 4)
-    Debug.Print Strings.Format("The first occurrence of ""{0}"" between index 4 and the end is at index {1}.", myString, myIndex)
+    Debug.Print VBAString.Format("The first occurrence of ""{0}"" between index 4 and the end is at index {1}.", myString, myIndex)
 
     ' Search for the first occurrence of the duplicated value in a section of the ArrayList.
     myIndex = myAL.IndexOf3(myString, 6, 6)
-    Debug.Print Strings.Format("The first occurrence of ""{0}"" between index 6 and index 11 is at index {1}.", myString, myIndex)
+    Debug.Print VBAString.Format("The first occurrence of ""{0}"" between index 6 and index 11 is at index {1}.", myString, myIndex)
     
     ' Search for the first occurrence of the duplicated value in a small section at the end of the ArrayList.
     myIndex = myAL.IndexOf2(myString, 11)
-    Debug.Print Strings.Format("The first occurrence of ""{0}"" between index 11 and the end is at index {1}.", myString, myIndex)
+    Debug.Print VBAString.Format("The first occurrence of ""{0}"" between index 11 and the end is at index {1}.", myString, myIndex)
 End Sub
 
 Public Sub PrintIndexAndValues(ByVal myList As mscorlib.IEnumerable)
@@ -60,7 +60,7 @@ Public Sub PrintIndexAndValues(ByVal myList As mscorlib.IEnumerable)
     i = 0
     Dim obj As Variant
     For Each obj In myList
-        Debug.Print Strings.Format("   [{0}]:    {1}", i, obj)
+        Debug.Print VBAString.Format("   [{0}]:    {1}", i, obj)
         i = i + 1
     Next
     Debug.Print

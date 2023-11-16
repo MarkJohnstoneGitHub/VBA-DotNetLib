@@ -44,37 +44,37 @@ End Sub
 
 '@Static
 '@Description("Initializes a new instance of the BitArray class that can hold the specified number of bit values, which are initially set to false.")
-Public Function Create(ByVal Length As Long) As DotNetLib.BitArray
+Public Function Create(ByVal length As Long) As DotNetLib.BitArray
 Attribute Create.VB_Description = "Initializes a new instance of the BitArray class that can hold the specified number of bit values, which are initially set to false."
-   Set Create = this.BitArraySingleton.Create(Length)
+   Set Create = this.BitArraySingleton.Create(length)
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the BitArray class that can hold the specified number of bit values, which are initially set to the specified value.")
-Public Function Create2(ByVal Length As Long, ByVal defaultValue As Boolean) As DotNetLib.BitArray
+Public Function Create2(ByVal length As Long, ByVal defaultValue As Boolean) As DotNetLib.BitArray
 Attribute Create2.VB_Description = "Initializes a new instance of the BitArray class that can hold the specified number of bit values, which are initially set to the specified value."
-   Set Create2 = this.BitArraySingleton.Create_2(Length, defaultValue)
+   Set Create2 = this.BitArraySingleton.Create_2(length, defaultValue)
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the BitArray class that contains bit values copied from the specified array of bytes.")
-Public Function Create3(ByRef bytes() As Byte) As DotNetLib.BitArray
+Public Function Create3(ByRef Bytes() As Byte) As DotNetLib.BitArray
 Attribute Create3.VB_Description = "Initializes a new instance of the BitArray class that contains bit values copied from the specified array of bytes."
-   Set Create3 = this.BitArraySingleton.Create_3(bytes)
+   Set Create3 = this.BitArraySingleton.Create_3(Bytes)
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the BitArray class that contains bit values copied from the specified array of Booleans.")
-Public Function Create4(ByRef Values() As Boolean) As DotNetLib.BitArray
+Public Function Create4(ByRef values() As Boolean) As DotNetLib.BitArray
 Attribute Create4.VB_Description = "Initializes a new instance of the BitArray class that contains bit values copied from the specified array of Booleans."
-   Set Create4 = this.BitArraySingleton.Create_4(Values)
+   Set Create4 = this.BitArraySingleton.Create_4(values)
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the BitArray class that contains bit values copied from the specified array of 32-bit integers.")
-Public Function Create5(ByRef Values() As Long) As DotNetLib.BitArray
+Public Function Create5(ByRef values() As Long) As DotNetLib.BitArray
 Attribute Create5.VB_Description = "Initializes a new instance of the BitArray class that contains bit values copied from the specified array of 32-bit integers."
-   Set Create5 = this.BitArraySingleton.Create_5(Values)
+   Set Create5 = this.BitArraySingleton.Create_5(values)
 End Function
 
 '@Static

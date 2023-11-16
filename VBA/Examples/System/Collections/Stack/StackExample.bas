@@ -24,15 +24,15 @@ Public Sub StackExample()
     
     ' Displays the properties and values of the Stack.
     Debug.Print "myStack"
-    Debug.Print Strings.Format(Regex.Unescape("\tCount:    {0}"), myStack.Count) 'Note Unescape .Net escape characters \t i.e. tab
-    Debug.Print Strings.Format(Regex.Unescape("\tValues:"));
+    Debug.Print VBAString.Format(Regex.Unescape("\tCount:    {0}"), myStack.count) 'Note Unescape .Net escape characters \t i.e. tab
+    Debug.Print VBAString.Format(Regex.Unescape("\tValues:"));
     PrintValues myStack
 End Sub
 
 Private Sub PrintValues(ByVal myCollection As mscorlib.IEnumerable)
     Dim obj As Variant
     For Each obj In myCollection
-        Debug.Print Strings.Format("    {0}", obj);
+        Debug.Print VBAString.Format("    {0}", obj);
     Next
     Debug.Print
 End Sub

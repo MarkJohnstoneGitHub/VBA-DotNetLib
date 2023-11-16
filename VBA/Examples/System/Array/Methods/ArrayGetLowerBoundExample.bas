@@ -26,11 +26,11 @@ Public Sub ArrayGetLowerBound()
     Dim lower As Long
     lower = integers.GetLowerBound(0)
     
-    Debug.Print Strings.Format("Elements from index {0} to {1}:", lower, upper)
+    Debug.Print VBAString.Format("Elements from index {0} to {1}:", lower, upper)
     ' Iterate the array.
     Dim ctr As Long
     For ctr = lower To upper
-        Debug.Print Strings.Format("{0}{1}{2}", IIf(ctr = lower, "   ", ""), integers(ctr), IIf(ctr < upper, ", ", VBA.vbNewLine));
+        Debug.Print VBAString.Format("{0}{1}{2}", IIf(ctr = lower, "   ", ""), integers(ctr), IIf(ctr < upper, ", ", VBA.vbNewLine));
     Next
     Debug.Print
 
@@ -42,10 +42,10 @@ Public Sub ArrayGetLowerBound()
     ' Get the number of dimensions.
     Dim pvtRank As Long
     pvtRank = integers2d.Rank
-    Debug.Print Strings.Format("Number of dimensions: {0}", pvtRank)
+    Debug.Print VBAString.Format("Number of dimensions: {0}", pvtRank)
     For ctr = 0 To pvtRank - 1
-        Debug.Print Strings.Format("   Dimension {0}: ", ctr) & _
-                    Strings.Format("from {0} to {1}", integers2d.GetLowerBound(ctr), integers2d.GetUpperBound(ctr))
+        Debug.Print VBAString.Format("   Dimension {0}: ", ctr) & _
+                    VBAString.Format("from {0} to {1}", integers2d.GetLowerBound(ctr), integers2d.GetUpperBound(ctr))
     Next ctr
 
     ' Iterate the 2-dimensional array and display its values.
@@ -56,7 +56,7 @@ Public Sub ArrayGetLowerBound()
     For outer = integers2d.GetLowerBound(0) To integers2d.GetUpperBound(0)
         Dim inner As Long
         For inner = integers2d.GetLowerBound(1) To integers2d.GetUpperBound(1)
-            Debug.Print Strings.Format(formatString, outer, inner, integers2d.GetValue_2(outer, inner))
+            Debug.Print VBAString.Format(formatString, outer, inner, integers2d.GetValue_2(outer, inner))
         Next inner
     Next outer
 End Sub
@@ -85,3 +85,5 @@ End Sub
 '             {6, 1} = 64
 '             {7, 0} = 9
 '             {7, 1} = 81
+
+

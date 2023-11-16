@@ -33,7 +33,7 @@ Public Sub RegexExample1()
     Set pvtMatches = rx.Matches(text)
 
     ' Report the number of matches found.
-    Debug.Print Strings.Format(Regex.Unescape("{0} matches found in:\n   {1}"), pvtMatches.Count, text)
+    Debug.Print VBAString.Format(Regex.Unescape("{0} matches found in:\n   {1}"), pvtMatches.count, text)
 
     ' Report on each match.
     Dim varMatch As Variant
@@ -43,7 +43,7 @@ Public Sub RegexExample1()
         
         Dim Groups As DotNetLib.GroupCollection
         Set Groups = pvtMatch.Groups
-        Debug.Print Strings.Format("'{0}' repeated at positions {1} and {2}", _
+        Debug.Print VBAString.Format("'{0}' repeated at positions {1} and {2}", _
                                     Groups.Item_2("word").value, _
                                     Groups(0).index, _
                                     Groups(1).index)
@@ -73,3 +73,5 @@ Public Sub TestRegex()
     Set pvtMatches = rx.Matches(text)
 
 End Sub
+
+

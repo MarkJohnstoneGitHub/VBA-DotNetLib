@@ -63,9 +63,6 @@ namespace DotNetLib.System
             return new Type(_object.GetType()); ;
         }
 
-
-
-
     }
 }
 

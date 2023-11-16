@@ -50,7 +50,7 @@ Private Sub Show(ByVal sbs As DotNetLib.StringBuilder)
 
     Debug.Print rule1
     Debug.Print rule2
-    Debug.Print Strings.Format("{0}", sbs.ToString())
+    Debug.Print VBAString.Format("{0}", sbs.ToString())
     Debug.Print
 End Sub
 

@@ -24,11 +24,11 @@ Public Sub DateTimeFormatInfoSetAllDateTimePatterns()
     Dim enUS As DotNetLib.CultureInfo
     Set enUS = CultureInfo.CreateFromName("en-US")
     
-    Dim Values() As String
-    Values = StringArray.ToArray("December 2010", "December, 2010", _
+    Dim values() As String
+    values = StringArray.ToArray("December 2010", "December, 2010", _
                             "Dec-2010", "December-2010")
     
-    Debug.Print "Supported Y/y patterns for "; enUS.Name; " culture:"
+    Debug.Print "Supported Y/y patterns for "; enUS.name; " culture:"
     
     Dim pattern As Variant
     For Each pattern In enUS.DateTimeFormat.GetAllDateTimePatterns("Y")
@@ -38,7 +38,7 @@ Public Sub DateTimeFormatInfoSetAllDateTimePatterns()
     
     ' Try to parse each date string using "Y" format specifier.
     Dim value  As Variant
-    For Each value In Values
+    For Each value In values
         Dim dat As DotNetLib.DateTime
         On Error Resume Next
         Set dat = DateTime.ParseExact(value, "Y", enUS)
@@ -53,14 +53,14 @@ Public Sub DateTimeFormatInfoSetAllDateTimePatterns()
     
     'Modify supported "Y" format.
     enUS.DateTimeFormat.SetAllDateTimePatterns StringArray.ToArray("MMM-yyyy"), "Y"
-    Debug.Print "Supported Y/y patterns for "; enUS.Name; " culture:"
+    Debug.Print "Supported Y/y patterns for "; enUS.name; " culture:"
     For Each pattern In enUS.DateTimeFormat.GetAllDateTimePatterns("Y")
         Debug.Print "   " + pattern
     Next
     Debug.Print
 
     ' Try to parse each date string using "Y" format specifier.
-    For Each value In Values
+    For Each value In values
         On Error Resume Next
         Set dat = DateTime.ParseExact(value, "Y", enUS)
         If Try Then

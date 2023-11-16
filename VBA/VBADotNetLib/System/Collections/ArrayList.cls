@@ -44,9 +44,9 @@ End Sub
 
 '@Static
 '@Description("Initializes a new instance of the ArrayList class that is empty and has the default or specified initial capacity.")
-Public Function Create(Optional ByVal capacity As Long = 0) As DotNetLib.ArrayList
+Public Function Create(Optional ByVal Capacity As Long = 0) As DotNetLib.ArrayList
 Attribute Create.VB_Description = "Initializes a new instance of the ArrayList class that is empty and has the default or specified initial capacity."
-   Set Create = this.ArrayListSingleton.Create(capacity)
+   Set Create = this.ArrayListSingleton.Create(Capacity)
 End Function
 
 '@Static
@@ -93,9 +93,9 @@ End Function
 
 '@Static
 '@Description("Returns an ArrayList whose elements are copies of the specified value.")
-Public Function Repeat(ByVal Value As Variant, ByVal Count As Long) As DotNetLib.ArrayList
+Public Function Repeat(ByVal value As Variant, ByVal count As Long) As DotNetLib.ArrayList
 Attribute Repeat.VB_Description = "Returns an ArrayList whose elements are copies of the specified value."
-   Set Repeat = this.ArrayListSingleton.Repeat(Value, Count)
+   Set Repeat = this.ArrayListSingleton.Repeat(value, count)
 End Function
 
 '@Static

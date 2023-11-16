@@ -8,7 +8,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Represents a 16-bit signed integer."
-'@Folder("VBADotNetLib.System")
+'@Folder "VBADotNetLib.System"
 '@ModuleDescription("Represents a 16-bit signed integer.")
 '@PredeclaredId
 

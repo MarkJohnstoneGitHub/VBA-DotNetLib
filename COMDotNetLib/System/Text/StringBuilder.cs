@@ -55,7 +55,7 @@ namespace DotNetLib.System.Text
 
         // Properties
 
-        internal GText.StringBuilder WrappedStringBuilder
+        public GText.StringBuilder WrappedStringBuilder
         {
             get { return _sb; }
             set

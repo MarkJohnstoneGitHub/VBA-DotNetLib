@@ -39,10 +39,10 @@ Public Sub StringBuilderChars()
         End If
     Next
     
-    Debug.Print Strings.Format("The sentence '{0}' has:", sb)
-    Debug.Print Strings.Format("   Alphabetic characters: {0}", nAlphabeticChars)
-    Debug.Print Strings.Format("   White-space characters: {0}", nWhitespace)
-    Debug.Print Strings.Format("   Punctuation characters: {0}", nPunctuation)
+    Debug.Print VBAString.Format("The sentence '{0}' has:", sb)
+    Debug.Print VBAString.Format("   Alphabetic characters: {0}", nAlphabeticChars)
+    Debug.Print VBAString.Format("   White-space characters: {0}", nWhitespace)
+    Debug.Print VBAString.Format("   Punctuation characters: {0}", nPunctuation)
 End Sub
 
 ' The example displays the following output:
