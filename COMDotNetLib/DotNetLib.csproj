@@ -71,6 +71,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="System\Array.cs" />
     <Compile Include="System\Interfaces\IBStringSingleton.cs" />
+    <Compile Include="System\Security\AccessControl\Enums.cs" />
+    <Compile Include="System\Security\AccessControl\FileSystemRights.cs" />
+    <Compile Include="System\Security\AccessControl\objectsecurity.cs" />
+    <Compile Include="System\Security\AccessControl\rules.cs" />
     <Compile Include="System\Singletons\BStringSingleton.cs" />
     <Compile Include="System\Enviroment\SpecialFolder.cs" />
     <Compile Include="System\Interfaces\IString.cs" />
