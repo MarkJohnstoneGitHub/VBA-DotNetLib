@@ -4,7 +4,7 @@ Attribute VB_Name = "DirectoryGetDirectoriesExample3"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 November 18, 2023
-'@LastModified November 18 2023
+'@LastModified November 18, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
