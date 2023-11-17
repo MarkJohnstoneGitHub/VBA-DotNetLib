@@ -3,7 +3,7 @@ Attribute VB_Name = "DirectoryGetCreationTimeUtcEg"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
-'@Version v1.0 November 17 2023
+'@Version v1.0 November 17, 2023
 '@LastModified November 17, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
