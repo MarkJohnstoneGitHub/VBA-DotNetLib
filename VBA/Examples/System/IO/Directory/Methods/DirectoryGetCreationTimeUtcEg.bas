@@ -12,6 +12,10 @@ Attribute VB_Name = "DirectoryGetCreationTimeUtcEg"
 
 Option Explicit
 
+''
+' This sample shows the differences between dates from methods that use
+' coordinated universal time (UTC) format and those that do not.
+''
 Public Sub DirectoryGetCreationTimeUtc()
     ' Set the directory.
     Dim n As String
