@@ -12,6 +12,9 @@ Attribute VB_Name = "DirectoryGetLastAccessTimeEg"
 
 Option Explicit
 
+''
+' The following example demonstrates how to use GetLastAccessTime.
+''
 Public Sub DirectoryGetLastAccessTime()
     On Error GoTo ErrorHandler
     Dim pvtPath As String
