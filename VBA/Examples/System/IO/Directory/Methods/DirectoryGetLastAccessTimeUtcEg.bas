@@ -1,0 +1,61 @@
+Attribute VB_Name = "DirectoryGetLastAccessTimeUtcEg"
+'@Folder("Examples.System.IO.Directory.Methods")
+
+'@Author Mark Johnstone
+'@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
+'@Version v1.0 November 18, 2023
+'@LastModified November 18, 2023
+
+'@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
+
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.io.directory.getlastaccesstimeutc?view=netframework-4.8.1#examples
+
+Option Explicit
+
+''
+' The following example illustrates the differences in output when using
+' Coordinated Universal Time (UTC) output.
+''
+Public Sub DirectoryGetLastAccessTimeUtc()
+    ' Set the directory.
+    Dim n As String
+    n = "C:\test\newdir"
+    '  Create two variables to use to set the time.
+    Dim dtime1 As DotNetLib.DateTime
+    Set dtime1 = DateTime.CreateFromDate(2002, 1, 3)
+    Dim dtime2 As DotNetLib.DateTime
+    Set dtime2 = DateTime.CreateFromDate(1999, 1, 1)
+    
+    ' Create the directory.
+    On Error GoTo ErrorHandler
+    Call Directory.CreateDirectory(n)
+    
+    ' Set the creation and last access times to a variable DateTime value.
+    Call Directory.SetCreationTime(n, dtime1)
+    Call Directory.SetLastAccessTimeUtc(n, dtime1)
+
+    ' Print to console the results.
+    Debug.Print VBAString.Format("Creation Date: {0}", Directory.GetCreationTime(n))
+    Debug.Print VBAString.Format("UTC creation Date: {0}", Directory.GetCreationTimeUtc(n))
+    Debug.Print VBAString.Format("Last write time: {0}", Directory.GetLastWriteTime(n))
+    Debug.Print VBAString.Format("UTC last write time: {0}", Directory.GetLastWriteTimeUtc(n))
+    Debug.Print VBAString.Format("Last access time: {0}", Directory.GetLastAccessTime(n))
+    Debug.Print VBAString.Format("UTC last access time: {0}", Directory.GetLastAccessTimeUtc(n))
+
+    '  Set the last write time to a different value.
+    Call Directory.SetLastWriteTimeUtc(n, dtime2)
+    Debug.Print VBAString.Format("Changed last write time: {0}", Directory.GetLastWriteTimeUtc(n))
+Exit Sub
+ErrorHandler:
+    Debug.Print Err.Description
+End Sub
+
+' Obviously, since this sample deals with dates and times, the output will vary
+' depending on when you run the executable. Here is one example of the output:
+' Creation Date: 1/3/2002 12:00:00 AM
+' UTC creation Date: 1/3/2002 8:00:00 AM
+' Last write time: 12/31/1998 4:00:00 PM
+' UTC last write time: 1/1/1999 12:00:00 AM
+' Last access time: 1/2/2002 4:00:00 PM
+' UTC last access time: 1/3/2002 12:00:00 AM
+' Changed last write time: 1/1/1999 12:00:00 AM
