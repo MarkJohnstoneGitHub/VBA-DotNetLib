@@ -48,7 +48,7 @@ Public Sub DirectorySetCreationTime()
 
     Exit Sub
 ErrorHandler:
-    Debug.Print VBAString.Format("The process failed: {0}", Err.Description)
+    Debug.Print Err.Description
 End Sub
 
 ' Obviously, since this sample deals with dates and times, the output will vary
