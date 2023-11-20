@@ -74,6 +74,7 @@ As VBA doesnot have member overloading factory methods and member overloads will
     - The type libraries added can be viewed under View->Object Browser and select DotNetLib.tlb
 3) Add the [VBADotNetLib](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/VBADotNetLib/) VBA Factory/Singleton classes into a project.
     - Either copy the classes or add a reference to project containing the classes.
+4) Recommended install [Rubberduck](https://rubberduckvba.com/) VBA Addin.
  
 For detailed explanation of the DotNetLib class properties see [netframework-4.8.1](https://learn.microsoft.com/en-us/dotnet/api/system?view=netframework-4.8.1)
 
