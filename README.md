@@ -70,9 +70,9 @@ As VBA doesnot have member overloading factory methods and member overloads will
     - For [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/DotNetLibrary.accdb) references may be required to be fixed by removing and adding back in.
     - Add reference DotNetlib.tlb (Com Interlop wrappers of the .Net Framework 4.8.1)  i.e. browse to location where stored 
     - Add reference mscorlib.tlb version 2.4
-    - Add reference Microsoft VBScript Regular Expressions 5.5 (Required only for the [Rubberduck export utility](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Rubberduck%20Utility) not part of VBADotNetLib)
+    - Add reference Microsoft VBScript Regular Expressions 5.3 (Required only for the [Rubberduck export utility](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Rubberduck%20Utility) not part of VBADotNetLib)
     - The type libraries added can be viewed under View->Object Browser and select DotNetLib.tlb
-3) Add the [VBADotNetLib](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/VBADotNetLib/) Factory/Singleton classes into a project.
+3) Add the [VBADotNetLib](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/VBADotNetLib/) VBA Factory/Singleton classes into a project.
     - Either copy the classes or add a reference to project containing the classes.
  
 For detailed explanation of the DotNetLib class properties see [netframework-4.8.1](https://learn.microsoft.com/en-us/dotnet/api/system?view=netframework-4.8.1)
