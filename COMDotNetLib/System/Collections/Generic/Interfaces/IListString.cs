@@ -98,6 +98,9 @@ namespace DotNetLib.System.Collections
         [Description("Returns an enumerator that iterates through a collection.")]
         GCollections.IEnumerator GetEnumerator();
 
+        [Description("Returns an IEnumerable that iterates through a collection.")]
+        GCollections.IEnumerable GetIEnumerable();
+
         [Description("Searches for the specified string and returns the zero-based index of the first occurrence within the entire List<string>.")]
         int IndexOf(string item);
 

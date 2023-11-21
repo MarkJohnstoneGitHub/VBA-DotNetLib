@@ -15,7 +15,7 @@ namespace DotNetLib.System.Collections
     [Guid("70EF1DD1-80FA-4276-8051-426C0FAFB2FA")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IListString))]
-    public class ListString  : IListString, GCollections.IList, GCollections.ICollection, IEnumerable
+    public class ListString  : IListString, GCollections.IList, GCollections.ICollection, GCollections.IEnumerable
     {
         private GSystem.Collections.Generic.List<string> _stringList;
         public ListString()
@@ -261,6 +261,12 @@ namespace DotNetLib.System.Collections
         {
             return ((IEnumerable)_stringList).GetEnumerator();
         }
+
+        public IEnumerable GetIEnumerable()
+        {
+            return _stringList;
+        }
+
 
         public void CopyTo(GSystem.Array array, int index)
         {
