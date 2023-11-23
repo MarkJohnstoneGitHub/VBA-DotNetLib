@@ -66,9 +66,9 @@ Attribute AppendAllText2.VB_Description = "Appends the specified string to the f
 End Sub
 
 '@Description("Creates a StreamWriter that appends UTF-8 encoded text to an existing file, or to a new file if the specified file does not exist.")
-Public Function appendText(ByVal pPath As String) As DotNetLib.StreamWriter
-Attribute appendText.VB_Description = "Creates a StreamWriter that appends UTF-8 encoded text to an existing file, or to a new file if the specified file does not exist."
-   Set appendText = this.FileSingleton.appendText(pPath)
+Public Function AppendText(ByVal pPath As String) As DotNetLib.StreamWriter
+Attribute AppendText.VB_Description = "Creates a StreamWriter that appends UTF-8 encoded text to an existing file, or to a new file if the specified file does not exist."
+   Set AppendText = this.FileSingleton.AppendText(pPath)
 End Function
 
 '@Description("Copies an existing file to a new file. Overwriting a file of the same name is not allowed.")
