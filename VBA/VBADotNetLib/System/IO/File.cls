@@ -16,7 +16,7 @@ Attribute VB_Description = "Provides static methods for the creation, copying, d
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 November 6, 2023
-'@LastModified November 14, 2023
+'@LastModified November 23, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -48,7 +48,7 @@ Attribute AppendAllLines.VB_Description = "Appends lines to a file, and then clo
 End Sub
 
 '@Description("Appends lines to a file by using a specified encoding, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.")
-Public Sub AppendAllLines2(ByVal pPath As String, ByVal contents As IEnumerable, ByVal pEncoding As mscorlib.Encoding)
+Public Sub AppendAllLines2(ByVal pPath As String, ByVal contents As IEnumerable, ByVal pEncoding As DotNetLib.Encoding)
 Attribute AppendAllLines2.VB_Description = "Appends lines to a file by using a specified encoding, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file."
     Call this.FileSingleton.AppendAllLines_2(pPath, contents, pEncoding)
 End Sub
@@ -60,15 +60,15 @@ Attribute AppendAllText.VB_Description = "Opens a file, appends the specified st
 End Sub
 
 '@Description("Appends the specified string to the file using the specified encoding, creating the file if it does not already exist.")
-Public Sub AppendAllText2(ByVal pPath As String, ByVal contents As String, ByVal pEncoding As mscorlib.Encoding)
+Public Sub AppendAllText2(ByVal pPath As String, ByVal contents As String, ByVal pEncoding As DotNetLib.Encoding)
 Attribute AppendAllText2.VB_Description = "Appends the specified string to the file using the specified encoding, creating the file if it does not already exist."
     Call this.FileSingleton.AppendAllText_2(pPath, contents, pEncoding)
 End Sub
 
 '@Description("Creates a StreamWriter that appends UTF-8 encoded text to an existing file, or to a new file if the specified file does not exist.")
-Public Function AppendText(ByVal pPath As String) As DotNetLib.StreamWriter
-Attribute AppendText.VB_Description = "Creates a StreamWriter that appends UTF-8 encoded text to an existing file, or to a new file if the specified file does not exist."
-   Set AppendText = this.FileSingleton.AppendText(pPath)
+Public Function appendText(ByVal pPath As String) As DotNetLib.StreamWriter
+Attribute appendText.VB_Description = "Creates a StreamWriter that appends UTF-8 encoded text to an existing file, or to a new file if the specified file does not exist."
+   Set appendText = this.FileSingleton.appendText(pPath)
 End Function
 
 '@Description("Copies an existing file to a new file. Overwriting a file of the same name is not allowed.")
@@ -108,9 +108,9 @@ Attribute Create4.VB_Description = "Creates or overwrites a file in the specifie
 End Function
 
 '@Description("Creates or opens a file for writing UTF-8 encoded text. If the file already exists, its contents are overwritten.")
-Public Function CreateText(ByVal pPath As String) As DotNetLib.StreamWriter
-Attribute CreateText.VB_Description = "Creates or opens a file for writing UTF-8 encoded text. If the file already exists, its contents are overwritten."
-   Set CreateText = this.FileSingleton.CreateText(pPath)
+Public Function createText(ByVal pPath As String) As DotNetLib.StreamWriter
+Attribute createText.VB_Description = "Creates or opens a file for writing UTF-8 encoded text. If the file already exists, its contents are overwritten."
+   Set createText = this.FileSingleton.createText(pPath)
 End Function
 
 '@Description("Decrypts a file that was encrypted by the current account using the Encrypt(String) method.")
@@ -246,7 +246,7 @@ Attribute ReadAllLines.VB_Description = "Opens a text file, reads all lines of t
 End Function
 
 '@Description("Opens a file, reads all lines of the file with the specified encoding, and then closes the file.")
-Public Function ReadAllLines2(ByVal pPath As String, ByVal pEncoding As mscorlib.Encoding) As String()
+Public Function ReadAllLines2(ByVal pPath As String, ByVal pEncoding As DotNetLib.Encoding) As String()
 Attribute ReadAllLines2.VB_Description = "Opens a file, reads all lines of the file with the specified encoding, and then closes the file."
    ReadAllLines2 = this.FileSingleton.ReadAllLines_2(pPath, pEncoding)
 End Function
@@ -264,7 +264,7 @@ Attribute ReadLines.VB_Description = "Reads the lines of a file."
 End Function
 
 '@Description("Read the lines of a file that has a specified encoding.")
-Public Function ReadLines2(ByVal pPath As String, ByVal pEncoding As mscorlib.Encoding) As mscorlib.IEnumerable
+Public Function ReadLines2(ByVal pPath As String, ByVal pEncoding As DotNetLib.Encoding) As mscorlib.IEnumerable
 Attribute ReadLines2.VB_Description = "Read the lines of a file that has a specified encoding."
    Set ReadLines2 = this.FileSingleton.ReadLines_2(pPath, pEncoding)
 End Function
@@ -330,9 +330,9 @@ Attribute SetLastWriteTimeUtc.VB_Description = "Sets the date and time, in Coord
 End Sub
 
 '@Description("Creates a new file, writes the specified byte array to the file, and then closes the file. If the target file already exists, it is overwritten.")
-Public Sub WriteAllBytes(ByVal pPath As String, ByRef Bytes() As Byte)
+Public Sub WriteAllBytes(ByVal pPath As String, ByRef bytes() As Byte)
 Attribute WriteAllBytes.VB_Description = "Creates a new file, writes the specified byte array to the file, and then closes the file. If the target file already exists, it is overwritten."
-    Call this.FileSingleton.WriteAllBytes(pPath, Bytes)
+    Call this.FileSingleton.WriteAllBytes(pPath, bytes)
 End Sub
 
 '@Description("Creates a new file, write the specified string array to the file, and then closes the file.")
@@ -342,7 +342,7 @@ Attribute WriteAllLines.VB_Description = "Creates a new file, write the specifie
 End Sub
 
 '@Description("Creates a new file, writes the specified string array to the file by using the specified encoding, and then closes the file.")
-Public Sub WriteAllLines2(ByVal pPath As String, ByRef contents() As String, ByVal pEncoding As mscorlib.Encoding)
+Public Sub WriteAllLines2(ByVal pPath As String, ByRef contents() As String, ByVal pEncoding As DotNetLib.Encoding)
 Attribute WriteAllLines2.VB_Description = "Creates a new file, writes the specified string array to the file by using the specified encoding, and then closes the file."
    Call this.FileSingleton.WriteAllLines_2(pPath, contents, pEncoding)
 End Sub
@@ -354,7 +354,7 @@ Attribute WriteAllLines3.VB_Description = "Creates a new file, writes a collecti
 End Sub
 
 '@Description("Creates a new file by using the specified encoding, writes a collection of strings to the file, and then closes the file.")
-Public Sub WriteAllLines4(ByVal pPath As String, ByVal contents As mscorlib.IEnumerable, ByVal pEncoding As mscorlib.Encoding)
+Public Sub WriteAllLines4(ByVal pPath As String, ByVal contents As mscorlib.IEnumerable, ByVal pEncoding As DotNetLib.Encoding)
 Attribute WriteAllLines4.VB_Description = "Creates a new file by using the specified encoding, writes a collection of strings to the file, and then closes the file."
     Call this.FileSingleton.WriteAllLines_4(pPath, contents, pEncoding)
 End Sub
@@ -366,7 +366,7 @@ Attribute WriteAllText.VB_Description = "Creates a new file, writes the specifie
 End Sub
 
 '@Description("Creates a new file, writes the specified string to the file using the specified encoding, and then closes the file. If the target file already exists, it is overwritten.")
-Public Sub WriteAllText2(ByVal pPath As String, ByVal contents As String, ByVal pEncoding As mscorlib.Encoding)
+Public Sub WriteAllText2(ByVal pPath As String, ByVal contents As String, ByVal pEncoding As DotNetLib.Encoding)
 Attribute WriteAllText2.VB_Description = "Creates a new file, writes the specified string to the file using the specified encoding, and then closes the file. If the target file already exists, it is overwritten."
     Call this.FileSingleton.WriteAllText_2(pPath, contents, pEncoding)
 End Sub

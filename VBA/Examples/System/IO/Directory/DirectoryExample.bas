@@ -56,9 +56,9 @@ Public Sub DirectoryExample2()
         Set fileLines = File.ReadLines(varRetrievedFile)
         Dim i As Long
         i = 1
-        Dim varFileLine As Variant
-        For Each varFileLine In fileLines
-            If InStr(varFileLine, findText) Then
+        Dim varfileLine As Variant
+        For Each varfileLine In fileLines
+            If InStr(varfileLine, findText) Then
                 Debug.Print VBAString.Format("{0} contains ""{1}"" at line number {2}", varRetrievedFile, findText, i)
                 foundLinesCounter = foundLinesCounter + 1
             End If

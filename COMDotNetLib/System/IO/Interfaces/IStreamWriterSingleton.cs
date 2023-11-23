@@ -1,5 +1,6 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=netframework-4.8.1
 
+using Encoding = DotNetLib.System.Text.Encoding;
 using GIO = global::System.IO;
 using GText = global::System.Text;
 using System;
@@ -23,22 +24,22 @@ namespace DotNetLib.System.IO
         StreamWriter Create(string path, bool append);
 
         [Description("Initializes a new instance of the StreamWriter class for the specified file by using the specified encoding and default buffer size. If the file exists, it can be either overwritten or appended to. If the file does not exist, this constructor creates a new file.")]
-        StreamWriter Create(string path, bool append, GText.Encoding encoding);
+        StreamWriter Create(string path, bool append, Encoding encoding);
 
         [Description("Initializes a new instance of the StreamWriter class for the specified file on the specified path, using the specified encoding and buffer size. If the file exists, it can be either overwritten or appended to. If the file does not exist, this constructor creates a new file")]
-        StreamWriter Create(string path, bool append, GText.Encoding encoding, int bufferSize);
+        StreamWriter Create(string path, bool append, Encoding encoding, int bufferSize);
 
         [Description("Initializes a new instance of the StreamWriter class for the specified stream by using UTF-8 encoding and the default buffer size.")]
         StreamWriter Create(GIO.Stream stream);
 
         [Description("Initializes a new instance of the StreamWriter class for the specified stream by using the specified encoding and the default buffer size.")]
-        StreamWriter Create(GIO.Stream stream, GText.Encoding encoding);
+        StreamWriter Create(GIO.Stream stream, Encoding encoding);
 
         [Description("Initializes a new instance of the StreamWriter class for the specified stream by using the specified encoding and buffer size.")]
-        StreamWriter Create(GIO.Stream stream, GText.Encoding encoding, int bufferSize);
+        StreamWriter Create(GIO.Stream stream, Encoding encoding, int bufferSize);
 
         [Description("Initializes a new instance of the StreamWriter class for the specified stream by using the specified encoding and buffer size, and optionally leaves the stream open.")]
-        StreamWriter Create(GIO.Stream stream, GText.Encoding encoding, int bufferSize, bool leaveOpen);
+        StreamWriter Create(GIO.Stream stream, Encoding encoding, int bufferSize, bool leaveOpen);
 
         // Fields
         StreamWriter NullStreamWriter

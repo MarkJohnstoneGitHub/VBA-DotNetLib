@@ -7,6 +7,7 @@ using GAccessControl = global::System.Security.AccessControl;
 using DotNetLib.System.Security.AccessControl;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using DotNetLib.System.Text;
 
 namespace DotNetLib.System.IO
 {
@@ -21,13 +22,13 @@ namespace DotNetLib.System.IO
 
 
         [Description("Appends lines to a file by using a specified encoding, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.")]
-        void AppendAllLines(string path, GCollections.IEnumerable contents, GText.Encoding encoding);
+        void AppendAllLines(string path, GCollections.IEnumerable contents, Encoding encoding);
 
         [Description("Opens a file, appends the specified string to the file, and then closes the file. If the file does not exist, this method creates a file, writes the specified string to the file, then closes the file.")]
         void AppendAllText(string path, string contents);
 
         [Description("Appends the specified string to the file using the specified encoding, creating the file if it does not already exist.")]
-        void AppendAllText(string path, string contents, GText.Encoding encoding);
+        void AppendAllText(string path, string contents, Encoding encoding);
 
         [Description("Creates a StreamWriter that appends UTF-8 encoded text to an existing file, or to a new file if the specified file does not exist.")]
         StreamWriter AppendText(string path);
@@ -120,7 +121,7 @@ namespace DotNetLib.System.IO
         string[] ReadAllLines(string path);
 
         [Description("Opens a file, reads all lines of the file with the specified encoding, and then closes the file.")]
-        string[] ReadAllLines(string path, GText.Encoding encoding);
+        string[] ReadAllLines(string path, Encoding encoding);
 
         [Description("Opens a text file, reads all the text in the file, and then closes the file.")]
         string ReadAllText(string path);
@@ -129,7 +130,7 @@ namespace DotNetLib.System.IO
         GCollections.IEnumerable ReadLines(string path);
 
         [Description("Read the lines of a file that has a specified encoding.")]
-        GCollections.IEnumerable ReadLines(string path, GText.Encoding encoding);
+        GCollections.IEnumerable ReadLines(string path, Encoding encoding);
 
         [Description("Replaces the contents of a specified file with the contents of another file, deleting the original file, and creating a backup of the replaced file.")]
         void Replace(string sourceFileName, string destinationFileName, string destinationBackupFileName);
@@ -168,18 +169,18 @@ namespace DotNetLib.System.IO
         void WriteAllLines(string path, [In] ref string[] contents);
 
         [Description("Creates a new file, writes the specified string array to the file by using the specified encoding, and then closes the file.")]
-        void WriteAllLines(string path, [In] ref string[] contents, GText.Encoding encoding);
+        void WriteAllLines(string path, [In] ref string[] contents, Encoding encoding);
 
         [Description("Creates a new file, writes a collection of strings to the file, and then closes the file.")]
         void WriteAllLines(string path, GCollections.IEnumerable contents);
 
         [Description("Creates a new file by using the specified encoding, writes a collection of strings to the file, and then closes the file.")]
-        void WriteAllLines(string path, GCollections.IEnumerable contents, GText.Encoding encoding);
+        void WriteAllLines(string path, GCollections.IEnumerable contents, Encoding encoding);
 
         [Description("Creates a new file, writes the specified string to the file, and then closes the file. If the target file already exists, it is overwritten.")]
         void WriteAllText(string path, string contents);
 
         [Description("Creates a new file, writes the specified string to the file using the specified encoding, and then closes the file. If the target file already exists, it is overwritten.")]
-        void WriteAllText(string path, string contents, GText.Encoding encoding);
+        void WriteAllText(string path, string contents, Encoding encoding);
     }
 }

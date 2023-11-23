@@ -31,7 +31,7 @@ namespace DotNetLib.System.Globalization
         }
 
         // Properties
-        public GGlobalization.ChineseLunisolarCalendar WrappedHebrewCalendar => _chineseLunisolarCalendar;
+        public GGlobalization.ChineseLunisolarCalendar WrappedChineseLunisolarCalendar => _chineseLunisolarCalendar;
 
         public object WrappedObject => _chineseLunisolarCalendar;
 

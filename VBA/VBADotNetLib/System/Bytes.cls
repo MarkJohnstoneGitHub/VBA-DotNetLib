@@ -8,8 +8,6 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Represents an 8-bit unsigned integer."
-Attribute VB_Ext_KEY = "Rubberduck" ,"Predeclared Class Module"
-'@ModuleAttribute VB_Ext_KEY, "Rubberduck", "Predeclared Class Module"
 '@Folder "VBADotNetLib.System"
 '@ModuleDescription("Represents an 8-bit unsigned integer.")
 '@PredeclaredId

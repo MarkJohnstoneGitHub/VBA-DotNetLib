@@ -49,9 +49,9 @@ End Sub
 
 '@Static
 '@Description("Converts the specified Unicode code point into a UTF-16 encoded string.")
-Public Function ConvertFromUtf32(ByVal utf32 As Long) As String
+Public Function ConvertFromUtf32(ByVal Utf32 As Long) As String
 Attribute ConvertFromUtf32.VB_Description = "Converts the specified Unicode code point into a UTF-16 encoded string."
-   ConvertFromUtf32 = this.CharSingleton.ConvertFromUtf32(utf32)
+   ConvertFromUtf32 = this.CharSingleton.ConvertFromUtf32(Utf32)
 End Function
 
 '@Static

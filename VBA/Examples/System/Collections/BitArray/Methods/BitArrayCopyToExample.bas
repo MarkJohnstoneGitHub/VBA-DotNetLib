@@ -59,7 +59,7 @@ Public Sub BitArrayCopyToExample()
     
     ' Creates and initializes the one-dimensional target Array of type byte.
     Dim myByteArray As DotNetLib.Array
-    Set myByteArray = Arrays.CreateInstance(Bytes.GetType(), 8)
+    Set myByteArray = Arrays.CreateInstance(bytes.GetType(), 8)
     Call myByteArray.SetValue(CByte(10), 0)
     Call myByteArray.SetValue(CByte(11), 1)
 

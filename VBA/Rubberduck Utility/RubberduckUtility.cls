@@ -291,10 +291,10 @@ Attribute CreateRelativeDirectory.VB_Description = "Creates all directories and 
     For folderIndex = LBound(folders) To UBound(folders)
         Dim Path As String
         Path = Path & DirectorySeparatorChar & folders(folderIndex)
-        Dim fullpath As String
-        fullpath = this.WorkingDirectory & Path
-        If dir$(fullpath, vbDirectory) = vbNullString Then
-            MkDir fullpath
+        Dim fullPath As String
+        fullPath = this.WorkingDirectory & Path
+        If dir$(fullPath, vbDirectory) = vbNullString Then
+            MkDir fullPath
         End If
     Next folderIndex
 End Sub

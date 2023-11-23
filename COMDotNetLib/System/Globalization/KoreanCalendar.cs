@@ -96,12 +96,12 @@ namespace DotNetLib.System.Globalization
 
         public object Clone()
         {
-            return new JapaneseCalendar((GGlobalization.JapaneseCalendar)_koreanCalendar.Clone());
+            return new KoreanCalendar((GGlobalization.KoreanCalendar)_koreanCalendar.Clone());
         }
 
         public override bool Equals(object obj)
         {
-            return obj is JapaneseCalendar cal && _koreanCalendar.Equals(cal.WrappedJapaneseCalendar);
+            return obj is KoreanCalendar cal && _koreanCalendar.Equals(cal.WrappedKoreanCalendar);
         }
 
         public int GetDayOfMonth(DateTime time)

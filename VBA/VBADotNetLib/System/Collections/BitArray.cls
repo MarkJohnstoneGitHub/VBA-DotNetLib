@@ -58,9 +58,9 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the BitArray class that contains bit values copied from the specified array of bytes.")
-Public Function Create3(ByRef Bytes() As Byte) As DotNetLib.BitArray
+Public Function Create3(ByRef bytes() As Byte) As DotNetLib.BitArray
 Attribute Create3.VB_Description = "Initializes a new instance of the BitArray class that contains bit values copied from the specified array of bytes."
-   Set Create3 = this.BitArraySingleton.Create_3(Bytes)
+   Set Create3 = this.BitArraySingleton.Create_3(bytes)
 End Function
 
 '@Static

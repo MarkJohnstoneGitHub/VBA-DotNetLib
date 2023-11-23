@@ -1,5 +1,6 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.io.file?view=netframework-4.8.1
 
+using Encoding = DotNetLib.System.Text.Encoding;
 using GText = global::System.Text;
 using GCollections = global::System.Collections;
 using GIO = global::System.IO;
@@ -11,6 +12,7 @@ using System.ComponentModel;
 using System.Runtime.InteropServices;
 using DotNetLib.System.Security.AccessControl;
 using System.Text;
+using DotNetLib.Extensions;
 
 namespace DotNetLib.System.IO
 {
@@ -29,9 +31,9 @@ namespace DotNetLib.System.IO
             GIO.File.AppendAllLines(path, (GCollections.Generic.IEnumerable<string>)contents);
         }
 
-        public void AppendAllLines(string path, GCollections.IEnumerable contents, GText.Encoding encoding)
+        public void AppendAllLines(string path, GCollections.IEnumerable contents, Encoding encoding)
         {
-            GIO.File.AppendAllLines(path, (GCollections.Generic.IEnumerable<string>)contents, encoding);
+            GIO.File.AppendAllLines(path, (GCollections.Generic.IEnumerable<string>)contents, encoding.UnWrapEncoding());
         }
 
         public void AppendAllText(string path, string contents)
@@ -39,9 +41,9 @@ namespace DotNetLib.System.IO
             GIO.File.AppendAllText(path, contents);
         }
 
-        public void AppendAllText(string path, string contents, GText.Encoding encoding)
+        public void AppendAllText(string path, string contents, Encoding encoding)
         {
-            GIO.File.AppendAllText(path, contents, encoding);
+            GIO.File.AppendAllText(path, contents, encoding.UnWrapEncoding());
         }
 
         public StreamWriter AppendText(string path)
@@ -194,9 +196,9 @@ namespace DotNetLib.System.IO
             return GIO.File.ReadAllLines(path);
         }
 
-        public string[] ReadAllLines(string path, GText.Encoding encoding)
+        public string[] ReadAllLines(string path, Encoding encoding)
         {
-            return GIO.File.ReadAllLines(path, encoding);
+            return GIO.File.ReadAllLines(path, encoding.UnWrapEncoding());
         }
 
         public string ReadAllText(string path)
@@ -204,9 +206,9 @@ namespace DotNetLib.System.IO
             return GIO.File.ReadAllText(path);
         }
 
-        public string ReadAllText(string path, GText.Encoding encoding)
+        public string ReadAllText(string path, Encoding encoding)
         {
-            return GIO.File.ReadAllText(path, encoding);
+            return GIO.File.ReadAllText(path, encoding.UnWrapEncoding());
         }
 
         public GCollections.IEnumerable ReadLines(string path)
@@ -214,9 +216,9 @@ namespace DotNetLib.System.IO
             return GIO.File.ReadLines(path);
         }
 
-        public GCollections.IEnumerable ReadLines(string path, GText.Encoding encoding)
+        public GCollections.IEnumerable ReadLines(string path, Encoding encoding)
         {
-            return GIO.File.ReadLines(path, encoding);
+            return GIO.File.ReadLines(path, encoding.UnWrapEncoding());
         }
 
         public void Replace(string sourceFileName, string destinationFileName, string destinationBackupFileName)
@@ -279,9 +281,9 @@ namespace DotNetLib.System.IO
             GIO.File.WriteAllLines(path, contents);
         }
 
-        public void WriteAllLines(string path, [In] ref string[] contents, GText.Encoding encoding)
+        public void WriteAllLines(string path, [In] ref string[] contents, Encoding encoding)
         {
-            GIO.File.WriteAllLines(path, contents, encoding);
+            GIO.File.WriteAllLines(path, contents, encoding.UnWrapEncoding());
         }
 
         public void WriteAllLines(string path, GCollections.IEnumerable contents)
@@ -289,9 +291,9 @@ namespace DotNetLib.System.IO
             GIO.File.WriteAllLines(path, (GCollections.Generic.IEnumerable<string>)contents);
         }
 
-        public void WriteAllLines(string path, GCollections.IEnumerable contents, GText.Encoding encoding)
+        public void WriteAllLines(string path, GCollections.IEnumerable contents, Encoding encoding)
         {
-            GIO.File.WriteAllLines(path, (GCollections.Generic.IEnumerable<string>)contents, encoding);
+            GIO.File.WriteAllLines(path, (GCollections.Generic.IEnumerable<string>)contents, encoding.UnWrapEncoding());
         }
 
         public void WriteAllText(string path, string contents)
@@ -299,9 +301,9 @@ namespace DotNetLib.System.IO
             GIO.File.WriteAllText(path, contents);
         }
 
-        public void WriteAllText(string path, string contents, GText.Encoding encoding)
+        public void WriteAllText(string path, string contents, Encoding encoding)
         {
-            GIO.File.WriteAllText(path, contents, encoding);
+            GIO.File.WriteAllText(path, contents, encoding.UnWrapEncoding());
         }
 
 

@@ -1,5 +1,6 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=netframework-4.8.1
 
+using Encoding = DotNetLib.System.Text.Encoding;
 using GIO = global::System.IO;
 using GText = global::System.Text;
 using System;
@@ -10,6 +11,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using DotNetLib.Extensions;
 
 namespace DotNetLib.System.IO
 {
@@ -34,14 +36,14 @@ namespace DotNetLib.System.IO
             return new StreamWriter(path, append);
         }
 
-        public StreamWriter Create(string path, bool append, GText.Encoding encoding)
+        public StreamWriter Create(string path, bool append, Encoding encoding)
         {
-            return new StreamWriter(path, append, encoding);
+            return new StreamWriter(path, append, encoding.UnWrapEncoding());
         }
 
-        public StreamWriter Create(string path, bool append, GText.Encoding encoding, int bufferSize)
+        public StreamWriter Create(string path, bool append, Encoding encoding, int bufferSize)
         {
-            return new StreamWriter(path, append, encoding, bufferSize);
+            return new StreamWriter(path, append, encoding.UnWrapEncoding(), bufferSize);
         }
 
         public StreamWriter Create(GIO.Stream stream)
@@ -49,19 +51,19 @@ namespace DotNetLib.System.IO
             return new StreamWriter(stream);
         }
 
-        public StreamWriter Create(GIO.Stream stream, GText.Encoding encoding)
+        public StreamWriter Create(GIO.Stream stream, Encoding encoding)
         {
-            return new StreamWriter(stream, encoding);
+            return new StreamWriter(stream, encoding.UnWrapEncoding());
         }
 
-        public StreamWriter Create(GIO.Stream stream, GText.Encoding encoding, int bufferSize)
+        public StreamWriter Create(GIO.Stream stream, Encoding encoding, int bufferSize)
         {
-            return new StreamWriter(stream, encoding, bufferSize);
+            return new StreamWriter(stream, encoding.UnWrapEncoding(), bufferSize);
         }
 
-        public StreamWriter Create(GIO.Stream stream, GText.Encoding encoding, int bufferSize, bool leaveOpen)
+        public StreamWriter Create(GIO.Stream stream, Encoding encoding, int bufferSize, bool leaveOpen)
         {
-            return new StreamWriter(stream, encoding, bufferSize, leaveOpen);
+            return new StreamWriter(stream, encoding.UnWrapEncoding(), bufferSize, leaveOpen);
         }
 
         // Fields

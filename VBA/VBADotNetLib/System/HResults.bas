@@ -31,6 +31,8 @@ Const COR_E_BADIMAGEFORMAT          As Long = &H8007000B
 Const COR_E_INDEXOUTOFRANGE         As Long = &H80131508
 Const COR_E_UNAUTHORIZEDACCESS      As Long = &H80070005
 Const COR_E_PLATFORMNOTSUPPORTED    As Long = &H80131539
+Const COR_E_SECURITY                As Long = &H8013150A
+
 
 ' https://referencesource.microsoft.com/#mscorlib/system/io/__hresults.cs
 Const COR_E_ENDOFSTREAM             As Long = &H80070026
@@ -64,7 +66,9 @@ Public Enum COMHResult
     PathTooLongException = COR_E_PATHTOOLONG
     DirectoryNotFoundException = COR_E_DIRECTORYNOTFOUND
     PlatformNotSupportedException = COR_E_PLATFORMNOTSUPPORTED
+    SecurityException = COR_E_SECURITY
 End Enum
+
 
 ' @References
 '
@@ -104,3 +108,6 @@ End Enum
 
 ' https://learn.microsoft.com/en-us/dotnet/api/system.platformnotsupportedexception?view=netframework-4.8.1
 ' PlatformNotSupportedException uses the HRESULT COR_E_PLATFORMNOTSUPPORTED, which has the value 0x80131539.
+
+' https://learn.microsoft.com/en-us/dotnet/api/system.security.securityexception?view=netframework-4.8.1
+' SecurityException uses the HRESULT COR_E_SECURITY, which has the value 0x8013150A.
