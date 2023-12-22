@@ -1,5 +1,6 @@
 Attribute VB_Name = "SortedFileListGroupedByDate"
 '@Folder("Examples.System.IO.DirectoryInfo")
+
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 December 22, 2023
@@ -19,6 +20,7 @@ Option Explicit
 ' Displays a list of files grouped and sorted according to last write date
 ' for a provided path, search pattern, search option and filtered for a provided
 ' start date i.e. the number of days before the current date.
+' For each date files and sorted alphabetically by file name.
 Public Sub SortedFileListGroupedByDay()
     On Error GoTo ErrorHandler
     
@@ -74,15 +76,15 @@ Private Function GetFilteredSortedFileListGroupedByDay(ByRef fileInfos() As DotN
     For pvtIndex = 0 To UBound(fileInfos)
         If fileInfos(pvtIndex).lastWriteTime.Ticks >= startDate.Ticks Then
             Dim daySortedList As DotNetLib.SortedList
-            If Not pvtOutput.ContainsKey(fileInfos(pvtIndex).lastWriteTime.Date) Then
+            If pvtOutput.ContainsKey(fileInfos(pvtIndex).lastWriteTime.Date) Then
+                Set daySortedList = pvtOutput.Item(fileInfos(pvtIndex).lastWriteTime.Date)
+            Else
                 Set daySortedList = SortedList.Create()
                 Call pvtOutput.Add(fileInfos(pvtIndex).lastWriteTime.Date, daySortedList)
-            Else
-                Set daySortedList = pvtOutput.Item(fileInfos(pvtIndex).lastWriteTime.Date)
             End If
             'sorted key is last write time and full name to avoid potiential issue of duplicate key due to last write time
             'Could create a custom sort using an IComparer for the daily sorted file list
-            Call daySortedList.Add(CStr(fileInfos(pvtIndex).lastWriteTime.Date & "," & fileInfos(pvtIndex).FullName), fileInfos(pvtIndex))
+            Call daySortedList.Add(fileInfos(pvtIndex).name & "," & fileInfos(pvtIndex).lastWriteTime.Date.Ticks, fileInfos(pvtIndex))
         End If
     Next
     Set GetFilteredSortedFileListGroupedByDay = pvtOutput
