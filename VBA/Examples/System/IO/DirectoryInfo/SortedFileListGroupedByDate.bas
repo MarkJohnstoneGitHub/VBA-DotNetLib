@@ -56,6 +56,7 @@ ErrorHandler:
     Debug.Print Err.Description
 End Sub
 
+' Obtains an array of FileSystemInfo for a provided path, search pattern and search option
 Private Function GetFileSytemInfos(ByVal pPath As String, ByVal pSearchPattern As String, ByVal pSearchOption As mscorlib.SearchOption) As DotNetLib.FileSystemInfo()
     Dim pvtDir As DotNetLib.DirectoryInfo
     Set pvtDir = DirectoryInfo.Create(pPath)
@@ -64,7 +65,8 @@ Private Function GetFileSytemInfos(ByVal pPath As String, ByVal pSearchPattern A
     GetFileSytemInfos = fileInfos
 End Function
 
-'Returns a list of file FileSystemInfo grouped and sorted according to last write date filtered for a provided start date
+' Returns a sorted list of file FileSystemInfo by date and grouped according to
+' date of last write time and filtered for a provided start date
 Private Function GetFilteredSortedFileListGroupedByDay(ByRef fileInfos() As DotNetLib.FileSystemInfo, ByVal startDate As DotNetLib.DateTime) As DotNetLib.SortedList
     Dim pvtIndex As Long
     Dim pvtOutput As DotNetLib.SortedList
@@ -88,23 +90,21 @@ End Function
 
 '@TODO Fix SortedList enumeration to enable use For Each requires obtaining a Enumerator of IEnumVariant
 Private Sub DisplayFiles(ByVal pList As DotNetLib.SortedList)
-    Dim pvtFormatString As String
-    pvtFormatString = "{0}, Last Modified: {1}"
-    Dim pvtValueList As mscorlib.IList
-    Set pvtValueList = pList.GetValueList()
-    
+    Dim pvtFormat As String
+    pvtFormat = "{0}, Last Modified: {1}"
+
     Dim i As Long
     For i = pList.Count - 1 To 0 Step -1 'Transverse in reverse order from end date to start date
         'day list
         Dim daySortedFileList As DotNetLib.SortedList
-        Set daySortedFileList = pvtValueList(i)
+        Set daySortedFileList = pList.GetByIndex(i)
         Debug.Print VBAString.Format("Files last modified on {0:d}", pList.GetKey(i))
         
         Dim j As Long
         For j = 0 To daySortedFileList.Count - 1
-            Dim pvtFileSystemInfo As DotNetLib.FileSystemInfo
-            Set pvtFileSystemInfo = daySortedFileList.GetByIndex(j)
-            Debug.Print VBAString.Format(pvtFormatString, pvtFileSystemInfo.name, pvtFileSystemInfo.lastWriteTime)
+            Dim pvtFileInfo As DotNetLib.FileSystemInfo
+            Set pvtFileInfo = daySortedFileList.GetByIndex(j)
+            Debug.Print VBAString.Format(pvtFormat, pvtFileInfo.name, pvtFileInfo.lastWriteTime)
         Next j
         Debug.Print
     Next i
