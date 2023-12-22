@@ -86,9 +86,6 @@ namespace DotNetLib.System.IO
         [Description("Returns a string that represents the current object.\r\n\r\n(Inherited from Object)")]
         string ToString();
 
-        [Description("Writes a formatted string to the text stream, using the same semantics as the Format(String, Object[]) method.\r\n\r\n(Inherited from TextWriter)")]
-        void Write11(string format, [In] ref object[] arg);
-
         [Description("Writes a string to the stream.")]
         void Write(string value);
 
@@ -109,6 +106,18 @@ namespace DotNetLib.System.IO
 
         [Description("Writes the text representation of an object to the text stream by calling the ToString method on that object.\r\n\r\n(Inherited from TextWriter)")]
         void Write7(object value);
+
+        [Description("")]
+        void Write8(string format, object arg0);
+
+        [Description("")]
+        void Write9(string format, object arg0, object arg1);
+
+        [Description("")]
+        void Write10(string format, object arg0, object arg1, object arg2);
+
+        [Description("Writes a formatted string to the text stream, using the same semantics as the Format(String, Object[]) method.\r\n\r\n(Inherited from TextWriter)")]
+        void Write11(string format, [In] ref object[] arg);
 
         [Description("Writes a line terminator to the text stream.\r\n\r\n(Inherited from TextWriter)")]
         void WriteLine();

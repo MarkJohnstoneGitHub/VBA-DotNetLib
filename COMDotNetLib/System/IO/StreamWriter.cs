@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using DotNetLib.Extensions;
 using System.ComponentModel;
+using System.IO;
 
 namespace DotNetLib.System.IO
 {
@@ -19,7 +20,7 @@ namespace DotNetLib.System.IO
     [ProgId("DotNetLib.System.IO.StreamWriter")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IStreamWriter))]
-    public class StreamWriter : IStreamWriter, IWrappedObject, IDisposable
+    public class StreamWriter : IStreamWriter, IWrappedObject, IDisposable, TextWriter
     {
         private GIO.StreamWriter _streamWriter;
 
@@ -202,6 +203,10 @@ namespace DotNetLib.System.IO
             _streamWriter.Write(format, arg.Unwrap());
         }
 
+        public void Write(byte[] buffer, int index, int count)
+        {
+            throw new NotImplementedException();
+        }
 
         public virtual void WriteLine()
         { 
@@ -251,6 +256,8 @@ namespace DotNetLib.System.IO
         { 
             return _streamWriter.WriteLineAsync(value); 
         }
+
+
 
 
         //public virtual void WriteLine2(char[] buffer)

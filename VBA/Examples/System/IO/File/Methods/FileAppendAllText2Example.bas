@@ -32,7 +32,8 @@ Public Sub FileAppendAllText2Example()
     
     ' This text is always added, making the file longer over time
     ' if it is not deleted.
-    Dim appendText As String
-    appendText = "This is extra text" + Environment.NewLine
-    Call File.AppendAllText2(pvtPath, appendText, Encoding.UTF8)
+    Dim pvtAppendText As String
+    pvtAppendText = "This is extra text" + Environment.NewLine
+    Call File.AppendAllText2(pvtPath, pvtAppendText, Encoding.UTF8)
 End Sub
+
