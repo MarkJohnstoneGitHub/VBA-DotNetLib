@@ -4,16 +4,13 @@ Attribute VB_Name = "SortedFileListGroupedByDate"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 December 22, 2023
-'@LastModified December 22, 2023
+'@LastModified December 23, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=netframework-4.8.1
 
 ' https://stackoverflow.com/questions/77694253/what-is-the-fastest-way-to-loop-through-a-folder-with-20-000-files-excel-vba
-
-'@TODO Fix SortedList enumeration to enable use For Each to obtain a Enumerator of IEnumVariant
-' i.e update the SortList.GetEnumerator to return IEnumVariant
 
 Option Explicit
 
@@ -34,10 +31,10 @@ Public Sub SortedFileListGroupedByDay()
     Dim inputNumberOfDays As Long
     inputNumberOfDays = 60
 
-    Dim pvtEndDate As DotNetLib.DateTime
-    Set pvtEndDate = DateTime.Today
-    Dim pvtStartDate As DotNetLib.DateTime
-    Set pvtStartDate = pvtEndDate.AddDays(-inputNumberOfDays)
+    Dim endDate As DotNetLib.DateTime
+    Set endDate = DateTime.Today
+    Dim startDate As DotNetLib.DateTime
+    Set startDate = endDate.AddDays(-inputNumberOfDays)
     
     If Directory.Exists(inputPath) Then
         Dim fileInfos() As DotNetLib.FileSystemInfo
@@ -47,7 +44,7 @@ Public Sub SortedFileListGroupedByDay()
     End If
     
     Dim sortedFileList As DotNetLib.SortedList
-    Set sortedFileList = GetFilteredSortedFileListGroupedByDay(fileInfos, pvtStartDate)
+    Set sortedFileList = GetFilteredSortedFileListGroupedByDay(fileInfos, startDate)
     If sortedFileList.Count = 0 Then
         Debug.Print "No files found."
     Else
@@ -90,7 +87,6 @@ Private Function GetFilteredSortedFileListGroupedByDay(ByRef fileInfos() As DotN
     Set GetFilteredSortedFileListGroupedByDay = pvtOutput
 End Function
 
-'@TODO Fix SortedList enumeration to enable use For Each requires obtaining a Enumerator of IEnumVariant
 Private Sub DisplayFiles(ByVal pList As DotNetLib.SortedList)
     Dim pvtFormat As String
     pvtFormat = "{0}, Last Modified: {1}"
