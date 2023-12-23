@@ -6,7 +6,6 @@ using System.Collections;
 using DotNetLib.Extensions;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using System.Collections.Generic;
 
 namespace DotNetLib.System.Collections
 {
@@ -17,7 +16,7 @@ namespace DotNetLib.System.Collections
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(ISortedList))]
 
-    public class SortedList : GCollections.IDictionary, GCollections.ICollection, GCollections.IEnumerable, GSystem.ICloneable, ICollection, IDictionary, IWrappedObject, ISortedList 
+    public class SortedList : GCollections.IDictionary, GCollections.ICollection, GCollections.IEnumerable, GSystem.ICloneable, ICollection, IWrappedObject, ISortedList 
     {
         private GCollections.SortedList _sortedList;
 
@@ -91,9 +90,9 @@ namespace DotNetLib.System.Collections
 
         //GCollections.ICollection GCollections.IDictionary.Values => _sortedList.Values;
 
-        ICollection IDictionary.Keys => throw new GSystem.NotImplementedException();
+        //ICollection IDictionary.Keys => throw new GSystem.NotImplementedException();
 
-        ICollection IDictionary.Values => throw new GSystem.NotImplementedException();
+        //ICollection IDictionary.Values => throw new GSystem.NotImplementedException();
 
 
         // Methods
@@ -143,12 +142,17 @@ namespace DotNetLib.System.Collections
             return _sortedList.GetByIndex(index);
         }
 
-        public IDictionaryEnumerator GetEnumerator()
+        IDictionaryEnumerator GCollections.IDictionary.GetEnumerator()
         {
             return _sortedList.GetEnumerator();
         }
 
-        public IEnumerator GetEnumerator2()
+        //public IDictionaryEnumerator GetEnumerator()
+        //{
+        //    return _sortedList.GetEnumerator();
+        //}
+
+        public IEnumerator GetEnumerator()
         {
             return _sortedList.GetEnumerator();
         }
@@ -208,5 +212,7 @@ namespace DotNetLib.System.Collections
         {
             return new Type(((object)this).GetType());
         }
+
+
     }
 }

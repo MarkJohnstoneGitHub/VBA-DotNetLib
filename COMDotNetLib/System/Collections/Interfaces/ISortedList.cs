@@ -100,11 +100,11 @@ namespace DotNetLib.System.Collections
         [Description("Gets the value at the specified index of a SortedList object.")]
         object GetByIndex(int index);
 
-        [Description("Returns an IDictionaryEnumerator object that iterates through a SortedList object.")]
-        GCollections.IDictionaryEnumerator GetEnumerator();
+        //[Description("Returns an IDictionaryEnumerator object that iterates through a SortedList object.")]
+        //GCollections.IDictionaryEnumerator GetEnumerator();
 
         [Description("Returns an IEnumerator object that iterates through a SortedList object.")]
-        GCollections.IEnumerator GetEnumerator2();
+        GCollections.IEnumerator GetEnumerator();
 
         [Description("Serves as the default hash function.\r\n\r\n(Inherited from Object)")]
         int GetHashCode();
