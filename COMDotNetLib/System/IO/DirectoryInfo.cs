@@ -122,7 +122,7 @@ namespace DotNetLib.System.IO
             _directoryInfo.Delete(); 
         }
 
-        public void Delete(bool recursive)
+        public void Delete(bool recursive = false)
         { 
             _directoryInfo.Delete(recursive); 
         }

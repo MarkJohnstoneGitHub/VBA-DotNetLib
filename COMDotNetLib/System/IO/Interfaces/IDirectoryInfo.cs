@@ -59,11 +59,11 @@ namespace DotNetLib.System.IO
         [Description("Creates a subdirectory or subdirectories on the specified path with the specified security. The specified path can be relative to this instance of the DirectoryInfo class.")]
         DirectoryInfo CreateSubdirectory(string path, GAccessControl.DirectorySecurity directorySecurity = null);
 
-        [Description("Deletes this DirectoryInfo if it is empty.")]
-        void Delete();
+        //[Description("Deletes this DirectoryInfo if it is empty.")]
+        //void Delete();
 
         [Description("Deletes this instance of a DirectoryInfo, specifying whether to delete subdirectories and files.")]
-        void Delete(bool recursive);
+        void Delete(bool recursive = false);
 
         [Description("Returns an enumerable collection of directory information that matches a specified search pattern and search subdirectory option.")]
         GCollections.IEnumerable EnumerateDirectories(string searchPattern = "*", GIO.SearchOption searchOption = GIO.SearchOption.TopDirectoryOnly);
