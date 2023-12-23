@@ -16,6 +16,7 @@ namespace DotNetLib.System.Collections
     [ProgId("DotNetLib.System.Collections.SortedList")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(ISortedList))]
+
     public class SortedList : GCollections.IDictionary, GCollections.ICollection, GCollections.IEnumerable, GSystem.ICloneable, ICollection, IDictionary, IWrappedObject, ISortedList 
     {
         private GCollections.SortedList _sortedList;
@@ -146,6 +147,12 @@ namespace DotNetLib.System.Collections
         {
             return _sortedList.GetEnumerator();
         }
+
+        public IEnumerator GetEnumerator2()
+        {
+            return _sortedList.GetEnumerator();
+        }
+
 
         public object GetKey(int index)
         {

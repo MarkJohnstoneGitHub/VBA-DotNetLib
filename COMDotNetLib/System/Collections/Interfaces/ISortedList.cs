@@ -103,6 +103,9 @@ namespace DotNetLib.System.Collections
         [Description("Returns an IDictionaryEnumerator object that iterates through a SortedList object.")]
         GCollections.IDictionaryEnumerator GetEnumerator();
 
+        [Description("Returns an IEnumerator object that iterates through a SortedList object.")]
+        GCollections.IEnumerator GetEnumerator2();
+
         [Description("Serves as the default hash function.\r\n\r\n(Inherited from Object)")]
         int GetHashCode();
 

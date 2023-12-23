@@ -35,8 +35,8 @@ Public Sub DirectoryInfoCreateSubdirectory()
     ' ...
     
     ' Delete the subdirectory.
-    Call dis.Delete_2(True)
+    Call dis.Delete(True)
 
     ' Delete the directory.
-    Call di.Delete_2(True)
+    Call di.Delete(True)
 End Sub
