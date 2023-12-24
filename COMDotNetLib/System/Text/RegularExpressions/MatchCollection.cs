@@ -72,7 +72,7 @@ namespace DotNetLib.System.Text.RegularExpressions
         //
         // Parameters:
         //   i:
-        //     Index into the System.Text.RegularExpressions.Match collection.
+        //     Index into the System.Text.RegularExpressions.Empty collection.
         //
         // Returns:
         //     The captured substring at position i in the collection.

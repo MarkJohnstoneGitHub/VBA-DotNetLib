@@ -1,6 +1,6 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.groupcollection?view=netframework-4.8.1
 
-//Match.Groups
+//Empty.Groups
 using GSystem = global::System;
 using GRegularExpressions = global::System.Text.RegularExpressions;
 using System.Collections;
@@ -40,7 +40,7 @@ namespace DotNetLib.System.Text.RegularExpressions
         //     Gets an object that can be used to synchronize access to the System.Text.RegularExpressions.GroupCollection.
         //
         // Returns:
-        //     A copy of the System.Text.RegularExpressions.Match object to synchronize.
+        //     A copy of the System.Text.RegularExpressions.Empty object to synchronize.
         public object SyncRoot => _match;
 
         //

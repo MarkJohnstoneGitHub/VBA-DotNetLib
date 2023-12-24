@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents the results from a single regular express
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 1, 2023
-'@LastModified October 1, 2023
+'@LastModified December 24 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -48,7 +48,7 @@ End Sub
 ''
 Public Property Get EmptyMatch() As DotNetLib.Match
 Attribute EmptyMatch.VB_Description = "Gets the empty group. All failed matches return this empty match."
-   Set EmptyMatch = this.MatchSingleton.EmptyMatch()
+   Set EmptyMatch = this.MatchSingleton.[Empty]()
 End Property
 
 ''

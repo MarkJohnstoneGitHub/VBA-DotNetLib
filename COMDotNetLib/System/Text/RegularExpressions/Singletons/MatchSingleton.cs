@@ -16,7 +16,7 @@ namespace DotNetLib.System.Text.RegularExpressions
         public MatchSingleton() { }
 
         // Properties
-        public Match EmptyMatch => Match.Empty;
+        public Match Empty => Match.Empty;
 
         // Methods
         public  Match Synchronized(Match inner)

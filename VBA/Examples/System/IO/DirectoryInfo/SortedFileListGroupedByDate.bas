@@ -4,7 +4,7 @@ Attribute VB_Name = "SortedFileListGroupedByDate"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 December 22, 2023
-'@LastModified December 23, 2023
+'@LastModified December 24, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -55,11 +55,12 @@ ErrorHandler:
     Debug.Print Err.Description
 End Sub
 
+'@Todo Cannot assign to an Array
 ' Obtains an array of FileSystemInfo for a provided path, search pattern and search option
 Private Function GetFileSytemInfos(ByVal pPath As String, ByVal pSearchPattern As String, ByVal pSearchOption As mscorlib.SearchOption) As DotNetLib.FileSystemInfo()
     Dim pvtDir As DotNetLib.DirectoryInfo
     Set pvtDir = DirectoryInfo.Create(pPath)
-    Dim fileInfos() As DotNetLib.FileSystemInfo
+    Dim fileInfos As Variant
     fileInfos = pvtDir.GetFileSystemInfos(pSearchPattern, pSearchOption)
     GetFileSytemInfos = fileInfos
 End Function

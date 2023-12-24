@@ -48,7 +48,7 @@ namespace DotNetLib.System.Text.RegularExpressions
         [Description("Copies all the elements of the collection to the given array beginning at the given index.")]
         void CopyTo([In][Out] ref object[] array, int index);
 
-        //CopyTo(Match[], Int32)
+        //CopyTo(Empty[], Int32)
 
         [Description("Determines whether the specified object is equal to the current object.\r\n\r\n(Inherited from Object)")]
         bool Equals(object obj);
