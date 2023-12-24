@@ -4,7 +4,7 @@ Attribute VB_Name = "DirectoryInfoParentExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 December 23, 2023
-'@LastModified December 23, 2023
+'@LastModified December 24, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -35,7 +35,7 @@ Public Sub DirectoryInfoParentExample()
     Debug.Print VBAString.Format("The parent directory of '{0}' is '{1}'", dis.name, parentDir.name)
     
     ' Delete the parent directory.
-    Call di.Delete_2(True)
+    Call di.Delete(True)
 End Sub
 
 ' Output
