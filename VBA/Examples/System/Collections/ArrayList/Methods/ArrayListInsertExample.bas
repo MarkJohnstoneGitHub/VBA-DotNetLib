@@ -51,7 +51,7 @@ Public Sub ArrayListInsert()
     Call PrintValues(myAL)
     
     ' Add "!!!" at the end.
-    Call myAL.Insert(myAL.count, "!!!")
+    Call myAL.Insert(myAL.Count, "!!!")
 
     ' Displays the ArrayList.
     Debug.Print "After adding ""!!!"", the ArrayList now contains:"
@@ -59,8 +59,8 @@ Public Sub ArrayListInsert()
     
     ' Inserting an element beyond Count throws an exception.
     On Error Resume Next
-    Call myAL.Insert(myAL.count + 1, "anystring")
-    If Err.number Then
+    Call myAL.Insert(myAL.Count + 1, "anystring")
+    If Err.Number Then
         Debug.Print "Exception: " + Err.Description
     End If
     On Error GoTo 0 'Stop code and display error

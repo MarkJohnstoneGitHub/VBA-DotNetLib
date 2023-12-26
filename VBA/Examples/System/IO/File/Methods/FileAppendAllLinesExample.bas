@@ -21,8 +21,8 @@ Private Const dataPath As String = "c:\temp\timestamps.txt"
 ''
 Public Sub FileAppendAllLinesExample()
     Call CreateSampleFile
-    Call File.WriteAllLines3("C:\temp\selectedDays.txt", JulyWeekends)
-    Call File.AppendAllLines("C:\temp\selectedDays.txt", MarchMondays)
+    Call file.WriteAllLines3("C:\temp\selectedDays.txt", JulyWeekends)
+    Call file.AppendAllLines("C:\temp\selectedDays.txt", MarchMondays)
 End Sub
 
 Private Sub CreateSampleFile()
@@ -49,7 +49,7 @@ Private Function JulyWeekends() As mscorlib.IEnumerable
     Set output = ListString.Create()
     
     Dim varLine As Variant
-    For Each varLine In File.ReadLines(dataPath)
+    For Each varLine In file.ReadLines(dataPath)
         Dim line As DotNetLib.String
         Set line = Strings.Copy(varLine)
         If (line.StartsWith_4("Saturday") Or line.StartsWith_4("Sunday")) And line.Contains_2("July") Then
@@ -64,7 +64,7 @@ Private Function MarchMondays() As mscorlib.IEnumerable
     Set output = ListString.Create()
         
     Dim varLine As Variant
-    For Each varLine In File.ReadLines(dataPath)
+    For Each varLine In file.ReadLines(dataPath)
         Dim line As DotNetLib.String
         Set line = Strings.Copy(varLine)
         If (line.StartsWith_4("Monday") And line.Contains_2("March")) Then

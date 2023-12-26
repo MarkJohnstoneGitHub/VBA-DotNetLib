@@ -22,8 +22,8 @@ Public Function StringBuilderTest() As String
     
 ErrorLabel:
     Debug.Print Err.Description
-    Debug.Print Err.number
-    Debug.Print Err.Source
+    Debug.Print Err.Number
+    Debug.Print Err.source
     
     StringBuilderTest = "Error"
     Exit Function

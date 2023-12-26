@@ -32,13 +32,13 @@ Public Sub DirectoryEnumerateDirectories()
         Set dir = Strings.Create(varDir)
         Debug.Print VBAString.Format("{0}", dir.Substring(dir.LastIndexOf(dirSeparator) + 1))
     Next
-    Debug.Print VBAString.Format("{0} directories found.", dirs.count);
+    Debug.Print VBAString.Format("{0} directories found.", dirs.Count);
     Exit Sub
 ErrorHandler:
-    If Err.number = COMHResult.UnauthorizedAccessException Then
+    If Err.Number = COMHResult.UnauthorizedAccessException Then
         Debug.Print Err.Description
     End If
-    If Err.number = COMHResult.PathTooLongException Then
+    If Err.Number = COMHResult.PathTooLongException Then
         Debug.Print Err.Description
     End If
 End Sub

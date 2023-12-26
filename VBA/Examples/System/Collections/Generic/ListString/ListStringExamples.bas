@@ -23,12 +23,12 @@ Private Sub ListStringExample1()
     names.Add "Michael"
     names.Add DateTime.Now
 
-    Debug.Print VBAString.Format("Initial list: names.Count {0}", names.count)
+    Debug.Print VBAString.Format("Initial list: names.Count {0}", names.Count)
     DisplayList names
     Debug.Print
     
     names.Insert 4, "Elizabeth"
-    Debug.Print VBAString.Format("List after : names.Insert 4, 'Elizabeth' : names.Count {0}", names.count)
+    Debug.Print VBAString.Format("List after : names.Insert 4, 'Elizabeth' : names.Count {0}", names.Count)
     DisplayList names
     Debug.Print
     
@@ -52,7 +52,7 @@ Private Sub ListStringExample1()
     Debug.Print
     
     names.Sort
-    Debug.Print VBAString.Format("List after : names.Sort : names.Count {0}", names.count)
+    Debug.Print VBAString.Format("List after : names.Sort : names.Count {0}", names.Count)
     DisplayList names
     Debug.Print
     
@@ -66,27 +66,27 @@ Private Sub ListStringExample1()
     Debug.Print
     
     names.Reverse
-    Debug.Print VBAString.Format("List after : names.Reverse : names.Count {0}", names.count)
+    Debug.Print VBAString.Format("List after : names.Reverse : names.Count {0}", names.Count)
     DisplayList names
     Debug.Print
 
     names.RemoveAt 2
-    Debug.Print VBAString.Format("List after : names.RemoveAt 2 : names.Count {0}", names.count)
+    Debug.Print VBAString.Format("List after : names.RemoveAt 2 : names.Count {0}", names.Count)
     DisplayList names
     Debug.Print
     
     Debug.Print VBAString.Format("Remove 'James' : {0}", names.Remove("James"))
-    Debug.Print VBAString.Format("List after : names.Remove('James') : names.Count {0}", names.count)
+    Debug.Print VBAString.Format("List after : names.Remove('James') : names.Count {0}", names.Count)
     DisplayList names
     Debug.Print
     
     names.RemoveRange 2, 3
-    Debug.Print VBAString.Format("List after : names.RemoveRange 2, 3 : names.Count {0}", names.count)
+    Debug.Print VBAString.Format("List after : names.RemoveRange 2, 3 : names.Count {0}", names.Count)
     DisplayList names
     Debug.Print
     
     names.Clear
-    Debug.Print VBAString.Format("List after : names.Clear : names.Count {0}", names.count)
+    Debug.Print VBAString.Format("List after : names.Clear : names.Count {0}", names.Count)
     DisplayList names
 End Sub
 

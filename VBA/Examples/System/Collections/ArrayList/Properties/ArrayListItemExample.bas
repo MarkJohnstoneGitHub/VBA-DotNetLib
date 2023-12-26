@@ -48,29 +48,29 @@ Public Sub ArrayListItem()
     ' Accessing an element outside the current element count
     ' causes an exception.
     Debug.Print VBAString.Format("Number of elements in the list: {0}", _
-                                pvtStringList.count)
+                                pvtStringList.Count)
                                 
     On Error Resume Next
     Debug.Print VBAString.Format("Element {0} is {2}{1}{2}", _
-                pvtStringList.count, pvtStringList(pvtStringList.count), Quote)
+                pvtStringList.Count, pvtStringList(pvtStringList.Count), Quote)
     If Catch(ArgumentOutOfRangeException) Then
         Debug.Print VBAString.Format("pvtStringList({0}) is out of range.", _
-                                    pvtStringList.count)
+                                    pvtStringList.Count)
     End If
     On Error GoTo 0 'Stop code and display error
     
     ' You cannot use the Item property to add new elements.
     On Error Resume Next
-    pvtStringList.SetValue pvtStringList.count, "42"
+    pvtStringList.SetValue pvtStringList.Count, "42"
     If Catch(ArgumentOutOfRangeException) Then
         Debug.Print VBAString.Format("pvtStringList({0}) is out of range.", _
-                                    pvtStringList.count)
+                                    pvtStringList.Count)
     End If
     On Error GoTo 0 'Stop code and display error
     
     Debug.Print
     Dim i As Long
-    For i = 0 To pvtStringList.count - 1
+    For i = 0 To pvtStringList.Count - 1
         Debug.Print VBAString.Format("Element {0} is {2}{1}{2}", i, _
                                     pvtStringList(i), Quote)
     Next i

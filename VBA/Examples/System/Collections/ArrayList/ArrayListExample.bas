@@ -24,7 +24,7 @@ Public Sub ArrayListExample1()
     
     ' Displays the properties and values of the ArrayList.
     Debug.Print "myAL"
-    Debug.Print VBAString.Format("    Count:    {0}", myAL.count)
+    Debug.Print VBAString.Format("    Count:    {0}", myAL.Count)
     Debug.Print VBAString.Format("    Capacity: {0}", myAL.Capacity)
     Debug.Print "    Values:";
     PrintValues myAL

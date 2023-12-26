@@ -25,31 +25,31 @@ Attribute DateTimeToLocalTime.VB_Description = "The following example demonstrat
    
    On Error Resume Next    'Skip error and continue running
    Set LocalDateTime = DateTime.Parse(strDateTime)
-   If Err.number = 0 Then  ' Try
+   If Err.Number = 0 Then  ' Try
       Set univDateTime = LocalDateTime.ToUniversalTime()
       Debug.Print LocalDateTime.ToString & " local time is " & univDateTime.ToString & " universal time."
    Else ' Catch
-      If Err.number = COMHResult.FormatException Then
+      If Err.Number = COMHResult.FormatException Then
          Debug.Print "Invalid format."
       Else
          'Unexpected Error should not occur
-         Debug.Print "0x" & Hex$(Err.number) & " " & Err.Description
+         Debug.Print "0x" & Hex$(Err.Number) & " " & Err.Description
       End If
    End If
    On Error GoTo 0 'Stop code and display error. End of Try, Catch block
 
    On Error Resume Next    'Skip error and continue running
    Set univDateTime = DateTime.Parse(ParseUniversalDateTime)
-   If Err.number = 0 Then     ' Try
+   If Err.Number = 0 Then     ' Try
       Set LocalDateTime = univDateTime.ToLocalTime()
       Debug.Print univDateTime.ToString & " universal time is " & LocalDateTime.ToString & " local time."
    Else
       ' Catch
-      If Err.number = COMHResult.FormatException Then
+      If Err.Number = COMHResult.FormatException Then
          Debug.Print "Invalid format."
       Else
          'Unexpected Error should not occur
-         Debug.Print "0x" & Hex$(Err.number) & " " & Err.Description
+         Debug.Print "0x" & Hex$(Err.Number) & " " & Err.Description
       End If
    End If
    On Error GoTo 0 'Stop code and display error. End of Try, Catch block

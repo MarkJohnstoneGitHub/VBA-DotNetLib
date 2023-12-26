@@ -28,7 +28,7 @@ Public Sub DirectoryEnumerateFilesExample2()
         Set currentFile = Strings.Create(varCurrentFile)
         Dim fileName As String
         Dim txtFile() As String
-        txtFile = File.ReadAllLines(varCurrentFile)
+        txtFile = file.ReadAllLines(varCurrentFile)
         Dim varLine As Variant
         Dim lineCounter As Long
         lineCounter = 0

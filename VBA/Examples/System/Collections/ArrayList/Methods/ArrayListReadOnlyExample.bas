@@ -46,7 +46,7 @@ Public Sub ArrayListReadOnly()
     Debug.Print Regex.Unescape("\nTrying to add a new element to the read-only ArrayList:")
     On Error Resume Next
     Call myReadOnlyAL.Add("green")
-    If Err.number Then
+    If Err.Number Then
          Debug.Print "Exception: " & Err.Description
     End If
     On Error GoTo 0 'Stop code and display error

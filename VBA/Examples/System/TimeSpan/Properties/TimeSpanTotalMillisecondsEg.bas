@@ -20,7 +20,7 @@ Attribute TimeSpanTotalMilliseconds.VB_Description = "The following example inst
 
    Debug.Print "There are " & interval.TotalMilliseconds & " milliseconds, as follows:"
    Dim nMilliseconds As LongLong
-   nMilliseconds = interval.days * 24 * 60 * 60 * 1000 + _
+   nMilliseconds = interval.Days * 24 * 60 * 60 * 1000 + _
                    interval.Hours * 60 * 60 * 1000 + _
                    interval.Minutes * 60 * 1000 + _
                    interval.Seconds * 1000 + _

@@ -28,7 +28,7 @@ Public Sub DirectoryGetCreationTimeUtc()
 
     On Error Resume Next
     Directory.CreateDirectory (n)
-    If Err.number = IOException Then
+    If Err.Number = IOException Then
         Debug.Print Err.Description
     End If
     On Error GoTo 0 'Stop code and display error

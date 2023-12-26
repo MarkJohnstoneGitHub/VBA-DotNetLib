@@ -25,7 +25,7 @@ Public Sub HashtableClear()
     
     ' Displays the count and values of the Hashtable.
     Debug.Print "Initially,"
-    Debug.Print VBAString.Format("   Count    : {0}", myHT.count)
+    Debug.Print VBAString.Format("   Count    : {0}", myHT.Count)
     Debug.Print "   Values:"
     Call PrintKeysAndValues(myHT)
     
@@ -34,7 +34,7 @@ Public Sub HashtableClear()
 
     ' Displays the count and values of the Hashtable.
     Debug.Print "After Clear,"
-    Debug.Print VBAString.Format("   Count    : {0}", myHT.count)
+    Debug.Print VBAString.Format("   Count    : {0}", myHT.Count)
     Debug.Print "   Values:"
     Call PrintKeysAndValues(myHT)
 End Sub

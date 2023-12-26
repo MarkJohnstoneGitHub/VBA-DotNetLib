@@ -20,8 +20,8 @@ Public Sub StringBuilderAppendLine()
     Set sb = StringBuilder.Create()
     Dim line As String
     line = "A line of text."
-    Dim number As Long
-    number = 123
+    Dim Number As Long
+    Number = 123
 
     ' Append two lines of text.
     Call sb.AppendLine_2("The first line of text.")
@@ -33,7 +33,7 @@ Public Sub StringBuilderAppendLine()
     Call sb.AppendLine_2(Empty)
     
     ' Append the non-string value, 123, and two new lines.
-    Call sb.Append(number).AppendLine().AppendLine
+    Call sb.Append(Number).AppendLine().AppendLine
 
     ' Append two lines of text.
     Call sb.AppendLine_2(line)

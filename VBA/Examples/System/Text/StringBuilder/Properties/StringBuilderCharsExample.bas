@@ -29,7 +29,7 @@ Public Sub StringBuilderChars()
     Dim ctr As Long
     For ctr = 0 To sb.length - 1
         Dim ch As String
-        ch = sb.Item(ctr)
+        ch = sb.item(ctr)
         If (Char.IsLetter(ch, 0)) Then
             nAlphabeticChars = nAlphabeticChars + 1
         ElseIf (Char.IsWhiteSpace(ch, 0)) Then

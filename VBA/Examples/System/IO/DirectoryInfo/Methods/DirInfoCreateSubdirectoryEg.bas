@@ -1,4 +1,4 @@
-Attribute VB_Name = "DirectoryInfoCreateSubdirectory"
+Attribute VB_Name = "DirInfoCreateSubdirectoryEg"
 '@Folder("Examples.System.IO.DirectoryInfo.Methods")
 
 '@Author Mark Johnstone

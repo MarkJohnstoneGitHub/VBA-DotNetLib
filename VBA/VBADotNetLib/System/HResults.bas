@@ -3,7 +3,7 @@ Attribute VB_Name = "HResults"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
-'@Version v1.0 July 12 2023
+'@Version v1.0 July 12, 2023
 '@LastModified November 7, 2023
 
 ' https://referencesource.microsoft.com/#mscorlib/system/__hresults.cs

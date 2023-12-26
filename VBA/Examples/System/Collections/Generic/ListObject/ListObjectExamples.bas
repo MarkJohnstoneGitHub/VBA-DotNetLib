@@ -23,7 +23,7 @@ Public Sub ListObjectExample1()
     names.Add "Michael"
     names.Add DateTime.Now
     names.Add Person.Create("Martha", "Jones", DateTime.CreateFromDate(2000, 1, 1))
-    Debug.Print VBAString.Format("Initial list: names.Count {0}", names.count)
+    Debug.Print VBAString.Format("Initial list: names.Count {0}", names.Count)
     DisplayList names
     Debug.Print
     names.Reverse

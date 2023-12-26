@@ -1,4 +1,4 @@
-Attribute VB_Name = "DirectoryInfoDeleteExample"
+Attribute VB_Name = "DirInfoDeleteExample"
 '@Folder("Examples.System.IO.DirectoryInfo.Methods")
 
 '@Author Mark Johnstone

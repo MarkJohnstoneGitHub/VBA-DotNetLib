@@ -68,7 +68,7 @@ Public Sub BitArrayAndExample()
     myBA3(5) = myBA3(6)
     myBA3(4) = myBA3(5)
     Call myBA1.And(myBA3)
-    If Err.number Then
+    If Err.Number Then
         Debug.Print "Exception: " + Err.Description
     End If
     On Error GoTo 0 'Stop code and display error

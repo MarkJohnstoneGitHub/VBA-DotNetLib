@@ -31,7 +31,7 @@ Public Sub BitArrayGetExample()
     Call PrintIndexAndValues(myBA)
     
     ' Sets the last index to false.
-    Call myBA.Set(myBA.count - 1, False)
+    Call myBA.Set(myBA.Count - 1, False)
 
     ' Displays the properties and values of the BitArray.
     Debug.Print "After setting the last element to false,"
@@ -39,8 +39,8 @@ Public Sub BitArrayGetExample()
 
     ' Gets the value of the last two elements.
     Debug.Print "The last two elements are: "
-    Debug.Print VBAString.Format("    at index {0} : {1}", myBA.count - 2, myBA.Get(myBA.count - 2))
-    Debug.Print VBAString.Format("    at index {0} : {1}", myBA.count - 1, myBA.Get(myBA.count - 1))
+    Debug.Print VBAString.Format("    at index {0} : {1}", myBA.Count - 2, myBA.Get(myBA.Count - 2))
+    Debug.Print VBAString.Format("    at index {0} : {1}", myBA.Count - 1, myBA.Get(myBA.Count - 1))
 End Sub
 
 Private Sub PrintIndexAndValues(ByVal myCol As mscorlib.IEnumerable)

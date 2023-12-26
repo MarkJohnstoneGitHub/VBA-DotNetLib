@@ -49,9 +49,9 @@ Attribute Create.VB_Description = "Initializes a new instance of the String clas
 End Function
 
 '@Description("Initializes a new instance of the String class to the value indicated by a specified Unicode character repeated a specified number of times.")
-Public Function Create2(ByVal character As String, ByVal count As Long) As DotNetLib.String
+Public Function Create2(ByVal character As String, ByVal Count As Long) As DotNetLib.String
 Attribute Create2.VB_Description = "Initializes a new instance of the String class to the value indicated by a specified Unicode character repeated a specified number of times."
-   Set Create2 = this.StringSingleton.Create_2(character, count)
+   Set Create2 = this.StringSingleton.Create_2(character, Count)
 End Function
 
 '@Description("Initializes a new instance of the String class to the value indicated by an string of Unicode characters, a starting character position within that array, and a length")
@@ -67,9 +67,9 @@ Attribute Create4.VB_Description = "Initializes a new instance of the String cla
 End Function
 
 '@Description("Initializes a new instance of the String class to the value indicated by a specified Unicode character repeated a specified number of times.")
-Public Function Create5(ByVal character As DotNetLib.String, ByVal count As Long) As DotNetLib.String
+Public Function Create5(ByVal character As DotNetLib.String, ByVal Count As Long) As DotNetLib.String
 Attribute Create5.VB_Description = "Initializes a new instance of the String class to the value indicated by a specified Unicode character repeated a specified number of times."
-   Set Create5 = this.StringSingleton.Create_5(character, count)
+   Set Create5 = this.StringSingleton.Create_5(character, Count)
 End Function
 
 '@Description("Initializes a new instance of the String class to the value indicated by an string of Unicode characters, a starting character position within that array, and a length")

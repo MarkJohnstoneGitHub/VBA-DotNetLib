@@ -159,9 +159,9 @@ Attribute GetCultureInfo3.VB_Description = "Retrieves a cached, read-only instan
     Set GetCultureInfo3 = this.CultureInfoSingleton.GetCultureInfo3(name, altName)
 End Function
 
-'@Deprecated
+'@Depreciated
 '@Static
-'@Description("Deprecated. Retrieves a read-only CultureInfo object having linguistic characteristics that are identified by the specified RFC 4646 language tag.")
+'@Description("Depreciated. Retrieves a read-only CultureInfo object having linguistic characteristics that are identified by the specified RFC 4646 language tag.")
 Public Function GetCultureInfoByIetfLanguageTag(ByVal name As String) As DotNetLib.CultureInfo
 Attribute GetCultureInfoByIetfLanguageTag.VB_Description = "Deprecated. Retrieves a read-only CultureInfo object having linguistic characteristics that are identified by the specified RFC 4646 language tag."
     Set GetCultureInfoByIetfLanguageTag = this.CultureInfoSingleton.GetCultureInfoByIetfLanguageTag(name)

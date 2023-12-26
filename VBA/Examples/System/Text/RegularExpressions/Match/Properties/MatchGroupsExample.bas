@@ -42,7 +42,7 @@ Public Sub MatchGroups()
             Dim cc  As DotNetLib.CaptureCollection
             Set cc = g.Captures
             Dim j As Long
-            For j = 0 To cc.count - 1
+            For j = 0 To cc.Count - 1
                 Dim c As DotNetLib.Capture
                 Set c = cc(j)
                 Debug.Print VBAString.Format("Capture" & j & "='" & c & "', Position=" & c.index)

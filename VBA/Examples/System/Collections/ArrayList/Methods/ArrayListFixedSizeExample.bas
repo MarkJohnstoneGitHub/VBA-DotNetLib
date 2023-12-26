@@ -78,13 +78,13 @@ Public Sub ArrayListFixedSize()
     ' Adding or inserting elements to the fixed-size ArrayList throws an exception.
     On Error Resume Next
     Call myFixedSizeAL.Add("AddMe2")
-    If Err.number Then
+    If Err.Number Then
         Debug.Print "Exception: " + Err.Description
     End If
     On Error GoTo 0 'Stop code and display error
     On Error Resume Next
     Call myFixedSizeAL.Insert(3, "InsertMe")
-    If Err.number Then
+    If Err.Number Then
         Debug.Print "Exception: " + Err.Description
     End If
     On Error GoTo 0 'Stop code and display error

@@ -30,7 +30,7 @@ Public Sub DirectorySetCurrentDirectory()
     Debug.Print VBAString.Format("Current directory: {0}", Directory.GetCurrentDirectory())
     Exit Sub
 ErrorHandler:
-    If Err.number = DirectoryNotFoundException Then
+    If Err.Number = DirectoryNotFoundException Then
         Debug.Print VBAString.Format("The specified directory does not exist. {0}", Err.Description);
     Else
         Debug.Print Err.Description

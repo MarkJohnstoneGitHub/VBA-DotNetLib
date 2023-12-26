@@ -18,7 +18,7 @@ Public Sub TimeZoneInfoHasSameRules()
     Dim timeZones As IReadOnlyCollection
     Set timeZones = TimeZoneInfo.GetSystemTimeZones()
     Dim timeZoneArray() As Variant
-    ReDim timeZoneArray(timeZones.count - 1)
+    ReDim timeZoneArray(timeZones.Count - 1)
     timeZones.CopyTo timeZoneArray, 0
 
     ' Iterate array from top to bottom

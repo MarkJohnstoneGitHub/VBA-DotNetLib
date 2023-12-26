@@ -153,9 +153,9 @@ End Function
 
 '@Static
 '@Description("Deserializes a string to re-create an original serialized TimeZoneInfo object.")
-Public Function FromSerializedString(ByVal Source As String) As DotNetLib.TimeZoneInfo
+Public Function FromSerializedString(ByVal source As String) As DotNetLib.TimeZoneInfo
 Attribute FromSerializedString.VB_Description = "Deserializes a string to re-create an original serialized TimeZoneInfo object."
-    Set FromSerializedString = this.TZISingleton.FromSerializedString(Source)
+    Set FromSerializedString = this.TZISingleton.FromSerializedString(source)
 End Function
 
 '@Static

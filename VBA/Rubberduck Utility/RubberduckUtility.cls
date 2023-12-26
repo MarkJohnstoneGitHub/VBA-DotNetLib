@@ -140,11 +140,11 @@ Attribute ExportAll.VB_Description = "Export the active project components to fi
         On Error Resume Next
         Dim filePath As String
         CreateRelativeDirectory relativePath
-        If Err.number = 0 Then  ' Error if invalid Rubberduck folder characters or invalid working folder permission
+        If Err.Number = 0 Then  ' Error if invalid Rubberduck folder characters or invalid working folder permission
             filePath = this.WorkingDirectory & DirectorySeparatorChar & relativePath & _
                         IIf(relativePath <> VBA.vbNullString, DirectorySeparatorChar, VBA.vbNullString) & fileName & extension
         Else
-            this.ErrorLog.Add Exception.Create(Err.number, _
+            this.ErrorLog.Add Exception.Create(Err.Number, _
                     "RubberduckUtility.ExportAllComponents", _
                     "Warning invalid Rubberduck folder characters, " & folderAnnotation & _
                     " " & fileName & extension & " exported to " & _
@@ -155,11 +155,11 @@ Attribute ExportAll.VB_Description = "Export the active project components to fi
         
         On Error Resume Next
         component.Export filePath
-        If Err.number = 0 Then
+        If Err.Number = 0 Then
             this.TotalExported = this.TotalExported + 1
             If Len(fileName) > 31 Then
                 this.ErrorLog.Add Exception.Create( _
-                                Err.number, _
+                                Err.Number, _
                                 "RubberduckUtility.ExportAllComponents", _
                                 "Warning file name length greater than 31 characters for: " & fileName, _
                                 ExceptionSeverity.Warning)
@@ -167,7 +167,7 @@ Attribute ExportAll.VB_Description = "Export the active project components to fi
             End If
         ' Error may occur for attempting to overwrite read only file etc
         ElseIf (this.WorkingDirectory & DirectorySeparatorChar & fileName & extension) = filePath Then
-            this.ErrorLog.Add Exception.Create(Err.number, _
+            this.ErrorLog.Add Exception.Create(Err.Number, _
                                 "RubberduckUtility.ExportAllComponents", _
                                 "Export failed for " & filePath & _
                                 " Attempted to overwrite read only file or invalid folder permissions.", _
@@ -175,18 +175,18 @@ Attribute ExportAll.VB_Description = "Export the active project components to fi
         Else
             ' Attempt to export to working directory
             this.ErrorLog.Add Exception.Create( _
-                Err.number, _
+                Err.Number, _
                 "RubberduckUtility.ExportAllComponents", _
                 "Warning export failed for: " & filePath & " exported to " & this.WorkingDirectory, _
                 ExceptionSeverity.Warning)
             filePath = this.WorkingDirectory & DirectorySeparatorChar & fileName & extension
             Err.Clear
             component.Export filePath
-            If Err.number = 0 Then
+            If Err.Number = 0 Then
                 this.TotalExported = this.TotalExported + 1
                 If Len(fileName) > 31 Then
                     this.ErrorLog.Add Exception.Create( _
-                        Err.number, _
+                        Err.Number, _
                         "RubberduckUtility.ExportAllComponents", _
                         "Warning file name length greater than 31 characters for: " & fileName, _
                         ExceptionSeverity.Warning)
@@ -195,7 +195,7 @@ Attribute ExportAll.VB_Description = "Export the active project components to fi
             Else
                 'Export will fail if attempting to overwrite read only file in working directory or invalid folder permission
                 this.ErrorLog.Add Exception.Create( _
-                                    Err.number, _
+                                    Err.Number, _
                                     "RubberduckUtility.ExportAllComponents", _
                                     "Export failed for " & filePath & _
                                     " Attempted to overwrite read only file or invalid folder permissions.", _

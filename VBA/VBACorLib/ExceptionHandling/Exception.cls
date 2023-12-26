@@ -26,8 +26,8 @@ Option Explicit
 Implements IException
 
 Private Type TException
-    number As Long
-    Source As String
+    Number As Long
+    source As String
     Description As String
     ExceptionSeverity As ExceptionSeverity
     TimeStamp As Date
@@ -43,8 +43,8 @@ End Property
 Public Function Create(ByVal errNumber As Long, ByVal errSource As String, ByVal errDescription As String, Optional ByVal errType As ExceptionSeverity = Unspecified) As IException
 Attribute Create.VB_Description = "Initializes a new instance of an exception."
    With New Exception
-      .number = errNumber
-      .Source = errSource
+      .Number = errNumber
+      .source = errSource
       .Description = errDescription
       .TimeStamp = VBA.Now()
       .ExceptionSeverity = errType
@@ -77,23 +77,23 @@ End Property
 
 
 '@Description("Gets the error number.")
-Public Property Get number() As Long
-Attribute number.VB_Description = "Gets the error number."
-    number = this.number
+Public Property Get Number() As Long
+Attribute Number.VB_Description = "Gets the error number."
+    Number = this.Number
 End Property
 
-Friend Property Let number(ByVal value As Long)
-    this.number = value
+Friend Property Let Number(ByVal value As Long)
+    this.Number = value
 End Property
 
 '@Description("Gets the error source.")
-Public Property Get Source() As String
-Attribute Source.VB_Description = "Gets the error source."
-    Source = this.Source
+Public Property Get source() As String
+Attribute source.VB_Description = "Gets the error source."
+    source = this.source
 End Property
 
-Friend Property Let Source(ByVal value As String)
-    this.Source = value
+Friend Property Let source(ByVal value As String)
+    this.source = value
 End Property
 
 '@Description("Gets the time stamp when the error was generated.")
@@ -116,9 +116,9 @@ End Property
 Public Sub Throw(Optional ByVal ex As Exception = Nothing)
 Attribute Throw.VB_Description = "Static. Throws the excpetion or raises the current VBA Err object."
     If ex Is Nothing Then
-        Err.Raise Err.number, Err.Source, Err.Description
+        Err.Raise Err.Number, Err.source, Err.Description
     Else
-        Err.Raise ex.number, ex.Source, ex.Description
+        Err.Raise ex.Number, ex.source, ex.Description
     End If
 End Sub
 
@@ -128,10 +128,10 @@ End Sub
 Public Function Catch(Optional ByVal errNumber As Variant) As Boolean
 Attribute Catch.VB_Description = "Static. Returns true for the error number attempting to catch or if not provided error number is not zero."
     If IsMissing(errNumber) Then
-        If Err.number <> 0 Then
+        If Err.Number <> 0 Then
             Catch = True
         End If
-    ElseIf Err.number = errNumber Then
+    ElseIf Err.Number = errNumber Then
         Catch = True
     End If
 End Function
@@ -140,7 +140,7 @@ End Function
 '@Description("Static. Returns true if error number is 0.")
 Public Function Try() As Boolean
 Attribute Try.VB_Description = "Static. Returns true if error number is 0."
-   If Err.number = 0 Then
+   If Err.Number = 0 Then
       Try = True
    End If
 End Function
@@ -150,11 +150,11 @@ End Function
 '----------------------------------------------------------------------
 
 Private Property Get IException_Number() As Long
-    IException_Number = number
+    IException_Number = Number
 End Property
 
 Private Property Get IException_Source() As String
-    IException_Source = Source
+    IException_Source = source
 End Property
 
 Private Property Get IException_Description() As String

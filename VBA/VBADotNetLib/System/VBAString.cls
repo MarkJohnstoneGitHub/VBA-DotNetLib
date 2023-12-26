@@ -230,9 +230,9 @@ End Function
 
 '@Static
 '@Description("Concatenates the specified elements of a string array, using the specified separator between each element.")
-Public Function Join4(ByVal separator As String, ByRef value() As String, ByVal startIndex As Long, ByVal count As Long) As String
+Public Function Join4(ByVal separator As String, ByRef value() As String, ByVal startIndex As Long, ByVal Count As Long) As String
 Attribute Join4.VB_Description = "Concatenates the specified elements of a string array, using the specified separator between each element."
-   Join4 = this.BStringSingleton.Join4(separator, value, startIndex, count)
+   Join4 = this.BStringSingleton.Join4(separator, value, startIndex, Count)
 End Function
 
 

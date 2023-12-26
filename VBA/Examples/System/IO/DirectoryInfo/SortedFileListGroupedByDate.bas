@@ -55,7 +55,6 @@ ErrorHandler:
     Debug.Print Err.Description
 End Sub
 
-'@Todo Cannot assign to an Array
 ' Obtains an array of FileSystemInfo for a provided path, search pattern and search option
 Private Function GetFileSytemInfos(ByVal pPath As String, ByVal pSearchPattern As String, ByVal pSearchOption As mscorlib.SearchOption) As DotNetLib.FileSystemInfo()
     Dim pvtDir As DotNetLib.DirectoryInfo
@@ -75,7 +74,7 @@ Private Function GetFilteredSortedFileListGroupedByDay(ByRef fileInfos() As DotN
         If fileInfos(pvtIndex).lastWriteTime.Ticks >= startDate.Ticks Then
             Dim daySortedList As DotNetLib.SortedList
             If pvtOutput.ContainsKey(fileInfos(pvtIndex).lastWriteTime.Date) Then
-                Set daySortedList = pvtOutput.Item(fileInfos(pvtIndex).lastWriteTime.Date)
+                Set daySortedList = pvtOutput.item(fileInfos(pvtIndex).lastWriteTime.Date)
             Else
                 Set daySortedList = SortedList.Create()
                 Call pvtOutput.Add(fileInfos(pvtIndex).lastWriteTime.Date, daySortedList)

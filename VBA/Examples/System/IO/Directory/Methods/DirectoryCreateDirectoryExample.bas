@@ -29,7 +29,7 @@ Public Sub DirectoryCreateDirectoryExample()
     ' Try to create the directory.
     Dim di As DotNetLib.DirectoryInfo
     Set di = Directory.CreateDirectory(pvtPath)
-    If Err.number = 0 Then
+    If Err.Number = 0 Then
         Debug.Print VBAString.Format("The directory was created successfully at {0}.", Directory.GetCreationTime(pvtPath))
 
         ' Delete the directory.

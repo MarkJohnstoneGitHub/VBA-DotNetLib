@@ -33,7 +33,7 @@ Public Sub RegexExample1()
     Set pvtMatches = rx.Matches(text)
 
     ' Report the number of matches found.
-    Debug.Print VBAString.Format(Regex.Unescape("{0} matches found in:\n   {1}"), pvtMatches.count, text)
+    Debug.Print VBAString.Format(Regex.Unescape("{0} matches found in:\n   {1}"), pvtMatches.Count, text)
 
     ' Report on each match.
     Dim varMatch As Variant

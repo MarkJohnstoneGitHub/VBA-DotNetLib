@@ -28,14 +28,14 @@ Attribute TimeSpanFromDays.VB_Description = "The following example creates sever
    GenTimeSpanFromDays 20.84745602
 End Sub
 
-Private Sub GenTimeSpanFromDays(ByVal days As Double)
+Private Sub GenTimeSpanFromDays(ByVal Days As Double)
    ' Create a TimeSpan object and TimeSpan string from
    ' a number of days.
    Dim interval As ITimeSpan
-   Set interval = TimeSpan.FromDays(days)
+   Set interval = TimeSpan.FromDays(Days)
    Dim timeInterval As String
    timeInterval = interval.ToString()
-   Debug.Print Align(days, 25, Justify.Justify_Right) & Align(timeInterval, 25, Justify.Justify_Right)
+   Debug.Print Align(Days, 25, Justify.Justify_Right) & Align(timeInterval, 25, Justify.Justify_Right)
 End Sub
 
 '/*

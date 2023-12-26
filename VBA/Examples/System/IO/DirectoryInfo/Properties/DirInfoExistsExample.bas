@@ -1,4 +1,4 @@
-Attribute VB_Name = "DirectoryInfoExistsExample"
+Attribute VB_Name = "DirInfoExistsExample"
 '@Folder("Examples.System.IO.DirectoryInfo.Properties")
 
 '@Author Mark Johnstone
@@ -39,7 +39,7 @@ Private Sub CopyDirectory(ByVal SourceDirectory As String, ByVal TargetDirectory
     sourceFiles = source.GetFiles()
     Dim i As Long
     For i = 0 To UBound(sourceFiles)
-        Call File.Copy2(sourceFiles(i).FullName, target.FullName + "\\" + sourceFiles(i).name, True)
+        Call file.Copy2(sourceFiles(i).FullName, target.FullName + "\\" + sourceFiles(i).name, True)
     Next i
 
     ' Copy directories.

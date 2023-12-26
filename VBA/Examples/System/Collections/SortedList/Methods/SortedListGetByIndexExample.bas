@@ -47,7 +47,7 @@ Public Sub SortedListGetByIndex()
     Dim formatString As String
     formatString = Regex.Unescape("\t{0}\t{1}")
     Dim i As Long
-    For i = 0 To mySL.count - 1
+    For i = 0 To mySL.Count - 1
         Debug.Print VBAString.Format(formatString, myKeyList(i), myValueList(i))
     Next i
 End Sub

@@ -45,7 +45,7 @@ Private Function IterativeSearch(ByVal pList As DotNetLib.ArrayList, ByVal findi
     Dim index As Long
     index = -1
     Dim i As Long
-    For i = 0 To pList.count - 1
+    For i = 0 To pList.Count - 1
         If finditem = pList(i) Then
             index = i
             Exit For

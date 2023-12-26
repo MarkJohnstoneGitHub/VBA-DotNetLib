@@ -26,7 +26,7 @@ Public Sub ArrayListTrimToSize()
     
     ' Displays the count, capacity and values of the ArrayList.
     Debug.Print "Initially,"
-    Debug.Print VBAString.Format("   Count    : {0}", myAL.count)
+    Debug.Print VBAString.Format("   Count    : {0}", myAL.Count)
     Debug.Print VBAString.Format("   Capacity : {0}", myAL.Capacity)
     Debug.Print "   Values:";
     Call PrintValues(myAL)
@@ -36,7 +36,7 @@ Public Sub ArrayListTrimToSize()
     
     ' Displays the count, capacity and values of the ArrayList.
     Debug.Print "After TrimToSize,"
-    Debug.Print VBAString.Format("   Count    : {0}", myAL.count)
+    Debug.Print VBAString.Format("   Count    : {0}", myAL.Count)
     Debug.Print VBAString.Format("   Capacity : {0}", myAL.Capacity)
     Debug.Print "   Values:";
     Call PrintValues(myAL)
@@ -46,7 +46,7 @@ Public Sub ArrayListTrimToSize()
 
     ' Displays the count, capacity and values of the ArrayList.
     Debug.Print "After Clear,"
-    Debug.Print VBAString.Format("   Count    : {0}", myAL.count)
+    Debug.Print VBAString.Format("   Count    : {0}", myAL.Count)
     Debug.Print VBAString.Format("   Capacity : {0}", myAL.Capacity)
     Debug.Print "   Values:";
     Call PrintValues(myAL)
@@ -56,7 +56,7 @@ Public Sub ArrayListTrimToSize()
 
     ' Displays the count, capacity and values of the ArrayList.
     Debug.Print "After the second TrimToSize,"
-    Debug.Print VBAString.Format("   Count    : {0}", myAL.count)
+    Debug.Print VBAString.Format("   Count    : {0}", myAL.Count)
     Debug.Print VBAString.Format("   Capacity : {0}", myAL.Capacity)
     Debug.Print "   Values:";
     Call PrintValues(myAL)

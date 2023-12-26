@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirectoryExistsExample"
-'@Folder("Examples.System.IO.Directory.Methods")
+'@Folder "Examples.System.IO.Directory"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -21,7 +21,7 @@ Public Sub DirectoryExistsExample()
     Call ArrayEx.CreateInitialize1D(args, "C:\Current")
     Dim varPath As Variant
     For Each varPath In args
-        If File.Exists(varPath) Then
+        If file.Exists(varPath) Then
             ' This path is a file
             Call ProcessFile(varPath)
         ElseIf (Directory.Exists(varPath)) Then
@@ -34,9 +34,9 @@ End Sub
 
 ' Process all files in the directory passed in, recurse on any directories
 ' that are found, and process the files they contain.
-Public Sub ProcessDirectory(ByVal targetDirectory As String)
+Public Sub ProcessDirectory(ByVal TargetDirectory As String)
     Dim fileEntries() As String
-    fileEntries = Directory.GetFiles(targetDirectory)
+    fileEntries = Directory.GetFiles(TargetDirectory)
     Dim varFileName As Variant
     For Each varFileName In fileEntries
         Call ProcessFile(varFileName)
@@ -44,7 +44,7 @@ Public Sub ProcessDirectory(ByVal targetDirectory As String)
     
     ' Recurse into subdirectories of this directory.
     Dim subdirectoryEntries() As String
-    subdirectoryEntries = Directory.GetDirectories(targetDirectory)
+    subdirectoryEntries = Directory.GetDirectories(TargetDirectory)
     Dim varSubdirectory As Variant
     For Each varSubdirectory In subdirectoryEntries
         Call ProcessDirectory(varSubdirectory)

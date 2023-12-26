@@ -32,7 +32,7 @@ Public Sub DirectoryEnumerateDirectoriesEg3()
         Debug.Print VBAString.Format("{0}", _
                              dir.Substring(dir.LastIndexOf_7("\") + 1))
     Next
-    Debug.Print VBAString.Format("{0} directories found.", dirs.count);
+    Debug.Print VBAString.Format("{0} directories found.", dirs.Count);
     
     Exit Sub
 ErrorHandler:

@@ -62,7 +62,7 @@ Attribute TryToArray.VB_Description = "Copies a ParamArray of vaules or objects 
          Else
             destination(index) = varValue
          End If
-         If Err.number = 0 Then
+         If Err.Number = 0 Then
             index = index + 1
          Else
             TryToArray = False
@@ -91,21 +91,21 @@ End Function
 ' been allocated.
 '@Reference http://www.cpearson.com/excel/vbaarrays.htm
 '''
-Public Function IsAllocated(ByRef Source As Variant) As Boolean
+Public Function IsAllocated(ByRef source As Variant) As Boolean
 Attribute IsAllocated.VB_Description = "Returns if an array variable is initialized."
    Dim sourceUBound As Long
    On Error Resume Next
    
    ' if Arr is not an array, return FALSE and get out.
-   If IsArray(Source) = False Then
+   If IsArray(source) = False Then
        IsAllocated = False
        Exit Function
    End If
    
    ' Attempt to get the UBound of the array. If the array has not been allocated,
    ' an error will occur. Test Err.Number to see if an error occurred.
-   sourceUBound = UBound(Source, 1)
-   If (Err.number = 0) Then
+   sourceUBound = UBound(source, 1)
+   If (Err.Number = 0) Then
        ''''''''''''''''''''''''''''''''''''''
        ' Under some circumstances, if an array
        ' is not allocated, Err.Number will be
@@ -114,7 +114,7 @@ Attribute IsAllocated.VB_Description = "Returns if an array variable is initiali
        ' is True, the array is allocated. Otherwise,
        ' the array is not allocated.
        '''''''''''''''''''''''''''''''''''''''
-       IsAllocated = (LBound(Source) <= UBound(Source))
+       IsAllocated = (LBound(source) <= UBound(source))
    Else
        ' error. unallocated array
        IsAllocated = False

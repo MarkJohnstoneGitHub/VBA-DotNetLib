@@ -40,7 +40,7 @@ End Sub
 
 Private Sub ShowTimeSpanProperties(ByVal interval As ITimeSpan)
    Debug.Print "TimeSpan " & interval.ToString
-   Debug.Print "Days", interval.days, "TotalDays", interval.TotalDays
+   Debug.Print "Days", interval.Days, "TotalDays", interval.TotalDays
    Debug.Print "Hours", interval.Hours, "TotalHours", interval.TotalHours
    Debug.Print "Minutes", interval.Minutes, "TotalMinutes", interval.TotalMinutes
    Debug.Print "Seconds", interval.Minutes, "TotalSeconds", interval.totalSeconds

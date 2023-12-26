@@ -17,14 +17,14 @@ Option Explicit
 ' a new directory. The original directory no longer exists after it has been moved.
 ''
 Public Sub DirectoryMove()
-    Dim sourceDirectory As String
-    sourceDirectory = "C:\source"
+    Dim SourceDirectory As String
+    SourceDirectory = "C:\source"
     Dim destinationDirectory As String
     destinationDirectory = "C:\destination"
     
     On Error Resume Next
-    Call Directory.Move(sourceDirectory, destinationDirectory)
-    If Err.number <> 0 Then
+    Call Directory.Move(SourceDirectory, destinationDirectory)
+    If Err.Number <> 0 Then
         Debug.Print Err.Description
     End If
     On Error GoTo 0 'Stop code and display error

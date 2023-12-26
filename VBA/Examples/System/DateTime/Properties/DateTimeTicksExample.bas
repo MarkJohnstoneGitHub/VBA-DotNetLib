@@ -32,7 +32,7 @@ Attribute DateTimeTicks.VB_Description = "The following example uses the Ticks p
     Debug.Print "   " & VBA.Format$(elapsedTicks, "#,##0") & " ticks"
     Debug.Print "   " & VBA.Format$(elapsedSpan.totalSeconds, "#,##0.00") & " seconds"
     Debug.Print "   " & VBA.Format$(elapsedSpan.TotalMinutes, "#,##0.00") & " minutes"
-    Debug.Print "   " & elapsedSpan.days & " days, " & elapsedSpan.Hours & " hours, " & elapsedSpan.Minutes & " minutes, " & elapsedSpan.Seconds & " seconds"
+    Debug.Print "   " & elapsedSpan.Days & " days, " & elapsedSpan.Hours & " hours, " & elapsedSpan.Minutes & " minutes, " & elapsedSpan.Seconds & " seconds"
 End Sub
 
 ' This example displays an output similar to the following:

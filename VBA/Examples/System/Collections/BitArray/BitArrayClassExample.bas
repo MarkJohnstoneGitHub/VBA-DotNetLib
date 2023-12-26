@@ -42,31 +42,31 @@ Public Sub BitArrayClassExample()
     
     ' Displays the properties and values of the BitArrays.
     Debug.Print "myBA1"
-    Debug.Print VBAString.Format("   Count:    {0}", myBA1.count)
+    Debug.Print VBAString.Format("   Count:    {0}", myBA1.Count)
     Debug.Print VBAString.Format("   Length:   {0}", myBA1.length)
     Debug.Print "   Values:"
     Call PrintValues(myBA1, 8)
     
     Debug.Print "myBA2"
-    Debug.Print VBAString.Format("   Count:    {0}", myBA2.count)
+    Debug.Print VBAString.Format("   Count:    {0}", myBA2.Count)
     Debug.Print VBAString.Format("   Length:   {0}", myBA2.length)
     Debug.Print "   Values:"
     Call PrintValues(myBA2, 8)
 
     Debug.Print "myBA3"
-    Debug.Print VBAString.Format("   Count:    {0}", myBA3.count)
+    Debug.Print VBAString.Format("   Count:    {0}", myBA3.Count)
     Debug.Print VBAString.Format("   Length:   {0}", myBA3.length)
     Debug.Print "   Values:"
     Call PrintValues(myBA3, 8)
 
     Debug.Print "myBA4"
-    Debug.Print VBAString.Format("   Count:    {0}", myBA4.count)
+    Debug.Print VBAString.Format("   Count:    {0}", myBA4.Count)
     Debug.Print VBAString.Format("   Length:   {0}", myBA4.length)
     Debug.Print "   Values:"
     Call PrintValues(myBA4, 8)
 
     Debug.Print "myBA5"
-    Debug.Print VBAString.Format("   Count:    {0}", myBA5.count)
+    Debug.Print VBAString.Format("   Count:    {0}", myBA5.Count)
     Debug.Print VBAString.Format("   Length:   {0}", myBA5.length)
     Debug.Print "   Values:"
     Call PrintValues(myBA5, 8)

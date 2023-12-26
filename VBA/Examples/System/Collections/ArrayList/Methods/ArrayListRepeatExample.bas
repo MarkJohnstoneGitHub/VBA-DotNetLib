@@ -21,7 +21,7 @@ Public Sub ArrayListRepeat()
 
     ' Displays the count, capacity and values of the ArrayList.
     Debug.Print "ArrayList with five elements with a null value"
-    Debug.Print VBAString.Format("   Count    : {0}", myAL.count)
+    Debug.Print VBAString.Format("   Count    : {0}", myAL.Count)
     Debug.Print VBAString.Format("   Capacity : {0}", myAL.Capacity)
     Debug.Print "   Values:";
     Call PrintValues(myAL)
@@ -31,7 +31,7 @@ Public Sub ArrayListRepeat()
 
     ' Displays the count, capacity and values of the ArrayList.
     Debug.Print "ArrayList with seven elements with a string value"
-    Debug.Print VBAString.Format("   Count    : {0}", myAL.count)
+    Debug.Print VBAString.Format("   Count    : {0}", myAL.Count)
     Debug.Print VBAString.Format("   Capacity : {0}", myAL.Capacity)
     Debug.Print "   Values:";
     Call PrintValues(myAL)

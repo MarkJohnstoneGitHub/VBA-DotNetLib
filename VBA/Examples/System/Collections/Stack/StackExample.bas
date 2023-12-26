@@ -24,7 +24,7 @@ Public Sub StackExample()
     
     ' Displays the properties and values of the Stack.
     Debug.Print "myStack"
-    Debug.Print VBAString.Format(Regex.Unescape("\tCount:    {0}"), myStack.count) 'Note Unescape .Net escape characters \t i.e. tab
+    Debug.Print VBAString.Format(Regex.Unescape("\tCount:    {0}"), myStack.Count) 'Note Unescape .Net escape characters \t i.e. tab
     Debug.Print VBAString.Format(Regex.Unescape("\tValues:"));
     PrintValues myStack
 End Sub

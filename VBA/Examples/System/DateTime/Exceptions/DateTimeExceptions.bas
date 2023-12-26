@@ -18,10 +18,10 @@ Public Sub DateTimeCreateFromTicksException()
    On Error Resume Next    'Skip error and continue running
    Dim dateValue As IDateTime
    Set dateValue = DateTime.CreateFromTicks(ticksErr)
-   If Err.number = COMHResult.ArgumentOutOfRangeException Then
-      Debug.Print "ArgumentOutOfRangeException " & "0x" & Hex$(Err.number) & " " & Err.Description
+   If Err.Number = COMHResult.ArgumentOutOfRangeException Then
+      Debug.Print "ArgumentOutOfRangeException " & "0x" & Hex$(Err.Number) & " " & Err.Description
    Else
-      Debug.Print "0x" & Hex$(Err.number) & " " & Err.Description
+      Debug.Print "0x" & Hex$(Err.Number) & " " & Err.Description
    End If
    On Error GoTo 0 'Stop code and display error
 End Sub
@@ -34,10 +34,10 @@ Public Sub DateTimeCreateFromDateTimeKindException()
    On Error Resume Next    'Skip error and continue running
    Dim dateValue As IDateTime
    Set dateValue = DateTime.CreateFromDateTimeKind(2010, 8, 18, 16, 32, 0, 5)
-   If Err.number = COMHResult.ArgumentException Then
-      Debug.Print "ArgumentException " & "0x" & Hex$(Err.number) & " " & Err.Description
+   If Err.Number = COMHResult.ArgumentException Then
+      Debug.Print "ArgumentException " & "0x" & Hex$(Err.Number) & " " & Err.Description
    Else
-      Debug.Print "0x" & Hex$(Err.number) & " " & Err.Description
+      Debug.Print "0x" & Hex$(Err.Number) & " " & Err.Description
    End If
    On Error GoTo 0   'Stop code and display error
 End Sub

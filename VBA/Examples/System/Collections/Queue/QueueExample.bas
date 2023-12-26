@@ -23,7 +23,7 @@ Public Sub QueueExample()
     
     ' Displays the properties and values of the Queue.
     Debug.Print "myQ"
-    Debug.Print VBAString.Format(Regex.Unescape("\tCount:    {0}"), myQ.count) 'Note Unescape .Net escape characters \t i.e. tab
+    Debug.Print VBAString.Format(Regex.Unescape("\tCount:    {0}"), myQ.Count) 'Note Unescape .Net escape characters \t i.e. tab
     PrintValues myQ
 End Sub
 

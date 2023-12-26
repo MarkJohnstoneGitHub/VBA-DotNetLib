@@ -38,7 +38,7 @@ Private Sub PrintFileSystemEntries(ByVal pPath As String)
     Next
 Exit Sub
 ErrorHandler:
-    Select Case Err.number
+    Select Case Err.Number
         Case ArgumentNullException
             Debug.Print "Path is a null reference."
         Case SecurityException
@@ -64,7 +64,7 @@ Private Sub PrintFileSystemEntries2(ByVal pPath As String, ByVal pattern As Stri
     Next
 Exit Sub
 ErrorHandler:
-    Select Case Err.number
+    Select Case Err.Number
         Case ArgumentNullException
             Debug.Print "Path is a null reference."
         Case SecurityException
@@ -93,9 +93,9 @@ Private Sub GetLogicalDrives()
 Exit Sub
 
 ErrorHandler:
-    If Err.number = IOException Then
+    If Err.Number = IOException Then
         Debug.Print "An I/O error occurs."
-    ElseIf Err.number = SecurityException Then
+    ElseIf Err.Number = SecurityException Then
         Debug.Print "The caller does not have the required permission."
     End If
 End Sub
@@ -107,9 +107,9 @@ Private Sub GetParent(ByVal pPath As String)
     Debug.Print pvtDirectoryInfo.FullName
 Exit Sub
 ErrorHandler:
-    If Err.number = ArgumentNullException Then
+    If Err.Number = ArgumentNullException Then
         Debug.Print "Path is a null reference."
-    ElseIf Err.number = ArgumentException Then
+    ElseIf Err.Number = ArgumentException Then
         Debug.Print "Path is an empty string, " + _
                     "contains only white spaces, or " + _
                     "contains invalid characters."
@@ -122,7 +122,7 @@ Private Sub Move(ByVal sourcePath As String, ByVal destinationPath As String)
     Debug.Print "The directory move is complete."
 Exit Sub
 ErrorHandler:
-    Select Case Err.number
+    Select Case Err.Number
         Case ArgumentNullException
             Debug.Print "Path is a null reference."
         Case SecurityException

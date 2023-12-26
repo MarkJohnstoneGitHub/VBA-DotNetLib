@@ -93,9 +93,9 @@ End Function
 
 '@Static
 '@Description("Returns an ArrayList whose elements are copies of the specified value.")
-Public Function Repeat(ByVal value As Variant, ByVal count As Long) As DotNetLib.ArrayList
+Public Function Repeat(ByVal value As Variant, ByVal Count As Long) As DotNetLib.ArrayList
 Attribute Repeat.VB_Description = "Returns an ArrayList whose elements are copies of the specified value."
-   Set Repeat = this.ArrayListSingleton.Repeat(value, count)
+   Set Repeat = this.ArrayListSingleton.Repeat(value, Count)
 End Function
 
 '@Static

@@ -24,7 +24,7 @@ Public Sub DirectoryGetDirectoryRoot()
     On Error Resume Next
     ' Set the current directory.
     Call Directory.SetCurrentDirectory(dir)
-    If Err.number <> 0 Then
+    If Err.Number <> 0 Then
         Debug.Print VBAString.Format("The specified directory does not exist. {0}", Err.Description)
     End If
     On Error GoTo 0 'Stop code and display error

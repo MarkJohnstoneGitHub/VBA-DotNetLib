@@ -24,14 +24,14 @@ Attribute DateTimeOffsetSubtract.VB_Description = "The following example illustr
     
     Debug.Print "(" & firstDate.ToString() & ")" & " - " & _
                 "(" & secondDate.ToString() & ")" & ": " & _
-                difference.days & " days, " & _
+                difference.Days & " days, " & _
                 difference.Hours & ":" & _
                 Format$(difference.Minutes, "00")
             
     Set difference = firstDate.Subtract(thirdDate)
     Debug.Print "(" & firstDate.ToString() & ")" & " - " & _
                 "(" & secondDate.ToString() & ")" & ": " & _
-                difference.days & " days, " & _
+                difference.Days & " days, " & _
                 difference.Hours & ":" & _
                 Format$(difference.Minutes, "00")
 End Sub

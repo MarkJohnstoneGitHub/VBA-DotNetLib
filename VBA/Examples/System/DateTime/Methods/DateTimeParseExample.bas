@@ -37,13 +37,13 @@ Public Sub DateTimeParse()
    
    On Error Resume Next
    Set dateValue = DateTime.Parse(dateString)
-   If Err.number = 0 Then
+   If Err.Number = 0 Then
       Debug.Print "'" & dateString & "' converted to " & dateValue.ToString & "."
    Else
-      If Err.number = COMHResult.FormatException Then
+      If Err.Number = COMHResult.FormatException Then
          Debug.Print "Unable to convert '" & dateString & "'."
       Else
-         Debug.Print Err.number, Err.Description
+         Debug.Print Err.Number, Err.Description
       End If
    End If
    On Error GoTo 0 'reset error handling
@@ -53,13 +53,13 @@ Public Sub DateTimeParse()
    dateString = "16/02/2008 12:15:12"
    On Error Resume Next
    Set dateValue = DateTime.Parse(dateString)
-   If Err.number = 0 Then
+   If Err.Number = 0 Then
       Debug.Print "'" & dateString & "' converted to " & dateValue.ToString & "."
    Else
-      If Err.number = COMHResult.FormatException Then
+      If Err.Number = COMHResult.FormatException Then
          Debug.Print "Unable to convert '" & dateString & "'."
       Else
-         Debug.Print Err.number, Err.Description
+         Debug.Print Err.Number, Err.Description
       End If
    End If
    On Error GoTo 0 'reset error handling

@@ -18,20 +18,20 @@ Option Explicit
 ' they no longer exist in the original directory.
 ''
 Public Sub DirectoryExample()
-    Dim sourceDirectory As String
-    sourceDirectory = "C:\current"
+    Dim SourceDirectory As String
+    SourceDirectory = "C:\current"
     Dim archiveDirectory As String
     archiveDirectory = "C:\archive"
     On Error Resume Next
     Dim txtFiles As mscorlib.IEnumerable
-    Set txtFiles = Directory.EnumerateFiles(sourceDirectory, "*.bas")
+    Set txtFiles = Directory.EnumerateFiles(SourceDirectory, "*.bas")
     Dim varCurrentFile As Variant
     For Each varCurrentFile In txtFiles
         Dim fileName As String
-        fileName = Mid$(varCurrentFile, Len(sourceDirectory) + 2)
+        fileName = Mid$(varCurrentFile, Len(SourceDirectory) + 2)
         Call Directory.Move(varCurrentFile, Path.Combine2(archiveDirectory, fileName))
     Next
-    If Err.number Then
+    If Err.Number Then
         Debug.Print "Exception: " + Err.Description
     End If
     On Error GoTo 0 'Stop code and display error
@@ -53,7 +53,7 @@ Public Sub DirectoryExample2()
     Dim varRetrievedFile As Variant
     For Each varRetrievedFile In txtFiles
         Dim fileLines As mscorlib.IEnumerable
-        Set fileLines = File.ReadLines(varRetrievedFile)
+        Set fileLines = file.ReadLines(varRetrievedFile)
         Dim i As Long
         i = 1
         Dim varfileLine As Variant
@@ -73,13 +73,13 @@ End Sub
 ' a new directory. The original directory no longer exists after it has been moved.
 ''
 Public Sub DirectoryExample3()
-    Dim sourceDirectory As String
-    sourceDirectory = "C:\source"
+    Dim SourceDirectory As String
+    SourceDirectory = "C:\source"
     Dim destinationDirectory As String
     destinationDirectory = "C:\destination"
     On Error Resume Next
-    Call Directory.Move(sourceDirectory, destinationDirectory)
-    If Err.number Then
+    Call Directory.Move(SourceDirectory, destinationDirectory)
+    If Err.Number Then
         Debug.Print "Exception: " + Err.Description
     End If
     On Error GoTo 0 'Stop code and display error

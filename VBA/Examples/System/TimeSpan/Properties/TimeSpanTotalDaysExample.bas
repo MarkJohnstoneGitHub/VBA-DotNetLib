@@ -21,7 +21,7 @@ Attribute TimeSpanTotalDays.VB_Description = "The following example instantiates
    Debug.Print "Value of TimeSpan: " & interval.ToString
    
    Debug.Print interval.TotalDays & " days, as follows:"
-   Debug.Print "   Days:         " & interval.days
+   Debug.Print "   Days:         " & interval.Days
    Debug.Print "   Hours:        " & interval.Hours
    Debug.Print "   Minutes:      " & interval.Minutes
    Debug.Print "   Seconds:      " & interval.Seconds

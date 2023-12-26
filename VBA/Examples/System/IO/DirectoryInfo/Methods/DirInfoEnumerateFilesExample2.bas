@@ -1,4 +1,4 @@
-Attribute VB_Name = "DirInfoEnumerateFilesEg2"
+Attribute VB_Name = "DirInfoEnumerateFilesExample2"
 '@Folder("Examples.System.IO.DirectoryInfo.Methods")
 
 '@Author Mark Johnstone

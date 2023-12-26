@@ -80,7 +80,7 @@ Public Sub BitArrayCopyToExample()
     Call myStringArray.SetValue("Hello", 0)
     Call myStringArray.SetValue("World", 1)
     Call myBA.CopyTo(myStringArray, 3)
-    If Err.number Then
+    If Err.Number Then
         Debug.Print "Exception: " + Err.Description
     End If
     On Error GoTo 0 'Stop code and display error

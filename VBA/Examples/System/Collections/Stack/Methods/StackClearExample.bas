@@ -25,7 +25,7 @@ Public Sub StackClear()
     
     ' Displays the count and values of the Stack.
     Debug.Print "Initially,"
-    Debug.Print VBAString.Format("   Count    : {0}", myStack.count)
+    Debug.Print VBAString.Format("   Count    : {0}", myStack.Count)
     Debug.Print "   Values:";
     PrintValues myStack
     
@@ -34,7 +34,7 @@ Public Sub StackClear()
 
     ' Displays the count and values of the Stack.
     Debug.Print "After Clear,"
-    Debug.Print VBAString.Format("   Count    : {0}", myStack.count)
+    Debug.Print VBAString.Format("   Count    : {0}", myStack.Count)
     Debug.Print "   Values:";
     PrintValues myStack
 End Sub

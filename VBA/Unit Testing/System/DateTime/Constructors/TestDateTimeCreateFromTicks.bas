@@ -102,7 +102,7 @@ Private Sub TestMethodDateTimeCreateFromTicks()
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -127,7 +127,7 @@ Assert:
 TestExit:
     Exit Sub
 TestFail:
-    If Err.number = ExpectedError Then
+    If Err.Number = ExpectedError Then
         Resume TestExit
     Else
         Resume Assert
@@ -154,7 +154,7 @@ Assert:
 TestExit:
     Exit Sub
 TestFail:
-    If Err.number = ExpectedError Then
+    If Err.Number = ExpectedError Then
         Resume TestExit
     Else
         Resume Assert
@@ -183,7 +183,7 @@ Assert:
 TestExit:
     Exit Sub
 TestFail:
-    If Err.number = ExpectedError Then
+    If Err.Number = ExpectedError Then
         Resume TestExit
     Else
         Resume Assert

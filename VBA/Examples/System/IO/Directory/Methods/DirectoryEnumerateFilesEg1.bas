@@ -18,20 +18,20 @@ Option Explicit
 ' in the original directory.
 ''
 Public Sub DirectoryEnumerateFilesExample1()
-    Dim sourceDirectory As DotNetLib.String
-    Set sourceDirectory = Strings.Create("C:\current")
+    Dim SourceDirectory As DotNetLib.String
+    Set SourceDirectory = Strings.Create("C:\current")
     Dim archiveDirectory As String
     archiveDirectory = "C:\archive"
     On Error GoTo ErrorHandler
     
     Dim txtFiles As mscorlib.IEnumerable
-    Set txtFiles = Directory.EnumerateFiles(sourceDirectory)
+    Set txtFiles = Directory.EnumerateFiles(SourceDirectory)
     Dim varCurrentFile As Variant
     For Each varCurrentFile In txtFiles
         Dim currentFile As DotNetLib.String
         Set currentFile = Strings.Create(varCurrentFile)
         Dim fileName As String
-        fileName = currentFile.Substring(sourceDirectory.length + 1).ToString
+        fileName = currentFile.Substring(SourceDirectory.length + 1).ToString
         Call Directory.Move(currentFile.ToString, Path.Combine2(archiveDirectory, fileName))
     Next
     Exit Sub

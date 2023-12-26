@@ -68,7 +68,7 @@ Private Sub TestingDateTimeDate()
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -92,7 +92,7 @@ Attribute TestingDateTimeDay.VB_Description = "Testing the DateTime.Day property
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -113,7 +113,7 @@ Attribute TestingDateTimeDayOfWeek.VB_Description = "Testing the DateTime.DayOfW
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -139,7 +139,7 @@ Attribute TestingDateTimeDayOfYear.VB_Description = "Testing the DateTime.DayOfY
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -161,7 +161,7 @@ Attribute TestingDateTimeHour.VB_Description = "Testing the DateTime.Hour proper
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -183,7 +183,7 @@ Attribute TestingDateTimeKind.VB_Description = "Testing the DateTime.Kind proper
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -205,7 +205,7 @@ Attribute TestingDateTimeMillisecond.VB_Description = "Testing the DateTime.Mill
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -227,7 +227,7 @@ Attribute TestingDateTimeMinute.VB_Description = "Testing the DateTime.Minute pr
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -249,7 +249,7 @@ Attribute TestingDateTimeSecond.VB_Description = "Testing the DateTime.Second pr
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -291,7 +291,7 @@ Attribute TestingDateTimeTicks.VB_Description = "Testing the DateTime.Ticks prop
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
     Resume TestExit
 End Sub
 
@@ -303,11 +303,11 @@ End Function
 
 'https://referencesource.microsoft.com/#mscorlib/system/datetime.cs,256
 Private Function DateToTicks(ByVal pYear As Long, ByVal pMonth As Long, ByVal pDay As Long) As LongLong
-    Dim days() As Long
-    days = IIf(DateTime.IsLeapYear(pYear), DaysToMonth366, DaysToMonth365)
+    Dim Days() As Long
+    Days = IIf(DateTime.IsLeapYear(pYear), DaysToMonth366, DaysToMonth365)
     Dim y As Long
     y = pYear - 1
-    DateToTicks = CLngLng(y * 365 + y / 4 - y / 100 + y / 400 + days(pMonth - 1) + pDay - 1) * TimeSpan.TicksPerDay
+    DateToTicks = CLngLng(y * 365 + y / 4 - y / 100 + y / 400 + Days(pMonth - 1) + pDay - 1) * TimeSpan.TicksPerDay
 End Function
 
 '@TestMethod("DateTime Properties")
@@ -341,6 +341,6 @@ Attribute TestingDateTimeTimeOfDay.VB_Description = "Testing the DateTime.TimeOf
 TestExit:
     Exit Sub
 TestFail:
-    Assert.Fail "Test raised an error: #" & Err.number & " - " & Err.Description
+    Assert.Fail "Test raised an error: #" & Err.Number & " - " & Err.Description
     Resume TestExit
 End Sub

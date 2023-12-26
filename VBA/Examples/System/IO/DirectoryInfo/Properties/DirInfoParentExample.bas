@@ -1,4 +1,4 @@
-Attribute VB_Name = "DirectoryInfoParentExample"
+Attribute VB_Name = "DirInfoParentExample"
 '@Folder("Examples.System.IO.DirectoryInfo.Properties")
 
 '@Author Mark Johnstone

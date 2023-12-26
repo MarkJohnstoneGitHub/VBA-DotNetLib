@@ -25,7 +25,7 @@ Public Sub QueueClear()
     
     ' Displays the count and values of the Queue.
     Debug.Print "Initially,"
-    Debug.Print VBAString.Format("   Count    : {0}", myQ.count)
+    Debug.Print VBAString.Format("   Count    : {0}", myQ.Count)
     Debug.Print "   Values:";
     PrintValues myQ
     
@@ -34,7 +34,7 @@ Public Sub QueueClear()
 
     ' Displays the count and values of the Queue.
     Debug.Print "After Clear,"
-    Debug.Print VBAString.Format("   Count    : {0}", myQ.count)
+    Debug.Print VBAString.Format("   Count    : {0}", myQ.Count)
     Debug.Print "   Values:";
     PrintValues myQ
     

@@ -1,4 +1,4 @@
-Attribute VB_Name = "DirInfoEnumerateFilesEg"
+Attribute VB_Name = "DirInfoEnumerateFilesExample"
 '@Folder("Examples.System.IO.DirectoryInfo.Methods")
 
 '@Author Mark Johnstone
@@ -22,10 +22,10 @@ Public Sub DirectoryInfoEnumerateFiles()
     Dim files As mscorlib.IEnumerable
     Set files = dirInfo.EnumerateFiles()
     
-    Dim varfile As Variant
-    For Each varfile In files
+    Dim varFile As Variant
+    For Each varFile In files
         Dim file As DotNetLib.FileInfo
-        Set file = varfile
+        Set file = varFile
         Debug.Print VBAString.Format("{0}", file.name)
     Next
 End Sub

@@ -1,4 +1,4 @@
-Attribute VB_Name = "DirectoryInfoConstructorExample"
+Attribute VB_Name = "DirInfoConstructorExample"
 '@Folder("Examples.System.IO.DirectoryInfo.Constructors")
 
 '@Author Mark Johnstone
