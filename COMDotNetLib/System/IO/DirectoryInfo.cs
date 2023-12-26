@@ -174,7 +174,7 @@ namespace DotNetLib.System.IO
 
         public DirectoryInfo[] GetDirectories(string searchPattern = "*", GIO.SearchOption searchOption = GIO.SearchOption.TopDirectoryOnly)
         {
-            return WrapDirectoryInfoArray(_directoryInfo.GetDirectories());
+            return WrapDirectoryInfoArray(_directoryInfo.GetDirectories(searchPattern,searchOption));
         }
 
         // Todo
