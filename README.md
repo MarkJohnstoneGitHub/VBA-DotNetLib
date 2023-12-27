@@ -40,6 +40,8 @@ Nov 16, 2023 Added [Directory](https://learn.microsoft.com/en-us/dotnet/api/syst
 
 Nov 23, 2023 Added [ASCIIEncoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.asciiencoding?view=netframework-4.8.1), [Encoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.encoding?view=netframework-4.8.1), [UnicodeEncoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.unicodeencoding?view=netframework-4.8.1), [UTF32Encoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.utf32encoding?view=netframework-4.8.1), [UTF7Encoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.utf7encoding?view=netframework-4.8.1), [UTF8Encoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.utf8encoding?view=netframework-4.8.1)
 
+Dec 27,2023 Added [RegionInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.regioninfo.-ctor?view=netframework-4.8.1)
+
  **Affected API due to VBA reserved words:**
 
  The API for the .Net class or VBA singletons for associated .Net classes may be required to be altered due to VBA reserved words. See [reserved-word-list](https://www.engram9.info/access-2007-vba/reserved-word-list.html).
