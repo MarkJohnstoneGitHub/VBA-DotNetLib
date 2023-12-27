@@ -409,9 +409,9 @@ namespace DotNetLib.System
             return new String(_string.PadRight(totalWidth));
         }
 
-        public String PadRight(int totalWidth, String paddingChar)
+        public String PadRight(int totalWidth, string paddingChar)
         {
-            return new String(_string.PadRight(totalWidth, paddingChar.WrappedString[0]));
+            return new String(_string.PadRight(totalWidth, paddingChar[0]));
         }
 
         public string PadRightBStr(int totalWidth)

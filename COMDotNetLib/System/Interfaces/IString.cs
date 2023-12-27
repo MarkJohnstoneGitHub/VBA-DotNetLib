@@ -237,7 +237,7 @@ namespace DotNetLib.System
         String PadRight(int totalWidth);
 
         [Description("Returns a new string that left-aligns the characters in this string by padding them on the right with a specified Unicode character, for a specified total length.")]
-        String PadRight(int totalWidth, String paddingChar);
+        String PadRight(int totalWidth, string paddingChar);
 
         [Description("Returns a new string that left-aligns the characters in this string by padding them with spaces on the right, for a specified total length.")]
         string PadRightBStr(int totalWidth);
