@@ -3,7 +3,7 @@ Attribute VB_Name = "CharIsSurrogatePairExample"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
-'@Version v1.0 December 27, 2023
+'@Version v1.0 December 28, 2023
 '@LastModified December 28, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
