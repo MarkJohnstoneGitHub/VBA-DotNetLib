@@ -43,18 +43,20 @@ End Sub
 '@Static
 '@Description("Initializes a new instance of the RegionInfo class based on the country/region associated with the specified culture identifier.")
 Public Function Create(ByVal culture As Long) As DotNetLib.RegionInfo
+Attribute Create.VB_Description = "Initializes a new instance of the RegionInfo class based on the country/region associated with the specified culture identifier."
    Set Create = this.RegionInfoSingleton.Create(culture)
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the RegionInfo class based on the country/region or specific culture, specified by name.")
-Public Function Create2(ByVal name As String) As DotNetLib.RegionInfo
-   Set Create2 = this.RegionInfoSingleton.Create2(name)
+Public Function Create2(ByVal Name As String) As DotNetLib.RegionInfo
+Attribute Create2.VB_Description = "Initializes a new instance of the RegionInfo class based on the country/region or specific culture, specified by name."
+   Set Create2 = this.RegionInfoSingleton.Create2(Name)
 End Function
 
 '@Static
 '@Description("Gets the RegionInfo that represents the country/region used by the current thread.")
 Public Property Get CurrentRegion() As DotNetLib.RegionInfo
+Attribute CurrentRegion.VB_Description = "Gets the RegionInfo that represents the country/region used by the current thread."
    Set CurrentRegion = this.RegionInfoSingleton.CurrentRegion()
 End Property
-

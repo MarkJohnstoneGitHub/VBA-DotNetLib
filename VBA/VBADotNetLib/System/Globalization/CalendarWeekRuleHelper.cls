@@ -24,6 +24,8 @@ Option Explicit
 '@DefaultMember
 '@Description("Converts the value of a CalendarWeekRule to string value.")
 Public Property Get ToString(ByVal value As mscorlib.CalendarWeekRule) As String
+Attribute ToString.VB_Description = "Converts the value of a CalendarWeekRule to string value."
+Attribute ToString.VB_UserMemId = 0
     Select Case value
         Case CalendarWeekRule_FirstDay: ToString = "FirstDay"
         Case CalendarWeekRule_FirstFourDayWeek: ToString = "FirstFourDayWeek"
