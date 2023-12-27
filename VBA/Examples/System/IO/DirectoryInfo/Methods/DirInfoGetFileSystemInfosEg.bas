@@ -4,7 +4,7 @@ Attribute VB_Name = "DirInfoGetFileSystemInfosEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 December 26, 2023
-'@LastModified December 26, 2023
+'@LastModified December 28, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -19,6 +19,9 @@ Private numDirectories As Long
 ' The following example counts the files and directories under the specified directory.
 ''
 Public Sub DirectoryInfoGetFileSystemInfosExample()
+    numFiles = 0
+    numDirectories = 0
+
     On Error GoTo ErrorHandler
     
     Dim pvtPath As String

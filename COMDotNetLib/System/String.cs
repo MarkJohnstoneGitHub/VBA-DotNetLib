@@ -389,7 +389,7 @@ namespace DotNetLib.System
             return new String(_string.PadLeft(totalWidth));
         }
 
-        public String PadLeft(int totalWidth, string paddingChar)
+        public String PadLeft(int totalWidth, string paddingChar = " ")
         {
             return new String(_string.PadLeft(totalWidth, paddingChar[0]));
         }
@@ -399,7 +399,7 @@ namespace DotNetLib.System
             return _string.PadLeft(totalWidth);
         }
 
-        public string PadLeftBStr(int totalWidth, string paddingChar)
+        public string PadLeftBStr(int totalWidth, string paddingChar = " ")
         {
             return _string.PadLeft(totalWidth, paddingChar[0]);
         }
@@ -409,7 +409,7 @@ namespace DotNetLib.System
             return new String(_string.PadRight(totalWidth));
         }
 
-        public String PadRight(int totalWidth, string paddingChar)
+        public String PadRight(int totalWidth, string paddingChar = " ")
         {
             return new String(_string.PadRight(totalWidth, paddingChar[0]));
         }
@@ -419,7 +419,7 @@ namespace DotNetLib.System
             return _string.PadRight(totalWidth);
         }
 
-        public string PadRightBStr(int totalWidth, string paddingChar)
+        public string PadRightBStr(int totalWidth, string paddingChar = " ")
         {
             return _string.PadRight(totalWidth, paddingChar[0]);
         }

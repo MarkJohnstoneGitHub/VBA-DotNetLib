@@ -127,7 +127,7 @@ namespace DotNetLib.System
         [Description("Reports the zero-based index of the first occurrence in this instance of any character in a specified array of Unicode characters. The search starts at a specified character position.")]
         int IndexOfAny(String anyOf, int startIndex);
 
-        [Description("\t\r\nReports the zero-based index of the first occurrence in this instance of any character in a specified array of Unicode characters. The search starts at a specified character position and examines a specified number of character positions.")]
+        [Description("Reports the zero-based index of the first occurrence in this instance of any character in a specified array of Unicode characters. The search starts at a specified character position and examines a specified number of character positions.")]
         int IndexOfAny(String anyOf, int startIndex, int count);
 
         [Description("Reports the zero-based index of the first occurrence in this instance of any character in a specified array of Unicode characters.")]
@@ -169,7 +169,6 @@ namespace DotNetLib.System
         [Description("Reports the zero-based index position of the last occurrence of a specified string within this instance. The search starts at a specified character position and proceeds backward toward the beginning of the string for the specified number of character positions. A parameter specifies the type of comparison to perform when searching for the specified string.")]
         int LastIndexOf(String value, int startIndex, int count, GSystem.StringComparison comparisonType);
 
-
         [Description("Reports the zero-based index position of the last occurrence of a specified string within this instance.")]
         int LastIndexOf(string value);
 
@@ -188,7 +187,6 @@ namespace DotNetLib.System
         [Description("Reports the zero-based index position of the last occurrence of a specified string within this instance. The search starts at a specified character position and proceeds backward toward the beginning of the string for the specified number of character positions. A parameter specifies the type of comparison to perform when searching for the specified string.")]
         int LastIndexOf(string value, int startIndex, int count, GSystem.StringComparison comparisonType);
 
-
         [Description("Reports the zero-based index position of the last occurrence in this instance of one or more characters specified in a Unicode string.")]
         int LastIndexOfAny(String anyOf);
 
@@ -198,7 +196,6 @@ namespace DotNetLib.System
         [Description("Reports the zero-based index position of the last occurrence in this instance of one or more characters specified in a Unicode string. The search starts at a specified character position and proceeds backward toward the beginning of the string.")]
         int LastIndexOfAny(String anyOf, int startIndex, int count);
 
-        
         [Description("Reports the zero-based index position of the last occurrence in this instance of one or more characters specified in a Unicode string.")]
         int LastIndexOfAny(string anyOf);
 
@@ -221,29 +218,29 @@ namespace DotNetLib.System
         [Description("Returns a new string whose textual value is the same as this string, but whose binary representation is in Unicode normalization form C.")]
         string NormalizeBStr(GText.NormalizationForm normalizationForm = GText.NormalizationForm.FormC);
 
-        [Description("Returns a new string that right-aligns the characters in this instance by padding them with spaces on the left, for a specified total length.")]
-        String PadLeft(int totalWidth);
+        //[Description("Returns a new string that right-aligns the characters in this instance by padding them with spaces on the left, for a specified total length.")]
+        //String PadLeft(int totalWidth);
 
-        [Description("Returns a new string that right-aligns the characters in this instance by padding them on the left with a specified Unicode character, for a specified total length.")]
-        String PadLeft(int totalWidth, string paddingChar);
+        [Description("Returns a new string that right-aligns the characters in this instance by padding them on the left with spaces or a specified Unicode character, for a specified total length.")]
+        String PadLeft(int totalWidth, string paddingChar = " ");
 
-        [Description("Returns a new string that right-aligns the characters in this instance by padding them with spaces on the left, for a specified total length.")]
-        string PadLeftBStr(int totalWidth);
+        //[Description("Returns a new string that right-aligns the characters in this instance by padding them with spaces on the left, for a specified total length.")]
+        //string PadLeftBStr(int totalWidth);
 
-        [Description("Returns a new string that right-aligns the characters in this instance by padding them on the left with a specified Unicode character, for a specified total length.")]
-        string PadLeftBStr(int totalWidth, string paddingChar);
+        [Description("Returns a new string that right-aligns the characters in this instance by padding them on the left with spaces or a specified Unicode character, for a specified total length.")]
+        string PadLeftBStr(int totalWidth, string paddingChar = " ");
 
-        [Description("Returns a new string that left-aligns the characters in this string by padding them with spaces on the right, for a specified total length.")]
-        String PadRight(int totalWidth);
+        //[Description("Returns a new string that left-aligns the characters in this string by padding them with spaces on the right, for a specified total length.")]
+        //String PadRight(int totalWidth);
 
-        [Description("Returns a new string that left-aligns the characters in this string by padding them on the right with a specified Unicode character, for a specified total length.")]
-        String PadRight(int totalWidth, string paddingChar);
+        [Description("Returns a new string that left-aligns the characters in this string by padding them on the right with spaces or specified Unicode character, for a specified total length.")]
+        String PadRight(int totalWidth, string paddingChar = " ");
 
-        [Description("Returns a new string that left-aligns the characters in this string by padding them with spaces on the right, for a specified total length.")]
-        string PadRightBStr(int totalWidth);
+        //[Description("Returns a new string that left-aligns the characters in this string by padding them with spaces on the right, for a specified total length.")]
+        //string PadRightBStr(int totalWidth);
 
-        [Description("Returns a new string that left-aligns the characters in this string by padding them on the right with a specified Unicode character, for a specified total length.")]
-        string PadRightBStr(int totalWidth, string paddingChar);
+        [Description("Returns a new string that left-aligns the characters in this string by padding them on the right with spaces or a specified Unicode character, for a specified total length.")]
+        string PadRightBStr(int totalWidth, string paddingChar = " ");
 
         [Description("Returns a new string in which all the characters in the current instance, beginning at a specified position and continuing through the last position, have been deleted.")]
         String Remove(int startIndex);

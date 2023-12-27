@@ -4,7 +4,7 @@ Attribute VB_Name = "CalendarAlgorithmTypeExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 December 27, 2023
-'@LastModified December 27, 2023
+'@LastModified December 28, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -33,7 +33,7 @@ End Sub
 
 Private Sub Display(ByVal cal As DotNetLib.Calendar)
     Dim pvtName As DotNetLib.String
-    Set pvtName = Strings.Copy(cal.ToString()).PadRight_2(50, ".")
+    Set pvtName = Strings.Copy(cal.ToString()).PadRight(50, ".")
     Debug.Print VBAString.Format("{0} {1}", pvtName, CalendarAlgorithmTypeHelper.ToString(cal.AlgorithmType))
 End Sub
 
