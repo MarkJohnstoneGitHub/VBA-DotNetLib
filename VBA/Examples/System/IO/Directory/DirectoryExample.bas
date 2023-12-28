@@ -53,7 +53,7 @@ Public Sub DirectoryExample2()
     Dim varRetrievedFile As Variant
     For Each varRetrievedFile In txtFiles
         Dim fileLines As mscorlib.IEnumerable
-        Set fileLines = file.ReadLines(varRetrievedFile)
+        Set fileLines = File.ReadLines(varRetrievedFile)
         Dim i As Long
         i = 1
         Dim varfileLine As Variant

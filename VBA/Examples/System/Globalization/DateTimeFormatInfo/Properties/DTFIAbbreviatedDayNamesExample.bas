@@ -28,9 +28,9 @@ Public Sub DateTimeFormatInfoAbbreviatedDayNames()
     
     Dim ctr As Long
     For ctr = 0 To 6
-        Dim output As String
-        output = dat.AddDays(ctr).ToString2("ddd MMM dd, yyyy", ci)
-        Debug.Print output
+        Dim Output As String
+        Output = dat.AddDays(ctr).ToString2("ddd MMM dd, yyyy", ci)
+        Debug.Print Output
     Next
 End Sub
 

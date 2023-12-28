@@ -27,28 +27,28 @@ Public Sub DirectoryInfoEnumerateFilesExample2()
     For Each varFileInfo In di.EnumerateFiles()
         Dim fi As DotNetLib.FileInfo
         Set fi = varFileInfo
-        Debug.Print fi.name
+        Debug.Print fi.Name
     Next
     Debug.Print
     
     Debug.Print "Search pattern *2* returns:"
     For Each varFileInfo In di.EnumerateFiles("*2*")
         Set fi = varFileInfo
-        Debug.Print fi.name
+        Debug.Print fi.Name
     Next
     Debug.Print
 
     Debug.Print "Search pattern test?.txt returns:"
     For Each varFileInfo In di.EnumerateFiles("test?.txt")
         Set fi = varFileInfo
-        Debug.Print fi.name
+        Debug.Print fi.Name
     Next
     Debug.Print
 
     Debug.Print "Search pattern AllDirectories returns:"
     For Each varFileInfo In di.EnumerateFiles("*", SearchOption.SearchOption_AllDirectories)
         Set fi = varFileInfo
-        Debug.Print fi.name
+        Debug.Print fi.Name
     Next
 End Sub
 

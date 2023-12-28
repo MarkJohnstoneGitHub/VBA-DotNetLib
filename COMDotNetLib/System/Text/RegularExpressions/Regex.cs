@@ -225,9 +225,9 @@ namespace DotNetLib.System.Text.RegularExpressions
             return GRegularExpressions.Regex.Replace(input, pattern, evaluator, (GRegularExpressions.RegexOptions)options, matchTimeout.WrappedTimeSpan);
         }
 
-        //public string[] Split(string input)
+        //public string[] Split2(string input)
         //{
-        //    return _regex.Split(input);
+        //    return _regex.Split2(input);
         //}
 
         public string[] Split(string input, int count = 0)

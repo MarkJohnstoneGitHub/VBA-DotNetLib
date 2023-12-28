@@ -21,7 +21,7 @@ Public Sub DirectoryExistsExample()
     Call ArrayEx.CreateInitialize1D(args, "C:\Current")
     Dim varPath As Variant
     For Each varPath In args
-        If file.Exists(varPath) Then
+        If File.Exists(varPath) Then
             ' This path is a file
             Call ProcessFile(varPath)
         ElseIf (Directory.Exists(varPath)) Then

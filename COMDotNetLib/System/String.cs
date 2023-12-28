@@ -70,14 +70,16 @@ namespace DotNetLib.System
             return _string.Contains(value.WrappedString);
         }
 
-        public bool Contains(string value)
+        public bool Contains2(string value)
         {
             return _string.Contains(value);
         }
 
+        //Todo Check implementation
         public object Clone()
         {
-            return new String((string)_string.Clone());
+            return this;
+            //return new String((string)_string.Clone());
         }
 
         public int CompareTo(object obj)
@@ -89,9 +91,14 @@ namespace DotNetLib.System
         {
             return _string.CompareTo(strB.WrappedObject);
         }
-        public int CompareTo(string strB)
+        public int CompareTo2(string strB)
         {
             return _string.CompareTo(strB);
+        }
+
+        public int CompareTo3(object obj)
+        {
+            return _string.CompareTo(obj.Unwrap());
         }
 
         public bool EndsWith(String value)
@@ -99,27 +106,27 @@ namespace DotNetLib.System
             return _string.EndsWith(value.WrappedString);
         }
 
-        public bool EndsWith(String value, GSystem.StringComparison comparisonType)
+        public bool EndsWith2(String value, GSystem.StringComparison comparisonType)
         {
             return _string.EndsWith(value.WrappedString, comparisonType);
         }
 
-        public bool EndsWith(String value, bool ignoreCase, CultureInfo culture)
+        public bool EndsWith3(String value, bool ignoreCase, CultureInfo culture)
         {
             return _string.EndsWith(value.WrappedString, ignoreCase, culture.WrappedCultureInfo);
         }
 
-        public bool EndsWith(string value)
+        public bool EndsWith4(string value)
         {
             return _string.EndsWith(value);
         }
 
-        public bool EndsWith(string value, GSystem.StringComparison comparisonType)
+        public bool EndsWith5(string value, GSystem.StringComparison comparisonType)
         {
             return _string.EndsWith(value, comparisonType);
         }
 
-        public bool EndsWith(string value, bool ignoreCase, CultureInfo culture)
+        public bool EndsWith6(string value, bool ignoreCase, CultureInfo culture)
         {
             return _string.EndsWith(value, ignoreCase, culture.WrappedCultureInfo);
         }
@@ -134,17 +141,17 @@ namespace DotNetLib.System
             return _string.Equals(value.WrappedString);
         }
 
-        public bool Equals(String value, GSystem.StringComparison comparisonType)
+        public bool Equals2(String value, GSystem.StringComparison comparisonType)
         {
             return _string.Equals(value.WrappedString, comparisonType);
         }
 
-        public bool Equals(string value)
+        public bool Equals3(string value)
         {
             return _string.Equals(value);
         }
 
-        public bool Equals(string value, GSystem.StringComparison comparisonType)
+        public bool Equals4(string value, GSystem.StringComparison comparisonType)
         {
             return _string.Equals(value, comparisonType);
         }
@@ -169,57 +176,57 @@ namespace DotNetLib.System
             return _string.IndexOf(value.WrappedString);
         }
 
-        public int IndexOf(String value, GSystem.StringComparison comparisonType)
+        public int IndexOf2(String value, GSystem.StringComparison comparisonType)
         {
             return _string.IndexOf(value.WrappedString, comparisonType);
         }
 
-        public int IndexOf(String value, int startIndex)
+        public int IndexOf3(String value, int startIndex)
         {
             return _string.IndexOf(value.WrappedString, startIndex);
         }
 
-        public int IndexOf(String value, int startIndex, StringComparison comparisonType)
+        public int IndexOf4(String value, int startIndex, StringComparison comparisonType)
         {
             return _string.IndexOf(value.WrappedString, startIndex, comparisonType);
         }
 
-        public int IndexOf(String value, int startIndex, int count)
+        public int IndexOf5(String value, int startIndex, int count)
         {
             return _string.IndexOf(value.WrappedString, startIndex, count);
         }
 
-        public int IndexOf(String value, int startIndex, int count, GSystem.StringComparison comparisonType)
+        public int IndexOf6(String value, int startIndex, int count, GSystem.StringComparison comparisonType)
         {
             return _string.IndexOf(value.WrappedString, startIndex, count, comparisonType);
         }
 
-        public int IndexOf(string value)
+        public int IndexOf7(string value)
         {
             return _string.IndexOf(value);
         }
 
-        public int IndexOf(string value, GSystem.StringComparison comparisonType)
+        public int IndexOf8(string value, GSystem.StringComparison comparisonType)
         {
             return _string.IndexOf(value, comparisonType);
         }
 
-        public int IndexOf(string value, int startIndex)
+        public int IndexOf9(string value, int startIndex)
         {
             return _string.IndexOf(value, startIndex);
         }
 
-        public int IndexOf(string value, int startIndex, StringComparison comparisonType)
+        public int IndexOf10(string value, int startIndex, StringComparison comparisonType)
         {
             return _string.IndexOf(value, startIndex, comparisonType);
         }
 
-        public int IndexOf(string value, int startIndex, int count)
+        public int IndexOf11(string value, int startIndex, int count)
         {
             return _string.IndexOf(value, startIndex, count);
         }
 
-        public int IndexOf(string value, int startIndex, int count, GSystem.StringComparison comparisonType)
+        public int IndexOf12(string value, int startIndex, int count, GSystem.StringComparison comparisonType)
         {
             return _string.IndexOf(value, startIndex, count, comparisonType);
         }
@@ -229,27 +236,27 @@ namespace DotNetLib.System
             return _string.IndexOfAny(anyOf.WrappedString.ToCharArray());
         }
 
-        public int IndexOfAny(String anyOf, int startIndex)
+        public int IndexOfAny2(String anyOf, int startIndex)
         {
             return _string.IndexOfAny(anyOf.WrappedString.ToCharArray(), startIndex);
         }
 
-        public int IndexOfAny(String anyOf, int startIndex, int count)
+        public int IndexOfAny3(String anyOf, int startIndex, int count)
         {
             return _string.IndexOfAny(anyOf.WrappedString.ToCharArray(), startIndex, count);
         }
 
-        public int IndexOfAny(string anyOf)
+        public int IndexOfAny4(string anyOf)
         {
             return _string.IndexOfAny(anyOf.ToCharArray());
         }
 
-        public int IndexOfAny(string anyOf, int startIndex)
+        public int IndexOfAny5(string anyOf, int startIndex)
         {
             return _string.IndexOfAny(anyOf.ToCharArray(), startIndex);
         }
 
-        public int IndexOfAny(string anyOf, int startIndex, int count)
+        public int IndexOfAny6(string anyOf, int startIndex, int count)
         {
             return _string.IndexOfAny(anyOf.ToCharArray(), startIndex, count);
         }
@@ -259,7 +266,7 @@ namespace DotNetLib.System
             return new String(_string.Insert(startIndex, value.WrappedString));
         }
 
-        public String Insert(int startIndex, string value)
+        public String Insert2(int startIndex, string value)
         {
             return new String(_string.Insert(startIndex, value));
         }
@@ -279,57 +286,57 @@ namespace DotNetLib.System
             return _string.LastIndexOf(value.WrappedString);
         }
 
-        public int LastIndexOf(String value, int startIndex)
+        public int LastIndexOf2(String value, int startIndex)
         {
             return _string.LastIndexOf(value.WrappedString, startIndex);
         }
 
-        public int LastIndexOf(String value, int startIndex, int count)
+        public int LastIndexOf3(String value, int startIndex, int count)
         {
             return _string.LastIndexOf(value.WrappedString, startIndex, count);
         }
 
-        public int LastIndexOf(String value, GSystem.StringComparison comparisonType)
+        public int LastIndexOf4(String value, GSystem.StringComparison comparisonType)
         {
             return _string.LastIndexOf(value.WrappedString, comparisonType);
         }
 
-        public int LastIndexOf(String value, int startIndex, StringComparison comparisonType)
+        public int LastIndexOf5(String value, int startIndex, StringComparison comparisonType)
         {
             return _string.LastIndexOf(value.WrappedString, startIndex, comparisonType);
         }
 
-        public int LastIndexOf(String value, int startIndex, int count, GSystem.StringComparison comparisonType)
+        public int LastIndexOf6(String value, int startIndex, int count, GSystem.StringComparison comparisonType)
         {
             return _string.LastIndexOf(value.WrappedString, startIndex, count, comparisonType);
         }
 
-        public int LastIndexOf(string value)
+        public int LastIndexOf7(string value)
         {
             return _string.LastIndexOf(value);
         }
 
-        public int LastIndexOf(string value, int startIndex)
+        public int LastIndexOf8(string value, int startIndex)
         {
             return _string.LastIndexOf(value, startIndex);
         }
 
-        public int LastIndexOf(string value, int startIndex, int count)
+        public int LastIndexOf9(string value, int startIndex, int count)
         {
             return _string.LastIndexOf(value, startIndex, count);
         }
 
-        public int LastIndexOf(string value, GSystem.StringComparison comparisonType)
+        public int LastIndexOf10(string value, GSystem.StringComparison comparisonType)
         {
             return _string.LastIndexOf(value, comparisonType);
         }
 
-        public int LastIndexOf(string value, int startIndex, StringComparison comparisonType)
+        public int LastIndexOf11(string value, int startIndex, StringComparison comparisonType)
         {
             return _string.LastIndexOf(value, startIndex, comparisonType);
         }
 
-        public int LastIndexOf(string value, int startIndex, int count, GSystem.StringComparison comparisonType)
+        public int LastIndexOf12(string value, int startIndex, int count, GSystem.StringComparison comparisonType)
         {
             return _string.LastIndexOf(value, startIndex, count, comparisonType);
         }
@@ -339,27 +346,27 @@ namespace DotNetLib.System
             return _string.LastIndexOfAny(anyOf.WrappedString.ToCharArray());
         }
 
-        public int LastIndexOfAny(String anyOf, int startIndex)
+        public int LastIndexOfAny2(String anyOf, int startIndex)
         {
             return _string.LastIndexOfAny(anyOf.WrappedString.ToCharArray(), startIndex);
         }
 
-        public int LastIndexOfAny(String anyOf, int startIndex, int count)
+        public int LastIndexOfAny3(String anyOf, int startIndex, int count)
         {
             return _string.LastIndexOfAny(anyOf.WrappedString.ToCharArray(), startIndex, count);
         }
 
-        public int LastIndexOfAny(string anyOf)
+        public int LastIndexOfAny4(string anyOf)
         {
             return _string.LastIndexOfAny(anyOf.ToCharArray());
         }
 
-        public int LastIndexOfAny(string anyOf, int startIndex)
+        public int LastIndexOfAny5(string anyOf, int startIndex)
         {
             return _string.LastIndexOfAny(anyOf.ToCharArray(), startIndex);
         }
 
-        public int LastIndexOfAny(string anyOf, int startIndex, int count)
+        public int LastIndexOfAny6(string anyOf, int startIndex, int count)
         {
             return _string.LastIndexOfAny(anyOf.ToCharArray(), startIndex, count);
         }
@@ -429,7 +436,7 @@ namespace DotNetLib.System
             return new String(_string.Remove(startIndex));
         }
 
-        public String Remove(int startIndex, int count)
+        public String Remove2(int startIndex, int count)
         {
             return new String(_string.Remove(startIndex, count));
         }
@@ -439,7 +446,7 @@ namespace DotNetLib.System
             return _string.Remove(startIndex);
         }
 
-        public string RemoveBStr(int startIndex, int count)
+        public string RemoveBStr2(int startIndex, int count)
         {
             return _string.Remove(startIndex, count);
         }
@@ -458,27 +465,27 @@ namespace DotNetLib.System
             return _string.Split(separator.ToCharArray());
         }
 
-        public string[] Split(string separator, StringSplitOptions options)
+        public string[] Split(string separator, StringSplitOptions options = StringSplitOptions.None)
         {
             return _string.Split(separator.ToCharArray(), (GSystem.StringSplitOptions)options);
         }
 
-        //public string[] Split(string separator, int count)
+        //public string[] Split2(string separator, int count)
         //{
-        //    return _string.Split(separator.ToCharArray(), count);
+        //    return _string.Split2(separator.ToCharArray(), count);
         //}
 
-        public string[] Split(string separator, int count, StringSplitOptions options = StringSplitOptions.None)
+        public string[] Split2(string separator, int count, StringSplitOptions options = StringSplitOptions.None)
         {
             return _string.Split(separator.ToCharArray(), count, (GSystem.StringSplitOptions)options);
         }
 
-        public string[] Split(string[] separator, StringSplitOptions options)
+        public string[] Split3(string[] separator, StringSplitOptions options)
         {
             return _string.Split(separator, (GSystem.StringSplitOptions)options);
         }
 
-        public string[] Split(string[] separator, int count, StringSplitOptions options)
+        public string[] Split4(string[] separator, int count, StringSplitOptions options)
         {
             return _string.Split(separator, count, (GSystem.StringSplitOptions)options);
         }
@@ -488,22 +495,22 @@ namespace DotNetLib.System
             return new Array(_string.Split(separator.ToCharArray()));
         }
 
-        public Array SplitStringArray(string separator, StringSplitOptions options)
+        public Array SplitStringArray2(string separator, StringSplitOptions options)
         {
             return new Array(_string.Split(separator.ToCharArray(), (GSystem.StringSplitOptions)options));
         }
 
-        public Array SplitStringArray(string separator, int count, StringSplitOptions options = StringSplitOptions.None)
+        public Array SplitStringArray3(string separator, int count, StringSplitOptions options = StringSplitOptions.None)
         {
             return new Array(_string.Split(separator.ToCharArray(), count, (GSystem.StringSplitOptions)options));
         }
 
-        public Array SplitStringArray(string[] separator, StringSplitOptions options)
+        public Array SplitStringArray4(string[] separator, StringSplitOptions options)
         {
             return new Array(_string.Split(separator, (GSystem.StringSplitOptions)options));
         }
 
-        public Array SplitStringArray(string[] separator, int count, StringSplitOptions options)
+        public Array SplitStringArray5(string[] separator, int count, StringSplitOptions options)
         {
             return new Array(_string.Split(separator, count, (GSystem.StringSplitOptions)options));
         }
@@ -513,28 +520,27 @@ namespace DotNetLib.System
             return _string.StartsWith(value.WrappedString);
         }
 
-        public bool StartsWith(String value, GSystem.StringComparison comparisonType)
+        public bool StartsWith2(String value, GSystem.StringComparison comparisonType)
         {
             return _string.StartsWith(value.WrappedString, comparisonType);
         }
 
-        public bool StartsWith(String value, bool ignoreCase, CultureInfo culture)
+        public bool StartsWith3(String value, bool ignoreCase, CultureInfo culture)
         {
             return _string.StartsWith(value.WrappedString, ignoreCase, culture.WrappedCultureInfo);
         }
 
-
-        public bool StartsWith(string value)
+        public bool StartsWith4(string value)
         {
             return _string.StartsWith(value);
         }
 
-        public bool StartsWith(string value, GSystem.StringComparison comparisonType)
+        public bool StartsWith5(string value, GSystem.StringComparison comparisonType)
         {
             return _string.StartsWith(value, comparisonType);
         }
 
-        public bool StartsWith(string value, bool ignoreCase, CultureInfo culture)
+        public bool StartsWith6(string value, bool ignoreCase, CultureInfo culture)
         {
             return _string.StartsWith(value, ignoreCase, culture.WrappedCultureInfo);
         }
@@ -544,7 +550,7 @@ namespace DotNetLib.System
             return new String(_string.Substring(startIndex));
         }
 
-        public String Substring(int startIndex, int length)
+        public String Substring2(int startIndex, int length)
         {
             return new String(_string.Substring(startIndex, length));
         }
@@ -554,7 +560,7 @@ namespace DotNetLib.System
             return _string.Substring(startIndex);
         }
 
-        public string SubstringBStr(int startIndex, int length)
+        public string SubstringBStr2(int startIndex, int length)
         {
             return _string.Substring(startIndex, length);
         }
@@ -564,7 +570,7 @@ namespace DotNetLib.System
             return new String(_string.ToLower());
         }
 
-        public String ToLower(CultureInfo culture)
+        public String ToLower2(CultureInfo culture)
         {
             return new String(_string.ToLower(culture.WrappedCultureInfo));
         }
@@ -574,7 +580,7 @@ namespace DotNetLib.System
             return _string.ToLower();
         }
 
-        public string ToLowerBStr(CultureInfo culture)
+        public string ToLowerBStr2(CultureInfo culture)
         {
             return _string.ToLower(culture.WrappedCultureInfo);
         }
@@ -599,18 +605,17 @@ namespace DotNetLib.System
             return new String(_string.ToUpper());
         }
 
-        public String ToUpper(CultureInfo culture)
+        public String ToUpper2(CultureInfo culture)
         {
             return new String(_string.ToUpper(culture.WrappedCultureInfo));
         }
-
 
         public string ToUpperBStr()
         {
             return _string.ToUpper();
         }
 
-        public string ToUpperBStr(CultureInfo culture)
+        public string ToUpperBStr2(CultureInfo culture)
         {
             return _string.ToUpper(culture.WrappedCultureInfo);
         }
@@ -629,12 +634,12 @@ namespace DotNetLib.System
         {
             return new String(_string.Trim());
         }
-        public String Trim(String trimChars)
+        public String Trim2(String trimChars)
         {
             return new String(_string.Trim(trimChars.WrappedString.ToCharArray()));
         }
 
-        public String Trim(string trimChars)
+        public String Trim3(string trimChars)
         {
             return new String(_string.Trim(trimChars.ToCharArray()));
         }
@@ -644,7 +649,7 @@ namespace DotNetLib.System
             return _string.Trim(); 
         }
 
-        public string TrimBStr(string trimChars)
+        public string TrimBStr2(string trimChars)
         {
             return _string.Trim(trimChars.ToCharArray());
         }
@@ -654,7 +659,7 @@ namespace DotNetLib.System
             return new String(_string.TrimEnd(trimChars.WrappedString.ToCharArray()));
         }
 
-        public String TrimEnd(string trimChars)
+        public String TrimEnd2(string trimChars)
         { 
             return new String(_string.TrimEnd(trimChars.ToCharArray()));
         }
@@ -669,7 +674,7 @@ namespace DotNetLib.System
             return new String(_string.TrimStart(trimChars.WrappedString.ToCharArray()));
         }
 
-        public String TrimStart(string trimChars)
+        public String TrimStart2(string trimChars)
         {
             return new String(_string.TrimStart(trimChars.ToCharArray()));
         }

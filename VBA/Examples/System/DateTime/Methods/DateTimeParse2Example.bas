@@ -34,7 +34,7 @@ Public Sub DateTimeParse2()
     For Each varCulture In cultures
         Set culture = varCulture
         Dim dateValue As DotNetLib.DateTime
-        Debug.Print "Attempted conversions using "; culture.name; " culture."
+        Debug.Print "Attempted conversions using "; culture.Name; " culture."
 
         Dim dateString As Variant
         For Each dateString In dateStrings
@@ -43,7 +43,7 @@ Public Sub DateTimeParse2()
             If Try Then
                 Debug.Print "   Converted '"; dateString; "' to "; dateValue.ToString2("f", culture); "."
             ElseIf Catch(FormatException) Then
-                Debug.Print "   Unable to convert '"; dateString; "' for culture "; culture.name
+                Debug.Print "   Unable to convert '"; dateString; "' for culture "; culture.Name
             End If
             On Error GoTo 0 'reset error handling
         Next

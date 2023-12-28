@@ -8,7 +8,7 @@ namespace DotNetLib.System
 
     //
     // Summary:
-    //     Specifies whether applicable Overload:System.String.Split method overloads include
+    //     Specifies whether applicable Overload:System.String.Split2 method overloads include
     //     or omit empty substrings from the return value.
     [Flags]
     public enum StringSplitOptions

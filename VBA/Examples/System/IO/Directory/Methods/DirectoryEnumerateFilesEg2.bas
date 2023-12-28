@@ -4,7 +4,7 @@ Attribute VB_Name = "DirectoryEnumerateFilesEg2"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 November 14, 2023
-'@LastModified November 16, 2023
+'@LastModified December 28, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -15,7 +15,7 @@ Option Explicit
 ''
 ' The following example enumerates the files in the specified directory,
 ' reads each line of the file, and displays the line if it contains the
-' string "DotNetLib.Array".
+' string "DotNetLib.String".
 ''
 Public Sub DirectoryEnumerateFilesExample2()
     On Error GoTo ErrorHandler
@@ -28,7 +28,7 @@ Public Sub DirectoryEnumerateFilesExample2()
         Set currentFile = Strings.Create(varCurrentFile)
         Dim fileName As String
         Dim txtFile() As String
-        txtFile = file.ReadAllLines(varCurrentFile)
+        txtFile = File.ReadAllLines(varCurrentFile)
         Dim varLine As Variant
         Dim lineCounter As Long
         lineCounter = 0
@@ -36,8 +36,8 @@ Public Sub DirectoryEnumerateFilesExample2()
             lineCounter = lineCounter + 1
             Dim line As DotNetLib.String
             Set line = Strings.Create(varLine)
-            If line.Contains_2("DotNetLib.Array") Then
-                Debug.Print varCurrentFile & " contains DotNetLib.Array at line " & lineCounter
+            If line.Contains2("DotNetLib.String") Then
+                Debug.Print varCurrentFile & " contains DotNetLib.String at line " & lineCounter
             End If
         Next
     Next

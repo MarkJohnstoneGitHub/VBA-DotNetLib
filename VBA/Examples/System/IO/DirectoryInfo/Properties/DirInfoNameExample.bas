@@ -19,7 +19,7 @@ Public Sub DirectoryInfoNameExample()
     Dim pvtDir  As DotNetLib.DirectoryInfo
     Set pvtDir = DirectoryInfo.Create(".")
     Dim dirName As String
-    dirName = pvtDir.name
+    dirName = pvtDir.Name
     Debug.Print VBAString.Format("DirectoryInfo name is {0}.", dirName)
 End Sub
 

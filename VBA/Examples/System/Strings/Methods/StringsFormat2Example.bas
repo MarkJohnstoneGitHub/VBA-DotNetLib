@@ -26,10 +26,10 @@ Public Sub StringsFormat2()
     For Each cultureName In cultureNames
         Dim culture As DotNetLib.CultureInfo
         Set culture = CultureInfo.CreateFromName(cultureName)
-        Dim output As String
-        output = VBAString.Format2(culture, "{0,-11} {1,-35:D} {2:N}", _
-                                culture.name, dateToDisplay, value)
-        Debug.Print output
+        Dim Output As String
+        Output = VBAString.Format2(culture, "{0,-11} {1,-35:D} {2:N}", _
+                                culture.Name, dateToDisplay, value)
+        Debug.Print Output
     Next
 End Sub
 

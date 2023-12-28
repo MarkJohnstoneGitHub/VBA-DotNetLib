@@ -71,7 +71,7 @@ namespace DotNetLib.System.Text.RegularExpressions
         string Replace2(string input, string replacement, int count, int startat);
 
         //[Description("Splits an input string into an array of substrings at the positions defined by a regular expression pattern specified in the Regex constructor.")]
-        //string[] Split(string input);
+        //string[] Split2(string input);
 
         [Description("Splits an input string a specified maximum number of times into an array of substrings, at the positions defined by a regular expression specified in the Regex constructor.")]
         string[] Split(string input, int count = 0);

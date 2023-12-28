@@ -37,7 +37,7 @@ Public Sub TimeSpanTryParse2()
         Set culture = varCulture
         header = header + IIf(culture.Equals(CultureInfo.InvariantCulture), _
                             VBAString.Format("{0,20}", "Invariant"), _
-                            VBAString.Format("{0,20}", culture.name))
+                            VBAString.Format("{0,20}", culture.Name))
     Next
     Debug.Print header
     Debug.Print

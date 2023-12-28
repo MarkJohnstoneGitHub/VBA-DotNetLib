@@ -23,7 +23,7 @@ Public Sub DirectoryDelete2Example()
     On Error GoTo ErrorHandler
     Call Directory.CreateDirectory(subPath)
     Dim writer As DotNetLib.StreamWriter
-    Set writer = file.createText(subPath + "\example.txt")
+    Set writer = File.createText(subPath + "\example.txt")
     Call writer.WriteLine2("content added")
     Call writer.Dispose
     Call Directory.Delete2(topPath, True)

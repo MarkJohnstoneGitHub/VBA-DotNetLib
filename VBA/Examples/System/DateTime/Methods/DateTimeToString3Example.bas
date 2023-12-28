@@ -32,10 +32,10 @@ Attribute DateTimeToString3.VB_Description = "The following example displays the
         Set culture = varCulture
         Dim cultureName As String
         
-        If culture.name = vbNullString Then
+        If culture.Name = vbNullString Then
             cultureName = culture.NativeName
         Else
-            cultureName = culture.name
+            cultureName = culture.Name
         End If
         Debug.Print "In "; cultureName; ", "; thisDate.ToString3(culture)
     Next

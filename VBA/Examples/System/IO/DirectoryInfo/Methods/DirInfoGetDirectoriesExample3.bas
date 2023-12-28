@@ -46,6 +46,6 @@ Public Sub DirectoryInfoGetDirectoriesExample3()
     For Each varFile In pvtFiles
         Dim pvtFile As DotNetLib.FileInfo
         Set pvtFile = varFile
-        Debug.Print VBAString.Format("{0,-25} {1,25}", pvtFile.name, pvtFile.lastWriteTime)
+        Debug.Print VBAString.Format("{0,-25} {1,25}", pvtFile.Name, pvtFile.lastWriteTime)
     Next
 End Sub

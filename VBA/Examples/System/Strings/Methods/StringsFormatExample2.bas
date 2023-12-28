@@ -37,13 +37,13 @@ Public Sub StringsFormatEg2()
         pvtYears = interval.TotalDays / 365
         
         ' See if adding the number of years exceeds dateValue.
-        Dim output As String
+        Dim Output As String
         If (DateTime.LessThanOrEqual(birthDate.AddYears(pvtYears), dateValue)) Then
-            output = VBAString.Format("You are now {0} years old.", pvtYears)
-            Debug.Print output
+            Output = VBAString.Format("You are now {0} years old.", pvtYears)
+            Debug.Print Output
         Else
-            output = VBAString.Format("You are now {0} years old.", pvtYears - 1)
-            Debug.Print output
+            Output = VBAString.Format("You are now {0} years old.", pvtYears - 1)
+            Debug.Print Output
         End If
     Next
 End Sub

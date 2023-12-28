@@ -23,16 +23,16 @@ Public Sub FileAppendAllTextExample()
     pvtPath = "c:\temp\MyTest.txt"
     
     ' This text is added only once to the file.
-    If (Not file.Exists(pvtPath)) Then
+    If (Not File.Exists(pvtPath)) Then
         ' Create a file to write to.
         Dim createText As String
         createText = "Hello and Welcome" + Environment.NewLine
-        Call file.WriteAllText(pvtPath, createText)
+        Call File.WriteAllText(pvtPath, createText)
     End If
     
     ' This text is always added, making the file longer over time
     ' if it is not deleted.
     Dim AppendText As String
     AppendText = "This is extra text" + Environment.NewLine
-    Call file.AppendAllText(pvtPath, AppendText)
+    Call File.AppendAllText(pvtPath, AppendText)
 End Sub
