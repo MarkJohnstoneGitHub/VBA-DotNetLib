@@ -7,6 +7,7 @@ using DotNetLib.Extensions;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using DotNetLib.System.Globalization;
+using System.Data.SqlTypes;
 
 namespace DotNetLib.System
 {
@@ -65,10 +66,10 @@ namespace DotNetLib.System
 
         // Methods
 
-        public bool Contains(String value)
-        {
-            return _string.Contains(value.WrappedString);
-        }
+        //public bool Contains(String value)
+        //{
+        //    return _string.Contains(value.WrappedString);
+        //}
 
         public bool Contains(String value, StringComparison comparisonType = StringComparison.Ordinal)
         {
