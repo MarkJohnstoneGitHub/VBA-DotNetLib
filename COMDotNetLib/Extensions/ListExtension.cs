@@ -4,9 +4,11 @@ using GCollections = global::System.Collections;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 namespace DotNetLib.Extensions
 {
+    [ComVisible(false)]
     public static class ListExtension
     {
         static List<T> CreateFromType<T>(T obj)

@@ -238,7 +238,7 @@
     <Compile Include="System\Globalization\Calendar\Interfaces\IJapaneseCalendar.cs" />
     <Compile Include="System\Globalization\Calendar\Interfaces\IPersianCalendar.cs" />
     <Compile Include="System\Globalization\Calendar\Singletons\IPersianCalendarSingleton.cs" />
-    <Compile Include="System\Globalization\Calendar\Singletons\ICalendarSingleton.cs" />
+    <Compile Include="System\Globalization\Calendar\Interfaces\ICalendarSingleton.cs" />
     <Compile Include="System\Globalization\Calendar\Interfaces\IUmAlQuraCalendar .cs" />
     <Compile Include="System\Globalization\Calendar\Singletons\IUmAlQuraCalendarSingleton.cs" />
     <Compile Include="System\Globalization\Calendar\Interfaces\IThaiBuddhistCalendar.cs" />

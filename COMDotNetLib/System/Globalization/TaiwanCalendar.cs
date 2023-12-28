@@ -12,8 +12,8 @@ namespace DotNetLib.System.Globalization
 {
     [ComVisible(true)]
     [Guid("481F508E-5129-4751-BD21-53C399319C7C")]
-    [ProgId("DotNetLib.System.Globalization.EastAsianLunisolarCalendar")]
-    [Description("")]
+    [ProgId("DotNetLib.System.Globalization.TaiwanCalendar")]
+    [Description("The Taiwan calendar.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(ITaiwanCalendar))]
     public class TaiwanCalendar : ITaiwanCalendar, Calendar, IWrappedObject

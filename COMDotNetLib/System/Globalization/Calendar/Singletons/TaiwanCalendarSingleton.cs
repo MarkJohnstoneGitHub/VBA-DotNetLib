@@ -4,9 +4,17 @@ using GGlobalization = global::System.Globalization;
 using DotNetLib.Extensions;
 using System.Globalization;
 using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Runtime.InteropServices;
 
 namespace DotNetLib.System.Globalization
 {
+    [ComVisible(true)]
+    [Guid("ED1EF286-3970-41C5-BC25-91FD754FACB3")]
+    [ProgId("DotNetLib.System.Globalization.PersianCalendarSingleton")]
+    [Description("Represents the Taiwan calendar.")]
+    [ClassInterface(ClassInterfaceType.None)]
+    [ComDefaultInterface(typeof(ITaiwanCalendarSingleton))]
     public class TaiwanCalendarSingleton : ITaiwanCalendarSingleton
     {
         public TaiwanCalendarSingleton() { }
