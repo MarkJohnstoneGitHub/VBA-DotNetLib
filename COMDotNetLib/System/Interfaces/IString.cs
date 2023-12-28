@@ -40,11 +40,14 @@ namespace DotNetLib.System
         [Description("Compares this instance with a specified Object and indicates whether this instance precedes, follows, or appears in the same position in the sort order as the specified Object.")]
         int CompareTo3(object obj);
 
-        [Description("Returns a value indicating whether a specified substring occurs within this string.")]
-        bool Contains(String value);
+        //[Description("Returns a value indicating whether a specified substring occurs within this string.")]
+        //bool Contains(String value);
 
-        [Description("Returns a value indicating whether a specified substring occurs within this string.")]
-        bool Contains2(string value);
+        [Description("Returns a value indicating whether a specified substring occurs within this string, using the specified comparison rules.")]
+        bool Contains(String value, StringComparison comparisonType = StringComparison.Ordinal);
+
+        [Description("Returns a value indicating whether a specified substring occurs within this string, using the specified comparison rules.")]
+        bool Contains2(string value, StringComparison comparisonType = StringComparison.Ordinal);
 
         [Description("Determines whether the end of this string instance matches the specified string.")]
         bool EndsWith(String value);

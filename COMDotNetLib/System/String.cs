@@ -70,9 +70,14 @@ namespace DotNetLib.System
             return _string.Contains(value.WrappedString);
         }
 
-        public bool Contains2(string value)
+        public bool Contains(String value, StringComparison comparisonType = StringComparison.Ordinal)
         {
-            return _string.Contains(value);
+            return _string.IndexOf(value.WrappedString, comparisonType) >= 0;
+        }
+
+        public bool Contains2(string value, StringComparison comparisonType = StringComparison.Ordinal)
+        {
+            return _string.IndexOf(value, comparisonType) >= 0;
         }
 
         //Todo Check implementation
