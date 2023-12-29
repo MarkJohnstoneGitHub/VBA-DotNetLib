@@ -12,6 +12,9 @@ Attribute VB_Name = "StringEndsWithExample"
 
 Option Explicit
 
+''
+' The following example indicates whether each string in an array ends with a period (".").
+''
 Public Sub StringEndsWithExample()
     Dim pvtStrings() As String
     Call ArrayEx.CreateInitialize1D(pvtStrings, "This is a string.", "Hello!", "Nothing.", _
@@ -33,4 +36,3 @@ End Sub
 '       'Nothing.' ends in a period: True
 '       'Yes.' ends in a period: True
 '       'randomize' ends in a period: False
-
