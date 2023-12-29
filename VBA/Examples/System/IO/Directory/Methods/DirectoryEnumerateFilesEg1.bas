@@ -31,7 +31,7 @@ Public Sub DirectoryEnumerateFilesExample1()
         Dim currentFile As DotNetLib.String
         Set currentFile = Strings.Create(varCurrentFile)
         Dim fileName As String
-        fileName = currentFile.Substring(SourceDirectory.length + 1).ToString
+        fileName = currentFile.substring(SourceDirectory.length + 1).ToString
         Call Directory.Move(currentFile.ToString, Path.Combine2(archiveDirectory, fileName))
     Next
     Exit Sub

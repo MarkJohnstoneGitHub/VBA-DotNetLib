@@ -1,5 +1,6 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1
 
+using GSystem = global::System;
 using GCollections = global::System.Collections;
 using CultureInfo = DotNetLib.System.Globalization.CultureInfo;
 using System;
@@ -45,8 +46,17 @@ namespace DotNetLib.System
         [Description("Compares substrings of two specified String objects by evaluating the numeric values of the corresponding Char objects in each substring.")]
         int CompareOrdinal(string strA, int indexA, string strB, int indexB, int length);
 
+        [Description("Returns a value indicating whether a specified substring occurs within this string, using the specified comparison rules.")]
+        bool Contains(string str, string substring, GSystem.StringComparison comparisonType = GSystem.StringComparison.Ordinal);
+
         [Description("Creates a new instance of String with the same value as a specified String.")]
         string Copy(string str);
+
+        [Description("Determines whether the end of this string instance matches the specified string when compared using the specified comparison option.")]
+        bool EndsWith(string str, string substring, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture);
+
+        [Description("Determines whether the end of this string instance matches the specified string when compared using the specified culture.")]
+        bool EndsWith2(string str, string substring, bool ignoreCase, CultureInfo culture);
 
         [Description("Determines whether two specified String objects have the same value.")]
         bool Equals(string a, string b);

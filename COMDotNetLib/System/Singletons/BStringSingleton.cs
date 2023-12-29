@@ -1,5 +1,7 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1
 
+
+using GSystem = global::System;
 using GCollections = global::System.Collections;
 using GGlobalization = System.Globalization;
 using CultureInfo = DotNetLib.System.Globalization.CultureInfo;
@@ -72,9 +74,24 @@ namespace DotNetLib.System
             return string.CompareOrdinal(strA, indexA, strB, indexB, length);
         }
 
+        public bool Contains(string str, string substring, GSystem.StringComparison comparisonType = GSystem.StringComparison.Ordinal)
+        {
+            return str.Contains(substring, comparisonType);
+        }
+
         public string Copy(string str)
         {
             return string.Copy(str);
+        }
+
+        public bool EndsWith(string str, string substring, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture)
+        {
+            return str.EndsWith(substring, comparisonType);
+        }
+
+        public bool EndsWith2(string str, string substring, bool ignoreCase, CultureInfo culture)
+        {
+            return str.EndsWith(substring, ignoreCase, culture.WrappedCultureInfo);
         }
 
         public bool Equals(string a, string b)
@@ -100,7 +117,7 @@ namespace DotNetLib.System
         {
             return string.IsNullOrEmpty(value);
         }
-
+     
         public bool IsNullOrWhiteSpace(string value)
         {
             return string.IsNullOrWhiteSpace(value);

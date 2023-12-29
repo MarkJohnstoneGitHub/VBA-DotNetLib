@@ -30,7 +30,7 @@ Public Sub DirectoryEnumerateDirectoriesEg2()
         Set dir = Strings.Create(varDir)
         ' Remove path information from string.
         Debug.Print VBAString.Format("{0}", _
-                             dir.Substring(dir.LastIndexOf7("\") + 1))
+                             dir.substring(dir.LastIndexOf7("\") + 1))
     Next
     Debug.Print VBAString.Format("{0} directories found.", dirs.Count);
     

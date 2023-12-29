@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents text as a sequence of UTF-16 code units."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 23, 2023
-'@LastModified November 16, 2023
+'@LastModified December 29, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -45,36 +45,6 @@ End Sub
 Private Sub Class_Terminate()
     Set this.BStringSingleton = Nothing
 End Sub
-
-''@Description("Initializes a new instance of the String class to the Unicode characters indicated in the specified string.")
-'Public Function Create(ByVal value As String) As DotNetLib.String
-'   Set Create = this.StringSingleton.Create(value)
-'End Function
-'
-''@Description("Initializes a new instance of the String class to the value indicated by a specified Unicode character repeated a specified number of times.")
-'Public Function Create2(ByVal character As String, ByVal Count As Long) As DotNetLib.String
-'   Set Create2 = this.StringSingleton.Create_2(character, Count)
-'End Function
-'
-''@Description("Initializes a new instance of the String class to the value indicated by an string of Unicode characters, a starting character position within that array, and a length")
-'Public Function Create3(ByVal value As String, ByVal startIndex As Long, ByVal length As Long) As DotNetLib.String
-'   Set Create3 = this.StringSingleton.Create_3(value, startIndex, length)
-'End Function
-'
-''@Description("Initializes a new instance of the String class to the Unicode characters indicated in the specified string.")
-'Public Function Create4(ByRef value As DotNetLib.String) As DotNetLib.String
-'   Set Create4 = this.StringSingleton.Create_4(value)
-'End Function
-'
-''@Description("Initializes a new instance of the String class to the value indicated by a specified Unicode character repeated a specified number of times.")
-'Public Function Create5(ByRef character As DotNetLib.String, ByVal Count As Long) As DotNetLib.String
-'   Set Create5 = this.BStringSingleton.Create_5(character, Count)
-'End Function
-'
-''@Description("Initializes a new instance of the String class to the value indicated by an string of Unicode characters, a starting character position within that array, and a length")
-'Public Function Create6(ByRef value As DotNetLib.String, ByVal startIndex As Long, ByVal length As Long) As DotNetLib.String
-'   Set Create6 = this.StringSingleton.Create_6(value, startIndex, length)
-'End Function
 
 '@Static
 '@Description("Represents the empty string. This field is read-only.")
@@ -235,11 +205,31 @@ Attribute Join4.VB_Description = "Concatenates the specified elements of a strin
    Join4 = this.BStringSingleton.Join4(separator, value, startIndex, Count)
 End Function
 
-
 '--------------------------------------------------------------------
 'Extension
 'Added to get the type for arrays etc.
 '--------------------------------------------------------------------
+
+'@Static
+'@Description("Returns a value indicating whether a specified substring occurs within this string, using the specified comparison rules.")
+Public Function Contains(ByVal str As String, ByVal substring As String, Optional ByVal comparisonType As mscorlib.StringComparison = StringComparison.StringComparison_Ordinal) As Boolean
+Attribute Contains.VB_Description = "Returns a value indicating whether a specified substring occurs within this string, using the specified comparison rules."
+   Contains = this.BStringSingleton.Contains(str, substring, comparisonType)
+End Function
+
+'@Static
+'@Description("Determines whether the end of this string instance matches the specified string when compared using the specified comparison option.")
+Public Function EndsWith(ByVal str As String, ByVal substring As String, Optional ByVal comparisonType As mscorlib.StringComparison = StringComparison.StringComparison_Ordinal) As Boolean
+   EndsWith = this.BStringSingleton.EndsWith(str, substring, comparisonType)
+End Function
+
+'@Static
+'@Description("Determines whether the end of this string instance matches the specified string when compared using the specified culture.")
+Public Function EndsWith2(ByVal str As String, ByVal substring As String, ByVal ignoreCase As Boolean, ByRef culture As DotNetLib.CultureInfo) As Boolean
+   EndsWith2 = this.BStringSingleton.EndsWith2(str, substring, ignoreCase, culture)
+End Function
+
+
 '@Static
 '@DefaultMember
 '@Description("Gets the String Type.")

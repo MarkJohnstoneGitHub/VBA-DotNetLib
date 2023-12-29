@@ -30,7 +30,7 @@ Public Sub DirectoryEnumerateDirectories()
     For Each varDir In dirs
         Dim dir As DotNetLib.String
         Set dir = Strings.Create(varDir)
-        Debug.Print VBAString.Format("{0}", dir.Substring(dir.LastIndexOf(dirSeparator) + 1))
+        Debug.Print VBAString.Format("{0}", dir.substring(dir.LastIndexOf(dirSeparator) + 1))
     Next
     Debug.Print VBAString.Format("{0} directories found.", dirs.Count);
     Exit Sub

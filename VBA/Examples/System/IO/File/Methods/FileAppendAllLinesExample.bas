@@ -4,7 +4,7 @@ Attribute VB_Name = "FileAppendAllLinesExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 November 21, 2023
-'@LastModified December 28, 2023
+'@LastModified December 29, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -52,7 +52,7 @@ Private Function JulyWeekends() As mscorlib.IEnumerable
     For Each varLine In File.ReadLines(dataPath)
         Dim line As DotNetLib.String
         Set line = Strings.Copy(varLine)
-        If (line.StartsWith4("Saturday") Or line.StartsWith4("Sunday")) And line.Contains2("July") Then
+        If (line.StartsWith3("Saturday") Or line.StartsWith3("Sunday")) And line.Contains2("July") Then
             Call Output.Add(line.ToString())
         End If
     Next
@@ -67,7 +67,7 @@ Private Function MarchMondays() As mscorlib.IEnumerable
     For Each varLine In File.ReadLines(dataPath)
         Dim line As DotNetLib.String
         Set line = Strings.Copy(varLine)
-        If (line.StartsWith4("Monday") And line.Contains2("March")) Then
+        If (line.StartsWith3("Monday") And line.Contains2("March")) Then
             Call Output.Add(line.ToString())
         End If
     Next

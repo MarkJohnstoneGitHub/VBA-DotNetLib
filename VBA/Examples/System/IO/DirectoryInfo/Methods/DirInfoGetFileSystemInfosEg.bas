@@ -72,7 +72,7 @@ Private Sub ListDirectoriesAndFiles(ByRef FSInfo() As DotNetLib.FileSystemInfo)
             Dim dInfo As DotNetLib.DirectoryInfo
             Set dInfo = fileSytemInfoItem
             ' Iterate through all sub-directories.
-            Call ListDirectoriesAndFiles(dInfo.GetFileSystemInfos())
+            Call ListDirectoriesAndFiles(dInfo.GetFileSystemInfos)
             
         '/ Check to see if this is a FileInfo object.
         ElseIf TypeOf fileSytemInfoItem Is DotNetLib.FileInfo Then

@@ -7,7 +7,6 @@ using DotNetLib.Extensions;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using DotNetLib.System.Globalization;
-using System.Data.SqlTypes;
 
 namespace DotNetLib.System
 {
@@ -21,8 +20,6 @@ namespace DotNetLib.System
     public class String : IString, ICloneable, IComparable, IWrappedObject
     {
         private GSystem.String _string;
-
-
 
         // Constructors
         public String(string value)
@@ -66,21 +63,6 @@ namespace DotNetLib.System
 
         // Methods
 
-        //public bool Contains(String value)
-        //{
-        //    return _string.Contains(value.WrappedString);
-        //}
-
-        public bool Contains(String value, StringComparison comparisonType = StringComparison.Ordinal)
-        {
-            return _string.IndexOf(value.WrappedString, comparisonType) >= 0;
-        }
-
-        public bool Contains2(string value, StringComparison comparisonType = StringComparison.Ordinal)
-        {
-            return _string.IndexOf(value, comparisonType) >= 0;
-        }
-
         //Todo Check implementation
         public object Clone()
         {
@@ -107,32 +89,32 @@ namespace DotNetLib.System
             return _string.CompareTo(obj.Unwrap());
         }
 
-        public bool EndsWith(String value)
+        public bool Contains(String value, StringComparison comparisonType = StringComparison.Ordinal)
         {
-            return _string.EndsWith(value.WrappedString);
+            return _string.IndexOf(value.WrappedString, comparisonType) >= 0;
         }
 
-        public bool EndsWith2(String value, GSystem.StringComparison comparisonType)
+        public bool Contains2(string value, StringComparison comparisonType = StringComparison.Ordinal)
+        {
+            return _string.IndexOf(value, comparisonType) >= 0;
+        }
+
+        public bool EndsWith(String value, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture)
         {
             return _string.EndsWith(value.WrappedString, comparisonType);
         }
 
-        public bool EndsWith3(String value, bool ignoreCase, CultureInfo culture)
+        public bool EndsWith2(String value, bool ignoreCase, CultureInfo culture)
         {
             return _string.EndsWith(value.WrappedString, ignoreCase, culture.WrappedCultureInfo);
         }
 
-        public bool EndsWith4(string value)
-        {
-            return _string.EndsWith(value);
-        }
-
-        public bool EndsWith5(string value, GSystem.StringComparison comparisonType)
+        public bool EndsWith3(string value, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture)
         {
             return _string.EndsWith(value, comparisonType);
         }
 
-        public bool EndsWith6(string value, bool ignoreCase, CultureInfo culture)
+        public bool EndsWith4(string value, bool ignoreCase, CultureInfo culture)
         {
             return _string.EndsWith(value, ignoreCase, culture.WrappedCultureInfo);
         }
@@ -521,32 +503,32 @@ namespace DotNetLib.System
             return new Array(_string.Split(separator, count, (GSystem.StringSplitOptions)options));
         }
 
-        public bool StartsWith(String value)
-        {
-            return _string.StartsWith(value.WrappedString);
-        }
+        //public bool StartsWith(String value)
+        //{
+        //    return _string.StartsWith(value.WrappedString);
+        //}
 
-        public bool StartsWith2(String value, GSystem.StringComparison comparisonType)
+        public bool StartsWith(String value, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture)
         {
             return _string.StartsWith(value.WrappedString, comparisonType);
         }
 
-        public bool StartsWith3(String value, bool ignoreCase, CultureInfo culture)
+        public bool StartsWith2(String value, bool ignoreCase, CultureInfo culture)
         {
             return _string.StartsWith(value.WrappedString, ignoreCase, culture.WrappedCultureInfo);
         }
 
-        public bool StartsWith4(string value)
-        {
-            return _string.StartsWith(value);
-        }
+        //public bool StartsWith4(string value)
+        //{
+        //    return _string.StartsWith(value);
+        //}
 
-        public bool StartsWith5(string value, GSystem.StringComparison comparisonType)
+        public bool StartsWith3(string value, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture)
         {
             return _string.StartsWith(value, comparisonType);
         }
 
-        public bool StartsWith6(string value, bool ignoreCase, CultureInfo culture)
+        public bool StartsWith4(string value, bool ignoreCase, CultureInfo culture)
         {
             return _string.StartsWith(value, ignoreCase, culture.WrappedCultureInfo);
         }

@@ -49,23 +49,23 @@ namespace DotNetLib.System
         [Description("Returns a value indicating whether a specified substring occurs within this string, using the specified comparison rules.")]
         bool Contains2(string value, StringComparison comparisonType = StringComparison.Ordinal);
 
-        [Description("Determines whether the end of this string instance matches the specified string.")]
-        bool EndsWith(String value);
+        //[Description("Determines whether the end of this string instance matches the specified string.")]
+        //bool EndsWith(String value);
 
         [Description("Determines whether the end of this string instance matches the specified string when compared using the specified comparison option.")]
-        bool EndsWith2(String value, GSystem.StringComparison comparisonType);
+        bool EndsWith(String value, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture);
 
         [Description("Determines whether the end of this string instance matches the specified string when compared using the specified culture.")]
-        bool EndsWith3(String value, bool ignoreCase, CultureInfo culture);
+        bool EndsWith2(String value, bool ignoreCase, CultureInfo culture);
 
-        [Description("Determines whether the end of this string instance matches the specified string.")]
-        bool EndsWith4(string value);
+        //[Description("Determines whether the end of this string instance matches the specified string.")]
+        //bool EndsWith4(string value);
 
         [Description("Determines whether the end of this string instance matches the specified string when compared using the specified comparison option.")]
-        bool EndsWith5(string value, GSystem.StringComparison comparisonType);
+        bool EndsWith3(string value, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture);
 
         [Description("Determines whether the end of this string instance matches the specified string when compared using the specified culture.")]
-        bool EndsWith6(string value, bool ignoreCase, CultureInfo culture);
+        bool EndsWith4(string value, bool ignoreCase, CultureInfo culture);
 
         [Description("Determines whether this instance and another specified String object have the same value.")]
         bool Equals(String value);
@@ -297,22 +297,23 @@ namespace DotNetLib.System
         Array SplitStringArray5(string[] separator, int count, StringSplitOptions options);
 
 
-        [Description("Determines whether the beginning of this string instance matches the specified string.")]
-        bool StartsWith(String value);
+        //[Description("Determines whether the beginning of this string instance matches the specified string.")]
+        //bool StartsWith(String value);
 
         [Description("Determines whether the beginning of this string instance matches the specified string when compared using the specified comparison option.")]
-        bool StartsWith2(String value, GSystem.StringComparison comparisonType);
+        bool StartsWith(String value, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture);
 
         [Description("Determines whether the beginning of this string instance matches the specified string when compared using the specified culture.")]
-        bool StartsWith3(String value, bool ignoreCase, CultureInfo culture);
+        bool StartsWith2(String value, bool ignoreCase, CultureInfo culture);
 
-        [Description("Determines whether the beginning of this string instance matches the specified string.")]
-        bool StartsWith4(string value);
+        //[Description("Determines whether the beginning of this string instance matches the specified string.")]
+        //bool StartsWith4(string value);
 
         [Description("Determines whether the beginning of this string instance matches the specified string when compared using the specified comparison option.")]
-        bool StartsWith5(string value, GSystem.StringComparison comparisonType);
+        bool StartsWith3(string value, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture);
+
         [Description("Determines whether the beginning of this string instance matches the specified string when compared using the specified culture.")]
-        bool StartsWith6(string value, bool ignoreCase, CultureInfo culture);
+        bool StartsWith4(string value, bool ignoreCase, CultureInfo culture);
 
         [Description("Retrieves a substring from this instance. The substring starts at a specified character position and continues to the end of the string.")]
         String Substring(int startIndex);
