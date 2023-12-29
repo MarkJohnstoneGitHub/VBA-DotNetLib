@@ -67,17 +67,21 @@ namespace DotNetLib.System
         [Description("Determines whether the end of this string instance matches the specified string when compared using the specified culture.")]
         bool EndsWith4(string value, bool ignoreCase, CultureInfo culture);
 
-        [Description("Determines whether this instance and another specified String object have the same value.")]
-        bool Equals(String value);
 
-        [Description("Determines whether this string and a specified String object have the same value. A parameter specifies the culture, case, and sort rules used in the comparison.")]
-        bool Equals2(String value, GSystem.StringComparison comparisonType);
+        [Description("Determines whether this instance and a specified object, which must also be a String object, have the same value.")]
+        bool Equals(object obj);
 
         [Description("Determines whether this instance and another specified String object have the same value.")]
-        bool Equals3(string value);
+        bool Equals2(String value);
 
         [Description("Determines whether this string and a specified String object have the same value. A parameter specifies the culture, case, and sort rules used in the comparison.")]
-        bool Equals4(string value, GSystem.StringComparison comparisonType);
+        bool Equals3(String value, GSystem.StringComparison comparisonType);
+
+        [Description("Determines whether this instance and another specified String object have the same value.")]
+        bool Equals4(string value);
+
+        [Description("Determines whether this string and a specified String object have the same value. A parameter specifies the culture, case, and sort rules used in the comparison.")]
+        bool Equals5(string value, GSystem.StringComparison comparisonType);
 
         [Description("Returns the hash code for this string.")]
         int GetHashCode();

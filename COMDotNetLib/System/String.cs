@@ -124,22 +124,22 @@ namespace DotNetLib.System
             return _string.Equals(obj.Unwrap());
         }
 
-        public bool Equals(String value)
+        public bool Equals2(String value)
         {
             return _string.Equals(value.WrappedString);
         }
 
-        public bool Equals2(String value, GSystem.StringComparison comparisonType)
+        public bool Equals3(String value, GSystem.StringComparison comparisonType)
         {
             return _string.Equals(value.WrappedString, comparisonType);
         }
 
-        public bool Equals3(string value)
+        public bool Equals4(string value)
         {
             return _string.Equals(value);
         }
 
-        public bool Equals4(string value, GSystem.StringComparison comparisonType)
+        public bool Equals5(string value, GSystem.StringComparison comparisonType)
         {
             return _string.Equals(value, comparisonType);
         }
