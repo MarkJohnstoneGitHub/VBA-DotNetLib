@@ -7,7 +7,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Attribute VB_Ext_KEY = "Rubberduck" ,"Predeclared Class Module"
+Attribute VB_Description = "TypeCode helper class to convert a TypeCode to string value."
 '@ModuleDescription("TypeCode helper class to convert a TypeCode to string value.")
 '@Folder "VBADotNetLib.System"
 '@PredeclaredId
@@ -23,27 +23,30 @@ Attribute VB_Ext_KEY = "Rubberduck" ,"Predeclared Class Module"
 
 Option Explicit
 
+Private Type TTypeCode
+    TypeCodeSingleton As DotNetLib.TypeCodeHelperSingleton
+End Type
+
+Private this As TTypeCode
+
+Private Sub Class_Initialize()
+    Set this.TypeCodeSingleton = New DotNetLib.TypeCodeHelperSingleton
+End Sub
+
+Private Sub Class_Terminate()
+    Set this.TypeCodeSingleton = Nothing
+End Sub
+
 '@DefaultMember
-'@Description("Converts the value of a DateTimeKind to string value.")
+'@Description("Converts the value of a TypeCode to string value.")
 Public Property Get ToString(ByVal value As mscorlib.TypeCode) As String
-   Select Case value
-      Case TypeCode_Boolean: ToString = "Boolean"
-      Case TypeCode_Byte: ToString = "Byte"
-      Case TypeCode_Char: ToString = "Char"
-      Case TypeCode_DateTime: ToString = "DateTime"
-      Case TypeCode_DBNull: ToString = "DBNull"
-      Case TypeCode_Decimal: ToString = "Decimal"
-      Case TypeCode_Double: ToString = "Double"
-      Case TypeCode_Empty: ToString = "Empty"
-      Case TypeCode_Int16: ToString = "Int16"
-      Case TypeCode_Int32: ToString = "Int32"
-      Case TypeCode_Int64: ToString = "Int64"
-      Case TypeCode_Object: ToString = "Object"
-      Case TypeCode_SByte: ToString = "SByte"
-      Case TypeCode_Single: ToString = "Single"
-      Case TypeCode_String: ToString = "String"
-      Case TypeCode_UInt16: ToString = "UInt16"
-      Case TypeCode_UInt32: ToString = "UInt32"
-      Case TypeCode_UInt64: ToString = "UInt64"
-   End Select
+Attribute ToString.VB_Description = "Converts the value of a DateTimeKind to string value."
+Attribute ToString.VB_UserMemId = 0
+    ToString = this.TypeCodeSingleton.ToString(value)
 End Property
+
+'@Description("Converts the value of a TypeCode to its equivalent string representation using the specified format.")
+Public Function ToString2(ByVal value As mscorlib.TypeCode, ByVal pFormat As String) As String
+Attribute ToString2.VB_Description = "Converts the value of a TypeCode to its equivalent string representation using the specified format."
+    ToString2 = this.TypeCodeSingleton.ToString2(value, pFormat)
+End Function
