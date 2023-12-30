@@ -200,7 +200,7 @@ namespace DotNetLib.System
 
         public bool Equals(String a, String b)
         {
-            return a.WrappedString == b.WrappedString;
+            return string.Equals(a.WrappedString, b.WrappedString);
         }
 
         public bool Equals2(String a, String b, StringComparison comparisonType)
