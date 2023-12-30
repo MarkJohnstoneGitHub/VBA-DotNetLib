@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents text as a sequence of UTF-16 code units."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 23, 2023
-'@LastModified December 29, 2023
+'@LastModified December 30, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -220,15 +220,16 @@ End Function
 '@Static
 '@Description("Determines whether the end of this string instance matches the specified string when compared using the specified comparison option.")
 Public Function EndsWith(ByVal str As String, ByVal substring As String, Optional ByVal comparisonType As mscorlib.StringComparison = StringComparison.StringComparison_Ordinal) As Boolean
+Attribute EndsWith.VB_Description = "Determines whether the end of this string instance matches the specified string when compared using the specified comparison option."
    EndsWith = this.BStringSingleton.EndsWith(str, substring, comparisonType)
 End Function
 
 '@Static
 '@Description("Determines whether the end of this string instance matches the specified string when compared using the specified culture.")
 Public Function EndsWith2(ByVal str As String, ByVal substring As String, ByVal ignoreCase As Boolean, ByRef culture As DotNetLib.CultureInfo) As Boolean
+Attribute EndsWith2.VB_Description = "Determines whether the end of this string instance matches the specified string when compared using the specified culture."
    EndsWith2 = this.BStringSingleton.EndsWith2(str, substring, ignoreCase, culture)
 End Function
-
 
 '@Static
 '@DefaultMember
