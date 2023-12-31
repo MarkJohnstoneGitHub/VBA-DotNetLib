@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents text as a sequence of UTF-16 code units."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 November 11, 2023
-'@LastModified November 16, 2023
+'@LastModified December 31 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -253,27 +253,35 @@ Attribute Equals2.VB_Description = "Determines whether two specified String obje
 End Function
 
 '@Description("Replaces the format item in a specified string with the string representation of a corresponding object in a specified array.")
-Public Function Format(ByVal pFormat As String, ByRef args() As Variant) As DotNetLib.String
+Public Function Format(ByVal pFormat As String, ParamArray args() As Variant) As DotNetLib.String
 Attribute Format.VB_Description = "Replaces the format item in a specified string with the string representation of a corresponding object in a specified array."
-   Set Format = this.StringSingleton.Format(pFormat, args)
+    Dim params() As Variant
+    params = args
+    Set Format = this.StringSingleton.Format(pFormat, params)
 End Function
 
 '@Description("Replaces the format items in a string with the string representations of corresponding objects in a specified array. A parameter supplies culture-specific formatting information.")
-Public Function Format2(ByVal provider As IFormatProvider, ByVal pFormat As String, ByRef args() As Variant) As DotNetLib.String
+Public Function Format2(ByVal provider As IFormatProvider, ByVal pFormat As String, ParamArray args() As Variant) As DotNetLib.String
 Attribute Format2.VB_Description = "Replaces the format items in a string with the string representations of corresponding objects in a specified array. A parameter supplies culture-specific formatting information."
-   Set Format2 = this.StringSingleton.Format2(provider, pFormat, args)
+    Dim params() As Variant
+    params = args
+    Set Format2 = this.StringSingleton.Format2(provider, pFormat, params)
 End Function
 
 '@Description("Replaces the format item in a specified string with the string representation of a corresponding object in a specified array.")
-Public Function Format3(ByVal pFormat As DotNetLib.String, ByRef args() As Variant) As DotNetLib.String
+Public Function Format3(ByVal pFormat As DotNetLib.String, ParamArray args() As Variant) As DotNetLib.String
 Attribute Format3.VB_Description = "Replaces the format item in a specified string with the string representation of a corresponding object in a specified array."
-   Set Format3 = this.StringSingleton.Format3(pFormat, args)
+    Dim params() As Variant
+    params = args
+    Set Format3 = this.StringSingleton.Format3(pFormat, params)
 End Function
 
 '@Description("Replaces the format items in a string with the string representations of corresponding objects in a specified array. A parameter supplies culture-specific formatting information.")
-Public Function Format4(ByVal provider As IFormatProvider, ByVal pFormat As DotNetLib.String, ByRef args() As Variant) As DotNetLib.String
+Public Function Format4(ByVal provider As IFormatProvider, ByVal pFormat As DotNetLib.String, ParamArray args() As Variant) As DotNetLib.String
 Attribute Format4.VB_Description = "Replaces the format items in a string with the string representations of corresponding objects in a specified array. A parameter supplies culture-specific formatting information."
-   Set Format4 = this.StringSingleton.Format4(provider, pFormat, args)
+    Dim params() As Variant
+    params = args
+   Set Format4 = this.StringSingleton.Format4(provider, pFormat, params)
 End Function
 
 '@Description("Indicates whether the specified string is null or an empty string ("").")
