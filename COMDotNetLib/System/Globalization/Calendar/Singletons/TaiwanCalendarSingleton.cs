@@ -11,7 +11,7 @@ namespace DotNetLib.System.Globalization
 {
     [ComVisible(true)]
     [Guid("ED1EF286-3970-41C5-BC25-91FD754FACB3")]
-    [ProgId("DotNetLib.System.Globalization.PersianCalendarSingleton")]
+    [ProgId("DotNetLib.System.Globalization.TaiwanCalendarSingleton")]
     [Description("Represents the Taiwan calendar.")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(ITaiwanCalendarSingleton))]
