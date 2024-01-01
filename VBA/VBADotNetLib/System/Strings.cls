@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents text as a sequence of UTF-16 code units."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 November 11, 2023
-'@LastModified December 31 2023
+'@LastModified January 1, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -372,4 +372,20 @@ End Function
 Public Function Join4(ByVal separator As String, ByRef value() As String, ByVal startIndex As Long, ByVal pCount As Long) As DotNetLib.String
 Attribute Join4.VB_Description = "Concatenates the specified elements of a string array, using the specified separator between each element."
    Set Join4 = this.StringSingleton.Join4(separator, value, startIndex, pCount)
+End Function
+
+'Extensions
+
+'@Static
+'@Description("Initializes a new instance of the String class to the value indicated by an string of Unicode characters, converting any escaped characters in the input string.")
+Public Function Unescape(ByVal value As DotNetLib.String) As DotNetLib.String
+Attribute Unescape.VB_Description = "Initializes a new instance of the String class to the value indicated by an string of Unicode characters, converting any escaped characters in the input string."
+   Set Unescape = this.StringSingleton.Unescape2(value)
+End Function
+
+'@Static
+'@Description("Initializes a new instance of the String class to the value indicated by an string of Unicode characters, converting any escaped characters in the input string.")
+Public Function Unescape2(ByVal value As String) As DotNetLib.String
+Attribute Unescape2.VB_Description = "Initializes a new instance of the String class to the value indicated by an string of Unicode characters, converting any escaped characters in the input string."
+   Set Unescape2 = this.StringSingleton.Unescape2(value)
 End Function
