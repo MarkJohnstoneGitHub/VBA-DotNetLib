@@ -31,7 +31,9 @@ namespace DotNetLib.System
         // Notes https://stackoverflow.com/questions/25759878/convert-byte-to-sbyte 
         // Possible add String(SByte*, Int32, Int32) by passing an array of bytes? 
         public String Create(string value)
-        { 
+        {
+            if (value == null)
+                return new String(String.Empty);
             return new String(value); 
         }
 
@@ -200,11 +202,29 @@ namespace DotNetLib.System
 
         public bool Equals(String a, String b)
         {
+            if ((object)a == b)
+            {
+                return true;
+            }
+
+            if ((object)a == null || (object)b == null)
+            {
+                return false;
+            }
             return string.Equals(a.WrappedString, b.WrappedString);
         }
 
         public bool Equals2(String a, String b, StringComparison comparisonType)
         {
+            if ((object)a == b)
+            {
+                return true;
+            }
+
+            if ((object)a == null || (object)b == null)
+            {
+                return false;
+            }
             return string.Equals(a.WrappedString, b.WrappedString, comparisonType);
         }
 
