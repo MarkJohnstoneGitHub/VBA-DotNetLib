@@ -1,5 +1,8 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1
 
+//Todo for constructors if value parameter is null return null or empty string?
+
+
 using GGeneric = global::System.Collections.Generic;
 using GSystem = global::System;
 using GRegularExpressions = global::System.Text.RegularExpressions;

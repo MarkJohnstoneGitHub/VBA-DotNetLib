@@ -88,5 +88,16 @@ namespace DotNetLib.System
         [Description("Concatenates the members of a constructed IEnumerable<T> collection of type String, using the specified separator between each member.")]
         string Join3(string separator, GCollections.IEnumerable stringValues);
 
+        [Description("Determines whether the beginning of this string instance matches the specified string when compared using the specified comparison option.")]
+        bool StartsWith(string str, string substring, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture);
+
+        [Description("Determines whether the beginning of this string instance matches the specified string when compared using the specified culture.")]
+        bool StartsWith2(string str, string substring, bool ignoreCase, CultureInfo culture);
+
+        //Extensions
+
+        [Description("Initializes a new instance of the String class to the value indicated by an string of Unicode characters, converts any escaped characters in the input string.")]
+        string Unescape(string value);
+
     }
 }

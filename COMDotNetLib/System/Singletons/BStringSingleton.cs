@@ -1,6 +1,6 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1
 
-
+using GRegularExpressions = global::System.Text.RegularExpressions;
 using GSystem = global::System;
 using GCollections = global::System.Collections;
 using GGlobalization = System.Globalization;
@@ -143,8 +143,22 @@ namespace DotNetLib.System
             return string.Join(separator, value, startIndex, count);
         }
 
+        public bool StartsWith(string str, string substring, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture)
+        {
+            return str.StartsWith(substring, comparisonType);
+        }
 
+        public bool StartsWith2(string str, string substring, bool ignoreCase, CultureInfo culture)
+        {
+            return str.StartsWith(substring, ignoreCase, culture.WrappedCultureInfo);
+        }
 
+        public string Unescape(string value)
+        {
+            if (value == null)
+                return string.Empty;
+            return GRegularExpressions.Regex.Unescape(value);
+        }
 
     }
 }
