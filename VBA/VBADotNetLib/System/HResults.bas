@@ -4,7 +4,7 @@ Attribute VB_Name = "HResults"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 12, 2023
-'@LastModified November 7, 2023
+'@LastModified January 2, 2024
 
 ' https://referencesource.microsoft.com/#mscorlib/system/__hresults.cs
 
@@ -14,6 +14,7 @@ Option Explicit
 
 Const E_FAIL                        As Long = &H80004005
 Const E_POINTER                     As Long = &H80004003
+Const COR_E_NULLREFERENCE           As Long = &H80004003
 Const E_NOTIMPL                     As Long = &H80004001
 Const COR_E_FORMAT                  As Long = &H80131537
 Const COR_E_ARGUMENTOUTOFRANGE      As Long = &H80131502
@@ -32,7 +33,6 @@ Const COR_E_INDEXOUTOFRANGE         As Long = &H80131508
 Const COR_E_UNAUTHORIZEDACCESS      As Long = &H80070005
 Const COR_E_PLATFORMNOTSUPPORTED    As Long = &H80131539
 Const COR_E_SECURITY                As Long = &H8013150A
-
 
 ' https://referencesource.microsoft.com/#mscorlib/system/io/__hresults.cs
 Const COR_E_ENDOFSTREAM             As Long = &H80070026
@@ -67,6 +67,7 @@ Public Enum COMHResult
     DirectoryNotFoundException = COR_E_DIRECTORYNOTFOUND
     PlatformNotSupportedException = COR_E_PLATFORMNOTSUPPORTED
     SecurityException = COR_E_SECURITY
+    NullReferenceException = COR_E_NULLREFERENCE
 End Enum
 
 
@@ -111,3 +112,6 @@ End Enum
 
 ' https://learn.microsoft.com/en-us/dotnet/api/system.security.securityexception?view=netframework-4.8.1
 ' SecurityException uses the HRESULT COR_E_SECURITY, which has the value 0x8013150A.
+
+' https://learn.microsoft.com/en-us/dotnet/api/system.nullreferenceexception?view=netframework-4.8.1
+' NullReferenceException uses the HRESULT COR_E_NULLREFERENCE, which has the value 0x80004003.
