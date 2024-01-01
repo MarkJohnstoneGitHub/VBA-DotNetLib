@@ -228,11 +228,19 @@ namespace DotNetLib.System
 
         public bool IsNullOrEmpty(String value)
         {
-            return string.IsNullOrEmpty(value.WrappedString);
+            if ((object)value != null)
+            {
+                return value.WrappedString.Length == 0; // string.IsNullOrEmpty(value.WrappedString);
+            }
+            return true;
         }
 
         public bool IsNullOrWhiteSpace(String value)
         {
+            if ((object)value == null)
+            {
+                return true;
+            }
             return string.IsNullOrWhiteSpace(value.WrappedString);
         }
 
