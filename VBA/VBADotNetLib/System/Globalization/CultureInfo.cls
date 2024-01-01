@@ -163,7 +163,7 @@ End Function
 '@Static
 '@Description("Depreciated. Retrieves a read-only CultureInfo object having linguistic characteristics that are identified by the specified RFC 4646 language tag.")
 Public Function GetCultureInfoByIetfLanguageTag(ByVal Name As String) As DotNetLib.CultureInfo
-Attribute GetCultureInfoByIetfLanguageTag.VB_Description = "Deprecated. Retrieves a read-only CultureInfo object having linguistic characteristics that are identified by the specified RFC 4646 language tag."
+Attribute GetCultureInfoByIetfLanguageTag.VB_Description = "Depreciated. Retrieves a read-only CultureInfo object having linguistic characteristics that are identified by the specified RFC 4646 language tag."
     Set GetCultureInfoByIetfLanguageTag = this.CultureInfoSingleton.GetCultureInfoByIetfLanguageTag(Name)
 End Function
 

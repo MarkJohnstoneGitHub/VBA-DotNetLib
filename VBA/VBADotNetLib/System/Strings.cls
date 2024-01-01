@@ -380,7 +380,7 @@ End Function
 '@Description("Initializes a new instance of the String class to the value indicated by an string of Unicode characters, converting any escaped characters in the input string.")
 Public Function Unescape(ByVal value As DotNetLib.String) As DotNetLib.String
 Attribute Unescape.VB_Description = "Initializes a new instance of the String class to the value indicated by an string of Unicode characters, converting any escaped characters in the input string."
-   Set Unescape = this.StringSingleton.Unescape2(value)
+   Set Unescape = this.StringSingleton.Unescape(value)
 End Function
 
 '@Static

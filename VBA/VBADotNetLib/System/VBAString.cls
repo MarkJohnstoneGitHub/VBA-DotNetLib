@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents text as a sequence of UTF-16 code units."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 23, 2023
-'@LastModified December 30, 2023
+'@LastModified January 1, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -219,16 +219,30 @@ End Function
 
 '@Static
 '@Description("Determines whether the end of this string instance matches the specified string when compared using the specified comparison option.")
-Public Function EndsWith(ByVal str As String, ByVal substring As String, Optional ByVal comparisonType As mscorlib.StringComparison = StringComparison.StringComparison_Ordinal) As Boolean
+Public Function EndsWith(ByVal str As String, ByVal substring As String, Optional ByVal comparisonType As mscorlib.StringComparison = StringComparison.StringComparison_CurrentCulture) As Boolean
 Attribute EndsWith.VB_Description = "Determines whether the end of this string instance matches the specified string when compared using the specified comparison option."
    EndsWith = this.BStringSingleton.EndsWith(str, substring, comparisonType)
 End Function
 
 '@Static
 '@Description("Determines whether the end of this string instance matches the specified string when compared using the specified culture.")
-Public Function EndsWith2(ByVal str As String, ByVal substring As String, ByVal ignoreCase As Boolean, ByRef culture As DotNetLib.CultureInfo) As Boolean
+Public Function EndsWith2(ByVal str As String, ByVal substring As String, ByVal ignoreCase As Boolean, ByVal culture As DotNetLib.CultureInfo) As Boolean
 Attribute EndsWith2.VB_Description = "Determines whether the end of this string instance matches the specified string when compared using the specified culture."
    EndsWith2 = this.BStringSingleton.EndsWith2(str, substring, ignoreCase, culture)
+End Function
+
+'@Static
+'@Description("Determines whether the beginning of this string instance matches the specified string when compared using the specified comparison option.")
+Public Function StartsWith(ByVal str As String, ByVal substring As String, Optional ByVal comparisonType As mscorlib.StringComparison = StringComparison.StringComparison_CurrentCulture) As Boolean
+Attribute StartsWith.VB_Description = "Determines whether the beginning of this string instance matches the specified string when compared using the specified comparison option."
+   StartsWith = this.BStringSingleton.StartsWith(str, substring, comparisonType)
+End Function
+
+'@Static
+'@Description("Determines whether the beginning of this string instance matches the specified string when compared using the specified culture.")
+Public Function StartsWith2(ByVal str As String, ByVal substring As String, ByVal ignoreCase As Boolean, ByVal culture As DotNetLib.CultureInfo) As Boolean
+Attribute StartsWith2.VB_Description = "Determines whether the beginning of this string instance matches the specified string when compared using the specified culture."
+   StartsWith2 = this.BStringSingleton.StartsWith2(str, substring, ignoreCase, culture)
 End Function
 
 '@Static
@@ -238,4 +252,11 @@ Public Function GetType() As DotNetLib.Type
 Attribute GetType.VB_Description = "Gets the String Type."
 Attribute GetType.VB_UserMemId = 0
     Set GetType = this.StringType
+End Function
+
+'@Static
+'@Description("Initializes a new instance a string to the value indicated by an string of Unicode characters, converting any escaped characters in the input string.")
+Public Function Unescape(ByVal value As String) As String
+Attribute Unescape.VB_Description = "Initializes a new instance a string to the value indicated by an string of Unicode characters, converting any escaped characters in the input string."
+   Unescape = this.BStringSingleton.Unescape(value)
 End Function

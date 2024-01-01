@@ -47,12 +47,12 @@ Public Sub StringEndsWithExample3()
     Next
 End Sub
 
-Private Sub Test(ByVal x As DotNetLib.String, ByVal y As DotNetLib.String, ByVal comparison As mscorlib.StringComparison)
+Private Sub Test(ByVal x As DotNetLib.String, ByVal y As DotNetLib.String, ByVal Comparison As mscorlib.StringComparison)
     Dim resultFmt As String
     resultFmt = """{0}"" {1} with ""{2}""."
     Dim result As String
     result = "does not end"
-    If (x.EndsWith(y, comparison)) Then
+    If (x.EndsWith(y, Comparison)) Then
         result = "ends"
     End If
     Debug.Print VBAString.Format(resultFmt, x, result, y)

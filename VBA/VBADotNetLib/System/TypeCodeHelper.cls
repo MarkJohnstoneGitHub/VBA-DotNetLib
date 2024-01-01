@@ -40,7 +40,7 @@ End Sub
 '@DefaultMember
 '@Description("Converts the value of a TypeCode to string value.")
 Public Property Get ToString(ByVal value As mscorlib.TypeCode) As String
-Attribute ToString.VB_Description = "Converts the value of a DateTimeKind to string value."
+Attribute ToString.VB_Description = "Converts the value of a TypeCode to string value."
 Attribute ToString.VB_UserMemId = 0
     ToString = this.TypeCodeSingleton.ToString(value)
 End Property

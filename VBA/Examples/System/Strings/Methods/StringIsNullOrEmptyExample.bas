@@ -24,9 +24,17 @@ Public Sub StringIsNullOrEmptyExample()
     Dim s3 As DotNetLib.String
     Set s3 = Nothing
     
+    Dim s4 As DotNetLib.String
+    Set s4 = Strings.Create(VBA.vbNullString)
+    Dim str As String
+    Dim s5 As DotNetLib.String
+    Set s5 = Strings.Create(str)
+    
     Debug.Print VBAString.Format("String s1 {0}.", Test(s1))
     Debug.Print VBAString.Format("String s2 {0}.", Test(s2))
     Debug.Print VBAString.Format("String s3 {0}.", Test(s3))
+    Debug.Print VBAString.Format("String s4 {0}.", Test(s4))
+    Debug.Print VBAString.Format("String s5 {0}.", Test(s5))
 End Sub
 
 Private Function Test(ByVal s As DotNetLib.String) As String
@@ -41,3 +49,6 @@ End Function
 '       String s1 ("abcd") is neither null nor empty.
 '       String s2 is null or empty.
 '       String s3 is null or empty.
+'       String s4 is null or empty.
+'       String s5 is null or empty.
+

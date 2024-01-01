@@ -45,35 +45,35 @@ Public Sub StringBuilderInsert()
     Set sb = StringBuilder.Create(initialValue)
     
     Call sb.Insert(3, xyz)
-    Call Show(1, sb)
+    Call show(1, sb)
     
     Call sb.Insert_2(3, xyz, 2)
-    Call Show(2, sb)
+    Call show(2, sb)
     
     Call sb.Insert_3(3, xBool)      ' True
-    Call Show(3, sb)
+    Call show(3, sb)
     
     Call sb.Insert_4(3, xByte)      ' 1
-    Call Show(4, sb)
+    Call show(4, sb)
     
     Call sb.Insert_5(3, xInt16)     ' 2
-    Call Show(5, sb)
+    Call show(5, sb)
     
     Call sb.Insert_6(3, xInt32)     ' 3
-    Call Show(6, sb)
+    Call show(6, sb)
 
     Call sb.Insert_7(3, xInt64)     ' 4
-    Call Show(7, sb)
+    Call show(7, sb)
     
     Call sb.Insert_8(3, xSingle)      ' 6.6
-    Call Show(8, sb)
+    Call show(8, sb)
 
     Call sb.Insert_9(3, xDouble)      ' 7.7
-    Call Show(9, sb)
+    Call show(9, sb)
     
 End Sub
 
-Private Sub Show(ByVal overloadNumber As Long, ByVal sbs As DotNetLib.StringBuilder)
+Private Sub show(ByVal overloadNumber As Long, ByVal sbs As DotNetLib.StringBuilder)
     Debug.Print VBAString.Format("{0,2:G} = {1}", overloadNumber, sbs.ToString())
     Set sb = StringBuilder.Create(initialValue)
 End Sub

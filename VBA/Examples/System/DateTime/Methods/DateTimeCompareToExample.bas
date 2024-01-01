@@ -35,18 +35,18 @@ Public Sub DateTimeCompareTo()
    Set thisDateLastYear = thisDate.AddYears(-1)
    
    ' Compare dates
-   Dim comparison As DateComparisonResult
+   Dim Comparison As DateComparisonResult
    ' Compare today to last year
-   comparison = thisDate.CompareTo(thisDateLastYear)
-   Debug.Print "CompareTo method returns " & comparison & ": " & _
+   Comparison = thisDate.CompareTo(thisDateLastYear)
+   Debug.Print "CompareTo method returns " & Comparison & ": " & _
                 thisDate.ToString2("d") & " is " & _
-                DateComparisonResultToString(comparison) & " than " & thisDateLastYear.ToString2("d")
+                DateComparisonResultToString(Comparison) & " than " & thisDateLastYear.ToString2("d")
    
    ' Compare today to last year
-   comparison = thisDate.CompareTo(thisDateNextYear)
-   Debug.Print "CompareTo method returns " & comparison & ": " & _
+   Comparison = thisDate.CompareTo(thisDateNextYear)
+   Debug.Print "CompareTo method returns " & Comparison & ": " & _
                 thisDate.ToString2("d") & " is " & _
-                DateComparisonResultToString(comparison) & " than " & thisDateNextYear.ToString2("d")
+                DateComparisonResultToString(Comparison) & " than " & thisDateNextYear.ToString2("d")
 End Sub
 
 Private Function DateComparisonResultToString(ByVal value As DateComparisonResult) As String

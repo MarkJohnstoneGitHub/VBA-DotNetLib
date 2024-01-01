@@ -18,7 +18,7 @@ Attribute VB_Description = "StringComparison helper class to convert a StringCom
 '@Version v1.0 December 29, 2023
 '@LastModified December 29, 2023
 
-'@ReferenceAddin DotNetLib.tlb
+'@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.stringcomparison?view=netframework-4.8.1
 

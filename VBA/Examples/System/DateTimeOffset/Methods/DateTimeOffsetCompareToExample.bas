@@ -47,8 +47,8 @@ Attribute DateTimeOffsetCompareTo.VB_Description = "The following example illust
             TimeComparisionToString(firstTime.CompareTo(secondTime))
 End Sub
 
-Private Function TimeComparisionToString(ByVal comparison As Long) As String
-   Select Case comparison
+Private Function TimeComparisionToString(ByVal Comparison As Long) As String
+   Select Case Comparison
       Case Earlier: TimeComparisionToString = "Earlier"
       Case Same: TimeComparisionToString = "Same"
       Case Later: TimeComparisionToString = "Later"

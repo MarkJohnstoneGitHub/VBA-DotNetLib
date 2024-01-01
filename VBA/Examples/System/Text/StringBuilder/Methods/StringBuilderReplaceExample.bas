@@ -28,21 +28,21 @@ Public Sub StringBuilderReplace()
     Debug.Print
 
     Debug.Print "Original value:"
-    Call Show(sb)
+    Call show(sb)
 
     Call sb.Replace_2("#", "!", 15, 29)        ' Some '#' -> '!'
-    Call Show(sb)
+    Call show(sb)
     Call sb.Replace("!", "o")                 ' All '!' -> 'o'
-    Call Show(sb)
+    Call show(sb)
     Call sb.Replace("cat", "dog")             ' All "cat" -> "dog"
-    Call Show(sb)
+    Call show(sb)
     Call sb.Replace_2("dog", "fox", 15, 20)    ' Some "dog" -> "fox"
     
     Debug.Print "Final value:"
-    Call Show(sb)
+    Call show(sb)
 End Sub
 
-Private Sub Show(ByVal sbs As DotNetLib.StringBuilder)
+Private Sub show(ByVal sbs As DotNetLib.StringBuilder)
     Dim rule1 As String
     rule1 = "0----+----1----+----2----+----3----+----4---"
     Dim rule2 As String
