@@ -33,37 +33,49 @@ namespace DotNetLib.System
         public String Create(string value)
         {
             if (value == null)
-                return new String(String.Empty);
+                return null;
             return new String(value); 
         }
 
         public String Create(string character, int count)
         {
+            if (character == null)
+                return null;
             return new String(character, count);
         }
 
         public String Create(string value, int startIndex, int length)
         {
+            if (value == null)
+                return null;
             return new String(value, startIndex, length);
         }
 
         public String Create(String value)
         {
+            if (value == null)
+                return null;
             return new String(value);
         }
 
         public String Create(String character, int count)
         {
+            if (character == null || character.WrappedString == null)
+                return null;
             return new String(character, count);
         }
 
         public String Create(String value, int startIndex, int length)
         {
+            if (value == null || value.WrappedString == null)
+                return null;
             return new String(value, startIndex, length);
         }
 
         public String CreateUnescape(string value)
-        { 
+        {
+            if (value == null)
+                return null;
             return new String(GRegularExpressions.Regex.Unescape(value)); 
         }
 
@@ -282,6 +294,22 @@ namespace DotNetLib.System
         public String Join4(string separator, [In] ref string[] value, int startIndex, int count)
         {
             return new String(string.Join(separator, value, startIndex, count));
+        }
+
+        // Extensions
+
+        public String Unescape(String value)
+        {
+            if (value == null || value.WrappedString == null)
+                return null;
+            return new String(GRegularExpressions.Regex.Unescape(value.WrappedString));
+        }
+
+        public String Unescape2(string value)
+        {
+            if (value == null)
+                return null;
+            return new String(GRegularExpressions.Regex.Unescape(value));
         }
 
     }

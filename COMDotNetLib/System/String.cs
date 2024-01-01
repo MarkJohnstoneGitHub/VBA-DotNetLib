@@ -39,6 +39,7 @@ namespace DotNetLib.System
 
         public String(String value)
         {
+            
             _string = value.WrappedString;
         }
 

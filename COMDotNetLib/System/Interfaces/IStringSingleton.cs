@@ -159,5 +159,13 @@ namespace DotNetLib.System
         [Description("Concatenates the specified elements of a string array, using the specified separator between each element.")]
         String Join4(string separator, [In] ref string[] value, int startIndex, int count);
 
+        // Extensions
+
+        [Description("Initializes a new instance of the String class to the value indicated by an string of Unicode characters, converts any escaped characters in the input string.")]
+        String Unescape(String value);
+
+        [Description("Initializes a new instance of the String class to the value indicated by an string of Unicode characters, converts any escaped characters in the input string.")]
+        String Unescape2(string value);
+
     }
 }
