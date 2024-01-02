@@ -3,8 +3,8 @@ Attribute VB_Name = "StringLastIndexOfExample2"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
-'@Version v1.0 December 31, 2023
-'@LastModified December 31, 2023
+'@Version v1.0 January 2, 2024
+'@LastModified January 2, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
