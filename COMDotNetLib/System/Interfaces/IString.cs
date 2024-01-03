@@ -1,11 +1,12 @@
-﻿using System;
-// https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1
+﻿// https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1
 
+using System;
 using GSystem = global::System;
 using GText = global::System.Text;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using DotNetLib.System.Globalization;
+using System.Runtime.CompilerServices;
 
 namespace DotNetLib.System
 {
@@ -27,6 +28,13 @@ namespace DotNetLib.System
             get;
         }
 
+        [IndexerName("CharCodes")]
+        int this[int index] 
+        {
+            [Description("Returns an integer value representing the character code corresponding to a character at a specified position in the current String object.")]
+            get;
+        }
+
         // Methods
         [Description("Returns a reference to this instance of String.")]
         object Clone();
@@ -40,17 +48,11 @@ namespace DotNetLib.System
         [Description("Compares this instance with a specified Object and indicates whether this instance precedes, follows, or appears in the same position in the sort order as the specified Object.")]
         int CompareTo3(object obj);
 
-        //[Description("Returns a value indicating whether a specified substring occurs within this string.")]
-        //bool Contains(String value);
-
         [Description("Returns a value indicating whether a specified substring occurs within this string, using the specified comparison rules.")]
         bool Contains(String value, StringComparison comparisonType = StringComparison.Ordinal);
 
         [Description("Returns a value indicating whether a specified substring occurs within this string, using the specified comparison rules.")]
         bool Contains2(string value, StringComparison comparisonType = StringComparison.Ordinal);
-
-        //[Description("Determines whether the end of this string instance matches the specified string.")]
-        //bool EndsWith(String value);
 
         [Description("Determines whether the end of this string instance matches the specified string when compared using the specified comparison option.")]
         bool EndsWith(String value, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture);
@@ -58,15 +60,11 @@ namespace DotNetLib.System
         [Description("Determines whether the end of this string instance matches the specified string when compared using the specified culture.")]
         bool EndsWith2(String value, bool ignoreCase, CultureInfo culture);
 
-        //[Description("Determines whether the end of this string instance matches the specified string.")]
-        //bool EndsWith4(string value);
-
         [Description("Determines whether the end of this string instance matches the specified string when compared using the specified comparison option.")]
         bool EndsWith3(string value, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture);
 
         [Description("Determines whether the end of this string instance matches the specified string when compared using the specified culture.")]
         bool EndsWith4(string value, bool ignoreCase, CultureInfo culture);
-
 
         [Description("Determines whether this instance and a specified object, which must also be a String object, have the same value.")]
         bool Equals(object obj);
@@ -300,18 +298,11 @@ namespace DotNetLib.System
         [Description("Splits a string into a maximum number of substrings based on specified delimiting strings and, optionally, options.")]
         Array SplitStringArray5(string[] separator, int count, StringSplitOptions options);
 
-
-        //[Description("Determines whether the beginning of this string instance matches the specified string.")]
-        //bool StartsWith(String value);
-
         [Description("Determines whether the beginning of this string instance matches the specified string when compared using the specified comparison option.")]
         bool StartsWith(String value, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture);
 
         [Description("Determines whether the beginning of this string instance matches the specified string when compared using the specified culture.")]
         bool StartsWith2(String value, bool ignoreCase, CultureInfo culture);
-
-        //[Description("Determines whether the beginning of this string instance matches the specified string.")]
-        //bool StartsWith4(string value);
 
         [Description("Determines whether the beginning of this string instance matches the specified string when compared using the specified comparison option.")]
         bool StartsWith3(string value, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture);
@@ -405,6 +396,11 @@ namespace DotNetLib.System
 
         [Description("Removes all the leading occurrences of a set of characters specified in an array from the current string.")]
         string TrimStartBStr(string trimChars);
+
+        // Extensions
+        // https://stackoverflow.com/questions/73539519/how-effectively-detect-surrogate-pair-in-a-string
+        [Description("Indicates whether this string contains a surrogate pair.")]
+        bool IsSurrogate();
 
     }
 }

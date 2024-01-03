@@ -27,9 +27,9 @@ Public Sub DirectoryExample()
     Set txtFiles = Directory.EnumerateFiles(SourceDirectory, "*.bas")
     Dim varCurrentFile As Variant
     For Each varCurrentFile In txtFiles
-        Dim fileName As String
-        fileName = Mid$(varCurrentFile, Len(SourceDirectory) + 2)
-        Call Directory.Move(varCurrentFile, Path.Combine2(archiveDirectory, fileName))
+        Dim filename As String
+        filename = Mid$(varCurrentFile, Len(SourceDirectory) + 2)
+        Call Directory.Move(varCurrentFile, Path.Combine2(archiveDirectory, filename))
     Next
     If Err.Number Then
         Debug.Print "Exception: " + Err.Description

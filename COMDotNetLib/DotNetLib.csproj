@@ -341,6 +341,9 @@
     <PackageReference Include="CoordinateSharp">
       <Version>2.19.1.1</Version>
     </PackageReference>
+    <PackageReference Include="System.Memory">
+      <Version>4.5.5</Version>
+    </PackageReference>
     <PackageReference Include="System.Runtime.InteropServices">
       <Version>4.3.0</Version>
     </PackageReference>

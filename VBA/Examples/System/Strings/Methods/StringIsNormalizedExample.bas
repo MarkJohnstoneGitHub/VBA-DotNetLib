@@ -33,7 +33,7 @@ Public Sub StringIsNormalizedExample()
     Debug.Print "U+0301 = COMBINING ACUTE ACCENT"
     Debug.Print "U+0327 = COMBINING CEDILLA"
     Debug.Print "U+00BE = VULGAR FRACTION THREE QUARTERS"
-    Debug.Print divider
+    Debug.Print divider.ToString()
     
     Debug.Print VBAString.Format("A1) Is s1 normalized to the default form (Form C)?: {0}", _
                                     s1.IsNormalized())
@@ -47,7 +47,7 @@ Public Sub StringIsNormalizedExample()
     Debug.Print VBAString.Format("A5) Is s1 normalized to Form KD?: {0}", _
                                     s1.IsNormalized(NormalizationForm.NormalizationForm_FormKD))
                                     
-    Debug.Print divider
+    Debug.Print divider.ToString()
 
     Debug.Print ("Set string s2 to each normalized form of string s1.");
     Debug.Print
@@ -55,7 +55,7 @@ Public Sub StringIsNormalizedExample()
     Debug.Print "U+0033 = DIGIT THREE"
     Debug.Print "U+2044 = FRACTION SLASH"
     Debug.Print "U+0034 = DIGIT FOUR"
-    Debug.Print divider
+    Debug.Print divider.ToString()
 
     Set s2 = s1.Normalize()
     Debug.Print "B1) Is s2 normalized to the default form (Form C)?: ";

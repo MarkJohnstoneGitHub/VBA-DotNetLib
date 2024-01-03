@@ -26,7 +26,7 @@ Public Sub CharIsSurrogatePairExample()
     
     Dim s1 As DotNetLib.String
     Set s1 = Strings.CreateUnescape("a" & "\uD800" & "\uDC00" & "y")
-    Call Check(s1, 1)
+    Call Check(s1.ToString, 1)
     
     Debug.Print
     Debug.Print "s is null"

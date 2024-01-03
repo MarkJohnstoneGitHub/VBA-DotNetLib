@@ -167,5 +167,10 @@ namespace DotNetLib.System
         [Description("Initializes a new instance of the String class to the value indicated by an string of Unicode characters, converts any escaped characters in the input string.")]
         String Unescape2(string value);
 
+        // Extensions
+        // https://stackoverflow.com/questions/73539519/how-effectively-detect-surrogate-pair-in-a-string
+        [Description("Indicates whether this string contains a surrogate pair.")]
+        bool IsSurrogate(string str);
+
     }
 }

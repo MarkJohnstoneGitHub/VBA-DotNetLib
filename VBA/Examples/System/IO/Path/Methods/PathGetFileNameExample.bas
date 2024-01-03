@@ -17,15 +17,15 @@ Option Explicit
 ' on a Windows-based desktop platform.
 ''
 Public Sub PathGetFileNameExample()
-    Dim fileName As String
-    fileName = "C:\mydir\myfile.ext"
+    Dim filename As String
+    filename = "C:\mydir\myfile.ext"
     Dim pvtPath As String
     pvtPath = "C:\mydir\"
     Dim result As String
     
-    result = Path.GetFileName(fileName)
+    result = Path.GetFileName(filename)
     Debug.Print VBAString.Format("GetFileName('{0}') returns '{1}'", _
-                                fileName, result)
+                                filename, result)
                                 
     result = Path.GetFileName(pvtPath)
     Debug.Print VBAString.Format("GetFileName('{0}') returns '{1}'", _

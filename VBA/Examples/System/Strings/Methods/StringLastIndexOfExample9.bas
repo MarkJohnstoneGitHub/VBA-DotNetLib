@@ -47,7 +47,7 @@ Private Function ExtractFilename(ByVal filepath As DotNetLib.String) As DotNetLi
     ' If there is no backslash, assume that this is a filename.
     If (position = -1) Then
         ' Determine whether file exists in the current directory.
-        If (File.Exists(Environment.CurrentDirectory + Path.DirectorySeparatorChar + filepath)) Then
+        If (File.Exists(Environment.CurrentDirectory + Path.DirectorySeparatorChar + filepath.ToString())) Then
             Set ExtractFilename = filepath
             Exit Function
         Else
@@ -56,7 +56,7 @@ Private Function ExtractFilename(ByVal filepath As DotNetLib.String) As DotNetLi
         End If
     Else
         ' Determine whether file exists using filepath.
-        If (File.Exists(filepath)) Then
+        If (File.Exists(filepath.ToString())) Then
             ' Return filename without file path.
             Set ExtractFilename = filepath.substring(position + 1)
             Exit Function

@@ -46,32 +46,32 @@ Public Sub StringEndsWithExample4()
     Set xyzARing = Strings.CreateUnescape("xyz" + "\u0061\u030a")
     
     ' Display the string to search for and the string to search.
-    Debug.Print VBAString.Format(msg1, capitalARing, xyzARing)
+    Debug.Print VBAString.Format(msg1.ToString, capitalARing, xyzARing)
        
     ' Search using English-United States culture.
     Set ci = CultureInfo.CreateFromName("en-US")
-    Debug.Print VBAString.Format(msg2, ci.DisplayName, ci.Name)
+    Debug.Print VBAString.Format(msg2.ToString(), ci.DisplayName, ci.Name)
 
     Debug.Print "Case sensitive:"
     result = xyzARing.EndsWith2(capitalARing, False, ci)
-    Debug.Print VBAString.Format(msg3, result)
+    Debug.Print VBAString.Format(msg3.ToString(), result)
     
     Debug.Print "Case insensitive:"
     result = xyzARing.EndsWith2(capitalARing, True, ci)
-    Debug.Print VBAString.Format(msg3, result)
+    Debug.Print VBAString.Format(msg3.ToString(), result)
     Debug.Print
 
     ' Search using Swedish-Sweden culture.
     Set ci = CultureInfo.CreateFromName("sv-SE")
-    Debug.Print VBAString.Format(msg2, ci.DisplayName, ci.Name)
+    Debug.Print VBAString.Format(msg2.ToString(), ci.DisplayName, ci.Name)
 
     Debug.Print "Case sensitive:"
     result = xyzARing.EndsWith2(capitalARing, False, ci)
-    Debug.Print VBAString.Format(msg3, result)
+    Debug.Print VBAString.Format(msg3.ToString(), result)
     
     Debug.Print "Case insensitive:"
     result = xyzARing.EndsWith2(capitalARing, True, ci)
-    Debug.Print VBAString.Format(msg3, result)
+    Debug.Print VBAString.Format(msg3.ToString, result)
 End Sub
 
 '/*

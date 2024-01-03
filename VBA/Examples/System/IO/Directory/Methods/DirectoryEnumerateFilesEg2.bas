@@ -26,7 +26,7 @@ Public Sub DirectoryEnumerateFilesExample2()
     For Each varCurrentFile In txtFiles
         Dim currentFile As DotNetLib.String
         Set currentFile = Strings.Create(varCurrentFile)
-        Dim fileName As String
+        Dim filename As String
         Dim txtFile() As String
         txtFile = File.ReadAllLines(varCurrentFile)
         Dim varLine As Variant

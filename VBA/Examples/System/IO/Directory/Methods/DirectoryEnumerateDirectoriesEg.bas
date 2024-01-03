@@ -1,4 +1,4 @@
-Attribute VB_Name = "DirectoryEnumerateDirectories1"
+Attribute VB_Name = "DirectoryEnumerateDirectoriesEg"
 '@Folder("Examples.System.IO.Directory.Methods")
 
 '@Author Mark Johnstone

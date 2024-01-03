@@ -7,6 +7,8 @@ using DotNetLib.Extensions;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using DotNetLib.System.Globalization;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace DotNetLib.System
 {
@@ -16,7 +18,6 @@ namespace DotNetLib.System
     [ProgId("DotNetLib.System.String")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IString))]
-
     public class String : IString, ICloneable, IComparable, IWrappedObject
     {
         private GSystem.String _string;
@@ -53,6 +54,8 @@ namespace DotNetLib.System
             _string = new string(value.WrappedString.ToCharArray(), startIndex, length);
         }
 
+        // Properties
+
         public static readonly String Empty = new String(GSystem.String.Empty);
 
         public int Length => _string.Length;
@@ -61,6 +64,9 @@ namespace DotNetLib.System
 
         public string WrappedString => _string;
 
+        // https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/indexers/using-indexers
+        [IndexerName("CharCodes")]
+        public int this[int index] => _string[index];
 
         // Methods
 
@@ -673,6 +679,11 @@ namespace DotNetLib.System
             return _string.TrimStart(trimChars.ToCharArray()); 
         }
 
+        // Extensions
+        public bool IsSurrogate()
+        {
+            return _string.IsSurrogate();
+        }
 
     }
 }

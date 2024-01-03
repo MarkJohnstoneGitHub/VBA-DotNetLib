@@ -25,14 +25,14 @@ Public Sub DirectoryEnumerateFilesExample1()
     On Error GoTo ErrorHandler
     
     Dim txtFiles As mscorlib.IEnumerable
-    Set txtFiles = Directory.EnumerateFiles(SourceDirectory)
+    Set txtFiles = Directory.EnumerateFiles(SourceDirectory.ToString())
     Dim varCurrentFile As Variant
     For Each varCurrentFile In txtFiles
         Dim currentFile As DotNetLib.String
         Set currentFile = Strings.Create(varCurrentFile)
-        Dim fileName As String
-        fileName = currentFile.substring(SourceDirectory.length + 1).ToString
-        Call Directory.Move(currentFile.ToString, Path.Combine2(archiveDirectory, fileName))
+        Dim filename As String
+        filename = currentFile.substring(SourceDirectory.length + 1).ToString
+        Call Directory.Move(currentFile.ToString, Path.Combine2(archiveDirectory, filename))
     Next
     Exit Sub
 ErrorHandler:

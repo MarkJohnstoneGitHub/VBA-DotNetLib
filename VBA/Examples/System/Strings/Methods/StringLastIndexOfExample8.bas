@@ -28,7 +28,7 @@ Public Sub StringLastIndexOfExample8()
     ' Strip HTML start and end tags from each string if they are present.
     Dim s As Variant
     For Each s In strSource
-        Debug.Print "Before: " + s
+        Debug.Print "Before: " + s.ToString
         Dim item As DotNetLib.String
         Set item = s
         ' Use EndsWith to find a tag at the end of the line.
@@ -53,7 +53,7 @@ Public Sub StringLastIndexOfExample8()
             End If
         End If
         ' Display the trimmed string.
-        Debug.Print "After: " + item
+        Debug.Print "After: " + item.ToString()
         Debug.Print
     Next
 End Sub

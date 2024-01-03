@@ -28,6 +28,22 @@ namespace DotNetLib.Extensions
         }
 
 
+        // https://stackoverflow.com/questions/73539519/how-effectively-detect-surrogate-pair-in-a-string
+        // https://stackoverflow.com/questions/47321869/how-do-i-convert-a-c-sharp-string-to-a-spanchar-spant/47321870#47321870
+        // https://www.nuget.org/packages/System.Memory/#supportedframeworks-body-tab
+        public static bool IsSurrogate(this string str)
+        {
+            var span = str.AsSpan();
+
+            foreach (var c in span)
+            {
+                if (char.IsSurrogate(c))
+                    return true;
+            }
+            return false;
+        }
+
+
         // https://www.nuget.org/packages/System.Runtime.CompilerServices.Unsafe/
         // https://stackoverflow.com/a/274207/10759363
         // https://stackoverflow.com/questions/274158/c-sharp-ushort-to-string-conversion-is-this-possible

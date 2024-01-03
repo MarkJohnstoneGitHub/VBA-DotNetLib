@@ -4,7 +4,7 @@ Attribute VB_Name = "StringIndexOfExample5"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 December 31, 2023
-'@LastModified December 31, 2023
+'@LastModified January 3, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -33,12 +33,12 @@ Public Sub StringIndexOfExample5()
                 
 
     Dim pvtInput As String
-    pvtInput = InputBox(Strings.Format("Enter an adjective (or group of adjectives) " + _
+    pvtInput = InputBox(VBAString.Format("Enter an adjective (or group of adjectives) " + _
                 "to describe the {0}: ==> ", animal1))
     Dim adj1 As DotNetLib.String
     Set adj1 = Strings.Create(pvtInput)
     
-    pvtInput = InputBox(Strings.Format("Enter an adjective (or group of adjectives) " + _
+    pvtInput = InputBox(VBAString.Format("Enter an adjective (or group of adjectives) " + _
                 "to describe the {0}: ==> ", animal2))
     Dim adj2 As DotNetLib.String
     Set adj2 = Strings.Create(pvtInput)

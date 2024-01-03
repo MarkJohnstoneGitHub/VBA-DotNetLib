@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "UCFiD1LgzcbqGKDan5LO2/LyiPzIXTRmXy+3msJQAxdqSwJpQeTrROSNjICr0x0DlqFMj34sAlE8jvP7R4u8sg==",
+  "dgSpecHash": "axcSjBGzyvzE/AdY4kxUnC1oJmYiCBa5QgtpGfs90kJiAmreR5Q3MC90s2JltxRuffF427Du77UeKjdfRznMZw==",
   "success": true,
   "projectFilePath": "H:\\Users\\Me\\source\\repos\\DotNetLib\\COMDotNetLib\\DotNetLib.csproj",
   "expectedPackageFiles": [
     "D:\\Users\\Me\\.nuget\\packages\\coordinatesharp\\2.19.1.1\\coordinatesharp.2.19.1.1.nupkg.sha512",
+    "D:\\Users\\Me\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "D:\\Users\\Me\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
+    "D:\\Users\\Me\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "D:\\Users\\Me\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
+    "D:\\Users\\Me\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.3\\system.runtime.compilerservices.unsafe.4.5.3.nupkg.sha512",
     "D:\\Users\\Me\\.nuget\\packages\\system.runtime.interopservices\\4.3.0\\system.runtime.interopservices.4.3.0.nupkg.sha512"
   ],
   "logs": []

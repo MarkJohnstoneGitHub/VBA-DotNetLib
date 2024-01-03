@@ -27,7 +27,7 @@ Public Sub StringIndexOfExample7()
     Dim found As Long
     Dim totFinds As Long
     Do
-        strTarget = Strings.Create(InputBox(VBAString.Format("The search string is:{0}""{1}""{0}", Environment.NewLine, strSource) + "Please enter a search value to look for in the above string (hit Enter to exit) ==> "))
+        strTarget = Strings.Create(InputBox(VBAString.Format("The search string is:{0}""{1}""{0}", Environment.NewLine, strSource) + "Please enter a search value to look for in the above string (hit Enter to exit) ==> ")).ToString()
         If (strTarget <> "") Then
             Dim i As Long
             For i = 0 To strSource.length - 1

@@ -38,7 +38,7 @@ Public Sub StringEndsWithExample2()
     ' print out the initial array of strings
     Dim s As Variant
     For Each s In strSource
-        Debug.Print s
+        Debug.Print s.ToString
     Next
 
     Debug.Print
@@ -48,7 +48,7 @@ Public Sub StringEndsWithExample2()
 
     ' print out the array of strings
     For Each s In strSource
-        Debug.Print StripEndTags(s)
+        Debug.Print StripEndTags(s).ToString()
     Next
 End Sub
 

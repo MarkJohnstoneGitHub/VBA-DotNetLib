@@ -4,7 +4,7 @@ Attribute VB_Name = "StringInsertExample2"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 January 1, 2024
-'@LastModified January 1, 2024
+'@LastModified January 3, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -30,12 +30,12 @@ Public Sub StringInsertExample2()
                          Environment.NewLine, strTarget)
                          
     Dim pvtInput As String
-    pvtInput = InputBox(Strings.Format("Enter an adjective (or group of adjectives) " + _
+    pvtInput = InputBox(VBAString.Format("Enter an adjective (or group of adjectives) " + _
                 "to describe the {0}: ==> ", animal1))
     Dim adj1 As DotNetLib.String
     Set adj1 = Strings.Create(pvtInput)
     
-    pvtInput = InputBox(Strings.Format("Enter an adjective (or group of adjectives) " + _
+    pvtInput = InputBox(VBAString.Format("Enter an adjective (or group of adjectives) " + _
                 "to describe the {0}: ==> ", animal2))
     Dim adj2 As DotNetLib.String
     Set adj2 = Strings.Create(pvtInput)

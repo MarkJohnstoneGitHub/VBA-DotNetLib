@@ -4,6 +4,7 @@ using GSystem = global::System;
 using GGlobalization = global::System.Globalization;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using System.Reflection;
 
 namespace DotNetLib.System
 {
@@ -108,9 +109,20 @@ namespace DotNetLib.System
             return GSystem.Char.IsSurrogate(s, index);
         }
 
+        // https://stackoverflow.com/questions/289792/int-to-char-in-c-sharp
+        public bool IsSurrogate2(int c)
+        {
+            return GSystem.Char.IsSurrogate((char)c);
+        }
+
         public bool IsSurrogatePair(string s, int index)
         {
             return GSystem.Char.IsSurrogatePair(s, index);
+        }
+
+        public bool IsSurrogatePair2(int highSurrogate, int lowSurrogate)
+        {
+            return GSystem.Char.IsSurrogatePair((char)highSurrogate, (char)lowSurrogate);
         }
 
         public bool IsSymbol(string s, int index)

@@ -61,8 +61,14 @@ namespace DotNetLib.System
         [Description("Indicates whether the character at the specified position in a specified string has a surrogate code unit.")]
         bool IsSurrogate(string s, int index);
 
+        [Description("Indicates whether the specified AscW character has a surrogate code unit.")]
+        bool IsSurrogate2(int c);
+
         [Description("Indicates whether two adjacent Char objects at a specified position in a string form a surrogate pair.")]
         bool IsSurrogatePair(string s, int index);
+
+        [Description("Indicates whether the two specified AscW characters form a surrogate pair.")]
+        bool IsSurrogatePair2(int highSurrogate, int lowSurrogate);
 
         [Description("Indicates whether the character at the specified position in a specified string is categorized as a symbol character.")]
         bool IsSymbol(string s, int index);

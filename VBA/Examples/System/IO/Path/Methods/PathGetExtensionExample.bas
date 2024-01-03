@@ -17,12 +17,12 @@ Option Explicit
 ' Windows-based desktop platform.
 ''
 Public Sub PathGetExtensionExample()
-    Dim fileName As String
-    fileName = "C:\mydir.old\myfile.ext"
+    Dim filename As String
+    filename = "C:\mydir.old\myfile.ext"
     Dim pvtPath As String
     pvtPath = "C:\mydir.old\"
     Dim extension As String
-    extension = Path.GetExtension(fileName)
+    extension = Path.GetExtension(filename)
     Debug.Print VBAString.Format("GetExtension('{0}') returns '{1}'", _
                                 pvtPath, extension)
     extension = Path.GetExtension(pvtPath)

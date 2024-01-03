@@ -17,8 +17,8 @@ Option Explicit
 ' desktop platform.
 ''
 Public Sub PathGetFullPathExample()
-    Dim fileName As String
-    fileName = "myfile.ext"
+    Dim filename As String
+    filename = "myfile.ext"
     Dim path1 As String
     path1 = "mydir"
     Dim path2 As String
@@ -29,9 +29,9 @@ Public Sub PathGetFullPathExample()
     Debug.Print VBAString.Format("GetFullPath('{0}') returns '{1}'", _
                                 path1, fullPath)
                                 
-    fullPath = Path.GetFullPath(fileName)
+    fullPath = Path.GetFullPath(filename)
     Debug.Print VBAString.Format("GetFullPath('{0}') returns '{1}'", _
-                                fileName, fullPath)
+                                filename, fullPath)
 
     fullPath = Path.GetFullPath(path2)
     Debug.Print VBAString.Format("GetFullPath('{0}') returns '{1}'", _

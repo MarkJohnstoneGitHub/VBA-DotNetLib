@@ -18,8 +18,8 @@ Option Explicit
 Public Sub PathGetPathRootExample()
     Dim pvtPath As String
     pvtPath = "\mydir\"
-    Dim fileName As String
-    fileName = "myfile.ext"
+    Dim filename As String
+    filename = "myfile.ext"
     Dim fullPath As String
     fullPath = "C:\mydir\myfile.ext"
     Dim pathRoot As String
@@ -28,7 +28,7 @@ Public Sub PathGetPathRootExample()
     Debug.Print VBAString.Format("GetPathRoot('{0}') returns '{1}'", _
                                 pvtPath, pathRoot)
     
-    pathRoot = Path.GetPathRoot(fileName)
+    pathRoot = Path.GetPathRoot(filename)
     Debug.Print VBAString.Format("GetPathRoot('{0}') returns '{1}'", _
                                 pvtPath, pathRoot)
                                 

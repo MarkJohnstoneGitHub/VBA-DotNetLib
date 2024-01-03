@@ -30,7 +30,7 @@ Public Sub StringEndsWithExample3()
             StringComparison.StringComparison_Ordinal, _
             StringComparison.StringComparison_OrdinalIgnoreCase)
             
-    Debug.Print intro
+    Debug.Print intro.ToString()
     
     ' Display the current culture because the culture-specific comparisons
     ' can produce different results with different cultures.

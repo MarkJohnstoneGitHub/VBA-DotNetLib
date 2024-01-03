@@ -14,3 +14,7 @@ H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\obj\Release\DotNetLib.csproj.Cor
 H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\obj\Release\DotNetLib.csproj.CopyComplete
 H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\obj\Release\DotNetLib.dll
 H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\obj\Release\DotNetLib.pdb
+H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Release\System.Buffers.dll
+H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Release\System.Memory.dll
+H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Release\System.Numerics.Vectors.dll
+H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Release\System.Runtime.CompilerServices.Unsafe.dll

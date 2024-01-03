@@ -17,18 +17,18 @@ Option Explicit
 ' Windows-based desktop platform.
 ''
 Public Sub PathGetDirectoryNameExample()
-    Dim filePath As String
-    filePath = "C:\MyDir\MySubDir\myfile.ext"
+    Dim filepath As String
+    filepath = "C:\MyDir\MySubDir\myfile.ext"
     Dim directoryName As String
     Dim i As Long
     
-    Do While (filePath <> VBA.vbNullString)
-        directoryName = Path.GetDirectoryName(filePath)
+    Do While (filepath <> VBA.vbNullString)
+        directoryName = Path.GetDirectoryName(filepath)
         Debug.Print VBAString.Format("GetDirectoryName('{0}') returns '{1}'", _
-                                    filePath, directoryName)
-        filePath = directoryName
+                                    filepath, directoryName)
+        filepath = directoryName
         If (i = 1) Then
-             filePath = directoryName + "\"  ' this will preserve the previous path
+             filepath = directoryName + "\"  ' this will preserve the previous path
         End If
         i = i + 1
     Loop

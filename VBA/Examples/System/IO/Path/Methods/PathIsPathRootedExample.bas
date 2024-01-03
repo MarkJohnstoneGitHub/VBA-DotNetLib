@@ -17,17 +17,17 @@ Option Explicit
 ' test three strings.
 ''
 Public Sub PathIsPathRootedExample()
-    Dim fileName As String
-    fileName = "C:\mydir\myfile.ext"
+    Dim filename As String
+    filename = "C:\mydir\myfile.ext"
     Dim UncPath As String
     UncPath = "\\myPc\mydir\myfile"
     Dim relativePath As String
     relativePath = "mydir\sudir\"
     Dim result As Boolean
     
-    result = Path.IsPathRooted(fileName)
+    result = Path.IsPathRooted(filename)
     Debug.Print VBAString.Format("IsPathRooted('{0}') returns {1}", _
-                                fileName, result)
+                                filename, result)
                                 
     result = Path.IsPathRooted(UncPath)
     Debug.Print VBAString.Format("IsPathRooted('{0}') returns {1}", _

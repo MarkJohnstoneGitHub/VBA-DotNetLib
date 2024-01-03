@@ -2,7 +2,7 @@
 
 //Todo for constructors if value parameter is null return null or empty string?
 
-
+using DotNetLib.Extensions;
 using GGeneric = global::System.Collections.Generic;
 using GSystem = global::System;
 using GRegularExpressions = global::System.Text.RegularExpressions;
@@ -313,6 +313,13 @@ namespace DotNetLib.System
             if (value == null)
                 return null;
             return new String(GRegularExpressions.Regex.Unescape(value));
+        }
+
+        // Extensions
+
+        public bool IsSurrogate(string str)
+        {
+            return str.IsSurrogate();
         }
 
     }

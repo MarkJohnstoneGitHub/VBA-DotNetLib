@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents a character as a UTF-16 code unit."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 15, 2023
-'@LastModified November 2, 2023
+'@LastModified January 4 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -158,10 +158,24 @@ Attribute IsSurrogate.VB_Description = "Indicates whether the character at the s
 End Function
 
 '@Static
+'@Description("Indicates whether the specified character code is a surrogate code unit.")
+Public Function IsSurrogate2(ByVal c As Long) As Boolean
+Attribute IsSurrogate2.VB_Description = "Indicates whether the specified character code is a surrogate code unit."
+   IsSurrogate2 = this.CharSingleton.IsSurrogate2(c)
+End Function
+
+'@Static
 '@Description("Indicates whether two adjacent Char objects at a specified position in a string form a surrogate pair.")
 Public Function IsSurrogatePair(ByRef s As String, ByVal index As Long) As Boolean
 Attribute IsSurrogatePair.VB_Description = "Indicates whether two adjacent Char objects at a specified position in a string form a surrogate pair."
    IsSurrogatePair = this.CharSingleton.IsSurrogatePair(s, index)
+End Function
+
+'@Static
+'@Description("Indicates whether the two specified character codes form a surrogate pair.")
+Public Function IsSurrogatePair2(ByVal highSurrogate As Long, ByVal lowSurrogate As Long) As Boolean
+Attribute IsSurrogatePair2.VB_Description = "Indicates whether the two specified character codes form a surrogate pair."
+   IsSurrogatePair2 = this.CharSingleton.IsSurrogatePair2(highSurrogate, lowSurrogate)
 End Function
 
 '@Static
