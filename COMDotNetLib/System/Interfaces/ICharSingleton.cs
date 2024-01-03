@@ -34,8 +34,11 @@ namespace DotNetLib.System
         [Description("Indicates whether the character at the specified position in a specified string is categorized as a decimal digit.")]
         bool IsDigit(string s, int index);
 
+        [Description("Indicates whether the specified character code is a high surrogate.")]
+        bool IsHighSurrogate(int charCode);
+
         [Description("Indicates whether the Char object at the specified position in a string is a high surrogate.")] 
-        bool IsHighSurrogate(string s, int index);
+        bool IsHighSurrogate2(string s, int index);
 
         [Description("Indicates whether the character at the specified position in a specified string is categorized as a Unicode letter.")]
         bool IsLetter(string s, int index);
@@ -46,8 +49,11 @@ namespace DotNetLib.System
         [Description("Indicates whether the character at the specified position in a specified string is categorized as a lowercase letter.")]
         bool IsLower(string s, int index);
 
+        [Description("Indicates whether the specified character code is a low surrogate.")]
+        bool IsLowSurrogate(int charCode);
+
         [Description("Indicates whether the Char object at the specified position in a string is a low surrogate.")]
-        bool IsLowSurrogate(string s, int index);
+        bool IsLowSurrogate2(string s, int index);
 
         [Description("Indicates whether the character at the specified position in a specified string is categorized as a number.")]
         bool IsNumber(string s, int index);
@@ -62,7 +68,7 @@ namespace DotNetLib.System
         bool IsSurrogate(string s, int index);
 
         [Description("Indicates whether the specified AscW character has a surrogate code unit.")]
-        bool IsSurrogate2(int c);
+        bool IsSurrogate2(int charCodec);
 
         [Description("Indicates whether two adjacent Char objects at a specified position in a string form a surrogate pair.")]
         bool IsSurrogatePair(string s, int index);

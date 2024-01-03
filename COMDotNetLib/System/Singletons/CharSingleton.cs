@@ -4,7 +4,6 @@ using GSystem = global::System;
 using GGlobalization = global::System.Globalization;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
-using System.Reflection;
 
 namespace DotNetLib.System
 {
@@ -65,7 +64,12 @@ namespace DotNetLib.System
             return GSystem.Char.IsDigit(s, index);
         }
 
-        public bool IsHighSurrogate(string s, int index)
+        public bool IsHighSurrogate(int charCode)
+        {
+            return GSystem.Char.IsHighSurrogate((char)charCode);
+        }
+
+        public bool IsHighSurrogate2(string s, int index)
         {
             return GSystem.Char.IsHighSurrogate(s, index);
         }
@@ -85,7 +89,12 @@ namespace DotNetLib.System
             return GSystem.Char.IsLower(s, index);
         }
 
-        public bool IsLowSurrogate(string s, int index)
+        public bool IsLowSurrogate(int charCode)
+        {
+            return GSystem.Char.IsLowSurrogate((char)charCode);
+        }
+
+        public bool IsLowSurrogate2(string s, int index)
         {
             return GSystem.Char.IsLowSurrogate(s, index);
         }
@@ -109,10 +118,10 @@ namespace DotNetLib.System
             return GSystem.Char.IsSurrogate(s, index);
         }
 
-        // https://stackoverflow.com/questions/289792/int-to-char-in-c-sharp
-        public bool IsSurrogate2(int c)
+        // https://stackoverflow.com/questions/289792/int-to-char-in-charCode-sharp
+        public bool IsSurrogate2(int charCode)
         {
-            return GSystem.Char.IsSurrogate((char)c);
+            return GSystem.Char.IsSurrogate((char)charCode);
         }
 
         public bool IsSurrogatePair(string s, int index)
@@ -140,9 +149,9 @@ namespace DotNetLib.System
             return GSystem.Char.IsWhiteSpace(s, index);
         }
 
-        //public string ToString([In] ref char c)
+        //public string ToString([In] ref char charCode)
         //{
-        //    return char.ToString(c);
+        //    return char.ToString(charCode);
         //}
 
         //Operators
