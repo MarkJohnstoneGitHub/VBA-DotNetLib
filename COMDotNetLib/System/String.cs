@@ -461,10 +461,10 @@ namespace DotNetLib.System
             return _string.Replace(oldValue, newValue);
         }
 
-        public string[] Split(string separator)
-        {
-            return _string.Split(separator.ToCharArray());
-        }
+        //public string[] Split(string separator)
+        //{
+        //    return _string.Split(separator.ToCharArray());
+        //}
 
         public string[] Split(string separator, StringSplitOptions options = StringSplitOptions.None)
         {

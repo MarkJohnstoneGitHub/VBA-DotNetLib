@@ -143,6 +143,11 @@ namespace DotNetLib.System
             return string.Join(separator, value, startIndex, count);
         }
 
+        public string[] Split(string str, string separators, StringSplitOptions options = StringSplitOptions.None)
+        {
+            return str.Split(separators.ToCharArray(), (GSystem.StringSplitOptions)options);
+        }
+
         public bool StartsWith(string str, string substring, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture)
         {
             return str.StartsWith(substring, comparisonType);
