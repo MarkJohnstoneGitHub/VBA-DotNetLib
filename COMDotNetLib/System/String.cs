@@ -450,6 +450,12 @@ namespace DotNetLib.System
         {
             return new String(_string.Replace(oldValue.WrappedString, newValue.WrappedString));
         }
+
+        public String Replace2(string oldValue, string newValue)
+        {
+            return new String(_string.Replace(oldValue, newValue));
+        }
+
         public string ReplaceBStr(string oldValue, string newValue)
         {
             return _string.Replace(oldValue, newValue);
@@ -510,11 +516,6 @@ namespace DotNetLib.System
             return new Array(_string.Split(separator, count, (GSystem.StringSplitOptions)options));
         }
 
-        //public bool StartsWith(String value)
-        //{
-        //    return _string.StartsWith(value.WrappedString);
-        //}
-
         public bool StartsWith(String value, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture)
         {
             return _string.StartsWith(value.WrappedString, comparisonType);
@@ -524,11 +525,6 @@ namespace DotNetLib.System
         {
             return _string.StartsWith(value.WrappedString, ignoreCase, culture.WrappedCultureInfo);
         }
-
-        //public bool StartsWith4(string value)
-        //{
-        //    return _string.StartsWith(value);
-        //}
 
         public bool StartsWith3(string value, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture)
         {

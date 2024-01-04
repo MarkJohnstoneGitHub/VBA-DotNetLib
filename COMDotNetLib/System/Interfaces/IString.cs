@@ -264,6 +264,9 @@ namespace DotNetLib.System
         String Replace(String oldValue, String newValue);
 
         [Description("Returns a new string in which all occurrences of a specified string in the current instance are replaced with another specified string")]
+        String Replace2(string oldValue, string newValue);
+
+        [Description("Returns a new string in which all occurrences of a specified string in the current instance are replaced with another specified string")]
         string ReplaceBStr(string oldValue, string newValue);
 
 
