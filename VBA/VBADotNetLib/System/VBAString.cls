@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents text as a sequence of UTF-16 code units."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 23, 2023
-'@LastModified January 1, 2024
+'@LastModified January 5, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -229,6 +229,12 @@ End Function
 Public Function EndsWith2(ByVal str As String, ByVal substring As String, ByVal ignoreCase As Boolean, ByVal culture As DotNetLib.CultureInfo) As Boolean
 Attribute EndsWith2.VB_Description = "Determines whether the end of this string instance matches the specified string when compared using the specified culture."
    EndsWith2 = this.BStringSingleton.EndsWith2(str, substring, ignoreCase, culture)
+End Function
+
+'@Description("Splits a string into substrings based on specified delimiting characters and options.")
+Public Function Split(ByVal str As String, ByVal separators As String, Optional ByVal options As DotNetLib.StringSplitOptions = StringSplitOptions_None) As String()
+Attribute Split.VB_Description = "Splits a string into substrings based on specified delimiting characters and options."
+   Split = this.BStringSingleton.Split(str, separators, options)
 End Function
 
 '@Static
