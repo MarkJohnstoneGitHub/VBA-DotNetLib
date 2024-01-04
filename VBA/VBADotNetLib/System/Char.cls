@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents a character as a UTF-16 code unit."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 15, 2023
-'@LastModified January 4 2024
+'@LastModified January 4, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -95,10 +95,17 @@ Attribute IsDigit.VB_Description = "Indicates whether the character at the speci
 End Function
 
 '@Static
+'@Description("Indicates whether the specified character code is a high surrogate.")
+Public Function IsHighSurrogate(ByVal charCode As Long) As Boolean
+Attribute IsHighSurrogate.VB_Description = "Indicates whether the specified character code is a high surrogate."
+   IsHighSurrogate = this.CharSingleton.IsHighSurrogate(charCode)
+End Function
+
+'@Static
 '@Description("Indicates whether the Char object at the specified position in a string is a high surrogate.")
-Public Function IsHighSurrogate(ByRef s As String, ByVal index As Long) As Boolean
-Attribute IsHighSurrogate.VB_Description = "Indicates whether the Char object at the specified position in a string is a high surrogate."
-   IsHighSurrogate = this.CharSingleton.IsHighSurrogate(s, index)
+Public Function IsHighSurrogate2(ByRef s As String, ByVal index As Long) As Boolean
+Attribute IsHighSurrogate2.VB_Description = "Indicates whether the Char object at the specified position in a string is a high surrogate."
+   IsHighSurrogate2 = this.CharSingleton.IsHighSurrogate2(s, index)
 End Function
 
 '@Static
@@ -122,11 +129,17 @@ Attribute IsLower.VB_Description = "Indicates whether the character at the speci
    IsLower = this.CharSingleton.IsLower(s, index)
 End Function
 
+'@Description("Indicates whether the specified character code is a low surrogate.")
+Public Function IsLowSurrogate(ByVal charCode As Long) As Boolean
+Attribute IsLowSurrogate.VB_Description = "Indicates whether the specified character code is a low surrogate."
+   IsLowSurrogate = this.CharSingleton.IsLowSurrogate(charCode)
+End Function
+
 '@Static
 '@Description("Indicates whether the Char object at the specified position in a string is a low surrogate.")
-Public Function IsLowSurrogate(ByRef s As String, ByVal index As Long) As Boolean
-Attribute IsLowSurrogate.VB_Description = "Indicates whether the Char object at the specified position in a string is a low surrogate."
-   IsLowSurrogate = this.CharSingleton.IsLowSurrogate(s, index)
+Public Function IsLowSurrogate2(ByRef s As String, ByVal index As Long) As Boolean
+Attribute IsLowSurrogate2.VB_Description = "Indicates whether the Char object at the specified position in a string is a low surrogate."
+   IsLowSurrogate2 = this.CharSingleton.IsLowSurrogate2(s, index)
 End Function
 
 '@Static
@@ -151,17 +164,17 @@ Attribute IsSeparator.VB_Description = "Indicates whether the character at the s
 End Function
 
 '@Static
-'@Description("Indicates whether the character at the specified position in a specified string has a surrogate code unit.")
-Public Function IsSurrogate(ByRef s As String, ByVal index As Long) As Boolean
-Attribute IsSurrogate.VB_Description = "Indicates whether the character at the specified position in a specified string has a surrogate code unit."
-   IsSurrogate = this.CharSingleton.IsSurrogate(s, index)
+'@Description("Indicates whether the specified character code is a surrogate code unit.")
+Public Function IsSurrogate(ByVal c As Long) As Boolean
+Attribute IsSurrogate.VB_Description = "Indicates whether the specified character code is a surrogate code unit."
+   IsSurrogate = this.CharSingleton.IsSurrogate2(c)
 End Function
 
 '@Static
-'@Description("Indicates whether the specified character code is a surrogate code unit.")
-Public Function IsSurrogate2(ByVal c As Long) As Boolean
-Attribute IsSurrogate2.VB_Description = "Indicates whether the specified character code is a surrogate code unit."
-   IsSurrogate2 = this.CharSingleton.IsSurrogate2(c)
+'@Description("Indicates whether the character at the specified position in a specified string has a surrogate code unit.")
+Public Function IsSurrogate2(ByRef s As String, ByVal index As Long) As Boolean
+Attribute IsSurrogate2.VB_Description = "Indicates whether the character at the specified position in a specified string has a surrogate code unit."
+   IsSurrogate2 = this.CharSingleton.IsSurrogate(s, index)
 End Function
 
 '@Static

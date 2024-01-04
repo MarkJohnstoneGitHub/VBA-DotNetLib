@@ -4,7 +4,7 @@ Attribute VB_Name = "StringCharCodesExample2"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 January 3, 2024
-'@LastModified January 3, 2024
+'@LastModified January 4, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -19,7 +19,8 @@ Option Explicit
 ' more than one Char. Use the System.Globalization.StringInfo class to work with
 ' Unicode characters instead of Char objects.
 '
-' This example iterates a string by characters checking if the character is a surrogate.
+' This example iterates a string by characters checking if the character is a
+' high or low surrogate.
 ''
 Public Sub StringCharCodesExample2()
     Dim ctr As Long
@@ -30,14 +31,20 @@ Public Sub StringCharCodesExample2()
     For ctr = 0 To s1.length - 1
         Dim pvtCharCode As Long
         pvtCharCode = s1.CharCodes(ctr)
-        Debug.Print VBAString.Format("{0} {1} {2}", ChrW$(pvtCharCode), pvtCharCode, IIf(Char.IsSurrogate2(pvtCharCode), "Is Surrogate", ""))
+        Dim pvtSurrogate As String
+        pvtSurrogate = ""
+        If Char.IsLowSurrogate(pvtCharCode) Then
+            pvtSurrogate = "Low surrogate"
+        ElseIf Char.IsHighSurrogate(pvtCharCode) Then
+            pvtSurrogate = "High surrogate"
+        End If
+        Debug.Print VBAString.Format("{0} {1} {2}", ChrW$(pvtCharCode), pvtCharCode, pvtSurrogate)
     Next
 End Sub
 
 'The example displays the following output:
 'String 'a??y' contains surrogate pairs
 'a 97
-'Print 55296 Is Surrogate
-'Print 56320 Is Surrogate
+'? 55296 High surrogate
+'? 56320 Low surrogate
 'y 121
-
