@@ -468,6 +468,10 @@ namespace DotNetLib.System
 
         public string[] Split(string separator, StringSplitOptions options = StringSplitOptions.None)
         {
+            if (separator == null)
+            {
+                return  _string.Split(null as char[], (GSystem.StringSplitOptions)options);
+            }
             return _string.Split(separator.ToCharArray(), (GSystem.StringSplitOptions)options);
         }
 
@@ -482,9 +486,9 @@ namespace DotNetLib.System
 
         public string[] Split2(string separator, int count, StringSplitOptions options = StringSplitOptions.None)
         {
-            if (separator == null && options == StringSplitOptions.None)
+            if (separator == null)
             {
-                return _string.Split(null, count);
+                return _string.Split(null as char[], count, (GSystem.StringSplitOptions)options);
             }
 
             return _string.Split(separator.ToCharArray(), count, (GSystem.StringSplitOptions)options);
