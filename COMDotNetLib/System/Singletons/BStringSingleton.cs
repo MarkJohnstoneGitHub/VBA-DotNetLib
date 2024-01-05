@@ -145,6 +145,10 @@ namespace DotNetLib.System
 
         public string[] Split(string str, string separators, StringSplitOptions options = StringSplitOptions.None)
         {
+            if (separators == null)
+            {
+                return str.Split(null as char[], (GSystem.StringSplitOptions)options);
+            }
             return str.Split(separators.ToCharArray(), (GSystem.StringSplitOptions)options);
         }
 
