@@ -4,7 +4,7 @@ Attribute VB_Name = "TimeSpanFromDaysExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 16, 2023
-'@LastModified August 4, 2023
+'@LastModified January 6, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.fromdays?view=netframework-4.8.1#examples
 
@@ -13,36 +13,41 @@ Option Explicit
 '@Description("The following example creates several TimeSpan objects using the FromDays method.")
 Public Sub TimeSpanFromDays()
 Attribute TimeSpanFromDays.VB_Description = "The following example creates several TimeSpan objects using the FromDays method."
-   Debug.Print Align("FromDays", 25, Justify_Right) & Align("TimeSpan", 25, Justify_Right)
-   Debug.Print Align("----------------", 25, Justify_Right) & Align("----------------", 25, Justify_Right)
-   
-   GenTimeSpanFromDays 0.000000006
-   GenTimeSpanFromDays 0.000000017
-   GenTimeSpanFromDays 0.000123456
-   GenTimeSpanFromDays 1.234567898
-   GenTimeSpanFromDays 12345.678987654
-   GenTimeSpanFromDays 0.000011574
-   GenTimeSpanFromDays 0.000694444
-   GenTimeSpanFromDays 0.041666666
-   GenTimeSpanFromDays 1
-   GenTimeSpanFromDays 20.84745602
+    Debug.Print VBAString.Unescape( _
+            "This example of TimeSpan.FromDays( double )\n" + _
+            "generates the following output.\n")
+    Debug.Print VBAString.Format("{0,21}{1,18}", _
+            "FromDays", "TimeSpan")
+    Debug.Print VBAString.Format("{0,21}{1,18}", _
+            "--------", "--------")
+
+    Call GenTimeSpanFromDays(0.000000006)
+    Call GenTimeSpanFromDays(0.000000017)
+    Call GenTimeSpanFromDays(0.000123456)
+    Call GenTimeSpanFromDays(1.234567898)
+    Call GenTimeSpanFromDays(12345.678987654)
+    Call GenTimeSpanFromDays(0.000011574)
+    Call GenTimeSpanFromDays(0.000694444)
+    Call GenTimeSpanFromDays(0.041666666)
+    Call GenTimeSpanFromDays(1)
+    Call GenTimeSpanFromDays(20.84745602)
 End Sub
 
-Private Sub GenTimeSpanFromDays(ByVal Days As Double)
-   ' Create a TimeSpan object and TimeSpan string from
-   ' a number of days.
-   Dim interval As ITimeSpan
-   Set interval = TimeSpan.FromDays(Days)
-   Dim timeInterval As String
-   timeInterval = interval.ToString()
-   Debug.Print Align(Days, 25, Justify.Justify_Right) & Align(timeInterval, 25, Justify.Justify_Right)
+Private Sub GenTimeSpanFromDays(ByVal pDays As Double)
+    ' Create a TimeSpan object and TimeSpan string from
+    ' a number of days.
+    Dim interval As DotNetLib.TimeSpan
+    Set interval = TimeSpan.FromDays(pDays)
+    Dim timeInterval As String
+    timeInterval = interval.ToString()
+    Debug.Print VBAString.Format("{0,21}{1,26}", pDays, timeInterval)
 End Sub
 
 '/*
 'This example of TimeSpan.FromDays( double )
 'generates the following output.
 '
-'             FromDays TimeSpan
+'             FromDays          TimeSpan
 '             --------          --------
 '                6E-09          00:00:00.0010000
 '              1.7E-08          00:00:00.0010000
