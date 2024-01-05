@@ -18,7 +18,7 @@ Attribute VB_Description = "DateTime factory methods and static members."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v2.0 August 4, 2023
-'@LastModified November 3, 2023
+'@LastModified January 6, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -397,35 +397,35 @@ End Function
 
 '@Static
 '@Description("Converts the string representation of a date and time to its DateTime equivalent by using the conventions of the current culture.")
-Public Function Parse2(ByVal s As String, ByVal provider As IFormatProvider) As DotNetLib.DateTime
+Public Function Parse2(ByVal s As String, ByVal provider As mscorlib.IFormatProvider) As DotNetLib.DateTime
 Attribute Parse2.VB_Description = "Converts the string representation of a date and time to its DateTime equivalent by using the conventions of the current culture."
     Set Parse2 = this.DateTimeStatic.Parse2(s, provider)
 End Function
 
 '@Static
 '@Description("Defines the formatting options that customize string parsing for some date and time parsing methods.  This enumeration supports a bitwise combination of its member values.")
-Public Function Parse3(ByVal s As String, ByVal provider As IFormatProvider, ByVal styles As DateTimeStyles) As DotNetLib.DateTime
+Public Function Parse3(ByVal s As String, ByVal provider As mscorlib.IFormatProvider, ByVal styles As mscorlib.DateTimeStyles) As DotNetLib.DateTime
 Attribute Parse3.VB_Description = "Defines the formatting options that customize string parsing for some date and time parsing methods.  This enumeration supports a bitwise combination of its member values."
     Set Parse3 = this.DateTimeStatic.Parse3(s, provider, styles)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly.")
-Public Function ParseExact(ByVal s As String, ByVal pFormat As String, ByVal provider As IFormatProvider) As DotNetLib.DateTime
+Public Function ParseExact(ByVal s As String, ByVal pFormat As String, ByVal provider As mscorlib.IFormatProvider) As DotNetLib.DateTime
 Attribute ParseExact.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified format and culture-specific format information. The format of the string representation must match the specified format exactly."
     Set ParseExact = this.DateTimeStatic.ParseExact(s, pFormat, provider)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly or an exception is thrown.")
-Public Function ParseExact2(ByVal s As String, ByVal pFormat As String, ByVal provider As IFormatProvider, ByVal style As DateTimeStyles) As DotNetLib.DateTime
+Public Function ParseExact2(ByVal s As String, ByVal pFormat As String, ByVal provider As mscorlib.IFormatProvider, ByVal style As mscorlib.DateTimeStyles) As DotNetLib.DateTime
 Attribute ParseExact2.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style. The format of the string representation must match the specified format exactly or an exception is thrown."
     Set ParseExact2 = this.DateTimeStatic.ParseExact2(s, pFormat, provider, style)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified array of formats, culture-specific format information, and style. The format of the string representation must match at least one of the specified formats exactly or an exception is thrown.")
-Public Function ParseExact3(ByVal s As String, ByRef formats() As String, ByVal provider As IFormatProvider, ByVal style As DateTimeStyles) As DotNetLib.IDateTime
+Public Function ParseExact3(ByVal s As String, ByRef formats() As String, ByVal provider As mscorlib.IFormatProvider, ByVal style As mscorlib.DateTimeStyles) As DotNetLib.DateTime
 Attribute ParseExact3.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified array of formats, culture-specific format information, and style. The format of the string representation must match at least one of the specified formats exactly or an exception is thrown."
     Set ParseExact3 = this.DateTimeStatic.ParseExact3(s, formats, provider, style)
 End Function
@@ -446,21 +446,21 @@ End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified culture-specific format information and formatting style, and returns a value that indicates whether the conversion succeeded.")
-Public Function TryParse2(ByVal s As String, ByVal provider As IFormatProvider, ByVal styles As DateTimeStyles, ByRef result As DotNetLib.DateTime) As Boolean
+Public Function TryParse2(ByVal s As String, ByVal provider As mscorlib.IFormatProvider, ByVal styles As mscorlib.DateTimeStyles, ByRef result As DotNetLib.DateTime) As Boolean
 Attribute TryParse2.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified culture-specific format information and formatting style, and returns a value that indicates whether the conversion succeeded."
     TryParse2 = this.DateTimeStatic.TryParse2(s, provider, styles, result)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style.")
-Public Function TryParseExact(ByVal s As String, ByVal pFormat As String, ByVal provider As IFormatProvider, ByVal style As DateTimeStyles, ByRef result As DotNetLib.DateTime) As Boolean
+Public Function TryParseExact(ByVal s As String, ByVal pFormat As String, ByVal provider As mscorlib.IFormatProvider, ByVal style As mscorlib.DateTimeStyles, ByRef result As DotNetLib.DateTime) As Boolean
 Attribute TryParseExact.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified format, culture-specific format information, and style."
     TryParseExact = this.DateTimeStatic.TryParseExact(s, pFormat, provider, style, result)
 End Function
 
 '@Static
 '@Description("Converts the specified string representation of a date and time to its DateTime equivalent using the specified array of formats, culture-specific format information, and style.")
-Public Function TryParseExact2(ByVal s As String, ByRef formats() As String, ByVal provider As IFormatProvider, ByVal style As DateTimeStyles, ByRef result As DotNetLib.DateTime) As Boolean
+Public Function TryParseExact2(ByVal s As String, ByRef formats() As String, ByVal provider As mscorlib.IFormatProvider, ByVal style As mscorlib.DateTimeStyles, ByRef result As DotNetLib.DateTime) As Boolean
 Attribute TryParseExact2.VB_Description = "Converts the specified string representation of a date and time to its DateTime equivalent using the specified array of formats, culture-specific format information, and style."
     TryParseExact2 = this.DateTimeStatic.TryParseExact2(s, formats, provider, style, result)
 End Function
