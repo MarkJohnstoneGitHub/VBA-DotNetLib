@@ -473,11 +473,20 @@ namespace DotNetLib.System
 
         //public string[] Split2(string separator, int count)
         //{
-        //    return _string.Split2(separator.ToCharArray(), count);
+        //    if (separator == null)
+        //    {
+        //        return _string.Split(null, count);
+        //    }
+        //    return _string.Split(separator.ToCharArray(), count);
         //}
 
         public string[] Split2(string separator, int count, StringSplitOptions options = StringSplitOptions.None)
         {
+            if (separator == null && options == StringSplitOptions.None)
+            {
+                return _string.Split(null, count);
+            }
+
             return _string.Split(separator.ToCharArray(), count, (GSystem.StringSplitOptions)options);
         }
 
