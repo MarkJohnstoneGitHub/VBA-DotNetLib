@@ -91,6 +91,15 @@ namespace DotNetLib.System
         [Description("Splits a string into substrings based on specified delimiting characters and options.")]
         string[] Split(string str, string separators, StringSplitOptions options = StringSplitOptions.None);
 
+        [Description("Splits a string into a maximum number of substrings based on specified delimiting characters and, optionally, options.")]
+        string[] Split2(string str, string separator, int count, StringSplitOptions options = StringSplitOptions.None);
+
+        [Description("Splits a string into substrings based on a specified delimiting string and, optionally, options")]
+        string[] Split3(string str, [In] ref string[] separator, StringSplitOptions options);
+
+        [Description("Splits a string into a maximum number of substrings based on specified delimiting strings and, optionally, options.")]
+        string[] Split4(string str, [In] ref string[] separator, int count, StringSplitOptions options);
+
         [Description("Determines whether the beginning of this string instance matches the specified string when compared using the specified comparison option.")]
         bool StartsWith(string str, string substring, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture);
 

@@ -152,6 +152,26 @@ namespace DotNetLib.System
             return str.Split(separators.ToCharArray(), (GSystem.StringSplitOptions)options);
         }
 
+        public string[] Split2(string str, string separator, int count, StringSplitOptions options = StringSplitOptions.None)
+        {
+            if (separator == null)
+            {
+                return str.Split(null as char[], count, (GSystem.StringSplitOptions)options);
+            }
+
+            return str.Split(separator.ToCharArray(), count, (GSystem.StringSplitOptions)options);
+        }
+
+        public string[] Split3(string str, [In] ref string[] separator, StringSplitOptions options)
+        {
+            return str.Split(separator, (GSystem.StringSplitOptions)options);
+        }
+
+        public string[] Split4(string str, [In] ref string[] separator, int count, StringSplitOptions options)
+        {
+            return str.Split(separator, count, (GSystem.StringSplitOptions)options);
+        }
+
         public bool StartsWith(string str, string substring, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture)
         {
             return str.StartsWith(substring, comparisonType);

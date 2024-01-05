@@ -200,9 +200,9 @@ End Function
 
 '@Static
 '@Description("Concatenates the specified elements of a string array, using the specified separator between each element.")
-Public Function Join4(ByVal separator As String, ByRef value() As String, ByVal startIndex As Long, ByVal Count As Long) As String
+Public Function Join4(ByVal separator As String, ByRef value() As String, ByVal startIndex As Long, ByVal count As Long) As String
 Attribute Join4.VB_Description = "Concatenates the specified elements of a string array, using the specified separator between each element."
-   Join4 = this.BStringSingleton.Join4(separator, value, startIndex, Count)
+   Join4 = this.BStringSingleton.Join4(separator, value, startIndex, count)
 End Function
 
 '--------------------------------------------------------------------
@@ -212,25 +212,26 @@ End Function
 
 '@Static
 '@Description("Returns a value indicating whether a specified substring occurs within this string, using the specified comparison rules.")
-Public Function Contains(ByVal str As String, ByVal substring As String, Optional ByVal comparisonType As mscorlib.StringComparison = StringComparison.StringComparison_Ordinal) As Boolean
+Public Function Contains(ByVal str As String, ByVal Substring As String, Optional ByVal comparisonType As mscorlib.StringComparison = StringComparison.StringComparison_Ordinal) As Boolean
 Attribute Contains.VB_Description = "Returns a value indicating whether a specified substring occurs within this string, using the specified comparison rules."
-   Contains = this.BStringSingleton.Contains(str, substring, comparisonType)
+   Contains = this.BStringSingleton.Contains(str, Substring, comparisonType)
 End Function
 
 '@Static
 '@Description("Determines whether the end of this string instance matches the specified string when compared using the specified comparison option.")
-Public Function EndsWith(ByVal str As String, ByVal substring As String, Optional ByVal comparisonType As mscorlib.StringComparison = StringComparison.StringComparison_CurrentCulture) As Boolean
+Public Function EndsWith(ByVal str As String, ByVal Substring As String, Optional ByVal comparisonType As mscorlib.StringComparison = StringComparison.StringComparison_CurrentCulture) As Boolean
 Attribute EndsWith.VB_Description = "Determines whether the end of this string instance matches the specified string when compared using the specified comparison option."
-   EndsWith = this.BStringSingleton.EndsWith(str, substring, comparisonType)
+   EndsWith = this.BStringSingleton.EndsWith(str, Substring, comparisonType)
 End Function
 
 '@Static
 '@Description("Determines whether the end of this string instance matches the specified string when compared using the specified culture.")
-Public Function EndsWith2(ByVal str As String, ByVal substring As String, ByVal ignoreCase As Boolean, ByVal culture As DotNetLib.CultureInfo) As Boolean
+Public Function EndsWith2(ByVal str As String, ByVal Substring As String, ByVal ignoreCase As Boolean, ByVal culture As DotNetLib.CultureInfo) As Boolean
 Attribute EndsWith2.VB_Description = "Determines whether the end of this string instance matches the specified string when compared using the specified culture."
-   EndsWith2 = this.BStringSingleton.EndsWith2(str, substring, ignoreCase, culture)
+   EndsWith2 = this.BStringSingleton.EndsWith2(str, Substring, ignoreCase, culture)
 End Function
 
+'@Static
 '@Description("Splits a string into substrings based on specified delimiting characters and options.")
 Public Function Split(ByVal str As String, ByVal separators As String, Optional ByVal options As DotNetLib.StringSplitOptions = StringSplitOptions_None) As String()
 Attribute Split.VB_Description = "Splits a string into substrings based on specified delimiting characters and options."
@@ -238,17 +239,38 @@ Attribute Split.VB_Description = "Splits a string into substrings based on speci
 End Function
 
 '@Static
+'@Description("Splits a string into a maximum number of substrings based on specified delimiting characters and, optionally, options.")
+Public Function Split2(ByVal str As String, ByVal separator As String, ByVal count As Long, Optional ByVal options As DotNetLib.StringSplitOptions = StringSplitOptions_None) As String()
+Attribute Split2.VB_Description = "Splits a string into a maximum number of substrings based on specified delimiting characters and, optionally, options."
+   Split2 = this.BStringSingleton.Split2(str, separator, count, options)
+End Function
+
+'@Static
+'@Description("Splits a string into substrings based on a specified delimiting string and, optionally, options")
+Public Function Split3(ByVal str As String, ByRef separator() As String, ByVal options As DotNetLib.StringSplitOptions) As String()
+Attribute Split3.VB_Description = "Splits a string into substrings based on a specified delimiting string and, optionally, options"
+   Split3 = this.BStringSingleton.Split3(str, separator, options)
+End Function
+
+'@Static
+'@Description("Splits a string into a maximum number of substrings based on specified delimiting strings and, optionally, options.")
+Public Function Split4(ByVal str As String, ByRef separator() As String, ByVal count As Long, ByVal options As DotNetLib.StringSplitOptions) As String()
+Attribute Split4.VB_Description = "Splits a string into a maximum number of substrings based on specified delimiting strings and, optionally, options."
+   Split4 = this.BStringSingleton.Split4(str, separator, count, options)
+End Function
+
+'@Static
 '@Description("Determines whether the beginning of this string instance matches the specified string when compared using the specified comparison option.")
-Public Function StartsWith(ByVal str As String, ByVal substring As String, Optional ByVal comparisonType As mscorlib.StringComparison = StringComparison.StringComparison_CurrentCulture) As Boolean
+Public Function StartsWith(ByVal str As String, ByVal Substring As String, Optional ByVal comparisonType As mscorlib.StringComparison = StringComparison.StringComparison_CurrentCulture) As Boolean
 Attribute StartsWith.VB_Description = "Determines whether the beginning of this string instance matches the specified string when compared using the specified comparison option."
-   StartsWith = this.BStringSingleton.StartsWith(str, substring, comparisonType)
+   StartsWith = this.BStringSingleton.StartsWith(str, Substring, comparisonType)
 End Function
 
 '@Static
 '@Description("Determines whether the beginning of this string instance matches the specified string when compared using the specified culture.")
-Public Function StartsWith2(ByVal str As String, ByVal substring As String, ByVal ignoreCase As Boolean, ByVal culture As DotNetLib.CultureInfo) As Boolean
+Public Function StartsWith2(ByVal str As String, ByVal Substring As String, ByVal ignoreCase As Boolean, ByVal culture As DotNetLib.CultureInfo) As Boolean
 Attribute StartsWith2.VB_Description = "Determines whether the beginning of this string instance matches the specified string when compared using the specified culture."
-   StartsWith2 = this.BStringSingleton.StartsWith2(str, substring, ignoreCase, culture)
+   StartsWith2 = this.BStringSingleton.StartsWith2(str, Substring, ignoreCase, culture)
 End Function
 
 '@Static
