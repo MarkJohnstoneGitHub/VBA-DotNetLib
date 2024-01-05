@@ -4,17 +4,17 @@ Attribute VB_Name = "StringFormatting"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 1, 2023
-'@LastModified September 1, 2023
+'@LastModified January 6, 2024
 
 Option Explicit
-
-'@TODO StringFormatting Align
 
 Public Enum Justify
     Justify_Right = 1
     Justify_Left = 2
 End Enum
 
+'@TODO Remove
+'@Depreciated("Use VBAString.Format member instead")
 '@Description("String alignment left or right justify for a provided width")
 Public Function Align(ByVal text As String, ByVal width As Long, Optional ByVal alignment As Justify = Justify.Justify_Left) As String
 Attribute Align.VB_Description = "String alignment left or right justify for a provided width"
