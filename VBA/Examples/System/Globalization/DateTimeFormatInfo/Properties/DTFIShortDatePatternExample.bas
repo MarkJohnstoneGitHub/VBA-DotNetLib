@@ -4,7 +4,7 @@ Attribute VB_Name = "DTFIShortDatePatternExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 2, 2023
-'@LastModified September 9, 2023
+'@LastModified January 6, 2024
 
 '@Reference
 ' https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.shortdatepattern?view=netframework-4.8.1#examples
@@ -19,15 +19,15 @@ Public Sub DateTimeFormatInfoShortDatePattern()
     Dim date1 As DotNetLib.DateTime
     Set date1 = DateTime.CreateFromDate(2011, 5, 1)
     
-    Debug.Print Align("CULTURE", 7, Justify_Right); "  "; Align("PROPERTY VALUE", 19, Justify_Right); "  "; Align("DATE", 10, Justify_Right)
+    Debug.Print VBAString.Format(VBAString.Unescape(" {0,7} {1,19} {2,10}\n"), "CULTURE", "PROPERTY VALUE", "DATE")
 
     Dim culture As Variant
     For Each culture In cultures
         Dim dtfi As DotNetLib.DateTimeFormatInfo
         Set dtfi = CultureInfo.CreateSpecificCulture(culture).DateTimeFormat
-        Debug.Print Align(culture, 7, Justify_Right); "  ";
-        Debug.Print Align(dtfi.ShortDatePattern, 19, Justify_Right); "  ";
-        Debug.Print Align(date1.ToString2("d", dtfi), 10, Justify_Right)
+        Debug.Print VBAString.Format(" {0,7} {1,19} {2,10}", culture, _
+                           dtfi.ShortDatePattern, _
+                           date1.ToString2("d", dtfi))
     Next
 End Sub
 
