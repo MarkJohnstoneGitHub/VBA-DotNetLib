@@ -280,10 +280,10 @@ namespace DotNetLib.System
         string[] Split2(string separator, int count, StringSplitOptions options = StringSplitOptions.None);
 
         [Description("Splits a string into substrings based on a specified delimiting string and, optionally, options")]
-        string[] Split3(string[] separator, StringSplitOptions options);
+        string[] Split3([In] ref string[] separator, StringSplitOptions options);
 
         [Description("Splits a string into a maximum number of substrings based on specified delimiting strings and, optionally, options.")]
-        string[] Split4(string[] separator, int count, StringSplitOptions options);
+        string[] Split4([In] ref string[] separator, int count, StringSplitOptions options);
 
 
         [Description("Splits a string into substrings based on specified delimiting characters.")]
@@ -296,10 +296,10 @@ namespace DotNetLib.System
         Array SplitStringArray3(string separator, int count, StringSplitOptions options = StringSplitOptions.None);
 
         [Description("Splits a string into substrings based on a specified delimiting string and, optionally, options")]
-        Array SplitStringArray4(string[] separator, StringSplitOptions options);
+        Array SplitStringArray4([In] ref string[] separator, StringSplitOptions options);
 
         [Description("Splits a string into a maximum number of substrings based on specified delimiting strings and, optionally, options.")]
-        Array SplitStringArray5(string[] separator, int count, StringSplitOptions options);
+        Array SplitStringArray5([In] ref string[] separator, int count, StringSplitOptions options);
 
         [Description("Determines whether the beginning of this string instance matches the specified string when compared using the specified comparison option.")]
         bool StartsWith(String value, GSystem.StringComparison comparisonType = StringComparison.CurrentCulture);

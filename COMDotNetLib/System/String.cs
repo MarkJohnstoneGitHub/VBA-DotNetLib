@@ -490,12 +490,12 @@ namespace DotNetLib.System
             return _string.Split(separator.ToCharArray(), count, (GSystem.StringSplitOptions)options);
         }
 
-        public string[] Split3(string[] separator, StringSplitOptions options)
+        public string[] Split3([In] ref string[] separator, StringSplitOptions options)
         {
             return _string.Split(separator, (GSystem.StringSplitOptions)options);
         }
 
-        public string[] Split4(string[] separator, int count, StringSplitOptions options)
+        public string[] Split4([In] ref string[] separator, int count, StringSplitOptions options)
         {
             return _string.Split(separator, count, (GSystem.StringSplitOptions)options);
         }
@@ -515,12 +515,12 @@ namespace DotNetLib.System
             return new Array(_string.Split(separator.ToCharArray(), count, (GSystem.StringSplitOptions)options));
         }
 
-        public Array SplitStringArray4(string[] separator, StringSplitOptions options)
+        public Array SplitStringArray4([In] ref string[] separator, StringSplitOptions options)
         {
             return new Array(_string.Split(separator, (GSystem.StringSplitOptions)options));
         }
 
-        public Array SplitStringArray5(string[] separator, int count, StringSplitOptions options)
+        public Array SplitStringArray5([In] ref string[] separator, int count, StringSplitOptions options)
         {
             return new Array(_string.Split(separator, count, (GSystem.StringSplitOptions)options));
         }
