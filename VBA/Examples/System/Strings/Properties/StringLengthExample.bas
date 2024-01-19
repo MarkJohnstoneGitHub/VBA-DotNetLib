@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringLengthExample"
-'@Folder("Examples.System.Strings.Properties")
+'@Folder "Examples.System.Strings.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -17,11 +17,11 @@ Option Explicit
 Public Sub StringLengthExample()
     Dim str As DotNetLib.String
     Set str = Strings.Create("abcdefg")
-    Debug.Print VBAString.Format("1) The length of '{0}' is {1}", str, str.length)
-    Debug.Print VBAString.Format("2) The length of '{0}' is {1}", "xyz", Strings.Create("xyz").length)
+    Debug.Print VBString.Format("1) The length of '{0}' is {1}", str, str.Length)
+    Debug.Print VBString.Format("2) The length of '{0}' is {1}", "xyz", Strings.Create("xyz").Length)
     Dim pvtLength As Long
-    pvtLength = str.length
-    Debug.Print VBAString.Format("3) The length of '{0}' is {1}", str, pvtLength)
+    pvtLength = str.Length
+    Debug.Print VBString.Format("3) The length of '{0}' is {1}", str, pvtLength)
 End Sub
 
 ' This example displays the following output:

@@ -1,5 +1,5 @@
 Attribute VB_Name = "HashtableRemoveExample"
-'@Folder("Examples.System.Collections.Hashtable.Methods")
+'@Folder "Examples.System.Collections.Hashtable.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -44,7 +44,7 @@ Private Sub PrintKeysAndValues(ByVal myHT As DotNetLib.Hashtable)
     For Each varDictEntry In myHT
         Dim dictEntry As mscorlib.DictionaryEntry
         dictEntry = varDictEntry
-        Debug.Print VBAString.Format("    {0}:    {1}", DictionaryEntry.Key(dictEntry), DictionaryEntry.value(dictEntry))
+        Debug.Print VBString.Format("    {0}:    {1}", DictionaryEntry.Key(dictEntry), DictionaryEntry.value(dictEntry))
     Next
     Debug.Print
 End Sub

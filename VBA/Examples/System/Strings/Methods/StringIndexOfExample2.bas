@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringIndexOfExample2"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -20,8 +20,8 @@ Public Sub StringIndexOfExample2()
     Dim s2 As DotNetLib.String
     Set s2 = Strings.Create("animal")
     
-    Debug.Print VBAString.Format(s1.IndexOf5(searchString, 2, 4))
-    Debug.Print VBAString.Format(s2.IndexOf5(searchString, 2, 4))
+    Debug.Print VBString.Format(s1.IndexOf5(searchString, 2, 4))
+    Debug.Print VBString.Format(s2.IndexOf5(searchString, 2, 4))
 End Sub
 
 ' The example displays the following output:

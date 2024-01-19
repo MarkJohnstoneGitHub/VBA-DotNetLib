@@ -1,10 +1,10 @@
 Attribute VB_Name = "VBAStringEndsWithExample"
-'@Folder("Examples.System.VBAString.Methods")
+'@Folder "Examples.System.VBString.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 December 29, 2023
-'@LastModified December 29, 2023
+'@LastModified January 11, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -14,13 +14,13 @@ Option Explicit
 
 Public Sub VBAStringEndsWithExample()
     Dim pvtStrings() As String
-    Call ArrayEx.CreateInitialize1D(pvtStrings, "This is a string.", "Hello!", "Nothing.", _
+    Call VBArray.CreateInitialize1D(pvtStrings, "This is a string.", "Hello!", "Nothing.", _
                                     "Yes.", "randomize")
     Dim value As Variant
     For Each value In pvtStrings
         Dim endsInPeriod As Boolean
-        endsInPeriod = VBAString.EndsWith(value, ".")
-        Debug.Print VBAString.Format("'{0}' ends in a period: {1}", _
+        endsInPeriod = VBString.EndsWith(CStr(value), ".")
+        Debug.Print VBString.Format("'{0}' ends in a period: {1}", _
                               value, endsInPeriod)
     Next
 End Sub

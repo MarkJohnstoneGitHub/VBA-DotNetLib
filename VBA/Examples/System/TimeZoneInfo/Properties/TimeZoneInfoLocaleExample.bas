@@ -4,21 +4,24 @@ Attribute VB_Name = "TimeZoneInfoLocaleExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 31, 2023
+'@LastModified January 19, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.local?view=netframework-4.8.1#examples
 
 Option Explicit
 
-'@Description("The following example retrieves a TimeZoneInfo object that represents the local time zone and outputs its display name, standard time name, and daylight saving time name.")
+''
+' The following example retrieves a TimeZoneInfo object that represents the
+' local time zone and outputs its display name, standard time name, and
+' daylight saving time name.
+''
 Public Sub TimeZoneInfoLocale()
-Attribute TimeZoneInfoLocale.VB_Description = "The following example retrieves a TimeZoneInfo object that represents the local time zone and outputs its display name, standard time name, and daylight saving time name."
-    Dim localZone As ITimeZoneInfo
+    Dim localZone As DotNetLib.TimeZoneInfo
     Set localZone = TimeZoneInfo.Locale
-    Debug.Print "Local Time Zone ID: " & localZone.Id
-    Debug.Print "   Display Name is: " & localZone.DisplayName & "."
-    Debug.Print "   Standard name is: " & localZone.StandardName & "."
-    Debug.Print "   Daylight saving name is: " & localZone.DaylightName & "."
+    Debug.Print VBString.Format("Local Time Zone ID: {0}", localZone.Id)
+    Debug.Print VBString.Format("   Display Name is: {0}.", localZone.DisplayName)
+    Debug.Print VBString.Format("   Standard name is: {0}.", localZone.StandardName)
+    Debug.Print VBString.Format("   Daylight saving name is: {0}.", localZone.DaylightName)
 End Sub
 
 ' The example displays output like the following:

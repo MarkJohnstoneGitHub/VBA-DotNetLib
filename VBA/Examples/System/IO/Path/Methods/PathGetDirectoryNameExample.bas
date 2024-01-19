@@ -1,5 +1,5 @@
 Attribute VB_Name = "PathGetDirectoryNameExample"
-'@Folder("Examples.System.IO.Path.Methods")
+'@Folder "Examples.System.IO.Path.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -24,7 +24,7 @@ Public Sub PathGetDirectoryNameExample()
     
     Do While (filepath <> VBA.vbNullString)
         directoryName = Path.GetDirectoryName(filepath)
-        Debug.Print VBAString.Format("GetDirectoryName('{0}') returns '{1}'", _
+        Debug.Print VBString.Format("GetDirectoryName('{0}') returns '{1}'", _
                                     filepath, directoryName)
         filepath = directoryName
         If (i = 1) Then
@@ -43,3 +43,5 @@ End Sub
 'GetDirectoryName('C:\MyDir') returns 'C:\'
 'GetDirectoryName('C:\') returns ''
 '*/
+
+

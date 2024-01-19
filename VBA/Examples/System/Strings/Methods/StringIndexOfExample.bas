@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringIndexOfExample"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -29,11 +29,11 @@ Public Sub StringIndexOfExample()
     Dim pvtEnd As Long
     Dim pvtCount As Long
     
-    pvtEnd = str.length
+    pvtEnd = str.Length
     pvtStart = pvtEnd / 2
     Debug.Print
-    Debug.Print VBAString.Format("All occurrences of 'he' from position {0} to {1}.", pvtStart, pvtEnd - 1)
-    Debug.Print VBAString.Format("{1}{0}{2}{0}{3}{0}", Environment.NewLine, br1, br2, str);
+    Debug.Print VBString.Format("All occurrences of 'he' from position {0} to {1}.", pvtStart, pvtEnd - 1)
+    Debug.Print VBString.Format("{1}{0}{2}{0}{3}{0}", Environment.NewLine, br1, br2, str);
     Debug.Print "The string 'he' occurs at position(s): ";
     
     pvtCount = 0
@@ -46,7 +46,7 @@ Public Sub StringIndexOfExample()
         If (at = -1) Then
             Exit Do
         End If
-        Debug.Print VBAString.Format("{0} ", at);
+        Debug.Print VBString.Format("{0} ", at);
         pvtStart = at + 1
     Loop
 End Sub

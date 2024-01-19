@@ -1,5 +1,6 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1
 
+using GGeneric = global::System.Collections.Generic;
 using GRegularExpressions = global::System.Text.RegularExpressions;
 using GSystem = global::System;
 using GCollections = global::System.Collections;
@@ -74,9 +75,62 @@ namespace DotNetLib.System
             return string.CompareOrdinal(strA, indexA, strB, indexB, length);
         }
 
+        public string Concat([In] ref string[] values)
+        {
+            return string.Concat(values);
+        }
+
+        public string Concat2(string str0, string str1)
+        {
+            return string.Concat(str0, str1);
+        }
+
+        public string Concat3(string str0, string str1, string str2)
+        {
+            return string.Concat(str0, str1, str2);
+        }
+
+        public string Concat4(string str0, string str1, string str2, string str3)
+        {
+            return string.Concat(str0, str1, str2, str3);
+        }
+
+        public string Concat5(GCollections.IEnumerable stringValues)
+        {
+            return string.Concat((GGeneric.IEnumerable<string>)stringValues);
+        }
+
+        public string Concat6([In] ref object[] values)
+        {
+            return string.Concat(values);
+        }
+
+        public string Concat7(object arg0)
+        {
+            return string.Concat(arg0);
+        }
+
+        public string Concat8(object arg0, object arg1)
+        {
+            return string.Concat(arg0, arg1);
+        }
+
+        public string Concat9(object arg0, object arg1, object arg2)
+        {
+            return string.Concat(arg0, arg1, arg2);
+        }
+
+        //public static string Concat<T>(System.Collections.Generic.IEnumerable<T> values);
+        public string Concat10(GCollections.IEnumerable values)
+        {
+            return string.Concat((GGeneric.IEnumerable<object>)values);
+        }
+
         public bool Contains(string str, string substring, GSystem.StringComparison comparisonType = GSystem.StringComparison.Ordinal)
         {
-            return str.Contains(substring, comparisonType);
+            return str.IndexOf(substring, comparisonType) >= 0;
+
+            //return str.Contains(substring, comparisonType);
         }
 
         public string Copy(string str)

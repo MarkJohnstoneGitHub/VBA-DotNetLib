@@ -4,12 +4,19 @@ Attribute VB_Name = "DateTimeNowExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 14, 2023
-'@LastModified September 2, 2023
+'@LastModified January 7, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.now?view=netframework-4.8.1#examples
 
 Option Explicit
 
+''
+' The following example uses the Now and UtcNow properties to retrieve the
+' current local date and time and the current universal coordinated (UTC)
+' date and time. It then uses the formatting conventions of a number of
+' cultures to display the strings, along with the values of their Kind
+' properties.
+''
 Public Sub DateTimeNow()
     Dim localDate As DotNetLib.DateTime
     Set localDate = DateTime.Now
@@ -17,17 +24,17 @@ Public Sub DateTimeNow()
     Set utcDate = DateTime.UtcNow
     
     Dim cultureNames() As String
-    cultureNames = StringArray.ToArray("en-US", "en-GB", "fr-FR", _
+    cultureNames = StringArray.CreateInitialize1D("en-US", "en-GB", "fr-FR", _
                                     "de-DE", "ru-RU")
     Dim cultureName As Variant
     For Each cultureName In cultureNames
         Dim culture As DotNetLib.CultureInfo
         Set culture = CultureInfo.CreateFromName(cultureName)
-        Debug.Print culture.NativeName; ":"
-        Debug.Print "   Local date and time: "; localDate.ToString3(culture); ", "; _
-                     DateTimeKindHelper.ToString(localDate.Kind)
-        Debug.Print "   UTC date and time: "; utcDate.ToString3(culture); ", "; _
-                     DateTimeKindHelper.ToString(utcDate.Kind)
+        Debug.Print VBString.Format("{0}:", culture.NativeName)
+        Debug.Print VBString.Format("   Local date and time: {0}, {1:G}", _
+                          localDate.ToString3(culture), DateTimeKindHelper.ToString(localDate.Kind))
+        Debug.Print VBString.Format(VBString.Unescape("   UTC date and time: {0}, {1:G}\n"), _
+                          utcDate.ToString3(culture), DateTimeKindHelper.ToString(utcDate.Kind))
     Next
 End Sub
 

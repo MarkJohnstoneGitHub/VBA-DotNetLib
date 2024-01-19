@@ -4,39 +4,39 @@ Attribute VB_Name = "TimeSpanAddExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 16, 2023
-'@LastModified July 30, 2023
+'@LastModified January 17, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.add?view=netframework-4.8.1#examples
 
 Option Explicit
 
-'@Description("The following example calls the Add method to add each element in an array of time intervals to a base TimeSpan value.")
+''
+' The following example calls the Add method to add each element in an array of
+' time intervals to a base TimeSpan value.
+''
 Public Sub TimeSpanAdd()
-Attribute TimeSpanAdd.VB_Description = "The following example calls the Add method to add each element in an array of time intervals to a base TimeSpan value."
-   Dim intervals() As ITimeSpan
-   Dim baseTimeSpan As ITimeSpan
-   Set baseTimeSpan = TimeSpan.Create2(1, 12, 15, 16)
-   
-   ' Create an array of timespan intervals.
-   ObjectArray.ToArray intervals, _
-                  TimeSpan.FromDays(1.5), _
-                  TimeSpan.FromHours(1.5), _
-                  TimeSpan.FromMinutes(45), _
-                  TimeSpan.FromMilliseconds(505), _
-                  TimeSpan.Create2(1, 17, 32, 20), _
-                  TimeSpan.Create(-8, 30, 0)
-                  
-   ' Calculate a new time interval by adding each element to the base interval.
-   Dim varInterval As Variant
-   For Each varInterval In intervals
-      Dim interval As ITimeSpan
-      Set interval = varInterval
-      Debug.Print baseTimeSpan.ToString2("g") _
-            & " " & IIf(TimeSpan.LessThan(interval, TimeSpan.Zero), "-", "+") _
-            & " " & varInterval.ToString2("%d\:hh\:mm\:ss\.ffff") _
-            & " = " _
-            & baseTimeSpan.Add(varInterval).ToString2("%d\:hh\:mm\:ss\.ffff")
-   Next
+    Dim intervals() As DotNetLib.TimeSpan
+    Dim baseTimeSpan As DotNetLib.TimeSpan
+    Set baseTimeSpan = TimeSpan.Create2(1, 12, 15, 16)
+    
+    ' Create an array of timespan intervals.
+    ObjectArray.CreateInitialize1D intervals, _
+                   TimeSpan.FromDays(1.5), _
+                   TimeSpan.FromHours(1.5), _
+                   TimeSpan.FromMinutes(45), _
+                   TimeSpan.FromMilliseconds(505), _
+                   TimeSpan.Create2(1, 17, 32, 20), _
+                   TimeSpan.Create(-8, 30, 0)
+                   
+    ' Calculate a new time interval by adding each element to the base interval.
+    Dim varInterval As Variant
+    For Each varInterval In intervals
+        Dim interval As DotNetLib.TimeSpan
+        Set interval = varInterval
+        Debug.Print VBString.Format("{0,-10:g} {3} {1,15:%d\:hh\:mm\:ss\.ffff} = {2:%d\:hh\:mm\:ss\.ffff}", _
+                                baseTimeSpan, interval, baseTimeSpan.Add(interval), _
+                                IIf(TimeSpan.LessThan(interval, TimeSpan.Zero), "-", "+"))
+    Next
 End Sub
 
 ' The example displays the following output:
@@ -46,3 +46,4 @@ End Sub
 '       1:12:15:16 + 0:00:00:00.5050 = 1:12:15:16.5050
 '       1:12:15:16 + 1:17:32:20.0000 = 3:05:47:36.0000
 '       1:12:15:16 - 0:07:30:00.0000 = 1:04:45:16.0000
+

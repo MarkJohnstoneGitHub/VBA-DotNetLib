@@ -1,5 +1,5 @@
 Attribute VB_Name = "RegionInfoCreateExample"
-'@Folder("Examples.System.Globalization.RegionInfo.Constructors")
+'@Folder "Examples.System.Globalization.RegionInfo.Constructors"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

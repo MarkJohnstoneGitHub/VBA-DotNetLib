@@ -1,5 +1,5 @@
 Attribute VB_Name = "CalendarWeekRuleExample"
-'@Folder("Examples.System.Globalization.CalendarWeekRule")
+'@Folder "Examples.System.Globalization.CalendarWeekRule"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -35,7 +35,7 @@ Public Sub CalendarWeekRuleExample()
 End Sub
 
 Private Sub ShowWeekNumber(ByVal dat As DotNetLib.DateTime, ByVal pRule As mscorlib.CalendarWeekRule, ByVal firstDay As DotNetLib.DayOfWeek)
-    Debug.Print VBAString.Format("{0:d} with {1} rule and {2} as first day of week: week {3}", _
+    Debug.Print VBString.Format("{0:d} with {1} rule and {2} as first day of week: week {3}", _
                         dat, CalendarWeekRuleHelper.ToString(pRule), DayOfWeekHelper.ToString(firstDay), cal.GetWeekOfYear(dat, pRule, firstDay))
 End Sub
 
@@ -44,3 +44,5 @@ End Sub
 '       1/5/2013 with FirstFourDayWeek rule and Sunday as first day of week: week 1
 '
 '       1/3/2010 with FirstFourDayWeek rule and Sunday as first day of week: week 1
+
+

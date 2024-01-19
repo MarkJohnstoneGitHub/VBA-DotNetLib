@@ -1,5 +1,5 @@
 Attribute VB_Name = "PathIsPathRootedExample"
-'@Folder("Examples.System.IO.Path.Methods")
+'@Folder "Examples.System.IO.Path.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -17,24 +17,24 @@ Option Explicit
 ' test three strings.
 ''
 Public Sub PathIsPathRootedExample()
-    Dim filename As String
-    filename = "C:\mydir\myfile.ext"
+    Dim fileName As String
+    fileName = "C:\mydir\myfile.ext"
     Dim UncPath As String
     UncPath = "\\myPc\mydir\myfile"
     Dim relativePath As String
     relativePath = "mydir\sudir\"
     Dim result As Boolean
     
-    result = Path.IsPathRooted(filename)
-    Debug.Print VBAString.Format("IsPathRooted('{0}') returns {1}", _
-                                filename, result)
+    result = Path.IsPathRooted(fileName)
+    Debug.Print VBString.Format("IsPathRooted('{0}') returns {1}", _
+                                fileName, result)
                                 
     result = Path.IsPathRooted(UncPath)
-    Debug.Print VBAString.Format("IsPathRooted('{0}') returns {1}", _
+    Debug.Print VBString.Format("IsPathRooted('{0}') returns {1}", _
                                 UncPath, result)
 
     result = Path.IsPathRooted(relativePath)
-    Debug.Print VBAString.Format("IsPathRooted('{0}') returns {1}", _
+    Debug.Print VBString.Format("IsPathRooted('{0}') returns {1}", _
                                 relativePath, result)
 End Sub
 
@@ -60,9 +60,9 @@ Public Sub PathIsPathRootedExample2()
 End Sub
 
 Private Sub ShowPathInfo(ByVal pPath As String)
-    Debug.Print VBAString.Format("Path: {0}", pPath)
-    Debug.Print VBAString.Format("   Rooted: {0}", Path.IsPathRooted(pPath))
-    Debug.Print VBAString.Format("   Full path: {0}", Path.GetFullPath(pPath))
+    Debug.Print VBString.Format("Path: {0}", pPath)
+    Debug.Print VBString.Format("   Rooted: {0}", Path.IsPathRooted(pPath))
+    Debug.Print VBString.Format("   Full path: {0}", Path.GetFullPath(pPath))
     Debug.Print
 End Sub
 
@@ -78,3 +78,5 @@ End Sub
 '    Path: C:/Documents
 '       Rooted: True
 '       Full path: C:\Documents
+
+

@@ -1,5 +1,5 @@
 Attribute VB_Name = "TextInfoCloneExample"
-'@Folder("Examples.System.Globalization.TextInfo.Methods")
+'@Folder "Examples.System.Globalization.TextInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -81,4 +81,5 @@ End Sub
 '3d) The set operation is invalid.
 '
 '*/
+
 

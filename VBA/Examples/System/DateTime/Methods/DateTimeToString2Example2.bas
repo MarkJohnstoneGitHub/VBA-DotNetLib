@@ -4,23 +4,25 @@ Attribute VB_Name = "DateTimeToString2Example2"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 13, 2023
-'@LastModified September 8, 2023
+'@LastModified January 7, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=netframework-4.8.1#system-datetime-tostring(system-string-system-iformatprovider)
 
 Option Explicit
 
+''
 ' The following example uses each of the standard date time format strings to
 ' display the string representation of a date and time for four different cultures.
+''
 Public Sub DateTimeToString2Example2()
     ' Create an array of all supported standard date and time format specifiers.
     Dim formats() As String
-    formats = StringArray.ToArray("d", "D", "f", "F", "g", "G", "m", "o", "r", _
+    formats = StringArray.CreateInitialize1D("d", "D", "f", "F", "g", "G", "m", "o", "r", _
                             "s", "t", "T", "u", "U", "Y")
     
     ' Create an array of four cultures.
     Dim cultures() As DotNetLib.CultureInfo
-    ObjectArray.ToArray cultures, _
+    ObjectArray.CreateInitialize1D cultures, _
                   CultureInfo.GetCultureInfo2("de-DE"), _
                   CultureInfo.GetCultureInfo2("en-US"), _
                   CultureInfo.GetCultureInfo2("es-ES"), _
@@ -37,9 +39,9 @@ Public Sub DateTimeToString2Example2()
         For Each varCulture In cultures
             Dim culture As DotNetLib.CultureInfo
             Set culture = varCulture
-            Debug.Print formatSpecifier; " Format Specifier "; "   "; _
-                        culture.Name; " Culture "; "   "; _
-                        dateToDisplay.ToString2(formatSpecifier, culture)
+            Debug.Print VBString.Format("{0} Format Specifier {1, 10} Culture {2, 40}", _
+                              formatSpecifier, culture.Name, _
+                              dateToDisplay.ToString2(formatSpecifier, culture))
         Next
         Debug.Print
     Next

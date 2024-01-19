@@ -4,24 +4,26 @@ Attribute VB_Name = "DTOToUnixTimeSecondsExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 31, 2023
+'@LastModified January 11, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.tounixtimeseconds?view=netframework-4.8.1#examples
 
 Option Explicit
 
-'@Description("The following example calls the ToUnixTimeSeconds method to return the Unix time of values that are equal to, shortly before, and shortly after 1970-01-01T00:00:00Z.")
+''
+' The following example calls the ToUnixTimeSeconds method to return the Unix time
+' of values that are equal to, shortly before, and shortly after 1970-01-01T00:00:00Z.
+''
 Public Sub DateTimeOffsetToUnixTimeSeconds()
-Attribute DateTimeOffsetToUnixTimeSeconds.VB_Description = "The following example calls the ToUnixTimeSeconds method to return the Unix time of values that are equal to, shortly before, and shortly after 1970-01-01T00:00:00Z."
-    Dim dto As IDateTimeOffset
+    Dim dto As DotNetLib.DateTimeOffset
     Set dto = DateTimeOffset.CreateFromDateTimeParts(1970, 1, 1, 0, 0, 0, TimeSpan.Zero)
-    Debug.Print dto.ToString() & " --> Unix Seconds: " & dto.ToUnixTimeSeconds()
+    Debug.Print VBString.Format("{0} --> Unix Seconds: {1}", dto, dto.ToUnixTimeSeconds())
 
     Set dto = DateTimeOffset.CreateFromDateTimeParts(1969, 12, 31, 23, 59, 0, TimeSpan.Zero)
-    Debug.Print dto.ToString() & " --> Unix Seconds: " & dto.ToUnixTimeSeconds()
+    Debug.Print VBString.Format("{0} --> Unix Seconds: {1}", dto, dto.ToUnixTimeSeconds())
     
     Set dto = DateTimeOffset.CreateFromDateTimeParts(1970, 1, 1, 0, 1, 0, TimeSpan.Zero)
-    Debug.Print dto.ToString() & " --> Unix Seconds: " & dto.ToUnixTimeSeconds()
+    Debug.Print VBString.Format("{0} --> Unix Seconds: {1}", dto, dto.ToUnixTimeSeconds())
 End Sub
 
 ' The example displays the following output:

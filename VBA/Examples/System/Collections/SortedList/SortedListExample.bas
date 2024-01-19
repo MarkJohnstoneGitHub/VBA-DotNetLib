@@ -1,5 +1,5 @@
 Attribute VB_Name = "SortedListExample"
-'@Folder("Examples.System.Collections.SortedList")
+'@Folder "Examples.System.Collections.SortedList"
 '
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -26,8 +26,8 @@ Public Sub SortedListExample()
     
     ' Displays the properties and values of the SortedList.
     Debug.Print "mySL"
-    Debug.Print VBAString.Format("  Count:    {0}", mySL.Count)
-    Debug.Print VBAString.Format("  Capacity: {0}", mySL.Capacity)
+    Debug.Print VBString.Format("  Count:    {0}", mySL.Count)
+    Debug.Print VBString.Format("  Capacity: {0}", mySL.Capacity)
     Debug.Print "  Keys and Values:"
     Call PrintKeysAndValues(mySL)
 End Sub
@@ -39,7 +39,7 @@ Private Sub PrintKeysAndValues(ByVal myList As DotNetLib.SortedList)
     Debug.Print Regex.Unescape("\t-KEY-\t-VALUE-")
     Dim i As Long
     For i = 0 To myList.Count - 1
-         Debug.Print VBAString.Format(formatString, myList.GetKey(i), myList.GetByIndex(i))
+         Debug.Print VBString.Format(formatString, myList.GetKey(i), myList.GetByIndex(i))
     Next i
     Debug.Print
 End Sub

@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringBuilderExample"
-'@Folder("Examples.System.Text.StringBuilder")
+'@Folder "Examples.System.Text.StringBuilder"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -29,7 +29,7 @@ Public Sub StringBuilderExample()
     Call sb.AppendFormat_3("GHI{0}{1}", "J", "k")
     
     ' Display the number of characters in the StringBuilder and its string.
-    Debug.Print VBAString.Format("{0} chars: {1}", sb.length, sb.ToString())
+    Debug.Print VBString.Format("{0} chars: {1}", sb.Length, sb.ToString())
     
     ' Insert a string at the beginning of the StringBuilder.
     Call sb.Insert(0, "Alphabet: ")
@@ -38,7 +38,7 @@ Public Sub StringBuilderExample()
     Call sb.Replace("k", "K")
     
     ' Display the number of characters in the StringBuilder and its string.
-    Debug.Print VBAString.Format("{0} chars: {1}", sb.length, sb.ToString())
+    Debug.Print VBString.Format("{0} chars: {1}", sb.Length, sb.ToString())
 End Sub
 
 ' This code produces the following output.

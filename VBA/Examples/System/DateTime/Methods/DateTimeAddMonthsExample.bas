@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeAddMonthsExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 10, 2023
-'@LastModified August 4, 2023
+'@LastModified January 6, 2024
 
 'Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.addmonths?view=netframework-4.8.1#examples
 
@@ -13,7 +13,7 @@ Option Explicit
 '@Description("The following example adds between zero and fifteen months to the last day of December, 2015. In this case, the AddMonths method returns the date of the last day of each month, and successfully handles leap years.")
 Public Sub DateTimeAddMonths()
 Attribute DateTimeAddMonths.VB_Description = "The following example adds between zero and fifteen months to the last day of December, 2015. In this case, the AddMonths method returns the date of the last day of each month, and successfully handles leap years."
-   Dim dat As IDateTime
+   Dim dat As DotNetLib.DateTime
    Set dat = DateTime.CreateFromDate(2015, 12, 31)
    Dim ctr As Long
    For ctr = 0 To 15

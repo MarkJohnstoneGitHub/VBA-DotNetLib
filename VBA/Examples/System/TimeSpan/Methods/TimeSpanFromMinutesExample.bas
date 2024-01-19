@@ -4,45 +4,62 @@ Attribute VB_Name = "TimeSpanFromMinutesExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 16, 2023
-'@LastModified July 30, 2023
+'@LastModified January 18, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.fromminutes?view=netframework-4.8.1#examples
 
 Option Explicit
 
-'@Description("The following example creates several TimeSpan objects using the FromMinutes method.")
+''
+' The following example creates several TimeSpan objects using the FromMinutes
+' method.
+''
 Public Sub TimeSpanFromMinutes()
-Attribute TimeSpanFromMinutes.VB_Description = "The following example creates several TimeSpan objects using the FromMinutes method."
-   Debug.Print "FromMinutes", "TimeSpan"
-   Debug.Print "-----------", "--------"
-
-   GenTimeSpanFromMinutes 0.00001
-   GenTimeSpanFromMinutes 0.00002
-   GenTimeSpanFromMinutes 0.12345
-   GenTimeSpanFromMinutes 1234.56789
-   GenTimeSpanFromMinutes 12345678.98765
-   GenTimeSpanFromMinutes 0.01666
-   GenTimeSpanFromMinutes 1
-   GenTimeSpanFromMinutes 60
-   GenTimeSpanFromMinutes 1440
-   GenTimeSpanFromMinutes 30020.33667
+    Debug.Print VBString.Unescape( _
+        "This example of TimeSpan.FromMinutes( double )\n" + _
+        "generates the following output.\n")
+    Debug.Print VBString.Format("{0,21}{1,18}", _
+                    "FromMinutes", "TimeSpan")
+    Debug.Print VBString.Format("{0,21}{1,18}", _
+                    "-----------", "--------")
+    
+    Call GenTimeSpanFromMinutes(0.00001)
+    Call GenTimeSpanFromMinutes(0.00002)
+    Call GenTimeSpanFromMinutes(0.12345)
+    Call GenTimeSpanFromMinutes(1234.56789)
+    Call GenTimeSpanFromMinutes(12345678.98765)
+    Call GenTimeSpanFromMinutes(0.01666)
+    Call GenTimeSpanFromMinutes(1)
+    Call GenTimeSpanFromMinutes(60)
+    Call GenTimeSpanFromMinutes(1440)
+    Call GenTimeSpanFromMinutes(30020.33667)
 End Sub
 
-Private Sub GenTimeSpanFromMinutes(ByVal Minutes As Double)
-   ' Create a TimeSpan object and TimeSpan string from
-   ' a number of minutes.
-   Dim interval As ITimeSpan
-   Set interval = TimeSpan.FromMinutes(Minutes)
-   Dim timeInterval As String
-   timeInterval = interval.ToString()
-   Debug.Print Minutes, timeInterval
+Private Sub GenTimeSpanFromMinutes(ByVal pMinutes As Double)
+    ' Create a TimeSpan object and TimeSpan string from
+    ' a number of minutes.
+    Dim interval As DotNetLib.TimeSpan
+    Set interval = TimeSpan.FromMinutes(pMinutes)
+    Dim timeInterval As String
+    timeInterval = interval.ToString()
+    
+    ' Pad the end of the TimeSpan string with spaces if it
+    ' does not contain milliseconds.
+    Dim pIndex As Long
+    pIndex = InStr(timeInterval, ":")
+    pIndex = InStr(pIndex, timeInterval, ".")
+    If (pIndex = 0) Then
+        timeInterval = timeInterval & "        "
+    End If
+    
+    Debug.Print VBString.Format("{0,21}{1,26}", pMinutes, timeInterval)
 End Sub
 
 '/*
 'This example of TimeSpan.FromMinutes( double )
 'generates the following output.
 '
-'          FromMinutes TimeSpan
+'          FromMinutes          TimeSpan
 '          -----------          --------
 '                1E-05          00:00:00.0010000
 '                2E-05          00:00:00.0010000
@@ -55,3 +72,4 @@ End Sub
 '                 1440        1.00:00:00
 '          30020.33667       20.20:20:20.2000000
 '*/
+

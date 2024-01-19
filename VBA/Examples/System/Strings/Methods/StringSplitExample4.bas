@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringSplitExample4"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -30,17 +30,17 @@ Public Sub StringSplitExample4()
     Dim charSeparators As String
     charSeparators = ","
     Dim stringSeparators() As String
-    Call ArrayEx.CreateInitialize1D(stringSeparators, "[stop]")
+    Call VBArray.CreateInitialize1D(stringSeparators, "[stop]")
     Dim result() As String
     
     ' ------------------------------------------------------------------------------
     ' Split a string delimited by characters.
     ' ------------------------------------------------------------------------------
-    Debug.Print VBAString.Unescape("1) Split a string delimited by characters:\n")
+    Debug.Print VBString.Unescape("1) Split a string delimited by characters:\n")
 
     ' Display the original string and delimiter characters.
-    Debug.Print VBAString.Format("1a) The original string is ""{0}"".", s1)
-    Debug.Print VBAString.Format(VBAString.Unescape("The delimiter character is '{0}'.\n"), charSeparators)
+    Debug.Print VBString.Format("1a) The original string is ""{0}"".", s1)
+    Debug.Print VBString.Format(VBString.Unescape("The delimiter character is '{0}'.\n"), charSeparators)
 
     ' Split a string delimited by characters and return all elements.
     Debug.Print "1b) Split a string delimited by characters and " + _
@@ -71,11 +71,11 @@ Public Sub StringSplitExample4()
     ' ------------------------------------------------------------------------------
     ' Split a string delimited by another string.
     ' ------------------------------------------------------------------------------
-    Debug.Print VBAString.Unescape("2) Split a string delimited by another string:\n")
+    Debug.Print VBString.Unescape("2) Split a string delimited by another string:\n")
     
     ' Display the original string and delimiter string.
-    Debug.Print VBAString.Format("2a) The original string is ""{0}"".", s2)
-    Debug.Print VBAString.Format(VBAString.Unescape("The delimiter string is ""{0}"".\n"), stringSeparators(0))
+    Debug.Print VBString.Format("2a) The original string is ""{0}"".", s2)
+    Debug.Print VBString.Format(VBString.Unescape("The delimiter string is ""{0}"".\n"), stringSeparators(0))
 
     ' Split a string delimited by another string and return all elements.
     Debug.Print "2b) Split a string delimited by another string and " + _
@@ -112,12 +112,12 @@ End Sub
 
 ' Display the array of separated strings using a local function
 Private Sub Show(ByRef entries() As String)
-    Debug.Print VBAString.Format("The return value contains these {0} elements:", UBound(entries) + 1)
+    Debug.Print VBString.Format("The return value contains these {0} elements:", UBound(entries) + 1)
     Dim varEntry As Variant
     For Each varEntry In entries
-        Debug.Print VBAString.Format("<{0}>", varEntry);
+        Debug.Print VBString.Format("<{0}>", varEntry);
     Next
-    Debug.Print VBAString.Unescape("\n\n")
+    Debug.Print VBString.Unescape("\n\n")
 End Sub
 
 '/*
@@ -166,3 +166,5 @@ End Sub
 '<ONE><TWO[stop][stop][stop]THREE[stop][stop]>
 '
 '*/
+
+

@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringIsNullOrEmptyExample2"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

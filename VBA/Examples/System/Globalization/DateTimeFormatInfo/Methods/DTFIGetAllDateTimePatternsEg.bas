@@ -1,5 +1,5 @@
 Attribute VB_Name = "DTFIGetAllDateTimePatternsEg"
-'@Folder("Examples.System.Globalization.DateTimeFormatInfo.Methods")
+'@Folder "Examples.System.Globalization.DateTimeFormatInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -22,10 +22,10 @@ Public Sub DateTimeFormatInfoGetAllDateTimePatterns()
     Dim formats() As String
     formats = invDTF.GetAllDateTimePatterns()
     
-    Debug.Print VBAString.Format(VBAString.Unescape("{0,-40} {1}\n"), "Pattern", "Result String")
+    Debug.Print VBString.Format(VBString.Unescape("{0,-40} {1}\n"), "Pattern", "Result String")
     Dim fmt As Variant
     For Each fmt In formats
-        Debug.Print VBAString.Format("{0,-40} {1}", fmt, date1.ToString2(fmt))
+        Debug.Print VBString.Format("{0,-40} {1}", fmt, date1.ToString2(fmt))
     Next
 End Sub
 

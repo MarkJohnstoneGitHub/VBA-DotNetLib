@@ -4,9 +4,9 @@ Attribute VB_Name = "DateTimeTryParseExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 14, 2023
-'@LastModified August 4, 2023
+'@LastModified January 7, 2024
 
-'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tryparse?view=netframework-4.8.1
+'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tryparse?view=netframework-4.8.1#system-datetime-tryparse(system-string-system-datetime@)
 
 Option Explicit
 
@@ -14,22 +14,22 @@ Option Explicit
 Public Sub DateTimeTryParse()
 Attribute DateTimeTryParse.VB_Description = "The following example passes a number of date and time strings to the DateTime.TryParse(String, DateTime) method."
    Dim dateStrings() As String
-   dateStrings = StringArray.ToArray("05/01/2009 14:57:32.8", "2009-05-01 14:57:32.8", _
+   dateStrings = StringArray.CreateInitialize1D("05/01/2009 14:57:32.8", "2009-05-01 14:57:32.8", _
                                  "2009-05-01T14:57:32.8375298-04:00", "5/01/2008", _
                                  "5/01/2008 14:57:32.80 -07:00", _
                                  "1 May 2008 2:57:32.8 PM", "16-05-2009 1:00:32 PM", _
                                  "Fri, 15 May 2009 20:10:57 GMT")
    
-   'Debug.Print "Attempting to parse strings using " & CultureInfo.CurrentCulture.Name
-    Dim dateValue As IDateTime
+    Debug.Print VBString.Format("Attempting to parse strings using {0} culture.", _
+                               CultureInfo.CurrentCulture.Name)
+    Dim dateValue As DotNetLib.DateTime
     Dim dateString As Variant
     For Each dateString In dateStrings
         If (DateTime.TryParse(dateString, dateValue)) Then
-              Debug.Print "  Converted '" & dateString & "' to " & _
-                        dateValue.ToString() & _
-                        " (" & DateTimeKindHelper.ToString(dateValue.Kind) & ")"
+            Debug.Print VBString.Format("  Converted '{0}' to {1} ({2}).", dateString, _
+                              dateValue, DateTimeKindHelper.ToString(dateValue.Kind))
         Else
-           Debug.Print "  Unable to parse '" & dateString & "'."
+            Debug.Print VBString.Format("  Unable to parse '{0}'.", dateString)
         End If
     Next
 End Sub

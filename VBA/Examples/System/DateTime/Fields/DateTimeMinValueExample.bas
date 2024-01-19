@@ -5,7 +5,7 @@ Attribute VB_Name = "DateTimeMinValueExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 9, 2023
-'@LastModified August 3, 2023
+'@LastModified January 7, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.minvalue?view=netframework-4.8.1
 
@@ -15,7 +15,7 @@ Option Explicit
 ' MinValue defines the date and time that is assigned to an uninitialized DateTime variable.
 ' The following example illustrates this.
 Public Sub DateTimeMinValue()
-    Dim date1 As IDateTime
+    Dim date1 As DotNetLib.DateTime
     Set date1 = New DotNetLib.DateTime
     If (date1.Equals(DateTime.MinValue)) Then
         Debug.Print date1.ToString & " (Equals Date.MinValue)"

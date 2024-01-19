@@ -1,19 +1,20 @@
 Attribute VB_Name = "DateTimeOffsetParse3Example"
-'@Folder("Examples.System.DateTimeOffset.Methods")
+'@Folder "Examples.System.DateTimeOffset.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 25, 2023
-'@LastModified August 25, 2023
+'@LastModified January 10, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.parse?view=netframework-4.8.1#system-datetimeoffset-parse(system-string-system-iformatprovider-system-globalization-datetimestyles)
 
 Option Explicit
 
-
+''
 ' The following example illustrates the effect of passing the DateTimeStyles.AssumeLocal,
 ' DateTimeStyles.AssumeUniversal, and DateTimeStyles.AdjustToUniversal values to the
 ' styles parameter of the Parse(String, IFormatProvider, DateTimeStyles) method.
+''
 Public Sub DateTimeOffsetParse3()
     Dim dateString As String
     Dim offsetDate As DotNetLib.DateTimeOffset

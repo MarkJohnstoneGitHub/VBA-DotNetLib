@@ -1,5 +1,5 @@
 Attribute VB_Name = "FileAppendAllText2Example"
-'@Folder("Examples.System.IO.File.Methods")
+'@Folder "Examples.System.IO.File.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

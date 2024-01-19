@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringBuilderAppendLineExample"
-'@Folder("Examples.System.Text.StringBuilder.Methods")
+'@Folder "Examples.System.Text.StringBuilder.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

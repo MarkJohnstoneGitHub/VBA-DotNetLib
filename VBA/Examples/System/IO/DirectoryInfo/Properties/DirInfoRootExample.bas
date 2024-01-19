@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirInfoRootExample"
-'@Folder("Examples.System.IO.DirectoryInfo.Properties")
+'@Folder "Examples.System.IO.DirectoryInfo.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -25,10 +25,10 @@ Public Sub DirectoryInfoRootExample()
     Dim di4 As DotNetLib.DirectoryInfo
     Set di4 = DirectoryInfo.Create("c:\")
     
-    Debug.Print VBAString.Format("The root path of '{0}' is '{1}'", di1.FullName, di1.Root)
-    Debug.Print VBAString.Format("The root path of '{0}' is '{1}'", di2.FullName, di2.Root)
-    Debug.Print VBAString.Format("The root path of '{0}' is '{1}'", di3.FullName, di3.Root)
-    Debug.Print VBAString.Format("The root path of '{0}' is '{1}'", di4.FullName, di4.Root)
+    Debug.Print VBString.Format("The root path of '{0}' is '{1}'", di1.FullName, di1.Root)
+    Debug.Print VBString.Format("The root path of '{0}' is '{1}'", di2.FullName, di2.Root)
+    Debug.Print VBString.Format("The root path of '{0}' is '{1}'", di3.FullName, di3.Root)
+    Debug.Print VBString.Format("The root path of '{0}' is '{1}'", di4.FullName, di4.Root)
 End Sub
 
 '/*

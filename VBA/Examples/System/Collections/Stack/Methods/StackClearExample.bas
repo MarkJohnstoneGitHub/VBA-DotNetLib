@@ -1,5 +1,5 @@
 Attribute VB_Name = "StackClearExample"
-'@Folder("Examples.System.Collections.Stack.Methods")
+'@Folder "Examples.System.Collections.Stack.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -25,7 +25,7 @@ Public Sub StackClear()
     
     ' Displays the count and values of the Stack.
     Debug.Print "Initially,"
-    Debug.Print VBAString.Format("   Count    : {0}", myStack.Count)
+    Debug.Print VBString.Format("   Count    : {0}", myStack.Count)
     Debug.Print "   Values:";
     PrintValues myStack
     
@@ -34,7 +34,7 @@ Public Sub StackClear()
 
     ' Displays the count and values of the Stack.
     Debug.Print "After Clear,"
-    Debug.Print VBAString.Format("   Count    : {0}", myStack.Count)
+    Debug.Print VBString.Format("   Count    : {0}", myStack.Count)
     Debug.Print "   Values:";
     PrintValues myStack
 End Sub
@@ -42,7 +42,7 @@ End Sub
 Private Sub PrintValues(ByVal myCollection As mscorlib.IEnumerable)
     Dim obj As Variant
     For Each obj In myCollection
-        Debug.Print VBAString.Format("    {0}", obj);
+        Debug.Print VBString.Format("    {0}", obj);
     Next
     Debug.Print
 End Sub

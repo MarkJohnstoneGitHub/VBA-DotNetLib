@@ -4,34 +4,37 @@ Attribute VB_Name = "TimeZoneInfoConvertTime2Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 23, 2023
-'@LastModified July 31, 2023
+'@LastModified January 19, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.converttime?view=netframework-4.8.1#system-timezoneinfo-converttime(system-datetimeoffset-system-timezoneinfo)
 
 Option Explicit
 
-'@Description("The following example converts an array of DateTimeOffset values to times in the Eastern Time zone of the U.S. and Canada.")
-'It illustrates that the ConvertTime method takes time zone adjustments into account, because a
-'time zone adjustment occurs in both the source and destination time zones at 2:00 A.M. on November 7, 2010.
+''
+' The following example converts an array of DateTimeOffset values to times in
+' the Eastern Time zone of the U.S. and Canada. It illustrates that the
+' ConvertTime method takes time zone adjustments into account, because a time
+' zone adjustment occurs in both the source and destination time zones at
+' 2:00 A.M. on November 7, 2010.
+''
 Public Sub TimeZoneInfoConvertTime2()
-Attribute TimeZoneInfoConvertTime2.VB_Description = "The following example converts an array of DateTimeOffset values to times in the Eastern Time zone of the U.S. and Canada."
     TimeZoneInfo.ClearCachedData 'Clear incase timezone was changed.
     
     ' Define times to be converted.
-    Dim time1 As IDateTime
+    Dim time1 As DotNetLib.DateTime
     Set time1 = DateTime.CreateFromDateTime(2010, 1, 1, 12, 1, 0)
-    Dim time2 As IDateTime
+    Dim time2 As DotNetLib.DateTime
     Set time2 = DateTime.CreateFromDateTime(2010, 11, 6, 23, 30, 0)
     
-    Dim times() As IDateTimeOffset
-    ObjectArray.ToArray times, _
-                    DateTimeOffset.CreateFromDateTime2(time1, TimeZoneInfo.Locale.GetUtcOffset(time1)), _
-                    DateTimeOffset.CreateFromDateTime2(time1, TimeSpan.Zero), _
-                    DateTimeOffset.CreateFromDateTime2(time2, TimeZoneInfo.Locale.GetUtcOffset(time2)), _
-                    DateTimeOffset.CreateFromDateTime2(time2.AddHours(3), TimeZoneInfo.Locale.GetUtcOffset(time2.AddHours(3)))
+    Dim times() As DotNetLib.DateTimeOffset
+    ObjectArray.CreateInitialize1D times, _
+                DateTimeOffset.CreateFromDateTime2(time1, TimeZoneInfo.Locale.GetUtcOffset(time1)), _
+                DateTimeOffset.CreateFromDateTime2(time1, TimeSpan.Zero), _
+                DateTimeOffset.CreateFromDateTime2(time2, TimeZoneInfo.Locale.GetUtcOffset(time2)), _
+                DateTimeOffset.CreateFromDateTime2(time2.AddHours(3), TimeZoneInfo.Locale.GetUtcOffset(time2.AddHours(3)))
     
     ' Retrieve the time zone for Eastern Standard Time (U.S. and Canada).
-    Dim est As ITimeZoneInfo
+    Dim est As DotNetLib.TimeZoneInfo
     On Error Resume Next
     Set est = TimeZoneInfo.FindSystemTimeZoneById("Eastern Standard Time")
     If Catch(TimeZoneNotFoundException) Then
@@ -48,13 +51,11 @@ Attribute TimeZoneInfoConvertTime2.VB_Description = "The following example conve
     ' Convert each time in the array.
     Dim varTimeToConvert As Variant
     For Each varTimeToConvert In times
-        Dim timeToConvert As IDateTimeOffset
+        Dim timeToConvert As DotNetLib.DateTimeOffset
         Set timeToConvert = varTimeToConvert
-        
-        Dim targetTime As IDateTimeOffset
+        Dim targetTime As DotNetLib.DateTimeOffset
         Set targetTime = TimeZoneInfo.ConvertTime2(timeToConvert, est)
-        Debug.Print "Converted " & timeToConvert.ToString() & _
-                     " to " & targetTime.ToString() & "."
+        Debug.Print VBString.Format("Converted {0} to {1}.", timeToConvert, targetTime)
     Next
 End Sub
 

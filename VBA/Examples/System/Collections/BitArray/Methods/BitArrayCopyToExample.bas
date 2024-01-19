@@ -1,5 +1,5 @@
 Attribute VB_Name = "BitArrayCopyToExample"
-'@Folder("Examples.System.Collections.BitArray.Methods")
+'@Folder "Examples.System.Collections.BitArray.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -76,7 +76,7 @@ Public Sub BitArrayCopyToExample()
     ' Returns an exception if the array is not of type Boolean, integer or byte.
     On Error Resume Next
     Dim myStringArray As DotNetLib.Array
-    Set myStringArray = Arrays.CreateInstance(VBAString.GetType(), 8)
+    Set myStringArray = Arrays.CreateInstance(VBString.GetType(), 8)
     Call myStringArray.SetValue("Hello", 0)
     Call myStringArray.SetValue("World", 1)
     Call myBA.CopyTo(myStringArray, 3)
@@ -89,7 +89,7 @@ End Sub
 Private Sub PrintValues(ByVal myList As mscorlib.IEnumerable)
     Dim obj As Variant
     For Each obj In myList
-        Debug.Print VBAString.Format("{0,8}", obj);
+        Debug.Print VBString.Format("{0,8}", obj);
     Next
     Debug.Print
 End Sub

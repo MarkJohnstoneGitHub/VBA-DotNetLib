@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArrayRankExample"
-'@Folder("Examples.System.Array.Properties")
+'@Folder "Examples.System.Array.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -23,9 +23,9 @@ Public Sub ArrayRank()
     Dim array2 As DotNetLib.Array
     Set array2 = Arrays.CreateInstance2(Int32.GetType(), 10, 3)
     
-    Debug.Print VBAString.Format("{0}: {1} dimension(s)", _
+    Debug.Print VBString.Format("{0}: {1} dimension(s)", _
                         array1.ToString(), array1.Rank)
-    Debug.Print VBAString.Format("{0}: {1} dimension(s)", _
+    Debug.Print VBString.Format("{0}: {1} dimension(s)", _
                         array2.ToString(), array2.Rank)
 End Sub
 

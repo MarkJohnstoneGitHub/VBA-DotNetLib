@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringEqualsExample2"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -24,15 +24,15 @@ Public Sub StringEqualsExample2()
     Dim pvtWord As DotNetLib.String
     Set pvtWord = Strings.Create("File")
     Dim others() As DotNetLib.String
-    Call ArrayEx.CreateInitialize1D(others, pvtWord.ToLower(), pvtWord, pvtWord.ToUpper(), Strings.CreateUnescape("F\u0131le"))
+    Call VBArray.CreateInitialize1D(others, pvtWord.ToLower(), pvtWord, pvtWord.ToUpper(), Strings.CreateUnescape("F\u0131le"))
     Dim varOther As Variant
     For Each varOther In others
         Dim other As DotNetLib.String
         Set other = varOther
         If (pvtWord.Equals(other)) Then
-            Debug.Print VBAString.Format("{0} = {1}", pvtWord, other)
+            Debug.Print VBString.Format("{0} = {1}", pvtWord, other)
         Else
-            Debug.Print VBAString.Format("{0} {1} {2}", pvtWord, Regex.Unescape("\u2260"), other)
+            Debug.Print VBString.Format("{0} {1} {2}", pvtWord, Regex.Unescape("\u2260"), other)
         End If
     Next
 End Sub

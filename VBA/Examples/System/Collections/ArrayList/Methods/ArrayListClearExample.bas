@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArrayListClearExample"
-'@Folder("Examples.System.Collections.ArrayList.Methods")
+'@Folder "Examples.System.Collections.ArrayList.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -26,8 +26,8 @@ Public Sub ArrayListClear()
     
     ' Displays the count, capacity and values of the ArrayList.
     Debug.Print "Initially,"
-    Debug.Print VBAString.Format("   Count    : {0}", myAL.Count)
-    Debug.Print VBAString.Format("   Capacity : {0}", myAL.Capacity)
+    Debug.Print VBString.Format("   Count    : {0}", myAL.Count)
+    Debug.Print VBString.Format("   Capacity : {0}", myAL.Capacity)
     Debug.Print "   Values:";
     Call PrintValues(myAL)
     
@@ -36,8 +36,8 @@ Public Sub ArrayListClear()
 
     ' Displays the count, capacity and values of the ArrayList.
     Debug.Print "After TrimToSize,"
-    Debug.Print VBAString.Format("   Count    : {0}", myAL.Count)
-    Debug.Print VBAString.Format("   Capacity : {0}", myAL.Capacity)
+    Debug.Print VBString.Format("   Count    : {0}", myAL.Count)
+    Debug.Print VBString.Format("   Capacity : {0}", myAL.Capacity)
     Debug.Print "   Values:";
     Call PrintValues(myAL)
     
@@ -46,8 +46,8 @@ Public Sub ArrayListClear()
     
     ' Displays the count, capacity and values of the ArrayList.
     Debug.Print "After Clear,"
-    Debug.Print VBAString.Format("   Count    : {0}", myAL.Count)
-    Debug.Print VBAString.Format("   Capacity : {0}", myAL.Capacity)
+    Debug.Print VBString.Format("   Count    : {0}", myAL.Count)
+    Debug.Print VBString.Format("   Capacity : {0}", myAL.Capacity)
     Debug.Print "   Values:";
     Call PrintValues(myAL)
     
@@ -56,8 +56,8 @@ Public Sub ArrayListClear()
     
     ' Displays the count, capacity and values of the ArrayList.
     Debug.Print "After the second TrimToSize,"
-    Debug.Print VBAString.Format("   Count    : {0}", myAL.Count)
-    Debug.Print VBAString.Format("   Capacity : {0}", myAL.Capacity)
+    Debug.Print VBString.Format("   Count    : {0}", myAL.Count)
+    Debug.Print VBString.Format("   Capacity : {0}", myAL.Capacity)
     Debug.Print "   Values:";
     Call PrintValues(myAL)
 End Sub
@@ -65,7 +65,7 @@ End Sub
 Public Sub PrintValues(ByVal myList As mscorlib.IEnumerable)
     Dim obj As Variant
     For Each obj In myList
-        Debug.Print VBAString.Format("   {0}", obj);
+        Debug.Print VBString.Format("   {0}", obj);
     Next
     Debug.Print
 End Sub

@@ -4,45 +4,64 @@ Attribute VB_Name = "TimeSpanGetHashCodeExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 17, 2023
-'@LastModified July 30, 2023
+'@LastModified January 18, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.gethashcode?view=netframework-4.8.1#examples
 
 Option Explicit
 
-'@Description("The following example generates the hash codes of several TimeSpan objects using the GetHashCode method.")
+''
+' The following example generates the hash codes of several TimeSpan objects
+' using the GetHashCode method.
+''
 Public Sub TimeSpanGetHashCode()
-Attribute TimeSpanGetHashCode.VB_Description = "The following example generates the hash codes of several TimeSpan objects using the GetHashCode method."
-   Debug.Print "TimeSpan        ", "Hash Code"
-   Debug.Print "--------        ", "---------"
+    Debug.Print VBString.Unescape( _
+        "This example of TimeSpan.GetHashCode( ) generates " + _
+        "the following \noutput, which displays " + _
+        "the hash codes of representative TimeSpan \n" + _
+        "objects in hexadecimal and decimal formats.\n")
+    Debug.Print VBString.Format("{0,22}   {1,10}", _
+        "TimeSpan        ", "Hash Code")
+    Debug.Print VBString.Format("{0,22}   {1,10}", _
+        "--------        ", "---------")
    
-   DisplayHashCode TimeSpan.CreateFromTicks(0)
-   DisplayHashCode TimeSpan.CreateFromTicks(1)
-   DisplayHashCode TimeSpan.Create3(0, 0, 0, 0, 1)
-   DisplayHashCode TimeSpan.Create(0, 0, 1)
-   DisplayHashCode TimeSpan.Create(0, 1, 0)
-   DisplayHashCode TimeSpan.Create(1, 0, 0)
-   DisplayHashCode TimeSpan.CreateFromTicks(36000000001#)
-   DisplayHashCode TimeSpan.Create3(0, 1, 0, 0, 1)
-   DisplayHashCode TimeSpan.Create(1, 0, 1)
-   DisplayHashCode TimeSpan.Create2(1, 0, 0, 0)
-   DisplayHashCode TimeSpan.CreateFromTicks(864000000001#)
-   DisplayHashCode TimeSpan.Create3(1, 0, 0, 0, 1)
-   DisplayHashCode TimeSpan.Create2(1, 0, 0, 1)
-   DisplayHashCode TimeSpan.Create2(100, 0, 0, 0)
-   DisplayHashCode TimeSpan.Create3(100, 0, 0, 0, 1)
-   DisplayHashCode TimeSpan.Create2(100, 0, 0, 1)
+    DisplayHashCode TimeSpan.CreateFromTicks(0)
+    DisplayHashCode TimeSpan.CreateFromTicks(1)
+    DisplayHashCode TimeSpan.Create3(0, 0, 0, 0, 1)
+    DisplayHashCode TimeSpan.Create(0, 0, 1)
+    DisplayHashCode TimeSpan.Create(0, 1, 0)
+    DisplayHashCode TimeSpan.Create(1, 0, 0)
+    DisplayHashCode TimeSpan.CreateFromTicks(36000000001#)
+    DisplayHashCode TimeSpan.Create3(0, 1, 0, 0, 1)
+    DisplayHashCode TimeSpan.Create(1, 0, 1)
+    DisplayHashCode TimeSpan.Create2(1, 0, 0, 0)
+    DisplayHashCode TimeSpan.CreateFromTicks(864000000001#)
+    DisplayHashCode TimeSpan.Create3(1, 0, 0, 0, 1)
+    DisplayHashCode TimeSpan.Create2(1, 0, 0, 1)
+    DisplayHashCode TimeSpan.Create2(100, 0, 0, 0)
+    DisplayHashCode TimeSpan.Create3(100, 0, 0, 0, 1)
+    DisplayHashCode TimeSpan.Create2(100, 0, 0, 1)
 End Sub
 
-Private Sub DisplayHashCode(ByVal interval As ITimeSpan)
-   ' Create a hash code and a string representation of
-   ' the TimeSpan parameter.
-   Dim timeInterval As String
-   timeInterval = interval.ToString()
-   Dim hashCode As Long
-   hashCode = interval.GetHashCode()
+Private Sub DisplayHashCode(ByVal interval As DotNetLib.TimeSpan)
+    ' Create a hash code and a string representation of
+    ' the TimeSpan parameter.
+    Dim timeInterval As String
+    timeInterval = interval.ToString()
+    Dim hashCode As Long
+    hashCode = interval.GetHashCode()
    
-   Debug.Print timeInterval, "   0x" & Hex$(hashCode), hashCode
+    ' Pad the end of the TimeSpan string with spaces if it
+    ' does not contain milliseconds.
+    Dim pIndex As Long
+    pIndex = InStr(timeInterval, ":")
+    pIndex = InStr(pIndex, timeInterval, ".")
+    If (pIndex = 0) Then
+        timeInterval = timeInterval & "        "
+    End If
+    
+    Debug.Print VBString.Format("{0,22}   0x{1:X8}, {1}", _
+        timeInterval, hashCode)
 End Sub
 
 '/*
@@ -69,3 +88,4 @@ End Sub
 '  100.00:00:00.0010000   0x914F6984, -1857066620
 '  100.00:00:01           0x91E7D814, -1847076844
 '*/
+

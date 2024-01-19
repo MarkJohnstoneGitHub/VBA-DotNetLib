@@ -1,5 +1,5 @@
 Attribute VB_Name = "MatchGroupsExample"
-'@Folder("Examples.System.Text.RegularExpressions.Match.Properties")
+'@Folder "Examples.System.Text.RegularExpressions.Match.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -33,19 +33,19 @@ Public Sub MatchGroups()
     
     Do While (m.Success)
         matchCount = matchCount + 1
-        Debug.Print VBAString.Format("Match" & (matchCount))
+        Debug.Print VBString.Format("Match" & (matchCount))
         Dim i As Long
         For i = 1 To 2
             Dim g As DotNetLib.Group
-            Set g = m.Groups(i)
-            Debug.Print VBAString.Format("Group" & i & "='" & g & "'")
+            Set g = m.Groups.item(i)
+            Debug.Print VBString.Format("Group" & i & "='" & g & "'")
             Dim cc  As DotNetLib.CaptureCollection
             Set cc = g.Captures
             Dim j As Long
             For j = 0 To cc.Count - 1
                 Dim c As DotNetLib.Capture
-                Set c = cc(j)
-                Debug.Print VBAString.Format("Capture" & j & "='" & c & "', Position=" & c.index)
+                Set c = cc.item(j)
+                Debug.Print VBString.Format("Capture" & j & "='" & c & "', Position=" & c.Index)
             Next j
         Next i
          Set m = m.NextMatch()

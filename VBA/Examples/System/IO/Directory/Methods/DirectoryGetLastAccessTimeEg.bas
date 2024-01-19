@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirectoryGetLastAccessTimeEg"
-'@Folder("Examples.System.IO.Directory.Methods")
+'@Folder "Examples.System.IO.Directory.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -27,15 +27,15 @@ Public Sub DirectoryGetLastAccessTime()
     ' Get the creation time of a well-known directory.
     Dim dt As DotNetLib.DateTime
     Set dt = Directory.GetLastAccessTime(pvtPath)
-    Debug.Print VBAString.Format("The last access time for this directory was {0}", dt)
+    Debug.Print VBString.Format("The last access time for this directory was {0}", dt)
     
     ' Update the last access time.
     Call Directory.SetLastAccessTime(pvtPath, DateTime.Now)
     Set dt = Directory.GetLastAccessTime(pvtPath)
-    Debug.Print VBAString.Format("The last access time for this directory was {0}", dt)
+    Debug.Print VBString.Format("The last access time for this directory was {0}", dt)
 Exit Sub
 ErrorHandler:
-    Debug.Print VBAString.Format("The process failed: {0}", Err.Description)
+    Debug.Print VBString.Format("The process failed: {0}", Err.Description)
 End Sub
 
 'Example Output:

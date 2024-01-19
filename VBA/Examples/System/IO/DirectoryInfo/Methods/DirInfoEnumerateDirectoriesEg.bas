@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirInfoEnumerateDirectoriesEg"
-'@Folder("Examples.System.IO.DirectoryInfo.Methods")
+'@Folder "Examples.System.IO.DirectoryInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

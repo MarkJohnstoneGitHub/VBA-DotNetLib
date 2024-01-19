@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirectoryDelete2Example"
-'@Folder("Examples.System.IO.Directory.Methods")
+'@Folder "Examples.System.IO.Directory.Methods"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 November 16, 2023
@@ -32,5 +32,5 @@ Public Sub DirectoryDelete2Example()
     Debug.Print "top-level directory exists: " & directoryExists
 Exit Sub
 ErrorHandler:
-    Debug.Print VBAString.Format("The process failed: {0}", Err.Description)
+    Debug.Print VBString.Format("The process failed: {0}", Err.Description)
 End Sub

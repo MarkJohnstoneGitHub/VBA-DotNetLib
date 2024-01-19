@@ -1,5 +1,5 @@
 Attribute VB_Name = "BitArrayOrExample"
-'@Folder("Examples.System.Collections.BitArray.Methods")
+'@Folder "Examples.System.Collections.BitArray.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -83,7 +83,7 @@ Private Sub PrintValues(ByVal myList As mscorlib.IEnumerable, ByVal myWidth As L
             Debug.Print
         End If
         i = i - 1
-        Debug.Print VBAString.Format("{0,8}", obj);
+        Debug.Print VBString.Format("{0,8}", obj);
     Next
     Debug.Print
 End Sub

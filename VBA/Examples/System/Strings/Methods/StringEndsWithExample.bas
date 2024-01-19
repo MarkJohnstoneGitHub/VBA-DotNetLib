@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringEndsWithExample"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -17,7 +17,7 @@ Option Explicit
 ''
 Public Sub StringEndsWithExample()
     Dim pvtStrings() As String
-    Call ArrayEx.CreateInitialize1D(pvtStrings, "This is a string.", "Hello!", "Nothing.", _
+    Call VBArray.CreateInitialize1D(pvtStrings, "This is a string.", "Hello!", "Nothing.", _
                                     "Yes.", "randomize")
     Dim value As Variant
     For Each value In pvtStrings
@@ -25,7 +25,7 @@ Public Sub StringEndsWithExample()
         Dim pvtString As DotNetLib.String
         Set pvtString = Strings.Create(value)
         endsInPeriod = pvtString.EndsWith3(".")
-        Debug.Print VBAString.Format("'{0}' ends in a period: {1}", _
+        Debug.Print VBString.Format("'{0}' ends in a period: {1}", _
                               pvtString, endsInPeriod)
     Next
 End Sub
@@ -36,3 +36,5 @@ End Sub
 '       'Nothing.' ends in a period: True
 '       'Yes.' ends in a period: True
 '       'randomize' ends in a period: False
+
+

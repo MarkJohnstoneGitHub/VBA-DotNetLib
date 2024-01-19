@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringIsNullOrEmptyExample3"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -20,9 +20,9 @@ Option Explicit
 ''
 Public Sub StringIsNullOrEmptyExample3()
     Dim s As DotNetLib.String
-    Debug.Print VBAString.Format("The value of the string is '{0}'", s)
+    Debug.Print VBString.Format("The value of the string is '{0}'", s)
     On Error Resume Next
-    Debug.Print VBAString.Format("String length is {0}", s.length)
+    Debug.Print VBString.Format("String length is {0}", s.Length)
     If Err.Number Then
         Debug.Print Err.Description
     End If

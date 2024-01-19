@@ -8,6 +8,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Represents a character as a UTF-16 code unit."
+'@IgnoreModule ParameterCanBeByVal
 '@Folder "VBADotNetLib.System"
 '@ModuleDescription("Represents a character as a UTF-16 code unit.")
 '@PredeclaredId
@@ -56,9 +57,9 @@ End Function
 
 '@Static
 '@Description("Converts the value of a UTF-16 encoded character or surrogate pair at a specified position in a string into a Unicode code point.")
-Public Function ConvertToUtf32(ByRef s As String, ByVal index As Long) As Long
+Public Function ConvertToUtf32(ByRef s As String, ByVal Index As Long) As Long
 Attribute ConvertToUtf32.VB_Description = "Converts the value of a UTF-16 encoded character or surrogate pair at a specified position in a string into a Unicode code point."
-   ConvertToUtf32 = this.CharSingleton.ConvertToUtf32(s, index)
+   ConvertToUtf32 = this.CharSingleton.ConvertToUtf32(s, Index)
 End Function
 
 ''@Description("Converts the value of a UTF-16 encoded surrogate pair into a Unicode code point.")
@@ -68,30 +69,30 @@ End Function
 
 '@Static
 '@Description("Converts the numeric Unicode character at the specified position in a specified string to a double-precision floating point number.")
-Public Function GetNumericValue(ByRef s As String, ByVal index As Long) As Double
+Public Function GetNumericValue(ByRef s As String, ByVal Index As Long) As Double
 Attribute GetNumericValue.VB_Description = "Converts the numeric Unicode character at the specified position in a specified string to a double-precision floating point number."
-   GetNumericValue = this.CharSingleton.GetNumericValue(s, index)
+   GetNumericValue = this.CharSingleton.GetNumericValue(s, Index)
 End Function
 
 '@Static
 '@Description("Categorizes a Unicode character into a group identified by one of the UnicodeCategory values.")
-Public Function GetUnicodeCategory(ByRef s As String, ByVal index As Long) As UnicodeCategory
+Public Function GetUnicodeCategory(ByRef s As String, ByVal Index As Long) As UnicodeCategory
 Attribute GetUnicodeCategory.VB_Description = "Categorizes a Unicode character into a group identified by one of the UnicodeCategory values."
-   GetUnicodeCategory = this.CharSingleton.GetUnicodeCategory(s, index)
+   GetUnicodeCategory = this.CharSingleton.GetUnicodeCategory(s, Index)
 End Function
 
 '@Static
 '@Description("Indicates whether the character at the specified position in a specified string is categorized as a control character.")
-Public Function IsControl(ByRef s As String, ByVal index As Long) As Boolean
+Public Function IsControl(ByRef s As String, ByVal Index As Long) As Boolean
 Attribute IsControl.VB_Description = "Indicates whether the character at the specified position in a specified string is categorized as a control character."
-   IsControl = this.CharSingleton.IsControl(s, index)
+   IsControl = this.CharSingleton.IsControl(s, Index)
 End Function
 
 '@Static
 '@Description("Indicates whether the character at the specified position in a specified string is categorized as a decimal digit.")
-Public Function IsDigit(ByRef s As String, ByVal index As Long) As Boolean
+Public Function IsDigit(ByRef s As String, ByVal Index As Long) As Boolean
 Attribute IsDigit.VB_Description = "Indicates whether the character at the specified position in a specified string is categorized as a decimal digit."
-   IsDigit = this.CharSingleton.IsDigit(s, index)
+   IsDigit = this.CharSingleton.IsDigit(s, Index)
 End Function
 
 '@Static
@@ -103,30 +104,30 @@ End Function
 
 '@Static
 '@Description("Indicates whether the Char object at the specified position in a string is a high surrogate.")
-Public Function IsHighSurrogate2(ByRef s As String, ByVal index As Long) As Boolean
+Public Function IsHighSurrogate2(ByRef s As String, ByVal Index As Long) As Boolean
 Attribute IsHighSurrogate2.VB_Description = "Indicates whether the Char object at the specified position in a string is a high surrogate."
-   IsHighSurrogate2 = this.CharSingleton.IsHighSurrogate2(s, index)
+   IsHighSurrogate2 = this.CharSingleton.IsHighSurrogate2(s, Index)
 End Function
 
 '@Static
 '@Description("Indicates whether the character at the specified position in a specified string is categorized as a Unicode letter.")
-Public Function IsLetter(ByRef s As String, ByVal index As Long) As Boolean
+Public Function IsLetter(ByRef s As String, ByVal Index As Long) As Boolean
 Attribute IsLetter.VB_Description = "Indicates whether the character at the specified position in a specified string is categorized as a Unicode letter."
-   IsLetter = this.CharSingleton.IsLetter(s, index)
+   IsLetter = this.CharSingleton.IsLetter(s, Index)
 End Function
 
 '@Static
 '@Description("Indicates whether the character at the specified position in a specified string is categorized as a letter or a decimal digit.")
-Public Function IsLetterOrDigit(ByRef s As String, ByVal index As Long) As Boolean
+Public Function IsLetterOrDigit(ByRef s As String, ByVal Index As Long) As Boolean
 Attribute IsLetterOrDigit.VB_Description = "Indicates whether the character at the specified position in a specified string is categorized as a letter or a decimal digit."
-   IsLetterOrDigit = this.CharSingleton.IsLetterOrDigit(s, index)
+   IsLetterOrDigit = this.CharSingleton.IsLetterOrDigit(s, Index)
 End Function
 
 '@Static
 '@Description("Indicates whether the character at the specified position in a specified string is categorized as a lowercase letter.")
-Public Function IsLower(ByRef s As String, ByVal index As Long) As Boolean
+Public Function IsLower(ByRef s As String, ByVal Index As Long) As Boolean
 Attribute IsLower.VB_Description = "Indicates whether the character at the specified position in a specified string is categorized as a lowercase letter."
-   IsLower = this.CharSingleton.IsLower(s, index)
+   IsLower = this.CharSingleton.IsLower(s, Index)
 End Function
 
 '@Description("Indicates whether the specified character code is a low surrogate.")
@@ -137,30 +138,30 @@ End Function
 
 '@Static
 '@Description("Indicates whether the Char object at the specified position in a string is a low surrogate.")
-Public Function IsLowSurrogate2(ByRef s As String, ByVal index As Long) As Boolean
+Public Function IsLowSurrogate2(ByRef s As String, ByVal Index As Long) As Boolean
 Attribute IsLowSurrogate2.VB_Description = "Indicates whether the Char object at the specified position in a string is a low surrogate."
-   IsLowSurrogate2 = this.CharSingleton.IsLowSurrogate2(s, index)
+   IsLowSurrogate2 = this.CharSingleton.IsLowSurrogate2(s, Index)
 End Function
 
 '@Static
 '@Description("Indicates whether the character at the specified position in a specified string is categorized as a number.")
-Public Function IsNumber(ByRef s As String, ByVal index As Long) As Boolean
+Public Function IsNumber(ByRef s As String, ByVal Index As Long) As Boolean
 Attribute IsNumber.VB_Description = "Indicates whether the character at the specified position in a specified string is categorized as a number."
-   IsNumber = this.CharSingleton.IsNumber(s, index)
+   IsNumber = this.CharSingleton.IsNumber(s, Index)
 End Function
 
 '@Static
 '@Description("Indicates whether the character at the specified position in a specified string is categorized as a punctuation mark.")
-Public Function IsPunctuation(ByRef s As String, ByVal index As Long) As Boolean
+Public Function IsPunctuation(ByRef s As String, ByVal Index As Long) As Boolean
 Attribute IsPunctuation.VB_Description = "Indicates whether the character at the specified position in a specified string is categorized as a punctuation mark."
-   IsPunctuation = this.CharSingleton.IsPunctuation(s, index)
+   IsPunctuation = this.CharSingleton.IsPunctuation(s, Index)
 End Function
 
 '@Static
 '@Description("Indicates whether the character at the specified position in a specified string is categorized as a separator character.")
-Public Function IsSeparator(ByRef s As String, ByVal index As Long) As Boolean
+Public Function IsSeparator(ByRef s As String, ByVal Index As Long) As Boolean
 Attribute IsSeparator.VB_Description = "Indicates whether the character at the specified position in a specified string is categorized as a separator character."
-   IsSeparator = this.CharSingleton.IsSeparator(s, index)
+   IsSeparator = this.CharSingleton.IsSeparator(s, Index)
 End Function
 
 '@Static
@@ -172,16 +173,16 @@ End Function
 
 '@Static
 '@Description("Indicates whether the character at the specified position in a specified string has a surrogate code unit.")
-Public Function IsSurrogate2(ByRef s As String, ByVal index As Long) As Boolean
+Public Function IsSurrogate2(ByRef s As String, ByVal Index As Long) As Boolean
 Attribute IsSurrogate2.VB_Description = "Indicates whether the character at the specified position in a specified string has a surrogate code unit."
-   IsSurrogate2 = this.CharSingleton.IsSurrogate(s, index)
+   IsSurrogate2 = this.CharSingleton.IsSurrogate(s, Index)
 End Function
 
 '@Static
 '@Description("Indicates whether two adjacent Char objects at a specified position in a string form a surrogate pair.")
-Public Function IsSurrogatePair(ByRef s As String, ByVal index As Long) As Boolean
+Public Function IsSurrogatePair(ByRef s As String, ByVal Index As Long) As Boolean
 Attribute IsSurrogatePair.VB_Description = "Indicates whether two adjacent Char objects at a specified position in a string form a surrogate pair."
-   IsSurrogatePair = this.CharSingleton.IsSurrogatePair(s, index)
+   IsSurrogatePair = this.CharSingleton.IsSurrogatePair(s, Index)
 End Function
 
 '@Static
@@ -193,23 +194,23 @@ End Function
 
 '@Static
 '@Description("Indicates whether the character at the specified position in a specified string is categorized as a symbol character.")
-Public Function IsSymbol(ByRef s As String, ByVal index As Long) As Boolean
+Public Function IsSymbol(ByRef s As String, ByVal Index As Long) As Boolean
 Attribute IsSymbol.VB_Description = "Indicates whether the character at the specified position in a specified string is categorized as a symbol character."
-   IsSymbol = this.CharSingleton.IsSymbol(s, index)
+   IsSymbol = this.CharSingleton.IsSymbol(s, Index)
 End Function
 
 '@Static
 '@Description("Indicates whether the character at the specified position in a specified string is categorized as an uppercase letter.")
-Public Function IsUpper(ByRef s As String, ByVal index As Long) As Boolean
+Public Function IsUpper(ByRef s As String, ByVal Index As Long) As Boolean
 Attribute IsUpper.VB_Description = "Indicates whether the character at the specified position in a specified string is categorized as an uppercase letter."
-   IsUpper = this.CharSingleton.IsUpper(s, index)
+   IsUpper = this.CharSingleton.IsUpper(s, Index)
 End Function
 
 '@Static
 '@Description("Indicates whether the character at the specified position in a specified string is categorized as white space.")
-Public Function IsWhiteSpace(ByRef s As String, ByVal index As Long) As Boolean
+Public Function IsWhiteSpace(ByRef s As String, ByVal Index As Long) As Boolean
 Attribute IsWhiteSpace.VB_Description = "Indicates whether the character at the specified position in a specified string is categorized as white space."
-   IsWhiteSpace = this.CharSingleton.IsWhiteSpace(s, index)
+   IsWhiteSpace = this.CharSingleton.IsWhiteSpace(s, Index)
 End Function
 
 '--------------------------------------------------------------------

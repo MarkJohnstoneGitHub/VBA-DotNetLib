@@ -1,11 +1,10 @@
 Attribute VB_Name = "DateTimeExceptions"
-'@IgnoreModule VariableNotUsed
 '@Folder "Examples.System.DateTime.Exceptions"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 12, 2023
-'@LastModified August 4, 2023
+'@LastModified January 7, 2024
 
 '@Notes
 ' https://www.automateexcel.com/vba/error-handling/
@@ -16,7 +15,7 @@ Public Sub DateTimeCreateFromTicksException()
    Dim ticksErr As LongLong
    ticksErr = DateTime.MaxValue.Ticks + 1
    On Error Resume Next    'Skip error and continue running
-   Dim dateValue As IDateTime
+   Dim dateValue As DotNetLib.DateTime
    Set dateValue = DateTime.CreateFromTicks(ticksErr)
    If Err.Number = COMHResult.ArgumentOutOfRangeException Then
       Debug.Print "ArgumentOutOfRangeException " & "0x" & Hex$(Err.Number) & " " & Err.Description
@@ -28,11 +27,11 @@ End Sub
 
 ' Output:
 ' ArgumentOutOfRangeException 0x80131502 Ticks must be between DateTime.MinValue.Ticks and DateTime.MaxValue.Ticks.
-' Parameter Name: Ticks
+' Parameter Name: ticks
 
 Public Sub DateTimeCreateFromDateTimeKindException()
    On Error Resume Next    'Skip error and continue running
-   Dim dateValue As IDateTime
+   Dim dateValue As DotNetLib.DateTime
    Set dateValue = DateTime.CreateFromDateTimeKind(2010, 8, 18, 16, 32, 0, 5)
    If Err.Number = COMHResult.ArgumentException Then
       Debug.Print "ArgumentException " & "0x" & Hex$(Err.Number) & " " & Err.Description

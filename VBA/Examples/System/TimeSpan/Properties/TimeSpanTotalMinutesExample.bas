@@ -4,19 +4,21 @@ Attribute VB_Name = "TimeSpanTotalMinutesExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 16, 2023
-'@LastModified July 30, 2023
+'@LastModified January 18, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.totalminutes?view=netframework-4.8.1#examples
 
 Option Explicit
 
-'@Description("The following example instantiates a TimeSpan object and displays the value of its TotalMinutes property.")
-' It also displays the value of each component (seconds, milliseconds) that forms the fractional
-' part of the value of its TotalMinutes property.
+''
+' The following example instantiates a TimeSpan object and displays the value
+' of its TotalMinutes property. It also displays the value of each component
+' (seconds, milliseconds) that forms the fractional part of the value of its
+' TotalMinutes property.
+''
 Public Sub TimeSpanTotalMinutes()
-Attribute TimeSpanTotalMinutes.VB_Description = "The following example instantiates a TimeSpan object and displays the value of its TotalMinutes property."
    ' Define an interval of 1 day, 15+ hours.
-   Dim interval As ITimeSpan
+   Dim interval As DotNetLib.TimeSpan
    Set interval = TimeSpan.Create3(1, 15, 42, 45, 750)
    Debug.Print "Value of TimeSpan: " & interval.ToString
 

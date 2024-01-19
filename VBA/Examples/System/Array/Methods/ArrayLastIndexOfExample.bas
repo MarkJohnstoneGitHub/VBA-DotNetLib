@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArrayLastIndexOfExample"
-'@Folder("Examples.System.Array.Methods")
+'@Folder "Examples.System.Array.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -18,7 +18,7 @@ Option Explicit
 ''
 Public Sub ArrayLastIndexOf()
     Dim myArray As DotNetLib.Array
-    Set myArray = Arrays.CreateInstance(VBAString.GetType(), 12)
+    Set myArray = Arrays.CreateInstance(VBString.GetType(), 12)
     Call myArray.SetValue("the", 0)
     Call myArray.SetValue("quick", 1)
     Call myArray.SetValue("brown", 2)
@@ -41,16 +41,16 @@ Public Sub ArrayLastIndexOf()
     myString = "the"
     Dim myIndex As Long
     myIndex = Arrays.LastIndexOf(myArray, myString)
-    Debug.Print VBAString.Format("The last occurrence of ""{0}"" is at index {1}.", myString, myIndex)
+    Debug.Print VBString.Format("The last occurrence of ""{0}"" is at index {1}.", myString, myIndex)
     
     ' Searches for the last occurrence of the duplicated value in the first section of the Array.
     myIndex = Arrays.LastIndexOf2(myArray, myString, 8)
-    Debug.Print VBAString.Format("The last occurrence of ""{0}"" between the start and index 8 is at index {1}.", myString, myIndex)
+    Debug.Print VBString.Format("The last occurrence of ""{0}"" between the start and index 8 is at index {1}.", myString, myIndex)
 
     ' Searches for the last occurrence of the duplicated value in a section of the Array.
     ' Note that the start index is greater than the end index because the search is done backward.
     myIndex = Arrays.LastIndexOf3(myArray, myString, 10, 6)
-    Debug.Print VBAString.Format("The last occurrence of ""{0}"" between index 5 and index 10 is at index {1}.", myString, myIndex)
+    Debug.Print VBString.Format("The last occurrence of ""{0}"" between index 5 and index 10 is at index {1}.", myString, myIndex)
 End Sub
 
 Private Sub PrintIndexAndValues(ByVal anArray As DotNetLib.Array)
@@ -58,7 +58,7 @@ Private Sub PrintIndexAndValues(ByVal anArray As DotNetLib.Array)
     formatString = Regex.Unescape("\t[{0}]:\t{1}")
     Dim i As Long
     For i = anArray.GetLowerBound(0) To anArray.GetUpperBound(0)
-        Debug.Print VBAString.Format(formatString, i, anArray.GetValue(i))
+        Debug.Print VBString.Format(formatString, i, anArray.GetValue(i))
     Next i
 End Sub
 

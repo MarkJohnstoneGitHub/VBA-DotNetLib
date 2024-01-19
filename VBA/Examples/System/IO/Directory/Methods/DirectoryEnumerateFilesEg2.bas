@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirectoryEnumerateFilesEg2"
-'@Folder("Examples.System.IO.Directory.Methods")
+'@Folder "Examples.System.IO.Directory.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -26,7 +26,7 @@ Public Sub DirectoryEnumerateFilesExample2()
     For Each varCurrentFile In txtFiles
         Dim currentFile As DotNetLib.String
         Set currentFile = Strings.Create(varCurrentFile)
-        Dim filename As String
+        Dim fileName As String
         Dim txtFile() As String
         txtFile = File.ReadAllLines(varCurrentFile)
         Dim varLine As Variant

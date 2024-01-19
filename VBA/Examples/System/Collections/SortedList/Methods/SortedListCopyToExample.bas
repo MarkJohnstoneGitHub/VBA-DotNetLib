@@ -1,5 +1,5 @@
 Attribute VB_Name = "SortedListCopyToExample"
-'@Folder("Examples.System.Collections.SortedList.Methods")
+'@Folder "Examples.System.Collections.SortedList.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -29,7 +29,7 @@ Public Sub SortedListCopyTo()
     
     ' Creates and initializes the one-dimensional target Array.
     Dim tempArray As DotNetLib.Array
-    Set tempArray = Arrays.CreateInitialize1D(VBAString.GetType(), "The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog")
+    Set tempArray = Arrays.CreateInitialize1D(VBString.GetType(), "The", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog")
     
     'Create an array of mscorlib.DictionaryEntry of size 15
     Dim myTargetArray As DotNetLib.Array
@@ -57,10 +57,10 @@ End Sub
 
 Private Sub PrintValues(ByVal myArr As DotNetLib.Array, ByVal mySeparator As String)
     Dim i As Long
-    For i = 0 To myArr.length - 1
+    For i = 0 To myArr.Length - 1
         Dim de As mscorlib.DictionaryEntry
         de = myArr(i)
-        Debug.Print VBAString.Format("{0}{1}", mySeparator, DictionaryEntry.value(de));
+        Debug.Print VBString.Format("{0}{1}", mySeparator, DictionaryEntry.value(de));
     Next i
     Debug.Print
 End Sub

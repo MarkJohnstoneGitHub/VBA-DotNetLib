@@ -4,18 +4,21 @@ Attribute VB_Name = "TimeZoneInfoHasSameRulesExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 26, 2023
-'@LastModified July 31, 2023
+'@LastModified January 19, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.hassamerules?view=netframework-4.8.1#examples
 
 '@TODO Issue with timeZoneArray(compareCtr).StandardName
 Option Explicit
 
-' Typically, a number of time zones defined in the registry on Windows and the ICU Library on Linux
-' and macOS have the same offset from Coordinated Universal Time (UTC) and the same adjustment rules.
+''
+' Typically, a number of time zones defined in the registry on Windows and the
+' ICU Library on Linux and macOS have the same offset from Coordinated Universal
+' Time (UTC) and the same adjustment rules.
 ' The following example displays a list of these time zones to the console.
+''
 Public Sub TimeZoneInfoHasSameRules()
-    Dim timeZones As IReadOnlyCollection
+    Dim timeZones As DotNetLib.ReadOnlyCollection
     Set timeZones = TimeZoneInfo.GetSystemTimeZones()
     Dim timeZoneArray() As Variant
     ReDim timeZoneArray(timeZones.Count - 1)
@@ -25,15 +28,16 @@ Public Sub TimeZoneInfoHasSameRules()
     Dim ctr As Long
     For ctr = UBound(timeZoneArray) To LBound(timeZoneArray) Step -1
         ' Get next item from top
-        Dim thisTimeZone As ITimeZoneInfo
+        Dim thisTimeZone As DotNetLib.TimeZoneInfo
         Set thisTimeZone = timeZoneArray(ctr)
         Dim compareCtr As Long
         compareCtr = 0
         For compareCtr = 0 To ctr - 1
             ' Determine if time zones have the same rules
             If thisTimeZone.HasSameRules(timeZoneArray(compareCtr)) Then
-                Debug.Print thisTimeZone.StandardName; " has the same rules as " & _
-                            timeZoneArray(compareCtr).StandardName
+                Debug.Print VBString.Format("{0} has the same rules as {1}", _
+                                  thisTimeZone.StandardName, _
+                                  timeZoneArray(compareCtr).StandardName)
             End If
         Next
     Next

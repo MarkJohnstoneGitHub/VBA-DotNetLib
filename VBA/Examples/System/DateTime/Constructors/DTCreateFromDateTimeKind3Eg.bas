@@ -1,10 +1,10 @@
 Attribute VB_Name = "DTCreateFromDateTimeKind3Eg"
-'@Folder("Examples.System.DateTime.Constructors")
+'@Folder "Examples.System.DateTime.Constructors"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 21, 2023
-'@LastModified September 21, 2023
+'@LastModified January 7, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.-ctor?view=netframework-4.8.1#system-datetime-ctor(system-int32-system-int32-system-int32-system-int32-system-int32-system-int32-system-int32-system-globalization-calendar-system-datetimekind)
 
@@ -34,16 +34,18 @@ Public Sub DateTimeCreateFromDateTimeKind3()
     Set persian = New DotNetLib.PersianCalendar
     Dim date1 As DotNetLib.DateTime
     Set date1 = DateTime.CreateFromDateTimeKind3(1389, 5, 27, 16, 32, 18, 500, persian, DateTimeKind.DateTimeKind_Local)
-    Debug.Print date1.ToString2("M/dd/yyyy h:mm:ss.fff tt") & " " & DateTimeKindHelper.ToString(date1.Kind)
-    Debug.Print persian.GetMonth(date1) & "/" & _
-                persian.GetDayOfMonth(date1) & "/" & _
-                persian.GetYear(date1) & " " & _
-                persian.GetHour(date1) & _
-                DateTimeFormatInfo.CurrentInfo.TimeSeparator & _
-                persian.GetMinute(date1) & _
-                persian.GetSecond(date1) & "." & _
-                persian.GetMilliseconds(date1) & " " & _
-                DateTimeKindHelper.ToString(date1.Kind) & VBA.vbNewLine
+    
+    Debug.Print VBString.Format("{0:M/dd/yyyy h:mm:ss.fff tt} {1}", date1, DateTimeKindHelper.ToString(date1.Kind))
+    Debug.Print VBString.Format(VBString.Unescape("{0}/{1}/{2} {3}{8}{4:D2}{8}{5:D2}.{6:G3} {7}\n"), _
+                                     persian.GetMonth(date1), _
+                                     persian.GetDayOfMonth(date1), _
+                                     persian.GetYear(date1), _
+                                     persian.GetHour(date1), _
+                                     persian.GetMinute(date1), _
+                                     persian.GetSecond(date1), _
+                                     persian.GetMilliseconds(date1), _
+                                     DateTimeKindHelper.ToString(date1.Kind), _
+                                     DateTimeFormatInfo.CurrentInfo.TimeSeparator)
 
     Debug.Print "Using the Hijri Calendar:"
     ' Get current culture so it can later be restored.
@@ -59,29 +61,33 @@ Public Sub DateTimeCreateFromDateTimeKind3()
     
     ' Make ar-SY the current culture and Hijri the current calendar
     Set CultureInfo.CurrentCulture = CultureInfo.CreateFromName("ar-SY")
-    
     Dim current As DotNetLib.CultureInfo
     Set current = CultureInfo.CurrentCulture
     Set current.DateTimeFormat.Calendar = hijri
     dFormat = current.DateTimeFormat.ShortDatePattern
     
     ' Ensure year is displayed as four digits.
-    ' dFormat = Regex.Replace(dFormat, "/yy$", "/yyyy") + " H:mm:ss.fff"
-    dFormat = dFormat + " H:mm:ss.fff"
-    
+    dFormat = Regex.Replace(dFormat, "/yy$", "/yyyy") + " H:mm:ss.fff"
     fmtString = "{0} culture using the {1} calendar: {2:" + dFormat + "} {3}"
     
     Dim date2 As DotNetLib.DateTime
     Set date2 = DateTime.CreateFromDateTimeKind3(1431, 9, 9, 16, 32, 18, 500, hijri, DateTimeKind.DateTimeKind_Local)
-    Debug.Print current.ToString; " culture using the "; hijri.ToString; " calendar: "; date2.ToString2(dFormat); " "; DateTimeKindHelper.ToString(date2.Kind)
+    Debug.Print VBString.Format(fmtString, current, GetCalendarName(hijri), _
+                        date2, DateTimeKindHelper.ToString(date2.Kind))
     
     ' Restore previous culture.
     Set CultureInfo.CurrentCulture = dftCulture
-    
-    Debug.Print CultureInfo.CurrentCulture.ToString; " culture using the "; _
-                CultureInfo.CurrentCulture.Calendar.ToString; " calendar: "; _
-                date2.ToString2(dFormat); " "; DateTimeKindHelper.ToString(date2.Kind)
+    dFormat = DateTimeFormatInfo.CurrentInfo.ShortDatePattern + " H:mm:ss.fff"
+    fmtString = "{0} culture using the {1} calendar: {2:" + dFormat + "} {3}"
+    Debug.Print VBString.Format(fmtString, _
+                        CultureInfo.CurrentCulture, _
+                        GetCalendarName(CultureInfo.CurrentCulture.Calendar), _
+                        date2, DateTimeKindHelper.ToString(date2.Kind))
 End Sub
+
+Private Function GetCalendarName(ByVal cal As DotNetLib.Calendar) As String
+    GetCalendarName = Regex.Match(cal.ToString(), "\.(\w+)Calendar").Groups.item(1).value
+End Function
 
 ' The example displays the following output:
 '    Using the Persian Calendar:
@@ -91,3 +97,5 @@ End Sub
 '    Using the Hijri Calendar:
 '    ar-SY culture using the Hijri calendar: 09/09/1431 16:32:18.500 Local
 '    en-US culture using the Gregorian calendar: 8/18/2010 16:32:18.500 Local
+
+

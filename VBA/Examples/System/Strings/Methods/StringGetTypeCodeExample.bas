@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringGetTypeCodeExample"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -20,7 +20,7 @@ Public Sub StringGetTypeCodeExample()
     Set str = Strings.Create("abc")
     Dim tc As mscorlib.TypeCode
     tc = str.GetTypeCode()
-    Debug.Print VBAString.Format("The type code for '{0}' is {1}, which represents {2}.", _
+    Debug.Print VBString.Format("The type code for '{0}' is {1}, which represents {2}.", _
                          str, TypeCodeHelper.ToString2(tc, "D"), TypeCodeHelper.ToString2(tc, "F"))
 End Sub
 
@@ -28,4 +28,5 @@ End Sub
 'This example produces the following results:
 'The type code for 'abc' is 18, which represents String.
 '*/
+
 

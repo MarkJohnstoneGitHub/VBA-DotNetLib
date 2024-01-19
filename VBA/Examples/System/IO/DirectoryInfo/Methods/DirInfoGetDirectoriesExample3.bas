@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirInfoGetDirectoriesExample3"
-'@Folder("Examples.System.IO.DirectoryInfo.Methods")
+'@Folder "Examples.System.IO.DirectoryInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -32,20 +32,20 @@ Public Sub DirectoryInfoGetDirectoriesExample3()
     Dim pvtFiles() As DotNetLib.FileInfo
     pvtFiles = di.GetFiles(pvtSearchPattern, SearchOption.SearchOption_TopDirectoryOnly)
     
-    Debug.Print VBAString.Format("Directories that begin with the letter ""c"" in {0}", pvtPath)
+    Debug.Print VBString.Format("Directories that begin with the letter ""c"" in {0}", pvtPath)
     Dim varDir As Variant
     For Each varDir In pvtDirectories
         Dim pvtDir As DotNetLib.DirectoryInfo
         Set pvtDir = varDir
-        Debug.Print VBAString.Format("{0,-25} {1,25}", pvtDir.FullName, pvtDir.lastWriteTime)
+        Debug.Print VBString.Format("{0,-25} {1,25}", pvtDir.FullName, pvtDir.lastWriteTime)
     Next
 
     Debug.Print
-    Debug.Print VBAString.Format("Files that begin with the letter ""c"" in {0}", pvtPath)
+    Debug.Print VBString.Format("Files that begin with the letter ""c"" in {0}", pvtPath)
     Dim varFile As Variant
     For Each varFile In pvtFiles
         Dim pvtFile As DotNetLib.FileInfo
         Set pvtFile = varFile
-        Debug.Print VBAString.Format("{0,-25} {1,25}", pvtFile.Name, pvtFile.lastWriteTime)
+        Debug.Print VBString.Format("{0,-25} {1,25}", pvtFile.Name, pvtFile.lastWriteTime)
     Next
 End Sub

@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringBuilderCharsExample"
-'@Folder("Examples.System.Text.StringBuilder.Properties")
+'@Folder "Examples.System.Text.StringBuilder.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -27,7 +27,7 @@ Public Sub StringBuilderChars()
     Set sb = StringBuilder.Create("This is a simple sentence.")
     
     Dim ctr As Long
-    For ctr = 0 To sb.length - 1
+    For ctr = 0 To sb.Length - 1
         Dim ch As String
         ch = sb.item(ctr)
         If (Char.IsLetter(ch, 0)) Then
@@ -39,10 +39,10 @@ Public Sub StringBuilderChars()
         End If
     Next
     
-    Debug.Print VBAString.Format("The sentence '{0}' has:", sb)
-    Debug.Print VBAString.Format("   Alphabetic characters: {0}", nAlphabeticChars)
-    Debug.Print VBAString.Format("   White-space characters: {0}", nWhitespace)
-    Debug.Print VBAString.Format("   Punctuation characters: {0}", nPunctuation)
+    Debug.Print VBString.Format("The sentence '{0}' has:", sb)
+    Debug.Print VBString.Format("   Alphabetic characters: {0}", nAlphabeticChars)
+    Debug.Print VBString.Format("   White-space characters: {0}", nWhitespace)
+    Debug.Print VBString.Format("   Punctuation characters: {0}", nPunctuation)
 End Sub
 
 ' The example displays the following output:

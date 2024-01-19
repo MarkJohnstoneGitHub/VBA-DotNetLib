@@ -4,18 +4,19 @@ Attribute VB_Name = "TZISupportsDaylightSavingTimeEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 31, 2023
+'@LastModified January 19, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.supportsdaylightsavingtime?view=netframework-4.8.1#examples
 
-'@TODO Wrap DotNetLib.ReadOnlyCollection
-
 Option Explicit
 
-'The following example retrieves a collection of all time zones that are available
-' on a local system and displays the names of those that do not support daylight saving time.
+''
+' The following example retrieves a collection of all time zones that are
+' available on a local system and displays the names of those that do not
+' support daylight saving time.
+''
 Public Sub TimeZoneInfoSupportsDaylightSavingTime()
-    Dim zones As DotNetLib.IReadOnlyCollection
+    Dim zones As DotNetLib.ReadOnlyCollection
     Set zones = TimeZoneInfo.GetSystemTimeZones()
     
     Dim varZone As Variant

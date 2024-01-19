@@ -1,5 +1,5 @@
 Attribute VB_Name = "PathGetFileNameWithoutExtension"
-'@Folder("Examples.System.IO.Path.Methods")
+'@Folder "Examples.System.IO.Path.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -16,16 +16,16 @@ Option Explicit
 ' The following example demonstrates a use of the GetFileNameWithoutExtension method.
 ''
 Public Sub PathGetFileNameWithoutExtensionExample()
-    Dim filename As String
-    filename = "C:\mydir\myfile.ext"
+    Dim fileName As String
+    fileName = "C:\mydir\myfile.ext"
     Dim pvtPath As String
     pvtPath = "C:\mydir\"
     Dim result As String
-    result = Path.GetFileNameWithoutExtension(filename)
-    Debug.Print VBAString.Format("GetFileNameWithoutExtension('{0}') returns '{1}'", _
-                                filename, result)
+    result = Path.GetFileNameWithoutExtension(fileName)
+    Debug.Print VBString.Format("GetFileNameWithoutExtension('{0}') returns '{1}'", _
+                                fileName, result)
     result = Path.GetFileName(pvtPath)
-    Debug.Print VBAString.Format("GetFileName('{0}') returns '{1}'", _
+    Debug.Print VBString.Format("GetFileName('{0}') returns '{1}'", _
                                 pvtPath, result)
 End Sub
 
@@ -33,3 +33,5 @@ End Sub
 '
 ' GetFileNameWithoutExtension('C:\mydir\myfile.ext') returns 'myfile'
 ' GetFileName('C:\mydir\') returns ''
+
+

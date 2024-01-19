@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArraySortExample"
-'@Folder("Examples.System.Array.Methods")
+'@Folder "Examples.System.Array.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -22,7 +22,7 @@ Option Explicit
 Public Sub ArraySort()
     ' Create and initialize a new array.
     Dim words As DotNetLib.Array
-    Set words = Arrays.CreateInitialize1D(VBAString.GetType(), _
+    Set words = Arrays.CreateInitialize1D(VBString.GetType(), _
                         "The", "QUICK", "BROWN", "FOX", "jumps", _
                         "over", "the", "lazy", "dog")
                         
@@ -59,7 +59,7 @@ End Sub
 Public Sub DisplayValues(ByVal arr As DotNetLib.Array)
     Dim i As Long
     For i = arr.GetLowerBound(0) To arr.GetUpperBound(0)
-        Debug.Print VBAString.Format("   [{0}] : {1}", i, arr(i))
+        Debug.Print VBString.Format("   [{0}] : {1}", i, arr(i))
     Next i
     Debug.Print
 End Sub

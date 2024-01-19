@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirectoryExample"
-'@Folder("Examples.System.IO.Directory")
+'@Folder "Examples.System.IO.Directory"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -27,9 +27,9 @@ Public Sub DirectoryExample()
     Set txtFiles = Directory.EnumerateFiles(SourceDirectory, "*.bas")
     Dim varCurrentFile As Variant
     For Each varCurrentFile In txtFiles
-        Dim filename As String
-        filename = Mid$(varCurrentFile, Len(SourceDirectory) + 2)
-        Call Directory.Move(varCurrentFile, Path.Combine2(archiveDirectory, filename))
+        Dim fileName As String
+        fileName = Mid$(varCurrentFile, Len(SourceDirectory) + 2)
+        Call Directory.Move(varCurrentFile, Path.Combine2(archiveDirectory, fileName))
     Next
     If Err.Number Then
         Debug.Print "Exception: " + Err.Description
@@ -59,13 +59,13 @@ Public Sub DirectoryExample2()
         Dim varfileLine As Variant
         For Each varfileLine In fileLines
             If InStr(varfileLine, findText) Then
-                Debug.Print VBAString.Format("{0} contains ""{1}"" at line number {2}", varRetrievedFile, findText, i)
+                Debug.Print VBString.Format("{0} contains ""{1}"" at line number {2}", varRetrievedFile, findText, i)
                 foundLinesCounter = foundLinesCounter + 1
             End If
             i = i + 1
         Next
     Next
-    Debug.Print VBAString.Format("{0} lines found.", foundLinesCounter);
+    Debug.Print VBString.Format("{0} lines found.", foundLinesCounter);
 End Sub
 
 ''

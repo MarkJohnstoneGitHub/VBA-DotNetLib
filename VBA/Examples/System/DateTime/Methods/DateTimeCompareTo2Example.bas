@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeCompareTo2Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 5, 2023
-'@LastModified September 9, 2023
+'@LastModified January 6, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.compareto?view=netframework-4.8.1#system-datetime-compareto(system-object)
 
@@ -25,11 +25,11 @@ Attribute DateTimeCompareTo2.VB_Description = "The following example demonstrate
         Exit Sub
     End If
     If (compareValue < 0) Then
-        Debug.Print theDay.ToString2("d") & " is in the past."
+        Debug.Print VBString.Format("{0:d} is in the past.", theDay)
     ElseIf (compareValue = 0) Then
-        Debug.Print theDay.ToString2("d") & " is today!"
+        Debug.Print VBString.Format("{0:d} is today!", theDay)
     Else
-        Debug.Print theDay.ToString2("d") & " has not come yet."
+        Debug.Print VBString.Format("{0:d} has not come yet.", theDay);
     End If
 End Sub
 

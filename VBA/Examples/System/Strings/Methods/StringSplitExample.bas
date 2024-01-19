@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringSplitExample"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -24,7 +24,7 @@ Public Sub StringSplitExampleA()
     subs = s.Split(" ")
     Dim varSub As Variant
     For Each varSub In subs
-        Debug.Print VBAString.Format("Substring: {0}", varSub)
+        Debug.Print VBString.Format("Substring: {0}", varSub)
     Next
 End Sub
 
@@ -49,7 +49,7 @@ Public Sub StringSplitExampleB()
     subs = s.Split(" .")
     Dim varSub As Variant
     For Each varSub In subs
-        Debug.Print VBAString.Format("Substring: {0}", varSub)
+        Debug.Print VBString.Format("Substring: {0}", varSub)
     Next
 End Sub
 
@@ -80,7 +80,7 @@ Public Sub StringSplitExampleC()
     subs = s.Split(separators, StringSplitOptions_RemoveEmptyEntries)
     Dim varSub As Variant
     For Each varSub In subs
-        Debug.Print VBAString.Format("Substring: {0}", varSub)
+        Debug.Print VBString.Format("Substring: {0}", varSub)
     Next
 End Sub
 

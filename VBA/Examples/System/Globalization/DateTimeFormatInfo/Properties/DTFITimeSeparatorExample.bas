@@ -1,5 +1,5 @@
 Attribute VB_Name = "DTFITimeSeparatorExample"
-'@Folder("Examples.System.Globalization.DateTimeFormatInfo.Properties")
+'@Folder "Examples.System.Globalization.DateTimeFormatInfo.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -18,7 +18,7 @@ Public Sub DateTimeFormatInfoTimeSeparator()
     Set value = DateTime.CreateFromDateTime(2013, 9, 8, 14, 30, 0)
     
     Dim formats() As String
-    formats = StringArray.ToArray("t", "T", "f", "F", "G", "g")
+    formats = StringArray.CreateInitialize1D("t", "T", "f", "F", "G", "g")
     Dim culture As DotNetLib.CultureInfo
     Set culture = CultureInfo.CreateSpecificCulture("en-US")
     Dim dtfi As DotNetLib.DateTimeFormatInfo

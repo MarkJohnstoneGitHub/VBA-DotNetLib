@@ -4,7 +4,7 @@ Attribute VB_Name = "DTOCreateFromDateTimeExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 18, 2023
-'@LastModified July 31, 2023
+'@LastModified January 8, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.-ctor?view=netframework-4.8.1#system-datetimeoffset-ctor(system-datetime)
 
@@ -13,21 +13,21 @@ Option Explicit
 '@Description("The following example illustrates how the value of the DateTime.Kind property of the dateTime parameter affects the date and time value that is returned by this constructor.")
 Public Sub DateTimeOffsetCreateFromDateTime()
 Attribute DateTimeOffsetCreateFromDateTime.VB_Description = "The following example illustrates how the value of the DateTime.Kind property of the dateTime parameter affects the date and time value that is returned by this constructor."
-   Dim localNow As IDateTime
+   Dim localNow As DotNetLib.DateTime
    Set localNow = DateTime.Now
-   Dim localOffset As IDateTimeOffset
+   Dim localOffset As DotNetLib.DateTimeOffset
    Set localOffset = DateTimeOffset.CreateFromDateTime(localNow)
    Debug.Print localOffset.ToString()
    
-   Dim pvtUtcNow As IDateTime
+   Dim pvtUtcNow As DotNetLib.DateTime
    Set pvtUtcNow = DateTime.UtcNow
-   Dim utcOffset As IDateTimeOffset
+   Dim utcOffset As DotNetLib.DateTimeOffset
    Set utcOffset = DateTimeOffset.CreateFromDateTime(pvtUtcNow)
    Debug.Print utcOffset.ToString()
    
-   Dim unspecifiedNow As IDateTime
+   Dim unspecifiedNow As DotNetLib.DateTime
    Set unspecifiedNow = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.DateTimeKind_Unspecified)
-   Dim unspecifiedOffset As IDateTimeOffset
+   Dim unspecifiedOffset As DotNetLib.DateTimeOffset
    Set unspecifiedOffset = DateTimeOffset.CreateFromDateTime(unspecifiedNow)
    Debug.Print unspecifiedOffset.ToString()
 End Sub

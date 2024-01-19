@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringsFormat2Example"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -15,7 +15,7 @@ Option Explicit
 ' values by using several different cultures.
 Public Sub StringsFormat2()
     Dim cultureNames() As String
-    cultureNames = StringArray.ToArray("en-US", "fr-FR", "de-DE", "es-ES")
+    cultureNames = StringArray.CreateInitialize1D("en-US", "fr-FR", "de-DE", "es-ES")
     Dim dateToDisplay As DotNetLib.DateTime
     Set dateToDisplay = DateTime.CreateFromDateTime(2009, 9, 1, 18, 32, 0)
     Dim value As Double
@@ -27,7 +27,7 @@ Public Sub StringsFormat2()
         Dim culture As DotNetLib.CultureInfo
         Set culture = CultureInfo.CreateFromName(cultureName)
         Dim Output As String
-        Output = VBAString.Format2(culture, "{0,-11} {1,-35:D} {2:N}", _
+        Output = VBString.Format2(culture, "{0,-11} {1,-35:D} {2:N}", _
                                 culture.Name, dateToDisplay, value)
         Debug.Print Output
     Next

@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeDayExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 9, 2023
-'@LastModified August 4, 2023
+'@LastModified January 7, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.day?view=netframework-4.8.1#examples
 
@@ -13,7 +13,7 @@ Option Explicit
 '@Description("The following example demonstrates the Day property.")
 Public Sub DateTimePropertyDay()
 Attribute DateTimePropertyDay.VB_Description = "The following example demonstrates the Day property."
-    Dim moment As IDateTime
+    Dim moment As DotNetLib.DateTime
     Set moment = DateTime.CreateFromDateTime(1999, 1, 13, 3, 57, 32, 11)
     
     ' Year gets 1999.

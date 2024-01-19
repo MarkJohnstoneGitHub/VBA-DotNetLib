@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeAddMinutesExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 10, 2023
-'@LastModified August 4, 2023
+'@LastModified January 6, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.addminutes?view=netframework-4.8.1#examples
 
@@ -13,16 +13,17 @@ Option Explicit
 '@Description("The following example uses the AddMinutes method to add a number of whole and fractional values to a date and time.")
 Public Sub DateTimeAddMinutes()
 Attribute DateTimeAddMinutes.VB_Description = "The following example uses the AddMinutes method to add a number of whole and fractional values to a date and time."
-   Dim dateValue As IDateTime
-   Set dateValue = DateTime.CreateFromDateTime(2013, 9, 15, 12, 0, 0)
-   
-   Dim Minutes() As Double
-   Minutes = DoubleArray.ToArray(0.01667, 0.08333, 0.16667, 0.25, 0.33333, 0.5, 0.66667, 1, 2, 15, 30, 17, 45, 60, 180, 60 * 24)
+    Dim dateValue As DotNetLib.DateTime
+    Set dateValue = DateTime.CreateFromDateTime(2013, 9, 15, 12, 0, 0)
     
-   Dim varMinute As Variant
-   For Each varMinute In Minutes
-      Debug.Print dateValue.ToString & " + " & varMinute & " minute(s) = " & dateValue.AddMinutes(varMinute).ToString
-   Next
+    Dim pvtMinutes() As Double
+    pvtMinutes = DoubleArray.CreateInitialize1D(0.01667, 0.08333, 0.16667, 0.25, 0.33333, 0.5, 0.66667, 1, 2, 15, 30, 17, 45, 60, 180, 60 * 24)
+    
+    Dim varMinute As Variant
+    For Each varMinute In pvtMinutes
+        Debug.Print VBString.Format("{0} + {1} minute(s) = {2}", dateValue, varMinute, _
+                           dateValue.AddMinutes(varMinute))
+    Next
 End Sub
 
 ' The example displays the following output on a system whose current culture is en-US:

@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirectoryGetCurrentDirectoryEg"
-'@Folder("Examples.System.IO.Directory.Methods")
+'@Folder "Examples.System.IO.Directory.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -21,7 +21,7 @@ Public Sub DirectoryGetCurrentDirectory()
     pvtPath = Directory.GetCurrentDirectory()
     Dim target As String
     target = "c:\temp"
-    Debug.Print VBAString.Format("The current directory is {0}", pvtPath)
+    Debug.Print VBString.Format("The current directory is {0}", pvtPath)
     If (Not Directory.Exists(target)) Then
         Call Directory.CreateDirectory(target)
     End If
@@ -35,5 +35,5 @@ Public Sub DirectoryGetCurrentDirectory()
     End If
 Exit Sub
 ErrorHandler:
-    Debug.Print VBAString.Format("The process failed: {0}", Err.Description)
+    Debug.Print VBString.Format("The process failed: {0}", Err.Description)
 End Sub

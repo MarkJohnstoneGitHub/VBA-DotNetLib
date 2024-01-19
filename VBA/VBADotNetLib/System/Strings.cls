@@ -58,9 +58,9 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the String class to the value indicated by an string of Unicode characters, a starting character position within that array, and a length")
-Public Function Create3(ByVal value As String, ByVal startIndex As Long, ByVal length As Long) As DotNetLib.String
+Public Function Create3(ByVal value As String, ByVal startIndex As Long, ByVal Length As Long) As DotNetLib.String
 Attribute Create3.VB_Description = "Initializes a new instance of the String class to the value indicated by an string of Unicode characters, a starting character position within that array, and a length"
-   Set Create3 = this.StringSingleton.Create_3(value, startIndex, length)
+   Set Create3 = this.StringSingleton.Create_3(value, startIndex, Length)
 End Function
 
 '@Static
@@ -79,9 +79,9 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the String class to the value indicated by an string of Unicode characters, a starting character position within that array, and a length")
-Public Function Create6(ByVal value As DotNetLib.String, ByVal startIndex As Long, ByVal length As Long) As DotNetLib.String
+Public Function Create6(ByVal value As DotNetLib.String, ByVal startIndex As Long, ByVal Length As Long) As DotNetLib.String
 Attribute Create6.VB_Description = "Initializes a new instance of the String class to the value indicated by an string of Unicode characters, a starting character position within that array, and a length"
-   Set Create6 = this.StringSingleton.Create_6(value, startIndex, length)
+   Set Create6 = this.StringSingleton.Create_6(value, startIndex, Length)
 End Function
 
 '@Static
@@ -128,30 +128,30 @@ End Function
 
 '@Static
 '@Description("Compares substrings of two specified String objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order.")
-Public Function Compare5(ByVal strA As DotNetLib.String, ByVal indexA As Long, ByVal strB As DotNetLib.String, ByVal indexB As Long, ByVal length As Long, Optional ByVal ignoreCase As Boolean = False) As Long
+Public Function Compare5(ByVal strA As DotNetLib.String, ByVal indexA As Long, ByVal strB As DotNetLib.String, ByVal indexB As Long, ByVal Length As Long, Optional ByVal ignoreCase As Boolean = False) As Long
 Attribute Compare5.VB_Description = "Compares substrings of two specified String objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order."
-   Compare5 = this.StringSingleton.Compare5(strA, indexA, strB, indexB, length, ignoreCase)
+   Compare5 = this.StringSingleton.Compare5(strA, indexA, strB, indexB, Length, ignoreCase)
 End Function
 
 '@Static
 '@Description("Compares substrings of two specified String objects using the specified rules, and returns an integer that indicates their relative position in the sort order.")
-Public Function Compare6(ByVal strA As DotNetLib.String, ByVal indexA As Long, ByVal strB As DotNetLib.String, ByVal indexB As Long, ByVal length As Long, ByVal comparisonType As mscorlib.StringComparison) As Long
+Public Function Compare6(ByVal strA As DotNetLib.String, ByVal indexA As Long, ByVal strB As DotNetLib.String, ByVal indexB As Long, ByVal Length As Long, ByVal comparisonType As mscorlib.StringComparison) As Long
 Attribute Compare6.VB_Description = "Compares substrings of two specified String objects using the specified rules, and returns an integer that indicates their relative position in the sort order."
-   Compare6 = this.StringSingleton.Compare6(strA, indexA, strB, indexB, length, comparisonType)
+   Compare6 = this.StringSingleton.Compare6(strA, indexA, strB, indexB, Length, comparisonType)
 End Function
 
 '@Static
 '@Description("Compares substrings of two specified String objects, ignoring or honoring their case and using culture-specific information to influence the comparison, and returns an integer that indicates their relative position in the sort order.")
-Public Function Compare7(ByVal strA As DotNetLib.String, ByVal indexA As Long, ByVal strB As DotNetLib.String, ByVal indexB As Long, ByVal length As Long, ByVal ignoreCase As Boolean, ByVal culture As DotNetLib.CultureInfo) As Long
+Public Function Compare7(ByVal strA As DotNetLib.String, ByVal indexA As Long, ByVal strB As DotNetLib.String, ByVal indexB As Long, ByVal Length As Long, ByVal ignoreCase As Boolean, ByVal culture As DotNetLib.CultureInfo) As Long
 Attribute Compare7.VB_Description = "Compares substrings of two specified String objects, ignoring or honoring their case and using culture-specific information to influence the comparison, and returns an integer that indicates their relative position in the sort order."
-   Compare7 = this.StringSingleton.Compare7(strA, indexA, strB, indexB, length, ignoreCase, culture)
+   Compare7 = this.StringSingleton.Compare7(strA, indexA, strB, indexB, Length, ignoreCase, culture)
 End Function
 
 '@Static
 '@Description("Compares substrings of two specified String objects using the specified comparison options and culture-specific information to influence the comparison, and returns an integer that indicates the relationship of the two substrings to each other in the sort order.")
-Public Function Compare8(ByVal strA As DotNetLib.String, ByVal indexA As Long, ByVal strB As DotNetLib.String, ByVal indexB As Long, ByVal length As Long, ByVal culture As DotNetLib.CultureInfo, ByVal options As mscorlib.CompareOptions) As Long
+Public Function Compare8(ByVal strA As DotNetLib.String, ByVal indexA As Long, ByVal strB As DotNetLib.String, ByVal indexB As Long, ByVal Length As Long, ByVal culture As DotNetLib.CultureInfo, ByVal options As mscorlib.CompareOptions) As Long
 Attribute Compare8.VB_Description = "Compares substrings of two specified String objects using the specified comparison options and culture-specific information to influence the comparison, and returns an integer that indicates the relationship of the two substrings to each other in the sort order."
-   Compare8 = this.StringSingleton.Compare8(strA, indexA, strB, indexB, length, culture, options)
+   Compare8 = this.StringSingleton.Compare8(strA, indexA, strB, indexB, Length, culture, options)
 End Function
 
 '@Static
@@ -163,9 +163,9 @@ End Function
 
 '@Static
 '@Description("Compares substrings of two specified String objects by evaluating the numeric values of the corresponding Char objects in each substring.")
-Public Function CompareOrdinal2(ByVal strA As DotNetLib.String, ByVal indexA As Long, ByVal strB As DotNetLib.String, ByVal indexB As Long, ByVal length As Long) As Long
+Public Function CompareOrdinal2(ByVal strA As DotNetLib.String, ByVal indexA As Long, ByVal strB As DotNetLib.String, ByVal indexB As Long, ByVal Length As Long) As Long
 Attribute CompareOrdinal2.VB_Description = "Compares substrings of two specified String objects by evaluating the numeric values of the corresponding Char objects in each substring."
-   CompareOrdinal2 = this.StringSingleton.CompareOrdinal2(strA, indexA, strB, indexB, length)
+   CompareOrdinal2 = this.StringSingleton.CompareOrdinal2(strA, indexA, strB, indexB, Length)
 End Function
 
 '@Static

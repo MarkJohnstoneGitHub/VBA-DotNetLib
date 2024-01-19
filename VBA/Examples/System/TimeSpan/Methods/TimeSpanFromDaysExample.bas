@@ -4,21 +4,22 @@ Attribute VB_Name = "TimeSpanFromDaysExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 16, 2023
-'@LastModified January 6, 2024
+'@LastModified January 17, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.fromdays?view=netframework-4.8.1#examples
 
 Option Explicit
 
-'@Description("The following example creates several TimeSpan objects using the FromDays method.")
+''
+' The following example creates several TimeSpan objects using the FromDays method.
+''
 Public Sub TimeSpanFromDays()
-Attribute TimeSpanFromDays.VB_Description = "The following example creates several TimeSpan objects using the FromDays method."
-    Debug.Print VBAString.Unescape( _
+    Debug.Print VBString.Unescape( _
             "This example of TimeSpan.FromDays( double )\n" + _
             "generates the following output.\n")
-    Debug.Print VBAString.Format("{0,21}{1,18}", _
+    Debug.Print VBString.Format("{0,21}{1,18}", _
             "FromDays", "TimeSpan")
-    Debug.Print VBAString.Format("{0,21}{1,18}", _
+    Debug.Print VBString.Format("{0,21}{1,18}", _
             "--------", "--------")
 
     Call GenTimeSpanFromDays(0.000000006)
@@ -40,7 +41,7 @@ Private Sub GenTimeSpanFromDays(ByVal pDays As Double)
     Set interval = TimeSpan.FromDays(pDays)
     Dim timeInterval As String
     timeInterval = interval.ToString()
-    Debug.Print VBAString.Format("{0,21}{1,26}", pDays, timeInterval)
+    Debug.Print VBString.Format("{0,21}{1,26}", pDays, timeInterval)
 End Sub
 
 '/*
@@ -60,3 +61,4 @@ End Sub
 '                    1        1.00:00:00
 '          20.84745602       20.20:20:20.2000000
 '*/
+

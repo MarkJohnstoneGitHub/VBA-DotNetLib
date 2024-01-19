@@ -4,46 +4,46 @@ Attribute VB_Name = "DateTimeOffsetToUniversalTimeEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 31, 2023
+'@LastModified January 10, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.touniversaltime?view=netframework-4.8.1#examples
 
 Option Explicit
 
-'@Description("The following example calls the ToUniversalTime method to convert a local time and several other times to Coordinated Universal Time (UTC).")
+''
+' The following example calls the ToUniversalTime method to convert a local
+' time and several other times to Coordinated Universal Time (UTC).
+''
 Public Sub DateTimeOffsetToUniversalTime()
-Attribute DateTimeOffsetToUniversalTime.VB_Description = "The following example calls the ToUniversalTime method to convert a local time and several other times to Coordinated Universal Time (UTC)."
-    Dim localTime As IDateTimeOffset
-    Dim otherTime As IDateTimeOffset
-    Dim universalTime As IDateTimeOffset
+    Dim localTime As DotNetLib.DateTimeOffset
+    Dim otherTime As DotNetLib.DateTimeOffset
+    Dim universalTime As DotNetLib.DateTimeOffset
     
     ' Define local time in local time zone
     Set localTime = DateTimeOffset.CreateFromDateTime(DateTime.CreateFromDateTime(2007, 6, 15, 12, 0, 0))
-    Debug.Print "Local time: " & localTime.ToString()
+    Debug.Print VBString.Format("Local time: {0}", localTime)
     Debug.Print
     
     ' Convert local time to offset 0 and assign to otherTime
     Set otherTime = localTime.ToOffset(TimeSpan.Zero)
-    Debug.Print "Other time: " & otherTime.ToString()
-    Debug.Print localTime.ToString() & " = " & _
-                otherTime.ToString() & ": " & _
-                localTime.Equals(otherTime)
-                
-    Debug.Print localTime.ToString() & " exactly equals " & _
-                otherTime.ToString() & ": " & _
-                localTime.EqualsExact(otherTime)
+    Debug.Print VBString.Format("Other time: {0}", otherTime)
+    Debug.Print VBString.Format("{0} = {1}: {2}", _
+                                localTime, otherTime, _
+                                localTime.Equals(otherTime))
+    Debug.Print VBString.Format("{0} exactly equals {1}: {2}", _
+                                localTime, otherTime, _
+                                localTime.EqualsExact(otherTime))
     Debug.Print
     
     ' Convert other time to UTC
     Set universalTime = localTime.ToUniversalTime()
-    Debug.Print "Universal time: " & universalTime.ToString()
-    Debug.Print otherTime.ToString() & " = " & _
-                universalTime.ToString() & ": " & _
-                universalTime.Equals(otherTime)
-                
-    Debug.Print otherTime.ToString() & " exactly equals " & _
-                universalTime.ToString() & ": " & _
-                universalTime.EqualsExact(otherTime)
+    Debug.Print VBString.Format("Universal time: {0}", universalTime)
+    Debug.Print VBString.Format("{0} = {1}: {2}", _
+                                otherTime, universalTime, _
+                                universalTime.Equals(otherTime))
+    Debug.Print VBString.Format("{0} exactly equals {1}: {2}", _
+                                otherTime, universalTime, _
+                                universalTime.EqualsExact(otherTime))
     Debug.Print
 End Sub
 
@@ -57,3 +57,4 @@ End Sub
 '    Universal time: 6/15/2007 7:00:00 PM +00:00
 '    6/15/2007 7:00:00 PM +00:00 = 6/15/2007 7:00:00 PM +00:00: True
 '    6/15/2007 7:00:00 PM +00:00 exactly equals 6/15/2007 7:00:00 PM +00:00: True
+

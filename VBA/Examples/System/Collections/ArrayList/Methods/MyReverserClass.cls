@@ -7,7 +7,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = False
-'@Folder("Examples.System.Collections.ArrayList.Methods")
+'@Folder "Examples.System.Collections.ArrayList.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -30,5 +30,4 @@ End Function
 Private Function IComparer_Compare(ByVal x As Variant, ByVal y As Variant) As Long
     IComparer_Compare = Compare(x, y)
 End Function
-
 

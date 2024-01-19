@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirectoryEnumerateDirectoriesEg"
-'@Folder("Examples.System.IO.Directory.Methods")
+'@Folder "Examples.System.IO.Directory.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -30,9 +30,9 @@ Public Sub DirectoryEnumerateDirectories()
     For Each varDir In dirs
         Dim dir As DotNetLib.String
         Set dir = Strings.Create(varDir)
-        Debug.Print VBAString.Format("{0}", dir.substring(dir.LastIndexOf(dirSeparator) + 1))
+        Debug.Print VBString.Format("{0}", dir.Substring(dir.LastIndexOf(dirSeparator) + 1))
     Next
-    Debug.Print VBAString.Format("{0} directories found.", dirs.Count);
+    Debug.Print VBString.Format("{0} directories found.", dirs.Count);
     Exit Sub
 ErrorHandler:
     If Err.Number = COMHResult.UnauthorizedAccessException Then

@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirInfoExistsExample"
-'@Folder("Examples.System.IO.DirectoryInfo.Properties")
+'@Folder "Examples.System.IO.DirectoryInfo.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

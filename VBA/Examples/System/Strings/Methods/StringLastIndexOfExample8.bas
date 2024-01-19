@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringLastIndexOfExample8"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -20,7 +20,7 @@ Option Explicit
 ''
 Public Sub StringLastIndexOfExample8()
     Dim strSource() As DotNetLib.String
-    Call ArrayEx.CreateInitialize1D(strSource, Strings.Create("<b>This is bold text</b>"), Strings.Create("<H1>This is large Text</H1>"), _
+    Call VBArray.CreateInitialize1D(strSource, Strings.Create("<b>This is bold text</b>"), Strings.Create("<H1>This is large Text</H1>"), _
                 Strings.Create("<b><i><font color=green>This has multiple tags</font></i></b>"), _
                 Strings.Create("<b>This has <i>embedded</i> tags.</b>"), _
                 Strings.Create("This line ends with a greater than symbol and should not be modified>"))
@@ -48,7 +48,7 @@ Public Sub StringLastIndexOfExample8()
                 openTagEndPosition = item.IndexOf7(">")
                 ' Remove the identified section, if it is valid.
                 If (openTagEndPosition >= 0) Then
-                    Set item = item.substring(openTagEndPosition + 1)
+                    Set item = item.Substring(openTagEndPosition + 1)
                 End If
             End If
         End If
@@ -73,3 +73,5 @@ End Sub
 '
 '    Before: This line ends with a greater than symbol and should not be modified>
 '    After: This line ends with a greater than symbol and should not be modified>
+
+

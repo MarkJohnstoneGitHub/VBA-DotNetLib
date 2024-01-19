@@ -4,22 +4,23 @@ Attribute VB_Name = "DateTimeOffsetAdditionExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified August 4, 2023
+'@LastModified January 11, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.op_addition?view=netframework-4.8.1
 
 Option Explicit
 
-'@Description("The Addition method defines the addition operation for DateTimeOffset values.")
+''
+' The Addition method defines the addition operation for DateTimeOffset values.
+''
 Public Sub DateTimeOffsetAddition()
-Attribute DateTimeOffsetAddition.VB_Description = "The Addition method defines the addition operation for DateTimeOffset values."
-    Dim date1 As IDateTimeOffset
+    Dim date1 As DotNetLib.DateTimeOffset
     Set date1 = DateTimeOffset.CreateFromDateTimeParts(2008, 1, 1, 13, 32, 45, TimeSpan.Create(-5, 0, 0))
-    Dim interval1 As ITimeSpan
+    Dim interval1 As DotNetLib.TimeSpan
     Set interval1 = TimeSpan.Create2(202, 3, 30, 0)
-    Dim interval2 As ITimeSpan
+    Dim interval2 As DotNetLib.TimeSpan
     Set interval2 = TimeSpan.Create2(5, 0, 0, 0)
-    Dim date2 As IDateTimeOffset
+    Dim date2 As DotNetLib.DateTimeOffset
     
     Debug.Print date1.ToString()                ' Displays 1/1/2008 1:32:45 PM -05:00
     Set date2 = DateTimeOffset.Addition(date1, interval1)

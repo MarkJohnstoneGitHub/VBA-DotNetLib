@@ -1,5 +1,5 @@
 Attribute VB_Name = "RegionInfoCurrencyEnglishNameEg"
-'@Folder("Examples.System.Globalization.RegionInfo.Properties")
+'@Folder "Examples.System.Globalization.RegionInfo.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -20,11 +20,11 @@ Public Sub RegionInfoCurrencyEnglishNameExample()
     Dim ri As DotNetLib.RegionInfo
     Set ri = RegionInfo.Create2("SE") ' Sweden
 
-    Debug.Print VBAString.Format("Region English Name: . . . {0}", ri.EnglishName)
-    Debug.Print VBAString.Format("Native Name: . . . . . . . {0}", ri.NativeName)
-    Debug.Print VBAString.Format("Currency English Name: . . {0}", ri.CurrencyEnglishName)
-    Debug.Print VBAString.Format("Currency Native Name:. . . {0}", ri.CurrencyNativeName)
-    Debug.Print VBAString.Format("Geographical ID: . . . . . {0}", ri.GeoId)
+    Debug.Print VBString.Format("Region English Name: . . . {0}", ri.EnglishName)
+    Debug.Print VBString.Format("Native Name: . . . . . . . {0}", ri.NativeName)
+    Debug.Print VBString.Format("Currency English Name: . . {0}", ri.CurrencyEnglishName)
+    Debug.Print VBString.Format("Currency Native Name:. . . {0}", ri.CurrencyNativeName)
+    Debug.Print VBString.Format("Geographical ID: . . . . . {0}", ri.GeoId)
 End Sub
 
 'This code example produces the following results:

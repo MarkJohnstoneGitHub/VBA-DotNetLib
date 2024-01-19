@@ -1,5 +1,5 @@
 Attribute VB_Name = "SortedListRemoveExample"
-'@Folder("Examples.System.Collections.SortedList.Methods")
+'@Folder "Examples.System.Collections.SortedList.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -54,7 +54,7 @@ Private Sub PrintKeysAndValues(ByVal myList As DotNetLib.SortedList)
     formatString = Regex.Unescape("\t{0}:\t{1}")
     Dim i As Long
     For i = 0 To myList.Count - 1
-        Debug.Print VBAString.Format(formatString, myList.GetKey(i), myList.GetByIndex(i))
+        Debug.Print VBString.Format(formatString, myList.GetKey(i), myList.GetByIndex(i))
     Next i
     Debug.Print
 End Sub

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DotNetLib.Extensions
 {
@@ -17,11 +13,12 @@ namespace DotNetLib.Extensions
         {
             {
                 if (substring == null)
-                    throw new ArgumentNullException("substring",
-                                                 "substring cannot be null.");
-                else if (!Enum.IsDefined(typeof(StringComparison), comparisonType))
-                    throw new ArgumentException("comp is not a member of StringComparison",
-                                             "comp");
+                {
+                    throw new ArgumentNullException("substring","substring cannot be null.");
+                }
+                //else if (!Enum.IsDefined(typeof(StringComparison), comparisonType))
+                //    throw new ArgumentException("comp is not a member of StringComparison",
+                //                             "comp");
 
                 return str.IndexOf(substring, comparisonType) >= 0;
             }

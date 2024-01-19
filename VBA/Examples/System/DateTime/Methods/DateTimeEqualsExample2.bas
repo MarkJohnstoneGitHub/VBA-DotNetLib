@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeEqualsExample2"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 4, 2023
-'@LastModified September 10, 2023
+'@LastModified January 6, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.equals?view=netframework-4.8.1#system-datetime-equals(system-datetime-system-datetime)
 Option Explicit
@@ -12,13 +12,13 @@ Option Explicit
 '@Description("Returns a value indicating whether two DateTime instances have the same date and time value.")
 Public Sub DateTimeEquals3()
 Attribute DateTimeEquals3.VB_Description = "Returns a value indicating whether two DateTime instances have the same date and time value."
-   Dim today1 As IDateTime
+   Dim today1 As DotNetLib.DateTime
    Set today1 = DateTime.CreateFromTicks(DateTime.Today.Ticks)
    
-   Dim today2 As IDateTime
+   Dim today2 As DotNetLib.DateTime
    Set today2 = DateTime.CreateFromTicks(DateTime.Today.Ticks)
 
-   Dim tomorrow As IDateTime
+   Dim tomorrow As DotNetLib.DateTime
    Set tomorrow = DateTime.CreateFromTicks(DateTime.Today.AddDays(1).Ticks)
 
    ' todayEqualsToday gets true.

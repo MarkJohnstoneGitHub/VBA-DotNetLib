@@ -54,7 +54,7 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the StringBuilder class from the specified substring and capacity.")
-Public Function Create3(ByVal value As String, ByVal startIndex As Long, ByVal length As Long, ByVal Capacity As Long) As DotNetLib.StringBuilder
+Public Function Create3(ByVal value As String, ByVal startIndex As Long, ByVal Length As Long, ByVal Capacity As Long) As DotNetLib.StringBuilder
 Attribute Create3.VB_Description = "Initializes a new instance of the StringBuilder class from the specified substring and capacity."
-   Set Create3 = this.StringBuilderSingleton.Create3(value, startIndex, length, Capacity)
+   Set Create3 = this.StringBuilderSingleton.Create3(value, startIndex, Length, Capacity)
 End Function

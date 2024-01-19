@@ -1,5 +1,5 @@
 Attribute VB_Name = "DTFIAbbreviatedDayNamesExample"
-'@Folder("Examples.System.Globalization.DateTimeFormatInfo.Properties")
+'@Folder "Examples.System.Globalization.DateTimeFormatInfo.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -20,7 +20,7 @@ Public Sub DateTimeFormatInfoAbbreviatedDayNames()
     Set ci = CultureInfo.CreateSpecificCulture("en-US")
     Dim dtfi As DotNetLib.DateTimeFormatInfo
     Set dtfi = ci.DateTimeFormat
-    dtfi.SetAbbreviatedDayNames StringArray.ToArray("Su", "M", "Tu", "W", _
+    dtfi.SetAbbreviatedDayNames StringArray.CreateInitialize1D("Su", "M", "Tu", "W", _
                                                 "Th", "F", "Sa")
                                                 
     Dim dat As DotNetLib.DateTime
@@ -42,4 +42,5 @@ End Sub
 '       Su Jun 01, 2014
 '       M Jun 02, 2014
 '       Tu Jun 03, 2014
+
 

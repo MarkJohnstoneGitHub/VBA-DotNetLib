@@ -4,27 +4,32 @@ Attribute VB_Name = "DateTimeIsLeapYearExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 11, 2023
-'@LastModified July 30, 2023
+'@LastModified January 6, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.isleapyear?view=netframework-4.8.1#examples
 
 Option Explicit
 
+''
 '@Description("The following example uses the IsLeapYear method to determine which years between 1994 and 2014 are leap years.")
-'The example also illustrates the result when the AddYears method is used to add a year to a leap day.
+' The example also illustrates the result when the AddYears method is used to
+' add a year to a leap day.
+''
 Public Sub DateTimeIsLeapYear()
 Attribute DateTimeIsLeapYear.VB_Description = "The following example uses the IsLeapYear method to determine which years between 1994 and 2014 are leap years."
-   Dim pvtYear As Long
-   For pvtYear = 1994 To 2014
-      If (DateTime.IsLeapYear(pvtYear)) Then
-         Debug.Print pvtYear & " is a leap year."
-         Dim leapDay As IDateTime
-         Set leapDay = DateTime.CreateFromDate(pvtYear, 2, 29)
-         Dim nextYear As IDateTime
-         Set nextYear = leapDay.AddYears(1)
-         Debug.Print "   One year from " & leapDay.ToString2("d") & " is " & nextYear.ToString2("d")
-      End If
-   Next
+    Dim pvtYear As Long
+    For pvtYear = 1994 To 2014
+        If (DateTime.IsLeapYear(pvtYear)) Then
+            Debug.Print VBString.Format("{0} is a leap year.", pvtYear)
+            Dim leapDay As DotNetLib.DateTime
+            Set leapDay = DateTime.CreateFromDate(pvtYear, 2, 29)
+            Dim nextYear As DotNetLib.DateTime
+            Set nextYear = leapDay.AddYears(1)
+            Debug.Print VBString.Format("   One year from {0} is {1}.", _
+                              leapDay.ToString2("d"), _
+                              nextYear.ToString2("d"))
+        End If
+    Next
 End Sub
 
 ' The example produces the following output:

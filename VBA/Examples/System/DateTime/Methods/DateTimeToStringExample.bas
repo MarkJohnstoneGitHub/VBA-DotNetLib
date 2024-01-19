@@ -4,17 +4,19 @@ Attribute VB_Name = "DateTimeToStringExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 13, 2023
-'@LastModified August 13, 2023
+'@LastModified January 7, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=netframework-4.8.1#system-datetime-tostring
 
 Option Explicit
 
+''
 ' The following example illustrates how the string representation of a DateTime
 ' value returned by the ToString() method depends on the thread current culture.
 ' It changes the current culture to en-US, fr-FR, and ja-JP, and in each case
 ' calls the ToString() method to return the string representation of a date and
 ' time value using that culture.
+''
 Public Sub DateTimeToString()
     Dim pvtCurrentCulture As DotNetLib.CultureInfo
     Set pvtCurrentCulture = CultureInfo.CurrentCulture

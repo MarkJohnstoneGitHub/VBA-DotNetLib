@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArrayListBinarySearch2Example"
-'@Folder("Examples.System.Collections.ArrayList.Methods")
+'@Folder "Examples.System.Collections.ArrayList.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -32,26 +32,26 @@ Public Sub ArrayListBinarySearch2()
     coloredAnimals.Sort
     
     ' Compare results of an iterative search with a binary search
-    Dim index As Long
-    index = IterativeSearch(coloredAnimals, "White Tiger")
-    Debug.Print VBAString.Format("Iterative search, item found at index: {0}", index)
+    Dim Index As Long
+    Index = IterativeSearch(coloredAnimals, "White Tiger")
+    Debug.Print VBString.Format("Iterative search, item found at index: {0}", Index)
     
-    index = coloredAnimals.BinarySearch2("White Tiger", New SimpleStringComparer)
-    Debug.Print VBAString.Format("Binary search, item found at index:    {0}", index)
+    Index = coloredAnimals.BinarySearch2("White Tiger", New SimpleStringComparer)
+    Debug.Print VBString.Format("Binary search, item found at index:    {0}", Index)
 
 End Sub
 
 Private Function IterativeSearch(ByVal pList As DotNetLib.ArrayList, ByVal finditem As String) As Long
-    Dim index As Long
-    index = -1
+    Dim Index As Long
+    Index = -1
     Dim i As Long
     For i = 0 To pList.Count - 1
         If finditem = pList(i) Then
-            index = i
+            Index = i
             Exit For
         End If
     Next i
-    IterativeSearch = index
+    IterativeSearch = Index
 End Function
 
 ' This code produces the following output.

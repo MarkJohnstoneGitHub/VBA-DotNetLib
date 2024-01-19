@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringIndexOfExample5"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -28,17 +28,17 @@ Public Sub StringIndexOfExample5()
                                          animal1, animal2)
     
     
-    Debug.Print VBAString.Format("The original string is:{0}{1}{0}", _
+    Debug.Print VBString.Format("The original string is:{0}{1}{0}", _
                           Environment.NewLine, strTarget)
                 
 
     Dim pvtInput As String
-    pvtInput = InputBox(VBAString.Format("Enter an adjective (or group of adjectives) " + _
+    pvtInput = InputBox(VBString.Format("Enter an adjective (or group of adjectives) " + _
                 "to describe the {0}: ==> ", animal1))
     Dim adj1 As DotNetLib.String
     Set adj1 = Strings.Create(pvtInput)
     
-    pvtInput = InputBox(VBAString.Format("Enter an adjective (or group of adjectives) " + _
+    pvtInput = InputBox(VBString.Format("Enter an adjective (or group of adjectives) " + _
                 "to describe the {0}: ==> ", animal2))
     Dim adj2 As DotNetLib.String
     Set adj2 = Strings.Create(pvtInput)
@@ -49,7 +49,7 @@ Public Sub StringIndexOfExample5()
     Set strTarget = strTarget.Insert(strTarget.IndexOf(animal1), adj1)
     Set strTarget = strTarget.Insert(strTarget.IndexOf(animal2), adj2)
 
-    Debug.Print VBAString.Format("{0}The final string is:{0}{1}", _
+    Debug.Print VBString.Format("{0}The final string is:{0}{1}", _
                           Environment.NewLine, strTarget)
 End Sub
 
@@ -62,3 +62,5 @@ End Sub
 '
 '       The final string is:
 '       The bold fox jumps over the lazy dog.
+
+

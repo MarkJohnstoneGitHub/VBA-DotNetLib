@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArrayListExample"
-'@Folder("Examples.System.Collections.ArrayList")
+'@Folder "Examples.System.Collections.ArrayList"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -24,8 +24,8 @@ Public Sub ArrayListExample1()
     
     ' Displays the properties and values of the ArrayList.
     Debug.Print "myAL"
-    Debug.Print VBAString.Format("    Count:    {0}", myAL.Count)
-    Debug.Print VBAString.Format("    Capacity: {0}", myAL.Capacity)
+    Debug.Print VBString.Format("    Count:    {0}", myAL.Count)
+    Debug.Print VBString.Format("    Capacity: {0}", myAL.Capacity)
     Debug.Print "    Values:";
     PrintValues myAL
 End Sub
@@ -33,7 +33,7 @@ End Sub
 Private Sub PrintValues(ByVal myList As mscorlib.IEnumerable)
     Dim obj As Variant
     For Each obj In myList
-        Debug.Print VBAString.Format("    {0}", obj);
+        Debug.Print VBString.Format("    {0}", obj);
     Next
     Debug.Print
 End Sub

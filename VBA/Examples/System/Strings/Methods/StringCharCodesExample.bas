@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringCharCodesExample"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -21,12 +21,12 @@ Public Sub StringCharCodesExample()
     Dim str1 As DotNetLib.String
     Set str1 = Strings.Create("Test")
     Dim ctr As Long
-    For ctr = 0 To str1.length - 1
-        Debug.Print VBAString.Format("{0} ", ChrW$(str1.CharCodes(ctr)));
+    For ctr = 0 To str1.Length - 1
+        Debug.Print VBString.Format("{0} ", ChrW$(str1.CharCodes(ctr)));
     Next
     Debug.Print
-    For ctr = 0 To str1.length - 1
-        Debug.Print VBAString.Format("{0} ", str1.CharCodes(ctr));
+    For ctr = 0 To str1.Length - 1
+        Debug.Print VBString.Format("{0} ", str1.CharCodes(ctr));
     Next
 End Sub
 

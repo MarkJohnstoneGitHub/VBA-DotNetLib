@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringLastIndexOfExample9"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -19,19 +19,19 @@ Option Explicit
 ' returns the file name without its path.
 ''
 Public Sub StringLastIndexOfExample9()
-    Dim filename As DotNetLib.String
+    Dim fileName As DotNetLib.String
 
-    Set filename = ExtractFilename(Strings.Create("C:\temp\"))
-    Debug.Print VBAString.Format("{0}", IIf(Strings.IsNullOrEmpty(filename), "<none>", filename))
+    Set fileName = ExtractFilename(Strings.Create("C:\temp\"))
+    Debug.Print VBString.Format("{0}", IIf(Strings.IsNullOrEmpty(fileName), "<none>", fileName))
 
-    Set filename = ExtractFilename(Strings.Create("C:\temp\delegate.txt"))
-    Debug.Print VBAString.Format("{0}", IIf(Strings.IsNullOrEmpty(filename), "<none>", filename))
+    Set fileName = ExtractFilename(Strings.Create("C:\temp\delegate.txt"))
+    Debug.Print VBString.Format("{0}", IIf(Strings.IsNullOrEmpty(fileName), "<none>", fileName))
 
-    Set filename = ExtractFilename(Strings.Create("delegate.txt"))
-    Debug.Print VBAString.Format("{0}", IIf(Strings.IsNullOrEmpty(filename), "<none>", filename))
+    Set fileName = ExtractFilename(Strings.Create("delegate.txt"))
+    Debug.Print VBString.Format("{0}", IIf(Strings.IsNullOrEmpty(fileName), "<none>", fileName))
 
-    Set filename = ExtractFilename(Strings.Create("C:\temp\notafile.txt"))
-    Debug.Print VBAString.Format("{0}", IIf(Strings.IsNullOrEmpty(filename), "<none>", filename))
+    Set fileName = ExtractFilename(Strings.Create("C:\temp\notafile.txt"))
+    Debug.Print VBString.Format("{0}", IIf(Strings.IsNullOrEmpty(fileName), "<none>", fileName))
 End Sub
 
 Private Function ExtractFilename(ByVal filepath As DotNetLib.String) As DotNetLib.String
@@ -58,7 +58,7 @@ Private Function ExtractFilename(ByVal filepath As DotNetLib.String) As DotNetLi
         ' Determine whether file exists using filepath.
         If (File.Exists(filepath.ToString())) Then
             ' Return filename without file path.
-            Set ExtractFilename = filepath.substring(position + 1)
+            Set ExtractFilename = filepath.Substring(position + 1)
             Exit Function
         Else
             Set ExtractFilename = Strings.EmptyString()

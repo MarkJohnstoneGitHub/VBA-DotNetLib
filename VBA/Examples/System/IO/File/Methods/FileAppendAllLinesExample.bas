@@ -1,5 +1,5 @@
 Attribute VB_Name = "FileAppendAllLinesExample"
-'@Folder("Examples.System.IO.File.Methods")
+'@Folder "Examples.System.IO.File.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -35,11 +35,11 @@ Private Sub CreateSampleFile()
     For i = 0 To 499
         Dim TS1 As DotNetLib.DateTime
         Set TS1 = TimeStamp.AddYears(i)
-        Dim TS2 As DotNetLib.DateTime
-        Set TS2 = TS1.AddMonths(i)
-        Dim TS3 As DotNetLib.DateTime
-        Set TS3 = TS2.AddDays(i)
-        Call sw.WriteLine2(TS3.ToLongDateString())
+        Dim ts2 As DotNetLib.DateTime
+        Set ts2 = TS1.AddMonths(i)
+        Dim ts3 As DotNetLib.DateTime
+        Set ts3 = ts2.AddDays(i)
+        Call sw.WriteLine2(ts3.ToLongDateString())
     Next
     Call sw.Dispose
 End Sub

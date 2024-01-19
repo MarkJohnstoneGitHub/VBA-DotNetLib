@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringCharCodesExample2"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -27,8 +27,8 @@ Public Sub StringCharCodesExample2()
     Dim s1 As DotNetLib.String
     Set s1 = Strings.CreateUnescape("a\uD800\uDC00y")
     
-    Debug.Print VBAString.Format("String '{0}' {1}", s1, IIf(s1.IsSurrogate(), "contains surrogate pairs", ""))
-    For ctr = 0 To s1.length - 1
+    Debug.Print VBString.Format("String '{0}' {1}", s1, IIf(s1.IsSurrogate(), "contains surrogate pairs", ""))
+    For ctr = 0 To s1.Length - 1
         Dim pvtCharCode As Long
         pvtCharCode = s1.CharCodes(ctr)
         Dim pvtSurrogate As String
@@ -38,7 +38,7 @@ Public Sub StringCharCodesExample2()
         ElseIf Char.IsHighSurrogate(pvtCharCode) Then
             pvtSurrogate = "High surrogate"
         End If
-        Debug.Print VBAString.Format("{0} {1} {2}", ChrW$(pvtCharCode), pvtCharCode, pvtSurrogate)
+        Debug.Print VBString.Format("{0} {1} {2}", ChrW$(pvtCharCode), pvtCharCode, pvtSurrogate)
     Next
 End Sub
 

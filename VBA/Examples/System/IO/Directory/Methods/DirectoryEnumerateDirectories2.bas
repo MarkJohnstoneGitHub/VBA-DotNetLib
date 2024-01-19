@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirectoryEnumerateDirectories2"
-'@Folder("Examples.System.IO.Directory.Methods")
+'@Folder "Examples.System.IO.Directory.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -29,10 +29,10 @@ Public Sub DirectoryEnumerateDirectoriesEg2()
         Dim dir As DotNetLib.String
         Set dir = Strings.Create(varDir)
         ' Remove path information from string.
-        Debug.Print VBAString.Format("{0}", _
-                             dir.substring(dir.LastIndexOf7("\") + 1))
+        Debug.Print VBString.Format("{0}", _
+                             dir.Substring(dir.LastIndexOf7("\") + 1))
     Next
-    Debug.Print VBAString.Format("{0} directories found.", dirs.Count);
+    Debug.Print VBString.Format("{0} directories found.", dirs.Count);
     
     Exit Sub
 ErrorHandler:
@@ -43,3 +43,5 @@ End Sub
 '   DateTime
 '   DateTimeOffset
 '   2 directories found.
+
+

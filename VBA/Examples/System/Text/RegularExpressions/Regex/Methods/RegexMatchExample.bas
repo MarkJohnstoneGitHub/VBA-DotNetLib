@@ -1,5 +1,5 @@
 Attribute VB_Name = "RegexMatchExample"
-'@Folder("Examples.System.Text.RegularExpressions.Regex.Methods")
+'@Folder "Examples.System.Text.RegularExpressions.Regex.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -26,7 +26,7 @@ Public Sub RegexMatch()
     Dim m As DotNetLib.Match
     Set m = Regex.Match(strInput, pattern, RegexOptions.RegexOptions_IgnoreCase)
     If (m.Success) Then
-        Debug.Print VBAString.Format("Found '{0}' at position {1}.", m.value, m.index)
+        Debug.Print VBString.Format("Found '{0}' at position {1}.", m.value, m.Index)
     End If
 End Sub
 

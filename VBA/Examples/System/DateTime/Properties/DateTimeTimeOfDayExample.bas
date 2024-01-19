@@ -5,7 +5,7 @@ Attribute VB_Name = "DateTimeTimeOfDayExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 09, 2023
-'@LastModified July 30, 2023
+'@LastModified January 7, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.timeofday?view=netframework-4.8.1#examples
 
@@ -15,20 +15,23 @@ Attribute VB_Name = "DateTimeTimeOfDayExample"
 
 Option Explicit
 
+''
+' The following example displays the value of the TimeOfDay property for an
+' array of DateTime values. It also contrasts the return value with the string
+' returned by the "t" standard format string in a composite formatting operation.
+''
 Public Sub DateTimeTimeOfDay()
-    Dim dates(3) As IDateTime
-    
-    Set dates(0) = DateTime.Now
-    Set dates(1) = DateTime.CreateFromDateTime(2013, 9, 14, 9, 28, 0)
-    Set dates(2) = DateTime.CreateFromDateTime(2011, 5, 28, 10, 35, 0)
-    Set dates(3) = DateTime.CreateFromDateTime(1979, 12, 25, 14, 30, 0)
-    
+    Dim dates() As DotNetLib.DateTime
+    Call VBArray.CreateInitialize1D(dates, DateTime.Now, _
+                            DateTime.CreateFromDateTime(2013, 9, 14, 9, 28, 0), _
+                            DateTime.CreateFromDateTime(2011, 5, 28, 10, 35, 0), _
+                            DateTime.CreateFromDateTime(1979, 12, 25, 14, 30, 0))
     Dim varDateTime As Variant
-    For Each varDateTime In dates    ' Iterate through each element.
-        Dim dtObject As IDateTime
+    For Each varDateTime In dates
+        Dim dtObject As DotNetLib.DateTime
         Set dtObject = varDateTime
-        Debug.Print "Day: " & dtObject.Date.ToString2("d") & " Time: " & dtObject.TimeOfDay.ToString2("g")
-        Debug.Print "Day: " & dtObject.ToString2("d") & " Time: " & dtObject.ToString2("t")
+        Debug.Print VBString.Format("Day: {0:d} Time: {1:g}", dtObject.Date, dtObject.TimeOfDay)
+        Debug.Print VBString.Format(VBString.Unescape("Day: {0:d} Time: {0:t}\n"), dtObject)
     Next
 End Sub
 
@@ -44,3 +47,5 @@ End Sub
 '
 '    Day: 12/25/1979 Time: 14:30:00
 '    Day: 12/25/1979 Time: 2:30 PM
+
+

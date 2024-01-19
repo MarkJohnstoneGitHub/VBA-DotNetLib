@@ -1,5 +1,5 @@
 Attribute VB_Name = "PathGetExtensionExample"
-'@Folder("Examples.System.IO.Path.Methods")
+'@Folder "Examples.System.IO.Path.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -17,16 +17,16 @@ Option Explicit
 ' Windows-based desktop platform.
 ''
 Public Sub PathGetExtensionExample()
-    Dim filename As String
-    filename = "C:\mydir.old\myfile.ext"
+    Dim fileName As String
+    fileName = "C:\mydir.old\myfile.ext"
     Dim pvtPath As String
     pvtPath = "C:\mydir.old\"
     Dim extension As String
-    extension = Path.GetExtension(filename)
-    Debug.Print VBAString.Format("GetExtension('{0}') returns '{1}'", _
+    extension = Path.GetExtension(fileName)
+    Debug.Print VBString.Format("GetExtension('{0}') returns '{1}'", _
                                 pvtPath, extension)
     extension = Path.GetExtension(pvtPath)
-    Debug.Print VBAString.Format("GetExtension('{0}') returns '{1}'", _
+    Debug.Print VBString.Format("GetExtension('{0}') returns '{1}'", _
                                 pvtPath, extension)
 End Sub
 
@@ -34,3 +34,5 @@ End Sub
 '
 ' GetExtension('C:\mydir.old\myfile.ext') returns '.ext'
 ' GetExtension('C:\mydir.old\') returns ''
+
+

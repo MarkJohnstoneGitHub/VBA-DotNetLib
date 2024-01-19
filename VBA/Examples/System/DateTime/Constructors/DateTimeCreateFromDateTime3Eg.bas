@@ -1,10 +1,10 @@
 Attribute VB_Name = "DateTimeCreateFromDateTime3Eg"
-'@Folder("Examples.System.DateTime.Constructors")
+'@Folder "Examples.System.DateTime.Constructors"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 21, 2023
-'@LastModified September 21, 2023
+'@LastModified January 7, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.-ctor?view=netframework-4.8.1#system-datetime-ctor(system-int32-system-int32-system-int32-system-int32-system-int32-system-int32-system-int32-system-globalization-calendar)
 
@@ -31,15 +31,15 @@ Public Sub DateTimeCreateFromDateTime3()
     Dim date1 As DotNetLib.DateTime
     Set date1 = DateTime.CreateFromDateTime3(1389, 5, 27, 16, 32, 18, 500, persian)
     Debug.Print date1.ToString2("M/dd/yyyy h:mm:ss.fff tt")
-    Debug.Print persian.GetMonth(date1) & "/" & _
-                persian.GetDayOfMonth(date1) & "/" & _
-                persian.GetYear(date1) & " " & _
-                persian.GetHour(date1) & _
-                DateTimeFormatInfo.CurrentInfo.TimeSeparator & _
-                persian.GetMinute(date1) & _
-                DateTimeFormatInfo.CurrentInfo.TimeSeparator & _
-                persian.GetSecond(date1) & "." & _
-                persian.GetMilliseconds(date1) & VBA.vbNewLine
+    Debug.Print VBString.Format(VBString.Unescape("{0}/{1}/{2} {3}{7}{4:D2}{7}{5:D2}.{6:G3}\n"), _
+                                persian.GetMonth(date1), _
+                                persian.GetDayOfMonth(date1), _
+                                persian.GetYear(date1), _
+                                persian.GetHour(date1), _
+                                persian.GetMinute(date1), _
+                                persian.GetSecond(date1), _
+                                persian.GetMilliseconds(date1), _
+                                DateTimeFormatInfo.CurrentInfo.TimeSeparator)
 
     Debug.Print "Using the Hijri Calendar:"
     ' Get current culture so it can later be restored.
@@ -60,23 +60,26 @@ Public Sub DateTimeCreateFromDateTime3()
     Set current = CultureInfo.CurrentCulture
     Set current.DateTimeFormat.Calendar = hijri
     dFormat = current.DateTimeFormat.ShortDatePattern
-    
     ' Ensure year is displayed as four digits.
-    ' dFormat = Regex.Replace(dFormat, "/yy$", "/yyyy") + " H:mm:ss.fff";
-    dFormat = dFormat + " H:mm:ss.fff"
-'    current.DateTimeFormat.ShortDatePattern = dFormat
-    
+    dFormat = Regex.Replace(dFormat, "/yy$", "/yyyy") + " H:mm:ss.fff"
+    fmtString = "{0} culture using the {1} calendar: {2:" + dFormat + "}"
     Dim date2 As DotNetLib.DateTime
     Set date2 = DateTime.CreateFromDateTime3(1431, 9, 9, 16, 32, 18, 500, hijri)
-    Debug.Print current.ToString; " culture using the "; hijri.ToString; " calendar: "; date2.ToString2(dFormat)
+    Debug.Print VBString.Format(fmtString, current, GetCalendarName(hijri), date2)
     
     ' Restore previous culture.
     Set CultureInfo.CurrentCulture = dftCulture
-    
-    Debug.Print CultureInfo.CurrentCulture.ToString; " culture using the "; _
-                CultureInfo.CurrentCulture.Calendar.ToString; " calendar: "; _
-                date2.ToString2(dFormat)
+    dFormat = DateTimeFormatInfo.CurrentInfo.ShortDatePattern + " H:mm:ss.fff"
+    fmtString = "{0} culture using the {1} calendar: {2:" + dFormat + "}"
+    Debug.Print VBString.Format(fmtString, _
+                        CultureInfo.CurrentCulture, _
+                        GetCalendarName(CultureInfo.CurrentCulture.Calendar), _
+                        date2)
 End Sub
+
+Private Function GetCalendarName(ByVal cal As DotNetLib.Calendar) As String
+    GetCalendarName = Regex.Match(cal.ToString(), "\.(\w+)Calendar").Groups.item(1).value
+End Function
 
 ' The example displays the following output:
 '       8/18/2010 4:32:18.500 PM
@@ -85,4 +88,5 @@ End Sub
 '       Using the Hijri Calendar:
 '       ar-SY culture using the Hijri calendar: 09/09/1431 16:32:18.500
 '       en-US culture using the Gregorian calendar: 8/18/2010 16:32:18.500
+
 

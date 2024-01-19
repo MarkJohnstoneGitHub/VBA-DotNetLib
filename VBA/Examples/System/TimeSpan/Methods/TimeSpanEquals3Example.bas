@@ -4,23 +4,25 @@ Attribute VB_Name = "TimeSpanEquals3Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 16, 2023
-'@LastModified August 14, 2023
+'@LastModified January 17, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.equals?view=netframework-4.8.1#system-timespan-equals(system-timespan-system-timespan)
 
 Option Explicit
 
-'@Description("The following example demonstrates the TimeSpan.Equals( TimeSpan, TimeSpan ) method.")
+''
+' The following example demonstrates the
+' TimeSpan.Equals( TimeSpan, TimeSpan ) method.
+''
 Public Sub TimeSpanEquals3()
-Attribute TimeSpanEquals3.VB_Description = "The following example demonstrates the TimeSpan.Equals( TimeSpan, TimeSpan ) method."
    ' Create some TimeSpan objects.
-   Dim one As ITimeSpan
+   Dim one As DotNetLib.TimeSpan
    Set one = TimeSpan.Create3(0, 0, 10, -20, -30)
    
-   Dim two As ITimeSpan
+   Dim two As DotNetLib.TimeSpan
    Set two = TimeSpan.Create3(0, -10, 20, -30, 40)
    
-   Dim three As ITimeSpan
+   Dim three As DotNetLib.TimeSpan
    Set three = one
    
    ' Compare the TimeSpan objects and display the results.

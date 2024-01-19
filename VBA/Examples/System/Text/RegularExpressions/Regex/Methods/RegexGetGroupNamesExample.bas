@@ -1,5 +1,5 @@
 Attribute VB_Name = "RegexGetGroupNamesExample"
-'@Folder("Examples.System.Text.RegularExpressions.Regex.Methods")
+'@Folder "Examples.System.Text.RegularExpressions.Regex.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -39,7 +39,7 @@ Private Sub ShowMatches(ByVal r As DotNetLib.Regex, ByVal m As DotNetLib.Match)
     For Each Name In names
         Dim grp As DotNetLib.Group
         Set grp = m.Groups.Item_2(Name)
-        Debug.Print VBAString.Format("   {0}: '{1}'", Name, grp.value)
+        Debug.Print VBString.Format("   {0}: '{1}'", Name, grp.value)
     Next
 End Sub
 

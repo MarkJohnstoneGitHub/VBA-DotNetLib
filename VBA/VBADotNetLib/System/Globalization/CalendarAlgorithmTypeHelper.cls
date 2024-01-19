@@ -7,7 +7,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-'@Folder("VBADotNetLib.System.Globalization")
+'@Folder "VBADotNetLib.System.Globalization"
 '@PredeclaredId
 
 '@Author Mark Johnstone

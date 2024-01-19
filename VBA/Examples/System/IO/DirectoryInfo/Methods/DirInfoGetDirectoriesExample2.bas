@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirInfoGetDirectoriesExample2"
-'@Folder("Examples.System.IO.DirectoryInfo.Methods")
+'@Folder "Examples.System.IO.DirectoryInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -24,16 +24,16 @@ Public Sub DirectoryInfoGetDirectoriesExample2()
     ' Get only subdirectories that contain the letter "p."
     Dim dirs() As DotNetLib.DirectoryInfo
     dirs = di.GetDirectories("*p*")
-    Debug.Print VBAString.Format("The number of directories containing the letter p is {0}.", UBound(dirs) + 1)
+    Debug.Print VBString.Format("The number of directories containing the letter p is {0}.", UBound(dirs) + 1)
     
     Dim vardiNext As Variant
     For Each vardiNext In dirs
         Dim diNext As DotNetLib.DirectoryInfo
         Set diNext = vardiNext
-        Debug.Print VBAString.Format("The number of files in {0} is {1}", diNext, UBound(diNext.GetFiles()) + 1)
+        Debug.Print VBString.Format("The number of files in {0} is {1}", diNext, UBound(diNext.GetFiles()) + 1)
     Next
     Exit Sub
     
 ErrorHandler:
-    Debug.Print VBAString.Format("The process failed: {0}", Err.Description)
+    Debug.Print VBString.Format("The process failed: {0}", Err.Description)
 End Sub

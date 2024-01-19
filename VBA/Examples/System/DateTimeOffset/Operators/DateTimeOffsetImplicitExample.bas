@@ -4,19 +4,21 @@ Attribute VB_Name = "DateTimeOffsetImplicitExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified July 31, 2023
+'@LastModified January 11, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.op_implicit?view=netframework-4.8.1#remarks
 
 Option Explicit
 
-'The Implicit method enables the compiler to automatically convert a DateTime object
-'to a DateTimeOffset object without an explicit casting operator (in C#) or a call to
-'a conversion function (in Visual Basic). It defines a widening conversion that does not
-'involve data loss and does not throw an OverflowException.
-'The Implicit method makes code such as the following possible:
+''
+' The Implicit method enables the compiler to automatically convert a DateTime object
+' to a DateTimeOffset object without an explicit casting operator (in C#) or a call to
+' a conversion function (in Visual Basic). It defines a widening conversion that does not
+' involve data loss and does not throw an OverflowException.
+' The Implicit method makes code such as the following possible:
+''
 Public Sub DateTimeOffsetImplicit()
-    Dim timeWithOffset As IDateTimeOffset
+    Dim timeWithOffset As DotNetLib.DateTimeOffset
     Set timeWithOffset = DateTimeOffset.Implicit(DateTime.CreateFromDateTime(2008, 7, 3, 18, 45, 0))
     Debug.Print timeWithOffset.ToString()
 

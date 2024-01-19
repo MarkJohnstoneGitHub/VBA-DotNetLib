@@ -1,5 +1,5 @@
 Attribute VB_Name = "TextInfoToLowerExample"
-'@Folder("Examples.System.Globalization.TextInfo.Methods")
+'@Folder "Examples.System.Globalization.TextInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

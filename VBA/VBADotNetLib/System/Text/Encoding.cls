@@ -88,9 +88,9 @@ Attribute Convert.VB_Description = "Converts an entire byte array from one encod
 End Function
 
 '@Description("Converts a range of bytes in a byte array from one encoding to another.")
-Public Function Convert2(ByVal srcEncoding As DotNetLib.Encoding, ByVal dstEncoding As DotNetLib.Encoding, ByRef bytes() As Byte, ByVal index As Long, ByVal Count As Long) As Byte()
+Public Function Convert2(ByVal srcEncoding As DotNetLib.Encoding, ByVal dstEncoding As DotNetLib.Encoding, ByRef bytes() As Byte, ByVal Index As Long, ByVal Count As Long) As Byte()
 Attribute Convert2.VB_Description = "Converts a range of bytes in a byte array from one encoding to another."
-   Convert2 = this.EncodingSingleton.Convert_2(srcEncoding, dstEncoding, bytes, index, Count)
+   Convert2 = this.EncodingSingleton.Convert_2(srcEncoding, dstEncoding, bytes, Index, Count)
 End Function
 
 '@Description("Returns the encoding associated with the specified code page identifier.")

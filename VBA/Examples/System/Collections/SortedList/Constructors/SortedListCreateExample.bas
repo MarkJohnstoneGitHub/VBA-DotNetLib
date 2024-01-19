@@ -1,5 +1,5 @@
 Attribute VB_Name = "SortedListCreateExample"
-'@Folder("Examples.System.Collections.SortedList.Constructors")
+'@Folder "Examples.System.Collections.SortedList.Constructors"
 '
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -88,7 +88,7 @@ Private Sub PrintKeysAndValues(ByVal myList As DotNetLib.SortedList)
     Debug.Print "        -KEY-   -VALUE-"
     Dim i As Long
     For i = 0 To myList.Count - 1
-        Debug.Print VBAString.Format("        {0,-6}: {1}", myList.GetKey(i), myList.GetByIndex(i))
+        Debug.Print VBString.Format("        {0,-6}: {1}", myList.GetKey(i), myList.GetByIndex(i))
     Next i
     Debug.Print
 End Sub

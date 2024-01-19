@@ -18,7 +18,7 @@ Option Explicit
 ''
 Public Sub DirectoryExistsExample()
     Dim args() As String
-    Call ArrayEx.CreateInitialize1D(args, "C:\Current")
+    Call VBArray.CreateInitialize1D(args, "C:\Current")
     Dim varPath As Variant
     For Each varPath In args
         If File.Exists(varPath) Then
@@ -27,7 +27,7 @@ Public Sub DirectoryExistsExample()
         ElseIf (Directory.Exists(varPath)) Then
             Call ProcessDirectory(varPath)
         Else
-            Debug.Print VBAString.Format("{0} is not a valid file or directory.", varPath)
+            Debug.Print VBString.Format("{0} is not a valid file or directory.", varPath)
         End If
     Next
 End Sub
@@ -53,5 +53,5 @@ End Sub
 
 ' Insert logic for processing found files here.
 Public Sub ProcessFile(ByVal pPath As String)
-    Debug.Print VBAString.Format("Processed file '{0}'.", pPath)
+    Debug.Print VBString.Format("Processed file '{0}'.", pPath)
 End Sub

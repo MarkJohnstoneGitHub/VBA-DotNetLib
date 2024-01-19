@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringLastIndexOfExample3"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -28,11 +28,11 @@ Public Sub StringLastIndexOfExample3()
     Dim pvtEnd As Long
     Dim pvtCount As Long
     
-    pvtStart = str.length - 1
+    pvtStart = str.Length - 1
     pvtEnd = pvtStart / 2 - 1
     Debug.Print
-    Debug.Print VBAString.Format("All occurrences of 'he' from position {0} to {1}.", pvtStart, pvtEnd)
-    Debug.Print VBAString.Format("{1}{0}{2}{0}{3}{0}", Environment.NewLine, br1, br2, str);
+    Debug.Print VBString.Format("All occurrences of 'he' from position {0} to {1}.", pvtStart, pvtEnd)
+    Debug.Print VBString.Format("{1}{0}{2}{0}{3}{0}", Environment.NewLine, br1, br2, str);
     Debug.Print "The string 'he' occurs at position(s): ";
     
     pvtCount = 0
@@ -41,11 +41,11 @@ Public Sub StringLastIndexOfExample3()
         pvtCount = pvtStart - pvtEnd 'Count must be within the substring.
         at = str.LastIndexOf9("he", pvtStart, pvtCount)
         If (at > -1) Then
-            Debug.Print VBAString.Format("{0} ", at);
+            Debug.Print VBString.Format("{0} ", at);
             pvtStart = at - 1
         End If
     Loop
-    Debug.Print VBAString.Format("{0}{0}{0}", Environment.NewLine)
+    Debug.Print VBString.Format("{0}{0}{0}", Environment.NewLine)
 End Sub
 
 '/*

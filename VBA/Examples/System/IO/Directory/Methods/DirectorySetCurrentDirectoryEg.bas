@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirectorySetCurrentDirectoryEg"
-'@Folder("Examples.System.IO.Directory.Methods")
+'@Folder "Examples.System.IO.Directory.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -26,12 +26,12 @@ Public Sub DirectorySetCurrentDirectory()
     ' Set the current directory.
     Call Directory.SetCurrentDirectory(dir)
     ' Print to console the results.
-    Debug.Print VBAString.Format("Root directory: {0}", Directory.GetDirectoryRoot(dir))
-    Debug.Print VBAString.Format("Current directory: {0}", Directory.GetCurrentDirectory())
+    Debug.Print VBString.Format("Root directory: {0}", Directory.GetDirectoryRoot(dir))
+    Debug.Print VBString.Format("Current directory: {0}", Directory.GetCurrentDirectory())
     Exit Sub
 ErrorHandler:
     If Err.Number = DirectoryNotFoundException Then
-        Debug.Print VBAString.Format("The specified directory does not exist. {0}", Err.Description);
+        Debug.Print VBString.Format("The specified directory does not exist. {0}", Err.Description);
     Else
         Debug.Print Err.Description
     End If

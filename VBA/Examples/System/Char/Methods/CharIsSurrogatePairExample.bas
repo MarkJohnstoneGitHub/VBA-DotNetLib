@@ -1,5 +1,5 @@
 Attribute VB_Name = "CharIsSurrogatePairExample"
-'@Folder("Examples.System.Char.Methods")
+'@Folder "Examples.System.Char.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -46,19 +46,19 @@ Private Sub Check(ByVal s As String, ByVal i As Long)
     
     '/ checking
     If (val) Then
-        Debug.Print VBAString.Format("String '{0}' contains " _
+        Debug.Print VBString.Format("String '{0}' contains " _
             & "Surrogate pairs at s[{1}] and s[{2}]", _
                                         s, i, i + 1)
         #If Not Mac Then
             Dim messageBoxText As String
-            messageBoxText = VBAString.Format("String '{0}' contains " _
+            messageBoxText = VBString.Format("String '{0}' contains " _
             & "Surrogate pairs at s[{1}] and s[{2}]", _
                                         s, i, i + 1)
             WinAPIUser32.MessageBoxW 0, StrPtr(messageBoxText), StrPtr("Char.IsSurrogatePair"), 0
         #End If
                                         
     Else
-        Debug.Print VBAString.Format("String '{0}' does't contain any " _
+        Debug.Print VBString.Format("String '{0}' does't contain any " _
                         & "Surrogate pairs at s[{1}] and s[{2}]", _
                                                     s, i, i + 1)
     End If
@@ -73,3 +73,5 @@ End Sub
 's is null
 'Exception Thrown: Value cannot be null.
 'Parameter Name: s
+
+

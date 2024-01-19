@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringsCompareExample"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -25,16 +25,16 @@ Public Sub StringCompare()
     
     ' Display the strings.
     Dim Output As String
-    Output = VBAString.Format("Comparing '{0}' and '{1}':", stringUpper, stringLower)
+    Output = VBString.Format("Comparing '{0}' and '{1}':", stringUpper, stringLower)
     Debug.Print Output
     
     ' Compare the uppercased strings; the result is true.
-    Debug.Print VBAString.Format("The Strings are equal when capitalized? {0}", _
-            IIf(VBAString.Compare(UCase$(stringUpper), UCase$(stringLower)) = 0, "true", "false"))
+    Debug.Print VBString.Format("The Strings are equal when capitalized? {0}", _
+            IIf(VBString.Compare(UCase$(stringUpper), UCase$(stringLower)) = 0, "true", "false"))
     
     ' The previous method call is equivalent to this Compare method, which ignores case.
-    Debug.Print VBAString.Format("The Strings are equal when case is ignored? {0}", _
-            IIf(VBAString.Compare(stringUpper, stringLower, True) = 0, "true", "false"))
+    Debug.Print VBString.Format("The Strings are equal when case is ignored? {0}", _
+            IIf(VBString.Compare(stringUpper, stringLower, True) = 0, "true", "false"))
 End Sub
 
 ' The example displays the following output:

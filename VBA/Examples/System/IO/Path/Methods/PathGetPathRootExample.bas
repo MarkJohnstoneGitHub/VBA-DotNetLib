@@ -1,5 +1,5 @@
 Attribute VB_Name = "PathGetPathRootExample"
-'@Folder("Examples.System.IO.Path.Methods")
+'@Folder "Examples.System.IO.Path.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -18,22 +18,22 @@ Option Explicit
 Public Sub PathGetPathRootExample()
     Dim pvtPath As String
     pvtPath = "\mydir\"
-    Dim filename As String
-    filename = "myfile.ext"
+    Dim fileName As String
+    fileName = "myfile.ext"
     Dim fullPath As String
     fullPath = "C:\mydir\myfile.ext"
     Dim pathRoot As String
     pathRoot = Path.GetPathRoot(pvtPath)
     
-    Debug.Print VBAString.Format("GetPathRoot('{0}') returns '{1}'", _
+    Debug.Print VBString.Format("GetPathRoot('{0}') returns '{1}'", _
                                 pvtPath, pathRoot)
     
-    pathRoot = Path.GetPathRoot(filename)
-    Debug.Print VBAString.Format("GetPathRoot('{0}') returns '{1}'", _
+    pathRoot = Path.GetPathRoot(fileName)
+    Debug.Print VBString.Format("GetPathRoot('{0}') returns '{1}'", _
                                 pvtPath, pathRoot)
                                 
     pathRoot = Path.GetPathRoot(fullPath)
-    Debug.Print VBAString.Format("GetPathRoot('{0}') returns '{1}'", _
+    Debug.Print VBString.Format("GetPathRoot('{0}') returns '{1}'", _
                                 fullPath, pathRoot)
 End Sub
 
@@ -42,3 +42,5 @@ End Sub
 ' GetPathRoot('\mydir\') returns '\'
 ' GetPathRoot('myfile.ext') returns ''
 ' GetPathRoot('C:\mydir\myfile.ext') returns 'C:\'
+
+

@@ -1,10 +1,10 @@
 Attribute VB_Name = "StringIsNormalizedExample"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 January 1, 2024
-'@LastModified January 1, 2024
+'@LastModified January 19, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -35,16 +35,16 @@ Public Sub StringIsNormalizedExample()
     Debug.Print "U+00BE = VULGAR FRACTION THREE QUARTERS"
     Debug.Print divider.ToString()
     
-    Debug.Print VBAString.Format("A1) Is s1 normalized to the default form (Form C)?: {0}", _
+    Debug.Print VBString.Format("A1) Is s1 normalized to the default form (Form C)?: {0}", _
                                     s1.IsNormalized())
 
-    Debug.Print VBAString.Format("A2) Is s1 normalized to Form C?:  {0}", _
+    Debug.Print VBString.Format("A2) Is s1 normalized to Form C?:  {0}", _
                                     s1.IsNormalized(NormalizationForm.NormalizationForm_FormC))
-    Debug.Print VBAString.Format("A3) Is s1 normalized to Form D?:  {0}", _
+    Debug.Print VBString.Format("A3) Is s1 normalized to Form D?:  {0}", _
                                     s1.IsNormalized(NormalizationForm.NormalizationForm_FormD))
-    Debug.Print VBAString.Format("A4) Is s1 normalized to Form KC?: {0}", _
+    Debug.Print VBString.Format("A4) Is s1 normalized to Form KC?: {0}", _
                                     s1.IsNormalized(NormalizationForm.NormalizationForm_FormKC))
-    Debug.Print VBAString.Format("A5) Is s1 normalized to Form KD?: {0}", _
+    Debug.Print VBString.Format("A5) Is s1 normalized to Form KD?: {0}", _
                                     s1.IsNormalized(NormalizationForm.NormalizationForm_FormKD))
                                     
     Debug.Print divider.ToString()
@@ -60,43 +60,41 @@ Public Sub StringIsNormalizedExample()
     Set s2 = s1.Normalize()
     Debug.Print "B1) Is s2 normalized to the default form (Form C)?: ";
     Debug.Print (s2.IsNormalized())
-    'Show("s2", s2);
+    Call Show("s2", s2)
     Debug.Print
 
     Set s2 = s1.Normalize(NormalizationForm.NormalizationForm_FormC)
     Debug.Print "B2) Is s2 normalized to Form C?: ";
     Debug.Print s2.IsNormalized(NormalizationForm.NormalizationForm_FormC)
-    'Show("s2", s2);
+    Call Show("s2", s2)
     Debug.Print
 
     Set s2 = s1.Normalize(NormalizationForm.NormalizationForm_FormD)
     Debug.Print "B3) Is s2 normalized to Form D?: ";
     Debug.Print s2.IsNormalized(NormalizationForm.NormalizationForm_FormD)
-    'Show("s2", s2);
+    Call Show("s2", s2)
     Debug.Print
 
     Set s2 = s1.Normalize(NormalizationForm.NormalizationForm_FormKC)
     Debug.Print "B4) Is s2 normalized to Form KC?: ";
     Debug.Print s2.IsNormalized(NormalizationForm.NormalizationForm_FormKC)
-    'Show("s2", s2);
+    Call Show("s2", s2)
     Debug.Print
 
     Set s2 = s1.Normalize(NormalizationForm.NormalizationForm_FormKD)
     Debug.Print "B5) Is s2 normalized to Form KD?: ";
     Debug.Print s2.IsNormalized(NormalizationForm.NormalizationForm_FormKD)
-    'Show("s2", s2);
+    Call Show("s2", s2)
     Debug.Print
 End Sub
 
-'@TODO String enumeration of characters
-Private Sub show(ByVal title As String, ByVal s As DotNetLib.String)
-'    {
-'       Console.Write("Characters in string {0} = ", title);
-'       foreach(short x in s) {
-'           Console.Write("{0:X4} ", x);
-'       }
-'       Console.WriteLine();
-'    }
+Private Sub Show(ByVal title As String, ByVal s As DotNetLib.String)
+    Debug.Print VBString.Format("Characters in string {0} = ", title);
+    Dim pvtIndex As Long
+    For pvtIndex = 0 To s.Length - 1
+        Debug.Print VBString.Format("{0:X4} ", s.CharCodes(pvtIndex));
+    Next
+    Debug.Print
 End Sub
 
 '/*
@@ -144,3 +142,5 @@ End Sub
 'Characters in string s2 = 0063 0327 0301 0033 2044 0034
 '
 '*/
+
+

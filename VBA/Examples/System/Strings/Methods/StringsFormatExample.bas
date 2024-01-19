@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringsFormatExample"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -32,13 +32,13 @@ Public Sub StringsFormat()
     
     Dim result1 As String
     
-    result1 = VBAString.Format(Regex.Unescape("Temperature on {0:d}:\n{1,11}: {2} degrees (hi)\n{3,11}: {4} degrees (lo)"), _
+    result1 = VBString.Format(Regex.Unescape("Temperature on {0:d}:\n{1,11}: {2} degrees (hi)\n{3,11}: {4} degrees (lo)"), _
                            date1, hiTime, hiTemp, loTime, loTemp)
     Debug.Print result1
     Debug.Print
     
     Dim result2 As String
-    result2 = VBAString.Format(Regex.Unescape("Temperature on {0:d}:\n{1,11}: {2} degrees (hi)\n{3,11}: {4} degrees (lo)"), _
+    result2 = VBString.Format(Regex.Unescape("Temperature on {0:d}:\n{1,11}: {2} degrees (hi)\n{3,11}: {4} degrees (lo)"), _
                             date1, hiTime, hiTemp, loTime, loTemp)
     Debug.Print result2
 End Sub

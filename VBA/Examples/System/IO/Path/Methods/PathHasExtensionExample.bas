@@ -1,5 +1,5 @@
 Attribute VB_Name = "PathHasExtensionExample"
-'@Folder("Examples.System.IO.Path.Methods")
+'@Folder "Examples.System.IO.Path.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -25,15 +25,15 @@ Public Sub PathHasExtensionExample()
     Dim result As Boolean
     
     result = Path.HasExtension(fileName1)
-    Debug.Print VBAString.Format("HasExtension('{0}') returns {1}", _
+    Debug.Print VBString.Format("HasExtension('{0}') returns {1}", _
                                 fileName1, result)
     
     result = Path.HasExtension(fileName2)
-    Debug.Print VBAString.Format("HasExtension('{0}') returns {1}", _
+    Debug.Print VBString.Format("HasExtension('{0}') returns {1}", _
                                 fileName2, result)
                                 
     result = Path.HasExtension(pvtPath)
-    Debug.Print VBAString.Format("HasExtension('{0}') returns {1}", _
+    Debug.Print VBString.Format("HasExtension('{0}') returns {1}", _
                                 pvtPath, result)
 End Sub
 
@@ -42,3 +42,5 @@ End Sub
 ' HasExtension('myfile.ext') returns True
 ' HasExtension('mydir\myfile') returns False
 ' HasExtension('C:\mydir.ext\') returns False
+
+

@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirInfoEnumerateDirectoriesEg2"
-'@Folder("Examples.System.IO.DirectoryInfo.Methods")
+'@Folder "Examples.System.IO.DirectoryInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -31,8 +31,8 @@ Public Sub DirectoryInfoEnumerateDirectoriesExample2()
                 Dim fi As DotNetLib.FileInfo
                 Set fi = varFileInfo
                 ' Display each file over 10 MB.
-                If (fi.length > 10000000) Then
-                    Debug.Print VBAString.Format(pvtFormatString, fi.FullName, fi.length)
+                If (fi.Length > 10000000) Then
+                    Debug.Print VBString.Format(pvtFormatString, fi.FullName, fi.Length)
                 End If
             ElseIf Err.Number = UnauthorizedAccessException Then
                 Debug.Print Err.Description
@@ -49,8 +49,8 @@ Public Sub DirectoryInfoEnumerateDirectoriesExample2()
                     If Err.Number = 0 Then
                         Set fi = varFileInfo
                         ' Display each file over 10 MB.
-                        If (fi.length > 10000000) Then
-                            Debug.Print VBAString.Format(pvtFormatString, fi.FullName, fi.length)
+                        If (fi.Length > 10000000) Then
+                            Debug.Print VBString.Format(pvtFormatString, fi.FullName, fi.Length)
                         End If
                     ElseIf Err.Number = UnauthorizedAccessException Then
                         Debug.Print "unAuthFile: " & Err.Description

@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringIndexOfExample7"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -20,17 +20,17 @@ Public Sub StringIndexOfExample7()
     Dim strSource As DotNetLib.String
     Set strSource = Strings.Create("This is the string which we will perform the search on")
     
-    Debug.Print VBAString.Format("The search string is:{0}""{1}""{0}", Environment.NewLine, strSource)
+    Debug.Print VBString.Format("The search string is:{0}""{1}""{0}", Environment.NewLine, strSource)
 
     Dim strTarget As String
     strTarget = VBA.vbNullString
     Dim found As Long
     Dim totFinds As Long
     Do
-        strTarget = Strings.Create(InputBox(VBAString.Format("The search string is:{0}""{1}""{0}", Environment.NewLine, strSource) + "Please enter a search value to look for in the above string (hit Enter to exit) ==> ")).ToString()
+        strTarget = Strings.Create(InputBox(VBString.Format("The search string is:{0}""{1}""{0}", Environment.NewLine, strSource) + "Please enter a search value to look for in the above string (hit Enter to exit) ==> ")).ToString()
         If (strTarget <> "") Then
             Dim i As Long
-            For i = 0 To strSource.length - 1
+            For i = 0 To strSource.Length - 1
                 found = strSource.IndexOf9(strTarget, i)
                 If (found >= 0) Then
                     totFinds = totFinds + 1
@@ -42,8 +42,10 @@ Public Sub StringIndexOfExample7()
         Else
             Exit Do
         End If
-        Debug.Print VBAString.Format("{0}The search parameter '{1}' was found {2} times.{0}", _
+        Debug.Print VBString.Format("{0}The search parameter '{1}' was found {2} times.{0}", _
                     Environment.NewLine, strTarget, totFinds)
         totFinds = 0
     Loop While (True)
 End Sub
+
+

@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArrayListCopyToExample"
-'@Folder("Examples.System.Collections.ArrayList.Methods")
+'@Folder "Examples.System.Collections.ArrayList.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -30,7 +30,7 @@ Public Sub ArrayListCopyTo()
     
     ' Creates and initializes the one-dimensional target Array.
     Dim myTargetArray As DotNetLib.Array
-    Set myTargetArray = Arrays.CreateInstance(VBAString.GetType(), 15)
+    Set myTargetArray = Arrays.CreateInstance(VBString.GetType(), 15)
     Call myTargetArray.SetValue("The", 0)
     Call myTargetArray.SetValue("quick", 1)
     Call myTargetArray.SetValue("brown", 2)
@@ -66,8 +66,8 @@ End Sub
 
 Private Sub PrintValues(ByVal myArr As DotNetLib.Array, ByVal mySeparator As String)
     Dim i As Long
-    For i = 0 To myArr.length - 1
-        Debug.Print VBAString.Format("{0}{1}", mySeparator, myArr(i));
+    For i = 0 To myArr.Length - 1
+        Debug.Print VBString.Format("{0}{1}", mySeparator, myArr(i));
     Next i
     Debug.Print
 End Sub

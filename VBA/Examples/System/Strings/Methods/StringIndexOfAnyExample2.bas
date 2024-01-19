@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringIndexOfAnyExample2"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -32,13 +32,13 @@ Public Sub StringIndexOfAnyExample2()
     Dim anyOf As DotNetLib.String
     Set anyOf = target
     
-    pvtStart = str.length / 2
+    pvtStart = str.Length / 2
     Debug.Print
-    Debug.Print VBAString.Format("The first character occurrence from position {0} to {1}.", _
-                           pvtStart, str.length - 1)
+    Debug.Print VBString.Format("The first character occurrence from position {0} to {1}.", _
+                           pvtStart, str.Length - 1)
                 
-    Debug.Print VBAString.Format("{1}{0}{2}{0}{3}{0}", Environment.NewLine, br1, br2, str)
-    Debug.Print VBAString.Format("A character in '{0}' occurs at position: ", target)
+    Debug.Print VBString.Format("{1}{0}{2}{0}{3}{0}", Environment.NewLine, br1, br2, str)
+    Debug.Print VBString.Format("A character in '{0}' occurs at position: ", target)
 
     at = str.IndexOfAny2(anyOf, pvtStart)
     If (at > -1) Then
@@ -59,3 +59,5 @@ End Sub
 'A character in 'is' occurs at position: 49
 '
 '*/
+
+

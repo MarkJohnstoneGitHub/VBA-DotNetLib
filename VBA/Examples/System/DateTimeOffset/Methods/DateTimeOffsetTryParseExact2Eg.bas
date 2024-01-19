@@ -1,24 +1,26 @@
 Attribute VB_Name = "DateTimeOffsetTryParseExact2Eg"
-'@Folder("Examples.System.DateTimeOffset.Methods")
+'@Folder "Examples.System.DateTimeOffset.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 28, 2023
-'@LastModified August 28, 2023
+'@LastModified January 11, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.tryparseexact?view=netframework-4.8.1#system-datetimeoffset-tryparseexact(system-string-system-string()-system-iformatprovider-system-globalization-datetimestyles-system-datetimeoffset@)
 
 Option Explicit
 
+''
 ' The following example defines multiple input formats for the string representation of a
 ' date and time and offset value, and then passes the string that is entered by the user to
 ' the TryParseExact(String, String[], IFormatProvider, DateTimeStyles, DateTimeOffset) method.
+''
 Public Sub DateTimeOffsetTryParseExact2()
     Dim tries As Long
     Dim pvtInput As String
     
     Dim formats() As String
-    formats = StringArray.ToArray( _
+    formats = StringArray.CreateInitialize1D( _
                 "@M/dd/yyyy HH:m zzz", "MM/dd/yyyy HH:m zzz", _
                 "M/d/yyyy HH:m zzz", "MM/d/yyyy HH:m zzz", _
                 "M/dd/yy HH:m zzz", "MM/dd/yy HH:m zzz", _
@@ -44,12 +46,17 @@ Public Sub DateTimeOffsetTryParseExact2()
         If (DateTimeOffset.TryParseExact2(pvtInput, formats, provider, _
                                    DateTimeStyles.DateTimeStyles_AllowWhiteSpaces, _
                                    result)) Then
-            Debug.Print "'" & pvtInput & "' was converted to " & result.ToString()
+            Exit Do
         Else
-            Debug.Print "Unable to parse "; "'"; pvtInput; "'"; "."
+            Debug.Print VBString.Format("Unable to parse '{0}'.", pvtInput)
         End If
         tries = tries + 1
     Loop While (tries < 3)
+    If (tries >= 3) Then
+        Debug.Print VBString.Format("Exiting application without parsing {0}", pvtInput)
+    Else
+        Debug.Print VBString.Format("{0} was converted to {1}", pvtInput, result.ToString())
+    End If
 End Sub
 
 ' Some successful sample interactions with the user might appear as follows:
@@ -67,4 +74,5 @@ End Sub
 '    Then press Enter: 12/5/07 6:54 -6:00
 '
 '    12/5/07 6:54 -6:00 was converted to 12/5/2007 6:54:00 AM -06:00
+
 

@@ -1,5 +1,5 @@
 Attribute VB_Name = "DTFIMonthDayPatternExample"
-'@Folder("Examples.System.Globalization.DateTimeFormatInfo.Properties")
+'@Folder "Examples.System.Globalization.DateTimeFormatInfo.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

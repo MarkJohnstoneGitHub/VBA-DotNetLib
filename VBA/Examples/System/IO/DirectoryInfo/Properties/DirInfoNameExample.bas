@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirInfoNameExample"
-'@Folder("Examples.System.IO.DirectoryInfo.Properties")
+'@Folder "Examples.System.IO.DirectoryInfo.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -20,7 +20,7 @@ Public Sub DirectoryInfoNameExample()
     Set pvtDir = DirectoryInfo.Create(".")
     Dim dirName As String
     dirName = pvtDir.Name
-    Debug.Print VBAString.Format("DirectoryInfo name is {0}.", dirName)
+    Debug.Print VBString.Format("DirectoryInfo name is {0}.", dirName)
 End Sub
 
 ' Output

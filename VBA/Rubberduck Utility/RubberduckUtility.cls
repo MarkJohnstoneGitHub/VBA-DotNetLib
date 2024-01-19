@@ -128,8 +128,8 @@ Attribute ExportAll.VB_Description = "Export the active project components to fi
     
     Dim component As VBComponent
     For Each component In this.Project.VBComponents
-        Dim filename As String
-        filename = component.Name
+        Dim fileName As String
+        fileName = component.Name
         Dim extension As String
         extension = ComponentExtension(component)
         Dim folderAnnotation As String
@@ -142,14 +142,14 @@ Attribute ExportAll.VB_Description = "Export the active project components to fi
         CreateRelativeDirectory relativePath
         If Err.Number = 0 Then  ' Error if invalid Rubberduck folder characters or invalid working folder permission
             filepath = this.WorkingDirectory & DirectorySeparatorChar & relativePath & _
-                        IIf(relativePath <> VBA.vbNullString, DirectorySeparatorChar, VBA.vbNullString) & filename & extension
+                        IIf(relativePath <> VBA.vbNullString, DirectorySeparatorChar, VBA.vbNullString) & fileName & extension
         Else
             this.ErrorLog.Add Exception.Create(Err.Number, _
                     "RubberduckUtility.ExportAllComponents", _
                     "Warning invalid Rubberduck folder characters, " & folderAnnotation & _
-                    " " & filename & extension & " exported to " & _
+                    " " & fileName & extension & " exported to " & _
                     this.WorkingDirectory, ExceptionSeverity.Warning)
-            filepath = this.WorkingDirectory & DirectorySeparatorChar & filename & extension
+            filepath = this.WorkingDirectory & DirectorySeparatorChar & fileName & extension
         End If
         On Error GoTo 0 'reset error handling
         
@@ -157,16 +157,16 @@ Attribute ExportAll.VB_Description = "Export the active project components to fi
         component.Export filepath
         If Err.Number = 0 Then
             this.TotalExported = this.TotalExported + 1
-            If Len(filename) > 31 Then
+            If Len(fileName) > 31 Then
                 this.ErrorLog.Add Exception.Create( _
                                 Err.Number, _
                                 "RubberduckUtility.ExportAllComponents", _
-                                "Warning file name length greater than 31 characters for: " & filename, _
+                                "Warning file name length greater than 31 characters for: " & fileName, _
                                 ExceptionSeverity.Warning)
                                 
             End If
         ' Error may occur for attempting to overwrite read only file etc
-        ElseIf (this.WorkingDirectory & DirectorySeparatorChar & filename & extension) = filepath Then
+        ElseIf (this.WorkingDirectory & DirectorySeparatorChar & fileName & extension) = filepath Then
             this.ErrorLog.Add Exception.Create(Err.Number, _
                                 "RubberduckUtility.ExportAllComponents", _
                                 "Export failed for " & filepath & _
@@ -179,16 +179,16 @@ Attribute ExportAll.VB_Description = "Export the active project components to fi
                 "RubberduckUtility.ExportAllComponents", _
                 "Warning export failed for: " & filepath & " exported to " & this.WorkingDirectory, _
                 ExceptionSeverity.Warning)
-            filepath = this.WorkingDirectory & DirectorySeparatorChar & filename & extension
+            filepath = this.WorkingDirectory & DirectorySeparatorChar & fileName & extension
             Err.Clear
             component.Export filepath
             If Err.Number = 0 Then
                 this.TotalExported = this.TotalExported + 1
-                If Len(filename) > 31 Then
+                If Len(fileName) > 31 Then
                     this.ErrorLog.Add Exception.Create( _
                         Err.Number, _
                         "RubberduckUtility.ExportAllComponents", _
-                        "Warning file name length greater than 31 characters for: " & filename, _
+                        "Warning file name length greater than 31 characters for: " & fileName, _
                         ExceptionSeverity.Warning)
                                 
                 End If

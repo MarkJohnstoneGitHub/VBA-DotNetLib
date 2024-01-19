@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArrayListFixedSizeExample"
-'@Folder("Examples.System.Collections.ArrayList.Methods")
+'@Folder "Examples.System.Collections.ArrayList.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -33,8 +33,8 @@ Public Sub ArrayListFixedSize()
     Set myFixedSizeAL = ArrayList.FixedSize(myAL)
     
     ' Display whether the ArrayLists have a fixed size or not.
-    Debug.Print VBAString.Format("myAL {0}.", IIf(myAL.IsFixedSize, "has a fixed size", "does not have a fixed size"))
-    Debug.Print VBAString.Format("myFixedSizeAL {0}.", IIf(myFixedSizeAL.IsFixedSize, "has a fixed size", "does not have a fixed size"))
+    Debug.Print VBString.Format("myAL {0}.", IIf(myAL.IsFixedSize, "has a fixed size", "does not have a fixed size"))
+    Debug.Print VBString.Format("myFixedSizeAL {0}.", IIf(myFixedSizeAL.IsFixedSize, "has a fixed size", "does not have a fixed size"))
     Debug.Print
     
     ' Display both ArrayLists.
@@ -93,7 +93,7 @@ End Sub
 Private Sub PrintValues(ByVal myList As mscorlib.IEnumerable, ByVal mySeparator As String)
     Dim obj As Variant
     For Each obj In myList
-        Debug.Print VBAString.Format("{0}{1}", mySeparator, obj);
+        Debug.Print VBString.Format("{0}{1}", mySeparator, obj);
     Next
     Debug.Print
 End Sub

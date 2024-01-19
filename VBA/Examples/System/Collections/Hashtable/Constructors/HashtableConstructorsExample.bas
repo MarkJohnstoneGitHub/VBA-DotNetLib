@@ -1,5 +1,5 @@
 Attribute VB_Name = "HashtableConstructorsExample"
-'@Folder("Examples.System.Collections.Hashtable.Constructors")
+'@Folder "Examples.System.Collections.Hashtable.Constructors"
 
 ' https://learn.microsoft.com/en-us/dotnet/api/system.collections.hashtable.-ctor?view=netframework-4.8.1#system-collections-hashtable-ctor
 Option Explicit
@@ -33,8 +33,8 @@ Public Sub HashtableConstructor()
 '        myHT3.Add("THIRD", "!");
     
     ' Search for a key in each hash table.
-    Debug.Print VBAString.Format("first is in myHT1: {0}", myHT1.ContainsKey("first"))
-    Debug.Print VBAString.Format("first is in myHT2: {0}", myHT2.ContainsKey("first"))
+    Debug.Print VBString.Format("first is in myHT1: {0}", myHT1.ContainsKey("first"))
+    Debug.Print VBString.Format("first is in myHT2: {0}", myHT2.ContainsKey("first"))
 End Sub
 
 'using System;

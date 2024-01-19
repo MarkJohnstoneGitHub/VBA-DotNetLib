@@ -44,16 +44,16 @@ End Sub
 
 '@Static
 '@Description("Initializes a new instance of the BitArray class that can hold the specified number of bit values, which are initially set to false.")
-Public Function Create(ByVal length As Long) As DotNetLib.BitArray
+Public Function Create(ByVal Length As Long) As DotNetLib.BitArray
 Attribute Create.VB_Description = "Initializes a new instance of the BitArray class that can hold the specified number of bit values, which are initially set to false."
-   Set Create = this.BitArraySingleton.Create(length)
+   Set Create = this.BitArraySingleton.Create(Length)
 End Function
 
 '@Static
 '@Description("Initializes a new instance of the BitArray class that can hold the specified number of bit values, which are initially set to the specified value.")
-Public Function Create2(ByVal length As Long, ByVal defaultValue As Boolean) As DotNetLib.BitArray
+Public Function Create2(ByVal Length As Long, ByVal defaultValue As Boolean) As DotNetLib.BitArray
 Attribute Create2.VB_Description = "Initializes a new instance of the BitArray class that can hold the specified number of bit values, which are initially set to the specified value."
-   Set Create2 = this.BitArraySingleton.Create_2(length, defaultValue)
+   Set Create2 = this.BitArraySingleton.Create_2(Length, defaultValue)
 End Function
 
 '@Static

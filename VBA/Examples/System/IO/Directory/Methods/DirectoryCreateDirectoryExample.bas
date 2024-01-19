@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirectoryCreateDirectoryExample"
-'@Folder("Examples.System.IO.Directory.Methods")
+'@Folder "Examples.System.IO.Directory.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -30,13 +30,13 @@ Public Sub DirectoryCreateDirectoryExample()
     Dim di As DotNetLib.DirectoryInfo
     Set di = Directory.CreateDirectory(pvtPath)
     If Err.Number = 0 Then
-        Debug.Print VBAString.Format("The directory was created successfully at {0}.", Directory.GetCreationTime(pvtPath))
+        Debug.Print VBString.Format("The directory was created successfully at {0}.", Directory.GetCreationTime(pvtPath))
 
         ' Delete the directory.
         Call di.Delete
         Debug.Print "The directory was deleted successfully."
     Else
-        Debug.Print VBAString.Format("The process failed: {0}", Err.Description)
+        Debug.Print VBString.Format("The process failed: {0}", Err.Description)
     End If
 CleanExit:
     On Error GoTo 0 'Stop code and display error

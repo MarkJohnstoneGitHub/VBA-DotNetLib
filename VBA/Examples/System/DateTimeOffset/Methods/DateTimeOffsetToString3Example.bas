@@ -1,20 +1,22 @@
 Attribute VB_Name = "DateTimeOffsetToString3Example"
-'@Folder("Examples.System.DateTimeOffset.Methods")
+'@Folder "Examples.System.DateTimeOffset.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 26, 2023
-'@LastModified September 2, 2023
+'@LastModified January 10, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.tostring?view=netframework-4.8.1#system-datetimeoffset-tostring(system-iformatprovider)
 
 Option Explicit
 
+''
 ' The following example displays a DateTimeOffset object using CultureInfo objects
 ' that represent the invariant culture, as well as four other cultures.
+''
 Public Sub DateTimeOffsetToString3()
     Dim cultures() As DotNetLib.CultureInfo
-    ObjectArray.ToArray cultures, _
+    ObjectArray.CreateInitialize1D cultures, _
         CultureInfo.InvariantCulture, _
         CultureInfo.CreateFromName("en-us"), _
         CultureInfo.CreateFromName("fr-fr"), _
@@ -34,7 +36,8 @@ Public Sub DateTimeOffsetToString3()
         Else
             cultureName = culture.Name
         End If
-        Debug.Print "In "; cultureName; ", "; thisDate.ToString3(culture)
+        Debug.Print VBString.Format("In {0}, {1}", _
+                                    cultureName, thisDate.ToString3(culture))
     Next
 End Sub
 

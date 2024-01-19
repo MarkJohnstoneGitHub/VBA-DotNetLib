@@ -1,5 +1,5 @@
 Attribute VB_Name = "SortedListContainsExample"
-'@Folder("Examples.System.Collections.SortedList.Methods")
+'@Folder "Examples.System.Collections.SortedList.Methods"
 '
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -36,16 +36,16 @@ Public Sub SortedListContains()
     ' Searches for a specific key.
     Dim myKey As Long
     myKey = 2
-    Debug.Print VBAString.Format("The key ""{0}"" is {1}.", myKey, IIf(mySL.ContainsKey(myKey), "in the SortedList", "NOT in the SortedList"))
+    Debug.Print VBString.Format("The key ""{0}"" is {1}.", myKey, IIf(mySL.ContainsKey(myKey), "in the SortedList", "NOT in the SortedList"))
     myKey = 6
-    Debug.Print VBAString.Format("The key ""{0}"" is {1}.", myKey, IIf(mySL.ContainsKey(myKey), "in the SortedList", "NOT in the SortedList"))
+    Debug.Print VBString.Format("The key ""{0}"" is {1}.", myKey, IIf(mySL.ContainsKey(myKey), "in the SortedList", "NOT in the SortedList"))
     
     ' Searches for a specific value.
     Dim myValue As String
     myValue = "three"
-    Debug.Print VBAString.Format("The value ""{0}"" is {1}.", myValue, IIf(mySL.ContainsValue(myValue), "in the SortedList", "NOT in the SortedList"))
+    Debug.Print VBString.Format("The value ""{0}"" is {1}.", myValue, IIf(mySL.ContainsValue(myValue), "in the SortedList", "NOT in the SortedList"))
     myValue = "nine"
-    Debug.Print VBAString.Format("The value ""{0}"" is {1}.", myValue, IIf(mySL.ContainsValue(myValue), "in the SortedList", "NOT in the SortedList"))
+    Debug.Print VBString.Format("The value ""{0}"" is {1}.", myValue, IIf(mySL.ContainsValue(myValue), "in the SortedList", "NOT in the SortedList"))
 End Sub
 
 Private Sub PrintIndexAndKeysAndValues(ByVal myList As DotNetLib.SortedList)
@@ -54,7 +54,7 @@ Private Sub PrintIndexAndKeysAndValues(ByVal myList As DotNetLib.SortedList)
     formatString = Regex.Unescape("\t[{0}]:\t{1}\t{2}")
     Dim i As Long
     For i = 0 To myList.Count - 1
-        Debug.Print VBAString.Format(formatString, i, myList.GetKey(i), myList.GetByIndex(i))
+        Debug.Print VBString.Format(formatString, i, myList.GetKey(i), myList.GetByIndex(i))
     Next i
     Debug.Print
 End Sub

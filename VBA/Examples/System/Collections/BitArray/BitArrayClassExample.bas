@@ -1,5 +1,5 @@
 Attribute VB_Name = "BitArrayClassExample"
-'@Folder("Examples.System.Collections.BitArray")
+'@Folder "Examples.System.Collections.BitArray"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -26,48 +26,48 @@ Public Sub BitArrayClassExample()
     Set myBA2 = BitArray.Create2(5, False)
 
     Dim myBytes() As Byte
-    Call ArrayEx.CreateInitialize1D(myBytes, 1, 2, 3, 4, 5)
+    Call VBArray.CreateInitialize1D(myBytes, 1, 2, 3, 4, 5)
     Dim myBA3 As DotNetLib.BitArray
     Set myBA3 = BitArray.Create3(myBytes)
 
     Dim myBools() As Boolean
-    Call ArrayEx.CreateInitialize1D(myBools, True, False, True, True, False)
+    Call VBArray.CreateInitialize1D(myBools, True, False, True, True, False)
     Dim myBA4 As DotNetLib.BitArray
     Set myBA4 = BitArray.Create4(myBools)
 
     Dim myInts() As Long
-    Call ArrayEx.CreateInitialize1D(myInts, 6, 7, 8, 9, 10)
+    Call VBArray.CreateInitialize1D(myInts, 6, 7, 8, 9, 10)
     Dim myBA5 As DotNetLib.BitArray
     Set myBA5 = BitArray.Create5(myInts)
     
     ' Displays the properties and values of the BitArrays.
     Debug.Print "myBA1"
-    Debug.Print VBAString.Format("   Count:    {0}", myBA1.Count)
-    Debug.Print VBAString.Format("   Length:   {0}", myBA1.length)
+    Debug.Print VBString.Format("   Count:    {0}", myBA1.Count)
+    Debug.Print VBString.Format("   Length:   {0}", myBA1.Length)
     Debug.Print "   Values:"
     Call PrintValues(myBA1, 8)
     
     Debug.Print "myBA2"
-    Debug.Print VBAString.Format("   Count:    {0}", myBA2.Count)
-    Debug.Print VBAString.Format("   Length:   {0}", myBA2.length)
+    Debug.Print VBString.Format("   Count:    {0}", myBA2.Count)
+    Debug.Print VBString.Format("   Length:   {0}", myBA2.Length)
     Debug.Print "   Values:"
     Call PrintValues(myBA2, 8)
 
     Debug.Print "myBA3"
-    Debug.Print VBAString.Format("   Count:    {0}", myBA3.Count)
-    Debug.Print VBAString.Format("   Length:   {0}", myBA3.length)
+    Debug.Print VBString.Format("   Count:    {0}", myBA3.Count)
+    Debug.Print VBString.Format("   Length:   {0}", myBA3.Length)
     Debug.Print "   Values:"
     Call PrintValues(myBA3, 8)
 
     Debug.Print "myBA4"
-    Debug.Print VBAString.Format("   Count:    {0}", myBA4.Count)
-    Debug.Print VBAString.Format("   Length:   {0}", myBA4.length)
+    Debug.Print VBString.Format("   Count:    {0}", myBA4.Count)
+    Debug.Print VBString.Format("   Length:   {0}", myBA4.Length)
     Debug.Print "   Values:"
     Call PrintValues(myBA4, 8)
 
     Debug.Print "myBA5"
-    Debug.Print VBAString.Format("   Count:    {0}", myBA5.Count)
-    Debug.Print VBAString.Format("   Length:   {0}", myBA5.length)
+    Debug.Print VBString.Format("   Count:    {0}", myBA5.Count)
+    Debug.Print VBString.Format("   Length:   {0}", myBA5.Length)
     Debug.Print "   Values:"
     Call PrintValues(myBA5, 8)
 End Sub
@@ -82,7 +82,7 @@ Private Sub PrintValues(ByVal myList As mscorlib.IEnumerable, ByVal myWidth As L
             Debug.Print
         End If
         i = i - 1
-        Debug.Print VBAString.Format("{0,8}", obj);
+        Debug.Print VBString.Format("{0,8}", obj);
     Next
     Debug.Print
 End Sub

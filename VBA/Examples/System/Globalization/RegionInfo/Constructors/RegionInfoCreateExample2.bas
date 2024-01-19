@@ -1,5 +1,5 @@
 Attribute VB_Name = "RegionInfoCreateExample2"
-'@Folder("Examples.System.Globalization.RegionInfo.Constructors")
+'@Folder "Examples.System.Globalization.RegionInfo.Constructors"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -18,7 +18,7 @@ Option Explicit
 Public Sub RegionInfoCreateExample2()
     ' Creates an array containing culture names.
     Dim myCultures() As String
-    Call ArrayEx.CreateInitialize1D(myCultures, "", "ar", "ar-DZ", "en", "en-US")
+    Call VBArray.CreateInitialize1D(myCultures, "", "ar", "ar-DZ", "en", "en-US")
 
     ' Creates a RegionInfo for each of the culture names.
     '    Note that "ar" is the culture name for the neutral culture "Arabic",
@@ -46,9 +46,9 @@ Public Sub RegionInfoCreateExample2()
             Dim myCI As DotNetLib.CultureInfo
             Set myCI = CultureInfo.CreateFromName(varCulture, False)
             If (myCI.IsNeutralCulture) Then
-                Debug.Print VBAString.Format("The culture {0} is a neutral culture.", varCulture)
+                Debug.Print VBString.Format("The culture {0} is a neutral culture.", varCulture)
             Else
-                Debug.Print VBAString.Format("The culture {0} is a specific culture.", varCulture)
+                Debug.Print VBString.Format("The culture {0} is a specific culture.", varCulture)
                 On Error Resume Next
                 Set myRI = RegionInfo.Create2(varCulture)
                 If Err.Number = ArgumentException Then

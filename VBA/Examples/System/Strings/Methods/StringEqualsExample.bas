@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringEqualsExample"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -26,28 +26,28 @@ Public Sub StringEqualsExample()
     Set o2 = Nothing
     
     Debug.Print
-    Debug.Print VBAString.Format(" *  The value of String str1 is '{0}'.", str1)
-    Debug.Print VBAString.Format(" *  The value of StringBuilder sb is '{0}'.", sb.ToString())
+    Debug.Print VBString.Format(" *  The value of String str1 is '{0}'.", str1)
+    Debug.Print VBString.Format(" *  The value of StringBuilder sb is '{0}'.", sb.ToString())
 
     Debug.Print
-    Debug.Print VBAString.Format("1a) String.Equals(Object). Object is a StringBuilder, not a String.")
-    Debug.Print VBAString.Format("    Is str1 equal to sb?: {0}", str1.Equals(sb))
+    Debug.Print VBString.Format("1a) String.Equals(Object). Object is a StringBuilder, not a String.")
+    Debug.Print VBString.Format("    Is str1 equal to sb?: {0}", str1.Equals(sb))
     
     Debug.Print
-    Debug.Print VBAString.Format("1b) String.Equals(Object). Object is a String.");
+    Debug.Print VBString.Format("1b) String.Equals(Object). Object is a String.");
     Set str2 = Strings.Create(sb.ToString())
     Set o2 = str2
-    Debug.Print VBAString.Format(" *  The value of Object o2 is '{0}'.", o2)
-    Debug.Print VBAString.Format("    Is str1 equal to o2?: {0}", str1.Equals(o2))
+    Debug.Print VBString.Format(" *  The value of Object o2 is '{0}'.", o2)
+    Debug.Print VBString.Format("    Is str1 equal to o2?: {0}", str1.Equals(o2))
 
     Debug.Print
-    Debug.Print VBAString.Format(" 2) String.Equals(String)")
-    Debug.Print VBAString.Format(" *  The value of String str2 is '{0}'.", str2)
-    Debug.Print VBAString.Format("    Is str1 equal to str2?: {0}", str1.Equals2(str2))
+    Debug.Print VBString.Format(" 2) String.Equals(String)")
+    Debug.Print VBString.Format(" *  The value of String str2 is '{0}'.", str2)
+    Debug.Print VBString.Format("    Is str1 equal to str2?: {0}", str1.Equals2(str2))
 
     Debug.Print
-    Debug.Print VBAString.Format(" 3) String.Equals(String, String)")
-    Debug.Print VBAString.Format("    Is str1 equal to str2?: {0}", Strings.Equals(str1, str2))
+    Debug.Print VBString.Format(" 3) String.Equals(String, String)")
+    Debug.Print VBString.Format("    Is str1 equal to str2?: {0}", Strings.Equals(str1, str2))
 End Sub
 
 '/*

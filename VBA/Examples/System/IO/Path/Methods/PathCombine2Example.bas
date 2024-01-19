@@ -1,5 +1,5 @@
 Attribute VB_Name = "PathCombine2Example"
-'@Folder("Examples.System.IO.Path.Methods")
+'@Folder "Examples.System.IO.Path.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -36,7 +36,7 @@ End Sub
 Private Sub CombinePaths(ByVal p1 As String, ByVal p2 As String)
     Dim combination As String
     combination = Path.Combine2(p1, p2)
-    Debug.Print VBAString.Format("When you combine '{0}' and '{1}', the result is: {2}'{3}'", _
+    Debug.Print VBString.Format("When you combine '{0}' and '{1}', the result is: {2}'{3}'", _
                                 p1, p2, Environment.NewLine, combination)
     Debug.Print
 End Sub
@@ -57,3 +57,5 @@ End Sub
 '
 ' When you combine '' and 'subdir\file.txt', the result is:
 ' 'subdir\file.txt'
+
+

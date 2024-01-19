@@ -4,29 +4,30 @@ Attribute VB_Name = "TimeZoneInfoIdExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 22, 2023
-'@LastModified August 4, 2023
+'@LastModified January 19, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.id?view=netframework-4.8.1#examples
 
-'@TODO Require wrapping a custom ReadOnlyCollection for SystemTime?
-
 Option Explicit
 
-'@Description("The following example lists the identifier of each of the time zones defined on the local computer.")
+''
+' The following example lists the identifier of each of the time zones defined
+' on the local computer.
+''
 Public Sub TimeZoneInfoId()
-Attribute TimeZoneInfoId.VB_Description = "The following example lists the identifier of each of the time zones defined on the local computer."
-    Dim zones As DotNetLib.IReadOnlyCollection
+    Dim zones As DotNetLib.ReadOnlyCollection
     Set zones = TimeZoneInfo.GetSystemTimeZones()
-    
+    Debug.Print VBString.Format("The local system has the following {0} time zones", zones.Count)
     Dim varZone As Variant
     For Each varZone In zones
-        Dim myZone As ITimeZoneInfo
+        Dim myZone As DotNetLib.TimeZoneInfo
         Set myZone = varZone
         Debug.Print myZone.Id
     Next
 End Sub
 
 ' Output:
+'    The local system has the following 141 time zones
 '    Dateline Standard Time
 '    Utc -11
 '    Aleutian Standard Time

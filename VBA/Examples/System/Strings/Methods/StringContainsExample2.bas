@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringContainsExample2"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -18,14 +18,14 @@ Public Sub StringContainsExample2()
     Dim sub1 As DotNetLib.String
     Set sub1 = Strings.Create("this")
     
-    Debug.Print VBAString.Format("Does '{0}' contain '{1}'?", s, sub1)
+    Debug.Print VBString.Format("Does '{0}' contain '{1}'?", s, sub1)
     
     Dim comp As mscorlib.StringComparison
     comp = StringComparison.StringComparison_Ordinal
-    Debug.Print VBAString.Format("   {0:G}: {1}", StringComparisonHelper.ToString(comp), s.Contains(sub1, comp))
+    Debug.Print VBString.Format("   {0:G}: {1}", StringComparisonHelper.ToString(comp), s.Contains(sub1, comp))
     
     comp = StringComparison.StringComparison_OrdinalIgnoreCase
-    Debug.Print VBAString.Format("   {0:G}: {1}", StringComparisonHelper.ToString(comp), s.Contains(sub1, comp))
+    Debug.Print VBString.Format("   {0:G}: {1}", StringComparisonHelper.ToString(comp), s.Contains(sub1, comp))
 End Sub
 
 ' The example displays the following output:

@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArrayListReadOnlyExample"
-'@Folder("Examples.System.Collections.ArrayList.Methods")
+'@Folder "Examples.System.Collections.ArrayList.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -27,19 +27,19 @@ Public Sub ArrayListReadOnly()
     Set myReadOnlyAL = ArrayList.ReadOnly(myAL)
     
     ' Displays whether the ArrayList is read-only or writable.
-    Debug.Print VBAString.Format("myAL is {0}.", IIf(myAL.IsReadOnly, "read-only", "writable"))
-    Debug.Print VBAString.Format("myReadOnlyAL is {0}.", IIf(myReadOnlyAL.IsReadOnly, "read-only", "writable"))
+    Debug.Print VBString.Format("myAL is {0}.", IIf(myAL.IsReadOnly, "read-only", "writable"))
+    Debug.Print VBString.Format("myReadOnlyAL is {0}.", IIf(myReadOnlyAL.IsReadOnly, "read-only", "writable"))
 
     ' Displays the contents of both collections.
     Debug.Print Regex.Unescape("\nInitially,")
     Debug.Print "The original ArrayList myAL contains:"
-    Dim myStr As Variant
-    For Each myStr In myAL
-        Debug.Print VBAString.Format("   {0}", myStr)
+    Dim MyStr As Variant
+    For Each MyStr In myAL
+        Debug.Print VBString.Format("   {0}", MyStr)
     Next
     Debug.Print "The read-only ArrayList myReadOnlyAL contains:"
-    For Each myStr In myReadOnlyAL
-        Debug.Print VBAString.Format("   {0}", myStr)
+    For Each MyStr In myReadOnlyAL
+        Debug.Print VBString.Format("   {0}", MyStr)
     Next
 
     ' Adding an element to a read-only ArrayList throws an exception.
@@ -57,12 +57,12 @@ Public Sub ArrayListReadOnly()
     ' Displays the contents of both collections again.
     Debug.Print Regex.Unescape("\nAfter adding a new element to the original ArrayList,")
     Debug.Print "The original ArrayList myAL contains:"
-    For Each myStr In myAL
-        Debug.Print VBAString.Format("   {0}", myStr)
+    For Each MyStr In myAL
+        Debug.Print VBString.Format("   {0}", MyStr)
     Next
     Debug.Print "The read-only ArrayList myReadOnlyAL contains:"
-    For Each myStr In myReadOnlyAL
-        Debug.Print VBAString.Format("   {0}", myStr)
+    For Each MyStr In myReadOnlyAL
+        Debug.Print VBString.Format("   {0}", MyStr)
     Next
 End Sub
 

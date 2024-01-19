@@ -1,5 +1,5 @@
 Attribute VB_Name = "BitArrayGetExample"
-'@Folder("Examples.System.Collections.BitArray.Methods")
+'@Folder "Examples.System.Collections.BitArray.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -39,15 +39,15 @@ Public Sub BitArrayGetExample()
 
     ' Gets the value of the last two elements.
     Debug.Print "The last two elements are: "
-    Debug.Print VBAString.Format("    at index {0} : {1}", myBA.Count - 2, myBA.Get(myBA.Count - 2))
-    Debug.Print VBAString.Format("    at index {0} : {1}", myBA.Count - 1, myBA.Get(myBA.Count - 1))
+    Debug.Print VBString.Format("    at index {0} : {1}", myBA.Count - 2, myBA.Get(myBA.Count - 2))
+    Debug.Print VBString.Format("    at index {0} : {1}", myBA.Count - 1, myBA.Get(myBA.Count - 1))
 End Sub
 
 Private Sub PrintIndexAndValues(ByVal myCol As mscorlib.IEnumerable)
     Dim i As Long
     Dim obj As Variant
     For Each obj In myCol
-         Debug.Print VBAString.Format("    [{0}]:    {1}", i, obj)
+         Debug.Print VBString.Format("    [{0}]:    {1}", i, obj)
          i = i + 1
     Next
     Debug.Print

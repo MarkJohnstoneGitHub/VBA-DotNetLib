@@ -42,7 +42,7 @@ Private Sub Class_Terminate()
 End Sub
 
 '@Description("Initializes a new instance of the FileInfo class, which acts as a wrapper for a file path.")
-Public Function Create(ByVal filename As String) As DotNetLib.FileInfo
+Public Function Create(ByVal fileName As String) As DotNetLib.FileInfo
 Attribute Create.VB_Description = "Initializes a new instance of the FileInfo class, which acts as a wrapper for a file path."
-   Set Create = this.FileInfoSingleton.Create(filename)
+   Set Create = this.FileInfoSingleton.Create(fileName)
 End Function

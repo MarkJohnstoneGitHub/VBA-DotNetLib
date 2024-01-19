@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArrayListReverseExample"
-'@Folder("Examples.System.Collections.ArrayList.Methods")
+'@Folder "Examples.System.Collections.ArrayList.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -43,7 +43,7 @@ End Sub
 Private Sub PrintValues(ByVal myList As mscorlib.IEnumerable)
     Dim obj As Variant
     For Each obj In myList
-        Debug.Print VBAString.Format("   {0}", obj)
+        Debug.Print VBString.Format("   {0}", obj)
     Next
     Debug.Print
 End Sub

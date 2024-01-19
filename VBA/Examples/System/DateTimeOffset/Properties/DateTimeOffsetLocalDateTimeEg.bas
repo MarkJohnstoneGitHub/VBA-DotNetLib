@@ -4,18 +4,20 @@ Attribute VB_Name = "DateTimeOffsetLocalDateTimeEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 19, 2023
-'@LastModified July 31, 2023
+'@LastModified January 11, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.localdatetime?view=netframework-4.8.1#examples
 
 Option Explicit
 
-'@Description("The following example illustrates several conversions of DateTimeOffset values to local times in the U.S. Pacific Standard Time zone.")
-' Note that the last three times are all ambiguous; the property maps all of them to a single date
-' and time in the Pacific Standard Time zone.
+''
+' The following example illustrates several conversions of DateTimeOffset values
+' to local times in the U.S. Pacific Standard Time zone.
+' Note that the last three times are all ambiguous; the property maps all of
+' them to a single date and time in the Pacific Standard Time zone.
+''
 Public Sub DateTimeOffsetLocalDateTime()
-Attribute DateTimeOffsetLocalDateTime.VB_Description = "The following example illustrates several conversions of DateTimeOffset values to local times in the U.S. Pacific Standard Time zone."
-    Dim dto As IDateTimeOffset
+    Dim dto As DotNetLib.DateTimeOffset
     
     ' Current time
     Set dto = DateTimeOffset.Now

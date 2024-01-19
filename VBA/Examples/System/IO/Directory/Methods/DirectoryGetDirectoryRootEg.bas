@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirectoryGetDirectoryRootEg"
-'@Folder("Examples.System.IO.Directory.Methods")
+'@Folder "Examples.System.IO.Directory.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -25,13 +25,13 @@ Public Sub DirectoryGetDirectoryRoot()
     ' Set the current directory.
     Call Directory.SetCurrentDirectory(dir)
     If Err.Number <> 0 Then
-        Debug.Print VBAString.Format("The specified directory does not exist. {0}", Err.Description)
+        Debug.Print VBString.Format("The specified directory does not exist. {0}", Err.Description)
     End If
     On Error GoTo 0 'Stop code and display error
     
     ' Print to console the results.
-    Debug.Print VBAString.Format("Root directory: {0}", Directory.GetDirectoryRoot(dir))
-    Debug.Print VBAString.Format("Current directory: {0}", Directory.GetCurrentDirectory())
+    Debug.Print VBString.Format("Root directory: {0}", Directory.GetDirectoryRoot(dir))
+    Debug.Print VBString.Format("Current directory: {0}", Directory.GetCurrentDirectory())
 End Sub
 
 ' The output of this sample depends on what value you assign to the variable dir.

@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringSplitExample5"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -26,12 +26,12 @@ Public Sub StringSplitExample5()
     subs = phrase.Split(VBA.vbNullString, StringSplitOptions.StringSplitOptions_RemoveEmptyEntries)
     Dim varSub As Variant
     For Each varSub In subs
-        Debug.Print VBAString.Format("Substring: {0}", varSub)
+        Debug.Print VBString.Format("Substring: {0}", varSub)
     Next
     Debug.Print
     subs = phrase.Split(Empty, StringSplitOptions.StringSplitOptions_RemoveEmptyEntries)
     For Each varSub In subs
-        Debug.Print VBAString.Format("Substring: {0}", varSub)
+        Debug.Print VBString.Format("Substring: {0}", varSub)
     Next
 End Sub
 

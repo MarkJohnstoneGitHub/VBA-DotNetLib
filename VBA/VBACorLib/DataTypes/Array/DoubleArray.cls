@@ -13,7 +13,7 @@ Attribute VB_Exposed = False
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 14, 2023
-'@LastModified July 16, 2023
+'@LastModified Januaray 6, 2024
 
 Option Explicit
 
@@ -26,14 +26,14 @@ Option Explicit
 '@Returns Double()
 '   Returns a double array.
 ''
-Public Function ToArray(ParamArray values() As Variant) As Double()
-Attribute ToArray.VB_Description = "Creates a one dimensional double array from a list of parameters"
+Public Function CreateInitialize1D(ParamArray values() As Variant) As Double()
+Attribute CreateInitialize1D.VB_Description = "Creates a one dimensional double array from a list of parameters"
    Dim result() As Double
    '@TODO What if values is empty?
    ReDim result(LBound(values) To UBound(values))
-   Dim index As Long
-   For index = LBound(values) To UBound(values)
-       result(index) = values(index)
-   Next index
-   ToArray = result
+   Dim Index As Long
+   For Index = LBound(values) To UBound(values)
+       result(Index) = values(Index)
+   Next Index
+   CreateInitialize1D = result
 End Function

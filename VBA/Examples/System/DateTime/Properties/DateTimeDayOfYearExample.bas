@@ -1,27 +1,31 @@
 Attribute VB_Name = "DateTimeDayOfYearExample"
-'Rubberduck annotations
 '@Folder "Examples.System.DateTime.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 9, 2023
-'@LastModified August 4, 2023
+'@LastModified January 7, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.dayofyear?view=netframework-4.8.1#examples
 
 Option Explicit
 
-'@Description("The following example displays the day of the year of December 31 for the years 2010-2020 in the Gregorian calendar. Note that the example shows that December 31 is the 366th day of the year in leap years.")
+''
+' The following example displays the day of the year of December 31 for the years
+' 2010-2020 in the Gregorian calendar. Note that the example shows that December 31
+' is the 366th day of the year in leap years."
+''
 Public Sub DateTimeDayOfYear()
-Attribute DateTimeDayOfYear.VB_Description = "The following example displays the day of the year of December 31 for the years 2010-2020 in the Gregorian calendar. Note that the example shows that December 31 is the 366th day of the year in leap years."
-    Dim dec31 As IDateTime
+    Dim dec31 As DotNetLib.DateTime
     Set dec31 = DateTime.CreateFromDate(2010, 12, 31)
-    
     Dim ctr As Long
     For ctr = 0 To 10
-        Dim dateToDisplay As IDateTime
+        Dim dateToDisplay As DotNetLib.DateTime
         Set dateToDisplay = dec31.AddYears(ctr)
-        Debug.Print dateToDisplay.ToString & ": day " & dateToDisplay.DayOfYear & " of " & dateToDisplay.Year & IIf(DateTime.IsLeapYear(dateToDisplay.Year), " (Leap Year)", vbNullString)
+        Debug.Print VBString.Format("{0:d}: day {1} of {2} {3}", dateToDisplay, _
+                           dateToDisplay.DayOfYear, _
+                           dateToDisplay.Year, _
+                           IIf(DateTime.IsLeapYear(dateToDisplay.Year), " (Leap Year)", vbNullString))
     Next ctr
 End Sub
 
@@ -37,3 +41,4 @@ End Sub
 '       12/31/2018: day 365 of 2018
 '       12/31/2019: day 365 of 2019
 '       12/31/2020: day 366 of 2020 (Leap Year)
+

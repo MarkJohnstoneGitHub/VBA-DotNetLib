@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringSplitExample3"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -29,8 +29,8 @@ Public Sub StringSplitExample3()
     If UBound(subs) > 0 Then
         lastName = subs(1)
     End If
-    Debug.Print VBAString.Format("firstName = {0}", firstName)
-    Debug.Print VBAString.Format("lastName = {0}", lastName)
+    Debug.Print VBString.Format("firstName = {0}", firstName)
+    Debug.Print VBString.Format("lastName = {0}", lastName)
 End Sub
 
 ' Output:

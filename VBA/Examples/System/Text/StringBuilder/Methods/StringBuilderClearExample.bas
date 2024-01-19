@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringBuilderClearExample"
-'@Folder("Examples.System.Text.StringBuilder.Methods")
+'@Folder "Examples.System.Text.StringBuilder.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -20,13 +20,13 @@ Public Sub StringBuilderClear()
     Dim sb As DotNetLib.StringBuilder
     Set sb = StringBuilder.Create("This is a string.")
     
-    Debug.Print VBAString.Format("{0} ({1} characters)", sb.ToString(), sb.length)
+    Debug.Print VBString.Format("{0} ({1} characters)", sb.ToString(), sb.Length)
 
     Call sb.Clear
-    Debug.Print VBAString.Format("{0} ({1} characters)", sb.ToString(), sb.length)
+    Debug.Print VBString.Format("{0} ({1} characters)", sb.ToString(), sb.Length)
 
     Call sb.Append("This is a second string.")
-    Debug.Print VBAString.Format("{0} ({1} characters)", sb.ToString(), sb.length)
+    Debug.Print VBString.Format("{0} ({1} characters)", sb.ToString(), sb.Length)
 End Sub
 
 ' The example displays the following output:

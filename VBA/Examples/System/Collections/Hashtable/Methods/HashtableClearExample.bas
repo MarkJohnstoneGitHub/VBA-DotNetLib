@@ -1,5 +1,5 @@
 Attribute VB_Name = "HashtableClearExample"
-'@Folder("Examples.System.Collections.Hashtable.Methods")
+'@Folder "Examples.System.Collections.Hashtable.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -25,7 +25,7 @@ Public Sub HashtableClear()
     
     ' Displays the count and values of the Hashtable.
     Debug.Print "Initially,"
-    Debug.Print VBAString.Format("   Count    : {0}", myHT.Count)
+    Debug.Print VBString.Format("   Count    : {0}", myHT.Count)
     Debug.Print "   Values:"
     Call PrintKeysAndValues(myHT)
     
@@ -34,7 +34,7 @@ Public Sub HashtableClear()
 
     ' Displays the count and values of the Hashtable.
     Debug.Print "After Clear,"
-    Debug.Print VBAString.Format("   Count    : {0}", myHT.Count)
+    Debug.Print VBString.Format("   Count    : {0}", myHT.Count)
     Debug.Print "   Values:"
     Call PrintKeysAndValues(myHT)
 End Sub
@@ -47,7 +47,7 @@ Private Sub PrintKeysAndValues(ByVal myHT As DotNetLib.Hashtable)
     For Each varDictEntry In myHT
         Dim dictEntry As mscorlib.DictionaryEntry
         dictEntry = varDictEntry
-        Debug.Print VBAString.Format(formatString, DictionaryEntry.Key(dictEntry), DictionaryEntry.value(dictEntry))
+        Debug.Print VBString.Format(formatString, DictionaryEntry.Key(dictEntry), DictionaryEntry.value(dictEntry))
     Next
 End Sub
 

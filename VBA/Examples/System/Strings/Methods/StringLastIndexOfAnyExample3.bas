@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringLastIndexOfAnyExample3"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -32,11 +32,11 @@ Public Sub StringLastIndexOfAnyExample3()
     Dim anyOf As DotNetLib.String
     Set anyOf = target
        
-    pvtStart = ((str.length - 1) * 2) / 3
-    pvtCount = (str.length - 1) / 3
-    Debug.Print VBAString.Format("The last character occurrence from position {0} for {1} characters.", pvtStart, pvtCount)
-    Debug.Print VBAString.Format("{1}{0}{2}{0}{3}{0}", Environment.NewLine, br1, br2, str)
-    Debug.Print VBAString.Format("A character in '{0}' occurs at position: ", target);
+    pvtStart = ((str.Length - 1) * 2) / 3
+    pvtCount = (str.Length - 1) / 3
+    Debug.Print VBString.Format("The last character occurrence from position {0} for {1} characters.", pvtStart, pvtCount)
+    Debug.Print VBString.Format("{1}{0}{2}{0}{3}{0}", Environment.NewLine, br1, br2, str)
+    Debug.Print VBString.Format("A character in '{0}' occurs at position: ", target);
     
     at = str.LastIndexOfAny3(anyOf, pvtStart, pvtCount)
     If (at > -1) Then
@@ -44,7 +44,7 @@ Public Sub StringLastIndexOfAnyExample3()
     Else
         Debug.Print "(not found)"
     End If
-    Debug.Print VBAString.Format("{0}{0}{0}", Environment.NewLine)
+    Debug.Print VBString.Format("{0}{0}{0}", Environment.NewLine)
 End Sub
 
 '/*

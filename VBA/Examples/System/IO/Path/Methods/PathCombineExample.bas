@@ -1,5 +1,5 @@
 Attribute VB_Name = "PathCombineExample"
-'@Folder("Examples.System.IO.Path.Methods")
+'@Folder "Examples.System.IO.Path.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -17,7 +17,7 @@ Option Explicit
 ''
 Public Sub PathCombineExample()
     Dim pvtPaths() As String
-    Call ArrayEx.CreateInitialize1D(pvtPaths, "d:\archives", "2001", "media", "images")
+    Call VBArray.CreateInitialize1D(pvtPaths, "d:\archives", "2001", "media", "images")
     Dim fullPath As String
     fullPath = Path.Combine(pvtPaths)
     Debug.Print fullPath

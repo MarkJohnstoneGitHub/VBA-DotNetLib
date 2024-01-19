@@ -1,5 +1,5 @@
 Attribute VB_Name = "PathPathSeparatorExample"
-'@Folder("Examples.System.IO.Path.Fields")
+'@Folder "Examples.System.IO.Path.Fields"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -16,10 +16,10 @@ Option Explicit
 ' The following example demonstrates the use of the PathSeparator field.
 ''
 Public Sub PathPathSeparatorExample()
-    Debug.Print VBAString.Format("Path.AltDirectorySeparatorChar={0}", Path.AltDirectorySeparatorChar)
-    Debug.Print VBAString.Format("Path.DirectorySeparatorChar={0}", Path.DirectorySeparatorChar)
-    Debug.Print VBAString.Format("Path.PathSeparator={0}", Path.PathSeparator)
-    Debug.Print VBAString.Format("Path.VolumeSeparatorChar={0}", Path.VolumeSeparatorChar)
+    Debug.Print VBString.Format("Path.AltDirectorySeparatorChar={0}", Path.AltDirectorySeparatorChar)
+    Debug.Print VBString.Format("Path.DirectorySeparatorChar={0}", Path.DirectorySeparatorChar)
+    Debug.Print VBString.Format("Path.PathSeparator={0}", Path.PathSeparator)
+    Debug.Print VBString.Format("Path.VolumeSeparatorChar={0}", Path.VolumeSeparatorChar)
     
     Debug.Print "Path.GetInvalidPathChars()="
     Dim pvtChar As Variant

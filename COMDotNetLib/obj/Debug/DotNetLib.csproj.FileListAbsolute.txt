@@ -9,12 +9,12 @@ H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Debug\DotNetLib.dll
 H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Debug\DotNetLib.pdb
 H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Debug\DotNetLib.tlb
 H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Debug\CoordinateSharp.dll
+H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Debug\System.Buffers.dll
+H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Debug\System.Memory.dll
+H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Debug\System.Numerics.Vectors.dll
+H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\obj\Debug\DotNetLib.csproj.AssemblyReference.cache
 H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\obj\Debug\DotNetLib.csproj.CoreCompileInputs.cache
 H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\obj\Debug\DotNetLib.csproj.CopyComplete
 H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\obj\Debug\DotNetLib.dll
 H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\obj\Debug\DotNetLib.pdb
-H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Debug\System.Buffers.dll
-H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Debug\System.Memory.dll
-H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Debug\System.Numerics.Vectors.dll
-H:\Users\Me\source\repos\DotNetLib\COMDotNetLib\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll

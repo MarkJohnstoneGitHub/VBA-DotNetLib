@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirInfoConstructorExample"
-'@Folder("Examples.System.IO.DirectoryInfo.Constructors")
+'@Folder "Examples.System.IO.DirectoryInfo.Constructors"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -29,7 +29,7 @@ Public Sub DirectoryInfoConstructor()
     Call di2.Create
     
     ' This operation will not be allowed because there are subdirectories.
-    Debug.Print VBAString.Format("I am about to attempt to delete {0}.", di1.Name)
+    Debug.Print VBString.Format("I am about to attempt to delete {0}.", di1.Name)
     Call di1.Delete
     Debug.Print "The Delete operation was successful, which was unexpected."
     

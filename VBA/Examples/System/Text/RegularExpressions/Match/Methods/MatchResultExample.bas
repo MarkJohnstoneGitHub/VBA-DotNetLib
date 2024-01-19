@@ -1,5 +1,5 @@
 Attribute VB_Name = "MatchResultExample"
-'@Folder("Examples.System.Text.RegularExpressions.Match.Methods")
+'@Folder "Examples.System.Text.RegularExpressions.Match.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

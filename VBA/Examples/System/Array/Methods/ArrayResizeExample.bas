@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArrayResizeExample"
-'@Folder("Examples.System.Array.Methods")
+'@Folder "Examples.System.Array.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -17,7 +17,7 @@ Option Explicit
 ''
 Public Sub ArrayResize()
     Dim myArr As DotNetLib.Array
-    Set myArr = Arrays.CreateInitialize1D(VBAString.GetType(), _
+    Set myArr = Arrays.CreateInitialize1D(VBString.GetType(), _
                         "The", "quick", "brown", "fox", "jumps", _
                         "over", "the", "lazy", "dog")
                         
@@ -26,7 +26,7 @@ Public Sub ArrayResize()
     Call PrintIndexAndValues(myArr)
     
     ' Resize the array to a bigger size (five elements larger).
-    Call Arrays.Resize(myArr, myArr.length + 5)
+    Call Arrays.Resize(myArr, myArr.Length + 5)
 
     ' Display the values of the array.
     Debug.Print "After resizing to a larger size, "
@@ -44,8 +44,8 @@ End Sub
 
 Private Sub PrintIndexAndValues(ByVal myArr As DotNetLib.Array)
     Dim i As Long
-    For i = 0 To myArr.length - 1
-        Debug.Print VBAString.Format("   [{0}] : {1}", i, myArr(i))
+    For i = 0 To myArr.Length - 1
+        Debug.Print VBString.Format("   [{0}] : {1}", i, myArr(i))
     Next i
     Debug.Print
 End Sub

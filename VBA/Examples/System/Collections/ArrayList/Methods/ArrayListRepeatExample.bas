@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArrayListRepeatExample"
-'@Folder("Examples.System.Collections.ArrayList.Methods")
+'@Folder "Examples.System.Collections.ArrayList.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -21,8 +21,8 @@ Public Sub ArrayListRepeat()
 
     ' Displays the count, capacity and values of the ArrayList.
     Debug.Print "ArrayList with five elements with a null value"
-    Debug.Print VBAString.Format("   Count    : {0}", myAL.Count)
-    Debug.Print VBAString.Format("   Capacity : {0}", myAL.Capacity)
+    Debug.Print VBString.Format("   Count    : {0}", myAL.Count)
+    Debug.Print VBString.Format("   Capacity : {0}", myAL.Capacity)
     Debug.Print "   Values:";
     Call PrintValues(myAL)
     
@@ -31,8 +31,8 @@ Public Sub ArrayListRepeat()
 
     ' Displays the count, capacity and values of the ArrayList.
     Debug.Print "ArrayList with seven elements with a string value"
-    Debug.Print VBAString.Format("   Count    : {0}", myAL.Count)
-    Debug.Print VBAString.Format("   Capacity : {0}", myAL.Capacity)
+    Debug.Print VBString.Format("   Count    : {0}", myAL.Count)
+    Debug.Print VBString.Format("   Capacity : {0}", myAL.Capacity)
     Debug.Print "   Values:";
     Call PrintValues(myAL)
 End Sub
@@ -40,7 +40,7 @@ End Sub
 Private Sub PrintValues(ByVal myList As mscorlib.IEnumerable)
     Dim obj As Variant
     For Each obj In myList
-        Debug.Print VBAString.Format("   {0}", obj);
+        Debug.Print VBString.Format("   {0}", obj);
     Next
     Debug.Print
 End Sub

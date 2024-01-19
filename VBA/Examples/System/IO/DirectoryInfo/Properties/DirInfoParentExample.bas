@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirInfoParentExample"
-'@Folder("Examples.System.IO.DirectoryInfo.Properties")
+'@Folder "Examples.System.IO.DirectoryInfo.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -32,7 +32,7 @@ Public Sub DirectoryInfoParentExample()
     ' Get a reference to the parent directory of the subdirectory you just made.
     Dim parentDir As DotNetLib.DirectoryInfo
     Set parentDir = dis.Parent
-    Debug.Print VBAString.Format("The parent directory of '{0}' is '{1}'", dis.Name, parentDir.Name)
+    Debug.Print VBString.Format("The parent directory of '{0}' is '{1}'", dis.Name, parentDir.Name)
     
     ' Delete the parent directory.
     Call di.Delete(True)

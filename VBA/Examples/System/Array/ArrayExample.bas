@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArrayExample"
-'@Folder("Examples.System.Array")
+'@Folder "Examples.System.Array"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -56,7 +56,7 @@ Private Sub PrintValues(ByVal myArr As DotNetLib.Array)
             Debug.Print
             i = 1
         End If
-        Debug.Print VBAString.Format(formatString, varItem);
+        Debug.Print VBString.Format(formatString, varItem);
     Next
     Debug.Print
 End Sub

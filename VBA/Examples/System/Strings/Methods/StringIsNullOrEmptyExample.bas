@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringIsNullOrEmptyExample"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -30,18 +30,18 @@ Public Sub StringIsNullOrEmptyExample()
     Dim s5 As DotNetLib.String
     Set s5 = Strings.Create(str)
     
-    Debug.Print VBAString.Format("String s1 {0}.", Test(s1))
-    Debug.Print VBAString.Format("String s2 {0}.", Test(s2))
-    Debug.Print VBAString.Format("String s3 {0}.", Test(s3))
-    Debug.Print VBAString.Format("String s4 {0}.", Test(s4))
-    Debug.Print VBAString.Format("String s5 {0}.", Test(s5))
+    Debug.Print VBString.Format("String s1 {0}.", test(s1))
+    Debug.Print VBString.Format("String s2 {0}.", test(s2))
+    Debug.Print VBString.Format("String s3 {0}.", test(s3))
+    Debug.Print VBString.Format("String s4 {0}.", test(s4))
+    Debug.Print VBString.Format("String s5 {0}.", test(s5))
 End Sub
 
-Private Function Test(ByVal s As DotNetLib.String) As String
+Private Function test(ByVal s As DotNetLib.String) As String
     If (Strings.IsNullOrEmpty(s)) Then
-        Test = "is null or empty"
+        test = "is null or empty"
     Else
-        Test = VBAString.Format("(""{0}"") is neither null nor empty", s)
+        test = VBString.Format("(""{0}"") is neither null nor empty", s)
     End If
 End Function
 

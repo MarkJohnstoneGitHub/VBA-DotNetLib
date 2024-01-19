@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringIsNullOrWhiteSpaceExample"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -18,9 +18,9 @@ Option Explicit
 ''
 Public Sub StringIsNullOrWhiteSpaceExample()
     Dim values() As DotNetLib.String
-    Call ArrayEx.CreateInitialize1D(values, Nothing, Strings.EmptyString, Strings.Create("ABCDE"), _
+    Call VBArray.CreateInitialize1D(values, Nothing, Strings.EmptyString, Strings.Create("ABCDE"), _
                                     Strings.Create2(" ", 20), Strings.CreateUnescape("  \t   "), _
-                                     Strings.Create2(VBAString.Unescape("\u2000"), 10))
+                                     Strings.Create2(VBString.Unescape("\u2000"), 10))
     Dim varValue As Variant
     For Each varValue In values
         Debug.Print Strings.IsNullOrWhiteSpace(varValue)
@@ -34,3 +34,5 @@ End Sub
 '       True
 '       True
 '       True
+
+

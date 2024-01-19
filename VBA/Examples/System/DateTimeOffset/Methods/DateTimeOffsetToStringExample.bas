@@ -4,16 +4,18 @@ Attribute VB_Name = "DateTimeOffsetToStringExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 21, 2023
-'@LastModified August 4, 2023
+'@LastModified January 10, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.tostring?view=netframework-4.8.1#system-datetimeoffset-tostring
 
 Option Explicit
 
-'@Description("The following example illustrates calls to the ToString() method and displays its output on a system whose current culture is en-us.")
+''
+' The following example illustrates calls to the ToString() method and displays
+' its output on a system whose current culture is en-us.
+''
 Public Sub DateTimeOffsetToString()
-Attribute DateTimeOffsetToString.VB_Description = "The following example illustrates calls to the ToString() method and displays its output on a system whose current culture is en-us."
-    Dim thisDate As IDateTimeOffset
+    Dim thisDate As DotNetLib.DateTimeOffset
     Set thisDate = DateTimeOffset.UtcNow
     Debug.Print thisDate.ToString()         ' Displays 3/28/2007 7:13:50 PM +00:00
     

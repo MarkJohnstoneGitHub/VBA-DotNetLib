@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringInsertExample"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -19,10 +19,10 @@ Option Explicit
 Public Sub StringInsertExample()
     Dim original As DotNetLib.String
     Set original = Strings.Create("aaabbb")
-    Debug.Print VBAString.Format("The original string: '{0}'", original)
+    Debug.Print VBString.Format("The original string: '{0}'", original)
     Dim modified As DotNetLib.String
     Set modified = original.Insert2(3, " ")
-    Debug.Print VBAString.Format("The modified string: '{0}'", modified)
+    Debug.Print VBString.Format("The modified string: '{0}'", modified)
 End Sub
 
 ' The example displays the following output:

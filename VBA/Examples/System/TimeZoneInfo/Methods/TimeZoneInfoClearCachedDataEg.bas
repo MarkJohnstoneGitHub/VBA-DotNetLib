@@ -4,13 +4,15 @@ Attribute VB_Name = "TimeZoneInfoClearCachedDataEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 23, 2023
-'@LastModified August 17, 2023
+'@LastModified January 19, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.clearcacheddata?view=netframework-4.8.1#remarks
 
 Option Explicit
 
-'@Description("Cached time zone data includes data on the local time zone and the Coordinated Universal Time (UTC) zone.")
+''
+' Cached time zone data includes data on the local time zone and the Coordinated
+' Universal Time (UTC) zone.
 '
 ' You might call the ClearCachedData method to reduce the memory devoted to the
 ' application's cache of time zone information or to reflect the fact that the
@@ -24,11 +26,11 @@ Option Explicit
 ' TimeZoneInfo.ConvertTime(DateTime, TimeZoneInfo, TimeZoneInfo) method throws
 ' an ArgumentException because the local variable is no longer considered equal
 ' to TimeZoneInfo.Local.
+''
 Public Sub TimeZoneInfoClearCachedData()
-Attribute TimeZoneInfoClearCachedData.VB_Description = "Cached time zone data includes data on the local time zone and the Coordinated Universal Time (UTC) zone."
-    Dim cst As ITimeZoneInfo
+    Dim cst As DotNetLib.TimeZoneInfo
     Set cst = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time")
-    Dim Locale As ITimeZoneInfo
+    Dim Locale As DotNetLib.TimeZoneInfo
     Set Locale = TimeZoneInfo.Locale
     Debug.Print TimeZoneInfo.ConvertTime3(DateTime.Now, Locale, cst).ToString()
     

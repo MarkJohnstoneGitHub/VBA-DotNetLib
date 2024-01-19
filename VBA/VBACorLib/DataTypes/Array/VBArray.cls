@@ -2,7 +2,7 @@ VERSION 1.0 CLASS
 BEGIN
   MultiUse = -1  'True
 END
-Attribute VB_Name = "ArrayEx"
+Attribute VB_Name = "VBArray"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -13,7 +13,7 @@ Attribute VB_Exposed = False
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 16, 2023
-'@LastModified October 29, 2023
+'@LastModified Januaray 6, 2024
 
 '@TODO Work in progress
 
@@ -25,16 +25,16 @@ Attribute CreateInitialize1D.VB_Description = "Creates a one-dimensional array o
    If VBA.IsArray(destination) Then
       '@TODO What if values is empty?
       ReDim destination(LBound(values) To UBound(values))
-      Dim index As Long
+      Dim Index As Long
       Dim varValue As Variant
       On Error GoTo Catch
       For Each varValue In values
          If IsObject(varValue) Then
-            Set destination(index) = varValue
+            Set destination(Index) = varValue
          Else
-            destination(index) = varValue
+            destination(Index) = varValue
          End If
-         index = index + 1
+         Index = Index + 1
       Next
    Else
       Err.Raise VBAException.INVALID_PROCEDURE_CALL, , "Only arrays are supported."
@@ -54,23 +54,23 @@ Attribute TryToArray.VB_Description = "Copies a ParamArray of vaules or objects 
       Resize = False
       
       ReDim destination(LBound(values) To UBound(values))
-      Dim index As Long
+      Dim Index As Long
       Dim varValue As Variant
       For Each varValue In values
          If IsObject(varValue) Then
-            Set destination(index) = varValue
+            Set destination(Index) = varValue
          Else
-            destination(index) = varValue
+            destination(Index) = varValue
          End If
          If Err.Number = 0 Then
-            index = index + 1
+            Index = Index + 1
          Else
             TryToArray = False
             Resize = True
          End If
       Next
       If Resize Then
-         ReDim Preserve destination(index - 1)
+         ReDim Preserve destination(Index - 1)
       End If
    Else
       Err.Raise VBAException.INVALID_PROCEDURE_CALL, , "Only arrays are supported."

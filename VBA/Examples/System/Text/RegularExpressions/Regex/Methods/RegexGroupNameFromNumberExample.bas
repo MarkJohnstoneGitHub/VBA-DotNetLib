@@ -1,5 +1,5 @@
 Attribute VB_Name = "RegexGroupNameFromNumberExample"
-'@Folder("Examples.System.Text.RegularExpressions.Regex.Methods")
+'@Folder "Examples.System.Text.RegularExpressions.Regex.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -21,7 +21,7 @@ Public Sub RegexGroupNameFromNumber()
     Dim pattern As String
     pattern = "(?<city>[A-Za-z\s]+), (?<state>[A-Za-z]{2}) (?<zip>\d{5}(-\d{4})?)"
     Dim cityLines() As String
-    cityLines = StringArray.ToArray("New York, NY 10003", "Brooklyn, NY 11238", "Detroit, MI 48204", _
+    cityLines = StringArray.CreateInitialize1D("New York, NY 10003", "Brooklyn, NY 11238", "Detroit, MI 48204", _
                                     "San Francisco, CA 94109", "Seattle, WA 98109")
     Dim rgx As DotNetLib.Regex
     Set rgx = Regex.Create(pattern)
@@ -36,7 +36,7 @@ Public Sub RegexGroupNameFromNumber()
     Do
         Dim Name As String
         Name = rgx.GroupNameFromNumber(ctr)
-        If (Not VBAString.IsNullOrEmpty(Name)) Then
+        If (Not VBString.IsNullOrEmpty(Name)) Then
             names.Add Name
             ctr = ctr + 1
         Else
@@ -48,7 +48,7 @@ Public Sub RegexGroupNameFromNumber()
         Dim pvtMatch As DotNetLib.Match
         Set pvtMatch = rgx.Match(cityLine)
         If (pvtMatch.Success) Then
-            Debug.Print VBAString.Format("Zip code {0} is in {1}, {2}.", _
+            Debug.Print VBString.Format("Zip code {0} is in {1}, {2}.", _
                                         pvtMatch.Groups.Item_2(names(3)), _
                                         pvtMatch.Groups.Item_2(names(1)), _
                                         pvtMatch.Groups.Item_2(names(2)))

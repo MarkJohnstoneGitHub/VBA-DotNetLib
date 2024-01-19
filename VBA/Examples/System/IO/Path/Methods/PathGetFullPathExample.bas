@@ -1,5 +1,5 @@
 Attribute VB_Name = "PathGetFullPathExample"
-'@Folder("Examples.System.IO.Path.Methods")
+'@Folder "Examples.System.IO.Path.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -17,8 +17,8 @@ Option Explicit
 ' desktop platform.
 ''
 Public Sub PathGetFullPathExample()
-    Dim filename As String
-    filename = "myfile.ext"
+    Dim fileName As String
+    fileName = "myfile.ext"
     Dim path1 As String
     path1 = "mydir"
     Dim path2 As String
@@ -26,15 +26,15 @@ Public Sub PathGetFullPathExample()
     Dim fullPath As String
     
     fullPath = Path.GetFullPath(path1)
-    Debug.Print VBAString.Format("GetFullPath('{0}') returns '{1}'", _
+    Debug.Print VBString.Format("GetFullPath('{0}') returns '{1}'", _
                                 path1, fullPath)
                                 
-    fullPath = Path.GetFullPath(filename)
-    Debug.Print VBAString.Format("GetFullPath('{0}') returns '{1}'", _
-                                filename, fullPath)
+    fullPath = Path.GetFullPath(fileName)
+    Debug.Print VBString.Format("GetFullPath('{0}') returns '{1}'", _
+                                fileName, fullPath)
 
     fullPath = Path.GetFullPath(path2)
-    Debug.Print VBAString.Format("GetFullPath('{0}') returns '{1}'", _
+    Debug.Print VBString.Format("GetFullPath('{0}') returns '{1}'", _
                                 path2, fullPath)
 End Sub
 
@@ -43,3 +43,5 @@ End Sub
 ' GetFullPath('mydir') returns 'C:\temp\Demo\mydir'
 ' GetFullPath('myfile.ext') returns 'C:\temp\Demo\myfile.ext'
 ' GetFullPath('\mydir') returns 'C:\mydir'
+
+

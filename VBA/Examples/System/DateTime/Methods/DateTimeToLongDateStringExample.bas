@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeToLongDateStringExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 14, 2023
-'@LastModified July 30, 2023
+'@LastModified January 7, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tolongdatestring?view=netframework-4.8.1#examples
 
@@ -15,7 +15,7 @@ Public Sub DateTimeToLongDateString()
 Attribute DateTimeToLongDateString.VB_Description = "The following example demonstrates the ToLongDateString method."
    ' Initialize a DateTime object.
    Debug.Print "Initialize the DateTime object to May 16, 2001 3:02:15 AM." & VBA.vbNewLine
-   Dim dateAndTime As IDateTime
+   Dim dateAndTime As DotNetLib.DateTime
    Set dateAndTime = DateTime.CreateFromDateTime(2001, 5, 16, 3, 2, 15)
    
    Debug.Print "Long date string:  " & dateAndTime.ToLongDateString()

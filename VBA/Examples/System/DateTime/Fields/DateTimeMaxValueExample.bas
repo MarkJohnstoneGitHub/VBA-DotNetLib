@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeMaxValueExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 9, 2023
-'@LastModified September 23, 2023
+'@LastModified January 7, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.maxvalue?view=netframework-4.8.1#examples
 
@@ -19,15 +19,15 @@ Attribute DateTimeMaxValue.VB_Description = "The following example instantiates 
     
     ' Validate the value.
     If (numberOfTicks >= DateTime.MinValue.Ticks And numberOfTicks <= DateTime.MaxValue.Ticks) Then
-        Dim validDate As IDateTime
+        Dim validDate As DotNetLib.DateTime
         Set validDate = DateTime.CreateFromTicks(numberOfTicks)
         Debug.Print validDate.ToString()
     ElseIf (numberOfTicks < DateTime.MinValue.Ticks) Then
-        Debug.Print VBAString.Format("{0:N0} is less than {1:N0} ticks.", _
+        Debug.Print VBString.Format("{0:N0} is less than {1:N0} ticks.", _
                         numberOfTicks, _
                         DateTime.MinValue.Ticks)
     Else
-        Debug.Print VBAString.Format("{0:N0} is greater than {1:N0} ticks.", _
+        Debug.Print VBString.Format("{0:N0} is greater than {1:N0} ticks.", _
                                     numberOfTicks, _
                                     DateTime.MaxValue.Ticks)
     End If

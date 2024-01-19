@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringIndexOfAnyExample"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -21,7 +21,7 @@ Public Sub StringIndexOfAnyExample()
                     "A", "E", "I", "O", "U", "Y")
     Dim s As DotNetLib.String
     Set s = Strings.Create("The long and winding road...")
-    Debug.Print VBAString.Format(Regex.Unescape("The first vowel in \n   {0}\nis found at position {1}"), _
+    Debug.Print VBString.Format(Regex.Unescape("The first vowel in \n   {0}\nis found at position {1}"), _
                         s, s.IndexOfAny(chars) + 1)
 End Sub
 
@@ -29,3 +29,5 @@ End Sub
 '       The first vowel in
 '          The long and winding road...
 '       is found at position 3
+
+

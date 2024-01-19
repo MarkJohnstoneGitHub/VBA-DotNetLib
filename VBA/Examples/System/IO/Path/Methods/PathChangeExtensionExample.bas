@@ -1,5 +1,5 @@
 Attribute VB_Name = "PathChangeExtensionExample"
-'@Folder("Examples.System.IO.Path.Methods")
+'@Folder "Examples.System.IO.Path.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -23,15 +23,15 @@ Public Sub PathChangeExtensionExample()
     Dim result As String
     
     result = Path.ChangeExtension(goodFileName, ".old")
-    Debug.Print VBAString.Format("ChangeExtension({0}, '.old') returns '{1}'", _
+    Debug.Print VBString.Format("ChangeExtension({0}, '.old') returns '{1}'", _
                                 goodFileName, result)
     
     result = Path.ChangeExtension(goodFileName, "")
-    Debug.Print VBAString.Format("ChangeExtension({0}, '') returns '{1}'", _
+    Debug.Print VBString.Format("ChangeExtension({0}, '') returns '{1}'", _
                                 goodFileName, result)
     
     result = Path.ChangeExtension(badFileName, ".old")
-    Debug.Print VBAString.Format("ChangeExtension({0}, '.old') returns '{1}'", _
+    Debug.Print VBString.Format("ChangeExtension({0}, '.old') returns '{1}'", _
                                 badFileName, result)
 End Sub
 
@@ -40,3 +40,5 @@ End Sub
 ' ChangeExtension(C:\mydir\myfile.com.extension, '.old') returns 'C:\mydir\myfile.com.old'
 ' ChangeExtension(C:\mydir\myfile.com.extension, '') returns 'C:\mydir\myfile.com.'
 ' ChangeExtension(C:\mydir\, '.old') returns 'C:\mydir\.old'
+
+

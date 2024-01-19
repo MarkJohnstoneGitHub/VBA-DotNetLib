@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringSplitExample2"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -22,11 +22,11 @@ Public Sub StringSplitExample2()
     Set s = Strings.CreateUnescape("Today\tI'm going to school")
     
     Dim subs() As String
-    subs = s.Split(" " & VBAString.Unescape("\t"))
+    subs = s.Split(" " & VBString.Unescape("\t"))
     
     Dim varSub As Variant
     For Each varSub In subs
-        Debug.Print VBAString.Format("Substring: {0}", varSub)
+        Debug.Print VBString.Format("Substring: {0}", varSub)
     Next
 End Sub
 

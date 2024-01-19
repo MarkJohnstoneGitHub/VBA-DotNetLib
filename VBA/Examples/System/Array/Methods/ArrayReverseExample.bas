@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArrayReverseExample"
-'@Folder("Examples.System.Array.Methods")
+'@Folder "Examples.System.Array.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -19,7 +19,7 @@ Option Explicit
 Public Sub ArrayReverse()
     ' Creates and initializes a new Array.
     Dim myArray As DotNetLib.Array
-    Set myArray = Arrays.CreateInstance(VBAString.GetType(), 9)
+    Set myArray = Arrays.CreateInstance(VBString.GetType(), 9)
     Call myArray.SetValue("The", 0)
     Call myArray.SetValue("quick", 1)
     Call myArray.SetValue("brown", 2)
@@ -47,7 +47,7 @@ Private Sub PrintIndexAndValues(ByVal myArray As DotNetLib.Array)
     formatString = Regex.Unescape("\t[{0}]:\t{1}")
     Dim i As Long
     For i = myArray.GetLowerBound(0) To myArray.GetUpperBound(0)
-        Debug.Print VBAString.Format(formatString, i, myArray.GetValue(i))
+        Debug.Print VBString.Format(formatString, i, myArray.GetValue(i))
     Next i
 End Sub
 

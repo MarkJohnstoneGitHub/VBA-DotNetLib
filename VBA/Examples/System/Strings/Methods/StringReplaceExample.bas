@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringReplaceExample"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -20,13 +20,13 @@ Public Sub StringReplaceExample()
     Dim errString As DotNetLib.String
     Set errString = Strings.Create("This docment uses 3 other docments to docment the docmentation")
     
-    Debug.Print VBAString.Format("The original string is:{0}'{1}'{0}", Environment.NewLine, errString)
+    Debug.Print VBString.Format("The original string is:{0}'{1}'{0}", Environment.NewLine, errString)
     
     ' Correct the spelling of "document".
     Dim correctString As DotNetLib.String
     Set correctString = errString.Replace2("docment", "document")
     
-    Debug.Print VBAString.Format("After correcting the string, the result is:{0}'{1}'", _
+    Debug.Print VBString.Format("After correcting the string, the result is:{0}'{1}'", _
         Environment.NewLine, correctString)
 End Sub
 
@@ -38,3 +38,5 @@ End Sub
 ' After correcting the string, the result is:
 ' 'This document uses 3 other documents to document the documentation'
 '
+
+

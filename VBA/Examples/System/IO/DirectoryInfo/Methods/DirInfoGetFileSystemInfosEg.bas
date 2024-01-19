@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirInfoGetFileSystemInfosEg"
-'@Folder("Examples.System.IO.DirectoryInfo.Methods")
+'@Folder "Examples.System.IO.DirectoryInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -45,8 +45,8 @@ Public Sub DirectoryInfoGetFileSystemInfosExample()
     Call ListDirectoriesAndFiles(infos)
 
     ' Display the results to the console.
-    Debug.Print VBAString.Format("Directories: {0}", numDirectories)
-    Debug.Print VBAString.Format("Files: {0}", numFiles)
+    Debug.Print VBString.Format("Directories: {0}", numDirectories)
+    Debug.Print VBString.Format("Files: {0}", numFiles)
 Exit Sub
 ErrorHandler:
     Debug.Print Err.Description

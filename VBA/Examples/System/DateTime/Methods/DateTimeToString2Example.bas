@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeToString2Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 13, 2023
-'@LastModified August 13, 2023
+'@LastModified January 7, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=netframework-4.8.1#system-datetime-tostring(system-string)
 
@@ -20,24 +20,26 @@ Public Sub DateTimeToString2()
     
     ' Create an array of standard format strings.
     Dim standardFmts() As String
-    standardFmts = StringArray.ToArray("d", "D", "f", "F", "g", "G", "m", "o", _
+    standardFmts = StringArray.CreateInitialize1D("d", "D", "f", "F", "g", "G", "m", "o", _
                                     "R", "s", "t", "T", "u", "U", "y")
                                     
     ' Output date and time using each custom format string.
     Dim standardFmt As Variant
     For Each standardFmt In standardFmts
-        Debug.Print standardFmt; ": "; dateValue.ToString2(standardFmt)
+        Debug.Print VBString.Format("{0}: {1}", standardFmt, _
+                           dateValue.ToString2(standardFmt))
     Next
     Debug.Print
     
     ' Create an array of some custom format strings.
     Dim customFmts() As String
-    customFmts = StringArray.ToArray("h:mm:ss.ff t", "d MMM yyyy", "HH:mm:ss.f", _
+    customFmts = StringArray.CreateInitialize1D("h:mm:ss.ff t", "d MMM yyyy", "HH:mm:ss.f", _
                                     "dd MMM HH:mm:ss", "\Mon\t\h\: M", "HH:mm:ss.ffffzzz")
     ' Output date and time using each custom format string.
     Dim customFmt As Variant
     For Each customFmt In customFmts
-        Debug.Print customFmt; ": "; dateValue.ToString2(customFmt)
+        Debug.Print VBString.Format("'{0}': {1}", customFmt, _
+                           dateValue.ToString2(customFmt))
     Next
     Debug.Print
 End Sub

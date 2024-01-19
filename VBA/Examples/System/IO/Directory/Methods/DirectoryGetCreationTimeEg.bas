@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirectoryGetCreationTimeEg"
-'@Folder("Examples.System.IO.Directory.Methods")
+'@Folder "Examples.System.IO.Directory.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -29,10 +29,10 @@ Public Sub DirectoryGetCreationTime()
     ElseIf (DateTime.Now.Subtract2(dt).TotalDays <= 1) Then
         Debug.Print "This directory is less than a day old."
     Else
-        Debug.Print VBAString.Format("This directory was created on {0}", dt)
+        Debug.Print VBString.Format("This directory was created on {0}", dt)
     End If
 Exit Sub
 
 ErrorHandler:
-    Debug.Print VBAString.Format("The process failed: {0}", Err.Description)
+    Debug.Print VBString.Format("The process failed: {0}", Err.Description)
 End Sub

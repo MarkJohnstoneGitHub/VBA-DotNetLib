@@ -1,5 +1,5 @@
 Attribute VB_Name = "QueueEnqueueExample"
-'@Folder("Examples.System.Collections.Queue.Methods")
+'@Folder "Examples.System.Collections.Queue.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -24,21 +24,21 @@ Public Sub QueueEnqueue()
     PrintValues myQ
     
     ' Removes an element from the Queue.
-    Debug.Print VBAString.Format(Regex.Unescape("(Dequeue)\t{0}"), myQ.Dequeue())
+    Debug.Print VBString.Format(Regex.Unescape("(Dequeue)\t{0}"), myQ.Dequeue())
     
     ' Displays the Queue.
     Debug.Print "Queue values:";
     PrintValues myQ
     
     ' Removes another element from the Queue.
-    Debug.Print VBAString.Format(Regex.Unescape("(Dequeue)\t{0}"), myQ.Dequeue())
+    Debug.Print VBString.Format(Regex.Unescape("(Dequeue)\t{0}"), myQ.Dequeue())
     
     ' Displays the Queue.
     Debug.Print "Queue values:";
     PrintValues myQ
     
     ' Views the first element in the Queue but does not remove it.
-    Debug.Print VBAString.Format(Regex.Unescape("(Peek)   \t{0}"), myQ.Peek())
+    Debug.Print VBString.Format(Regex.Unescape("(Peek)   \t{0}"), myQ.Peek())
 
     ' Displays the Queue.
     Debug.Print "Queue values:";
@@ -48,7 +48,7 @@ End Sub
 Private Sub PrintValues(ByVal myQ As DotNetLib.Queue)
     Dim myObj As Variant
     For Each myObj In myQ
-        Debug.Print VBAString.Format("    {0}", myObj);
+        Debug.Print VBString.Format("    {0}", myObj);
     Next
     Debug.Print
 End Sub

@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArrayListSetRangeExample"
-'@Folder("Examples.System.Collections.ArrayList.Methods")
+'@Folder "Examples.System.Collections.ArrayList.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -55,7 +55,7 @@ End Sub
 Private Sub PrintValues(ByVal myList As mscorlib.IEnumerable, ByVal mySeparator As String)
     Dim obj As Variant
     For Each obj In myList
-        Debug.Print VBAString.Format("{0}{1}", mySeparator, obj);
+        Debug.Print VBString.Format("{0}{1}", mySeparator, obj);
     Next
     Debug.Print
 End Sub

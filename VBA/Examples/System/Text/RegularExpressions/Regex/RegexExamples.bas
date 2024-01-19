@@ -1,5 +1,5 @@
 Attribute VB_Name = "RegexExamples"
-'@Folder("Examples.System.Text.RegularExpressions.Regex")
+'@Folder "Examples.System.Text.RegularExpressions.Regex"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -33,7 +33,7 @@ Public Sub RegexExample1()
     Set pvtMatches = rx.Matches(text)
 
     ' Report the number of matches found.
-    Debug.Print VBAString.Format(Regex.Unescape("{0} matches found in:\n   {1}"), pvtMatches.Count, text)
+    Debug.Print VBString.Format(Regex.Unescape("{0} matches found in:\n   {1}"), pvtMatches.Count, text)
 
     ' Report on each match.
     Dim varMatch As Variant
@@ -43,10 +43,10 @@ Public Sub RegexExample1()
         
         Dim Groups As DotNetLib.GroupCollection
         Set Groups = pvtMatch.Groups
-        Debug.Print VBAString.Format("'{0}' repeated at positions {1} and {2}", _
+        Debug.Print VBString.Format("'{0}' repeated at positions {1} and {2}", _
                                     Groups.Item_2("word").value, _
-                                    Groups(0).index, _
-                                    Groups(1).index)
+                                    Groups(0).Index, _
+                                    Groups(1).Index)
     Next
 End Sub
 

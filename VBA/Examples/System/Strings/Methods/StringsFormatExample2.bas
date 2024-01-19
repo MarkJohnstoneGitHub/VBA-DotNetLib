@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringsFormatExample2"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -17,7 +17,7 @@ Public Sub StringsFormatEg2()
     Set birthDate = DateTime.CreateFromDate(1993, 7, 28)
     Dim dates() As DotNetLib.DateTime
     
-    ObjectArray.ToArray dates, _
+    ObjectArray.CreateInitialize1D dates, _
                     DateTime.CreateFromDate(1993, 8, 16), _
                     DateTime.CreateFromDate(1994, 7, 28), _
                     DateTime.CreateFromDate(2000, 10, 16), _
@@ -39,10 +39,10 @@ Public Sub StringsFormatEg2()
         ' See if adding the number of years exceeds dateValue.
         Dim Output As String
         If (DateTime.LessThanOrEqual(birthDate.AddYears(pvtYears), dateValue)) Then
-            Output = VBAString.Format("You are now {0} years old.", pvtYears)
+            Output = VBString.Format("You are now {0} years old.", pvtYears)
             Debug.Print Output
         Else
-            Output = VBAString.Format("You are now {0} years old.", pvtYears - 1)
+            Output = VBString.Format("You are now {0} years old.", pvtYears - 1)
             Debug.Print Output
         End If
     Next

@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringIndexOfExample3"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -42,7 +42,7 @@ Public Sub StringIndexOfExample3()
     Dim loc As Long
     loc = 0
     Dim scValues() As mscorlib.StringComparison
-    Call ArrayEx.CreateInitialize1D(scValues, _
+    Call VBArray.CreateInitialize1D(scValues, _
                 StringComparison.StringComparison_CurrentCulture, _
                 StringComparison.StringComparison_CurrentCultureIgnoreCase, _
                 StringComparison.StringComparison_InvariantCulture, _
@@ -57,12 +57,12 @@ Public Sub StringIndexOfExample3()
     ' try this code example with the "sv-SE" (Swedish-Sweden) culture.
     
     Set CultureInfo.CurrentCulture = CultureInfo.CreateFromName("en-US")
-    Debug.Print VBAString.Format("The current culture is ""{0}"" - {1}.", _
+    Debug.Print VBString.Format("The current culture is ""{0}"" - {1}.", _
                         CultureInfo.CurrentCulture.Name, _
                         CultureInfo.CurrentCulture.DisplayName)
 
     ' Display the string to search for and the string to search.
-    Debug.Print VBAString.Format("Search for the string ""{0}"" in the string ""{1}""", _
+    Debug.Print VBString.Format("Search for the string ""{0}"" in the string ""{1}""", _
                 CapitalAWithRing, cat)
     Debug.Print
 
@@ -76,8 +76,8 @@ Public Sub StringIndexOfExample3()
     Debug.Print "Part 1: Start index and count are specified."
     Dim sc As Variant
     For Each sc In scValues
-        loc = cat.IndexOf6(CapitalAWithRing, 0, cat.length, sc)
-        Debug.Print VBAString.Format(resultFmt, StringComparisonHelper.ToString(sc), loc)
+        loc = cat.IndexOf6(CapitalAWithRing, 0, cat.Length, sc)
+        Debug.Print VBString.Format(resultFmt, StringComparisonHelper.ToString(sc), loc)
     Next
     
     ' Search using different values of StringComparison. Specify the
@@ -85,14 +85,14 @@ Public Sub StringIndexOfExample3()
     Debug.Print Regex.Unescape("\nPart 2: Start index is specified.")
     For Each sc In scValues
         loc = cat.IndexOf4(CapitalAWithRing, 0, sc)
-        Debug.Print VBAString.Format(resultFmt, StringComparisonHelper.ToString(sc), loc)
+        Debug.Print VBString.Format(resultFmt, StringComparisonHelper.ToString(sc), loc)
     Next
     
     ' Search using different values of StringComparison.
     Debug.Print Regex.Unescape("\nPart 3: Neither start index nor count is specified.")
     For Each sc In scValues
         loc = cat.IndexOf2(CapitalAWithRing, sc)
-        Debug.Print VBAString.Format(resultFmt, StringComparisonHelper.ToString(sc), loc)
+        Debug.Print VBString.Format(resultFmt, StringComparisonHelper.ToString(sc), loc)
     Next
 End Sub
 
@@ -131,3 +131,5 @@ End Sub
 'Comparison: OrdinalIgnoreCase            Location:  -1
 '
 '*/
+
+

@@ -1,19 +1,23 @@
 Attribute VB_Name = "DateTimeTryParse2Example"
-'@Folder("Examples.System.DateTime.Methods")
+'@Folder "Examples.System.DateTime.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 25, 2023
-'@LastModified August 29, 2023
+'@LastModified January 7, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tryparse?view=netframework-4.8.1#system-datetime-tryparse(system-string-system-iformatprovider-system-globalization-datetimestyles-system-datetime@)
 
 Option Explicit
 
+''
+' The following example illustrates the
+' DateTime.TryParse(String, IFormatProvider, DateTimeStyles, DateTime) method.
+''
 Public Sub DateTimeTryParse2()
     Dim dateString As String
     Dim culture As DotNetLib.CultureInfo
-    Dim styles As DateTimeStyles
+    Dim styles As mscorlib.DateTimeStyles
     Dim dateResult As DotNetLib.DateTime
     
     ' Parse a date and time with no styles.
@@ -21,15 +25,18 @@ Public Sub DateTimeTryParse2()
     Set culture = CultureInfo.CreateSpecificCulture("en-US")
     styles = DateTimeStyles.DateTimeStyles_None
     If (DateTime.TryParse2(dateString, culture, styles, dateResult)) Then
-        Debug.Print dateString; " converted to "; dateResult.ToString(); " "; DateTimeKindHelper.ToString(dateResult.Kind)
+        Debug.Print VBString.Format("{0} converted to {1} {2}.", _
+                           dateString, dateResult, DateTimeKindHelper.ToString(dateResult.Kind))
     Else
-        Debug.Print "Unable to convert "; dateString; " to a date and time."
+        Debug.Print VBString.Format("Unable to convert {0} to a date and time.", _
+                           dateString)
     End If
 
     ' Parse the same date and time with the AssumeLocal style.
     styles = DateTimeStyles.DateTimeStyles_AssumeLocal
     If (DateTime.TryParse2(dateString, culture, styles, dateResult)) Then
-        Debug.Print dateString; " converted to "; dateResult.ToString(); " "; DateTimeKindHelper.ToString(dateResult.Kind)
+        Debug.Print VBString.Format("{0} converted to {1} {2}.", _
+                           dateString, dateResult, DateTimeKindHelper.ToString(dateResult.Kind))
     Else
         Debug.Print "Unable to convert "; dateString; " to a date and time."
     End If
@@ -40,17 +47,21 @@ Public Sub DateTimeTryParse2()
     dateString = "2009/03/01T10:00:00-5:00"
     styles = DateTimeStyles.DateTimeStyles_AssumeLocal
     If (DateTime.TryParse2(dateString, culture, styles, dateResult)) Then
-        Debug.Print dateString; " converted to "; dateResult.ToString(); " "; DateTimeKindHelper.ToString(dateResult.Kind)
+        Debug.Print VBString.Format("{0} converted to {1} {2}.", _
+                           dateString, dateResult, DateTimeKindHelper.ToString(dateResult.Kind))
     Else
-        Debug.Print "Unable to convert "; dateString; " to a date and time."
+        Debug.Print VBString.Format("Unable to convert {0} to a date and time.", _
+                           dateString)
     End If
 
     ' Attempt to convert a string in improper ISO 8601 format.
     dateString = "03/01/2009T10:00:00-5:00"
     If (DateTime.TryParse2(dateString, culture, styles, dateResult)) Then
-        Debug.Print dateString; " converted to "; dateResult.ToString(); " "; DateTimeKindHelper.ToString(dateResult.Kind)
+        Debug.Print VBString.Format("{0} converted to {1} {2}.", _
+                           dateString, dateResult, DateTimeKindHelper.ToString(dateResult.Kind))
     Else
-        Debug.Print "Unable to convert "; dateString; " to a date and time."
+        Debug.Print VBString.Format("Unable to convert {0} to a date and time.", _
+                           dateString)
     End If
 
     ' Assume a date and time string formatted for the fr-FR culture is the local
@@ -59,9 +70,11 @@ Public Sub DateTimeTryParse2()
     Set culture = CultureInfo.CreateSpecificCulture("fr-FR")
     styles = DateTimeStyles.DateTimeStyles_AdjustToUniversal Or DateTimeStyles.DateTimeStyles_AssumeLocal
     If (DateTime.TryParse2(dateString, culture, styles, dateResult)) Then
-        Debug.Print dateString; " converted to "; dateResult.ToString(); " "; DateTimeKindHelper.ToString(dateResult.Kind)
+        Debug.Print VBString.Format("{0} converted to {1} {2}.", _
+                           dateString, dateResult, DateTimeKindHelper.ToString(dateResult.Kind))
     Else
-        Debug.Print "Unable to convert "; dateString; " to a date and time."
+        Debug.Print VBString.Format("Unable to convert {0} to a date and time.", _
+                           dateString)
     End If
 End Sub
 

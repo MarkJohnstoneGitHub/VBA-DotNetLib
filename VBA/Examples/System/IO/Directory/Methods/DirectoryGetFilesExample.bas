@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirectoryGetFilesExample"
-'@Folder("Examples.System.IO.Directory.Methods")
+'@Folder "Examples.System.IO.Directory.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -21,12 +21,12 @@ Public Sub DirectoryGetFilesEg()
     ' Only get files that begin with the letter "c".
     Dim dirs() As String
     dirs = Directory.GetFiles("c:\VBA\Export", "c*")
-    Debug.Print VBAString.Format("The number of files starting with c is {0}.", UBound(dirs) + 1)
+    Debug.Print VBString.Format("The number of files starting with c is {0}.", UBound(dirs) + 1)
     Dim dir As Variant
     For Each dir In dirs
         Debug.Print dir
     Next
 Exit Sub
 ErrorHandler:
-    Debug.Print VBAString.Format("The process failed: {0}", Err.Description)
+    Debug.Print VBString.Format("The process failed: {0}", Err.Description)
 End Sub

@@ -4,26 +4,28 @@ Attribute VB_Name = "TimeZoneInfoIsAmbiguousTimeEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 27, 2023
-'@LastModified July 31, 2023
+'@LastModified January 19, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.isambiguoustime?view=netframework-4.8.1
 
 Option Explicit
 
+''
 ' In the Pacific Time zone, daylight saving time ends at 2:00 A.M. on November 4, 2007.
 ' The following example passes the time at one-minute intervals from 12:59 A.M. on
 ' November 4, 2007, to 2:01 A.M. on November 4, 2007, to the IsAmbiguousTime(DateTime)
 ' method of a TimeZoneInfo object that represents the Pacific Time zone.
 ' The console output indicates that all times from 1:00 A.M. on November 4, 2007, to 1:59 A.M.
 ' on November 4, 2007, are ambiguous.
+''
 Public Sub TimeZoneInfoIsAmbiguousTime()
     ' Specify DateTimeKind in Date constructor
-    Dim baseTime As IDateTime
+    Dim baseTime As DotNetLib.DateTime
     Set baseTime = DateTime.CreateFromDateTimeKind(2007, 11, 4, 0, 59, 0, DateTimeKind.DateTimeKind_Unspecified)
-    Dim newTime  As IDateTime
+    Dim newTime  As DotNetLib.DateTime
     
     ' Get Pacific Standard Time zone
-    Dim pstZone As ITimeZoneInfo
+    Dim pstZone As DotNetLib.TimeZoneInfo
     Set pstZone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")
 
     ' List possible ambiguous times for 63-minute interval, from 12:59 AM to 2:01 AM
@@ -31,8 +33,7 @@ Public Sub TimeZoneInfoIsAmbiguousTime()
     For ctr = 0 To 62
         ' Because of assignment, newTime.Kind is also DateTimeKind.Unspecified
         Set newTime = baseTime.AddMinutes(ctr)
-        Debug.Print newTime.ToString() & " is ambiguous: " & _
-        pstZone.IsAmbiguousTime(newTime)
+        Debug.Print VBString.Format("{0} is ambiguous: {1}", newTime, pstZone.IsAmbiguousTime(newTime))
     Next
 End Sub
 

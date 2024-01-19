@@ -1,5 +1,5 @@
 Attribute VB_Name = "RegionInfoCurrencySymbolExample"
-'@Folder("Examples.System.Globalization.RegionInfo.Properties")
+'@Folder "Examples.System.Globalization.RegionInfo.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -16,15 +16,15 @@ Public Sub RegionInfoCurrencySymbolExample()
     ' Displays the property values of the RegionInfo for "US".
     Dim myRI1 As DotNetLib.RegionInfo
     Set myRI1 = RegionInfo.Create2("US")
-    Debug.Print VBAString.Format("   Name:                         {0}", myRI1.Name)
-    Debug.Print VBAString.Format("   DisplayName:                  {0}", myRI1.DisplayName)
-    Debug.Print VBAString.Format("   EnglishName:                  {0}", myRI1.EnglishName)
-    Debug.Print VBAString.Format("   IsMetric:                     {0}", myRI1.IsMetric)
-    Debug.Print VBAString.Format("   ThreeLetterISORegionName:     {0}", myRI1.ThreeLetterISORegionName)
-    Debug.Print VBAString.Format("   ThreeLetterWindowsRegionName: {0}", myRI1.ThreeLetterWindowsRegionName)
-    Debug.Print VBAString.Format("   TwoLetterISORegionName:       {0}", myRI1.TwoLetterISORegionName)
-    Debug.Print VBAString.Format("   CurrencySymbol:               {0}", myRI1.CurrencySymbol)
-    Debug.Print VBAString.Format("   ISOCurrencySymbol:            {0}", myRI1.ISOCurrencySymbol)
+    Debug.Print VBString.Format("   Name:                         {0}", myRI1.Name)
+    Debug.Print VBString.Format("   DisplayName:                  {0}", myRI1.DisplayName)
+    Debug.Print VBString.Format("   EnglishName:                  {0}", myRI1.EnglishName)
+    Debug.Print VBString.Format("   IsMetric:                     {0}", myRI1.IsMetric)
+    Debug.Print VBString.Format("   ThreeLetterISORegionName:     {0}", myRI1.ThreeLetterISORegionName)
+    Debug.Print VBString.Format("   ThreeLetterWindowsRegionName: {0}", myRI1.ThreeLetterWindowsRegionName)
+    Debug.Print VBString.Format("   TwoLetterISORegionName:       {0}", myRI1.TwoLetterISORegionName)
+    Debug.Print VBString.Format("   CurrencySymbol:               {0}", myRI1.CurrencySymbol)
+    Debug.Print VBString.Format("   ISOCurrencySymbol:            {0}", myRI1.ISOCurrencySymbol)
 End Sub
 
 '/*

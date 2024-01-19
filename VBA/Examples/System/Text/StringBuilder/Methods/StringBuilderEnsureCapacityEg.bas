@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringBuilderEnsureCapacityEg"
-'@Folder("Examples.System.Text.StringBuilder.Methods")
+'@Folder "Examples.System.Text.StringBuilder.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -22,35 +22,35 @@ Public Sub StringBuilderEnsureCapacity()
     Set sb2 = StringBuilder.Create("abc", 16)
     
     Debug.Print
-    Debug.Print VBAString.Format("a1) sb1.Length = {0}, sb1.Capacity = {1}", sb1.length, sb1.Capacity)
-    Debug.Print VBAString.Format("a2) sb2.Length = {0}, sb2.Capacity = {1}", sb2.length, sb2.Capacity)
-    Debug.Print VBAString.Format("a3) sb1.ToString() = ""{0}"", sb2.ToString() = ""{1}""", _
+    Debug.Print VBString.Format("a1) sb1.Length = {0}, sb1.Capacity = {1}", sb1.Length, sb1.Capacity)
+    Debug.Print VBString.Format("a2) sb2.Length = {0}, sb2.Capacity = {1}", sb2.Length, sb2.Capacity)
+    Debug.Print VBString.Format("a3) sb1.ToString() = ""{0}"", sb2.ToString() = ""{1}""", _
                                 sb1.ToString(), sb2.ToString())
-    Debug.Print VBAString.Format("a4) sb1 equals sb2: {0}", sb1.Equals(sb2))
+    Debug.Print VBString.Format("a4) sb1 equals sb2: {0}", sb1.Equals(sb2))
     
     Debug.Print
     Debug.Print "Ensure sb1 has a capacity of at least 50 characters."
     Call sb1.EnsureCapacity(50)
     
     Debug.Print
-    Debug.Print VBAString.Format("b1) sb1.Length = {0}, sb1.Capacity = {1}", sb1.length, sb1.Capacity)
-    Debug.Print VBAString.Format("b2) sb2.Length = {0}, sb2.Capacity = {1}", sb2.length, sb2.Capacity)
-    Debug.Print VBAString.Format("b3) sb1.ToString() = ""{0}"", sb2.ToString() = ""{1}""", _
+    Debug.Print VBString.Format("b1) sb1.Length = {0}, sb1.Capacity = {1}", sb1.Length, sb1.Capacity)
+    Debug.Print VBString.Format("b2) sb2.Length = {0}, sb2.Capacity = {1}", sb2.Length, sb2.Capacity)
+    Debug.Print VBString.Format("b3) sb1.ToString() = ""{0}"", sb2.ToString() = ""{1}""", _
                                 sb1.ToString(), sb2.ToString())
-    Debug.Print VBAString.Format("b4) sb1 equals sb2: {0}", sb1.Equals(sb2))
+    Debug.Print VBString.Format("b4) sb1 equals sb2: {0}", sb1.Equals(sb2))
     
     Debug.Print
     Debug.Print "Set the length of sb1 to zero."
     Debug.Print "Set the capacity of sb2 to 51 characters."
-    sb1.length = 0
+    sb1.Length = 0
     sb2.Capacity = 51
     
     Debug.Print
-    Debug.Print VBAString.Format("c1) sb1.Length = {0}, sb1.Capacity = {1}", sb1.length, sb1.Capacity)
-    Debug.Print VBAString.Format("c2) sb2.Length = {0}, sb2.Capacity = {1}", sb2.length, sb2.Capacity)
-    Debug.Print VBAString.Format("c3) sb1.ToString() = ""{0}"", sb2.ToString() = ""{1}""", _
+    Debug.Print VBString.Format("c1) sb1.Length = {0}, sb1.Capacity = {1}", sb1.Length, sb1.Capacity)
+    Debug.Print VBString.Format("c2) sb2.Length = {0}, sb2.Capacity = {1}", sb2.Length, sb2.Capacity)
+    Debug.Print VBString.Format("c3) sb1.ToString() = ""{0}"", sb2.ToString() = ""{1}""", _
                                 sb1.ToString(), sb2.ToString())
-    Debug.Print VBAString.Format("c4) sb1 equals sb2: {0}", sb1.Equals(sb2))
+    Debug.Print VBString.Format("c4) sb1 equals sb2: {0}", sb1.Equals(sb2))
 End Sub
 
 '/*

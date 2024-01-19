@@ -1,5 +1,5 @@
 Attribute VB_Name = "SortedFileListGroupedByDate"
-'@Folder("Examples.System.IO.DirectoryInfo")
+'@Folder "Examples.System.IO.DirectoryInfo"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -40,7 +40,7 @@ Public Sub SortedFileListGroupedByDay()
         Dim fileInfos() As DotNetLib.FileSystemInfo
         fileInfos = GetFileSytemInfos(inputPath, inputSearchPattern, inputSearchOption)
     Else
-        Err.Raise DirectoryNotFoundException, Description:=VBAString.Format("{0} is not a valid file or directory.", inputPath)
+        Err.Raise DirectoryNotFoundException, Description:=VBString.Format("{0} is not a valid file or directory.", inputPath)
     End If
     
     Dim sortedFileList As DotNetLib.SortedList
@@ -96,13 +96,13 @@ Private Sub DisplayFiles(ByVal pList As DotNetLib.SortedList)
         'day list
         Dim daySortedFileList As DotNetLib.SortedList
         Set daySortedFileList = pList.GetByIndex(i)
-        Debug.Print VBAString.Format("Files last modified on {0:d}", pList.GetKey(i))
+        Debug.Print VBString.Format("Files last modified on {0:d}", pList.GetKey(i))
         
         Dim j As Long
         For j = 0 To daySortedFileList.Count - 1
-            Dim pvtFileInfo As DotNetLib.FileSystemInfo
-            Set pvtFileInfo = daySortedFileList.GetByIndex(j)
-            Debug.Print VBAString.Format(pvtFormat, pvtFileInfo.Name, pvtFileInfo.lastWriteTime)
+            Dim pvtfileInfo As DotNetLib.FileSystemInfo
+            Set pvtfileInfo = daySortedFileList.GetByIndex(j)
+            Debug.Print VBString.Format(pvtFormat, pvtfileInfo.Name, pvtfileInfo.lastWriteTime)
         Next j
         Debug.Print
     Next i

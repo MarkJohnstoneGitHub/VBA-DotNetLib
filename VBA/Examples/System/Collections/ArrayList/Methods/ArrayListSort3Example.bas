@@ -1,5 +1,5 @@
 Attribute VB_Name = "ArrayListSort3Example"
-'@Folder("Examples.System.Collections.ArrayList.Methods")
+'@Folder "Examples.System.Collections.ArrayList.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -54,7 +54,7 @@ Public Sub PrintIndexAndValues(ByVal myList As mscorlib.IEnumerable)
     Dim i As Long
     Dim obj As Variant
     For Each obj In myList
-        Debug.Print VBAString.Format(formatString, i, obj)
+        Debug.Print VBString.Format(formatString, i, obj)
         i = i + 1
     Next
     Debug.Print

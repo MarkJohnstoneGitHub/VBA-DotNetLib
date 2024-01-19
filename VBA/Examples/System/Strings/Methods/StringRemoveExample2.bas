@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringRemoveExample2"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -20,7 +20,7 @@ Public Sub StringRemoveExample2()
     Dim pvtName As DotNetLib.String
     Set pvtName = Strings.Create("Michelle Violet Banks")
     
-    Debug.Print VBAString.Format("The entire name is '{0}'", pvtName)
+    Debug.Print VBString.Format("The entire name is '{0}'", pvtName)
     
     ' Remove the middle name, identified by finding the spaces in the name.
     Dim founds1 As Long
@@ -31,7 +31,7 @@ Public Sub StringRemoveExample2()
     If (founds1 <> foundS2 And founds1 >= 0) Then
         Set pvtName = pvtName.Remove2(founds1 + 1, foundS2 - founds1)
 
-        Debug.Print VBAString.Format("After removing the middle name, we are left with '{0}'", pvtName)
+        Debug.Print VBString.Format("After removing the middle name, we are left with '{0}'", pvtName)
     End If
 End Sub
 

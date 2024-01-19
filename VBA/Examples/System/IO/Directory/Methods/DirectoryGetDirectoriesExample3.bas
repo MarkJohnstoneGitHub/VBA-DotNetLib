@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirectoryGetDirectoriesExample3"
-'@Folder("Examples.System.IO.Directory.Methods")
+'@Folder "Examples.System.IO.Directory.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -21,12 +21,12 @@ Public Sub DirectoryGetDirectoriesExample3()
 
     Dim dirs() As String
     dirs = Directory.GetDirectories("c:\", "p*", SearchOption.SearchOption_TopDirectoryOnly)
-    Debug.Print VBAString.Format("The number of directories starting with p is {0}.", UBound(dirs) + 1)
+    Debug.Print VBString.Format("The number of directories starting with p is {0}.", UBound(dirs) + 1)
     Dim dir As Variant
     For Each dir In dirs
         Debug.Print dir
     Next
 Exit Sub
 ErrorHandler:
-    Debug.Print VBAString.Format("The process failed: {0}", Err.Description)
+    Debug.Print VBString.Format("The process failed: {0}", Err.Description)
 End Sub

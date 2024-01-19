@@ -36,4 +36,3 @@ Public Sub TestCultureInfo2()
         End If
     Next
 End Sub
-

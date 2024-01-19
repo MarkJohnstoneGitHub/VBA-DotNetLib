@@ -7,7 +7,6 @@ using DotNetLib.Extensions;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using DotNetLib.System.Globalization;
-using System.Reflection;
 using System.Runtime.CompilerServices;
 
 namespace DotNetLib.System
@@ -98,7 +97,7 @@ namespace DotNetLib.System
 
         public bool Contains(String value, StringComparison comparisonType = StringComparison.Ordinal)
         {
-            return _string.IndexOf(value.WrappedString, comparisonType) >= 0;
+            return _string.IndexOf(value.WrappedString, comparisonType) >= 0; //_string.Contains(value.WrappedString, comparisonType);  //_string.IndexOf(value.WrappedString, comparisonType) >= 0;
         }
 
         public bool Contains2(string value, StringComparison comparisonType = StringComparison.Ordinal)

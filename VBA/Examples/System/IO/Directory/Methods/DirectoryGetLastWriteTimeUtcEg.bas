@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirectoryGetLastWriteTimeUtcEg"
-'@Folder("Examples.System.IO.Directory.Methods")
+'@Folder "Examples.System.IO.Directory.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -34,20 +34,20 @@ Public Sub DirectoryGetLastWriteTimeUtc()
     Call Directory.SetLastAccessTimeUtc(n, dtime1)
 
     ' Print to console the results.
-    Debug.Print VBAString.Format("Creation Date: {0}", Directory.GetCreationTime(n))
-    Debug.Print VBAString.Format("UTC creation Date: {0}", Directory.GetCreationTimeUtc(n))
-    Debug.Print VBAString.Format("Last write time: {0}", Directory.GetLastWriteTime(n))
-    Debug.Print VBAString.Format("UTC last write time: {0}", Directory.GetLastWriteTimeUtc(n))
-    Debug.Print VBAString.Format("Last access time: {0}", Directory.GetLastAccessTime(n))
-    Debug.Print VBAString.Format("UTC last access time: {0}", Directory.GetLastAccessTimeUtc(n))
+    Debug.Print VBString.Format("Creation Date: {0}", Directory.GetCreationTime(n))
+    Debug.Print VBString.Format("UTC creation Date: {0}", Directory.GetCreationTimeUtc(n))
+    Debug.Print VBString.Format("Last write time: {0}", Directory.GetLastWriteTime(n))
+    Debug.Print VBString.Format("UTC last write time: {0}", Directory.GetLastWriteTimeUtc(n))
+    Debug.Print VBString.Format("Last access time: {0}", Directory.GetLastAccessTime(n))
+    Debug.Print VBString.Format("UTC last access time: {0}", Directory.GetLastAccessTimeUtc(n))
 
     ' Set the last write time to a different value.
     Call Directory.SetLastWriteTimeUtc(n, dtime2)
-    Debug.Print VBAString.Format("Changed last write time: {0}", Directory.GetLastWriteTimeUtc(n))
+    Debug.Print VBString.Format("Changed last write time: {0}", Directory.GetLastWriteTimeUtc(n))
 
 Exit Sub
 ErrorHandler:
-    Debug.Print VBAString.Format("The process failed: {0}", Err.Description)
+    Debug.Print VBString.Format("The process failed: {0}", Err.Description)
 End Sub
 
 ' Obviously, since this sample deals with dates and times, the output will vary

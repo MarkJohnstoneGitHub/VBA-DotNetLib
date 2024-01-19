@@ -5,7 +5,7 @@ Attribute VB_Name = "DateTimeDateExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 9, 2023
-'@LastModified September 3, 2023
+'@LastModified January 7, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.date?view=netframework-4.8.1#examples
 
@@ -17,14 +17,13 @@ Option Explicit
 ' the DateTime value, the time component can continue to appear in formatted output.
 '
 Public Sub DateTimeDate()
-    Dim date1 As IDateTime
+    Dim date1 As DotNetLib.DateTime
     Set date1 = DateTime.CreateFromDateTime(2008, 6, 1, 7, 47, 0)
     Debug.Print date1.ToString
     
     ' Get date-only portion of date, without its time.
-    Dim pvtDateOnly As IDateTime
+    Dim pvtDateOnly As DotNetLib.DateTime
     Set pvtDateOnly = date1.Date()
-    
     ' Display date using short date string.
     Debug.Print pvtDateOnly.ToString2("d")
     ' Display date using 24-hour clock.

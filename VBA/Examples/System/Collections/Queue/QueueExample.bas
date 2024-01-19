@@ -1,5 +1,5 @@
 Attribute VB_Name = "QueueExample"
-'@Folder("Examples.System.Collections.Queue")
+'@Folder "Examples.System.Collections.Queue"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -23,14 +23,14 @@ Public Sub QueueExample()
     
     ' Displays the properties and values of the Queue.
     Debug.Print "myQ"
-    Debug.Print VBAString.Format(Regex.Unescape("\tCount:    {0}"), myQ.Count) 'Note Unescape .Net escape characters \t i.e. tab
+    Debug.Print VBString.Format(Regex.Unescape("\tCount:    {0}"), myQ.Count) 'Note Unescape .Net escape characters \t i.e. tab
     PrintValues myQ
 End Sub
 
 Private Sub PrintValues(ByVal myCollection As mscorlib.IEnumerable)
     Dim obj As Variant
     For Each obj In myCollection
-        Debug.Print VBAString.Format("    {0}", obj);
+        Debug.Print VBString.Format("    {0}", obj);
     Next
     Debug.Print
 End Sub

@@ -1,5 +1,5 @@
 Attribute VB_Name = "DTFISetAllDateTimePatternsEg"
-'@Folder("Examples.System.Globalization.DateTimeFormatInfo.Methods")
+'@Folder "Examples.System.Globalization.DateTimeFormatInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -25,7 +25,7 @@ Public Sub DateTimeFormatInfoSetAllDateTimePatterns()
     Set enUS = CultureInfo.CreateFromName("en-US")
     
     Dim values() As String
-    values = StringArray.ToArray("December 2010", "December, 2010", _
+    values = StringArray.CreateInitialize1D("December 2010", "December, 2010", _
                             "Dec-2010", "December-2010")
     
     Debug.Print "Supported Y/y patterns for "; enUS.Name; " culture:"
@@ -52,7 +52,7 @@ Public Sub DateTimeFormatInfoSetAllDateTimePatterns()
     Debug.Print
     
     'Modify supported "Y" format.
-    enUS.DateTimeFormat.SetAllDateTimePatterns StringArray.ToArray("MMM-yyyy"), "Y"
+    enUS.DateTimeFormat.SetAllDateTimePatterns StringArray.CreateInitialize1D("MMM-yyyy"), "Y"
     Debug.Print "Supported Y/y patterns for "; enUS.Name; " culture:"
     For Each pattern In enUS.DateTimeFormat.GetAllDateTimePatterns("Y")
         Debug.Print "   " + pattern
@@ -88,4 +88,5 @@ End Sub
 '          Cannot parse December, 2010
 '          Parsed Dec-2010 as Dec-2010
 '          Cannot parse December-2010
+
 

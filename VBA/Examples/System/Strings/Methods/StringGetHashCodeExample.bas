@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringGetHashCodeExample"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -34,7 +34,7 @@ End Sub
 Private Sub DisplayHashCode(ByVal Operand As DotNetLib.String)
     Dim pvtHashCode As Long
      pvtHashCode = Operand.GetHashCode()
-    Debug.Print VBAString.Format("The hash code for ""{0}"" is: 0x{1:X8}, {1}", _
+    Debug.Print VBString.Format("The hash code for ""{0}"" is: 0x{1:X8}, {1}", _
                          Operand, pvtHashCode)
 End Sub
 
@@ -54,3 +54,5 @@ End Sub
 '      The hash code for "Abcdeh" is: 0x175C954D, 391943501
 '      The hash code for "Abcdei" is: 0x175D954D, 392009037
 '*/
+
+

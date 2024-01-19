@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringRemoveExample"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -23,9 +23,9 @@ Public Sub StringRemoveExample()
     Set s = Strings.Create("abc---def")
 
     Debug.Print "Index: 012345678"
-    Debug.Print VBAString.Format("1)     {0}", s)
-    Debug.Print VBAString.Format("2)     {0}", s.Remove(3))
-    Debug.Print VBAString.Format("3)     {0}", s.Remove2(3, 3))
+    Debug.Print VBString.Format("1)     {0}", s)
+    Debug.Print VBString.Format("2)     {0}", s.Remove(3))
+    Debug.Print VBString.Format("3)     {0}", s.Remove2(3, 3))
 End Sub
 
 '/*

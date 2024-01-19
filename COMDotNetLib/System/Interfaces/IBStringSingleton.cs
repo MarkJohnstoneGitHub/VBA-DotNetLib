@@ -46,6 +46,36 @@ namespace DotNetLib.System
         [Description("Compares substrings of two specified String objects by evaluating the numeric values of the corresponding Char objects in each substring.")]
         int CompareOrdinal(string strA, int indexA, string strB, int indexB, int length);
 
+        [Description("Concatenates the elements of a specified String array.")]
+        string Concat([In] ref string[] values);
+
+        [Description("Concatenates two specified instances of String.")]
+        string Concat2(string str0, string str1);
+
+        [Description("Concatenates three specified instances of String.")]
+        string Concat3(string str0, string str1, string str2);
+
+        [Description("Concatenates four specified instances of String.")]
+        string Concat4(string str0, string str1, string str2, string str3);
+
+        [Description("Concatenates the members of a constructed IEnumerable<T> collection of type String.")]
+        string Concat5(GCollections.IEnumerable stringValues);
+
+        [Description("Concatenates the string representations of the elements in a specified Object array.")]
+        string Concat6([In] ref object[] values);
+
+        [Description("Creates the string representation of a specified object.")]
+        string Concat7(object arg0);
+
+        [Description("Concatenates the string representations of two specified objects.")]
+        string Concat8(object arg0, object arg1);
+
+        [Description("Concatenates the string representations of three specified objects.")]
+        string Concat9(object arg0, object arg1, object arg2);
+
+        [Description("Concatenates the members of an IEnumerable<T> implementation.")]
+        string Concat10(GCollections.IEnumerable values);
+
         [Description("Returns a value indicating whether a specified substring occurs within this string, using the specified comparison rules.")]
         bool Contains(string str, string substring, GSystem.StringComparison comparisonType = GSystem.StringComparison.Ordinal);
 

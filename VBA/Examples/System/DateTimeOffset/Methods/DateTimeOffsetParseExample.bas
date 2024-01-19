@@ -4,17 +4,19 @@ Attribute VB_Name = "DateTimeOffsetParseExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 21, 2023
-'@LastModified July 31, 2023
+'@LastModified January 10, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.parse?view=netframework-4.8.1#system-datetimeoffset-parse(system-string)
 
 Option Explicit
 
-'@Description("The following example calls the Parse(String) method to parse several date and time strings.")
+''
+' The following example calls the Parse(String) method to parse several date
+' and time strings.
+''
 Public Sub DateTimeOffsetParse()
-Attribute DateTimeOffsetParse.VB_Description = "The following example calls the Parse(String) method to parse several date and time strings."
     Dim dateString As String
-    Dim offsetDate As IDateTimeOffset
+    Dim offsetDate As DotNetLib.DateTimeOffset
     
     ' String with date only
     dateString = "05/01/2008"

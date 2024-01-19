@@ -1,5 +1,5 @@
 Attribute VB_Name = "StackPeekExample"
-'@Folder("Examples.System.Collections.Stack.Methods")
+'@Folder "Examples.System.Collections.Stack.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -28,21 +28,21 @@ Public Sub StackPeek()
     Call PrintValues(myStack, Regex.Unescape("\t"))
 
     ' Removes an element from the Stack.
-    Debug.Print VBAString.Format(Regex.Unescape("(Pop)\t\t{0}"), myStack.Pop())
+    Debug.Print VBString.Format(Regex.Unescape("(Pop)\t\t{0}"), myStack.Pop())
 
     '  Displays the Stack.
     Debug.Print "Stack values:";
     Call PrintValues(myStack, Regex.Unescape("\t"))
     
     ' Removes another element from the Stack.
-    Debug.Print VBAString.Format(Regex.Unescape("(Pop)\t\t{0}"), myStack.Pop())
+    Debug.Print VBString.Format(Regex.Unescape("(Pop)\t\t{0}"), myStack.Pop())
 
     '  Displays the Stack.
     Debug.Print "Stack values:";
     Call PrintValues(myStack, Regex.Unescape("\t"))
     
     ' Views the first element in the Stack but does not remove it.
-    Debug.Print VBAString.Format(Regex.Unescape("(Peek)\t\t{0}"), myStack.Peek())
+    Debug.Print VBString.Format(Regex.Unescape("(Peek)\t\t{0}"), myStack.Peek())
 
     '  Displays the Stack.
     Debug.Print "Stack values:";
@@ -53,7 +53,7 @@ End Sub
 Private Sub PrintValues(ByVal myCollection As mscorlib.IEnumerable, ByVal mySeparator As String)
     Dim obj As Variant
     For Each obj In myCollection
-        Debug.Print VBAString.Format("{0}{1}", mySeparator, obj);
+        Debug.Print VBString.Format("{0}{1}", mySeparator, obj);
     Next
     Debug.Print
 End Sub

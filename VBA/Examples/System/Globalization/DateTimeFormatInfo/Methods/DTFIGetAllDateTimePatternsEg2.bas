@@ -1,5 +1,5 @@
 Attribute VB_Name = "DTFIGetAllDateTimePatternsEg2"
-'@Folder("Examples.System.Globalization.DateTimeFormatInfo.Methods")
+'@Folder "Examples.System.Globalization.DateTimeFormatInfo.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

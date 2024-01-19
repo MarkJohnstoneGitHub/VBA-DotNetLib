@@ -4,7 +4,7 @@ Attribute VB_Name = "DateTimeToString3Example"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 14, 2023
-'@LastModified August 14, 2023
+'@LastModified January 7, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=netframework-4.8.1#system-datetime-tostring(system-iformatprovider)
 
@@ -15,7 +15,7 @@ Public Sub DateTimeToString3()
 Attribute DateTimeToString3.VB_Description = "The following example displays the string representation of a date and time using CultureInfo objects that represent five different cultures."
     ' Create an array of four cultures.
     Dim cultures() As DotNetLib.CultureInfo
-    ObjectArray.ToArray cultures, _
+    ObjectArray.CreateInitialize1D cultures, _
                 CultureInfo.InvariantCulture, _
                 CultureInfo.GetCultureInfo2("en-us"), _
                 CultureInfo.GetCultureInfo2("fr-fr"), _
@@ -37,7 +37,8 @@ Attribute DateTimeToString3.VB_Description = "The following example displays the
         Else
             cultureName = culture.Name
         End If
-        Debug.Print "In "; cultureName; ", "; thisDate.ToString3(culture)
+        Debug.Print VBString.Format("In {0}, {1}", _
+                           cultureName, thisDate.ToString3(culture))
     Next
                   
 End Sub

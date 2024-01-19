@@ -1,21 +1,23 @@
 Attribute VB_Name = "DateTimeTryParseExactExample"
-'@Folder("Examples.System.DateTime.Methods")
+'@Folder "Examples.System.DateTime.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 15, 2023
-'@LastModified September 2, 2023
+'@LastModified January 7, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.tryparseexact?view=netframework-4.8.1#system-datetime-tryparseexact(system-string-system-string-system-iformatprovider-system-globalization-datetimestyles-system-datetime@)
 
 Option Explicit
 
+''
 '@Description("The following example demonstrates the DateTime.TryParseExact(String, String, IFormatProvider, DateTimeStyles, DateTime) method.")
 ' Note that the string " 5/01/2009 8:30 AM" cannot be parsed successfully when
 ' the styles parameter equals DateTimeStyles.None because leading spaces are
 ' not allowed by format. Additionally, the string "5/01/2009 09:00" cannot be
 ' parsed successfully with a format of "MM/dd/yyyyhh:mm" because the date string
 ' does not precede the month number with a leading zero, as format requires.
+''
 Public Sub DateTimeTryParseExact()
 Attribute DateTimeTryParseExact.VB_Description = "The following example demonstrates the DateTime.TryParseExact(String, String, IFormatProvider, DateTimeStyles, DateTime) method."
     Dim enUS  As DotNetLib.CultureInfo
@@ -26,18 +28,18 @@ Attribute DateTimeTryParseExact.VB_Description = "The following example demonstr
     Dim dateString As String
     dateString = " 5/01/2009 8:30 AM"
     If (DateTime.TryParseExact(dateString, "g", enUS, DateTimeStyles.DateTimeStyles_None, dateValue)) Then
-        Debug.Print "Converted '"; dateString; "' to "; dateValue.ToString(); _
-                    " ("; DateTimeKindHelper.ToString(dateValue.Kind); ")."
+        Debug.Print VBString.Format("Converted '{0}' to {1} ({2}).", dateString, dateValue, _
+                           DateTimeKindHelper.ToString(dateValue.Kind))
     Else
-        Debug.Print "'"; dateString; "' is not in an acceptable format."
+        Debug.Print VBString.Format("'{0}' is not in an acceptable format.", dateString)
     End If
     
     ' Allow a leading space in the date string.
     If (DateTime.TryParseExact(dateString, "g", enUS, DateTimeStyles.DateTimeStyles_AllowLeadingWhite, dateValue)) Then
-        Debug.Print "Converted '"; dateString; "' to "; dateValue.ToString(); _
-                    " ("; DateTimeKindHelper.ToString(dateValue.Kind); ")."
+        Debug.Print VBString.Format("Converted '{0}' to {1} ({2}).", dateString, dateValue, _
+                           DateTimeKindHelper.ToString(dateValue.Kind))
     Else
-        Debug.Print "'"; dateString; "' is not in an acceptable format."
+        Debug.Print VBString.Format("'{0}' is not in an acceptable format.", dateString)
     End If
 
     ' Use custom formats with M and MM.
@@ -46,50 +48,49 @@ Attribute DateTimeTryParseExact.VB_Description = "The following example demonstr
         Debug.Print "Converted '"; dateString; "' to "; dateValue.ToString(); _
                     " ("; DateTimeKindHelper.ToString(dateValue.Kind); ")."
     Else
-        Debug.Print "'"; dateString; "' is not in an acceptable format."
+        Debug.Print VBString.Format("'{0}' is not in an acceptable format.", dateString)
     End If
 
     ' Allow a leading space in the date string.
     If (DateTime.TryParseExact(dateString, "MM/dd/yyyy hh:mm", enUS, DateTimeStyles.DateTimeStyles_None, dateValue)) Then
-        Debug.Print "Converted '"; dateString; "' to "; dateValue.ToString(); _
-                    " ("; DateTimeKindHelper.ToString(dateValue.Kind); ")."
+        Debug.Print VBString.Format("Converted '{0}' to {1} ({2}).", dateString, dateValue, _
+                           DateTimeKindHelper.ToString(dateValue.Kind))
     Else
-        Debug.Print "'"; dateString; "' is not in an acceptable format."
+        Debug.Print VBString.Format("'{0}' is not in an acceptable format.", dateString)
     End If
 
     ' Parse a string with time zone information.
     dateString = "05/01/2009 01:30:42 PM -05:00"
     If (DateTime.TryParseExact(dateString, "MM/dd/yyyy hh:mm:ss tt zzz", enUS, DateTimeStyles.DateTimeStyles_None, dateValue)) Then
-        Debug.Print "Converted '"; dateString; "' to "; dateValue.ToString(); _
-                    " ("; DateTimeKindHelper.ToString(dateValue.Kind); ")."
+        Debug.Print VBString.Format("Converted '{0}' to {1} ({2}).", dateString, dateValue, _
+                           DateTimeKindHelper.ToString(dateValue.Kind))
     Else
-        Debug.Print "'"; dateString; "' is not in an acceptable format."
+        Debug.Print VBString.Format("'{0}' is not in an acceptable format.", dateString)
     End If
 
     ' Allow a leading space in the date string.
     If (DateTime.TryParseExact(dateString, "MM/dd/yyyy hh:mm:ss tt zzz", enUS, DateTimeStyles.DateTimeStyles_AdjustToUniversal, dateValue)) Then
-        Debug.Print "Converted '"; dateString; "' to "; dateValue.ToString(); _
-                    " ("; DateTimeKindHelper.ToString(dateValue.Kind); ")."
+        Debug.Print VBString.Format("Converted '{0}' to {1} ({2}).", dateString, dateValue, _
+                           DateTimeKindHelper.ToString(dateValue.Kind))
     Else
-        Debug.Print "'"; dateString; "' is not in an acceptable format."
+        Debug.Print VBString.Format("'{0}' is not in an acceptable format.", dateString)
     End If
     
     ' Parse a string representing UTC.
     dateString = "2008-06-11T16:11:20.0904778Z"
     If (DateTime.TryParseExact(dateString, "o", CultureInfo.InvariantCulture, DateTimeStyles.DateTimeStyles_None, dateValue)) Then
-        Debug.Print "Converted '"; dateString; "' to "; dateValue.ToString(); _
-                    " ("; DateTimeKindHelper.ToString(dateValue.Kind); ")."
+        Debug.Print VBString.Format("Converted '{0}' to {1} ({2}).", dateString, dateValue, _
+                           DateTimeKindHelper.ToString(dateValue.Kind))
     Else
-        Debug.Print "'"; dateString; "' is not in an acceptable format."
+        Debug.Print VBString.Format("'{0}' is not in an acceptable format.", dateString)
     End If
     
     If (DateTime.TryParseExact(dateString, "o", CultureInfo.InvariantCulture, DateTimeStyles.DateTimeStyles_RoundTripKind, dateValue)) Then
-        Debug.Print "Converted '"; dateString; "' to "; dateValue.ToString(); _
-                    " ("; DateTimeKindHelper.ToString(dateValue.Kind); ")."
+        Debug.Print VBString.Format("Converted '{0}' to {1} ({2}).", dateString, dateValue, _
+                           DateTimeKindHelper.ToString(dateValue.Kind))
     Else
-        Debug.Print "'"; dateString; "' is not in an acceptable format."
+        Debug.Print VBString.Format("'{0}' is not in an acceptable format.", dateString)
     End If
-
 End Sub
 
 ' The example displays the following output:

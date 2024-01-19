@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringLastIndexOfExample4"
-'@Folder("Examples.System.Strings.Methods")
+'@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -29,36 +29,36 @@ Public Sub StringLastIndexOfExample4()
     
     ' Find the index of the soft hyphen followed by "n".
     position = s1.LastIndexOf7("m")
-    Debug.Print VBAString.Format("'m' at position {0}", position)
+    Debug.Print VBString.Format("'m' at position {0}", position)
 
     If (position >= 0) Then
-        Debug.Print VBAString.Format(s1.LastIndexOf3(Strings.CreateUnescape("\u00ADn"), position, position + 1))
+        Debug.Print VBString.Format(s1.LastIndexOf3(Strings.CreateUnescape("\u00ADn"), position, position + 1))
     End If
     
     position = s2.LastIndexOf7("m")
-    Debug.Print VBAString.Format("'m' at position {0}", position)
+    Debug.Print VBString.Format("'m' at position {0}", position)
 
 
     'if (position >= 0)
     '    Console.WriteLine(s2.LastIndexOf("\u00ADn", position, position + 1));
 
     If (position >= 0) Then
-        Debug.Print VBAString.Format(s2.LastIndexOf3(Strings.CreateUnescape("\u00ADn"), position, position + 1))
+        Debug.Print VBString.Format(s2.LastIndexOf3(Strings.CreateUnescape("\u00ADn"), position, position + 1))
     End If
 
     ' Find the index of the soft hyphen followed by "m".
     position = s1.LastIndexOf7("m")
-    Debug.Print VBAString.Format("'m' at position {0}", position)
+    Debug.Print VBString.Format("'m' at position {0}", position)
 
     If (position >= 0) Then
-        Debug.Print VBAString.Format(s1.LastIndexOf3(Strings.CreateUnescape("\u00ADm"), position, position + 1))
+        Debug.Print VBString.Format(s1.LastIndexOf3(Strings.CreateUnescape("\u00ADm"), position, position + 1))
     End If
     
     position = s2.LastIndexOf7("m")
-    Debug.Print VBAString.Format("'m' at position {0}", position)
+    Debug.Print VBString.Format("'m' at position {0}", position)
     
     If (position >= 0) Then
-        Debug.Print VBAString.Format(s2.LastIndexOf3(Strings.CreateUnescape("\u00ADm"), position, position + 1));
+        Debug.Print VBString.Format(s2.LastIndexOf3(Strings.CreateUnescape("\u00ADm"), position, position + 1));
     End If
 End Sub
 

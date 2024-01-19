@@ -4,16 +4,18 @@ Attribute VB_Name = "DateTimeCompareToExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 10, 2023
-'@LastModified September 6, 2023
+'@LastModified January 6, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetime.compareto?view=netframework-4.8.1#system-datetime-compareto(system-datetime)
 
 Option Explicit
 
+''
 ' The following example instantiates three DateTime objects, one that represents today's date,
 ' another that represents the date one year previously, and a third that represents the date
 ' one year in the future. It then calls the CompareTo(DateTime) method and displays the
 ' result of the comparison.
+''
 
 Private Enum DateComparisonResult
    Earlier = -1
@@ -22,31 +24,31 @@ Private Enum DateComparisonResult
 End Enum
 
 Public Sub DateTimeCompareTo()
-   Dim thisDate As IDateTime
-   Set thisDate = DateTime.Today
+    Dim thisDate As DotNetLib.DateTime
+    Set thisDate = DateTime.Today
    
-   ' Define two DateTime objects for today's date
-   ' next year and last year
-   Dim thisDateNextYear As IDateTime
-   Dim thisDateLastYear As IDateTime
+    ' Define two DateTime objects for today's date
+    ' next year and last year
+    Dim thisDateNextYear As DotNetLib.DateTime
+    Dim thisDateLastYear As DotNetLib.DateTime
 
-   ' Call AddYears instance method to add/substract 1 year
-   Set thisDateNextYear = thisDate.AddYears(1)
-   Set thisDateLastYear = thisDate.AddYears(-1)
+    ' Call AddYears instance method to add/substract 1 year
+    Set thisDateNextYear = thisDate.AddYears(1)
+    Set thisDateLastYear = thisDate.AddYears(-1)
    
-   ' Compare dates
-   Dim Comparison As DateComparisonResult
-   ' Compare today to last year
-   Comparison = thisDate.CompareTo(thisDateLastYear)
-   Debug.Print "CompareTo method returns " & Comparison & ": " & _
-                thisDate.ToString2("d") & " is " & _
-                DateComparisonResultToString(Comparison) & " than " & thisDateLastYear.ToString2("d")
+    ' Compare dates
+    Dim pvtComparison As DateComparisonResult
+    ' Compare today to last year
+    pvtComparison = thisDate.CompareTo(thisDateLastYear)
+    Debug.Print VBString.Format("CompareTo method returns {0}: {1:d} is {2} than {3:d}", _
+                        pvtComparison, thisDate, LCase$(DateComparisonResultToString(pvtComparison)), _
+                        thisDateLastYear)
    
-   ' Compare today to last year
-   Comparison = thisDate.CompareTo(thisDateNextYear)
-   Debug.Print "CompareTo method returns " & Comparison & ": " & _
-                thisDate.ToString2("d") & " is " & _
-                DateComparisonResultToString(Comparison) & " than " & thisDateNextYear.ToString2("d")
+    ' Compare today to next year
+    pvtComparison = thisDate.CompareTo(thisDateNextYear)
+    Debug.Print VBString.Format("CompareTo method returns {0}: {1:d} is {2} than {3:d}", _
+                        pvtComparison, thisDate, LCase$(DateComparisonResultToString(pvtComparison)), _
+                        thisDateNextYear)
 End Sub
 
 Private Function DateComparisonResultToString(ByVal value As DateComparisonResult) As String
@@ -56,30 +58,6 @@ Private Function DateComparisonResultToString(ByVal value As DateComparisonResul
       Case TheSame: DateComparisonResultToString = "TheSame"
    End Select
 End Function
-
-Public Sub DateTimeCompareTo2()
-   Dim theDay As IDateTime
-   Set theDay = DateTime.CreateFromDate(DateTime.Today.Year, 7, 28)
-   Dim compareValue As Long
-   On Error GoTo ErrorHandler
-      compareValue = theDay.CompareTo(DateTime.Today)
-   On Error GoTo 0
-   If (compareValue < 0) Then
-      Debug.Print theDay.ToString2("d") & " is in the past."
-   ElseIf (compareValue = 0) Then
-      Debug.Print theDay.ToString2("d") & " is today!"
-   Else ' compareValue > 0
-      Debug.Print theDay.ToString2("d") & " has not come yet."
-   End If
-
-CleanExit:
-Exit Sub
-
-ErrorHandler:
-   Debug.Print "Value is not a DateTime"
-   Debug.Print Err.Number, Err.Description
-   Resume CleanExit
-End Sub
 
 ' If run on October 20, 2006, the example produces the following output:
 '    CompareTo method returns 1: 10/20/2006 is later than 10/20/2005

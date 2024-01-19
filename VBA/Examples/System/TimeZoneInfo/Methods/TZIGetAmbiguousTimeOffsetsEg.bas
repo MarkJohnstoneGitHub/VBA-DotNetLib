@@ -4,40 +4,48 @@ Attribute VB_Name = "TZIGetAmbiguousTimeOffsetsEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 24, 2023
-'@LastModified August 1, 2023
+'@LastModified January 19, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo.getambiguoustimeoffsets?view=netframework-4.8.1
 
 Option Explicit
 
-' The following example defines a method named ShowPossibleUtcTimes that uses the
-' GetAmbiguousTimeOffsets(DateTime) method to map an ambiguous time to its possible
-' corresponding Coordinated Universal Time (UTC) times.
+''
+' The following example defines a method named ShowPossibleUtcTimes that uses
+' the GetAmbiguousTimeOffsets(DateTime) method to map an ambiguous time to its
+' possible corresponding Coordinated Universal Time (UTC) times.
+''
 Public Sub TimeZoneInfoGetAmbiguousTimeOffsets()
     Debug.Print
-    ShowPossibleUtcTimes DateTime.CreateFromDateTime(2007, 11, 4, 1, 0, 0), TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time")
+    ShowPossibleUtcTimes DateTime.CreateFromDateTime(2007, 11, 4, 1, 0, 0), _
+                        TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time")
 
     Debug.Print
-    ShowPossibleUtcTimes DateTime.CreateFromDateTimeKind(2007, 11, 4, 1, 0, 0, DateTimeKind.DateTimeKind_Local), TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time")
+    ShowPossibleUtcTimes DateTime.CreateFromDateTimeKind(2007, 11, 4, 1, 0, 0, DateTimeKind.DateTimeKind_Local), _
+                        TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time")
 
     Debug.Print
-    ShowPossibleUtcTimes DateTime.CreateFromDateTimeKind(2007, 11, 4, 0, 0, 0, DateTimeKind.DateTimeKind_Local), TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time")
+    ShowPossibleUtcTimes DateTime.CreateFromDateTimeKind(2007, 11, 4, 0, 0, 0, DateTimeKind.DateTimeKind_Local), _
+                        TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time")
     
     Debug.Print
-    ShowPossibleUtcTimes DateTime.CreateFromDateTimeKind(2007, 11, 4, 1, 0, 0, DateTimeKind.DateTimeKind_Unspecified), TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time")
+    ShowPossibleUtcTimes DateTime.CreateFromDateTimeKind(2007, 11, 4, 1, 0, 0, DateTimeKind.DateTimeKind_Unspecified), _
+                        TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time")
     
     Debug.Print
-    ShowPossibleUtcTimes DateTime.CreateFromDateTimeKind(2007, 11, 4, 7, 0, 0, DateTimeKind.DateTimeKind_Utc), TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time")
+    ShowPossibleUtcTimes DateTime.CreateFromDateTimeKind(2007, 11, 4, 7, 0, 0, DateTimeKind.DateTimeKind_Utc), _
+                        TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time")
 End Sub
 
-Private Sub ShowPossibleUtcTimes(ByVal ambiguousTime As IDateTime, ByVal timeZone As ITimeZoneInfo)
-    Dim pvtAmbiguousTime As IDateTime
+Private Sub ShowPossibleUtcTimes(ByVal ambiguousTime As DotNetLib.DateTime, ByVal timeZone As DotNetLib.TimeZoneInfo)
+    Dim pvtAmbiguousTime As DotNetLib.DateTime
     Set pvtAmbiguousTime = ambiguousTime
     
     ' Determine if time is ambiguous in target time zone
     If (Not timeZone.IsAmbiguousTime(pvtAmbiguousTime)) Then
-        Debug.Print pvtAmbiguousTime.ToString() & " is not ambiguous in time zone " & _
-                    timeZone.DisplayName & "."
+        Debug.Print VBString.Format("{0} is not ambiguous in time zone {1}.", _
+                        pvtAmbiguousTime, _
+                        timeZone.DisplayName)
     Else
         ' Display time and its time zone (local, UTC, or indicated by timeZone argument)
         Dim originalTimeZoneName As String
@@ -49,11 +57,11 @@ Private Sub ShowPossibleUtcTimes(ByVal ambiguousTime As IDateTime, ByVal timeZon
             originalTimeZoneName = timeZone.DisplayName
         End If
         
-        Debug.Print pvtAmbiguousTime.ToString() & " " & _
-                    originalTimeZoneName & " maps to the following possible times:"
+        Debug.Print VBString.Format("{0} {1} maps to the following possible times:", _
+                  pvtAmbiguousTime, originalTimeZoneName)
                     
         ' Get ambiguous offsets
-        Dim offsets() As ITimeSpan
+        Dim offsets() As DotNetLib.TimeSpan
         offsets = timeZone.GetAmbiguousTimeOffsets(pvtAmbiguousTime)
         ' Handle times not in time zone of timeZone argument
         ' Local time where timeZone is not local zone
@@ -69,16 +77,18 @@ Private Sub ShowPossibleUtcTimes(ByVal ambiguousTime As IDateTime, ByVal timeZon
         ' Display each offset and its mapping to UTC
         Dim varOffset As Variant
         For Each varOffset In offsets
-            Dim tzOffset As ITimeSpan
+            Dim tzOffset As DotNetLib.TimeSpan
             Set tzOffset = varOffset
             If (tzOffset.Equals(timeZone.BaseUtcOffset)) Then
-                Debug.Print "If " & pvtAmbiguousTime.ToString() & _
-                            " is " & timeZone.StandardName & _
-                            ", " & DateTime.Subtraction2(pvtAmbiguousTime, tzOffset).ToString() & " UTC"
+                Debug.Print VBString.Format("If {0} is {1}, {2} UTC", _
+                                pvtAmbiguousTime, _
+                                timeZone.StandardName, _
+                                DateTime.Subtraction2(pvtAmbiguousTime, tzOffset))
             Else
-                Debug.Print "If " & pvtAmbiguousTime.ToString() & _
-                            " is " & timeZone.DaylightName & _
-                            ", " & DateTime.Subtraction2(pvtAmbiguousTime, tzOffset).ToString() & " UTC"
+                Debug.Print VBString.Format("If {0} is {1}, {2} UTC", _
+                                pvtAmbiguousTime, _
+                                timeZone.DaylightName, _
+                                DateTime.Subtraction2(pvtAmbiguousTime, tzOffset))
             End If
         Next
     End If

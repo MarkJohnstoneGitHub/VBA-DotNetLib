@@ -1,5 +1,5 @@
 Attribute VB_Name = "DirectoryGetFileSystemEntriesEg"
-'@Folder("Examples.System.IO.Directory.Methods")
+'@Folder "Examples.System.IO.Directory.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -140,3 +140,5 @@ ErrorHandler:
             Debug.Print Err.Description
     End Select
 End Sub
+
+

@@ -1,5 +1,5 @@
 Attribute VB_Name = "StringBuilderReplaceExample"
-'@Folder("Examples.System.Text.StringBuilder.Methods")
+'@Folder "Examples.System.Text.StringBuilder.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -28,21 +28,21 @@ Public Sub StringBuilderReplace()
     Debug.Print
 
     Debug.Print "Original value:"
-    Call show(sb)
+    Call Show(sb)
 
     Call sb.Replace_2("#", "!", 15, 29)        ' Some '#' -> '!'
-    Call show(sb)
+    Call Show(sb)
     Call sb.Replace("!", "o")                 ' All '!' -> 'o'
-    Call show(sb)
+    Call Show(sb)
     Call sb.Replace("cat", "dog")             ' All "cat" -> "dog"
-    Call show(sb)
+    Call Show(sb)
     Call sb.Replace_2("dog", "fox", 15, 20)    ' Some "dog" -> "fox"
     
     Debug.Print "Final value:"
-    Call show(sb)
+    Call Show(sb)
 End Sub
 
-Private Sub show(ByVal sbs As DotNetLib.StringBuilder)
+Private Sub Show(ByVal sbs As DotNetLib.StringBuilder)
     Dim rule1 As String
     rule1 = "0----+----1----+----2----+----3----+----4---"
     Dim rule2 As String
@@ -50,7 +50,7 @@ Private Sub show(ByVal sbs As DotNetLib.StringBuilder)
 
     Debug.Print rule1
     Debug.Print rule2
-    Debug.Print VBAString.Format("{0}", sbs.ToString())
+    Debug.Print VBString.Format("{0}", sbs.ToString())
     Debug.Print
 End Sub
 

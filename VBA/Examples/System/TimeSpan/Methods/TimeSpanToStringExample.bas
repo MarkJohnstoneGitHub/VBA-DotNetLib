@@ -4,16 +4,18 @@ Attribute VB_Name = "TimeSpanToStringExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 17, 2023
-'@LastModified August 4, 2023
+'@LastModified January 18, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.timespan.tostring?view=netframework-4.8.1#system-timespan-tostring
 
 Option Explicit
 
-'@Description("The following example displays the strings returned by calling the ToString method with a number of TimeSpan values.")
+''
+' The following example displays the strings returned by calling the ToString
+' method with a number of TimeSpan values.
+''
 Public Sub TimeSpanToString()
-Attribute TimeSpanToString.VB_Description = "The following example displays the strings returned by calling the ToString method with a number of TimeSpan values."
-   Dim span As ITimeSpan
+   Dim span As DotNetLib.TimeSpan
    ' Initialize a time span to zero.
    Set span = TimeSpan.Zero
    Debug.Print span.ToString()

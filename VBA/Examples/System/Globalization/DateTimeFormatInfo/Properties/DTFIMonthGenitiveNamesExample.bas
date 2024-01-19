@@ -1,5 +1,5 @@
 Attribute VB_Name = "DTFIMonthGenitiveNamesExample"
-'@Folder("Examples.System.Globalization.DateTimeFormatInfo.Properties")
+'@Folder "Examples.System.Globalization.DateTimeFormatInfo.Properties"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -21,7 +21,7 @@ Option Explicit
 ' the GetShortestDayName() and SetAllDateTimePatterns() methods.
 Public Sub DateTimeFormatInfoMonthGenitiveNames()
     Dim myDateTimePatterns() As String
-    myDateTimePatterns = StringArray.ToArray("MM/dd/yy", "MM/dd/yyyy")
+    myDateTimePatterns = StringArray.CreateInitialize1D("MM/dd/yy", "MM/dd/yyyy")
     
     ' Get the en-US culture.
     Dim ci As DotNetLib.CultureInfo

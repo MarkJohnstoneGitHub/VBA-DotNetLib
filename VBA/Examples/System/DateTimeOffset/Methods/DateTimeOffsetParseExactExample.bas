@@ -1,18 +1,21 @@
 Attribute VB_Name = "DateTimeOffsetParseExactExample"
-'@Folder("Examples.System.DateTimeOffset.Methods")
+'@Folder "Examples.System.DateTimeOffset.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 25, 2023
-'@LastModified August 25, 2023
+'@LastModified January 10, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.parseexact?view=netframework-4.8.1#system-datetimeoffset-parseexact(system-string-system-string-system-iformatprovider)
 
 Option Explicit
 
-' The following example uses the DateTimeOffset.ParseExact(String, String, IFormatProvider)
-' method with standard and custom format specifiers and the invariant culture to parse
-' several date and time strings.
+''
+' The following example uses the
+' DateTimeOffset.ParseExact(String, String, IFormatProvider) method with standard
+' and custom format specifiers and the invariant culture to parse several date
+' and time strings.
+''
 Public Sub DateTimeOffsetParseExact()
     Dim dateString As String
     Dim pvtFormat As String
@@ -26,9 +29,9 @@ Public Sub DateTimeOffsetParseExact()
     On Error Resume Next
     Set result = DateTimeOffset.ParseExact(dateString, pvtFormat, provider)
     If Try Then
-        Debug.Print dateString; " converts to "; result.ToString()
+        Debug.Print VBString.Format("{0} converts to {1}.", dateString, result.ToString())
     ElseIf Catch(FormatException) Then
-       Debug.Print dateString; " is not in the correct format."
+        Debug.Print dateString; " is not in the correct format."
     End If
     On Error GoTo 0 'reset error handling
     
@@ -39,9 +42,9 @@ Public Sub DateTimeOffsetParseExact()
     On Error Resume Next
     Set result = DateTimeOffset.ParseExact(dateString, pvtFormat, provider)
     If Try Then
-        Debug.Print dateString; " converts to "; result.ToString()
+        Debug.Print VBString.Format("{0} converts to {1}.", dateString, result.ToString())
     ElseIf Catch(FormatException) Then
-       Debug.Print dateString; " is not in the correct format."
+        Debug.Print VBString.Format("{0} is not in the correct format.", dateString)
     End If
     On Error GoTo 0 'reset error handling
     
@@ -51,9 +54,9 @@ Public Sub DateTimeOffsetParseExact()
     On Error Resume Next
     Set result = DateTimeOffset.ParseExact(dateString, pvtFormat, provider)
     If Try Then
-        Debug.Print dateString; " converts to "; result.ToString()
+        Debug.Print VBString.Format("{0} converts to {1}.", dateString, result.ToString())
     ElseIf Catch(FormatException) Then
-       Debug.Print dateString; " is not in the correct format."
+        Debug.Print VBString.Format("{0} is not in the correct format.", dateString)
     End If
     On Error GoTo 0 'reset error handling
     
@@ -64,9 +67,9 @@ Public Sub DateTimeOffsetParseExact()
     On Error Resume Next
     Set result = DateTimeOffset.ParseExact(dateString, pvtFormat, provider)
     If Try Then
-        Debug.Print dateString; " converts to "; result.ToString()
+        Debug.Print VBString.Format("{0} converts to {1}.", dateString, result.ToString())
     ElseIf Catch(FormatException) Then
-       Debug.Print dateString; " is not in the correct format."
+        Debug.Print VBString.Format("{0} is not in the correct format.", dateString)
     End If
     On Error GoTo 0 'reset error handling
 End Sub

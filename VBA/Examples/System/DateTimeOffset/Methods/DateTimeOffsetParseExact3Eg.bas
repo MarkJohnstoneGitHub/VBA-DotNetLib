@@ -1,27 +1,27 @@
 Attribute VB_Name = "DateTimeOffsetParseExact3Eg"
-'@Folder("Examples.System.DateTimeOffset.Methods")
+'@Folder "Examples.System.DateTimeOffset.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 August 27, 2023
-'@LastModified August 27, 2023
+'@LastModified January 10, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset.parseexact?view=netframework-4.8.1#system-datetimeoffset-parseexact(system-string-system-string()-system-iformatprovider-system-globalization-datetimestyles)
 
-'@TODO Implement DateTimeFormat in DotNetLib
-
 Option Explicit
 
+''
 ' The following example defines multiple input formats for the string
 ' representation of a date and time and offset value, and then passes
 ' the string that is entered by the user to the
 ' DateTimeOffset.ParseExact(String, String[], IFormatProvider, DateTimeStyles) method.
+''
 Public Sub DateTimeOffsetParseExact3()
     Dim tries As Long
     Dim pvtInput As String
     
     Dim formats() As String
-    formats = StringArray.ToArray( _
+    formats = StringArray.CreateInitialize1D( _
                 "@M/dd/yyyy HH:m zzz", "MM/dd/yyyy HH:m zzz", _
                 "M/d/yyyy HH:m zzz", "MM/d/yyyy HH:m zzz", _
                 "M/dd/yy HH:m zzz", "MM/dd/yy HH:m zzz", _
@@ -47,13 +47,18 @@ Public Sub DateTimeOffsetParseExact3()
         On Error Resume Next
         Set result = DateTimeOffset.ParseExact3(pvtInput, formats, provider, DateTimeStyles.DateTimeStyles_AllowWhiteSpaces)
         If Try Then
-            Debug.Print "'" & pvtInput & "' was converted to " & result.ToString()
+            Exit Do
         ElseIf Catch(FormatException) Then
-            Debug.Print "Unable to parse "; "'"; pvtInput; "'"; "."
+            Debug.Print VBString.Format("Unable to parse {0}.", pvtInput)
         End If
         On Error GoTo 0 'reset error handling
         tries = tries + 1
     Loop While (tries < 3)
+    If (tries >= 3) Then
+        Debug.Print VBString.Format("Exiting application without parsing {0}", pvtInput)
+    Else
+        Debug.Print VBString.Format("{0} was converted to {1}", pvtInput, result.ToString())
+    End If
 End Sub
 
 ' Some successful sample interactions with the user might appear as follows:
