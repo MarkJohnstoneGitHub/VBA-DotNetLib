@@ -5,47 +5,6 @@
  **Recommendations:**
  Install the VBA Addin [Rubberduck](https://rubberduckvba.com/) will allow easier navigation of virtual folders according to the rubberduck folder annotation. 
 
- 
-Classes initally focussing on are [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8.1), [DateTimeOffset](https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=netframework-4.8.1), [TimeSpan](https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8.1),  [TimeZoneInfo](https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo?view=netframework-4.8.1) and associated classes.
-
-Aug 29, 2023 Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8.1), [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1), [NumberFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.numberformatinfo?view=netframework-4.8.1), [TextInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.textinfo?view=netframework-4.8.1) .
-
-Sep 19, 2023 Added: [ChineseLunisolarCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.chineselunisolarcalendar?view=netframework-4.8.1),  [GregorianCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.gregoriancalendar?view=netframework-4.8.1), [HebrewCalendar ](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.hebrewcalendar?view=netframework-4.8.1), [HijriCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.hijricalendar?view=netframework-4.8.1), [JapaneseCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.japanesecalendar?view=netframework-4.8.1), [JulianCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.juliancalendar?view=netframework-4.8.1), [KoreanCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.koreancalendar?view=netframework-4.8.1), [PersianCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.persiancalendar?view=netframework-4.8.1), [ThaiBuddhistCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.thaibuddhistcalendar?view=netframework-4.8.1), [UmAlQuraCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.umalquracalendar?view=netframework-4.8.1)
-
-Sep 22, 2023 Added: [CompareInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.compareinfo?view=netframework-4.8.1) 
-
-Sep 23, 2023 Added [String](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1) For the VBA singleton wrapper renamed String to Strings due to VBA reserved word.
-
-Sep 25, 2023 Added [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1) Implemented so far Regex.Unescape and Regex.Escape
-
-Sep 30, 2023 Added [System.Text.RegularExpressions](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions?view=netframework-4.8.1), [Capture](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.capture?view=netframework-4.8.1), [CaptureCollection](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.capturecollection?view=netframework-4.8.1), [Group](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.group?view=netframework-4.8.1), [GroupCollection](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.groupcollection?view=netframework-4.8.1), [Match](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.match?view=netframework-4.8.1), [MatchCollection](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.matchcollection?view=netframework-4.8.1), [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1)
-
-Oct 3, 2023 Added [ListString](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netframework-4.8.1) 
-- Attempted to dynamically create a List providing the data type instance however having issues casting, therefore will wrap a List for various basic types individually.
-- Testing still to be done. Create, Add, BinarySearch, Contains, IndexOf, Insert, Reverse, Sort, appears functioning correctly.
-
-Oct 5, 2023 Added [ArrayList](https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist?view=netframework-4.8.1)
-
-Oct 12, 2023 Added [Array](https://learn.microsoft.com/en-us/dotnet/api/system.array?view=netframework-4.8.1), [Type](https://learn.microsoft.com/en-us/dotnet/api/system.type?view=netframework-4.8.1), [GenericParameterAttributes](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.genericparameterattributes?view=netframework-4.8.1)
-
-Oct 15, 2023 Added [Queue](https://learn.microsoft.com/en-us/dotnet/api/system.collections.queue?view=netframework-4.8.1), [Stack](https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack?view=netframework-4.8.1)
-
-Oct 16, 2023 Added [SortedList](https://learn.microsoft.com/en-us/dotnet/api/system.collections.sortedlist?view=netframework-4.8.1)
-
-Oct 17, 2023 Added [CaseInsensitiveComparer](https://learn.microsoft.com/en-us/dotnet/api/system.collections.caseinsensitivecomparer?view=netframework-4.8.1), [StringComparer](https://learn.microsoft.com/en-us/dotnet/api/system.stringcomparer?view=netframework-4.8.1)
-
-Oct 18, 2023 Added [DictionaryEntry](https://learn.microsoft.com/en-us/dotnet/api/system.collections.dictionaryentry?view=netframework-4.8.1), [Hashtable](https://learn.microsoft.com/en-us/dotnet/api/system.collections.hashtable?view=netframework-4.8.1)
-
-Oct 31, 2023 Added [StringBuilder](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=netframework-4.8.1)
-
-Nov 2, 2023 Added [BitArray](https://learn.microsoft.com/en-us/dotnet/api/system.collections.bitarray?view=netframework-4.8.1)
-
-Nov 16, 2023 Added [Directory](https://learn.microsoft.com/en-us/dotnet/api/system.io.directory?view=netframework-4.8.1), [DirectoryInfo](https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=netframework-4.8.1), [Environment](https://learn.microsoft.com/en-us/dotnet/api/system.environment?view=netframework-4.8.1), [File](https://learn.microsoft.com/en-us/dotnet/api/system.io.file?view=netframework-4.8.1),  [FileInfo](https://learn.microsoft.com/en-us/dotnet/api/system.io.fileinfo?view=netframework-4.8.1), [Path](https://learn.microsoft.com/en-us/dotnet/api/system.io.path?view=netframework-4.8.1) , [FileSystemInfo](https://learn.microsoft.com/en-us/dotnet/api/system.io.filesysteminfo?view=netframework-4.8.1), [StreamWriter](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=netframework-4.8.1) [AccessControlSections](https://learn.microsoft.com/en-us/dotnet/api/system.security.accesscontrol.accesscontrolsections?view=netframework-4.8.1), [SpecialFolderOption](https://learn.microsoft.com/en-us/dotnet/api/system.environment.specialfolderoption?view=netframework-4.8.1), [SpecialFolders](https://learn.microsoft.com/en-us/dotnet/api/system.environment.specialfolder?view=netframework-4.8.1), [StringSplitOptions](https://learn.microsoft.com/en-us/dotnet/api/system.stringsplitoptions?view=netframework-4.8.1)
-
-Nov 23, 2023 Added [ASCIIEncoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.asciiencoding?view=netframework-4.8.1), [Encoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.encoding?view=netframework-4.8.1), [UnicodeEncoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.unicodeencoding?view=netframework-4.8.1), [UTF32Encoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.utf32encoding?view=netframework-4.8.1), [UTF7Encoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.utf7encoding?view=netframework-4.8.1), [UTF8Encoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.utf8encoding?view=netframework-4.8.1)
-
-Dec 27, 2023 Added [RegionInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.regioninfo.-ctor?view=netframework-4.8.1)
-
  **Affected API due to VBA reserved words:**
 
  The API for the .Net class or VBA singletons for associated .Net classes may be required to be altered due to VBA reserved words. See [reserved-word-list](https://www.engram9.info/access-2007-vba/reserved-word-list.html).
@@ -123,10 +82,85 @@ ArrayList.Item(index) = item
 - Unit testing using Rubberduck unit testing.
 - [Create an installer from Microsoft Visual Studio](https://www.advancedinstaller.com/user-guide/tutorial-ai-ext-vs.html#section761)
 
+**Status: Latest Updates**
+
+Jan 21, 2024 
+ - Added [Uri](https://learn.microsoft.com/en-us/dotnet/api/system.uri?view=netframework-4.8.1)
+ - Added Uri.cls VBA Singleton class
+
+Jan 20, 2024 Updated DotNetLib.tlb Type Library
+ - Added [Stopwatch](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?view=netframework-4.8.1) 
+ - Added Stopwatch.cls Singleton class for Stopwatch.
+ - Moved Type Library files to folder DotNetLib Type Library
+ - Removed StringFormatting.bas
+
+Renamed the following:
+ - ArrayEx.cls to VBArray.cls
+ - VBAString.cls to VBString.cls 
+
+DoubleArray.cls
+  Renamed the member DoubleArray.ToArray to DoubleArray.CreateInitialize1D
+
+ObjectArray.cls
+  Renamed the member ObjectArray.ToArray to ObjectArray.CreateInitialize1D
+
+StringArray.cs
+  Renamed the member StringArray.ToArray to StringArray.CreateInitialize1D
+ 
+Updated all affected examples for renamed classes and members.
+
+Updated 
+DateTime, DateTimeOffset, TimeSpan, TimeZoneInfo examples 
+Removed use of IDate, IDateTimeOffset, ITimespan, ITimeZoneInfo
+And use VBString.Format to format output for examples.
+
 
 **Update History**
 
-**Status: Latest Updates**
+Classes initally focussing on are [DateTime](https://learn.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8.1), [DateTimeOffset](https://learn.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=netframework-4.8.1), [TimeSpan](https://learn.microsoft.com/en-us/dotnet/api/system.timespan?view=netframework-4.8.1),  [TimeZoneInfo](https://learn.microsoft.com/en-us/dotnet/api/system.timezoneinfo?view=netframework-4.8.1) and associated classes.
+
+Aug 29, 2023 Added: [CultureInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netframework-4.8.1), [DateTimeFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netframework-4.8.1), [NumberFormatInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.numberformatinfo?view=netframework-4.8.1), [TextInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.textinfo?view=netframework-4.8.1) .
+
+Sep 19, 2023 Added: [ChineseLunisolarCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.chineselunisolarcalendar?view=netframework-4.8.1),  [GregorianCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.gregoriancalendar?view=netframework-4.8.1), [HebrewCalendar ](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.hebrewcalendar?view=netframework-4.8.1), [HijriCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.hijricalendar?view=netframework-4.8.1), [JapaneseCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.japanesecalendar?view=netframework-4.8.1), [JulianCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.juliancalendar?view=netframework-4.8.1), [KoreanCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.koreancalendar?view=netframework-4.8.1), [PersianCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.persiancalendar?view=netframework-4.8.1), [ThaiBuddhistCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.thaibuddhistcalendar?view=netframework-4.8.1), [UmAlQuraCalendar](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.umalquracalendar?view=netframework-4.8.1)
+
+Sep 22, 2023 Added: [CompareInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.compareinfo?view=netframework-4.8.1) 
+
+Sep 23, 2023 Added [String](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8.1) For the VBA singleton wrapper renamed String to Strings due to VBA reserved word.
+
+Sep 25, 2023 Added [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1) Implemented so far Regex.Unescape and Regex.Escape
+
+Sep 30, 2023 Added [System.Text.RegularExpressions](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions?view=netframework-4.8.1), [Capture](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.capture?view=netframework-4.8.1), [CaptureCollection](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.capturecollection?view=netframework-4.8.1), [Group](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.group?view=netframework-4.8.1), [GroupCollection](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.groupcollection?view=netframework-4.8.1), [Match](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.match?view=netframework-4.8.1), [MatchCollection](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.matchcollection?view=netframework-4.8.1), [Regex](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1)
+
+Oct 3, 2023 Added [ListString](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netframework-4.8.1) 
+- Attempted to dynamically create a List providing the data type instance however having issues casting, therefore will wrap a List for various basic types individually.
+- Testing still to be done. Create, Add, BinarySearch, Contains, IndexOf, Insert, Reverse, Sort, appears functioning correctly.
+
+Oct 5, 2023 Added [ArrayList](https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist?view=netframework-4.8.1)
+
+Oct 12, 2023 Added [Array](https://learn.microsoft.com/en-us/dotnet/api/system.array?view=netframework-4.8.1), [Type](https://learn.microsoft.com/en-us/dotnet/api/system.type?view=netframework-4.8.1), [GenericParameterAttributes](https://learn.microsoft.com/en-us/dotnet/api/system.reflection.genericparameterattributes?view=netframework-4.8.1)
+
+Oct 15, 2023 Added [Queue](https://learn.microsoft.com/en-us/dotnet/api/system.collections.queue?view=netframework-4.8.1), [Stack](https://learn.microsoft.com/en-us/dotnet/api/system.collections.stack?view=netframework-4.8.1)
+
+Oct 16, 2023 Added [SortedList](https://learn.microsoft.com/en-us/dotnet/api/system.collections.sortedlist?view=netframework-4.8.1)
+
+Oct 17, 2023 Added [CaseInsensitiveComparer](https://learn.microsoft.com/en-us/dotnet/api/system.collections.caseinsensitivecomparer?view=netframework-4.8.1), [StringComparer](https://learn.microsoft.com/en-us/dotnet/api/system.stringcomparer?view=netframework-4.8.1)
+
+Oct 18, 2023 Added [DictionaryEntry](https://learn.microsoft.com/en-us/dotnet/api/system.collections.dictionaryentry?view=netframework-4.8.1), [Hashtable](https://learn.microsoft.com/en-us/dotnet/api/system.collections.hashtable?view=netframework-4.8.1)
+
+Oct 31, 2023 Added [StringBuilder](https://learn.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=netframework-4.8.1)
+
+Nov 2, 2023 Added [BitArray](https://learn.microsoft.com/en-us/dotnet/api/system.collections.bitarray?view=netframework-4.8.1)
+
+Nov 16, 2023 Added [Directory](https://learn.microsoft.com/en-us/dotnet/api/system.io.directory?view=netframework-4.8.1), [DirectoryInfo](https://learn.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=netframework-4.8.1), [Environment](https://learn.microsoft.com/en-us/dotnet/api/system.environment?view=netframework-4.8.1), [File](https://learn.microsoft.com/en-us/dotnet/api/system.io.file?view=netframework-4.8.1),  [FileInfo](https://learn.microsoft.com/en-us/dotnet/api/system.io.fileinfo?view=netframework-4.8.1), [Path](https://learn.microsoft.com/en-us/dotnet/api/system.io.path?view=netframework-4.8.1) , [FileSystemInfo](https://learn.microsoft.com/en-us/dotnet/api/system.io.filesysteminfo?view=netframework-4.8.1), [StreamWriter](https://learn.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=netframework-4.8.1) [AccessControlSections](https://learn.microsoft.com/en-us/dotnet/api/system.security.accesscontrol.accesscontrolsections?view=netframework-4.8.1), [SpecialFolderOption](https://learn.microsoft.com/en-us/dotnet/api/system.environment.specialfolderoption?view=netframework-4.8.1), [SpecialFolders](https://learn.microsoft.com/en-us/dotnet/api/system.environment.specialfolder?view=netframework-4.8.1), [StringSplitOptions](https://learn.microsoft.com/en-us/dotnet/api/system.stringsplitoptions?view=netframework-4.8.1)
+
+Nov 23, 2023 Added [ASCIIEncoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.asciiencoding?view=netframework-4.8.1), [Encoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.encoding?view=netframework-4.8.1), [UnicodeEncoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.unicodeencoding?view=netframework-4.8.1), [UTF32Encoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.utf32encoding?view=netframework-4.8.1), [UTF7Encoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.utf7encoding?view=netframework-4.8.1), [UTF8Encoding](https://learn.microsoft.com/en-us/dotnet/api/system.text.utf8encoding?view=netframework-4.8.1)
+
+Dec 27, 2023 Added [RegionInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.regioninfo.-ctor?view=netframework-4.8.1)
+
+Jan 20, 2024 Added [Stopwatch](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?view=netframework-4.8.1) 
+
+Jan 21, 2024 Added [Uri](https://learn.microsoft.com/en-us/dotnet/api/system.uri?view=netframework-4.8.1)
+
 
 **DotNetLib Update September 30th, 2023** 
 
