@@ -83,6 +83,11 @@ ArrayList.Item(index) = item
 - [Create an installer from Microsoft Visual Studio](https://www.advancedinstaller.com/user-guide/tutorial-ai-ext-vs.html#section761)
 
 **Status: Latest Updates**
+
+Jan 21, 2024 
+ - Added [Uri](https://learn.microsoft.com/en-us/dotnet/api/system.uri?view=netframework-4.8.1)
+ - Added Uri.cls VBA Singleton class
+
 Jan 20, 2024 Updated DotNetLib.tlb Type Library
  - Added [Stopwatch](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?view=netframework-4.8.1) 
  - Added Stopwatch.cls Singleton class for Stopwatch.
@@ -152,6 +157,9 @@ Nov 23, 2023 Added [ASCIIEncoding](https://learn.microsoft.com/en-us/dotnet/api/
 
 Dec 27, 2023 Added [RegionInfo](https://learn.microsoft.com/en-us/dotnet/api/system.globalization.regioninfo.-ctor?view=netframework-4.8.1)
 
+Jan 20, 2024 Added [Stopwatch](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?view=netframework-4.8.1) 
+
+Jan 21, 2024 Added [Uri](https://learn.microsoft.com/en-us/dotnet/api/system.uri?view=netframework-4.8.1)
 
 
 **DotNetLib Update September 30th, 2023** 
