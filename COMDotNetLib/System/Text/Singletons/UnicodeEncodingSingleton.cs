@@ -21,12 +21,12 @@ namespace DotNetLib.System.Text
         public int CharSize => GText.UnicodeEncoding.CharSize;
 
         // Factory Methods
-        //public UnicodeEncoding Create()
+        //public UnicodeEncoding Create2()
         //{
         //    return new UnicodeEncoding();
         //}
 
-        //public UnicodeEncoding Create(bool bigEndian, bool byteOrderMark)
+        //public UnicodeEncoding Create2(bool bigEndian, bool byteOrderMark)
         //{
         //    return new UnicodeEncoding(bigEndian, byteOrderMark);
         //}

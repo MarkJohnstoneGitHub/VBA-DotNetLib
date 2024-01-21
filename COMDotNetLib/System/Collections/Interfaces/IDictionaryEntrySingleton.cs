@@ -14,16 +14,16 @@ namespace DotNetLib.System.Collections
     public interface IDictionaryEntrySingleton
     {
         //[Description("Initializes an instance of the DictionaryEntry type from an object containing a mscorlib.DictionaryEntry")]
-        //DictionaryEntry Create(object dictionaryEntry);
+        //DictionaryEntry Create2(object dictionaryEntry);
 
         //[Description("Initializes an instance of the DictionaryEntry type from a mscorlib.DictionaryEntry containing the specified key and value.")]
         //DictionaryEntry Create2([In] ref GCollections.DictionaryEntry dictionaryEntry);
 
         //[Description("Initializes an instance of the DictionaryEntry type with the specified key and value.")]
-        //DictionaryEntry Create3(object key, object value);
+        //DictionaryEntry Create2(object key, object value);
 
         //[Description("Initializes an instance of the DictionaryEntry type with the specified key and value.")]
-        //GCollections.DictionaryEntry Create(object key, object value);
+        //GCollections.DictionaryEntry Create2(object key, object value);
 
         [Description("Initializes an instance of the mscorlib.DictionaryEntry type with the specified key and value.")]
         void Create([In][Out] ref GCollections.DictionaryEntry dictionaryEntry, object key, object value);

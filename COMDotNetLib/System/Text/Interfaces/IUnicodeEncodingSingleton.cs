@@ -15,10 +15,10 @@ namespace DotNetLib.System.Text
         // Factory Methods
 
         //[Description("Initializes a new instance of the UnicodeEncoding class")]
-        //UnicodeEncoding Create();
+        //UnicodeEncoding Create2();
 
         //[Description("Initializes a new instance of the UnicodeEncoding class. Parameters specify whether to use the big endian byte order and whether the GetPreamble() method returns a Unicode byte order mark.")]
-        //UnicodeEncoding Create(bool bigEndian, bool byteOrderMark);
+        //UnicodeEncoding Create2(bool bigEndian, bool byteOrderMark);
 
         [Description("Initializes a new instance of the UnicodeEncoding class. Parameters specify whether to use the big endian byte order, whether to provide a Unicode byte order mark, and whether to throw an exception when an invalid encoding is detected.")]
         UnicodeEncoding Create(bool bigEndian = false, bool byteOrderMark = true, bool throwOnInvalidBytes = false);

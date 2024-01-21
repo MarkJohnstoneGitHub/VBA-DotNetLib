@@ -13,7 +13,7 @@ namespace DotNetLib.System.Text
     public interface IUTF7EncodingSingleton
     {
         //[Description("Initializes a new instance of the UTF7Encoding class.")]
-        //UTF7Encoding Create();
+        //UTF7Encoding Create2();
 
         [Description("Initializes a new instance of the UTF7Encoding class. A parameter specifies whether to allow optional characters.")]
         UTF7Encoding Create(bool allowOptionals = false);

@@ -98,6 +98,8 @@
     <Compile Include="System\IO\TextReader.cs" />
     <Compile Include="System\IO\TextWriter.cs" />
     <Compile Include="System\Interfaces\ITypeCodeHelperSingleton.cs" />
+    <Compile Include="System\IUri.cs" />
+    <Compile Include="System\IUriSingleton.cs" />
     <Compile Include="System\Security\AccessControl\Enums.cs" />
     <Compile Include="System\Security\AccessControl\FileSystemRights.cs" />
     <Compile Include="System\Security\AccessControl\objectsecurity.cs" />
@@ -342,6 +344,11 @@
     <Compile Include="System\Type.cs" />
     <Compile Include="System\Singletons\TypeSingleton.cs" />
     <Compile Include="System\Singletons\TypeCodeHelperSingleton.cs" />
+    <Compile Include="System\Uri.cs" />
+    <Compile Include="System\UriEnumTypes.cs" />
+    <Compile Include="System\UriHostNameType.cs" />
+    <Compile Include="System\UriPartial.cs" />
+    <Compile Include="System\UriSingleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CoordinateSharp">

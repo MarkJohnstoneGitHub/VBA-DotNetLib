@@ -13,7 +13,7 @@ namespace DotNetLib.System.IO
     public interface IBufferedStreamSingleton
     {
         //[Description("Initializes a new instance of the BufferedStream class with a default buffer size of 4096 bytes.")]
-        //BufferedStream Create(Stream stream);
+        //BufferedStream Create2(Stream stream);
 
         [Description("Initializes a new instance of the BufferedStream class with the specified buffer size or default buffer size of 4096 byte.")]
         BufferedStream Create(Stream stream, int bufferSize = 4096);

@@ -13,10 +13,10 @@ namespace DotNetLib.System.Text
     public interface IUTF8EncodingSingleton
     {
         //[Description("Initializes a new instance of the UTF8Encoding class.")]
-        //UTF8Encoding Create();
+        //UTF8Encoding Create2();
 
         //[Description("Initializes a new instance of the UTF8Encoding class. A parameter specifies whether to provide a Unicode byte order mark.")]
-        //UTF8Encoding Create(bool encoderShouldEmitUTF8Identifier);
+        //UTF8Encoding Create2(bool encoderShouldEmitUTF8Identifier);
 
         [Description("Initializes a new instance of the UTF8Encoding class. Parameters specify whether to provide a Unicode byte order mark and whether to throw an exception when an invalid encoding is detected.")]
         UTF8Encoding Create(bool encoderShouldEmitUTF8Identifier = false, bool throwOnInvalidBytes = false);

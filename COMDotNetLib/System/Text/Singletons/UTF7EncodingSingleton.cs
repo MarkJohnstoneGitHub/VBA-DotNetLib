@@ -16,7 +16,7 @@ namespace DotNetLib.System.Text
     {
         public UTF7EncodingSingleton() { }
 
-        //public UTF7Encoding Create()
+        //public UTF7Encoding Create2()
         //{  
         //    return new UTF7Encoding(); 
         //}

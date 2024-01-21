@@ -15,12 +15,12 @@ namespace DotNetLib.System.Text
     public class UTF8EncodingSingleton : IUTF8EncodingSingleton
     {
 
-        //public UTF8Encoding Create()
+        //public UTF8Encoding Create2()
         //{
         //    return new UTF8Encoding();
         //}
 
-        //public UTF8Encoding Create(bool encoderShouldEmitUTF8Identifier)
+        //public UTF8Encoding Create2(bool encoderShouldEmitUTF8Identifier)
         //{
         //    return new UTF8Encoding(encoderShouldEmitUTF8Identifier);
         //}

@@ -16,7 +16,7 @@ namespace DotNetLib.System.IO
     {
         public BufferedStreamSingleton() { }
 
-        //public BufferedStream Create(Stream stream)
+        //public BufferedStream Create2(Stream stream)
         //{
         //    return new BufferedStream(stream);
         //}
