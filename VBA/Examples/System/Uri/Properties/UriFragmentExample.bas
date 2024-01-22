@@ -12,6 +12,10 @@ Attribute VB_Name = "UriFragmentExample"
 
 Option Explicit
 
+''
+' The following example creates a Uri instance and writes the fragment
+' information to the console.
+''
 Public Sub UriFragmentExample()
     '// Create Uri
     Dim uriAddress As DotNetLib.Uri

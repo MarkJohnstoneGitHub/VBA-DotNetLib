@@ -28,6 +28,10 @@ Attribute VB_Name = "UriSegmentsExample"
 
 Option Explicit
 
+''
+' The following example creates a Uri instance with 3 segments and displays
+' the segments on the screen.
+''
 Public Sub UriSegmentsExample()
     Dim uriAddress1 As DotNetLib.Uri
     Set uriAddress1 = Uri.Create("http://www.contoso.com/title/index.htm")
