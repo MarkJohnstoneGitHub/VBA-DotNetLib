@@ -49,9 +49,9 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the RegionInfo class based on the country/region or specific culture, specified by name.")
-Public Function Create2(ByVal Name As String) As DotNetLib.RegionInfo
+Public Function Create2(ByVal name As String) As DotNetLib.RegionInfo
 Attribute Create2.VB_Description = "Initializes a new instance of the RegionInfo class based on the country/region or specific culture, specified by name."
-   Set Create2 = this.RegionInfoSingleton.Create2(Name)
+   Set Create2 = this.RegionInfoSingleton.Create2(name)
 End Function
 
 '@Static

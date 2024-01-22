@@ -34,10 +34,10 @@ Public Sub RegexGroupNameFromNumber()
     exitFlag = False
     ' Get group names.
     Do
-        Dim Name As String
-        Name = rgx.GroupNameFromNumber(ctr)
-        If (Not VBString.IsNullOrEmpty(Name)) Then
-            names.Add Name
+        Dim name As String
+        name = rgx.GroupNameFromNumber(ctr)
+        If (Not VBString.IsNullOrEmpty(name)) Then
+            names.Add name
             ctr = ctr + 1
         Else
             exitFlag = True

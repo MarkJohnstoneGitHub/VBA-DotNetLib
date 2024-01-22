@@ -162,9 +162,40 @@ namespace DotNetLib.System
         {
             return string.Format(pFormat, args.Unwrap());
         }
-        public string Format2(IFormatProvider provider, string pFormat, [In] ref object[] args)
+
+        public string Format2(string pFormat, object arg0)
+        {
+            return string.Format(pFormat, arg0.Unwrap());
+        }
+
+        public string Format3(string pFormat, object arg0, object arg1)
+        {
+            return string.Format(pFormat, arg0.Unwrap(), arg1.Unwrap());
+        }
+
+        public string Format4(string pFormat, object arg0, object arg1, object arg2)
+        {
+            return string.Format(pFormat, arg0.Unwrap(), arg1.Unwrap(), arg2.Unwrap());
+        }
+
+        public string Format5(IFormatProvider provider, string pFormat, [In] ref object[] args)
         {
             return string.Format(provider.Unwrap(), pFormat, args.Unwrap());
+        }
+
+        public string Format6(IFormatProvider provider, string pFormat, object arg0)
+        {
+            return string.Format(provider.Unwrap(), pFormat, arg0.Unwrap());
+        }
+
+        public string Format7(IFormatProvider provider, string pFormat, object arg0, object arg1)
+        {
+            return string.Format(provider.Unwrap(), pFormat, arg0.Unwrap(), arg1.Unwrap());
+        }
+
+        public string Format8(IFormatProvider provider, string pFormat, object arg0, object arg1, object arg2)
+        {
+            return string.Format(provider.Unwrap(), pFormat, arg0.Unwrap(), arg1.Unwrap(), arg2.Unwrap());
         }
 
         public bool IsNullOrEmpty(string value)

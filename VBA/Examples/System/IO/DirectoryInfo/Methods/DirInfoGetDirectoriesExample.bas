@@ -29,6 +29,6 @@ Public Sub DirectoryInfoGetDirectoriesExample()
     For Each vardri In diArr
         Dim dri As DotNetLib.DirectoryInfo
         Set dri = vardri
-        Debug.Print dri.Name
+        Debug.Print dri.name
     Next
 End Sub

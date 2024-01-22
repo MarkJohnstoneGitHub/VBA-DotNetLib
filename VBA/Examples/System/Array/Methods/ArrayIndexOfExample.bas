@@ -33,22 +33,22 @@ Public Sub ArrayIndexOf()
     ' Search for the first occurrence of the duplicated value.
     Dim searchString As String
     searchString = "the"
-    Dim Index As Long
-    Index = Arrays.IndexOf(stringArr, searchString)
+    Dim index As Long
+    index = Arrays.IndexOf(stringArr, searchString)
     Debug.Print VBString.Format("The first occurrence of ""{0}"" is at index {1}.", _
-                             searchString, Index)
+                             searchString, index)
 
     ' Search for the first occurrence of the duplicated value in the last section of the array.
-    Index = Arrays.IndexOf2(stringArr, searchString, 4)
+    index = Arrays.IndexOf2(stringArr, searchString, 4)
     Debug.Print VBString.Format("The first occurrence of ""{0}"" between index 4 and the end is at index {1}.", _
-                                searchString, Index)
+                                searchString, index)
 
     ' Search for the first occurrence of the duplicated value in a section of the array.
     Dim position As Long
-    position = Index + 1
-    Index = Arrays.IndexOf3(stringArr, searchString, position, stringArr.GetUpperBound(0) - position + 1)
+    position = index + 1
+    index = Arrays.IndexOf3(stringArr, searchString, position, stringArr.GetUpperBound(0) - position + 1)
     Debug.Print VBString.Format("The first occurrence of ""{0}"" between index {1} and index {2} is at index {3}.", _
-                  searchString, position, stringArr.GetUpperBound(0), Index)
+                  searchString, position, stringArr.GetUpperBound(0), index)
 End Sub
 
 ' The example displays the following output:

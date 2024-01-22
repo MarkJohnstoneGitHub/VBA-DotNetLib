@@ -28,7 +28,7 @@ Public Sub DirectoryInfoGetFilesExample()
     On Error Resume Next
     For Each varfi In di.GetFiles()
         Set fi = varfi
-        Debug.Print fi.Name
+        Debug.Print fi.name
     Next
 
     Debug.Print
@@ -36,13 +36,13 @@ Public Sub DirectoryInfoGetFilesExample()
     Debug.Print "Search pattern *2* returns:"
     For Each varfi In di.GetFiles("*2*")
         Set fi = varfi
-        Debug.Print fi.Name
+        Debug.Print fi.name
     Next
     
     Debug.Print
     Debug.Print "Search pattern AllDirectories returns:"
     For Each varfi In di.GetFiles("*", SearchOption.SearchOption_AllDirectories)
-        Debug.Print fi.Name
+        Debug.Print fi.name
     Next
     On Error GoTo 0 'Stop code and display error
 End Sub

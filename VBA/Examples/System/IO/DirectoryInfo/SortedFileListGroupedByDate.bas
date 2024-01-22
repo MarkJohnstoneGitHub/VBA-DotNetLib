@@ -81,7 +81,7 @@ Private Function GetFilteredSortedFileListGroupedByDay(ByRef fileInfos() As DotN
             End If
             'sorted key is last write time and full name to avoid potiential issue of duplicate key due to last write time
             'Could create a custom sort using an IComparer for the daily sorted file list
-            Call daySortedList.Add(fileInfos(pvtIndex).Name & "," & fileInfos(pvtIndex).lastWriteTime.Date.Ticks, fileInfos(pvtIndex))
+            Call daySortedList.Add(fileInfos(pvtIndex).name & "," & fileInfos(pvtIndex).lastWriteTime.Date.Ticks, fileInfos(pvtIndex))
         End If
     Next
     Set GetFilteredSortedFileListGroupedByDay = pvtOutput
@@ -102,7 +102,7 @@ Private Sub DisplayFiles(ByVal pList As DotNetLib.SortedList)
         For j = 0 To daySortedFileList.Count - 1
             Dim pvtfileInfo As DotNetLib.FileSystemInfo
             Set pvtfileInfo = daySortedFileList.GetByIndex(j)
-            Debug.Print VBString.Format(pvtFormat, pvtfileInfo.Name, pvtfileInfo.lastWriteTime)
+            Debug.Print VBString.Format(pvtFormat, pvtfileInfo.name, pvtfileInfo.lastWriteTime)
         Next j
         Debug.Print
     Next i

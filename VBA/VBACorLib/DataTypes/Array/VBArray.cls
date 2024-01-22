@@ -25,16 +25,16 @@ Attribute CreateInitialize1D.VB_Description = "Creates a one-dimensional array o
    If VBA.IsArray(destination) Then
       '@TODO What if values is empty?
       ReDim destination(LBound(values) To UBound(values))
-      Dim Index As Long
+      Dim index As Long
       Dim varValue As Variant
       On Error GoTo Catch
       For Each varValue In values
          If IsObject(varValue) Then
-            Set destination(Index) = varValue
+            Set destination(index) = varValue
          Else
-            destination(Index) = varValue
+            destination(index) = varValue
          End If
-         Index = Index + 1
+         index = index + 1
       Next
    Else
       Err.Raise VBAException.INVALID_PROCEDURE_CALL, , "Only arrays are supported."
@@ -54,29 +54,30 @@ Attribute TryToArray.VB_Description = "Copies a ParamArray of vaules or objects 
       Resize = False
       
       ReDim destination(LBound(values) To UBound(values))
-      Dim Index As Long
+      Dim index As Long
       Dim varValue As Variant
       For Each varValue In values
          If IsObject(varValue) Then
-            Set destination(Index) = varValue
+            Set destination(index) = varValue
          Else
-            destination(Index) = varValue
+            destination(index) = varValue
          End If
          If Err.Number = 0 Then
-            Index = Index + 1
+            index = index + 1
          Else
             TryToArray = False
             Resize = True
          End If
       Next
       If Resize Then
-         ReDim Preserve destination(Index - 1)
+         ReDim Preserve destination(index - 1)
       End If
    Else
       Err.Raise VBAException.INVALID_PROCEDURE_CALL, , "Only arrays are supported."
    End If
    On Error GoTo 0 'Stop code and display error
 End Function
+
 
 '''
 '@Description("Returns if an array variable is initialized.")
@@ -121,3 +122,30 @@ Attribute IsAllocated.VB_Description = "Returns if an array variable is initiali
    End If
    On Error GoTo 0 'Stop code and display error
 End Function
+
+' @TODO update to test
+' @References
+' https://stackoverflow.com/questions/183353/how-do-i-determine-if-an-array-is-initialized-in-vb6
+' https://stackoverflow.com/q/183353/10759363
+' https://stackoverflow.com/a/58472962/10759363
+' https://stackoverflow.com/a/183356/10759363
+
+'Public Function IsArrayInitialized(ByRef source As Variant) As Boolean
+'    ' if Arr is not an array, return FALSE and get out.
+'    If IsArray(source) = False Then
+'        IsArrayInitialized = False
+'        Exit Function
+'    End If
+'
+'    If ((Not source) = -1) Then
+'      IsArrayInitialized = False
+'    End If
+'
+''  Dim rv As Long
+''
+''  On Error Resume Next
+''
+''  rv = UBound(arr)
+''  IsArrayInitialized = (Err.Number = 0)
+'
+'End Function

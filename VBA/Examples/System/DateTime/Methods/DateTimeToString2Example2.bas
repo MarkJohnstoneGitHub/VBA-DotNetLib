@@ -40,7 +40,7 @@ Public Sub DateTimeToString2Example2()
             Dim culture As DotNetLib.CultureInfo
             Set culture = varCulture
             Debug.Print VBString.Format("{0} Format Specifier {1, 10} Culture {2, 40}", _
-                              formatSpecifier, culture.Name, _
+                              formatSpecifier, culture.name, _
                               dateToDisplay.ToString2(formatSpecifier, culture))
         Next
         Debug.Print

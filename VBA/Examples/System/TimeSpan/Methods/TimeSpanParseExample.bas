@@ -28,7 +28,7 @@ Public Sub TimeSpanParse()
     For Each cultureName In cultureNames
         Set CultureInfo.CurrentCulture = CultureInfo.CreateFromName(cultureName)
         Debug.Print VBString.Format("Current Culture: {0}", _
-                           CultureInfo.CurrentCulture.Name)
+                           CultureInfo.CurrentCulture.name)
         Dim value As Variant
         For Each value In values
             On Error Resume Next

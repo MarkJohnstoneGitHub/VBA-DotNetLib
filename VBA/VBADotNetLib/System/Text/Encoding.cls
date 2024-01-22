@@ -88,9 +88,9 @@ Attribute Convert.VB_Description = "Converts an entire byte array from one encod
 End Function
 
 '@Description("Converts a range of bytes in a byte array from one encoding to another.")
-Public Function Convert2(ByVal srcEncoding As DotNetLib.Encoding, ByVal dstEncoding As DotNetLib.Encoding, ByRef bytes() As Byte, ByVal Index As Long, ByVal Count As Long) As Byte()
+Public Function Convert2(ByVal srcEncoding As DotNetLib.Encoding, ByVal dstEncoding As DotNetLib.Encoding, ByRef bytes() As Byte, ByVal index As Long, ByVal Count As Long) As Byte()
 Attribute Convert2.VB_Description = "Converts a range of bytes in a byte array from one encoding to another."
-   Convert2 = this.EncodingSingleton.Convert_2(srcEncoding, dstEncoding, bytes, Index, Count)
+   Convert2 = this.EncodingSingleton.Convert_2(srcEncoding, dstEncoding, bytes, index, Count)
 End Function
 
 '@Description("Returns the encoding associated with the specified code page identifier.")
@@ -100,9 +100,9 @@ Attribute GetEncoding.VB_Description = "Returns the encoding associated with the
 End Function
 
 '@Description("Returns the encoding associated with the specified code page name.")
-Public Function GetEncoding2(ByVal Name As String) As DotNetLib.Encoding
+Public Function GetEncoding2(ByVal name As String) As DotNetLib.Encoding
 Attribute GetEncoding2.VB_Description = "Returns the encoding associated with the specified code page name."
-   Set GetEncoding2 = this.EncodingSingleton.GetEncoding_2(Name)
+   Set GetEncoding2 = this.EncodingSingleton.GetEncoding_2(name)
 End Function
 
 '@Description("Returns the encoding associated with the specified code page identifier. Parameters specify an error handler for characters that cannot be encoded and byte sequences that cannot be decoded.")
@@ -112,9 +112,9 @@ Attribute GetEncoding3.VB_Description = "Returns the encoding associated with th
 End Function
 
 '@Description("Returns the encoding associated with the specified code page name. Parameters specify an error handler for characters that cannot be encoded and byte sequences that cannot be decoded.")
-Public Function GetEncoding4(ByVal Name As String, ByVal EncoderFallback As Object, ByVal DecoderFallback As Object) As DotNetLib.Encoding
+Public Function GetEncoding4(ByVal name As String, ByVal EncoderFallback As Object, ByVal DecoderFallback As Object) As DotNetLib.Encoding
 Attribute GetEncoding4.VB_Description = "Returns the encoding associated with the specified code page name. Parameters specify an error handler for characters that cannot be encoded and byte sequences that cannot be decoded."
-   Set GetEncoding4 = this.EncodingSingleton.GetEncoding_4(Name, EncoderFallback, DecoderFallback)
+   Set GetEncoding4 = this.EncodingSingleton.GetEncoding_4(name, EncoderFallback, DecoderFallback)
 End Function
 
 'Todo : GetEncodings

@@ -32,26 +32,26 @@ Public Sub ArrayListBinarySearch2()
     coloredAnimals.Sort
     
     ' Compare results of an iterative search with a binary search
-    Dim Index As Long
-    Index = IterativeSearch(coloredAnimals, "White Tiger")
-    Debug.Print VBString.Format("Iterative search, item found at index: {0}", Index)
+    Dim index As Long
+    index = IterativeSearch(coloredAnimals, "White Tiger")
+    Debug.Print VBString.Format("Iterative search, item found at index: {0}", index)
     
-    Index = coloredAnimals.BinarySearch2("White Tiger", New SimpleStringComparer)
-    Debug.Print VBString.Format("Binary search, item found at index:    {0}", Index)
+    index = coloredAnimals.BinarySearch2("White Tiger", New SimpleStringComparer)
+    Debug.Print VBString.Format("Binary search, item found at index:    {0}", index)
 
 End Sub
 
 Private Function IterativeSearch(ByVal pList As DotNetLib.ArrayList, ByVal finditem As String) As Long
-    Dim Index As Long
-    Index = -1
+    Dim index As Long
+    index = -1
     Dim i As Long
     For i = 0 To pList.Count - 1
         If finditem = pList(i) Then
-            Index = i
+            index = i
             Exit For
         End If
     Next i
-    IterativeSearch = Index
+    IterativeSearch = index
 End Function
 
 ' This code produces the following output.

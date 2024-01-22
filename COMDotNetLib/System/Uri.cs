@@ -97,7 +97,7 @@ namespace DotNetLib.System
         public object WrappedObject => _uri;
 
         // Methods
-
+       
         public override bool Equals(object comparand)
         {  
             return _uri.Equals(comparand.Unwrap()); 

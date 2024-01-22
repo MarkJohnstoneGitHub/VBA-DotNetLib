@@ -50,7 +50,7 @@ Public Sub StringEndsWithExample4()
        
     ' Search using English-United States culture.
     Set ci = CultureInfo.CreateFromName("en-US")
-    Debug.Print VBString.Format(msg2.ToString(), ci.DisplayName, ci.Name)
+    Debug.Print VBString.Format(msg2.ToString(), ci.DisplayName, ci.name)
 
     Debug.Print "Case sensitive:"
     result = xyzARing.EndsWith2(capitalARing, False, ci)
@@ -63,7 +63,7 @@ Public Sub StringEndsWithExample4()
 
     ' Search using Swedish-Sweden culture.
     Set ci = CultureInfo.CreateFromName("sv-SE")
-    Debug.Print VBString.Format(msg2.ToString(), ci.DisplayName, ci.Name)
+    Debug.Print VBString.Format(msg2.ToString(), ci.DisplayName, ci.name)
 
     Debug.Print "Case sensitive:"
     result = xyzARing.EndsWith2(capitalARing, False, ci)

@@ -21,7 +21,7 @@ Attribute DateTimeTryParse.VB_Description = "The following example passes a numb
                                  "Fri, 15 May 2009 20:10:57 GMT")
    
     Debug.Print VBString.Format("Attempting to parse strings using {0} culture.", _
-                               CultureInfo.CurrentCulture.Name)
+                               CultureInfo.CurrentCulture.name)
     Dim dateValue As DotNetLib.DateTime
     Dim dateString As Variant
     For Each dateString In dateStrings

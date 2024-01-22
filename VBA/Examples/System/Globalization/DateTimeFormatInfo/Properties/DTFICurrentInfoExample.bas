@@ -21,7 +21,7 @@ Public Sub DateTimeFormatInfoCurrentInfo()
     Set dtfi = DateTimeFormatInfo.CurrentInfo
     
     Debug.Print VBString.Format("Date and Time Formats for {0:u} in the {1} Culture:", _
-                                date1, CultureInfo.CurrentCulture.Name); VBA.vbNewLine
+                                date1, CultureInfo.CurrentCulture.name); VBA.vbNewLine
     Debug.Print VBString.Format("{0,-22} {1,-20} {2,-30}", "Long Date Pattern", _
                                 dtfi.LongDatePattern, _
                                 date1.ToString2(dtfi.LongDatePattern))

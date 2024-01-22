@@ -30,11 +30,11 @@ Public Function CreateInitialize1D(ParamArray values() As Variant) As String()
 Attribute CreateInitialize1D.VB_Description = "Creates a one dimensional string array from a list of parameters"
    Dim result() As String
    ReDim result(LBound(values) To UBound(values))
-   Dim Index As Long
+   Dim index As Long
    
-   For Index = LBound(values) To UBound(values)
-       result(Index) = CStr(values(Index))
-   Next Index
+   For index = LBound(values) To UBound(values)
+       result(index) = CStr(values(index))
+   Next index
    CreateInitialize1D = result
 End Function
 

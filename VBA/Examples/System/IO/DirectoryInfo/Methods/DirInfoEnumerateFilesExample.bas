@@ -26,6 +26,6 @@ Public Sub DirectoryInfoEnumerateFiles()
     For Each varFile In files
         Dim File As DotNetLib.FileInfo
         Set File = varFile
-        Debug.Print VBString.Format("{0}", File.Name)
+        Debug.Print VBString.Format("{0}", File.name)
     Next
 End Sub

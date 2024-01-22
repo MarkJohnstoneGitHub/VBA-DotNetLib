@@ -16,7 +16,7 @@ Public Sub RegionInfoCurrencySymbolExample()
     ' Displays the property values of the RegionInfo for "US".
     Dim myRI1 As DotNetLib.RegionInfo
     Set myRI1 = RegionInfo.Create2("US")
-    Debug.Print VBString.Format("   Name:                         {0}", myRI1.Name)
+    Debug.Print VBString.Format("   Name:                         {0}", myRI1.name)
     Debug.Print VBString.Format("   DisplayName:                  {0}", myRI1.DisplayName)
     Debug.Print VBString.Format("   EnglishName:                  {0}", myRI1.EnglishName)
     Debug.Print VBString.Format("   IsMetric:                     {0}", myRI1.IsMetric)

@@ -29,7 +29,7 @@ Public Sub TimeSpanToString2Example2()
     Dim fmts() As String
     fmts = StringArray.CreateInitialize1D("c", "g", "G", "hh\:mm\:ss")
     Debug.Print VBString.Format(VBString.Unescape("{0,12}      Format  {1,22}  {2,22}\n"), _
-                      "Interval", cultures(0).Name, cultures(1).Name)
+                      "Interval", cultures(0).name, cultures(1).name)
 
     Dim varInterval As Variant
     For Each varInterval In intervals

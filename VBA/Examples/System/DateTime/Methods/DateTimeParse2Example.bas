@@ -36,7 +36,7 @@ Public Sub DateTimeParse2()
         Set culture = varCulture
         Dim dateValue As DotNetLib.DateTime
         Debug.Print VBString.Format("Attempted conversions using {0} culture.", _
-                           culture.Name)
+                           culture.name)
         Dim dateString As Variant
         For Each dateString In dateStrings
             On Error Resume Next
@@ -47,7 +47,7 @@ Public Sub DateTimeParse2()
                                  
             ElseIf Catch(FormatException) Then
                 Debug.Print VBString.Format("   Unable to convert '{0}' for culture {1}.", _
-                                 dateString, culture.Name)
+                                 dateString, culture.name)
             End If
             On Error GoTo 0 'reset error handling
         Next

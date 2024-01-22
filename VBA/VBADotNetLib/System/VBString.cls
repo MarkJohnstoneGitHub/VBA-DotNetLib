@@ -18,7 +18,7 @@ Attribute VB_Description = "Represents text as a sequence of UTF-16 code units."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 23, 2023
-'@LastModified January 18, 2024
+'@LastModified January 23, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -226,24 +226,62 @@ Attribute Format.VB_Description = "Replaces the format item in a specified strin
 End Function
 
 '@Static
+'@Description("Replaces one or more format items in a string with the string representation of a specified object.")
+Public Function Format2(ByRef pFormat As String, ByVal arg0 As Variant) As String
+Attribute Format2.VB_Description = "Replaces one or more format items in a string with the string representation of a specified object."
+   Format2 = this.BStringSingleton.Format2(pFormat, arg0)
+End Function
+
+'@Static
+'@Description("Replaces the format items in a string with the string representation of two specified objects.")
+Public Function Format3(ByRef pFormat As String, ByVal arg0 As Variant, ByVal arg1 As Variant) As String
+Attribute Format3.VB_Description = "Replaces the format items in a string with the string representation of two specified objects."
+   Format3 = this.BStringSingleton.Format3(pFormat, arg0, arg1)
+End Function
+
+'@Static
+'@Description("Replaces the format items in a string with the string representation of three specified objects.")
+Public Function Format4(ByRef pFormat As String, ByVal arg0 As Variant, ByVal arg1 As Variant, ByVal arg2 As Variant) As String
+Attribute Format4.VB_Description = "Replaces the format items in a string with the string representation of three specified objects."
+   Format4 = this.BStringSingleton.Format4(pFormat, arg0, arg1, arg2)
+End Function
+
+'@Static
 '@Description("Replaces the format items in a string with the string representations of corresponding objects in a specified array. A parameter supplies culture-specific formatting information.")
-Public Function Format2(ByVal provider As mscorlib.IFormatProvider, ByRef pFormat As String, ParamArray args() As Variant) As String
-Attribute Format2.VB_Description = "Replaces the format items in a string with the string representations of corresponding objects in a specified array. A parameter supplies culture-specific formatting information."
+Public Function Format5(ByVal provider As mscorlib.IFormatProvider, ByRef pFormat As String, ParamArray args() As Variant) As String
+Attribute Format5.VB_Description = "Replaces the format items in a string with the string representations of corresponding objects in a specified array. A parameter supplies culture-specific formatting information."
     Dim params() As Variant
     params = args
-    Format2 = this.BStringSingleton.Format2(provider, pFormat, params)
+    Format5 = this.BStringSingleton.Format5(provider, pFormat, params)
+End Function
+
+'@Description("Replaces the format items in a string with the string representations of corresponding objects in a specified array. A parameter supplies culture-specific formatting information.")
+Public Function Format6(ByVal provider As mscorlib.IFormatProvider, ByVal pFormat As String, ByVal arg0 As Variant) As String
+Attribute Format6.VB_Description = "Replaces the format items in a string with the string representations of corresponding objects in a specified array. A parameter supplies culture-specific formatting information."
+   Format6 = this.BStringSingleton.Format6(provider, pFormat, arg0)
+End Function
+
+'@Description("Replaces the format items in a string with the string representation of two specified objects. A parameter supplies culture-specific formatting information.")
+Public Function Format7(ByVal provider As mscorlib.IFormatProvider, ByVal pFormat As String, ByVal arg0 As Variant, ByVal arg1 As Variant) As String
+Attribute Format7.VB_Description = "Replaces the format items in a string with the string representation of two specified objects. A parameter supplies culture-specific formatting information."
+   Format7 = this.BStringSingleton.Format7(provider, pFormat, arg0, arg1)
+End Function
+
+'@Description("Replaces the format items in a string with the string representation of three specified objects. An parameter supplies culture-specific formatting information.")
+Public Function Format8(ByVal provider As mscorlib.IFormatProvider, ByVal pFormat As String, ByVal arg0 As Variant, ByVal arg1 As Variant, ByVal arg2 As Variant) As String
+Attribute Format8.VB_Description = "Replaces the format items in a string with the string representation of three specified objects. An parameter supplies culture-specific formatting information."
+   Format8 = this.BStringSingleton.Format8(provider, pFormat, arg0, arg1, arg2)
 End Function
 
 '@Static
-Friend Function Format3(ByRef pFormat As String, ByRef args() As Variant) As String
-    Format3 = this.BStringSingleton.Format(pFormat, args)
+Friend Function Format9(ByRef pFormat As String, ByRef args() As Variant) As String
+    Format9 = this.BStringSingleton.Format(pFormat, args)
 End Function
 
 '@Static
-Friend Function Format4(ByVal provider As mscorlib.IFormatProvider, ByRef pFormat As String, ByRef args() As Variant) As String
-    Format4 = this.BStringSingleton.Format2(provider, pFormat, args)
+Friend Function Format10(ByVal provider As mscorlib.IFormatProvider, ByRef pFormat As String, ByRef args() As Variant) As String
+    Format10 = this.BStringSingleton.Format5(provider, pFormat, args)
 End Function
-
 
 '@Static
 '@Description("Indicates whether the specified string is null or an empty string ("").")

@@ -28,7 +28,7 @@ Public Sub DateTimeFormatInfoSetAllDateTimePatterns()
     values = StringArray.CreateInitialize1D("December 2010", "December, 2010", _
                             "Dec-2010", "December-2010")
     
-    Debug.Print "Supported Y/y patterns for "; enUS.Name; " culture:"
+    Debug.Print "Supported Y/y patterns for "; enUS.name; " culture:"
     
     Dim pattern As Variant
     For Each pattern In enUS.DateTimeFormat.GetAllDateTimePatterns("Y")
@@ -53,7 +53,7 @@ Public Sub DateTimeFormatInfoSetAllDateTimePatterns()
     
     'Modify supported "Y" format.
     enUS.DateTimeFormat.SetAllDateTimePatterns StringArray.CreateInitialize1D("MMM-yyyy"), "Y"
-    Debug.Print "Supported Y/y patterns for "; enUS.Name; " culture:"
+    Debug.Print "Supported Y/y patterns for "; enUS.name; " culture:"
     For Each pattern In enUS.DateTimeFormat.GetAllDateTimePatterns("Y")
         Debug.Print "   " + pattern
     Next

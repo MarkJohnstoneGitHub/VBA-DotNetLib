@@ -97,8 +97,26 @@ namespace DotNetLib.System
         [Description("Replaces the format item in a specified string with the string representation of a corresponding object in a specified array.")]
         string Format(string pFormat, [In] ref object[] args);
 
+        [Description("Replaces one or more format items in a string with the string representation of a specified object.")]
+        string Format2(string pFormat, object arg0);
+
+        [Description("Replaces the format items in a string with the string representation of two specified objects.")]
+        string Format3(string pFormat, object arg0, object arg1);
+
+        [Description("Replaces the format items in a string with the string representation of three specified objects.")]
+        string Format4(string pFormat, object arg0, object arg1, object arg2);
+
         [Description("Replaces the format items in a string with the string representations of corresponding objects in a specified array. A parameter supplies culture-specific formatting information.")]
-        string Format2(IFormatProvider provider, string pFormat, [In] ref object[] args);
+        string Format5(IFormatProvider provider, string pFormat, [In] ref object[] args);
+
+        [Description("Replaces the format items in a string with the string representations of corresponding objects in a specified array. A parameter supplies culture-specific formatting information.")]
+        string Format6(IFormatProvider provider, string pFormat, object arg0);
+
+        [Description("Replaces the format items in a string with the string representation of two specified objects. A parameter supplies culture-specific formatting information.")]
+        string Format7(IFormatProvider provider, string pFormat, object arg0, object arg1);
+
+        [Description("Replaces the format items in a string with the string representation of three specified objects. An parameter supplies culture-specific formatting information.")]
+        string Format8(IFormatProvider provider, string pFormat, object arg0, object arg1, object arg2);
 
         [Description("Indicates whether the specified string is null or an empty string (\"\").")]
         bool IsNullOrEmpty(string value);

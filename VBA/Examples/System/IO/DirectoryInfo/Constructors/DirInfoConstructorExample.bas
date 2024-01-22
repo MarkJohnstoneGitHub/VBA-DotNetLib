@@ -29,7 +29,7 @@ Public Sub DirectoryInfoConstructor()
     Call di2.Create
     
     ' This operation will not be allowed because there are subdirectories.
-    Debug.Print VBString.Format("I am about to attempt to delete {0}.", di1.Name)
+    Debug.Print VBString.Format("I am about to attempt to delete {0}.", di1.name)
     Call di1.Delete
     Debug.Print "The Delete operation was successful, which was unexpected."
     

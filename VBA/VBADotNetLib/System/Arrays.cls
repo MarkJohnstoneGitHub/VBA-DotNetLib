@@ -51,9 +51,9 @@ End Function
 
 '@Static
 '@Description("Searches a range of elements in a one-dimensional sorted array for a value, using the specified IComparer interface.")
-Public Function BinarySearch2(ByVal pArray As DotNetLib.Array, ByVal Index As Long, ByVal pLength As Long, ByVal value As Variant, Optional ByVal comparer As mscorlib.IComparer = Nothing) As Long
+Public Function BinarySearch2(ByVal pArray As DotNetLib.Array, ByVal index As Long, ByVal pLength As Long, ByVal value As Variant, Optional ByVal comparer As mscorlib.IComparer = Nothing) As Long
 Attribute BinarySearch2.VB_Description = "Searches a range of elements in a one-dimensional sorted array for a value, using the specified IComparer interface."
-   BinarySearch2 = this.ArraySingleton.BinarySearch_3(pArray, Index, pLength, value, comparer)
+   BinarySearch2 = this.ArraySingleton.BinarySearch_3(pArray, index, pLength, value, comparer)
 End Function
 
 '@Static
@@ -191,9 +191,9 @@ End Sub
 
 '@Static
 '@Description("Reverses the sequence of a subset of the elements in the one-dimensional Array.")
-Public Sub Reverse2(ByVal pArray As DotNetLib.Array, ByVal Index As Long, ByVal pLength As Long)
+Public Sub Reverse2(ByVal pArray As DotNetLib.Array, ByVal index As Long, ByVal pLength As Long)
 Attribute Reverse2.VB_Description = "Reverses the sequence of a subset of the elements in the one-dimensional Array."
-    this.ArraySingleton.Reverse_2 pArray, Index, pLength
+    this.ArraySingleton.Reverse_2 pArray, index, pLength
 End Sub
 
 'Static
@@ -205,9 +205,9 @@ End Sub
 
 'Static
 '@Description("Sorts the elements in a range of elements in a one-dimensional Array using the specified IComparer.")
-Public Sub Sort2(ByVal pArray As DotNetLib.Array, ByVal Index As Long, ByVal pLength As Long, Optional ByVal comparer As mscorlib.IComparer = Nothing)
+Public Sub Sort2(ByVal pArray As DotNetLib.Array, ByVal index As Long, ByVal pLength As Long, Optional ByVal comparer As mscorlib.IComparer = Nothing)
 Attribute Sort2.VB_Description = "Sorts the elements in a range of elements in a one-dimensional Array using the specified IComparer."
-    this.ArraySingleton.Sort_2 pArray, Index, pLength, comparer
+    this.ArraySingleton.Sort_2 pArray, index, pLength, comparer
 End Sub
 
 'Static
@@ -219,9 +219,9 @@ End Sub
 
 'Static
 '@Description("Sorts a range of elements in a pair of one-dimensional Array objects (one contains the keys and the other contains the corresponding items) based on the keys in the first Array using the specified IComparer.")
-Public Sub Sort4(ByVal keys As DotNetLib.Array, ByVal items As DotNetLib.Array, ByVal Index As Long, ByVal pLength As Long, Optional ByVal comparer As mscorlib.IComparer = Nothing)
+Public Sub Sort4(ByVal keys As DotNetLib.Array, ByVal items As DotNetLib.Array, ByVal index As Long, ByVal pLength As Long, Optional ByVal comparer As mscorlib.IComparer = Nothing)
 Attribute Sort4.VB_Description = "Sorts a range of elements in a pair of one-dimensional Array objects (one contains the keys and the other contains the corresponding items) based on the keys in the first Array using the specified IComparer."
-    this.ArraySingleton.Sort_4 keys, items, Index, pLength, comparer
+    this.ArraySingleton.Sort_4 keys, items, index, pLength, comparer
 End Sub
 
 '@TODO FindAll

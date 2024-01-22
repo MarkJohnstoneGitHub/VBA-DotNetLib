@@ -22,12 +22,12 @@ Public Sub CreateInitialize1D(ByRef destination As Variant, ParamArray values() 
 Attribute CreateInitialize1D.VB_Description = "Copies a ParamArray of objects to an array."
    If VBA.IsArray(destination) Then
       ReDim destination(LBound(values) To UBound(values))
-      Dim Index As Long
+      Dim index As Long
       Dim varValue As Variant
       On Error GoTo Catch
       For Each varValue In values
-         Set destination(Index) = varValue
-         Index = Index + 1
+         Set destination(index) = varValue
+         index = index + 1
       Next
    Else
       Err.Raise VBAException.INVALID_PROCEDURE_CALL, , "Only arrays are supported."

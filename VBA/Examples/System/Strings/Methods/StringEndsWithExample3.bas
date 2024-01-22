@@ -35,7 +35,7 @@ Public Sub StringEndsWithExample3()
     ' Display the current culture because the culture-specific comparisons
     ' can produce different results with different cultures.
     Debug.Print VBString.Format(Regex.Unescape("The current culture is {0}.\n"), _
-                           CultureInfo.CurrentCulture.Name)
+                           CultureInfo.CurrentCulture.name)
                            
     ' Determine whether three versions of the letter I are equal to each other.
     Dim sc As Variant

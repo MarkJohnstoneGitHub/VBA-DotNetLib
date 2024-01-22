@@ -181,9 +181,9 @@ Attribute ExitProcess.VB_Description = "Terminates this process and returns an e
 End Sub
 
 '@Description("Replaces the name of each environment variable embedded in the specified string with the string equivalent of the value of the variable, then returns the resulting string.")
-Public Function ExpandEnvironmentVariables(ByVal Name As String) As String
+Public Function ExpandEnvironmentVariables(ByVal name As String) As String
 Attribute ExpandEnvironmentVariables.VB_Description = "Replaces the name of each environment variable embedded in the specified string with the string equivalent of the value of the variable, then returns the resulting string."
-   ExpandEnvironmentVariables = this.EnvironmentSingleton.ExpandEnvironmentVariables(Name)
+   ExpandEnvironmentVariables = this.EnvironmentSingleton.ExpandEnvironmentVariables(name)
 End Function
 
 '@Description("Immediately terminates a process after writing a message to the Windows Application event log, and then includes the message in error reporting to Microsoft.")

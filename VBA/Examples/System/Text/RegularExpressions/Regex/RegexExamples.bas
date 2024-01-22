@@ -45,8 +45,8 @@ Public Sub RegexExample1()
         Set Groups = pvtMatch.Groups
         Debug.Print VBString.Format("'{0}' repeated at positions {1} and {2}", _
                                     Groups.Item_2("word").value, _
-                                    Groups(0).Index, _
-                                    Groups(1).Index)
+                                    Groups(0).index, _
+                                    Groups(1).index)
     Next
 End Sub
 

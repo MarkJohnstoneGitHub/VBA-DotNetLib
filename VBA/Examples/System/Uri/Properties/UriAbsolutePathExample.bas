@@ -22,4 +22,3 @@ Public Sub UriAbsolutePathExample()
     Set myUri = Uri.Create2(baseUri, "catalog/shownew.htm?date=today")
     Debug.Print myUri.AbsolutePath
 End Sub
-

@@ -127,7 +127,7 @@ namespace DotNetLib.System
             get;
         }
 
-        string[] Segments 
+        string[] Segments
         {
             [Description("Gets an array containing the path segments that make up the specified URI.")]
             get;
@@ -146,6 +146,7 @@ namespace DotNetLib.System
         }
 
         // Methods
+
         [Description("Compares two Uri instances for equality.")]
         bool Equals(object comparand);
 

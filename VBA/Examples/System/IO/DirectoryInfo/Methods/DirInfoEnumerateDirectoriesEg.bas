@@ -26,6 +26,6 @@ Public Sub DirectoryInfoEnumerateDirectoriesExample()
     For Each varDirInfo In dirPrograms.EnumerateDirectories()
         Dim di As DotNetLib.DirectoryInfo
         Set di = varDirInfo
-        Debug.Print di.Name
+        Debug.Print di.name
     Next
 End Sub

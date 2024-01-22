@@ -129,7 +129,7 @@ Attribute ExportAll.VB_Description = "Export the active project components to fi
     Dim component As VBComponent
     For Each component In this.Project.VBComponents
         Dim fileName As String
-        fileName = component.Name
+        fileName = component.name
         Dim extension As String
         extension = ComponentExtension(component)
         Dim folderAnnotation As String

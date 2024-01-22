@@ -31,9 +31,9 @@ Attribute CreateInitialize1D.VB_Description = "Creates a one dimensional double 
    Dim result() As Double
    '@TODO What if values is empty?
    ReDim result(LBound(values) To UBound(values))
-   Dim Index As Long
-   For Index = LBound(values) To UBound(values)
-       result(Index) = values(Index)
-   Next Index
+   Dim index As Long
+   For index = LBound(values) To UBound(values)
+       result(index) = values(index)
+   Next index
    CreateInitialize1D = result
 End Function

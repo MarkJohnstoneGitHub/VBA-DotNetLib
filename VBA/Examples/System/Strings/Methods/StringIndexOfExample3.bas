@@ -58,7 +58,7 @@ Public Sub StringIndexOfExample3()
     
     Set CultureInfo.CurrentCulture = CultureInfo.CreateFromName("en-US")
     Debug.Print VBString.Format("The current culture is ""{0}"" - {1}.", _
-                        CultureInfo.CurrentCulture.Name, _
+                        CultureInfo.CurrentCulture.name, _
                         CultureInfo.CurrentCulture.DisplayName)
 
     ' Display the string to search for and the string to search.

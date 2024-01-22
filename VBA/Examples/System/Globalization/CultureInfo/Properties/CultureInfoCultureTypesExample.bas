@@ -19,7 +19,7 @@ Attribute CultureInfoCultureTypes.VB_Description = "The following example demons
     For Each varCultureInfo In cultures
         Dim culture As DotNetLib.CultureInfo
         Set culture = varCultureInfo
-        Debug.Print culture.EnglishName; "  ("; culture.Name; "):";
+        Debug.Print culture.EnglishName; "  ("; culture.name; "):";
         If (culture.IsNeutralCulture) Then
             Debug.Print " NeutralCulture"
         Else

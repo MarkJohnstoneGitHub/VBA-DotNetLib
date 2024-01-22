@@ -39,7 +39,7 @@ Private Sub CopyDirectory(ByVal SourceDirectory As String, ByVal TargetDirectory
     sourceFiles = source.GetFiles()
     Dim i As Long
     For i = 0 To UBound(sourceFiles)
-        Call File.Copy2(sourceFiles(i).FullName, target.FullName + "\\" + sourceFiles(i).Name, True)
+        Call File.Copy2(sourceFiles(i).FullName, target.FullName + "\\" + sourceFiles(i).name, True)
     Next i
 
     ' Copy directories.
@@ -47,6 +47,6 @@ Private Sub CopyDirectory(ByVal SourceDirectory As String, ByVal TargetDirectory
     sourceDirectories = source.GetDirectories()
     Dim j As Long
     For j = 0 To UBound(sourceDirectories)
-        Call CopyDirectory(sourceDirectories(j).FullName, target.FullName + "\\" + sourceDirectories(j).Name)
+        Call CopyDirectory(sourceDirectories(j).FullName, target.FullName + "\\" + sourceDirectories(j).name)
     Next j
 End Sub

@@ -35,11 +35,11 @@ Private Sub ShowMatches(ByVal r As DotNetLib.Regex, ByVal m As DotNetLib.Match)
     names = r.GetGroupNames()
     Debug.Print "Named Groups:"
     
-    Dim Name As Variant
-    For Each Name In names
+    Dim name As Variant
+    For Each name In names
         Dim grp As DotNetLib.Group
-        Set grp = m.Groups.Item_2(Name)
-        Debug.Print VBString.Format("   {0}: '{1}'", Name, grp.value)
+        Set grp = m.Groups.Item_2(name)
+        Debug.Print VBString.Format("   {0}: '{1}'", name, grp.value)
     Next
 End Sub
 

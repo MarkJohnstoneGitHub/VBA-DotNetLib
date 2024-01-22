@@ -45,7 +45,7 @@ Public Sub MatchGroups()
             For j = 0 To cc.Count - 1
                 Dim c As DotNetLib.Capture
                 Set c = cc.item(j)
-                Debug.Print VBString.Format("Capture" & j & "='" & c & "', Position=" & c.Index)
+                Debug.Print VBString.Format("Capture" & j & "='" & c & "', Position=" & c.index)
             Next j
         Next i
          Set m = m.NextMatch()
