@@ -71,8 +71,8 @@ namespace DotNetLib.System.Text
         [Description("Appends the string representation of a specified double-precision floating-point number to this instance.")]   
         StringBuilder Append(double value);
 
-        [Description("Appends the string representation of a specified decimal number to this instance.")] 
-        StringBuilder Append(decimal value);
+        //[Description("Appends the string representation of a specified decimal number to this instance.")] 
+        //StringBuilder Append(decimal value);
 
         [Description("Appends the string representation of a specified object to this instance.")]
         StringBuilder Append(object value);

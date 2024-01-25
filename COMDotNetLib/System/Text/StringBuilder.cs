@@ -149,11 +149,11 @@ namespace DotNetLib.System.Text
             return this;
         }
 
-        public StringBuilder Append(decimal value)
-        {
-            _sb.Append(value);
-            return this;
-        }
+        //public StringBuilder Append(decimal value)
+        //{
+        //    _sb.Append(value);
+        //    return this;
+        //}
 
         public StringBuilder Append(object value)
         {
