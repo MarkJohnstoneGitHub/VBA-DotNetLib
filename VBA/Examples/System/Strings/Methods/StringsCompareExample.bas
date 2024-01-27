@@ -24,9 +24,9 @@ Public Sub StringCompare()
     stringLower = Regex.Unescape("\x61\x62\x63")
     
     ' Display the strings.
-    Dim Output As String
-    Output = VBString.Format("Comparing '{0}' and '{1}':", stringUpper, stringLower)
-    Debug.Print Output
+    Dim output As String
+    output = VBString.Format("Comparing '{0}' and '{1}':", stringUpper, stringLower)
+    Debug.Print output
     
     ' Compare the uppercased strings; the result is true.
     Debug.Print VBString.Format("The Strings are equal when capitalized? {0}", _

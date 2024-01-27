@@ -1,5 +1,5 @@
 Attribute VB_Name = "UriFromHexExample"
-'@Folder("Examples.System.Uri.Methods")
+'@Folder "Examples.System.Uri.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -17,17 +17,17 @@ Option Explicit
 ' and, if it is, writes the corresponding decimal value to the console.
 ''
 Public Sub UriFromHexExample()
-    Dim testChar As String
-    testChar = "e"
-    If (Uri.IsHexDigit(testChar) = True) Then
-        Debug.Print VBString.Format("'{0}' is the hexadecimal representation of {1}", testChar, Uri.FromHex(testChar))
+    Dim testchar As String
+    testchar = "e"
+    If (Uri.IsHexDigit(testchar) = True) Then
+        Debug.Print VBString.Format("'{0}' is the hexadecimal representation of {1}", testchar, Uri.FromHex(testchar))
     Else
-        Debug.Print VBString.Format("'{0}' is not a hexadecimal character", testChar)
+        Debug.Print VBString.Format("'{0}' is not a hexadecimal character", testchar)
     End If
 
     Dim returnString As String
-    returnString = Uri.HexEscape(testChar)
-    Debug.Print VBString.Format("The hexadecimal value of '{0}' is {1}", testChar, returnString)
+    returnString = Uri.HexEscape(testchar)
+    Debug.Print VBString.Format("The hexadecimal value of '{0}' is {1}", testchar, returnString)
 End Sub
 
 ' Output

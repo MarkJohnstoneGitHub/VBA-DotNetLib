@@ -83,9 +83,9 @@ namespace DotNetLib.System.Text.RegularExpressions
             return Regex.Replace(input, pattern, replacement, options, matchTimeout);
         }
 
-        //public string Replace(string input, string pattern, GRegularExpressions.MatchEvaluator evaluator, RegexOptions options = RegexOptions.None)
+        //public string Replace2(string input, string pattern, GRegularExpressions.MatchEvaluator evaluator, RegexOptions options = RegexOptions.None)
         //{
-        //    return Regex.Replace(input, pattern, evaluator, options);
+        //    return Regex.Replace2(input, pattern, evaluator, options);
         //}
 
         public string[] Split(string input, string pattern, RegexOptions options = RegexOptions.None)

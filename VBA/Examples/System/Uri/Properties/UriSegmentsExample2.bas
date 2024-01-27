@@ -1,5 +1,6 @@
 Attribute VB_Name = "UriSegmentsExample2"
 '@Folder("Examples.System.Uri.Properties")
+
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 January 23, 2023
@@ -25,9 +26,9 @@ Public Sub UriSegmentsExample2()
     Dim pvtIndex As Long
     For pvtIndex = LBound(pvtSegments) To UBound(pvtSegments)
         If pvtIndex = LBound(pvtSegments) Then
-             Debug.Print VBString.Format2("The parts are {0}", pvtSegments(0));
+             Debug.Print VBString.Format("The parts are {0}", pvtSegments(0));
         Else
-            Debug.Print VBString.Format2(", {0}", pvtSegments(pvtIndex));
+            Debug.Print VBString.Format(", {0}", pvtSegments(pvtIndex));
         End If
     Next
     Debug.Print
@@ -36,9 +37,9 @@ Public Sub UriSegmentsExample2()
     pvtSegments = uriAddress1.Segments
     For pvtIndex = LBound(pvtSegments) To UBound(pvtSegments)
         If pvtIndex = LBound(pvtSegments) Then
-             Debug.Print VBString.Format2("The parts are {0}", pvtSegments(0));
+             Debug.Print VBString.Format("The parts are {0}", pvtSegments(0));
         Else
-            Debug.Print VBString.Format2(", {0}", pvtSegments(pvtIndex));
+            Debug.Print VBString.Format(", {0}", pvtSegments(pvtIndex));
         End If
     Next
 End Sub

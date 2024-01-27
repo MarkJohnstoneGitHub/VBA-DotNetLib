@@ -45,31 +45,31 @@ Private Sub CreateSampleFile()
 End Sub
 
 Private Function JulyWeekends() As mscorlib.IEnumerable
-    Dim Output As DotNetLib.ListString
-    Set Output = ListString.Create()
+    Dim output As DotNetLib.ListString
+    Set output = ListString.Create()
     
     Dim varLine As Variant
     For Each varLine In File.ReadLines(dataPath)
         Dim line As DotNetLib.String
         Set line = Strings.Copy(varLine)
         If (line.StartsWith3("Saturday") Or line.StartsWith3("Sunday")) And line.Contains2("July") Then
-            Call Output.Add(line.ToString())
+            Call output.Add(line.ToString())
         End If
     Next
-    Set JulyWeekends = Output.GetIEnumerable
+    Set JulyWeekends = output.GetIEnumerable
 End Function
 
 Private Function MarchMondays() As mscorlib.IEnumerable
-    Dim Output As DotNetLib.ListString
-    Set Output = ListString.Create()
+    Dim output As DotNetLib.ListString
+    Set output = ListString.Create()
         
     Dim varLine As Variant
     For Each varLine In File.ReadLines(dataPath)
         Dim line As DotNetLib.String
         Set line = Strings.Copy(varLine)
         If (line.StartsWith3("Monday") And line.Contains2("March")) Then
-            Call Output.Add(line.ToString())
+            Call output.Add(line.ToString())
         End If
     Next
-    Set MarchMondays = Output.GetIEnumerable
+    Set MarchMondays = output.GetIEnumerable
 End Function

@@ -4,7 +4,7 @@ Attribute VB_Name = "StringBuilderAppendExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 31, 2023
-'@LastModified October 31, 2023
+'@LastModified January 27, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -18,7 +18,7 @@ Public Sub StringBuilderAppend()
     Dim sb As DotNetLib.StringBuilder
     Set sb = StringBuilder.Create()
     
-    Call sb.Append("The value of the flag is ").Append(flag).Append(".")
+    Call sb.Append("The value of the flag is ").Append3(flag).Append(".")
     Debug.Print sb.ToString()
 End Sub
 

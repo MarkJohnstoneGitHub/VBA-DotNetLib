@@ -86,7 +86,7 @@ namespace DotNetLib.System
         bool IsWhiteSpace(string s, int index);
 
         //[Description("Converts the specified Unicode character to its equivalent string representation.")]
-        //string ToString([MarshalAs(UnmanagedType.IUnknown)] [In] ref char c);
+        //string ToString2([MarshalAs(UnmanagedType.IUnknown)] [In] ref char c);
 
         // Operators
 

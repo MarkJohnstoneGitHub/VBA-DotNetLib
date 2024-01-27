@@ -642,7 +642,7 @@ namespace DotNetLib.System
 
         //public string ToString4(string format, IFormatProvider provider)
         //{
-        //    return _dateTime.ToString(format, DateTimeFormatInfo.Unwrap(provider));
+        //    return _dateTime.ToString2(format, DateTimeFormatInfo.Unwrap(provider));
         //}
 
         public string ToString(string format, IFormatProvider formatProvider)

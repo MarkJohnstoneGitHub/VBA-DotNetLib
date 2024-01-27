@@ -26,7 +26,7 @@ Public Sub StringBuilderExample()
     Call sb.Append("DEF")
     
     ' Append a format string to the end of the StringBuilder.
-    Call sb.AppendFormat_3("GHI{0}{1}", "J", "k")
+    Call sb.AppendFormat3("GHI{0}{1}", "J", "k")
     
     ' Display the number of characters in the StringBuilder and its string.
     Debug.Print VBString.Format("{0} chars: {1}", sb.Length, sb.ToString())

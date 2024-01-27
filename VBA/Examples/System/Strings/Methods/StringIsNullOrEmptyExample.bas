@@ -1,4 +1,5 @@
 Attribute VB_Name = "StringIsNullOrEmptyExample"
+'@IgnoreModule EmptyStringLiteral
 '@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone

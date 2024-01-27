@@ -1,5 +1,5 @@
 Attribute VB_Name = "UriCheckSchemeNameExample"
-'@Folder("Examples.System.Uri.Methods")
+'@Folder "Examples.System.Uri.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
@@ -33,4 +33,5 @@ End Sub
 '    address 1  has a valid scheme name
 '    Uri is HTTP type
 '    Dns
+
 

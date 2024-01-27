@@ -4,7 +4,7 @@ Attribute VB_Name = "StringEndsWithExample2"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 December 29, 2023
-'@LastModified December 29, 2023
+'@LastModified January 27, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -55,25 +55,26 @@ End Sub
 Private Function StripEndTags(ByVal item As DotNetLib.String) As DotNetLib.String
     Dim found As Boolean
     found = False
-
+    Dim pvtItem As DotNetLib.String
+    Set pvtItem = item
     ' try to find a tag at the end of the line using EndsWith
-    If (item.Trim().EndsWith3(">")) Then
+    If (pvtItem.Trim().EndsWith3(">")) Then
 
         ' now search for the opening tag...
         Dim lastLocation As Long
-        lastLocation = item.LastIndexOf7("</")
+        lastLocation = pvtItem.LastIndexOf7("</")
 
         ' remove the identified section, if it is a valid region
         If (lastLocation >= 0) Then
             found = True
-            Set item = item.Substring2(0, lastLocation)
+            Set pvtItem = pvtItem.Substring2(0, lastLocation)
         End If
     End If
 
     If (found) Then
-        Set item = StripEndTags(item)
+        Set pvtItem = StripEndTags(pvtItem)
     End If
-    Set StripEndTags = item
+    Set StripEndTags = pvtItem
 End Function
 
 ' The example displays the following output:

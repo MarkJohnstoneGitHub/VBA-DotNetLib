@@ -1,5 +1,5 @@
 Attribute VB_Name = "UriIsHexEncodingExample"
-'@Folder("Examples.System.Uri.Methods")
+'@Folder "Examples.System.Uri.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib

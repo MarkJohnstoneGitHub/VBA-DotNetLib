@@ -4,7 +4,7 @@ Attribute VB_Name = "StringBuilderInsertExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 31, 2023
-'@LastModified October 31, 2023
+'@LastModified January 27, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -23,8 +23,8 @@ Public Sub StringBuilderInsert()
     
     Dim xyz As String
     xyz = "xyz"
-'    Dim obj As Object
-'    Set obj = Nothing
+    Dim obj As Variant
+    obj = 0
 
     Dim xBool As Boolean
     xBool = True
@@ -47,29 +47,32 @@ Public Sub StringBuilderInsert()
     Call sb.Insert(3, xyz)
     Call Show(1, sb)
     
-    Call sb.Insert_2(3, xyz, 2)
+    Call sb.Insert2(3, xyz, 2)
     Call Show(2, sb)
     
-    Call sb.Insert_3(3, xBool)      ' True
+    Call sb.Insert3(3, xBool)      ' True
     Call Show(3, sb)
     
-    Call sb.Insert_4(3, xByte)      ' 1
+    Call sb.Insert4(3, xByte)      ' 1
     Call Show(4, sb)
     
-    Call sb.Insert_5(3, xInt16)     ' 2
+    Call sb.Insert5(3, xInt16)     ' 2
     Call Show(5, sb)
     
-    Call sb.Insert_6(3, xInt32)     ' 3
+    Call sb.Insert6(3, xInt32)     ' 3
     Call Show(6, sb)
 
-    Call sb.Insert_7(3, xInt64)     ' 4
+    Call sb.Insert7(3, xInt64)     ' 4
     Call Show(7, sb)
     
-    Call sb.Insert_8(3, xSingle)      ' 6.6
+    Call sb.Insert8(3, xSingle)      ' 6.6
     Call Show(8, sb)
 
-    Call sb.Insert_9(3, xDouble)      ' 7.7
+    Call sb.Insert9(3, xDouble)      ' 7.7
     Call Show(9, sb)
+    
+    Call sb.Insert10(3, obj)      '
+    Call Show(10, sb)
     
 End Sub
 
@@ -91,4 +94,5 @@ End Sub
 ' 7 = --[4]--
 ' 8 = --[6.6]--
 ' 9 = --[7.7]--
+'10 = --[0]--
 '*/

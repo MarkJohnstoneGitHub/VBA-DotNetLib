@@ -28,10 +28,10 @@ Public Sub VBStringFormat5Example()
     For Each cultureName In cultureNames
         Dim culture As DotNetLib.CultureInfo
         Set culture = CultureInfo.CreateFromName(cultureName)
-        Dim Output As String
-        Output = VBString.Format5(culture, "{0,-11} {1,-35:D} {2:N}", _
+        Dim output As String
+        output = VBString.Format5(culture, "{0,-11} {1,-35:D} {2:N}", _
                                 culture.name, dateToDisplay, value)
-        Debug.Print Output
+        Debug.Print output
     Next
 End Sub
 

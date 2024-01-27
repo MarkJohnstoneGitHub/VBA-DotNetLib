@@ -95,7 +95,7 @@ namespace DotNetLib.System.Text
             return this;
         }
 
-        public StringBuilder Append(string value, int startIndex, int count)
+        public StringBuilder Append2(string value, int startIndex, int count)
         {
             _sb.Append(value, startIndex, count);
             return this;
@@ -103,59 +103,59 @@ namespace DotNetLib.System.Text
 
         public StringBuilder Append(StringBuilder value)
         {
-            _sb.Append(value);
+            _sb.Append(value.WrappedStringBuilder);
             return this;
         }
 
-        public StringBuilder Append(bool value)
+        public StringBuilder Append3(bool value)
         {
             _sb.Append(value);
             return this;
         }
 
-        public StringBuilder Append(byte value)
+        public StringBuilder Append4(byte value)
         {
             _sb.Append(value);
             return this;
         }
 
-        public StringBuilder Append(short value)
+        public StringBuilder Append5(short value)
         {
             _sb.Append(value);
             return this;
         }
 
-        public StringBuilder Append(int value)
+        public StringBuilder Append6(int value)
         {
             _sb.Append(value);
             return this;
         }
 
-        public StringBuilder Append(long value)
+        public StringBuilder Append7(long value)
         {
             _sb.Append(value);
             return this;
         }
 
-        public StringBuilder Append(float value)
+        public StringBuilder Append8(float value)
         {
             _sb.Append(value);
             return this;
         }
 
-        public StringBuilder Append(double value)
+        public StringBuilder Append9(double value)
         {
             _sb.Append(value);
             return this;
         }
 
-        //public StringBuilder Append(decimal value)
+        //public StringBuilder Append2(decimal value)
         //{
-        //    _sb.Append(value);
+        //    _sb.Append2(value);
         //    return this;
         //}
 
-        public StringBuilder Append(object value)
+        public StringBuilder Append10(object value)
         {
             _sb.Append(value.Unwrap());
             return this;
@@ -167,43 +167,43 @@ namespace DotNetLib.System.Text
             return this;
         }
 
-        public StringBuilder AppendFormat(string format, object arg0)
+        public StringBuilder AppendFormat2(string format, object arg0)
         {
             _sb.AppendFormat(format, arg0);
             return this;
         }
 
-        public StringBuilder AppendFormat(string format, object arg0, object arg1)
+        public StringBuilder AppendFormat3(string format, object arg0, object arg1)
         {
             _sb.AppendFormat(format, arg0, arg1);
             return this;
         }
 
-        public StringBuilder AppendFormat(string format, object arg0, object arg1, object arg2)
+        public StringBuilder AppendFormat4(string format, object arg0, object arg1, object arg2)
         {
             _sb.AppendFormat(format, arg0, arg1, arg2);
             return this;
         }
 
-        public StringBuilder AppendFormat(IFormatProvider provider, string pFormat, [In] ref object[] args)
+        public StringBuilder AppendFormat5(IFormatProvider provider, string pFormat, [In] ref object[] args)
         {
             _sb.AppendFormat(provider, pFormat, args);
             return this;
         }
 
-        public StringBuilder AppendFormat(IFormatProvider provider, string format, object arg0)
+        public StringBuilder AppendFormat6(IFormatProvider provider, string format, object arg0)
         {
             _sb.AppendFormat(provider, format, arg0);
             return this;
         }
 
-        public StringBuilder AppendFormat(IFormatProvider provider, string format, object arg0, object arg1)
+        public StringBuilder AppendFormat7(IFormatProvider provider, string format, object arg0, object arg1)
         {
             _sb.AppendFormat(provider, format, arg0, arg1);
             return this;
         }
 
-        public StringBuilder AppendFormat(IFormatProvider provider, string format, object arg0, object arg1, object arg2)
+        public StringBuilder AppendFormat8(IFormatProvider provider, string format, object arg0, object arg1, object arg2)
         {
             _sb.AppendFormat(provider, format, arg0, arg1, arg2);
             return this;
@@ -216,7 +216,7 @@ namespace DotNetLib.System.Text
             return this;
         }
 
-        public StringBuilder AppendLine(string value)
+        public StringBuilder AppendLine2(string value)
         {
             _sb.AppendLine(value);
             return this;
@@ -245,49 +245,49 @@ namespace DotNetLib.System.Text
             return this;
         }
 
-        public StringBuilder Insert(int index, string value, int count)
+        public StringBuilder Insert2(int index, string value, int count)
         {
             _sb.Insert(index, value, count);
             return this;
         }
 
-        public StringBuilder Insert(int index, bool value)
+        public StringBuilder Insert3(int index, bool value)
         {
             _sb.Insert(index, value);
             return this;
         }
 
-        public StringBuilder Insert(int index, byte value)
+        public StringBuilder Insert4(int index, byte value)
         {
             _sb.Insert(index, value);
             return this;
         }
 
-        public StringBuilder Insert(int index, short value)
+        public StringBuilder Insert5(int index, short value)
         {
             _sb.Insert(index, value);
             return this;
         }
 
-        public StringBuilder Insert(int index, int value)
+        public StringBuilder Insert6(int index, int value)
         {
             _sb.Insert(index, value);
             return this;
         }
 
-        public StringBuilder Insert(int index, long value)
+        public StringBuilder Insert7(int index, long value)
         {
             _sb.Insert(index, value);
             return this;
         }
 
-        public StringBuilder Insert(int index, float value)
+        public StringBuilder Insert8(int index, float value)
         {
             _sb.Insert(index, value);
             return this;
         }
 
-        public StringBuilder Insert(int index, double value)
+        public StringBuilder Insert9(int index, double value)
         {
             _sb.Insert(index, value);
             return this;
@@ -299,7 +299,7 @@ namespace DotNetLib.System.Text
             return this;
         }
 
-        public StringBuilder Insert(int index, object value)
+        public StringBuilder Insert10(int index, object value)
         {
             _sb.Insert(index, value.Unwrap());
             return this;
@@ -317,7 +317,7 @@ namespace DotNetLib.System.Text
             return this;
         }
 
-        public StringBuilder Replace(string oldValue, string newValue, int startIndex, int count)
+        public StringBuilder Replace2(string oldValue, string newValue, int startIndex, int count)
         {
             _sb.Replace(oldValue, newValue, startIndex, count);
             return this;
@@ -328,7 +328,7 @@ namespace DotNetLib.System.Text
             return _sb.ToString(); 
         }
 
-        public string ToString(int startIndex, int length)
+        public string ToString2(int startIndex, int length)
         {
             return _sb.ToString(startIndex, length);
         }

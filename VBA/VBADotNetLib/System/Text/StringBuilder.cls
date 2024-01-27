@@ -8,6 +8,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Represents a mutable string of characters. This class cannot be inherited."
+'@IgnoreModule ParameterCanBeByVal
 '@Folder "VBADotNetLib.System.Text"
 '@PredeclaredId
 '@ModuleDescription("Represents a mutable string of characters. This class cannot be inherited.")
@@ -40,7 +41,7 @@ End Sub
 
 '@Static
 '@Description("Initializes a new instance of the StringBuilder class using the specified string and capacity.")
-Public Function Create(Optional ByVal value As String = VBA.vbNullString, Optional ByVal Capacity As Long = 16) As DotNetLib.StringBuilder
+Public Function Create(Optional ByRef value As String = VBA.vbNullString, Optional ByVal Capacity As Long = 16) As DotNetLib.StringBuilder
 Attribute Create.VB_Description = "Initializes a new instance of the StringBuilder class using the specified string and capacity."
    Set Create = this.StringBuilderSingleton.Create(value, Capacity)
 End Function
@@ -54,7 +55,7 @@ End Function
 
 '@Static
 '@Description("Initializes a new instance of the StringBuilder class from the specified substring and capacity.")
-Public Function Create3(ByVal value As String, ByVal startIndex As Long, ByVal Length As Long, ByVal Capacity As Long) As DotNetLib.StringBuilder
+Public Function Create3(ByRef value As String, ByVal startIndex As Long, ByVal Length As Long, ByVal Capacity As Long) As DotNetLib.StringBuilder
 Attribute Create3.VB_Description = "Initializes a new instance of the StringBuilder class from the specified substring and capacity."
    Set Create3 = this.StringBuilderSingleton.Create3(value, startIndex, Length, Capacity)
 End Function

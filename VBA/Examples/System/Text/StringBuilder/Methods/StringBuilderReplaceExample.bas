@@ -4,7 +4,7 @@ Attribute VB_Name = "StringBuilderReplaceExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 31, 2023
-'@LastModified October 31, 2023
+'@LastModified January 27, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -30,13 +30,13 @@ Public Sub StringBuilderReplace()
     Debug.Print "Original value:"
     Call Show(sb)
 
-    Call sb.Replace_2("#", "!", 15, 29)        ' Some '#' -> '!'
+    Call sb.Replace2("#", "!", 15, 29)        ' Some '#' -> '!'
     Call Show(sb)
     Call sb.Replace("!", "o")                 ' All '!' -> 'o'
     Call Show(sb)
     Call sb.Replace("cat", "dog")             ' All "cat" -> "dog"
     Call Show(sb)
-    Call sb.Replace_2("dog", "fox", 15, 20)    ' Some "dog" -> "fox"
+    Call sb.Replace2("dog", "fox", 15, 20)    ' Some "dog" -> "fox"
     
     Debug.Print "Final value:"
     Call Show(sb)

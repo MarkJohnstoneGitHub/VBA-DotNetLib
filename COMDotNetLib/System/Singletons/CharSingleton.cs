@@ -149,9 +149,9 @@ namespace DotNetLib.System
             return GSystem.Char.IsWhiteSpace(s, index);
         }
 
-        //public string ToString([In] ref char charCode)
+        //public string ToString2([In] ref char charCode)
         //{
-        //    return char.ToString(charCode);
+        //    return char.ToString2(charCode);
         //}
 
         //Operators
