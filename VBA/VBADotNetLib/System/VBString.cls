@@ -411,18 +411,28 @@ End Function
 
 
 '@Static
-'@Description("")
+'@Description("Reports the zero-based index of the first occurrence of the specified string in this instance.")
 Public Function IndexOf(ByRef pValue As String, ByRef pSubstring As String) As Long
    IndexOf = InStr(pValue, pSubstring) - 1
 End Function
 
 '@Static
 '@Description("")
-Public Function IndexOf2(ByRef pValue As String, ByRef pSubstring As String, ByVal compareMode As Long) As Long
+'@Reference https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/instr-function
+Public Function IndexOf2(ByRef pValue As String, ByRef pSubstring As String, ByVal compareMode As VBA.VbCompareMethod) As Long
    IndexOf2 = InStr(pValue, pSubstring, compareMode) - 1
+End Function
+
+'@Static
+'@Description("")
+Public Function IndexOf3(ByRef pValue As String, ByRef pSubstring As String, ByVal startIndex As Long, ByVal pCount As Long)
+   IndexOf3 = InStr(pCount, pValue, pSubstring) - 1
 End Function
 
 ''@Static
 ''@Description("")
 'Public Function IndexOf3(ByRef pValue As String, ByRef pSubstring As String, pComparison As mscorlib.StringComparison) As Long
 'End Function
+
+
+

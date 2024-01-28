@@ -77,29 +77,36 @@ namespace DotNetLib.System.Text
         [Description("Appends the string representation of a specified object to this instance.")]
         StringBuilder Append10(object value);
 
+        [Description("Appends a copy of the specified .Net string to this instance.")]
+        StringBuilder Append11(String value);
+
+        [Description("Appends a copy of a specified .Net substring to this instance.")]
+        StringBuilder Append12(String value, int startIndex, int count);
+
+
         [Description("Appends the string returned by processing a composite format string, which contains zero or more format items, to this instance. Each format item is replaced by the string representation of a corresponding argument in a parameter array.")]
-        StringBuilder AppendFormat(string format, [In] ref object[] args);
+        StringBuilder AppendFormat4(string format, [In] ref object[] args);
 
         [Description("Appends the string returned by processing a composite format string, which contains zero or more format items, to this instance. Each format item is replaced by the string representation of a single argument.")]
-        StringBuilder AppendFormat2(string format, object arg0);
+        StringBuilder AppendFormat(string format, object arg0);
 
         [Description("Appends the string returned by processing a composite format string, which contains zero or more format items, to this instance. Each format item is replaced by the string representation of either of two arguments.")]
-        StringBuilder AppendFormat3(string format, object arg0, object arg1);
+        StringBuilder AppendFormat2(string format, object arg0, object arg1);
 
         [Description("Appends the string returned by processing a composite format string, which contains zero or more format items, to this instance. Each format item is replaced by the string representation of either of three arguments.")]
-        StringBuilder AppendFormat4(string format, object arg0, object arg1, object arg2);
+        StringBuilder AppendFormat3(string format, object arg0, object arg1, object arg2);
 
         [Description("Appends the string returned by processing a composite format string, which contains zero or more format items, to this instance. Each format item is replaced by the string representation of a corresponding argument in a parameter array using a specified format provider.")]
-        StringBuilder AppendFormat5(IFormatProvider provider, string pFormat, [In] ref object[] args);
+        StringBuilder AppendFormat8(IFormatProvider provider, string pFormat, [In] ref object[] args);
 
         [Description("Appends the string returned by processing a composite format string, which contains zero or more format items, to this instance. Each format item is replaced by the string representation of a single argument using a specified format provider.")]
-        StringBuilder AppendFormat6(IFormatProvider provider, string format, object arg0);
+        StringBuilder AppendFormat5(IFormatProvider provider, string format, object arg0);
 
         [Description("Appends the string returned by processing a composite format string, which contains zero or more format items, to this instance. Each format item is replaced by the string representation of either of two arguments using a specified format provider.")]
-        StringBuilder AppendFormat7(IFormatProvider provider, string format, object arg0, object arg1);
+        StringBuilder AppendFormat6(IFormatProvider provider, string format, object arg0, object arg1);
 
         [Description("Appends the string returned by processing a composite format string, which contains zero or more format items, to this instance. Each format item is replaced by the string representation of either of three arguments using a specified format provider.")]
-        StringBuilder AppendFormat8(IFormatProvider provider, string format, object arg0, object arg1, object arg2);
+        StringBuilder AppendFormat7(IFormatProvider provider, string format, object arg0, object arg1, object arg2);
 
         [Description("Appends the default line terminator to the end of the current StringBuilder object.")]
         StringBuilder AppendLine();

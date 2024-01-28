@@ -4,7 +4,7 @@ Attribute VB_Name = "StringBuilderExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 30, 2023
-'@LastModified October 30, 2023
+'@LastModified January 28, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -26,7 +26,7 @@ Public Sub StringBuilderExample()
     Call sb.Append("DEF")
     
     ' Append a format string to the end of the StringBuilder.
-    Call sb.AppendFormat3("GHI{0}{1}", "J", "k")
+    Call sb.AppendFormat2("GHI{0}{1}", "J", "k")
     
     ' Display the number of characters in the StringBuilder and its string.
     Debug.Print VBString.Format("{0} chars: {1}", sb.Length, sb.ToString())

@@ -155,57 +155,70 @@ namespace DotNetLib.System.Text
         //    return this;
         //}
 
+        //Todo Check implementation  is Unwrap() required?
         public StringBuilder Append10(object value)
         {
-            _sb.Append(value.Unwrap());
+            _sb.Append(value);
             return this;
         }
 
-        public StringBuilder AppendFormat(string format, [In] ref object[] args)
+        public StringBuilder Append11(String value)
         {
-            _sb.AppendFormat(format, args);
+            _sb.Append(value.WrappedString);
             return this;
         }
 
-        public StringBuilder AppendFormat2(string format, object arg0)
+        public StringBuilder Append12(String value, int startIndex, int count)
+        {
+            _sb.Append(value.WrappedString, startIndex, count);
+            return this;
+        }
+
+        public StringBuilder AppendFormat(string format, object arg0)
         {
             _sb.AppendFormat(format, arg0);
             return this;
         }
 
-        public StringBuilder AppendFormat3(string format, object arg0, object arg1)
+        public StringBuilder AppendFormat2(string format, object arg0, object arg1)
         {
             _sb.AppendFormat(format, arg0, arg1);
             return this;
         }
 
-        public StringBuilder AppendFormat4(string format, object arg0, object arg1, object arg2)
+        public StringBuilder AppendFormat3(string format, object arg0, object arg1, object arg2)
         {
             _sb.AppendFormat(format, arg0, arg1, arg2);
             return this;
         }
 
-        public StringBuilder AppendFormat5(IFormatProvider provider, string pFormat, [In] ref object[] args)
+        public StringBuilder AppendFormat4(string format, [In] ref object[] args)
         {
-            _sb.AppendFormat(provider, pFormat, args);
+            _sb.AppendFormat(format, args);
             return this;
         }
 
-        public StringBuilder AppendFormat6(IFormatProvider provider, string format, object arg0)
+        public StringBuilder AppendFormat5(IFormatProvider provider, string format, object arg0)
         {
-            _sb.AppendFormat(provider, format, arg0);
+            _sb.AppendFormat(provider.Unwrap(), format, arg0);
             return this;
         }
 
-        public StringBuilder AppendFormat7(IFormatProvider provider, string format, object arg0, object arg1)
+        public StringBuilder AppendFormat6(IFormatProvider provider, string format, object arg0, object arg1)
         {
-            _sb.AppendFormat(provider, format, arg0, arg1);
+            _sb.AppendFormat(provider.Unwrap(), format, arg0, arg1);
             return this;
         }
 
-        public StringBuilder AppendFormat8(IFormatProvider provider, string format, object arg0, object arg1, object arg2)
+        public StringBuilder AppendFormat7(IFormatProvider provider, string format, object arg0, object arg1, object arg2)
         {
-            _sb.AppendFormat(provider, format, arg0, arg1, arg2);
+            _sb.AppendFormat(provider.Unwrap(), format, arg0, arg1, arg2);
+            return this;
+        }
+
+        public StringBuilder AppendFormat8(IFormatProvider provider, string pFormat, [In] ref object[] args)
+        {
+            _sb.AppendFormat(provider.Unwrap(), pFormat, args);
             return this;
         }
 
