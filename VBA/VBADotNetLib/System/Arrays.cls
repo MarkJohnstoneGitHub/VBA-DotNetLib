@@ -17,7 +17,7 @@ Attribute VB_Description = "Provides methods for creating, manipulating, searchi
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 8, 2023
-'@LastModified October 29, 2023
+'@LastModified January 29, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -46,14 +46,14 @@ End Sub
 '@Description("Searches an entire one-dimensional sorted array for a value using the specified IComparer interface.")
 Public Function BinarySearch(ByVal pArray As DotNetLib.Array, ByVal pValue As Variant, Optional ByVal comparer As mscorlib.IComparer = Nothing) As Long
 Attribute BinarySearch.VB_Description = "Searches an entire one-dimensional sorted array for a value using the specified IComparer interface."
-    BinarySearch = this.ArraySingleton.BinarySearch_2(pArray, pValue, comparer)
+    BinarySearch = this.ArraySingleton.BinarySearch2(pArray, pValue, comparer)
 End Function
 
 '@Static
 '@Description("Searches a range of elements in a one-dimensional sorted array for a value, using the specified IComparer interface.")
 Public Function BinarySearch2(ByVal pArray As DotNetLib.Array, ByVal index As Long, ByVal pLength As Long, ByVal value As Variant, Optional ByVal comparer As mscorlib.IComparer = Nothing) As Long
 Attribute BinarySearch2.VB_Description = "Searches a range of elements in a one-dimensional sorted array for a value, using the specified IComparer interface."
-   BinarySearch2 = this.ArraySingleton.BinarySearch_3(pArray, index, pLength, value, comparer)
+   BinarySearch2 = this.ArraySingleton.BinarySearch3(pArray, index, pLength, value, comparer)
 End Function
 
 '@Static
@@ -81,14 +81,14 @@ End Sub
 '@Description("Copies a range of elements from an Array starting at the first element and pastes them into another Array starting at the first element. The length is specified as a 64-bit integer.")
 Public Sub Copy2(ByVal sourceArray As DotNetLib.Array, ByVal destinationArray As DotNetLib.Array, ByVal pLength As LongLong)
 Attribute Copy2.VB_Description = "Copies a range of elements from an Array starting at the first element and pastes them into another Array starting at the first element. The length is specified as a 64-bit integer."
-    this.ArraySingleton.Copy_2 sourceArray, destinationArray, pLength
+    this.ArraySingleton.Copy2 sourceArray, destinationArray, pLength
 End Sub
 
 '@Static
 '@Description("Copies a range of elements from an Array starting at the specified source index and pastes them to another Array starting at the specified destination index. The length and the indexes are specified as 32-bit integers.")
 Public Sub Copy3(ByVal sourceArray As DotNetLib.Array, ByVal sourceIndex As Long, ByVal destinationArray As DotNetLib.Array, ByVal destinationIndex As Long, ByVal pLength As Long)
 Attribute Copy3.VB_Description = "Copies a range of elements from an Array starting at the specified source index and pastes them to another Array starting at the specified destination index. The length and the indexes are specified as 32-bit integers."
-    this.ArraySingleton.Copy_3 sourceArray, sourceIndex, destinationArray, destinationIndex, pLength
+    this.ArraySingleton.Copy3 sourceArray, sourceIndex, destinationArray, destinationIndex, pLength
 End Sub
 
 '@Static
@@ -102,35 +102,35 @@ End Function
 '@Description("Creates a two-dimensional Array of the specified Type and dimension lengths, with zero-based indexing.")
 Public Function CreateInstance2(ByVal elementType As DotNetLib.Type, ByVal length1 As Long, ByVal length2 As Long) As DotNetLib.Array
 Attribute CreateInstance2.VB_Description = "Creates a two-dimensional Array of the specified Type and dimension lengths, with zero-based indexing."
-   Set CreateInstance2 = this.ArraySingleton.CreateInstance_2(elementType, length1, length2)
+   Set CreateInstance2 = this.ArraySingleton.CreateInstance2(elementType, length1, length2)
 End Function
 
 '@Static
 '@Description("Creates a three-dimensional Array of the specified Type and dimension lengths, with zero-based indexing.")
 Public Function CreateInstance3(ByVal elementType As DotNetLib.Type, ByVal length1 As Long, ByVal length2 As Long, ByVal length3 As Long) As DotNetLib.Array
 Attribute CreateInstance3.VB_Description = "Creates a three-dimensional Array of the specified Type and dimension lengths, with zero-based indexing."
-   Set CreateInstance3 = this.ArraySingleton.CreateInstance_3(elementType, length1, length2, length3)
+   Set CreateInstance3 = this.ArraySingleton.CreateInstance3(elementType, length1, length2, length3)
 End Function
 
 '@Static
 '@Description("Creates a multidimensional Array of the specified Type and dimension lengths, with zero-based indexing. The dimension lengths are specified in an array of 32-bit integers.")
 Public Function CreateInstance4(ByVal elementType As DotNetLib.Type, ByRef Lengths() As Long) As DotNetLib.Array
 Attribute CreateInstance4.VB_Description = "Creates a multidimensional Array of the specified Type and dimension lengths, with zero-based indexing. The dimension lengths are specified in an array of 32-bit integers."
-   Set CreateInstance4 = this.ArraySingleton.CreateInstance_4(elementType, Lengths)
+   Set CreateInstance4 = this.ArraySingleton.CreateInstance4(elementType, Lengths)
 End Function
 
 '@Static
 '@Description("Creates a multidimensional Array of the specified Type and dimension lengths, with zero-based indexing. The dimension lengths are specified in an array of 64-bit integers.")
 Public Function CreateInstance5(ByVal elementType As DotNetLib.Type, ByRef Lengths() As LongLong) As DotNetLib.Array
 Attribute CreateInstance5.VB_Description = "Creates a multidimensional Array of the specified Type and dimension lengths, with zero-based indexing. The dimension lengths are specified in an array of 64-bit integers."
-   Set CreateInstance5 = this.ArraySingleton.CreateInstance_5(elementType, Lengths)
+   Set CreateInstance5 = this.ArraySingleton.CreateInstance5(elementType, Lengths)
 End Function
 
 '@Static
 '@Description("Creates a multidimensional Array of the specified Type and dimension lengths, with the specified lower bounds.")
 Public Function CreateInstance6(ByVal elementType As DotNetLib.Type, ByRef Lengths() As Long, ByRef lowerBounds() As Long) As DotNetLib.Array
 Attribute CreateInstance6.VB_Description = "Creates a multidimensional Array of the specified Type and dimension lengths, with the specified lower bounds."
-   Set CreateInstance6 = this.ArraySingleton.CreateInstance_6(elementType, Lengths, lowerBounds)
+   Set CreateInstance6 = this.ArraySingleton.CreateInstance6(elementType, Lengths, lowerBounds)
 End Function
 
 '@Static
@@ -144,14 +144,14 @@ End Function
 '@Description("Searches for the specified object in a range of elements of a one-dimensional array, and returns the index of its first occurrence. The range extends from a specified index to the end of the array.")
 Public Function IndexOf2(ByVal pArray As DotNetLib.Array, ByVal value As Variant, ByVal startIndex As Long) As Long
 Attribute IndexOf2.VB_Description = "Searches for the specified object in a range of elements of a one-dimensional array, and returns the index of its first occurrence. The range extends from a specified index to the end of the array."
-   IndexOf2 = this.ArraySingleton.IndexOf_2(pArray, value, startIndex)
+   IndexOf2 = this.ArraySingleton.IndexOf2(pArray, value, startIndex)
 End Function
 
 '@Static
 '@Description("Searches for the specified object in a range of elements of a one-dimensional array, and returns the index of ifs first occurrence. The range extends from a specified index for a specified number of elements.")
 Public Function IndexOf3(ByVal pArray As DotNetLib.Array, ByVal value As Variant, ByVal startIndex As Long, ByVal pCount As Long) As Long
 Attribute IndexOf3.VB_Description = "Searches for the specified object in a range of elements of a one-dimensional array, and returns the index of ifs first occurrence. The range extends from a specified index for a specified number of elements."
-   IndexOf3 = this.ArraySingleton.IndexOf_3(pArray, value, startIndex, pCount)
+   IndexOf3 = this.ArraySingleton.IndexOf3(pArray, value, startIndex, pCount)
 End Function
 
 '@Static
@@ -165,14 +165,14 @@ End Function
 '@Description("Searches for the specified object and returns the index of the last occurrence within the range of elements in the one-dimensional Array that extends from the first element to the specified index.")
 Public Function LastIndexOf2(ByVal pArray As DotNetLib.Array, ByVal value As Variant, ByVal startIndex As Long) As Long
 Attribute LastIndexOf2.VB_Description = "Searches for the specified object and returns the index of the last occurrence within the range of elements in the one-dimensional Array that extends from the first element to the specified index."
-   LastIndexOf2 = this.ArraySingleton.LastIndexOf_2(pArray, value, startIndex)
+   LastIndexOf2 = this.ArraySingleton.LastIndexOf2(pArray, value, startIndex)
 End Function
 
 '@Static
 '@Description("Searches for the specified object and returns the index of the last occurrence within the range of elements in the one-dimensional Array that contains the specified number of elements and ends at the specified index.")
 Public Function LastIndexOf3(ByVal pArray As DotNetLib.Array, ByVal value As Variant, ByVal startIndex As Long, ByVal pCount As Long) As Long
 Attribute LastIndexOf3.VB_Description = "Searches for the specified object and returns the index of the last occurrence within the range of elements in the one-dimensional Array that contains the specified number of elements and ends at the specified index."
-   LastIndexOf3 = this.ArraySingleton.LastIndexOf_3(pArray, value, startIndex, pCount)
+   LastIndexOf3 = this.ArraySingleton.LastIndexOf3(pArray, value, startIndex, pCount)
 End Function
 
 '@Static
@@ -193,7 +193,7 @@ End Sub
 '@Description("Reverses the sequence of a subset of the elements in the one-dimensional Array.")
 Public Sub Reverse2(ByVal pArray As DotNetLib.Array, ByVal index As Long, ByVal pLength As Long)
 Attribute Reverse2.VB_Description = "Reverses the sequence of a subset of the elements in the one-dimensional Array."
-    this.ArraySingleton.Reverse_2 pArray, index, pLength
+    this.ArraySingleton.Reverse2 pArray, index, pLength
 End Sub
 
 'Static
@@ -207,21 +207,21 @@ End Sub
 '@Description("Sorts the elements in a range of elements in a one-dimensional Array using the specified IComparer.")
 Public Sub Sort2(ByVal pArray As DotNetLib.Array, ByVal index As Long, ByVal pLength As Long, Optional ByVal comparer As mscorlib.IComparer = Nothing)
 Attribute Sort2.VB_Description = "Sorts the elements in a range of elements in a one-dimensional Array using the specified IComparer."
-    this.ArraySingleton.Sort_2 pArray, index, pLength, comparer
+    this.ArraySingleton.Sort2 pArray, index, pLength, comparer
 End Sub
 
 'Static
 '@Description("Sorts a pair of one-dimensional Array objects (one contains the keys and the other contains the corresponding items) based on the keys in the first Array using the specified IComparer.")
 Public Sub Sort3(ByVal keys As DotNetLib.Array, ByVal items As DotNetLib.Array, Optional ByVal comparer As mscorlib.IComparer = Nothing)
 Attribute Sort3.VB_Description = "Sorts a pair of one-dimensional Array objects (one contains the keys and the other contains the corresponding items) based on the keys in the first Array using the specified IComparer."
-    this.ArraySingleton.Sort_3 keys, items, comparer
+    this.ArraySingleton.Sort3 keys, items, comparer
 End Sub
 
 'Static
 '@Description("Sorts a range of elements in a pair of one-dimensional Array objects (one contains the keys and the other contains the corresponding items) based on the keys in the first Array using the specified IComparer.")
 Public Sub Sort4(ByVal keys As DotNetLib.Array, ByVal items As DotNetLib.Array, ByVal index As Long, ByVal pLength As Long, Optional ByVal comparer As mscorlib.IComparer = Nothing)
 Attribute Sort4.VB_Description = "Sorts a range of elements in a pair of one-dimensional Array objects (one contains the keys and the other contains the corresponding items) based on the keys in the first Array using the specified IComparer."
-    this.ArraySingleton.Sort_4 keys, items, index, pLength, comparer
+    this.ArraySingleton.Sort4 keys, items, index, pLength, comparer
 End Sub
 
 '@TODO FindAll
@@ -280,7 +280,7 @@ Attribute CreateInitialize2D.VB_Description = "Creates a two-dimensional Array o
         columnIndex = 0
         Dim varValue As Variant
         For Each varValue In row
-            Call outArray.SetValue_2(varValue, rowIndex, columnIndex)
+            Call outArray.SetValue2(varValue, rowIndex, columnIndex)
             columnIndex = columnIndex + 1
         Next
         rowIndex = rowIndex + 1
@@ -326,7 +326,7 @@ Attribute CreateInitialize3D.VB_Description = "Creates a three-dimensional Array
             depthIndex = 0
             Dim varValue As Variant
             For Each varValue In height
-                Call outArray.SetValue_3(varValue, widthIndex, heightIndex, depthIndex)
+                Call outArray.SetValue3(varValue, widthIndex, heightIndex, depthIndex)
                 depthIndex = depthIndex + 1
             Next
             heightIndex = heightIndex + 1

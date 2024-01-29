@@ -4,7 +4,7 @@ Attribute VB_Name = "ArrayClearExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 28, 2023
-'@LastModified October 28, 2023
+'@LastModified January 29, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -23,7 +23,7 @@ Public Sub ArrayClearExample()
     
     Dim i As Long
     For i = 0 To 8
-        Debug.Print VBString.Format("{0} ", numbers1(i));
+        Debug.Print VBString.Format("{0} ", numbers1.Item(i));
     Next
     Debug.Print
     Debug.Print
@@ -32,7 +32,7 @@ Public Sub ArrayClearExample()
     Call Arrays.Clear(numbers1, 2, 5)
     
     For i = 0 To 8
-        Debug.Print VBString.Format("{0} ", numbers1(i));
+        Debug.Print VBString.Format("{0} ", numbers1.Item(i));
     Next
     Debug.Print
     Debug.Print
@@ -47,7 +47,7 @@ Public Sub ArrayClearExample()
     Dim j As Long
     For i = 0 To 2
         For j = 0 To 2
-            Debug.Print VBString.Format("{0} ", numbers2.GetValue_2(i, j));
+            Debug.Print VBString.Format("{0} ", numbers2.GetValue2(i, j));
         Next j
         Debug.Print
     Next i
@@ -58,7 +58,7 @@ Public Sub ArrayClearExample()
     
     For i = 0 To 2
         For j = 0 To 2
-            Debug.Print VBString.Format("{0} ", numbers2.GetValue_2(i, j));
+            Debug.Print VBString.Format("{0} ", numbers2.GetValue2(i, j));
         Next j
         Debug.Print
     Next i
@@ -76,7 +76,7 @@ Public Sub ArrayClearExample()
     For i = 0 To 2
         For j = 0 To 1
             For k = 0 To 1
-                Debug.Print VBString.Format("{0} ", numbers3.GetValue_3(i, j, k));
+                Debug.Print VBString.Format("{0} ", numbers3.GetValue3(i, j, k));
             Next k
             Debug.Print
         Next j
@@ -89,7 +89,7 @@ Public Sub ArrayClearExample()
     For i = 0 To 2
         For j = 0 To 1
             For k = 0 To 1
-                Debug.Print VBString.Format("{0} ", numbers3.GetValue_3(i, j, k));
+                Debug.Print VBString.Format("{0} ", numbers3.GetValue3(i, j, k));
             Next k
             Debug.Print
         Next j

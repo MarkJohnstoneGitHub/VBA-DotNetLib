@@ -19,7 +19,7 @@ namespace DotNetLib.System
     [ProgId("DotNetLib.System.Array")]
     [ClassInterface(ClassInterfaceType.None)]
     [ComDefaultInterface(typeof(IArray))]
-    public class Array : IArray, ICloneable, IList, ICollection, IEnumerable, IStructuralComparable, IStructuralEquatable
+    public class Array : IArray, ICloneable, IList, ICollection, IEnumerable, IStructuralComparable, IStructuralEquatable, IWrappedObject
     {
         private GSystem.Array _array;
 
@@ -51,6 +51,8 @@ namespace DotNetLib.System
         public int Rank => _array.Rank;
 
         public object SyncRoot => _array.SyncRoot;
+
+        public object WrappedObject => _array;
 
 
         // Methods
@@ -110,7 +112,7 @@ namespace DotNetLib.System
             _array.CopyTo(array.WrappedArray, index);
         }
 
-        public void CopyTo(Array array, long index)
+        public void CopyTo2(Array array, long index)
         {
             _array.CopyTo(array.WrappedArray, index);
         }
@@ -132,17 +134,17 @@ namespace DotNetLib.System
 
         public static Array CreateInstance(Type elementType, int length1, int length2)
         {
-            return new Array(GArray.CreateInstance(elementType.WrappedType,length1,length2));
+            return new Array(GArray.CreateInstance(elementType.WrappedType, length1, length2));
         }
 
         public static Array CreateInstance(Type elementType, int[] lengths, int[] lowerBounds)
         {
-            return new Array(GArray.CreateInstance(elementType.WrappedType, lengths,lowerBounds));
+            return new Array(GArray.CreateInstance(elementType.WrappedType, lengths, lowerBounds));
         }
 
         public static Array CreateInstance(Type elementType, int length1, int length2, int length3)
         {
-            return new Array(GArray.CreateInstance(elementType.WrappedType, length1, length2,length3));
+            return new Array(GArray.CreateInstance(elementType.WrappedType, length1, length2, length3));
         }
 
         public new virtual bool Equals(object obj)
@@ -190,37 +192,37 @@ namespace DotNetLib.System
             return _array.GetValue(index);
         }
 
-        public object GetValue(int index1, int index2)
+        public object GetValue2(int index1, int index2)
         {
             return _array.GetValue(index1, index2);
         }
 
-        public object GetValue(int index1, int index2, int index3)
+        public object GetValue3(int index1, int index2, int index3)
         {
             return _array.GetValue(index1, index2, index3);
         }
 
-        public object GetValue([In] ref int[] indices)
+        public object GetValue4([In] ref int[] indices)
         { 
             return _array.GetValue(indices);
         }
 
-        public object GetValue(long index)
+        public object GetValue5(long index)
         { 
             return _array.GetValue(index);
         }
 
-        public object GetValue(long index1, long index2)
+        public object GetValue6(long index1, long index2)
         {
             return _array.GetValue(index1, index2);
         }
 
-        public object GetValue(long index1, long index2, long index3)
+        public object GetValue7(long index1, long index2, long index3)
         {
             return _array.GetValue(index1, index2, index3);
         }
 
-        public object GetValue([In] ref long[] indices)
+        public object GetValue8([In] ref long[] indices)
         { 
             return _array.GetValue(indices); 
         }
@@ -312,7 +314,7 @@ namespace DotNetLib.System
         //    if (larray.Length != newSize)
         //    {
         //        T[] newArray = new T[newSize];
-        //        Array.Copy_2(larray, 0, newArray, 0, larray.Length > newSize ? newSize : larray.Length);
+        //        Array.Copy2(larray, 0, newArray, 0, larray.Length > newSize ? newSize : larray.Length);
         //        array = newArray;
         //    }
         //}
@@ -332,37 +334,37 @@ namespace DotNetLib.System
             _array.SetValue(value, index);
         }
 
-        public void SetValue(object value, int index1, int index2)
+        public void SetValue2(object value, int index1, int index2)
         {
             _array.SetValue(value, index1,  index2);
         }
 
-        public void SetValue(object value, int index1, int index2, int index3)
+        public void SetValue3(object value, int index1, int index2, int index3)
         {
             _array.SetValue(value, index1, index2, index3);
         }
 
-        public void SetValue(object value, [In] ref int[] indices)
+        public void SetValue4(object value, [In] ref int[] indices)
         {
             _array.SetValue(value, indices);
         }
 
-        public void SetValue(object value, long index)
+        public void SetValue5(object value, long index)
         {
             _array.SetValue(value, index);
         }
 
-        public void SetValue(object value, long index1, long index2)
+        public void SetValue6(object value, long index1, long index2)
         {
             _array.SetValue(value, index1, index2);
         }
 
-        public void SetValue(object value, long index1, long index2, long index3)
+        public void SetValue7(object value, long index1, long index2, long index3)
         {
             _array.SetValue(value, index1, index2, index3);
         }
 
-        public void SetValue(object value, [In] ref long[] indices)
+        public void SetValue8(object value, [In] ref long[] indices)
         {
             _array.SetValue(value, indices);
         }
@@ -465,12 +467,12 @@ namespace DotNetLib.System
             return ((IStructuralComparable)_array).CompareTo(other, comparer);
         }
 
-        public bool Equals(object other, IEqualityComparer comparer)
+        public bool Equals2(object other, IEqualityComparer comparer)
         {
             return ((IStructuralEquatable)_array).Equals(other, comparer);
         }
 
-        public int GetHashCode(IEqualityComparer comparer)
+        public int GetHashCode2(IEqualityComparer comparer)
         {
             return ((IStructuralEquatable)_array).GetHashCode(comparer);
         }
@@ -481,5 +483,14 @@ namespace DotNetLib.System
 
         }
 
+        int IStructuralEquatable.GetHashCode(IEqualityComparer comparer)
+        {
+            return ((IStructuralEquatable)_array).GetHashCode(comparer);
+        }
+
+        bool IStructuralEquatable.Equals(object other, IEqualityComparer comparer)
+        {
+            return ((IStructuralEquatable)_array).Equals(other, comparer);
+        }
     }
 }

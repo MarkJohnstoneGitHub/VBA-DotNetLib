@@ -73,7 +73,7 @@ namespace DotNetLib.System
         void CopyTo(Array array, int index);
 
         [Description("Copies all the elements of the current one-dimensional array to the specified one-dimensional array starting at the specified destination array index. The index is specified as a 64-bit integer.")]
-        void CopyTo(Array array, long index);
+        void CopyTo2(Array array, long index);
 
         [Description("Determines whether the specified object is equal to the current object.\r\n\r\n(Inherited from Object)")]
         bool Equals(object obj);
@@ -103,25 +103,25 @@ namespace DotNetLib.System
         object GetValue(int index);
 
         [Description("Gets the value at the specified position in the two-dimensional Array. The indexes are specified as 32-bit integers.")]
-        object GetValue(int index1, int index2);
+        object GetValue2(int index1, int index2);
 
         [Description("Gets the value at the specified position in the three-dimensional Array. The indexes are specified as 32-bit integers.")]
-        object GetValue(int index1, int index2, int index3);
+        object GetValue3(int index1, int index2, int index3);
 
         [Description("Gets the value at the specified position in the multidimensional Array. The indexes are specified as an array of 32-bit integers.")]
-        object GetValue([In] ref int[] indices);
+        object GetValue4([In] ref int[] indices);
 
         [Description("Gets the value at the specified position in the one-dimensional Array. The index is specified as a 64-bit integer.")] 
-        object GetValue(long index);
+        object GetValue5(long index);
 
         [Description("Gets the value at the specified position in the two-dimensional Array. The indexes are specified as 64-bit integers.")]
-        object GetValue(long index1, long index2);
+        object GetValue6(long index1, long index2);
 
         [Description("Gets the value at the specified position in the three-dimensional Array. The indexes are specified as 64-bit integers.")]
-        object GetValue(long index1, long index2, long index3);
+        object GetValue7(long index1, long index2, long index3);
 
         [Description("Gets the value at the specified position in the multidimensional Array. The indexes are specified as an array of 64-bit integers.")]
-        object GetValue([In] ref long[] indices);
+        object GetValue8([In] ref long[] indices);
 
         [Description("Initializes every element of the value-type Array by calling the parameterless constructor of the value type.")]
         void Initialize();
@@ -130,25 +130,25 @@ namespace DotNetLib.System
         void SetValue(object value, int index);
 
         [Description("Sets a value to the element at the specified position in the two-dimensional Array. The indexes are specified as 32-bit integers.")]
-        void SetValue(object value, int index1, int index2);
+        void SetValue2(object value, int index1, int index2);
 
         [Description("Sets a value to the element at the specified position in the three-dimensional Array. The indexes are specified as 32-bit integers.")]
-        void SetValue(object value, int index1, int index2, int index3);
+        void SetValue3(object value, int index1, int index2, int index3);
 
         [Description("Sets a value to the element at the specified position in the multidimensional Array. The indexes are specified as an array of 32-bit integers.")]
-        void SetValue(object value, [In] ref int[] indices);
+        void SetValue4(object value, [In] ref int[] indices);
 
         [Description("Sets a value to the element at the specified position in the one-dimensional Array. The index is specified as a 64-bit integer.")]
-        void SetValue(object value, long index);
+        void SetValue5(object value, long index);
 
         [Description("Sets a value to the element at the specified position in the two-dimensional Array. The indexes are specified as 64-bit integers.")]
-        void SetValue(object value, long index1, long index2);
+        void SetValue6(object value, long index1, long index2);
 
         [Description("Sets a value to the element at the specified position in the three-dimensional Array. The indexes are specified as 64-bit integers.")]
-        void SetValue(object value, long index1, long index2, long index3);
+        void SetValue7(object value, long index1, long index2, long index3);
 
         [Description("Sets a value to the element at the specified position in the multidimensional Array. The indexes are specified as an array of 64-bit integers.")]
-        void SetValue(object value, [In] ref long[] indices);
+        void SetValue8(object value, [In] ref long[] indices);
 
 
         // Explicit Interface Implementations
@@ -193,10 +193,10 @@ namespace DotNetLib.System
         int CompareTo(object other, GCollections.IComparer comparer);
 
         [Description("Determines whether an object is equal to the current instance.")]
-        bool Equals (object other, GCollections.IEqualityComparer comparer);
+        bool Equals2 (object other, GCollections.IEqualityComparer comparer);
 
         [Description("Returns a hash code for the current instance.")]
-        int GetHashCode(GCollections.IEqualityComparer comparer);
+        int GetHashCode2(GCollections.IEqualityComparer comparer);
 
         [Description("Returns a string that represents the current object.\r\n\r\n(Inherited from Object)")]
         string ToString();

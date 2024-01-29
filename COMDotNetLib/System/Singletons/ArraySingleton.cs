@@ -23,7 +23,7 @@ namespace DotNetLib.System
         //    throw new NotImplementedException();
         //}
 
-        // Note added to wrap a mscorlib.Array for mscorlib.ICollection void CopyTo(Array array, int index);
+        // Note added to wrap a mscorlib.Array for mscorlib.ICollection void CopyTo2(Array array, int index);
         // If array null throw error??
         public Array Create(GSystem.Array array)
         { 
@@ -35,12 +35,12 @@ namespace DotNetLib.System
             return Array.BinarySearch(array, value);
         }
 
-        public int BinarySearch_2(Array array, object value, IComparer comparer = null)
+        public int BinarySearch2(Array array, object value, IComparer comparer = null)
         {
             return Array.BinarySearch(array, value, comparer);
         }
 
-        public int BinarySearch_3(Array array, int index, int length, object value, IComparer comparer = null)
+        public int BinarySearch3(Array array, int index, int length, object value, IComparer comparer = null)
         {
             return Array.BinarySearch(array, index, length, value, comparer);
         }
@@ -60,12 +60,12 @@ namespace DotNetLib.System
             Array.Copy(sourceArray, destinationArray, length);
         }
 
-        public void Copy_2(Array sourceArray, Array destinationArray, long length)
+        public void Copy2(Array sourceArray, Array destinationArray, long length)
         {
             Array.Copy(sourceArray, destinationArray, length);
         }
 
-        public void Copy_3(Array sourceArray, int sourceIndex, Array destinationArray, int destinationIndex, int length)
+        public void Copy3(Array sourceArray, int sourceIndex, Array destinationArray, int destinationIndex, int length)
         {
             Array.Copy(sourceArray,sourceIndex, destinationArray, destinationIndex, length);
         }
@@ -75,26 +75,26 @@ namespace DotNetLib.System
             return Array.CreateInstance(elementType, length);
         }
 
-        public Array CreateInstance_2(Type elementType, int length1, int length2)
+        public Array CreateInstance2(Type elementType, int length1, int length2)
         {
             return Array.CreateInstance(elementType, length1, length2);
         }
-        public Array CreateInstance_3(Type elementType, int length1, int length2, int length3)
+        public Array CreateInstance3(Type elementType, int length1, int length2, int length3)
         {
             return Array.CreateInstance(elementType, length1, length2, length3);
         }
 
-        public Array CreateInstance_4(Type elementType, [In] ref int[] lengths)
+        public Array CreateInstance4(Type elementType, [In] ref int[] lengths)
         {
             return Array.CreateInstance(elementType, lengths);
         }
 
-        public Array CreateInstance_5(Type elementType, [In] ref long[] lengths)
+        public Array CreateInstance5(Type elementType, [In] ref long[] lengths)
         {
             return Array.CreateInstance(elementType, lengths);
         }
 
-        public Array CreateInstance_6(Type elementType, [In] ref int[] lengths, [In] ref int[] lowerBounds)
+        public Array CreateInstance6(Type elementType, [In] ref int[] lengths, [In] ref int[] lowerBounds)
         {
             return Array.CreateInstance(elementType, lengths,lowerBounds);
         }
@@ -104,12 +104,12 @@ namespace DotNetLib.System
             return Array.IndexOf(array,value);
         }
 
-        public int IndexOf_2(Array array, object value, int startIndex)
+        public int IndexOf2(Array array, object value, int startIndex)
         {
             return Array.IndexOf(array, value, startIndex);
         }
 
-        public int IndexOf_3(Array array, object value, int startIndex, int count)
+        public int IndexOf3(Array array, object value, int startIndex, int count)
         {
             return Array.IndexOf(array, value, startIndex, count);
         }
@@ -119,12 +119,12 @@ namespace DotNetLib.System
             return Array.LastIndexOf(array, value);
         }
 
-        public int LastIndexOf_2(Array array, object value, int startIndex)
+        public int LastIndexOf2(Array array, object value, int startIndex)
         {
             return Array.LastIndexOf(array, value, startIndex);
         }
 
-        public int LastIndexOf_3(Array array, object value, int startIndex, int count)
+        public int LastIndexOf3(Array array, object value, int startIndex, int count)
         {
             return Array.LastIndexOf(array, value, startIndex, count);
         }
@@ -139,14 +139,14 @@ namespace DotNetLib.System
             Array.Reverse(array);
         }
 
-        public void Reverse_2(Array array, int index, int length)
+        public void Reverse2(Array array, int index, int length)
         {
             Array.Reverse(array, index, length);
         }
 
-        //public void Sort_2(Array array)
+        //public void Sort2(Array array)
         //{
-        //    Array.Sort_2(array);
+        //    Array.Sort2(array);
         //}
 
         public void Sort(Array array, IComparer comparer = null)
@@ -154,32 +154,32 @@ namespace DotNetLib.System
             Array.Sort(array, comparer);
         }
 
-        //public void Sort_2(Array array, int index, int length)
+        //public void Sort2(Array array, int index, int length)
         //{
-        //    Array.Sort_2(array, index, length);
+        //    Array.Sort2(array, index, length);
         //}
 
-        public void Sort_2(Array array, int index, int length, IComparer comparer = null)
+        public void Sort2(Array array, int index, int length, IComparer comparer = null)
         {
             Array.Sort(array, index, length, comparer);
         }
 
-        //public void Sort_2(Array keys, Array items)
+        //public void Sort2(Array keys, Array items)
         //{
-        //    Array.Sort_2(keys, items);
+        //    Array.Sort2(keys, items);
         //}
 
-        public void Sort_3(Array keys, Array items, IComparer comparer = null)
+        public void Sort3(Array keys, Array items, IComparer comparer = null)
         {
             Array.Sort(keys, items, comparer);
         }
 
-        //public void Sort_2(Array keys, Array items, int index, int length)
+        //public void Sort2(Array keys, Array items, int index, int length)
         //{
-        //    Array.Sort_2(keys, items, index, length);
+        //    Array.Sort2(keys, items, index, length);
         //}
 
-        public void Sort_4(Array keys, Array items, int index, int length, IComparer comparer = null)
+        public void Sort4(Array keys, Array items, int index, int length, IComparer comparer = null)
         {
             Array.Sort(keys, items, index, length, comparer);
         }
@@ -187,12 +187,12 @@ namespace DotNetLib.System
 }
 
 
-//public int BinarySearch_2(Array array, object value)
+//public int BinarySearch2(Array array, object value)
 //{
-//    return Array.BinarySearch_2(array, value);
+//    return Array.BinarySearch2(array, value);
 //}
 
-//public int BinarySearch_2(Array array, int index, int length, object value)
+//public int BinarySearch2(Array array, int index, int length, object value)
 //{
 //    throw new NotImplementedException();
 //}

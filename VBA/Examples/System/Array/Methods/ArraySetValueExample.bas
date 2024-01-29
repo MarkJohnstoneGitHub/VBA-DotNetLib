@@ -4,7 +4,7 @@ Attribute VB_Name = "ArraySetValueExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 29, 2023
-'@LastModified October 29, 2023
+'@LastModified January 29, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -31,28 +31,28 @@ Public Sub ArraySetValue()
     Set myArr2 = Arrays.CreateInstance2(VBString.GetType(), 5, 5)
 
     ' Sets the element at index 1,3.
-    Call myArr2.SetValue_2("one-three", 1, 3)
-    Debug.Print VBString.Format("[1,3]:   {0}", myArr2.GetValue_2(1, 3))
+    Call myArr2.SetValue2("one-three", 1, 3)
+    Debug.Print VBString.Format("[1,3]:   {0}", myArr2.GetValue2(1, 3))
 
     ' Creates and initializes a three-dimensional array.
     Dim myArr3 As DotNetLib.Array
     Set myArr3 = Arrays.CreateInstance3(VBString.GetType(), 5, 5, 5)
     
     ' Sets the element at index 1,2,3.
-    Call myArr3.SetValue_3("one-two-three", 1, 2, 3)
-    Debug.Print VBString.Format("[1,2,3]:   {0}", myArr3.GetValue_3(1, 2, 3))
+    Call myArr3.SetValue3("one-two-three", 1, 2, 3)
+    Debug.Print VBString.Format("[1,2,3]:   {0}", myArr3.GetValue3(1, 2, 3))
     
     ' Creates and initializes a seven-dimensional array.
-    Dim Lengths() As Long
-    Call VBArray.CreateInitialize1D(Lengths, 5, 5, 5, 5, 5, 5, 5)
+    Dim pvtLengths() As Long
+    Call VBArray.CreateInitialize1D(pvtLengths, 5, 5, 5, 5, 5, 5, 5)
     Dim myArr7 As DotNetLib.Array
-    Set myArr7 = Arrays.CreateInstance4(VBString.GetType(), Lengths)
+    Set myArr7 = Arrays.CreateInstance4(VBString.GetType(), pvtLengths)
     
     ' Sets the element at index 1,2,3,0,1,2,3.
     Dim myIndices() As Long
     Call VBArray.CreateInitialize1D(myIndices, 1, 2, 3, 0, 1, 2, 3)
-    Call myArr7.SetValue_4("one-two-three-zero-one-two-three", myIndices)
-    Debug.Print VBString.Format("[1,2,3,0,1,2,3]:   {0}", myArr7.GetValue_4(myIndices))
+    Call myArr7.SetValue4("one-two-three-zero-one-two-three", myIndices)
+    Debug.Print VBString.Format("[1,2,3,0,1,2,3]:   {0}", myArr7.GetValue4(myIndices))
     
 End Sub
 

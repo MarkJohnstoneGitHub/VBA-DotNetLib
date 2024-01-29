@@ -4,7 +4,7 @@ Attribute VB_Name = "ArrayGetLowerBoundExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 28, 2023
-'@LastModified October 28, 2023
+'@LastModified January 29, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -30,7 +30,7 @@ Public Sub ArrayGetLowerBound()
     ' Iterate the array.
     Dim ctr As Long
     For ctr = lower To upper
-        Debug.Print VBString.Format("{0}{1}{2}", IIf(ctr = lower, "   ", ""), integers(ctr), IIf(ctr < upper, ", ", VBA.vbNewLine));
+        Debug.Print VBString.Format("{0}{1}{2}", IIf(ctr = lower, "   ", VBA.vbNullString), integers(ctr), IIf(ctr < upper, ", ", VBA.vbNewLine));
     Next
     Debug.Print
 
@@ -56,7 +56,7 @@ Public Sub ArrayGetLowerBound()
     For outer = integers2d.GetLowerBound(0) To integers2d.GetUpperBound(0)
         Dim inner As Long
         For inner = integers2d.GetLowerBound(1) To integers2d.GetUpperBound(1)
-            Debug.Print VBString.Format(formatString, outer, inner, integers2d.GetValue_2(outer, inner))
+            Debug.Print VBString.Format(formatString, outer, inner, integers2d.GetValue2(outer, inner))
         Next inner
     Next outer
 End Sub

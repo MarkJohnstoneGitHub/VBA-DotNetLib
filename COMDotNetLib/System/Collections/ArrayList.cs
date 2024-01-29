@@ -69,7 +69,7 @@ namespace DotNetLib.System.Collections
 
         public bool IsSynchronized => _arrayList.IsSynchronized;
 
-        // Todo Issue assigning value types added member SetValue(index,item) 
+        // Todo Issue assigning value types added member SetValue2(index,item) 
         // https://stackoverflow.com/questions/9481140/exposing-property-as-variant-in-net-for-interop
         // https://stackoverflow.com/a/9924325/10759363
         // https://social.msdn.microsoft.com/Forums/en-US/b8e26285-1f2a-4a1a-9ca4-9d198d0bd9dd/com-interop-property-getletset-interface-attribute?forum=vblanguage

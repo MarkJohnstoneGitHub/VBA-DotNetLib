@@ -170,12 +170,12 @@ namespace DotNetLib.System.Collections
             _list.Reverse();
         }
 
-        //public void Sort_2 (Comparison<string> comparison)
+        //public void Sort2 (Comparison<string> comparison)
         //{ 
-        //    this._stringList.Sort_2(comparison);
+        //    this._stringList.Sort2(comparison);
         //}
 
-        //public void Sort_2 (int index, int count, System.Collections.Generic.IComparer<T> comparer);
+        //public void Sort2 (int index, int count, System.Collections.Generic.IComparer<T> comparer);
         public void Sort()
         {
             _list.Sort();

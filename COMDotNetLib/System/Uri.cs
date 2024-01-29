@@ -152,7 +152,7 @@ namespace DotNetLib.System
 
         //
         //
-        //  A static shortcut to Uri.Equals
+        //  A static shortcut to Uri.Equals2
         //
         [SecurityPermission(SecurityAction.InheritanceDemand, Flags = SecurityPermissionFlag.Infrastructure)]
         public static bool operator ==(Uri uri1, Uri uri2)
@@ -170,7 +170,7 @@ namespace DotNetLib.System
 
         //
         //
-        //  A static shortcut to !Uri.Equals
+        //  A static shortcut to !Uri.Equals2
         //
         [SecurityPermission(SecurityAction.InheritanceDemand, Flags = SecurityPermissionFlag.Infrastructure)]
         public static bool operator !=(Uri uri1, Uri uri2)

@@ -1,10 +1,11 @@
 Attribute VB_Name = "StringBuilderInsertExample"
+'@IgnoreModule IntegerDataType
 '@Folder "Examples.System.Text.StringBuilder.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 31, 2023
-'@LastModified January 27, 2023
+'@LastModified January 29, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 

@@ -65,7 +65,7 @@ namespace DotNetLib.System.Collections
         //System.Collections.Generic.List<TOutput> ConvertAll<TOutput>(Converter<T, TOutput> converter);
 
         //[Description("Copies the entire List<T> to a compatible one-dimensional array, starting at the beginning of the target array.")]
-        //void CopyTo(object[] array);
+        //void CopyTo2(object[] array);
 
         //[Description("Copies the entire List<T> to a compatible one-dimensional array, starting at the specified index of the target array.")]
         //void CopyTo2(object[] array, int arrayIndex);
@@ -109,8 +109,8 @@ namespace DotNetLib.System.Collections
         [Description("Reverses the order of the elements in the entire List<T>.")]
         void Reverse();
 
-        //public void Sort_2 (Comparison<T> comparison);
-        //public void Sort_2 (int index, int count, System.Collections.Generic.IComparer<T> comparer);
+        //public void Sort2 (Comparison<T> comparison);
+        //public void Sort2 (int index, int count, System.Collections.Generic.IComparer<T> comparer);
         [Description("Sorts the elements in the entire List<T> using the default comparer.")]
         void Sort();
 
