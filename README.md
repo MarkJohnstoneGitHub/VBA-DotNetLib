@@ -17,9 +17,9 @@
 As VBA doesnot have member overloading factory methods and member overloads will differ.  Overloads generally are named with a preceeding number. Unique naming maybe used for factory methods.
 
  **Dependencies:**
- - [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/COMDotNetLib/bin/Release)
- - mscorlib.tlb type library eg Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.tlb
- - VBIDE (Microsoft Visual Basic for Applications Extensibility 5.3) for the Rubberduck utility exporting components
+ - [DotNetLib.tlb type library](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/DotNetLib%20Type%20Library)
+ - mscorlib.tlb version 2.4 type library Eg. Windows\Microsoft.NET\Framework64\v4.0.30319\mscorlib.tlb
+ - VBIDE (Microsoft Visual Basic for Applications Extensibility 5.3) optional for the [Rubberduck Export All Utility](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Rubberduck%20Utility) for exporting components.
  - .NET Framework If it is not installed see [Download .NET Framework](https://dotnet.microsoft.com/en-us/download/dotnet-framework)
 
  **Usage:**
@@ -37,13 +37,13 @@ As VBA doesnot have member overloading factory methods and member overloads will
     - For [DotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/DotNetLibrary.accdb) references may be required to be fixed by removing and adding back in.
     - Add reference DotNetlib.tlb (Com Interlop wrappers of the .Net Framework 4.8.1)  i.e. browse to location where stored 
     - Add reference mscorlib.tlb version 2.4
-    - Add reference Microsoft VBScript Regular Expressions 5.3 (Required only for the [Rubberduck export utility](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Rubberduck%20Utility) not part of VBADotNetLib)
-    - The type libraries added can be viewed under View->Object Browser and select DotNetLib.tlb
+    - Add reference Microsoft VBScript Regular Expressions 5.3 (Required only for the [Rubberduck export utility](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Rubberduck%20Utility) not a core part of VBADotNetLib)
+    - The type libraries added can be viewed under View->Object Browser and select DotNetLib.tlb or using the Rubberduck Code Explorer.
 3) Add the [VBADotNetLib](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/VBADotNetLib/) VBA Factory/Singleton classes into a project.
     - Either copy the classes or add a reference to project containing the classes.
 4) Recommended install [Rubberduck](https://rubberduckvba.com/) VBA Addin.
  
-For detailed explanation of the DotNetLib class properties see [netframework-4.8.1](https://learn.microsoft.com/en-us/dotnet/api/system?view=netframework-4.8.1)
+For detailed explanation of the DotNetLib class members see [netframework-4.8.1](https://learn.microsoft.com/en-us/dotnet/api/system?view=netframework-4.8.1)
 
 Ms Access database [VBADotNetLibrary.accdb](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/MS-Access) VBA Factory classes and [examples](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Examples) for the DotNetLib.tlb. Also a MS-Excel version [VBADotNetLib.xlsm](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/tree/main/VBA/Ms-Excel) .  
 
