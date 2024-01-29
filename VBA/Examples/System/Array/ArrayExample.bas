@@ -4,7 +4,7 @@ Attribute VB_Name = "ArrayExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 8, 2023
-'@LastModified October 26, 2023
+'@LastModified January 29, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.array?view=netframework-4.8.1
 
@@ -43,7 +43,7 @@ End Sub
 
 Private Sub PrintValues(ByVal myArr As DotNetLib.Array)
     Dim formatString As String
-    formatString = Regex.Unescape("\t{0}")
+    formatString = VBString.Unescape("\t{0}")
     Dim cols As Long
     cols = myArr.GetLength(myArr.Rank - 1)
     Dim i As Long

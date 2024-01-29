@@ -4,7 +4,7 @@ Attribute VB_Name = "ArrayBinarySearchExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 28, 2023
-'@LastModified October 28, 2023
+'@LastModified January 29, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -14,6 +14,10 @@ Attribute VB_Name = "ArrayBinarySearchExample"
 ' Define the object searching for as the same data type of the Array.
 Option Explicit
 
+''
+' The following code example shows how to use BinarySearch to locate a specific
+' object in an Array.
+''
 Public Sub ArrayBinarySearch()
     ' Creates and initializes a new Array.
     Dim myIntArray As DotNetLib.Array
@@ -55,7 +59,7 @@ End Sub
 
 Private Sub PrintValues(ByVal myArr As DotNetLib.Array)
     Dim formatString As String
-    formatString = Regex.Unescape("\t{0}")
+    formatString = VBString.Unescape("\t{0}")
     Dim i As Long
     Dim cols As Long
     cols = myArr.GetLength(myArr.Rank - 1)

@@ -1,11 +1,11 @@
 Attribute VB_Name = "StringIsNullOrEmptyExample"
-'@IgnoreModule EmptyStringLiteral
+'@IgnoreModule VariableNotAssigned, EmptyStringLiteral
 '@Folder "Examples.System.Strings.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 January 1, 2024
-'@LastModified January 1, 2024
+'@LastModified January 28, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 

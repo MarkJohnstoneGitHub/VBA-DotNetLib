@@ -1,10 +1,11 @@
 Attribute VB_Name = "BitArrayOrExample"
+'@IgnoreModule IndexedDefaultMemberAccess
 '@Folder "Examples.System.Collections.BitArray.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 November 2, 2023
-'@LastModified November 2, 2023
+'@LastModified January 28, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 

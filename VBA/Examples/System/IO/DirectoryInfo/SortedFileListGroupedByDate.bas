@@ -74,7 +74,7 @@ Private Function GetFilteredSortedFileListGroupedByDay(ByRef fileInfos() As DotN
         If fileInfos(pvtIndex).lastWriteTime.Ticks >= startDate.Ticks Then
             Dim daySortedList As DotNetLib.SortedList
             If pvtOutput.ContainsKey(fileInfos(pvtIndex).lastWriteTime.Date) Then
-                Set daySortedList = pvtOutput.item(fileInfos(pvtIndex).lastWriteTime.Date)
+                Set daySortedList = pvtOutput.Item(fileInfos(pvtIndex).lastWriteTime.Date)
             Else
                 Set daySortedList = SortedList.Create()
                 Call pvtOutput.Add(fileInfos(pvtIndex).lastWriteTime.Date, daySortedList)

@@ -1,4 +1,5 @@
 Attribute VB_Name = "DirectorySetLastAccessTimeEg"
+'@IgnoreModule FunctionReturnValueDiscarded
 '@Folder "Examples.System.IO.Directory.Methods"
 
 '@Author Mark Johnstone

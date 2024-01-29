@@ -1,4 +1,5 @@
 Attribute VB_Name = "RegexGroupNameFromNumberExample"
+'@IgnoreModule IndexedDefaultMemberAccess
 '@Folder "Examples.System.Text.RegularExpressions.Regex.Methods"
 
 '@Author Mark Johnstone

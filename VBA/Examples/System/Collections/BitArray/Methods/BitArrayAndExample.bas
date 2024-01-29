@@ -1,10 +1,11 @@
 Attribute VB_Name = "BitArrayAndExample"
+'@IgnoreModule IndexedDefaultMemberAccess
 '@Folder "Examples.System.Collections.BitArray.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 November 2, 2023
-'@LastModified November 2, 2023
+'@LastModified January 28, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -22,7 +23,7 @@ Public Sub BitArrayAndExample()
     Set myBA1 = BitArray.Create(4)
     Dim myBA2 As DotNetLib.BitArray
     Set myBA2 = BitArray.Create(4)
-
+    
     myBA1(1) = False
     myBA1(0) = myBA1(1)
     myBA1(3) = True

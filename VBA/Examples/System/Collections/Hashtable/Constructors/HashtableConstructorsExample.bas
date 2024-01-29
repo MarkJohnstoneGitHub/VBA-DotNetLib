@@ -1,6 +1,8 @@
 Attribute VB_Name = "HashtableConstructorsExample"
 '@Folder "Examples.System.Collections.Hashtable.Constructors"
 
+'TODO Implement
+
 ' https://learn.microsoft.com/en-us/dotnet/api/system.collections.hashtable.-ctor?view=netframework-4.8.1#system-collections-hashtable-ctor
 Option Explicit
 

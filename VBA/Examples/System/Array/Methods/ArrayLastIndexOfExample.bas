@@ -4,7 +4,7 @@ Attribute VB_Name = "ArrayLastIndexOfExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 28, 2023
-'@LastModified October 28, 2023
+'@LastModified January 29, 2023
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -55,7 +55,7 @@ End Sub
 
 Private Sub PrintIndexAndValues(ByVal anArray As DotNetLib.Array)
     Dim formatString As String
-    formatString = Regex.Unescape("\t[{0}]:\t{1}")
+    formatString = VBString.Unescape("\t[{0}]:\t{1}")
     Dim i As Long
     For i = anArray.GetLowerBound(0) To anArray.GetUpperBound(0)
         Debug.Print VBString.Format(formatString, i, anArray.GetValue(i))

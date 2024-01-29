@@ -52,11 +52,11 @@ Public Sub StringEndsWithExample2()
     Next
 End Sub
 
-Private Function StripEndTags(ByVal item As DotNetLib.String) As DotNetLib.String
+Private Function StripEndTags(ByVal Item As DotNetLib.String) As DotNetLib.String
     Dim found As Boolean
     found = False
     Dim pvtItem As DotNetLib.String
-    Set pvtItem = item
+    Set pvtItem = Item
     ' try to find a tag at the end of the line using EndsWith
     If (pvtItem.Trim().EndsWith3(">")) Then
 

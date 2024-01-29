@@ -1,10 +1,11 @@
 Attribute VB_Name = "HResults"
+'@IgnoreModule ConstantNotUsed
 '@Folder "VBADotNetLib.System"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 12, 2023
-'@LastModified January 2, 2024
+'@LastModified January 28, 2024
 
 ' https://referencesource.microsoft.com/#mscorlib/system/__hresults.cs
 

@@ -4,7 +4,7 @@ Attribute VB_Name = "MatchGroupsExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 1, 2023
-'@LastModified October 1, 2023
+'@LastModified January 28, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.match.groups?view=netframework-4.8.1#examples
 
@@ -37,15 +37,15 @@ Public Sub MatchGroups()
         Dim i As Long
         For i = 1 To 2
             Dim g As DotNetLib.Group
-            Set g = m.Groups.item(i)
-            Debug.Print VBString.Format("Group" & i & "='" & g & "'")
+            Set g = m.Groups.Item(i)
+            Debug.Print VBString.Format("Group" & i & "='" & g.ToString() & "'")
             Dim cc  As DotNetLib.CaptureCollection
             Set cc = g.Captures
             Dim j As Long
             For j = 0 To cc.Count - 1
                 Dim c As DotNetLib.Capture
-                Set c = cc.item(j)
-                Debug.Print VBString.Format("Capture" & j & "='" & c & "', Position=" & c.index)
+                Set c = cc.Item(j)
+                Debug.Print VBString.Format("Capture" & j & "='" & c.ToString() & "', Position=" & c.index)
             Next j
         Next i
          Set m = m.NextMatch()

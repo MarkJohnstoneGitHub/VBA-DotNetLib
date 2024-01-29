@@ -1,15 +1,17 @@
 Attribute VB_Name = "CaptureCollectionExample"
+'@IgnoreModule IndexedDefaultMemberAccess
 '@Folder "Examples.System.Text.RegularExpressions.CaptureCollection"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 30, 2023
-'@LastModified September 30, 2023
+'@LastModified January 28, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.capturecollection?view=netframework-4.8.1
 
 Option Explicit
 
+''
 ' The following example compares the Capture objects in the CaptureCollection
 ' object returned by the Group.Captures and Match.Captures properties. It also
 ' compares Group objects with the Capture objects in the CaptureCollection
@@ -35,7 +37,7 @@ Option Explicit
 ' only the last captured string, whereas the CaptureCollection object returned
 ' by the first capturing group's Group.Captures property includes all captured
 ' substrings.
-
+''
 Public Sub CaptureCollection()
     Dim pattern As String
     Dim strInput As String

@@ -29,31 +29,31 @@ Public Sub StringLastIndexOfExample8()
     Dim s As Variant
     For Each s In strSource
         Debug.Print "Before: " + s.ToString
-        Dim item As DotNetLib.String
-        Set item = s
+        Dim Item As DotNetLib.String
+        Set Item = s
         ' Use EndsWith to find a tag at the end of the line.
-        If (item.Trim().EndsWith3(">")) Then
+        If (Item.Trim().EndsWith3(">")) Then
             ' Locate the opening tag.
             Dim endTagStartPosition As Long
-            endTagStartPosition = item.LastIndexOf7("</")
+            endTagStartPosition = Item.LastIndexOf7("</")
             ' Remove the identified section, if it is valid.
             If (endTagStartPosition >= 0) Then
-                Set item = item.Substring2(0, endTagStartPosition)
+                Set Item = Item.Substring2(0, endTagStartPosition)
             End If
 
             ' Use StartsWith to find the opening tag.
-            If (item.Trim().StartsWith3("<")) Then
+            If (Item.Trim().StartsWith3("<")) Then
                 ' Locate the end of opening tab.
                 Dim openTagEndPosition As Long
-                openTagEndPosition = item.IndexOf7(">")
+                openTagEndPosition = Item.IndexOf7(">")
                 ' Remove the identified section, if it is valid.
                 If (openTagEndPosition >= 0) Then
-                    Set item = item.Substring(openTagEndPosition + 1)
+                    Set Item = Item.Substring(openTagEndPosition + 1)
                 End If
             End If
         End If
         ' Display the trimmed string.
-        Debug.Print "After: " + item.ToString()
+        Debug.Print "After: " + Item.ToString()
         Debug.Print
     Next
 End Sub

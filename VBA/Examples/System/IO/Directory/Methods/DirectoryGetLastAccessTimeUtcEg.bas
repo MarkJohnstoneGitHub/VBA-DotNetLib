@@ -1,10 +1,11 @@
 Attribute VB_Name = "DirectoryGetLastAccessTimeUtcEg"
+'@IgnoreModule FunctionReturnValueDiscarded
 '@Folder "Examples.System.IO.Directory.Methods"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 November 18, 2023
-'@LastModified November 18, 2023
+'@LastModified January 29, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 

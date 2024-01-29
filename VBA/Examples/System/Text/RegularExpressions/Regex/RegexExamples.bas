@@ -1,10 +1,11 @@
 Attribute VB_Name = "RegexExamples"
+'@IgnoreModule IndexedDefaultMemberAccess
 '@Folder "Examples.System.Text.RegularExpressions.Regex"
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 September 30, 2023
-'@LastModified September 30, 2023
+'@LastModified January 28, 2024
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1
 

@@ -4,7 +4,7 @@ Attribute VB_Name = "DirectoryGetFileSystemEntriesEg"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 November 18, 2023
-'@LastModified November 18, 2023
+'@LastModified January 28, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -32,6 +32,7 @@ Private Sub PrintFileSystemEntries(ByVal pPath As String)
     ' Obtain the file system entries in the directory path.
     Dim directoryEntries() As String
     directoryEntries = Directory.GetFileSystemEntries(pPath)
+    
     Dim str As Variant
     For Each str In directoryEntries
         Debug.Print str
@@ -57,7 +58,7 @@ Private Sub PrintFileSystemEntries2(ByVal pPath As String, ByVal pattern As Stri
     On Error GoTo ErrorHandler
     ' Obtain the file system entries in the directory path.
     Dim directoryEntries() As String
-    directoryEntries = Directory.GetFileSystemEntries(pPath)
+    directoryEntries = Directory.GetFileSystemEntries(pPath, pattern)
     Dim str As Variant
     For Each str In directoryEntries
         Debug.Print str

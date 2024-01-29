@@ -86,7 +86,7 @@ Public Sub DateTimeCreateFromDateTimeKind3()
 End Sub
 
 Private Function GetCalendarName(ByVal cal As DotNetLib.Calendar) As String
-    GetCalendarName = Regex.Match(cal.ToString(), "\.(\w+)Calendar").Groups.item(1).value
+    GetCalendarName = Regex.Match(cal.ToString(), "\.(\w+)Calendar").Groups.Item(1).value
 End Function
 
 ' The example displays the following output:

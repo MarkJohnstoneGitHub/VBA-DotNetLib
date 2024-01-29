@@ -65,9 +65,9 @@ End Property
 ''
 '@Description("Adds a new exception to the exception list.")
 '@param Item The new Error item being added.
-Public Sub Add(ByVal item As Exception)
+Public Sub Add(ByVal Item As Exception)
 Attribute Add.VB_Description = "Adds a new exception to the exception list."
-    this.ExceptionList.Add item:=item, Key:=str$(this.ExceptionList.Count + 1)
+    this.ExceptionList.Add Item:=Item, Key:=str$(this.ExceptionList.Count + 1)
 End Sub
 
 '@Description("List of all warnings and critical errrors when exported.")

@@ -409,10 +409,10 @@ Attribute Unescape.VB_Description = "Initializes a new instance a string to the 
    Unescape = this.BStringSingleton.Unescape(value)
 End Function
 
-
 '@Static
 '@Description("Reports the zero-based index of the first occurrence of the specified string in this instance.")
 Public Function IndexOf(ByRef pValue As String, ByRef pSubstring As String) As Long
+Attribute IndexOf.VB_Description = "Reports the zero-based index of the first occurrence of the specified string in this instance."
    IndexOf = InStr(pValue, pSubstring) - 1
 End Function
 
@@ -423,16 +423,13 @@ Public Function IndexOf2(ByRef pValue As String, ByRef pSubstring As String, ByV
    IndexOf2 = InStr(pValue, pSubstring, compareMode) - 1
 End Function
 
-'@Static
-'@Description("")
-Public Function IndexOf3(ByRef pValue As String, ByRef pSubstring As String, ByVal startIndex As Long, ByVal pCount As Long)
-   IndexOf3 = InStr(pCount, pValue, pSubstring) - 1
-End Function
+''@Static
+''@Description("")
+''Public Function IndexOf3(ByRef pValue As String, ByRef pSubstring As String, ByVal startIndex As Long, ByVal pCount As Long)
+''   'IndexOf3 = InStr(pCount, pValue, pSubstring) - 1
+''End Function
 
 ''@Static
 ''@Description("")
 'Public Function IndexOf3(ByRef pValue As String, ByRef pSubstring As String, pComparison As mscorlib.StringComparison) As Long
 'End Function
-
-
-

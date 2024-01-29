@@ -4,7 +4,7 @@ Attribute VB_Name = "ArrayListGetRangeExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 25, 2023
-'@LastModified October 25, 2023
+'@LastModified January 29, 2023
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.collections.arraylist.getrange?view=netframework-4.8.1#examples
 
@@ -40,7 +40,7 @@ Public Sub ArrayListGetRange()
     Set mySubAL = myAL.GetRange(0, 5)
     Debug.Print "Index 0 through 4 contains:"
     Dim mySeparator As String
-    mySeparator = Regex.Unescape("\t")
+    mySeparator = VBString.Unescape("\t")
     Call PrintValues(mySubAL, mySeparator)
     
     ' Replaces the values of five elements starting at index 1 with the values in the ICollection.
