@@ -1,6 +1,5 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.groupcollection?view=netframework-4.8.1
 
-//Empty.Groups
 using GSystem = global::System;
 using GRegularExpressions = global::System.Text.RegularExpressions;
 using System.Collections;
@@ -27,8 +26,18 @@ namespace DotNetLib.System.Text.RegularExpressions
             _match = match;
             _groups = WrapGroup();
         }
-        
-        public Group this[int index] =>  _groups[index];
+
+        public Group this[int groupnum]
+        {
+            get
+            {
+                if (groupnum >= _groups.Length || groupnum < 0)
+                {
+                    return Group._emptygroup;
+                }
+                return _groups[groupnum];
+            }
+        }
 
         public Group this[string groupname] => new Group(_match.WrappedMatch.Groups[groupname]);
 

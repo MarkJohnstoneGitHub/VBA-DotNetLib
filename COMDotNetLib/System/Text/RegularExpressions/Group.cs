@@ -24,6 +24,8 @@ namespace DotNetLib.System.Text.RegularExpressions
     {
         internal GRegularExpressions.Group _group;
         internal CaptureCollection _capcoll;
+        internal static Group _emptygroup = new Group(GRegularExpressions.Match.Empty.Groups[1]);
+
 
         // Constructors
         internal Group(GRegularExpressions.Group group) : base(group)
