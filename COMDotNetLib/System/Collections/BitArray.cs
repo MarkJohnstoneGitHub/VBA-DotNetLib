@@ -17,7 +17,7 @@ namespace DotNetLib.System.Collections
     {
         private GCollections.BitArray _bitArray;
 
-        //Constructors
+        // Constructors
         public BitArray(System.Collections.BitArray bits)
         {
             _bitArray = new GCollections.BitArray(bits.WrappedBitArray);
@@ -55,7 +55,6 @@ namespace DotNetLib.System.Collections
             get { return _bitArray; }
             set { _bitArray = value; }
         }
-
 
         public int Count => _bitArray.Count;
 
