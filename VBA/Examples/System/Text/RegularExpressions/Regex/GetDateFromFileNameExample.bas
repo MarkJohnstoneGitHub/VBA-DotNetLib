@@ -1,4 +1,5 @@
 Attribute VB_Name = "GetDateFromFileNameExample"
+'@IgnoreModule VariableNotAssigned
 '@Folder "Examples.System.Text.RegularExpressions.Regex"
 
 '@Author Mark Johnstone
@@ -12,7 +13,6 @@ Attribute VB_Name = "GetDateFromFileNameExample"
 
 Option Explicit
 
-
 ' Regular Expression testers
 ' https://regexr.com/
 ' http://regexstorm.net/tester
@@ -23,8 +23,7 @@ Option Explicit
 ' yyyyMMdd       \b(\d{4})(0[1-9]|1[0-2])(0[1-9]|[12]\d|30|31)\b
 ' MM -yyyy       (0?[1-9]|1[0-2]) -(\d{4})
 ' MMM dd yyyy    (?<!\w)\w{3}(?!\w)\s(0?[1-9]|[12]\d|30|31)\s(\d{4})
-' MMMM yyyy      \w[a-zA-Z]+\s\d{4}"
-
+' MMMM yyyy      \w[a-zA-Z]+\s\d{4}
 
 ''
 ' Parses a string according to a list of Regular Expression patterns provided to
@@ -34,7 +33,7 @@ Option Explicit
 ' To obtain a VBA Date data type from a DotNetLib.DateTime object use the
 ' ToOADate member which returns a double type which can be assigned to a VBA Date.
 ''
-Public Sub ExtractDateFromFileName()
+Public Sub ExtractDateFromFileNameExample()
     'Regex patterns for obtaining the date string from the file name
     Dim regexPatterns() As String
     regexPatterns = StringArray.CreateInitialize1D("(0?[1-9]|1[0-2])_(0?[1-9]|[12]\d|30|31)_(\d{4})", _
@@ -50,6 +49,10 @@ Public Sub ExtractDateFromFileName()
     dateFormats = StringArray.CreateInitialize1D("MMM dd yyyy", "MMM d yyyy", "MM_dd_yyyy", _
                             "M.d.yy", "MM.d.yy", "M.dd.yy", "yyyyMMdd", _
                             "MM -yyyy", "MMMM yyyy", "MMM.dd.yy")
+    
+    'Culture used for parsing date en-US, change to parse other cultures
+    Dim pvtFormatProvider As mscorlib.IFormatProvider
+    Set pvtFormatProvider = CultureInfo.CreateFromName("en-US")
     
     'Sample file name data
     Dim fileNames() As String
@@ -79,10 +82,6 @@ Public Sub ExtractDateFromFileName()
             "January 1995", _
             "December 1995")
     
-    'Culture used for parsing date en-US, change to parse other cultures
-    Dim pvtFormatProvider As mscorlib.IFormatProvider
-    Set pvtFormatProvider = CultureInfo.CreateFromName("en-US")
-    
     Dim fileName As Variant
     For Each fileName In fileNames
         Debug.Print VBString.Format("File name '{0}'", fileName)
@@ -104,7 +103,6 @@ Public Sub ExtractDateFromFileName()
         End If
         Debug.Print
     Next
-    
 End Sub
 
 ''
@@ -237,4 +235,5 @@ Public Function GetRegexPatternMatch(ByVal inputStr As String, ByRef patterns() 
 '    Pattern matched '\w[a-zA-Z]+\s\d{4}'
 '    Found Match 'December 1995' at position 0.
 '    Converted 'December 1995' to 12-01-1995.
+
 
