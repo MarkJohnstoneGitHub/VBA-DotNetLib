@@ -5,7 +5,7 @@ Attribute VB_Name = "HResults"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 July 12, 2023
-'@LastModified January 28, 2024
+'@LastModified Febuary 3, 2024
 
 ' https://referencesource.microsoft.com/#mscorlib/system/__hresults.cs
 
@@ -34,6 +34,7 @@ Const COR_E_INDEXOUTOFRANGE         As Long = &H80131508
 Const COR_E_UNAUTHORIZEDACCESS      As Long = &H80070005
 Const COR_E_PLATFORMNOTSUPPORTED    As Long = &H80131539
 Const COR_E_SECURITY                As Long = &H8013150A
+Const COR_E_TIMEOUT                 As Long = &H80131505
 
 ' https://referencesource.microsoft.com/#mscorlib/system/io/__hresults.cs
 Const COR_E_ENDOFSTREAM             As Long = &H80070026
@@ -69,6 +70,7 @@ Public Enum COMHResult
     PlatformNotSupportedException = COR_E_PLATFORMNOTSUPPORTED
     SecurityException = COR_E_SECURITY
     NullReferenceException = COR_E_NULLREFERENCE
+    RegexMatchTimeoutException = COR_E_TIMEOUT
 End Enum
 
 
