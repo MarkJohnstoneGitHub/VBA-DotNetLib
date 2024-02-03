@@ -62,7 +62,7 @@ namespace DotNetLib.System.Text.RegularExpressions
         MatchCollection Matches(string input);
 
         [Description("Searches the specified input string for all occurrences of a regular expression, beginning at the specified starting position in the string.")]
-        MatchCollection Matches(string input, int startat);
+        MatchCollection Matches2(string input, int startat);
 
         [Description("In a specified input string, replaces all strings that match a regular expression pattern with a specified replacement string.")]
         string Replace(string input, string replacement);
@@ -77,7 +77,7 @@ namespace DotNetLib.System.Text.RegularExpressions
         string[] Split(string input, int count = 0);
 
         [Description("Splits an input string a specified maximum number of times into an array of substrings, at the positions defined by a regular expression specified in the Regex constructor. The search for the regular expression pattern starts at a specified character position in the input string.")]
-        string[] Split(string input, int count, int startat);
+        string[] Split2(string input, int count, int startat);
 
         [Description("Returns the regular expression pattern that was passed into the Regex constructor.")]
         string ToString();

@@ -150,7 +150,7 @@ namespace DotNetLib.System.Text.RegularExpressions
             return new MatchCollection(_regex.Matches(input),this);
         }
 
-        public MatchCollection Matches(string input, int startat)
+        public MatchCollection Matches2(string input, int startat)
         {
             return new MatchCollection(_regex.Matches(input, startat), this);
         }
@@ -235,7 +235,7 @@ namespace DotNetLib.System.Text.RegularExpressions
             return _regex.Split(input, count);
         }
 
-        public string[] Split(string input, int count, int startat)
+        public string[] Split2(string input, int count, int startat)
         {
             return _regex.Split(input, count, startat);
         }

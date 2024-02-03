@@ -460,9 +460,9 @@ namespace DotNetLib.System
             return _string.Replace(oldValue, newValue);
         }
 
-        //public string[] Split(string separator)
+        //public string[] Split2(string separator)
         //{
-        //    return _string.Split(separator.ToCharArray());
+        //    return _string.Split2(separator.ToCharArray());
         //}
 
         public string[] Split(string separator, StringSplitOptions options = StringSplitOptions.None)
@@ -478,9 +478,9 @@ namespace DotNetLib.System
         //{
         //    if (separator == null)
         //    {
-        //        return _string.Split(null, count);
+        //        return _string.Split2(null, count);
         //    }
-        //    return _string.Split(separator.ToCharArray(), count);
+        //    return _string.Split2(separator.ToCharArray(), count);
         //}
 
         public string[] Split2(string separator, int count, StringSplitOptions options = StringSplitOptions.None)
