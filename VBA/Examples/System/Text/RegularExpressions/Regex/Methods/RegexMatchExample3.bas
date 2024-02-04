@@ -20,9 +20,9 @@ Option Explicit
 Public Sub RegexMatchExample3()
     Dim pvtInput  As String
     pvtInput = "ablaze beagle choral dozen elementary fanatic " + _
-                           "glaze hunger inept jazz kitchen lemon minus " + _
-                           "night optical pizza quiz restoration stamina " + _
-                           "train unrest vertical whiz xray yellow zealous"
+                "glaze hunger inept jazz kitchen lemon minus " + _
+                "night optical pizza quiz restoration stamina " + _
+                "train unrest vertical whiz xray yellow zealous"
     Dim pattern As String
     pattern = "\b\w*z+\w*\b"
     Dim m As DotNetLib.Match

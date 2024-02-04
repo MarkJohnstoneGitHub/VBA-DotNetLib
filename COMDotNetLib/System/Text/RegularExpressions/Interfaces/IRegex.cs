@@ -70,6 +70,18 @@ namespace DotNetLib.System.Text.RegularExpressions
         [Description("In a specified input substring, replaces a specified maximum number of strings that match a regular expression pattern with a specified replacement string.")]
         string Replace2(string input, string replacement, int count, int startat);
 
+        //[Description("In a specified input string, replaces all strings that match a specified regular expression with a string returned by a MatchEvaluator delegate.")]
+        //string Replace3(string input, IMatchEvaluator evaluator);
+
+        [Description("In a specified input string, replaces all strings that match a specified regular expression with a string returned by a MatchEvaluator delegate.")]
+        string Replace3(string input, MatchEvaluator evaluator);
+
+        [Description("In a specified input string, replaces a specified maximum number of strings that match a regular expression pattern with a string returned by a MatchEvaluator delegate.")]
+        string Replace4(string input, MatchEvaluator evaluator, int count);
+
+        [Description("In a specified input substring, replaces a specified maximum number of strings that match a regular expression pattern with a string returned by a MatchEvaluator delegate.")]
+        string Replace5(string input, MatchEvaluator evaluator, int count, int startat);
+
         //[Description("Splits an input string into an array of substrings at the positions defined by a regular expression pattern specified in the Regex constructor.")]
         //string[] Split2(string input);
 

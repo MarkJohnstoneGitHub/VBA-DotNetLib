@@ -1,7 +1,12 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1
 
+using DotNetLib.Extensions;
+using System;
 using System.ComponentModel;
+using System.Dynamic;
+using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using GRegularExpressions = global::System.Text.RegularExpressions;
 
 namespace DotNetLib.System.Text.RegularExpressions
@@ -180,19 +185,22 @@ namespace DotNetLib.System.Text.RegularExpressions
             return _regex.Replace(input, replacement, count, startat);
         }
 
-        public string Replace(string input, GRegularExpressions.MatchEvaluator evaluator)
+        public string Replace3(string input, MatchEvaluator evaluator)
         {
-            return _regex.Replace(input, evaluator);
+            GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.RegexMatchEvaluator);
+            return _regex.Replace(input, matchEvaluator);
         }
 
-        public string Replace(string input, GRegularExpressions.MatchEvaluator evaluator, int count)
+        public string Replace4(string input, MatchEvaluator evaluator, int count)
         {
-            return _regex.Replace(input, evaluator, count);
+            GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.RegexMatchEvaluator);
+            return _regex.Replace(input, matchEvaluator, count);
         }
 
-        public string Replace(string input, GRegularExpressions.MatchEvaluator evaluator, int count, int startat)
+        public string Replace5(string input, MatchEvaluator evaluator, int count, int startat)
         {
-            return _regex.Replace(input, evaluator, count, startat);
+            GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.RegexMatchEvaluator);
+            return _regex.Replace(input, matchEvaluator, count, startat);
         }
 
         public static string Replace(string input, string pattern, string replacement)
@@ -224,6 +232,7 @@ namespace DotNetLib.System.Text.RegularExpressions
         {
             return GRegularExpressions.Regex.Replace(input, pattern, evaluator, (GRegularExpressions.RegexOptions)options, matchTimeout.WrappedTimeSpan);
         }
+
 
         //public string[] Split2(string input)
         //{

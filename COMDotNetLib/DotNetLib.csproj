@@ -64,9 +64,11 @@
     <Compile Include="CoordinateSharp\ICelestialInfo.cs" />
     <Compile Include="CoordinateSharp\ICoordinate.cs" />
     <Compile Include="Extensions\CalendarExtension.cs" />
+    <Compile Include="Extensions\DelegateExtension.cs" />
     <Compile Include="Extensions\DirectoryInfoExtension.cs" />
     <Compile Include="Extensions\EncodingExtension.cs" />
     <Compile Include="Extensions\FileSystemInfoExtension.cs" />
+    <Compile Include="Extensions\GetMethodInfoExtension.cs" />
     <Compile Include="Extensions\IFormatProviderExtension.cs" />
     <Compile Include="Extensions\IWrappedObject.cs" />
     <Compile Include="Extensions\ListExtension.cs" />
@@ -291,6 +293,10 @@
     <Compile Include="System\Singletons\StringComparerSingleton.cs" />
     <Compile Include="System\StringSplitOptions.cs" />
     <Compile Include="System\Text\ASCIIEncoding.cs" />
+    <Compile Include="System\Text\RegularExpressions\IMatchEvaluator.cs" />
+    <Compile Include="System\Text\RegularExpressions\IMatchEvaluatorSingleton.cs" />
+    <Compile Include="System\Text\RegularExpressions\MatchEvaluator.cs" />
+    <Compile Include="System\Text\RegularExpressions\MatchEvaluatorSingleton.cs" />
     <Compile Include="System\Text\Singletons\ASCIIEncodingSingleton.cs" />
     <Compile Include="System\Text\Encoding.cs" />
     <Compile Include="System\Text\Interfaces\IASCIIEncodingSingleton.cs" />
