@@ -13,7 +13,7 @@ Attribute VB_Exposed = False
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 February 4, 2024
-'@LastModified February 4, 2024
+'@LastModified February 5, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -31,7 +31,7 @@ Implements DotNetLib.IMatchEvaluator
 ' Converts the first character of each match to uppercase and returns the
 ' converted string.
 '
-' @Remarks Used for the RegexReplace3Example.bas
+' @Remarks Used for the RegexReplace4Example.bas
 ''
 Private Function IMatchEvaluator_MatchEvaluator(ByVal pMatch As DotNetLib.Match) As String
     Dim pvtWord As String

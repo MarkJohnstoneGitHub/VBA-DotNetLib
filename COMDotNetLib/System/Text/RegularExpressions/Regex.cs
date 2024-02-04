@@ -180,24 +180,29 @@ namespace DotNetLib.System.Text.RegularExpressions
             return _regex.Replace(input, replacement);
         }
 
-        public string Replace2(string input, string replacement, int count, int startat)
+        public string Replace2(string input, string replacement, int count)
+        {
+            return _regex.Replace(input, replacement, count);
+        }
+
+        public string Replace3(string input, string replacement, int count, int startat)
         {
             return _regex.Replace(input, replacement, count, startat);
         }
 
-        public string Replace3(string input, MatchEvaluator evaluator)
+        public string Replace4(string input, MatchEvaluator evaluator)
         {
             GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.RegexMatchEvaluator);
             return _regex.Replace(input, matchEvaluator);
         }
 
-        public string Replace4(string input, MatchEvaluator evaluator, int count)
+        public string Replace5(string input, MatchEvaluator evaluator, int count)
         {
             GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.RegexMatchEvaluator);
             return _regex.Replace(input, matchEvaluator, count);
         }
 
-        public string Replace5(string input, MatchEvaluator evaluator, int count, int startat)
+        public string Replace6(string input, MatchEvaluator evaluator, int count, int startat)
         {
             GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.RegexMatchEvaluator);
             return _regex.Replace(input, matchEvaluator, count, startat);
