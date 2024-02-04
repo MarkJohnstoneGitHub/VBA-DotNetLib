@@ -84,6 +84,10 @@ ArrayList.Item(index) = item
 
 **Status: Latest Updates**
 
+Feb 4,2024
+ - Added [MatchEvaluator](https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.matchevaluator?view=netframework-4.8.1)
+ - Added [VBA MatchEvaluator singleton](https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib/blob/main/VBA/VBADotNetLib/System/Text/RegularExpressions/MatchEvaluator.cls)
+   
 Jan 21, 2024 
  - Added [Uri](https://learn.microsoft.com/en-us/dotnet/api/system.uri?view=netframework-4.8.1)
  - Added Uri.cls VBA Singleton class
