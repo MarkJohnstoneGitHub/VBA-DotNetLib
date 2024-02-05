@@ -4,7 +4,7 @@ Attribute VB_Name = "RegexIsMatchExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 February 2, 2024
-'@LastModified February 2, 2024
+'@LastModified February 5, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -34,7 +34,7 @@ Public Sub RegexIsMatchExample()
     For Each partNumber In partNumbers
         Debug.Print VBString.Format("{0} {1} a valid part number.", _
                            partNumber, _
-                           IIf(Regex.IsMatch(partNumber, pattern, RegexOptions.RegexOptions_IgnoreCase), _
+                           IIf(Regex.IsMatch(CStr(partNumber), pattern, RegexOptions.RegexOptions_IgnoreCase), _
                                           "is", "is not"))
     Next
 End Sub

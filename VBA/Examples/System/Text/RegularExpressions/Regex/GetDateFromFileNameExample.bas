@@ -5,7 +5,7 @@ Attribute VB_Name = "GetDateFromFileNameExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 February 3, 2024
-'@LastModified February 3, 2024
+'@LastModified February 5, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -114,7 +114,7 @@ Public Function GetRegexPatternMatch(ByVal inputStr As String, ByRef patterns() 
     Dim pattern As Variant
     For Each pattern In patterns
         Dim pvtMatch As DotNetLib.Match
-        Set pvtMatch = Regex.Match(inputStr, pattern, RegexOptions.RegexOptions_IgnoreCase)
+        Set pvtMatch = Regex.Match(inputStr, CStr(pattern), RegexOptions.RegexOptions_IgnoreCase)
         If (pvtMatch.Success) Then
             Debug.Print VBString.Format("Pattern matched '{0}' ", pattern)
             Debug.Print VBString.Format("Found match '{0}' at position {1}.", pvtMatch.value, pvtMatch.index)

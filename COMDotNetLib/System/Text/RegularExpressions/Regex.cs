@@ -1,12 +1,8 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8.1
 
-using DotNetLib.Extensions;
 using System;
 using System.ComponentModel;
-using System.Dynamic;
-using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Text.RegularExpressions;
 using GRegularExpressions = global::System.Text.RegularExpressions;
 
 namespace DotNetLib.System.Text.RegularExpressions
@@ -208,10 +204,10 @@ namespace DotNetLib.System.Text.RegularExpressions
             return _regex.Replace(input, matchEvaluator, count, startat);
         }
 
-        public static string Replace(string input, string pattern, string replacement)
-        {
-            return GRegularExpressions.Regex.Replace(input, pattern, replacement);
-        }
+        //public static string Replace(string input, string pattern, string replacement)
+        //{
+        //    return GRegularExpressions.Regex.Replace(input, pattern, replacement);
+        //}
 
         public static string Replace(string input, string pattern, string replacement, RegexOptions options)
         {
@@ -223,20 +219,20 @@ namespace DotNetLib.System.Text.RegularExpressions
             return GRegularExpressions.Regex.Replace(input, pattern, replacement, (GRegularExpressions.RegexOptions)options, matchTimeout.WrappedTimeSpan);
         }
 
-        public static string Replace(string input, string pattern, GRegularExpressions.MatchEvaluator evaluator)
-        {
-            return GRegularExpressions.Regex.Replace(input, pattern, evaluator);
-        }
+        //public static string Replace(string input, string pattern, GRegularExpressions.MatchEvaluator evaluator)
+        //{
+        //    return GRegularExpressions.Regex.Replace(input, pattern, evaluator);
+        //}
 
-        public static string Replace(string input, string pattern, GRegularExpressions.MatchEvaluator evaluator, RegexOptions options)
-        {
-            return GRegularExpressions.Regex.Replace(input, pattern, evaluator, (GRegularExpressions.RegexOptions)options);
-        }
+        //public static string Replace(string input, string pattern, GRegularExpressions.MatchEvaluator evaluator, RegexOptions options)
+        //{
+        //    return GRegularExpressions.Regex.Replace(input, pattern, evaluator, (GRegularExpressions.RegexOptions)options);
+        //}
 
-        public static string Replace(string input, string pattern, GRegularExpressions.MatchEvaluator evaluator, RegexOptions options, TimeSpan matchTimeout)
-        {
-            return GRegularExpressions.Regex.Replace(input, pattern, evaluator, (GRegularExpressions.RegexOptions)options, matchTimeout.WrappedTimeSpan);
-        }
+        //public static string Replace(string input, string pattern, GRegularExpressions.MatchEvaluator evaluator, RegexOptions options, TimeSpan matchTimeout)
+        //{
+        //    return GRegularExpressions.Regex.Replace(input, pattern, evaluator, (GRegularExpressions.RegexOptions)options, matchTimeout.WrappedTimeSpan);
+        //}
 
 
         //public string[] Split2(string input)

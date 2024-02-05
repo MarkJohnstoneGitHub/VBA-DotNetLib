@@ -83,10 +83,17 @@ namespace DotNetLib.System.Text.RegularExpressions
             return Regex.Replace(input, pattern, replacement, options, matchTimeout);
         }
 
-        //public string Replace2(string input, string pattern, GRegularExpressions.MatchEvaluator evaluator, RegexOptions options = RegexOptions.None)
-        //{
-        //    return Regex.Replace2(input, pattern, evaluator, options);
-        //}
+        public string Replace3(string input, string pattern, MatchEvaluator evaluator, RegexOptions options = RegexOptions.None)
+        {
+            GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.RegexMatchEvaluator);
+            return GRegularExpressions.Regex.Replace(input, pattern, matchEvaluator, (GRegularExpressions.RegexOptions)options);
+        }
+
+        public string Replace4(string input, string pattern, MatchEvaluator evaluator, RegexOptions options, TimeSpan matchTimeout)
+        {
+            GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.RegexMatchEvaluator);
+            return GRegularExpressions.Regex.Replace(input, pattern, matchEvaluator, (GRegularExpressions.RegexOptions)options, matchTimeout.WrappedTimeSpan);
+        }
 
         public string[] Split(string input, string pattern, RegexOptions options = RegexOptions.None)
         {

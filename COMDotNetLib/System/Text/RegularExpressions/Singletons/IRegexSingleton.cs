@@ -64,6 +64,12 @@ namespace DotNetLib.System.Text.RegularExpressions
         [Description("In a specified input string, replaces all strings that match a specified regular expression with a specified replacement string. Additional parameters specify options that modify the matching operation and a time-out interval if no match is found.")]
         string Replace2(string input, string pattern, string replacement, RegexOptions options, TimeSpan matchTimeout);
 
+        [Description("In a specified input string, replaces all strings that match a specified regular expression with a string returned by a MatchEvaluator delegate. Specified options modify the matching operation.")]
+        string Replace3(string input, string pattern, MatchEvaluator evaluator, RegexOptions options = RegexOptions.None);
+
+        [Description("In a specified input string, replaces all substrings that match a specified regular expression with a string returned by a MatchEvaluator delegate. Additional parameters specify options that modify the matching operation and a time-out interval if no match is found.")]
+        string Replace4(string input, string pattern, MatchEvaluator evaluator, RegexOptions options, TimeSpan matchTimeout);
+
         [Description("Splits an input string into an array of substrings at the positions defined by a specified regular expression pattern. Specified options modify the matching operation.")]
         string[] Split(string input, string pattern, RegexOptions options = RegexOptions.None);
 
