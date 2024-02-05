@@ -1,10 +1,11 @@
 Attribute VB_Name = "RegexEscapeExample"
+'@IgnoreModule IndexedDefaultMemberAccess
 '@Folder("Examples.System.Text.RegularExpressions.Regex.Methods")
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 February 3, 2024
-'@LastModified February 3, 2024
+'@LastModified February 5, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 

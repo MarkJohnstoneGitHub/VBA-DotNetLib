@@ -1,10 +1,11 @@
 Attribute VB_Name = "RegexMatchExample2"
+'@IgnoreModule IndexedDefaultMemberAccess
 '@Folder("Examples.System.Text.RegularExpressions.Regex.Methods")
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 February 3, 2024
-'@LastModified February 3, 2024
+'@LastModified February 5, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -38,14 +39,14 @@ Public Sub RegexMatchExample2()
         For i = 1 To 2
             Dim g As DotNetLib.Group
             Set g = m.Groups(i)
-            Debug.Print "Group" & i&; "='" & g & "'"
+            Debug.Print "Group" & i&; "='" & g.ToString & "'"
             Dim cc As DotNetLib.CaptureCollection
             Set cc = g.Captures
             Dim j As Long
             For j = 0 To cc.Count - 1
                 Dim c As DotNetLib.Capture
                 Set c = cc(j)
-                Debug.Print "Capture" & j&; "='" & c & "', Position=" & c.index
+                Debug.Print "Capture" & j&; "='" & c.ToString & "', Position=" & c.index
             Next
         Next
         Set m = m.NextMatch()

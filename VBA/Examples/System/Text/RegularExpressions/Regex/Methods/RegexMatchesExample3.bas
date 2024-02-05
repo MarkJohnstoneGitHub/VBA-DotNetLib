@@ -1,4 +1,5 @@
 Attribute VB_Name = "RegexMatchesExample3"
+'@IgnoreModule EmptyIfBlock
 '@Folder("Examples.System.Text.RegularExpressions.Regex.Methods")
 
 '@Author Mark Johnstone
@@ -9,6 +10,7 @@ Attribute VB_Name = "RegexMatchesExample3"
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
 '@Reference https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.matches?view=netframework-4.8.1#system-text-regularexpressions-regex-matches(system-string-system-string-system-text-regularexpressions-regexoptions-system-timespan)
+
 Option Explicit
 
 ''
@@ -63,3 +65,4 @@ End Sub
 '
 '       Found 'NOTES' at position 0
 '       Found 'notes' at position 11
+

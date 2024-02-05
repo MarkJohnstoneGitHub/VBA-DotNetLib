@@ -1,10 +1,11 @@
 Attribute VB_Name = "GroupCollectionItemExample"
+'@IgnoreModule IndexedDefaultMemberAccess
 '@Folder("Examples.System.Text.RegularExpressions.GroupCollection.Properties")
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 February 2, 2024
-'@LastModified February 2, 2024
+'@LastModified February 3, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 

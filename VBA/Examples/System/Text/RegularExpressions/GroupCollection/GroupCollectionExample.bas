@@ -1,10 +1,11 @@
 Attribute VB_Name = "GroupCollectionExample"
+'@IgnoreModule IndexedDefaultMemberAccess
 '@Folder("Examples.System.Text.RegularExpressions.GroupCollection")
 
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 February 1, 2024
-'@LastModified February 1, 2024
+'@LastModified February 3, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -58,3 +59,4 @@ End Sub
 '       ®: Outlook
 '       ®: PowerPoint
 '       ™: Silverlight
+

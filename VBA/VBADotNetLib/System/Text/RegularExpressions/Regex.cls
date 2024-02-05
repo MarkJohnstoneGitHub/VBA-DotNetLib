@@ -8,6 +8,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Attribute VB_Description = "Represents an immutable regular expression."
+'@IgnoreModule ParameterCanBeByVal
 '@Folder "VBADotNetLib.System.Text.RegularExpressions"
 '@PredeclaredId
 '@ModuleDescription("Represents an immutable regular expression.")
@@ -142,11 +143,13 @@ End Function
 
 '@Description("In a specified input string, replaces all strings that match a specified regular expression with a string returned by a MatchEvaluator delegate. Specified options modify the matching operation.")
 Public Function Replace3(ByRef strInput As String, ByRef pattern As String, ByVal evaluator As DotNetLib.MatchEvaluator, Optional ByVal options As DotNetLib.RegexOptions = RegexOptions_None) As String
+Attribute Replace3.VB_Description = "In a specified input string, replaces all strings that match a specified regular expression with a string returned by a MatchEvaluator delegate. Specified options modify the matching operation."
    Replace3 = this.Regex.Replace3(strInput, pattern, evaluator, options)
 End Function
 
 '@Description("In a specified input string, replaces all substrings that match a specified regular expression with a string returned by a MatchEvaluator delegate. Additional parameters specify options that modify the matching operation and a time-out interval if no match is found.")
 Public Function Replace4(ByRef strInput As String, ByRef pattern As String, ByVal evaluator As DotNetLib.MatchEvaluator, ByVal options As DotNetLib.RegexOptions, ByVal pMatchTimeout As DotNetLib.TimeSpan) As String
+Attribute Replace4.VB_Description = "In a specified input string, replaces all substrings that match a specified regular expression with a string returned by a MatchEvaluator delegate. Additional parameters specify options that modify the matching operation and a time-out interval if no match is found."
    Replace4 = this.Regex.Replace4(strInput, pattern, evaluator, options, pMatchTimeout)
 End Function
 
