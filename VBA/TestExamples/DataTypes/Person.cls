@@ -18,8 +18,8 @@ Attribute VB_Exposed = False
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
 'References
-'https://stackoverflow.com/questions/56151269/is-there-an-implemented-function-similar-to-the-tostring-function-in-vba
-'https://learn.microsoft.com/en-us/uwp/api/windows.foundation.istringable?view=winrt-22621
+' https://stackoverflow.com/questions/56151269/is-there-an-implemented-function-similar-to-the-tostring-function-in-vba
+' https://learn.microsoft.com/en-us/uwp/api/windows.foundation.istringable?view=winrt-22621
 '
 Option Explicit
 
@@ -28,14 +28,6 @@ Public Enum PersonStatus
     Alive = 1
     Deceased = 2
 End Enum
-
-
-'Const PersonFormat  As String = "{4} {3}FirstName{3}: {0}, {3}LastName{3}: {1}, {3}DateOfBirth{3}: {2:s} {5}"
-Const PersonFormat  As String = "{1} {0}FirstName{0}: {3}, {0}LastName{0}: {4}, {0}DateOfBirth{0}: {5:s}, {0}DateOfDeath{0}: {6:s} {2}"
-
-Const Quote As String = """"
-Const BraceOpen As String = "{"
-Const BraceClose As String = "}"
 
 Private Type TPerson
    FirstName As String
@@ -97,6 +89,11 @@ End Property
 '@DefaultMember
 Public Property Get ToString() As String
 Attribute ToString.VB_UserMemId = 0
+    Const PersonFormat  As String = "{1} {0}FirstName{0}: {3}, {0}LastName{0}: {4}, {0}DateOfBirth{0}: {5:s}, {0}DateOfDeath{0}: {6:s} {2}"
+    Const Quote As String = """"
+    Const BraceOpen As String = "{"
+    Const BraceClose As String = "}"
+    
     ToString = VBString.Format(PersonFormat, Quote, BraceOpen, BraceClose, _
                                 this.FirstName, this.LastName, this.DateOfBirth, _
                                 IIf(this.DateOfDeath Is Nothing, VBA.vbNullString, this.DateOfDeath))

@@ -26,14 +26,6 @@ Implements DotNetLib.IPredicate
 ' Interface IPredicate
 '----------------------------------------------------------------------
 
-'Private Function MyPredicate(ByVal pMatch As String) As Boolean
-'    MyPredicate = InStr(LCase$(pMatch), "bob")
-'End Function
-
-''
-'
-' @Remarks Used for the
-''
 Private Function IPredicate_CallBack(ByVal pMatch As Variant) As Boolean
     IPredicate_CallBack = InStr(LCase$(pMatch), "bob")
 End Function

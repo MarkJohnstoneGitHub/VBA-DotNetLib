@@ -55,12 +55,6 @@ End Property
 ' Interface IPredicate
 '----------------------------------------------------------------------
 
-''
-' The following code example uses the MatchEvaluator delegate to replace every
-' matched group of characters with the number of the match occurrence.
-'
-' @Remarks Used for the MatchEvaluatorExample.bas
-''
 Private Function IPredicate_CallBack(ByVal pMatch As Variant) As Boolean
     IPredicate_CallBack = InStr(LCase$(pMatch), this.pvtFilter)
 End Function

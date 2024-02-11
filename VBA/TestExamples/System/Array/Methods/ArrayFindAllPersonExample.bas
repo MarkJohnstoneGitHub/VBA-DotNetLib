@@ -26,10 +26,10 @@ Option Explicit
 '   DateOfBirth     Date of birth is greater or equal than specified
 '   Age             Age is greater than or equal than specified
 '   Status          Alive, Dead or AliveOrDead
+'
 ' The predicate function PersonFilter.IsPersonMatch tests if a match is found according to
 ' the specified filters.
-
-
+'
 ' @Remarks
 '   The PersonFilter.cls implements a Predicate i.e. a function returning a boolean given
 '   a parameter to match.
@@ -68,36 +68,36 @@ Public Sub ArrayFindAllPersonExample()
     Dim pvtPersonFilter As PersonFilter
     Set pvtPersonFilter = PersonFilter.Create("", "Smith", Nothing, 20)
 
-    Debug.Print "People with the surname that contains " & pvtPersonFilter.LastName & " that are least " & pvtPersonFilter.Age & " years old."
     Set pvtResult = Arrays.FindAll(personArray, pvtPersonFilter.CallBack)
+    Debug.Print "People with the surname that contains " & pvtPersonFilter.LastName & " that are least " & pvtPersonFilter.Age & " years old."
     Call DisplayFindAll(pvtResult)
     Debug.Print
     
     pvtPersonFilter.Reset
     pvtPersonFilter.Age = 20
-    Debug.Print "People that are at least of the age " & pvtPersonFilter.Age
     Set pvtResult = Arrays.FindAll(personArray, pvtPersonFilter.CallBack)
+    Debug.Print "People that are at least of the age " & pvtPersonFilter.Age
     Call DisplayFindAll(pvtResult)
     
     Debug.Print
     pvtPersonFilter.Reset
     pvtPersonFilter.Status = PersonStatus.Deceased
-    Debug.Print "Deceased people:"
     Set pvtResult = Arrays.FindAll(personArray, pvtPersonFilter.CallBack)
+    Debug.Print "Deceased people:"
     Call DisplayFindAll(pvtResult)
     
     Debug.Print
     pvtPersonFilter.Reset
-    Debug.Print "Person List:"
     Set pvtResult = Arrays.FindAll(personArray, pvtPersonFilter.CallBack)
+    Debug.Print "Person List:"
     Call DisplayFindAll(pvtResult)
     
     'Testing no results
     Debug.Print
     pvtPersonFilter.Reset
     pvtPersonFilter.Age = 100
-    Debug.Print "People that are least of the age " & pvtPersonFilter.Age
     Set pvtResult = Arrays.FindAll(personArray, pvtPersonFilter.CallBack)
+    Debug.Print "People that are least of the age " & pvtPersonFilter.Age
     Call DisplayFindAll(pvtResult)
 End Sub
 
