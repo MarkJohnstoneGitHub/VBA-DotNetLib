@@ -134,7 +134,7 @@ namespace DotNetLib.System.Collections
         void TrimExcess();
 
         //[Description("Determines whether every element in the List<T> matches the conditions defined by the specified predicate.")]
-        //bool TrueForAll(Predicate<T> match);
+        //bool TrueForAll(CallBack<T> match);
 
 
     }

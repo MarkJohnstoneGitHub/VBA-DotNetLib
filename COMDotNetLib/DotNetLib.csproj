@@ -68,6 +68,7 @@
     <Compile Include="Extensions\DirectoryInfoExtension.cs" />
     <Compile Include="Extensions\EncodingExtension.cs" />
     <Compile Include="Extensions\FileSystemInfoExtension.cs" />
+    <Compile Include="Extensions\FuncExtension.cs" />
     <Compile Include="Extensions\GetMethodInfoExtension.cs" />
     <Compile Include="Extensions\IFormatProviderExtension.cs" />
     <Compile Include="Extensions\IWrappedObject.cs" />
@@ -100,8 +101,12 @@
     <Compile Include="System\IO\TextReader.cs" />
     <Compile Include="System\IO\TextWriter.cs" />
     <Compile Include="System\Interfaces\ITypeCodeHelperSingleton.cs" />
-    <Compile Include="System\IUri.cs" />
-    <Compile Include="System\IUriSingleton.cs" />
+    <Compile Include="System\Interfaces\IUri.cs" />
+    <Compile Include="System\Interfaces\IUriSingleton.cs" />
+    <Compile Include="System\Interfaces\IPredicate.cs" />
+    <Compile Include="System\Interfaces\IPredicateSingleton.cs" />
+    <Compile Include="System\Predicate.cs" />
+    <Compile Include="System\Singletons\PredicateSingleton.cs" />
     <Compile Include="System\Security\AccessControl\Enums.cs" />
     <Compile Include="System\Security\AccessControl\FileSystemRights.cs" />
     <Compile Include="System\Security\AccessControl\objectsecurity.cs" />
@@ -354,7 +359,7 @@
     <Compile Include="System\UriEnumTypes.cs" />
     <Compile Include="System\UriHostNameType.cs" />
     <Compile Include="System\UriPartial.cs" />
-    <Compile Include="System\UriSingleton.cs" />
+    <Compile Include="System\Singletons\UriSingleton.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CoordinateSharp">

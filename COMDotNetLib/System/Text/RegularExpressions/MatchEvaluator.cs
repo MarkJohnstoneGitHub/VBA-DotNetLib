@@ -16,9 +16,12 @@ namespace DotNetLib.System.Text.RegularExpressions
     {
         IMatchEvaluator _evaluator;
 
+        internal GRegularExpressions.MatchEvaluator Delegate;
+
         public MatchEvaluator(IMatchEvaluator matchEvaluator)
         {
             _evaluator = matchEvaluator;
+            Delegate = new GRegularExpressions.MatchEvaluator(MatchEvaluatorCallBack);
         }
 
         string IMatchEvaluator.MatchEvaluator(Match match)
@@ -26,7 +29,7 @@ namespace DotNetLib.System.Text.RegularExpressions
             return _evaluator.MatchEvaluator(match);
         }
 
-        internal string RegexMatchEvaluator(GRegularExpressions.Match m)
+        internal string MatchEvaluatorCallBack(GRegularExpressions.Match m)
         {
             Match myMatch = new Match(m);
             return _evaluator.MatchEvaluator(myMatch);

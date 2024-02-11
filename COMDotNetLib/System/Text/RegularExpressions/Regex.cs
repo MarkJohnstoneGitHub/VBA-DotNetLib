@@ -188,20 +188,23 @@ namespace DotNetLib.System.Text.RegularExpressions
 
         public string Replace4(string input, MatchEvaluator evaluator)
         {
-            GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.RegexMatchEvaluator);
-            return _regex.Replace(input, matchEvaluator);
+            //GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.MatchEvaluatorCallBack);
+            //return _regex.Replace(input, matchEvaluator);
+            return _regex.Replace(input, evaluator.Delegate);
         }
 
         public string Replace5(string input, MatchEvaluator evaluator, int count)
         {
-            GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.RegexMatchEvaluator);
-            return _regex.Replace(input, matchEvaluator, count);
+            //GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.MatchEvaluatorCallBack);
+            //return _regex.Replace(input, matchEvaluator, count);
+            return _regex.Replace(input, evaluator.Delegate, count);
         }
 
         public string Replace6(string input, MatchEvaluator evaluator, int count, int startat)
         {
-            GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.RegexMatchEvaluator);
-            return _regex.Replace(input, matchEvaluator, count, startat);
+            //GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.MatchEvaluatorCallBack);
+            //return _regex.Replace(input, matchEvaluator, count, startat);
+            return _regex.Replace(input, evaluator.Delegate, count, startat);
         }
 
         //public static string Replace(string input, string pattern, string replacement)

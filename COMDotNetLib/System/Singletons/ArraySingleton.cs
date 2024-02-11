@@ -1,5 +1,6 @@
 ﻿// https://learn.microsoft.com/en-us/dotnet/api/system.array?view=netframework-4.8.1
 
+using GArray = global::System.Array;
 using GSystem = global::System;
 using System;
 using System.Collections;
@@ -97,6 +98,21 @@ namespace DotNetLib.System
         public Array CreateInstance6(Type elementType, [In] ref int[] lengths, [In] ref int[] lowerBounds)
         {
             return Array.CreateInstance(elementType, lengths,lowerBounds);
+        }
+
+        public object Find(Array array, Predicate match)
+        {
+            return Array.Find<object>(array, match);
+        }
+
+       public Array FindAll(Array array, Predicate match)
+       {
+            return Array.FindAll<object>(array, match);
+       }
+
+        public int FindIndex(Array array, Predicate match)
+        {
+            return Array.FindIndex<object>(array, match);
         }
 
         public int IndexOf(Array array, object value)

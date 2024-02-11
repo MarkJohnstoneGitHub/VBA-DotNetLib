@@ -141,11 +141,11 @@ namespace DotNetLib.System.Collections
         //https://stackoverflow.com/questions/68481139/how-to-convert-my-predicate-to-a-generic-predicate-in-c
         //https://stackoverflow.com/questions/9842222/dynamic-cast-to-generic-type
         //https://stackoverflow.com/questions/42902164/how-to-map-expressionfunctentity-bool-to-expressionfunctdbentity-bool/42904029#42904029
-        //public bool Exists(Predicate<T> match);
+        //public bool Exists(CallBack<T> match);
 
-        //public T Find(Predicate<T> match);
+        //public T Find(CallBack<T> match);
 
-        //public System.Collections.Generic.List<T> FindAll(Predicate<T> match);
+        //public System.Collections.Generic.List<T> FindAll(CallBack<T> match);
 
         public IEnumerator GetEnumerator()
         {
@@ -193,7 +193,7 @@ namespace DotNetLib.System.Collections
             return GenericList.Remove(value);
         }
 
-        //public int RemoveAll (Predicate<T> match);
+        //public int RemoveAll (CallBack<T> match);
 
         public void RemoveAt(int index)
         {
@@ -251,7 +251,7 @@ namespace DotNetLib.System.Collections
             GenericList.Remove(value);
         }
 
-        //public bool TrueForAll (Predicate<T> match);   
+        //public bool TrueForAll (CallBack<T> match);   
 
         public static GCollections.IList CreateFromTypeV2<T>(T obj = default)
         {

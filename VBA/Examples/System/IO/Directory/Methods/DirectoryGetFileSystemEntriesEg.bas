@@ -18,10 +18,10 @@ Option Explicit
 Public Sub DirectoryGetFileSystemEntries()
     Dim pvtPath As String
     pvtPath = Directory.GetCurrentDirectory()
-    Dim filter As String
-    filter = "*.exe"
+    Dim Filter As String
+    Filter = "*.exe"
     Call PrintFileSystemEntries(pvtPath)
-    Call PrintFileSystemEntries2(pvtPath, filter)
+    Call PrintFileSystemEntries2(pvtPath, Filter)
     Call GetLogicalDrives
     Call GetParent(pvtPath)
     Call Move("C:\\proof", "C:\\Temp")

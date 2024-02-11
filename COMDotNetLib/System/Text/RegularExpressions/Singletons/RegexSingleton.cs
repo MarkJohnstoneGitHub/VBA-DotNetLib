@@ -85,14 +85,16 @@ namespace DotNetLib.System.Text.RegularExpressions
 
         public string Replace3(string input, string pattern, MatchEvaluator evaluator, RegexOptions options = RegexOptions.None)
         {
-            GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.RegexMatchEvaluator);
-            return GRegularExpressions.Regex.Replace(input, pattern, matchEvaluator, (GRegularExpressions.RegexOptions)options);
+            //GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.MatchEvaluatorCallBack);
+            //return GRegularExpressions.Regex.Replace(input, pattern, matchEvaluator, (GRegularExpressions.RegexOptions)options);
+            return GRegularExpressions.Regex.Replace(input, pattern, evaluator.Delegate, (GRegularExpressions.RegexOptions)options);
         }
 
         public string Replace4(string input, string pattern, MatchEvaluator evaluator, RegexOptions options, TimeSpan matchTimeout)
         {
-            GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.RegexMatchEvaluator);
-            return GRegularExpressions.Regex.Replace(input, pattern, matchEvaluator, (GRegularExpressions.RegexOptions)options, matchTimeout.WrappedTimeSpan);
+            //GRegularExpressions.MatchEvaluator matchEvaluator = new GRegularExpressions.MatchEvaluator(evaluator.MatchEvaluatorCallBack);
+            //return GRegularExpressions.Regex.Replace(input, pattern, matchEvaluator, (GRegularExpressions.RegexOptions)options, matchTimeout.WrappedTimeSpan);
+            return GRegularExpressions.Regex.Replace(input, pattern, evaluator.Delegate, (GRegularExpressions.RegexOptions)options, matchTimeout.WrappedTimeSpan);
         }
 
         public string[] Split(string input, string pattern, RegexOptions options = RegexOptions.None)

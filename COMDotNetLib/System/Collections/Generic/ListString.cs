@@ -119,21 +119,21 @@ namespace DotNetLib.System.Collections
             _stringList.CopyTo(index, array, arrayIndex, count);
         }
 
-        //public bool Exists (Predicate<T> match);
+        //public bool Exists (CallBack<T> match);
 
-        //public T Find (Predicate<T> match);
+        //public T Find (CallBack<T> match);
 
-        //public System.Collections.Generic.List<T> FindAll (Predicate<T> match);
+        //public System.Collections.Generic.List<T> FindAll (CallBack<T> match);
 
-        //public int FindIndex (int startIndex, int count, Predicate<T> match);
-        //public int FindIndex (Predicate<T> match);
-        //public int FindIndex (int startIndex, Predicate<T> match);
+        //public int FindIndex (int startIndex, int count, CallBack<T> match);
+        //public int FindIndex (CallBack<T> match);
+        //public int FindIndex (int startIndex, CallBack<T> match);
 
-        //public T FindLast (Predicate<T> match);
+        //public T FindLast (CallBack<T> match);
 
-        //public int FindLastIndex (Predicate<T> match);
-        //public int FindLastIndex (int startIndex, Predicate<T> match);
-        //public int FindLastIndex (int startIndex, int count, Predicate<T> match);
+        //public int FindLastIndex (CallBack<T> match);
+        //public int FindLastIndex (int startIndex, CallBack<T> match);
+        //public int FindLastIndex (int startIndex, int count, CallBack<T> match);
 
         //public void ForEach (Action<T> action);
 
@@ -189,7 +189,7 @@ namespace DotNetLib.System.Collections
             return _stringList.Remove(item);
         }
 
-        //public int RemoveAll (Predicate<T> match);
+        //public int RemoveAll (CallBack<T> match);
 
         public void RemoveAt(int index)
         {
@@ -273,7 +273,7 @@ namespace DotNetLib.System.Collections
             ((GCollections.ICollection)_stringList).CopyTo(array, index);
         }
 
-        //public bool TrueForAll(Predicate<T> match);
+        //public bool TrueForAll(CallBack<T> match);
 
     }
 }

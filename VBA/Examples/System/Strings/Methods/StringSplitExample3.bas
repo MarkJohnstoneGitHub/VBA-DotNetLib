@@ -23,14 +23,14 @@ Public Sub StringSplitExample3()
     Dim subs() As String
     subs = pvtName.Split2(VBA.vbNullString, 2)
     
-    Dim firstName As String
-    firstName = subs(0)
-    Dim lastName As String
+    Dim FirstName As String
+    FirstName = subs(0)
+    Dim LastName As String
     If UBound(subs) > 0 Then
-        lastName = subs(1)
+        LastName = subs(1)
     End If
-    Debug.Print VBString.Format("firstName = {0}", firstName)
-    Debug.Print VBString.Format("lastName = {0}", lastName)
+    Debug.Print VBString.Format("firstName = {0}", FirstName)
+    Debug.Print VBString.Format("lastName = {0}", LastName)
 End Sub
 
 ' Output:

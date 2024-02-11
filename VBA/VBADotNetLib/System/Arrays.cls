@@ -17,7 +17,7 @@ Attribute VB_Description = "Provides methods for creating, manipulating, searchi
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 8, 2023
-'@LastModified January 29, 2024
+'@LastModified February 8, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -131,6 +131,24 @@ End Function
 Public Function CreateInstance6(ByVal elementType As DotNetLib.Type, ByRef Lengths() As Long, ByRef lowerBounds() As Long) As DotNetLib.Array
 Attribute CreateInstance6.VB_Description = "Creates a multidimensional Array of the specified Type and dimension lengths, with the specified lower bounds."
    Set CreateInstance6 = this.ArraySingleton.CreateInstance6(elementType, Lengths, lowerBounds)
+End Function
+
+'@Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the first occurrence within the entire Array.")
+Public Function Find(ByVal pArray As DotNetLib.Array, ByVal pMatch As DotNetLib.Predicate) As Variant
+Attribute Find.VB_Description = "Searches for an element that matches the conditions defined by the specified predicate, and returns the first occurrence within the entire Array."
+   Find = this.ArraySingleton.Find(pArray, pMatch)
+End Function
+
+'@Description("Retrieves all the elements that match the conditions defined by the specified predicate.")
+Public Function FindAll(ByVal pArray As DotNetLib.Array, ByVal pMatch As DotNetLib.Predicate) As DotNetLib.Array
+Attribute FindAll.VB_Description = "Retrieves all the elements that match the conditions defined by the specified predicate."
+   Set FindAll = this.ArraySingleton.FindAll(pArray, pMatch)
+End Function
+
+'@Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the entire Array.")
+Public Function FindIndex(ByVal pArray As DotNetLib.Array, ByVal pMatch As DotNetLib.Predicate) As Long
+Attribute FindIndex.VB_Description = "Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the entire Array."
+   FindIndex = this.ArraySingleton.FindIndex(pArray, pMatch)
 End Function
 
 '@Static

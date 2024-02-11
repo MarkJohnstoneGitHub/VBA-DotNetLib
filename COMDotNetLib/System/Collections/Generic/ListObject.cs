@@ -153,7 +153,7 @@ namespace DotNetLib.System.Collections
             return _list.Remove(value);
         }
 
-        //public int RemoveAll (Predicate<T> match);
+        //public int RemoveAll (CallBack<T> match);
 
         public void RemoveAt(int index)
         {

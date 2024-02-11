@@ -227,6 +227,52 @@ namespace DotNetLib.System
             return _array.GetValue(indices); 
         }
 
+        public static object Find<T>(Array array, Predicate match)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException("array");
+            }
+            if (match == null || match._predicate == null)
+            {
+                throw new ArgumentNullException("match");
+            }
+            
+            return GArray.Find((T[])array.WrappedArray, match.PredicateCallback);
+        }
+
+        public static Array FindAll<T>(Array array, Predicate match)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException("array");
+            }
+            if (match == null || match._predicate == null)
+            { 
+                throw new ArgumentNullException("match"); 
+            }
+            return new Array(GArray.FindAll((T[])array.WrappedArray, match.PredicateCallback));
+        }
+
+        //public static Array FindAll<T>(T[] array, Func<T, bool> predicate)
+        //{
+        //    return new Array(GArray.FindAll(array, predicate.Invoke));
+        //}
+
+        public static int FindIndex<T>(Array array, Predicate match)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException("array");
+            }
+            if (match == null || match._predicate == null)
+            {
+                throw new ArgumentNullException("match");
+            }
+            //GSystem.Predicate<T> predicate = match.PredicateCallback;
+            return GArray.FindIndex((T[])array.WrappedArray, match.PredicateCallback);
+        }
+
         public static int IndexOf(Array array, object value)
         { 
             return GArray.IndexOf(array.WrappedArray,value); 
@@ -492,5 +538,10 @@ namespace DotNetLib.System
         {
             return ((IStructuralEquatable)_array).Equals(other, comparer);
         }
+
+        //internal static object Find(T[] wrappedArray, Func<object, bool> funcPredicate)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
