@@ -13,11 +13,11 @@ Attribute VB_Exposed = False
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 February 10, 2024
-'@LastModified February 10, 2024
+'@LastModified February 11, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
-'@Reference https://learn.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.matchevaluator?view=netframework-4.8.1#examples
+'@Reference
 
 Option Explicit
 

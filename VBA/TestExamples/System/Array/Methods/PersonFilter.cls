@@ -49,8 +49,8 @@ End Sub
 ''
 Public Function Create(Optional ByVal pFirstName As String, Optional ByVal pLastName As String, Optional ByVal DOB As DotNetLib.DateTime, Optional ByVal pAge As Long, Optional ByVal pStatus As PersonStatus) As PersonFilter
     With New PersonFilter
-        .FirstName = LCase$(pFirstName)
-        .LastName = LCase$(pLastName)
+        .FirstName = pFirstName
+        .LastName = pLastName
         Set .DateOfBirth = DOB
         .Age = pAge
         .Status = pStatus
@@ -139,22 +139,32 @@ End Sub
 ' Person filter matches if a person which contains first name, or last name ignoring case.
 ' Also if date of birth is greater than or equal to DOB filter specified or their age is
 ' greater than or equal to age filter specified.
-' Strings comparision ignore case by converting to lower
-' Date,Age comparison is greater then or equal to.
+' Strings comparision ignore case by converting to lower case
+' Date, Age comparison is greater then or equal to.
 ''
 Public Function IsPersonMatch(ByVal pMatch As Person) As Boolean
     Select Case True
         Case this.mFirstName <> VBA.vbNullString Or this.mLastName <> VBA.vbNullString
-            IsPersonMatch = InStr(LCase$(pMatch.FirstName), this.mFirstName) And InStr(LCase$(pMatch.LastName), this.mLastName)
-            If Not IsPersonMatch Then
-                Exit Function
+            If this.mFirstName <> VBA.vbNullString Then
+                IsPersonMatch = InStr(LCase$(pMatch.FirstName), LCase$(this.mFirstName))
+                If Not IsPersonMatch Then
+                    Exit Function
+                End If
             End If
-            
+            If this.mLastName <> VBA.vbNullString Then
+                IsPersonMatch = InStr(LCase$(pMatch.LastName), LCase$(this.mLastName))
+                If Not IsPersonMatch Then
+                    Exit Function
+                End If
+            End If
+
             Select Case this.mStatus
                 Case PersonStatus.Alive
                     IsPersonMatch = pMatch.IsAlive
                 Case PersonStatus.Deceased
                     IsPersonMatch = Not pMatch.IsAlive
+                Case Else
+                    IsPersonMatch = True
             End Select
             If Not IsPersonMatch Then
                 Exit Function
@@ -162,16 +172,13 @@ Public Function IsPersonMatch(ByVal pMatch As Person) As Boolean
             
             If Not this.mDateOfBirth Is Nothing Then
                 IsPersonMatch = pMatch.DateOfBirth.Ticks >= this.mDateOfBirth.Ticks
-            ElseIf this.mAge > 0 Then
+            ElseIf this.mAge > 0 Then '
                 IsPersonMatch = DateTime.TotalYears(pMatch.DateOfBirth, this.mDateTimeNow) >= this.mAge
             End If
         Case Not this.mDateOfBirth Is Nothing
             IsPersonMatch = pMatch.DateOfBirth.Ticks >= this.mDateOfBirth.Ticks
-        Case this.mAge > 0
+        Case this.mAge > 0 'If age filter is only provided assumed to be alive
             IsPersonMatch = DateTime.TotalYears(pMatch.DateOfBirth, this.mDateTimeNow) >= this.mAge And (pMatch.IsAlive)
-'        Case this.mAge > 0
-'            IsPersonMatch = (DateTime.TotalYears(pMatch.DateOfBirth, this.mDateTimeNow) >= this.mAge) And (pMatch.IsAlive)
-        
         Case this.mStatus = PersonStatus.Alive
             IsPersonMatch = pMatch.IsAlive
         Case this.mStatus = PersonStatus.Deceased
