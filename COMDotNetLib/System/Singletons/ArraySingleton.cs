@@ -115,6 +115,36 @@ namespace DotNetLib.System
             return Array.FindIndex<object>(array, match);
         }
 
+        public int FindIndex2(Array array, int startIndex, Predicate match)
+        {
+            return Array.FindIndex<object>(array, startIndex, match);
+        }
+
+        public int FindIndex3(Array array, int startIndex, int count, Predicate match)
+        {
+            return Array.FindIndex<object>(array, startIndex, count, match);
+        }
+
+        public object FindLast(Array array, Predicate match)
+        {
+            return Array.FindLast<object>(array, match);
+        }
+
+        public int FindLastIndex(Array array, Predicate match)
+        {
+            return Array.FindLastIndex<object>(array, match);
+        }
+
+        public int FindLastIndex2(Array array, int startIndex, Predicate match)
+        {
+            return Array.FindLastIndex<object>(array, startIndex, match);
+        }
+
+        public int FindLastIndex3(Array array, int startIndex, int count, Predicate match)
+        {
+            return Array.FindLastIndex<object>(array, startIndex, count, match);
+        }
+
         public int IndexOf(Array array, object value)
         {
             return Array.IndexOf(array,value);
@@ -198,6 +228,11 @@ namespace DotNetLib.System
         public void Sort4(Array keys, Array items, int index, int length, IComparer comparer = null)
         {
             Array.Sort(keys, items, index, length, comparer);
+        }
+
+        public bool TrueForAll(Array array, Predicate match)
+        {
+            return Array.TrueForAll<object>(array, match);
         }
     }
 }

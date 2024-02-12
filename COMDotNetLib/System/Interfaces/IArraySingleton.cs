@@ -74,6 +74,24 @@ namespace DotNetLib.System
         [Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the entire Array.")]
         int FindIndex(Array array, Predicate match);
 
+        [Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the range of elements in the Array that extends from the specified index to the last element.")]
+        int FindIndex2(Array array, int startIndex, Predicate match);
+
+        [Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the range of elements in the Array that starts at the specified index and contains the specified number of elements.")]
+        int FindIndex3(Array array, int startIndex, int count, Predicate match);
+
+        [Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the last occurrence within the entire Array.")]
+        object FindLast(Array array, Predicate match);
+
+        [Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the entire Array.")]
+        int FindLastIndex(Array array, Predicate match);
+
+        [Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the range of elements in the Array that extends from the first element to the specified index.")]
+        int FindLastIndex2(Array array, int startIndex, Predicate match);
+
+        [Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the range of elements in the Array that contains the specified number of elements and ends at the specified index.")]
+        int FindLastIndex3(Array array, int startIndex, int count, Predicate match);
+
         [Description("Searches for the specified object and returns the index of its first occurrence in a one-dimensional array.")]
         int IndexOf(Array array, object value);
 
@@ -124,6 +142,11 @@ namespace DotNetLib.System
 
         [Description("Sorts a range of elements in a pair of one-dimensional Array objects (one contains the keys and the other contains the corresponding items) based on the keys in the first Array using the specified IComparer.")]
         void Sort4(Array keys, Array items, int index, int length, GCollections.IComparer comparer = null);
+
+        [Description("Determines whether every element in the array matches the conditions defined by the specified predicate.")]
+        bool TrueForAll(Array array, Predicate match);
+
+
 
         // Extension Methods
         // https://learn.microsoft.com/en-us/dotnet/api/system.array?view=netframework-4.8.1#extension-methods

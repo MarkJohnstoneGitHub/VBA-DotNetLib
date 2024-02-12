@@ -125,9 +125,9 @@ namespace DotNetLib.System.Collections
 
         //public System.Collections.Generic.List<T> FindAll (CallBack<T> match);
 
-        //public int FindIndex (int startIndex, int count, CallBack<T> match);
-        //public int FindIndex (CallBack<T> match);
-        //public int FindIndex (int startIndex, CallBack<T> match);
+        //public int FindIndex2 (int startIndex, int count, CallBack<T> match);
+        //public int FindIndex2 (CallBack<T> match);
+        //public int FindIndex2 (int startIndex, CallBack<T> match);
 
         //public T FindLast (CallBack<T> match);
 

@@ -227,13 +227,13 @@ namespace DotNetLib.System
             return _array.GetValue(indices); 
         }
 
-        public static object Find<T>(Array array, Predicate match)
+        public static T Find<T>(Array array, Predicate match)
         {
             if (array == null)
             {
                 throw new ArgumentNullException("array");
             }
-            if (match == null || match._predicate == null)
+            if (match == null)
             {
                 throw new ArgumentNullException("match");
             }
@@ -247,7 +247,7 @@ namespace DotNetLib.System
             {
                 throw new ArgumentNullException("array");
             }
-            if (match == null || match._predicate == null)
+            if (match == null)
             { 
                 throw new ArgumentNullException("match"); 
             }
@@ -265,13 +265,93 @@ namespace DotNetLib.System
             {
                 throw new ArgumentNullException("array");
             }
+            if (match == null)
+            {
+                throw new ArgumentNullException("match");
+            }
+            return GArray.FindIndex((T[])array.WrappedArray, match.PredicateCallback);
+        }
+
+        public static int FindIndex<T>(Array array, int startIndex, Predicate match)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException("array");
+            }
+            if (match == null)
+            {
+                throw new ArgumentNullException("match");
+            }
+            return GArray.FindIndex((T[])array.WrappedArray, startIndex, match.PredicateCallback);
+        }
+
+        public static int FindIndex<T>(Array array, int startIndex, int count, Predicate match)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException("array");
+            }
             if (match == null || match._predicate == null)
             {
                 throw new ArgumentNullException("match");
             }
-            //GSystem.Predicate<T> predicate = match.PredicateCallback;
-            return GArray.FindIndex((T[])array.WrappedArray, match.PredicateCallback);
+            return GArray.FindIndex((T[])array.WrappedArray, startIndex, count, match.PredicateCallback);
         }
+
+        public static T FindLast<T>(Array array, Predicate match)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException("array");
+            }
+            if (match == null)
+            {
+                throw new ArgumentNullException("match");
+            }
+            return GArray.FindLast((T[])array.WrappedArray, match.PredicateCallback);
+        }
+
+        public static int FindLastIndex<T>(Array array, Predicate match)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException("array");
+            }
+            if (match == null)
+            {
+                throw new ArgumentNullException("match");
+            }
+            return GArray.FindLastIndex((T[])array.WrappedArray, match.PredicateCallback);
+        }
+
+        public static int FindLastIndex<T>(Array array, int startIndex, Predicate match)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException("array");
+            }
+            if (match == null)
+            {
+                throw new ArgumentNullException("match");
+            }
+            return GArray.FindLastIndex((T[])array.WrappedArray, startIndex, match.PredicateCallback);
+        }
+
+        public static int FindLastIndex<T>(Array array, int startIndex, int count, Predicate match)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException("array");
+            }
+            if (match == null)
+            {
+                throw new ArgumentNullException("match");
+            }
+            return GArray.FindLastIndex((T[])array.WrappedArray, startIndex, count, match.PredicateCallback);
+
+        }
+
+        //public static void ForEach<T>(T[] array, Action<T> action);
 
         public static int IndexOf(Array array, object value)
         { 
@@ -455,6 +535,18 @@ namespace DotNetLib.System
             GArray.Sort(keys.WrappedArray, items.WrappedArray, index, length, comparer);
         }
 
+        public static bool TrueForAll<T>(Array array, Predicate match)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException("array");
+            }
+            if (match == null)
+            {
+                throw new ArgumentNullException("match");
+            }
+            return GArray.TrueForAll((T[])array.WrappedArray, match.PredicateCallback);
+        }
 
         // Explicit Interface Implementations
         // https://learn.microsoft.com/en-us/dotnet/api/system.array?view=netframework-4.8.1#explicit-interface-implementations

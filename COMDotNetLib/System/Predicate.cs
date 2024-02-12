@@ -35,20 +35,20 @@ namespace DotNetLib.System
 
         public bool CallBack(object obj)
         {
-            if (_predicate == null)
-            {
-                throw new ArgumentNullException("predicate");
-            }
+            //if (_predicate == null)
+            //{
+            //    throw new ArgumentNullException("predicate");
+            //}
             return _predicate.CallBack(obj);
         }
 
         //Call back to non-generic VBA predicate?
         internal bool PredicateCallback<T>(T obj)
         {
-            if (_predicate == null)
-            {
-                throw new ArgumentNullException("predicate");
-            }
+            //if (_predicate == null)
+            //{
+            //    throw new ArgumentNullException("predicate");
+            //}
             return _predicate.CallBack(obj);
         }
 
