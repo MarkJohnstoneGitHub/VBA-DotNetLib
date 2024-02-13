@@ -84,6 +84,8 @@
     <Compile Include="System\Globalization\Interfaces\IRegionInfoSingleton.cs" />
     <Compile Include="System\Globalization\RegionInfo.cs" />
     <Compile Include="System\Globalization\Singletons\RegionInfoSingleton.cs" />
+    <Compile Include="System\IInt32Singleton.cs" />
+    <Compile Include="System\Int32Singleton.cs" />
     <Compile Include="System\Interfaces\IBStringSingleton.cs" />
     <Compile Include="System\IO\BufferedStream.cs" />
     <Compile Include="System\IO\FileStream.cs" />

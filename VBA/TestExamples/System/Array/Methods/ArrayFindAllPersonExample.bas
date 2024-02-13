@@ -4,7 +4,7 @@ Attribute VB_Name = "ArrayFindAllPersonExample"
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 February 11, 2024
-'@LastModified February 11, 2024
+'@LastModified February 14, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -66,7 +66,7 @@ Public Sub ArrayFindAllPersonExample()
     
     'Create a person predicate that contains a person with last name Smith  and greater and equal to 20 years old
     Dim pvtPersonFilter As PersonFilter
-    Set pvtPersonFilter = PersonFilter.Create("", "Smith", Nothing, 20)
+    Set pvtPersonFilter = PersonFilter.Create(VBA.vbNullString, "Smith", Nothing, 20)
 
     Set pvtResult = Arrays.FindAll(personArray, pvtPersonFilter.CallBack)
     Debug.Print "People with the surname that contains " & pvtPersonFilter.LastName & " that are least " & pvtPersonFilter.Age & " years old."
@@ -92,6 +92,11 @@ Public Sub ArrayFindAllPersonExample()
     Debug.Print "Person List:"
     Call DisplayFindAll(pvtResult)
     
+    Debug.Print
+    Debug.Print "Person List sorted by date of birth"
+    Call Arrays.Sort(pvtResult, PersonDateOfBirthComparer)
+    Call DisplayFindAll(pvtResult)
+
     'Testing no results
     Debug.Print
     pvtPersonFilter.Reset
@@ -106,7 +111,7 @@ Private Sub DisplayFindAll(ByVal personArray As DotNetLib.Array)
         Debug.Print "Person Array is nothing"
         Exit Sub
     End If
-    If personArray.Count = 0 Then
+    If personArray.count = 0 Then
         Debug.Print "No results."
         Exit Sub
     End If
@@ -162,7 +167,20 @@ End Sub
 '    Cameron Boyce (born May 28, 1999 – May 6, 2019)
 '    John Harrismith (born July 25, 1933)
 '
+'    Person List sorted by date of birth
+'    Zelda Sears (born January 21, 1873 – February 19, 1935)
+'    Bob Hope (born May 29, 1903 – July 27, 2003)
+'    John Harrismith (born July 25, 1933)
+'    Simon Smithfield (born August 17, 1950)
+'    Martha Smithfield (born April 21, 1956)
+'    Mary Jones (born September 3, 1975)
+'    Bob Smith (born April 10, 1997)
+'    Cameron Boyce (born May 28, 1999 – May 6, 2019)
+'    Mary Smith (born January 1, 2000)
+'    Luke Smith (born December 3, 2020)
+'
 '    People that are least of the age 100
 '    No results.
+
 
 

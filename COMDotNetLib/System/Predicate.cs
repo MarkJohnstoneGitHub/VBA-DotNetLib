@@ -18,7 +18,7 @@ namespace DotNetLib.System
     [ComDefaultInterface(typeof(IPredicate))]
     public class Predicate : IPredicate
     {
-        internal IPredicate _predicate;
+        private readonly IPredicate _predicate;
 
         // https://stackoverflow.com/questions/731249/how-to-convert-funct-bool-to-predicatet
         //internal Func<object, bool> FuncPredicate;

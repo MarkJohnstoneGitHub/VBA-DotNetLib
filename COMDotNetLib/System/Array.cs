@@ -291,7 +291,7 @@ namespace DotNetLib.System
             {
                 throw new ArgumentNullException("array");
             }
-            if (match == null || match._predicate == null)
+            if (match == null)
             {
                 throw new ArgumentNullException("match");
             }

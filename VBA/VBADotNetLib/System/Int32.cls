@@ -17,7 +17,7 @@ Attribute VB_Description = "Represents a 32-bit signed integer."
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 12, 2023
-'@LastModified November 2, 2023
+'@LastModified February 14, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -32,11 +32,13 @@ Const Int32Type As String = "System.Int32"
 
 Private Type TInt32
     Int32Type       As DotNetLib.Type
+    Int32Singleton As DotNetLib.Int32Singleton
 End Type
 
 Private this As TInt32
 
 Private Sub Class_Initialize()
+    Set this.Int32Singleton = New DotNetLib.Int32Singleton
     Set this.Int32Type = Types.GetType(Int32Type)
 End Sub
 
@@ -44,6 +46,29 @@ Private Sub Class_Terminate()
     Set this.Int32Type = Nothing
 End Sub
 
+'@Description("Represents the largest possible value of an Int32. This field is constant.")
+Public Property Get MaxValue() As Long
+Attribute MaxValue.VB_Description = "Represents the largest possible value of an Int32. This field is constant."
+   MaxValue = this.Int32Singleton.MaxValue()
+End Property
+
+'@Description("Represents the smallest possible value of Int32. This field is constant.")
+Public Property Get MinValue() As Long
+Attribute MinValue.VB_Description = "Represents the smallest possible value of Int32. This field is constant."
+   MinValue = this.Int32Singleton.MinValue()
+End Property
+
+'@Description("Converts the string representation of a number to its 32-bit signed integer equivalent. A return value indicates whether the conversion succeeded.")
+Public Function TryParse(ByVal s As String, ByRef result As Long) As Boolean
+Attribute TryParse.VB_Description = "Converts the string representation of a number to its 32-bit signed integer equivalent. A return value indicates whether the conversion succeeded."
+   TryParse = this.Int32Singleton.TryParse(s, result)
+End Function
+
+'@Description("Converts the string representation of a number in a specified style and culture-specific format to its 32-bit signed integer equivalent. A return value indicates whether the conversion succeeded.")
+Public Function TryParse2(ByRef s As String, ByVal style As NumberStyles, ByVal provider As IFormatProvider, ByRef outResult As Long) As Boolean
+Attribute TryParse2.VB_Description = "Converts the string representation of a number in a specified style and culture-specific format to its 32-bit signed integer equivalent. A return value indicates whether the conversion succeeded."
+   TryParse2 = this.Int32Singleton.TryParse_2(s, style, provider, outResult)
+End Function
 
 '--------------------------------------------------------------------
 'Extension
