@@ -32,7 +32,7 @@ Const Int32Type As String = "System.Int32"
 
 Private Type TInt32
     Int32Type       As DotNetLib.Type
-    Int32Singleton As DotNetLib.Int32Singleton
+    Int32Singleton  As DotNetLib.Int32Singleton
 End Type
 
 Private this As TInt32
@@ -65,7 +65,7 @@ Attribute TryParse.VB_Description = "Converts the string representation of a num
 End Function
 
 '@Description("Converts the string representation of a number in a specified style and culture-specific format to its 32-bit signed integer equivalent. A return value indicates whether the conversion succeeded.")
-Public Function TryParse2(ByRef s As String, ByVal style As NumberStyles, ByVal provider As IFormatProvider, ByRef outResult As Long) As Boolean
+Public Function TryParse2(ByRef s As String, ByVal style As mscorlib.NumberStyles, ByVal provider As mscorlib.IFormatProvider, ByRef outResult As Long) As Boolean
 Attribute TryParse2.VB_Description = "Converts the string representation of a number in a specified style and culture-specific format to its 32-bit signed integer equivalent. A return value indicates whether the conversion succeeded."
    TryParse2 = this.Int32Singleton.TryParse_2(s, style, provider, outResult)
 End Function
