@@ -17,7 +17,7 @@ Attribute VB_Description = "Provides methods for creating, manipulating, searchi
 '@Author Mark Johnstone
 '@Project https://github.com/MarkJohnstoneGitHub/VBA-DotNetLib
 '@Version v1.0 October 8, 2023
-'@LastModified February 12, 2024
+'@LastModified February 17, 2024
 
 '@ReferenceAddin DotNetLib.tlb, mscorlib.tlb
 
@@ -133,54 +133,69 @@ Attribute CreateInstance6.VB_Description = "Creates a multidimensional Array of 
    Set CreateInstance6 = this.ArraySingleton.CreateInstance6(elementType, Lengths, lowerBounds)
 End Function
 
+'@Static
+'@Description("Determines whether the specified array contains elements that match the conditions defined by the specified predicate.")
+Public Function Exists(ByVal pArray As DotNetLib.Array, ByVal pMatch As DotNetLib.Predicate) As Boolean
+   Exists = this.ArraySingleton.Exists(pArray, pMatch)
+End Function
+
+'@Static
 '@Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the first occurrence within the entire Array.")
 Public Function Find(ByVal pArray As DotNetLib.Array, ByVal pMatch As DotNetLib.Predicate) As Variant
 Attribute Find.VB_Description = "Searches for an element that matches the conditions defined by the specified predicate, and returns the first occurrence within the entire Array."
    Find = this.ArraySingleton.Find(pArray, pMatch)
 End Function
 
+'@Static
 '@Description("Retrieves all the elements that match the conditions defined by the specified predicate.")
 Public Function FindAll(ByVal pArray As DotNetLib.Array, ByVal pMatch As DotNetLib.Predicate) As DotNetLib.Array
 Attribute FindAll.VB_Description = "Retrieves all the elements that match the conditions defined by the specified predicate."
    Set FindAll = this.ArraySingleton.FindAll(pArray, pMatch)
 End Function
 
+'@Static
 '@Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the entire Array.")
 Public Function FindIndex(ByVal pArray As DotNetLib.Array, ByVal pMatch As DotNetLib.Predicate) As Long
 Attribute FindIndex.VB_Description = "Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the entire Array."
    FindIndex = this.ArraySingleton.FindIndex(pArray, pMatch)
 End Function
 
+'@Static
 '@Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the range of elements in the Array that extends from the specified index to the last element.")
 Public Function FindIndex2(ByVal pArray As DotNetLib.Array, ByVal startIndex As Long, ByVal pMatch As DotNetLib.Predicate) As Long
 Attribute FindIndex2.VB_Description = "Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the range of elements in the Array that extends from the specified index to the last element."
    FindIndex2 = this.ArraySingleton.FindIndex2(pArray, startIndex, pMatch)
 End Function
 
+'@Static
 '@Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the range of elements in the Array that starts at the specified index and contains the specified number of elements.")
 Public Function FindIndex3(ByVal pArray As DotNetLib.Array, ByVal startIndex As Long, ByVal pCount As Long, ByVal pMatch As DotNetLib.Predicate) As Long
 Attribute FindIndex3.VB_Description = "Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the range of elements in the Array that starts at the specified index and contains the specified number of elements."
    FindIndex3 = this.ArraySingleton.FindIndex3(pArray, startIndex, pCount, pMatch)
 End Function
 
+'@Static
 '@Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the last occurrence within the entire Array.")
 Public Function FindLast(ByVal pArray As DotNetLib.Array, ByVal pMatch As DotNetLib.Predicate) As Variant
 Attribute FindLast.VB_Description = "Searches for an element that matches the conditions defined by the specified predicate, and returns the last occurrence within the entire Array."
    FindLast = this.ArraySingleton.FindLast(pArray, pMatch)
 End Function
 
+'@Static
 '@Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the entire Array.")
 Public Function FindLastIndex(ByVal pArray As DotNetLib.Array, ByVal pMatch As DotNetLib.Predicate) As Long
 Attribute FindLastIndex.VB_Description = "Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the entire Array."
    FindLastIndex = this.ArraySingleton.FindLastIndex(pArray, pMatch)
 End Function
 
+'@Static
 '@Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the range of elements in the Array that extends from the first element to the specified index.")
 Public Function FindLastIndex2(ByVal pArray As DotNetLib.Array, ByVal startIndex As Long, ByVal pMatch As DotNetLib.Predicate) As Long
 Attribute FindLastIndex2.VB_Description = "Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the range of elements in the Array that extends from the first element to the specified index."
    FindLastIndex2 = this.ArraySingleton.FindLastIndex2(pArray, startIndex, pMatch)
 End Function
 
+'@Static
 '@Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the range of elements in the Array that contains the specified number of elements and ends at the specified index.")
 Public Function FindLastIndex3(ByVal pArray As DotNetLib.Array, ByVal startIndex As Long, ByVal pCount As Long, ByVal pMatch As DotNetLib.Predicate) As Long
 Attribute FindLastIndex3.VB_Description = "Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the range of elements in the Array that contains the specified number of elements and ends at the specified index."
@@ -250,44 +265,40 @@ Attribute Reverse2.VB_Description = "Reverses the sequence of a subset of the el
     this.ArraySingleton.Reverse2 pArray, index, pLength
 End Sub
 
-'Static
+'@Static
 '@Description("Sorts the elements in an entire one-dimensional Array using the IComparable implementation of each element of the Array.")
 Public Sub Sort(ByVal pArray As DotNetLib.Array, Optional ByVal comparer As mscorlib.IComparer = Nothing)
 Attribute Sort.VB_Description = "Sorts the elements in an entire one-dimensional Array using the IComparable implementation of each element of the Array."
     this.ArraySingleton.Sort pArray, comparer
 End Sub
 
-'Static
+'@Static
 '@Description("Sorts the elements in a range of elements in a one-dimensional Array using the specified IComparer.")
 Public Sub Sort2(ByVal pArray As DotNetLib.Array, ByVal index As Long, ByVal pLength As Long, Optional ByVal comparer As mscorlib.IComparer = Nothing)
 Attribute Sort2.VB_Description = "Sorts the elements in a range of elements in a one-dimensional Array using the specified IComparer."
     this.ArraySingleton.Sort2 pArray, index, pLength, comparer
 End Sub
 
-'Static
+'@Static
 '@Description("Sorts a pair of one-dimensional Array objects (one contains the keys and the other contains the corresponding items) based on the keys in the first Array using the specified IComparer.")
 Public Sub Sort3(ByVal keys As DotNetLib.Array, ByVal items As DotNetLib.Array, Optional ByVal comparer As mscorlib.IComparer = Nothing)
 Attribute Sort3.VB_Description = "Sorts a pair of one-dimensional Array objects (one contains the keys and the other contains the corresponding items) based on the keys in the first Array using the specified IComparer."
     this.ArraySingleton.Sort3 keys, items, comparer
 End Sub
 
-'Static
+'@Static
 '@Description("Sorts a range of elements in a pair of one-dimensional Array objects (one contains the keys and the other contains the corresponding items) based on the keys in the first Array using the specified IComparer.")
 Public Sub Sort4(ByVal keys As DotNetLib.Array, ByVal items As DotNetLib.Array, ByVal index As Long, ByVal pLength As Long, Optional ByVal comparer As mscorlib.IComparer = Nothing)
 Attribute Sort4.VB_Description = "Sorts a range of elements in a pair of one-dimensional Array objects (one contains the keys and the other contains the corresponding items) based on the keys in the first Array using the specified IComparer."
     this.ArraySingleton.Sort4 keys, items, index, pLength, comparer
 End Sub
 
+'@Static
 '@Description("Determines whether every element in the array matches the conditions defined by the specified predicate.")
 Public Function TrueForAll(ByVal pArray As DotNetLib.Array, ByVal pMatch As DotNetLib.Predicate) As Boolean
 Attribute TrueForAll.VB_Description = "Determines whether every element in the array matches the conditions defined by the specified predicate."
     TrueForAll = this.ArraySingleton.TrueForAll(pArray, pMatch)
 End Function
-
-
-'@TODO FindAll
-'Public Function FindAll(ByVal values As DotNetLib.Array, pMatch) As DotNetLib.Array
-'End Function
 
 '--------------------------------------------------------------------
 'Extensions

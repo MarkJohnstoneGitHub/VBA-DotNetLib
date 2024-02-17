@@ -100,6 +100,11 @@ namespace DotNetLib.System
             return Array.CreateInstance(elementType, lengths,lowerBounds);
         }
 
+        public bool Exists(Array array, Predicate match)
+        {
+            return Array.Exists<object>(array, match);
+        }
+
         public object Find(Array array, Predicate match)
         {
             return Array.Find<object>(array, match);

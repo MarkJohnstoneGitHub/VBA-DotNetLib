@@ -227,6 +227,20 @@ namespace DotNetLib.System
             return _array.GetValue(indices); 
         }
 
+        public static bool Exists<T>(Array array, Predicate match)
+        {
+            if (array == null)
+            {
+                throw new ArgumentNullException("array");
+            }
+            if (match == null)
+            {
+                throw new ArgumentNullException("match");
+            }
+
+            return GArray.Exists((T[])array.WrappedArray, match.PredicateCallback);
+        }
+
         public static T Find<T>(Array array, Predicate match)
         {
             if (array == null)

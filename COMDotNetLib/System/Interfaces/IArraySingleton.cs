@@ -65,6 +65,9 @@ namespace DotNetLib.System
         [Description("Creates a multidimensional Array of the specified Type and dimension lengths, with the specified lower bounds.")]
         Array CreateInstance6(Type elementType, [In] ref int[] lengths, [In] ref int[] lowerBounds);
 
+        [Description("Determines whether the specified array contains elements that match the conditions defined by the specified predicate.")]
+        bool Exists(Array array, Predicate match);
+
         [Description("Searches for an element that matches the conditions defined by the specified predicate, and returns the first occurrence within the entire Array.")]
         object Find(Array array, Predicate match);
 
